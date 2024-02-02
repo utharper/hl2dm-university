@@ -1,0 +1,500 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>new sdk update? - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>new sdk update?</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=4174">https://forum.hl2dm.community/viewtopic.php?t=4174</a>
+-->
+
+<div class="post" id="p55477">
+	<div class="info">
+		<p class="poster">Tranthor</p>
+		<p class="dt">2009-06-20 07:11:16</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">After the update to Source SDK on June 15, a bunch of stuff in hammer doesn't work for me anymore.<br>
+<br>
+anywhere where I had info_player_deathmatch or prop_physics_respawnable, the entity is gone from the map and it its place there is some kind of error thing, a guy in a yellow circle with his thumb up that says "obsolete."  How do i fix this garbage?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55479">
+	<div class="info">
+		<p class="poster">stretch</p>
+		<p class="dt">2009-06-20 07:30:47</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">are you going into hammer with Engine Version as Episode One and then Current Game as HL2DM? that was the only thing i forgot to change when it updated. else idk...<br>
+<br>
+stretch</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55480">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2009-06-20 07:33:22</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Everything seems ok to me.  I still have my spawn points in my map.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55482">
+	<div class="info">
+		<p class="poster">Tranthor</p>
+		<p class="dt">2009-06-20 08:03:21</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">*Facepalm* thanks stretch.  I didn't realize it reset the settings.<br>
+<br>
+While we are at it, I've got a couple of questions<br>
+<br>
+How do I attach toilets to walls?  when I make a setting for "minimum force to override", it is unmovable by the ggun until something else knocks it.<br>
+<br>
+With a trigger_multiple, does a player have to enter it's area for trigger it, or can it just be around the area that the spawn in?  for example, if I were to make a giant box around the whole map would that work to start the trigger?<br>
+<br>
+If you've got a custom model in your map, how do you make it force the client to download it on a server, rather than have a big ERROR sign for them?<br>
+<br>
+thanks, tranthor</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55488">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2009-06-20 15:54:40</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Tranthor wrote:</cite>If you've got a custom model in your map, how do you make it force the client to download it on a server, rather than have a big ERROR sign for them?</div></blockquote>
+
+You have to either use a plugin to force the download ( not recommended ), or you need to pack the custom models into the bsp file.  <br>
+<br>
+Look here:  <a href="http://developer.valvesoftware.com/wiki/Pakrat" class="postlink">http://developer.valvesoftware.com/wiki/Pakrat</a> and <a href="http://www.geocities.com/cofrdrbob/pakrat.html" class="postlink">http://www.geocities.com/cofrdrbob/pakrat.html</a> for more info.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55496">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2009-06-20 20:50:25</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Tranthor wrote:</cite>How do I attach toilets to walls?  when I make a setting for "minimum force to override", it is unmovable by the ggun until something else knocks it.</div></blockquote>
+
+Tick the "Motion Disabled" and "Enable motion on Physcannon grab" flags and untick the "Generate output on +USE" flag.<br>
+
+<blockquote><div><cite>Tranthor wrote:</cite>With a trigger_multiple, does a player have to enter it's area for trigger it, or can it just be around the area that the spawn in?</div></blockquote>
+
+All depends which output you're using, ie OnStartTouch fires when a player moves into the trigger, OnEndTouch fires when a player leaves the trigger. Test 'em out and see which one gives you the effect you want <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55533">
+	<div class="info">
+		<p class="poster">stretch</p>
+		<p class="dt">2009-06-21 08:40:04</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Keeper wrote:</cite><blockquote><div><cite>Tranthor wrote:</cite>If you've got a custom model in your map, how do you make it force the client to download it on a server, rather than have a big ERROR sign for them?</div></blockquote>
+
+You have to either use a plugin to force the download ( not recommended ), or you need to pack the custom models into the bsp file.  <br>
+<br>
+Look here:  <a href="http://developer.valvesoftware.com/wiki/Pakrat" class="postlink">http://developer.valvesoftware.com/wiki/Pakrat</a> and <a href="http://www.geocities.com/cofrdrbob/pakrat.html" class="postlink">http://www.geocities.com/cofrdrbob/pakrat.html</a> for more info.</div></blockquote>
+
+thx i have actually been wondering how to do that as well<br>
+<br>
+stretch</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55590">
+	<div class="info">
+		<p class="poster">Tranthor</p>
+		<p class="dt">2009-06-22 04:38:07</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I'm still having trouble with my trigger_multiple.  Right now I have it as a box the size of the inside of the walls to my map (a killbox).  I have my inputs and outputs set correctly; it seems that the trigger simply isn't firing.  I want it to fire every time someone spawns.  Does spawning inside not count as entering it, or are there more settings I need to change, or what?<br>
+<br>
+Failing that, i could put a small one around every spawn point that fires when the player leaves it, but I don't know how to set it up to do that.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55597">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2009-06-22 06:01:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">The player has to actually hit the trigger for it to work.  So spawning inside it does not count.<br>
+<br>
+
+<blockquote><div><cite>Tranthor wrote:</cite>
+Failing that, i could put a small one around every spawn point that fires when the player leaves it, but I don't know how to set it up to do that.</div></blockquote>
+
+<br>
+I am not 100% sure as I am learning hammer as well, but if you build a box around each with a trigger brush then set the trigger to do whatever you want when someone hits the trigger.  The problem is, it will do it everytime someone hits the trigger:  ie even players walking by.  <br>
+<br>
+I am not sure you can do what you are trying to do, unless you build little chambers off the main box and have your player spawn in the chambers.  Put the trigger at across the entrance and when people leave the spawn chambers it will fire.  You can put some sort of one way force field at each entrance so that players can only go out and not go in.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55637">
+	<div class="info">
+		<p class="poster">Tranthor</p>
+		<p class="dt">2009-06-23 02:52:31</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I'm running an gravgun/crowbar/9mm killbox, so I want to take away the smg and nades from spawning players.  I'll try the thing with boxes maybe</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55652">
+	<div class="info">
+		<p class="poster">Tranthor</p>
+		<p class="dt">2009-06-23 06:49:02</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">right, update:<br>
+<br>
+so, if I make small boxes set to OnEndTouch over each spawn, it sets everytime you walk through it, so I've gotta move the spawns.  Why didn't I think of that in the first place?<br>
+<br>
+For some reason, when my player_weaponstrip fires, nothing happens.  The trigger multiple is definitely triggering it, but it won't take away the weapons.  I think I can probably debug this though.<br>
+<br>
+That is all.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55656">
+	<div class="info">
+		<p class="poster">cyboy bunny</p>
+		<p class="dt">2009-06-23 09:38:43</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">dont use a trigger for the waepon strip. just make a brush around the player spawn(so the player spawns in the brush) and texture it with the tools_trigger texture, then tie it to trigger_waepon_strip. thats all you got to do.<br>
+<br>
+good luck <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=":wink:" title="Wink"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55673">
+	<div class="info">
+		<p class="poster">Tranthor</p>
+		<p class="dt">2009-06-23 18:51:11</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thanks for the advice Cyboy, but I've already got my player_weaponstrip working properly.  If I have any problems with crashes/bugs etc, I'll try it your way.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55842">
+	<div class="info">
+		<p class="poster">Tranthor</p>
+		<p class="dt">2009-06-25 03:28:47</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">If you've got a named entity in you map - in this case mine's a prop_physics - is there a way to tell it to do stuff through console commands?  For example, enable/disable physcannon pickup, break...</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55846">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2009-06-25 04:26:18</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">no. nope and naught.<br>
+think of ep1 Source as a small child with comprehensive dysfunctions. most of what you're trying to do will bug out online and that's a fact. including your weapon_strip.<br>
+anything that moves or has to do with moving will most proly fail online. this is one of ep1 Source's weakest points. leave it. trust me.<br>
+try to lower your expectations of what HL2DM can do for you code wise and keep praying for the OB port.<br>
+<br>
+best thing for you to do about the having only some weapons and some not is this:<br>
+<br>
+put a point_server_command in your map and name it (for example: jonny)<br>
+put a logic_auto in your map and go to its I/O and do the following outputs:<br>
+<br>
+1)<br>
+<br>
+OnMapSpawn<br>
+Jonny<br>
+Command<br>
+sv_cheats 1<br>
+<br>
+2)<br>
+<br>
+OnMapSpawn<br>
+Jonny<br>
+Command<br>
+ent_remove_all weapon_smg1<br>
+<br>
+1)<br>
+<br>
+OnMapSpawn<br>
+Jonny<br>
+Command<br>
+sv_cheats 0<br>
+<br>
+do the same for other weapons<br>
+<br>
+to give the players weapons:<br>
+grab this rar, unpack, open in hammer and modify the game_player_equip as you want. make sure to trigger it OnMapSpawn using your logic_auto - <a href="http://www.eyeclan.net/backup/player_equip_prefab.rar" class="postlink">DOWNLOAD</a> <br>
+<br>
+<strong class="text-strong">2 important notes:<br>
+1- you'll see in this prefab also a trigger giving players weapons and a weapon_strip - i suggest you ignore those. as those as the ones that bug out online.<br>
+2- the game_player_equip is edited in SmartEdit</strong><br>
+<br>
+joy</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55855">
+	<div class="info">
+		<p class="poster">Tranthor</p>
+		<p class="dt">2009-06-25 06:42:35</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">actually, every time I've been playing dm, I've been testing various beta versions of my map with friends, and also some random people who show up, on a listen server.  So far, no bug issues.  And everyone likes the giant melon.<br>
+<br>
+And actually, if I try it your way I wouldn't need to add any weapons; just remove smg and nades.  might be worth a shot.  You say it will perform better?  I suppose there also won't be issues when other players re-pass through spawns.  Right now, I've raised the spawn points off the ground so they will usually only be passed through if it's low grav.  And if you do go through a point again, it's only an issue if you are holding something at the time.  But i'll make the next version with your way and test it. <br>
+<br>
+edit: with the logic_auto will I need to put a "delay after trigger" for the ent_remove_all weapon_smg1 and then another longer one for sv_cheats 0? like, 0.1 seconds or something?<br>
+<br>
+Thanks,<br>
+Tranthor, the Space Hippo</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55901">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2009-06-25 14:13:50</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Tranthor wrote:</cite>
+edit: with the logic_auto will I need to put a "delay after trigger" for the ent_remove_all weapon_smg1 and then another longer one for sv_cheats 0? like, 0.1 seconds or something?
+</div></blockquote>
+
+you have two option really- either remove the weps using the logic_auto &gt; point_server_command<br>
+or just put these cvars into your server.cfg<br>
+<br>
+these command are called upon on each map launch they work on the actual server. so it's beyond players' spawn to mess up / bug on. and yes, far more stable than using entities performing the cvars on-the-fly.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55913">
+	<div class="info">
+		<p class="poster">Tranthor</p>
+		<p class="dt">2009-06-25 19:48:54</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">so OnMapSpawn means every time a player spawns, right?<br>
+<br>
+Previously, before I was fiddling around with weapon strips, i had a script in my "admin" cfg file i made, that removed the weapons, but I had to push it every time someone spawned.  Pain in the ass.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55926">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2009-06-25 21:51:10</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Tranthor wrote:</cite>so OnMapSpawn means every time a player spawns, right?</div></blockquote>
+
+<a href="http://developer.valvesoftware.com/wiki/Logic_auto#Outputs" class="postlink"><span style="text-decoration:underline">OnMapSpawn</span></a> is when the map first loads up.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55928">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2009-06-25 22:33:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>boshed wrote:</cite><blockquote><div><cite>Tranthor wrote:</cite>so OnMapSpawn means every time a player spawns, right?</div></blockquote>
+
+<a href="http://developer.valvesoftware.com/wiki/Logic_auto#Outputs" class="postlink"><span style="text-decoration:underline">OnMapSpawn</span></a> is when the map first loads up.</div></blockquote>
+
+<br>
+true but this setup will still make sure your players won't have guns and only their gguns and pistols. yes, on each spawn.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55941">
+	<div class="info">
+		<p class="poster">Tranthor</p>
+		<p class="dt">2009-06-26 01:40:37</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Nope, tried it.  It takes away all the smgs and nades <em class="text-italics">before</em> anyone spawns; when I spawn I still have it.<br>
+<br>
+Any other suggestions?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55966">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2009-06-26 03:45:36</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">sry. used to work once <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"> <br>
+in any case, from my experience having spawning players go through a trigger_weapon_strip and then giving them weapons using a triggered game_player_equip is buggy. only way i got the equip to work properly was to set it on mapspawn. this way hitbox doesn't come into play = no errors.<br>
+best ask one of the guys that make stick/crowbar only maps. perhaps they have a solution.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p56041">
+	<div class="info">
+		<p class="poster">Tranthor</p>
+		<p class="dt">2009-06-26 21:26:44</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">is there any way to create a time-based trigger?  something that can fire and activate my point_servercommand every, say, 5 seconds?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p56050">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2009-06-26 22:54:22</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">yes. but ppl will have those weapons during the unavoidable gaps and that'll be stupid.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p56054">
+	<div class="info">
+		<p class="poster">Tranthor</p>
+		<p class="dt">2009-06-26 23:50:17</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">if you ran the timer every second would it cause problems/crashes? because 1 second isn't enough time to switch to &amp; throw a nade, so I could give that a shot.  What kind of entity would I need?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p56080">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2009-06-27 02:14:13</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">i'll try reason for the last time (and i don't mean no disrespect brother) :<br>
+these sorts of entities are either half broken or completely broken in HL2DM. that is becaues none of them was actually WRITTEN from multiplayer or sorted to work for multiplayer at that. these are facts not subjective impressions. the bugs range from random to constant and it's essentially the farthest thing from FUN.<br>
+<br>
+Now. if you're still going to be pigheaded about it i'll try to make time in the next few days and look into making a prefab for you.<br>
+also, pern might know some proper server lines that can simply remove weapon_smg1 and weapon_frag altogether from the server and can rid Tranthor of playing in Ents Bugville...- pern?<br>
+<br>
+cheers4now</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p56081">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2009-06-27 02:19:39</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">lol</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p56124">
+	<div class="info">
+		<p class="poster">Tranthor</p>
+		<p class="dt">2009-06-27 22:11:03</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>[EYE] Valar wrote:</cite>i'll try reason for the last time (and i don't mean no disrespect brother) :<br>
+these sorts of entities are either half broken or completely broken in HL2DM. that is becaues none of them was actually WRITTEN from multiplayer or sorted to work for multiplayer at that. these are facts not subjective impressions. the bugs range from random to constant and it's essentially the farthest thing from FUN.<br>
+<br>
+Now. if you're still going to be pigheaded about it i'll try to make time in the next few days and look into making a prefab for you.<br>
+also, pern might know some proper server lines that can simply remove weapon_smg1 and weapon_frag altogether from the server and can rid Tranthor of playing in Ents Bugville...- pern?<br>
+<br>
+cheers4now</div></blockquote>
+
+That's really not necessary.  I can do this myself, all I want to know is what entity I can use as a timer.  If that one doesn't work either, I'll keep trying stuff.<br>
+<br>
+Who's pern?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p56174">
+	<div class="info">
+		<p class="poster">cyboy bunny</p>
+		<p class="dt">2009-06-28 16:04:40</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">logic_timer is the enity you need .the best way i think to insure that players dont run into spawn triggers while playing is the box methode. make (8) heigh boxes outside youre map. let the players spawn in the top off the box in a waepon_strip brush  then they drop into a player-equip trigger and the they fall into a trigger_teleport who them let spawn in the playable map. make the boxes just big enough and texture it with the black texture (mayby some nice light effects). you can use a trigger_push to speed up the fall off the players.<br>
+<br>
+<br>
+good luck <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=":wink:" title="Wink"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p56178">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2009-06-28 18:19:04</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">it works on paper but in reality many times i've seen the player go through the player_equip trigger and don't get nothing. it has i think something to do with hitbox/netcode b0rked behavior. this is why i was trying to avoid relaying on movement factors.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p56208">
+	<div class="info">
+		<p class="poster">Tranthor</p>
+		<p class="dt">2009-06-29 04:08:01</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">never had any problems in my beta7 version, where there was a small trigger_multiple around each spawn point which was raised above the ground to decrease likeliness of crossing it again.  Maybe you just need to make sure triggers are big enough to envelop the whole player?<br>
+<br>
+I think i want to try a logic_timer, and if that fails also, I will have to do it your way with the boxes.<br>
+<br>
+Thanks for the help everybody</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p56211">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2009-06-29 04:48:54</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Tranthor wrote:</cite>Maybe you just need to make sure triggers are big enough to envelop the whole player?</div></blockquote>
+
+i'd say 1024x1024 is big enough <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"> <br>
+anyway glhf</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p56215">
+	<div class="info">
+		<p class="poster">Tranthor</p>
+		<p class="dt">2009-06-29 05:40:17</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Is there a way to make it so that sv_cheats 1 or 0 doesn't show up every time it is changed?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

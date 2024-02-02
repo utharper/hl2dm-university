@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Help? - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+
+<h1>Help?</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=56">https://forum.hl2dm.community/viewtopic.php?t=56</a>
+-->
+
+<div class="post" id="p152">
+	<div class="info">
+		<p class="poster">Scar</p>
+		<p class="dt">2007-03-15 22:10:34</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Ok here is the issue.<br>
+<br>
+When clanservers updated my server, my mani got changed around a bit, nothing major, but now for the rankings it has points in there and I do not want them on. <br>
+<br>
+How do I turn them off? I've been trying for the past hour and no luck.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p153">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2007-03-15 23:57:49</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I am not sure what  the points mean. Have you looked at the rank config in the mani_server.cfg file in you hl2mp/cfg folder?<br>
+<br>
+Maybe it is the calculation method that is doing it? From mine:<br>
+
+<blockquote class="uncited"><div>
+//*****************************************************************************<br>
+// Module : Stats<br>
+//<br>
+// Desc : The stats module is a very simple ranking system based on 3 methods of<br>
+//        calculation (defined in mani_stats_calculate).<br>
+// *****************************************************************************<br>
+<br>
+// 1 = Enable stats module, 0 = disable stats module<br>
+mani_stats 0<br>
+<br>
+// 0 = calculate once per map, 1 = calculate at end of each round (CSS Only)<br>
+mani_stats_mode 1<br>
+<br>
+// Number of days since player last connected before they are removed from the <br>
+// stats list<br>
+mani_stats_drop_player_days 5<br>
+<br>
+// This cvar is used to set the type of stats calculation to use for ranking <br>
+// players<br>
+// <strong class="text-strong">0 = Rank by by pure kills</strong> &lt;---- maybe ?<br>
+// 1 = Rank by by kill:death ratio<br>
+// 2 = Rank by kills minus deaths<br>
+mani_stats_calculate 2</div></blockquote></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p155">
+	<div class="info">
+		<p class="poster">Scar</p>
+		<p class="dt">2007-03-16 03:01:14</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I had mine set to 0 (for pure kills) before clanservers updated my server and when they did, the rankings were going by points. For example:<br>
+<br>
+Player Cartel | Scar^ is ranked 1/528 with 1986 points, 12867 kills, and 4102 deaths.<br>
+<br>
+That's how it says it on my server. The points weren't there before the update and when I check my mani cfg, there was some stuff added, here is the link of what the stats look like in my mani after the update.<br>
+<br>
+ <a href="http://files.filefront.com//;6943369;;/" class="postlink">http://files.filefront.com//;6943369;;/</a><br>
+<br>
+After I tried changing stuff around in the mani_server.cfg, nothing worked so I tried deleting all that new stuff from the cfg but it still calculates rankings by points.<br>
+<br>
+I don't know what else to do.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p156">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2007-03-16 06:33:59</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">That's weird. What version of Mani do you have? Or server IP so I can check it on game-monitor?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p157">
+	<div class="info">
+		<p class="poster">Scar</p>
+		<p class="dt">2007-03-16 07:18:51</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I don't know what version of mani I got, my friend sent me his from his server because he had it all setup already.<br>
+<br>
+So here is my IP: 8.2.121.153:27015</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p158">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2007-03-16 08:49:51</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">1.2BetaN RC2-12 VSP<br>
+<br>
+I going to see what I can find out for you. Might take a few days depending on how busy I am.<br>
+<br>
+WT</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p160">
+	<div class="info">
+		<p class="poster">Scar</p>
+		<p class="dt">2007-03-16 21:38:43</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Anything that can help would be much appreciated. Thanks dude.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p167">
+	<div class="info">
+		<p class="poster">Scar</p>
+		<p class="dt">2007-03-18 00:37:58</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">lol. I found out what the problem was.<br>
+<br>
+Before my CAL match I removed the "exec mani_server.cfg" from the regular server .cfg, and after the match I never put it back in... :roll: <br>
+<br>
+It's fixed now though <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"><br>
+<br>
+Thanks for your help anyways</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p170">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2007-03-18 07:48:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Oh good coz I hadnt come up with anything useful yet, lol.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

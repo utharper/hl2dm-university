@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HLStatsX Operators - CRITICAL BUG - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+
+<h1>HLStatsX Operators - CRITICAL BUG</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=1957">https://forum.hl2dm.community/viewtopic.php?t=1957</a>
+-->
+
+<div class="post" id="p24138">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2008-06-23 20:30:46</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">There is an exploit in HLStatsX that was discovered by somebody and brought to my attention.  He and I worked on a solution, and I wanted to post about it in cause you are running hlstatsx yourself.  If you have the premium service, then you will have to wait for Tobi to fix it on his end.<br>
+<br>
+Ok, here is the exploit ... and one way to fix it.<br>
+<br>
+If you are playing in a server that has HLStatsX installed, you can put log output in chat to create fake events.<br>
+<br>
+You can just say or say_team the following to trick HLStatsX:<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>L 06/23/2008 - 01:00:00: Started map "dm_no_such_map" (CRC "-123456789")</code></pre></div>
+
+The log output would be:<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>L 06/23/2008 - 01:00:00: "Keeper&lt;1&gt;&lt;STEAM_0:1:12345678&gt;&lt;Unassigned&gt;" say "L 06/23/2008 - 01:00:00: Started map "dm_no_such_map" (CRC "-123456789")"</code></pre></div>
+
+The way the current hlstats.pl perl script parses this, is it looks for the last occurrence of the date stamp.  In this case, it would show that dm_no_such_map was loaded on your server ... even though it doesn't exist.  So you could logically put in headshot kills with crowbars in hl2dm.  Create fake captures and kills in TF2.  You could even mimic VAC Bans that would eliminate players from being able to join servers with HLStatsX installed.<br>
+<br>
+These exploits could range from being a small nuisance, to being a huge headache for server operators. <br>
+<br>
+To fix this, and I'm no regex expert, I found the following to work with both streaming servers and importing logs from the command shell:<br>
+<br>
+In your hlstats.pl files do the following two things:<br>
+<br>
+[#1 - SEARCH] ( around line 1494 )
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>my $last_attacker          = "";
+my $last_attacker_hitgroup = "";</code></pre></div>
+[ADD AFTER]
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>my $is_streamed            = 0;
+my $test_for_date          = 0;</code></pre></div>
+[END]------------------------------------------------------------<br>
+<br>
+[#2 - SEARCH] ( around line 1821 )
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code># Get the datestamp (or complain)
+if ($s_output =~ s/^.*L (\d\d)\/(\d\d)\/(\d{4}) - (\d\d):(\d\d):(\d\d):\s*//)
+{</code></pre></div>
+[REPLACE WITH]
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code># Get the datestamp (or complain)
+$is_streamed = 0;
+$test_for_date = 0;
+$is_streamed = ($s_output !~ m/^L\s*/);
+
+if ( !$is_streamed ) {
+$test_for_date = ($s_output =~ s/^L (\d\d)\/(\d\d)\/(\d{4}) - (\d\d):(\d\d):(\d\d):\s*//);
+} else {
+$test_for_date = ($s_output =~ s/^\S*L (\d\d)\/(\d\d)\/(\d{4}) - (\d\d):(\d\d):(\d\d):\s*//);
+}
+
+if ($test_for_date)
+{</code></pre></div>
+[END]------------------------------------------------------------<br>
+<br>
+This will allow the hlstats.pl parser to get the full event after the FIRST log stamp, and will stop this method of spoofing.<br>
+<br>
+Let me state, that I in no way support HLStatsX, nor will I do so in the future.  But I wanted to post about this so server operators could keep the integrity of their databases.<br>
+<br>
+Keeper</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p24151">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2008-06-23 22:25:43</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I was informed today that the creator of HLStatsX has fixed the problem by changing the following code in hlstats.pl:<br>
+<br>
+Change from line 1822 in hlstats.pl
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>if ($s_output =~ s/^.*L (\d\d)\/(\d\d)\/(\d{4}) - (\d\d):(\d\d):(\d\d):\s*//)
+</code></pre></div>
+
+To:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>if ($s_output =~ s/^(?:.*?)?L (\d\d)\/(\d\d)\/(\d{4}) - (\d\d):(\d\d):(\d\d):\s*//)
+</code></pre></div>
+
+A lot easier and should fix the problem for you.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

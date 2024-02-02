@@ -1,0 +1,344 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Keeper Sound Streak Plugin v1.15 - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Released Plugins</a></p>
+</div>
+
+<h1>Keeper Sound Streak Plugin v1.15</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=4066">https://forum.hl2dm.community/viewtopic.php?t=4066</a>
+-->
+
+<div class="post" id="p53897">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2009-06-02 05:16:43</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><span style="color:#FF0000"><strong class="text-strong"><span style="font-size:200%;line-height:116%">ANNOUNCING:  Keeper's Sound Streak Plugin Public Release</span></strong></span><br>
+<br>
+After several weeks of rigorous testing, updating, and fixing of small issues, this plugin is ready to release.<br>
+<br>
+<strong class="text-strong"><span style="font-size:150%;line-height:116%">DOWNLOAD</span></strong><br>
+<a href="http://www.hl2plugins.com/index.php?action=tpmod;dl=item23" class="postlink">http://www.hl2plugins.com/index.php?act ... ;dl=item23</a><br>
+<br>
+<strong class="text-strong"><span style="font-size:150%;line-height:116%">INSTALLATION and more information</span></strong><br>
+<a href="http://wiki.hl2plugins.com/index.php?title=Streak_Sounds_Plugin" class="postlink">http://wiki.hl2plugins.com/index.php?ti ... nds_Plugin</a><br>
+<br>
+<br>
+<span style="color:#4000FF"><strong class="text-strong">Q:  What does this plugin do?</strong></span><br>
+This plugin was written to streamline my original HL2DM Headshot plugin. <br>
+It includes the old features like:<br>
+
+ <ul>   <li> score saver</li>
+    <li> hit sounds</li>
+    <li> headshot detection</li>
+    <li> jihads/kamikazes</li>
+    <li> weaponstats</li></ul>
+ <br>
+It also includes new features like:<br>
+
+<ul>    <li> emotes in chat ( /me ... )</li>
+   <li> hlx cvars</li>
+    <li> disable the ringing on explosions</li>
+    <li> streamlined weaponstats</li>
+    <li> expanded streak detection</li>
+    <li> hitsounds can now be configured for the head and the body</li>
+    <li> standardized output for streaks in log for tracking across different servers.</li>
+    <li> mute ability ( voice and chat )</li>
+    <li> chat spam detection</li></ul>
+
+<strong class="text-strong"><span style="color:#4000FF">Q:  Why did you add some things that Mani or SourceMod already does?</span></strong><br>
+I've been asked over and over to help get rid of Mani for HL2DM since it is no longer supported.  The complaint about SourceMod that I most often get is nobody writes plugins for HL2DM, and finding what you need is hard to do if you are not that technically oriented.  I'm trying to provide a one stop shop for HL2DM plugins to give the community what it needs.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p53930">
+	<div class="info">
+		<p class="poster">Monarch</p>
+		<p class="dt">2009-06-02 18:48:55</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">oh my goodness that's what i'm talkin about!<br>
+<br>
+i have put like this
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>kp_score_resume 2
+kp_disable_ring 0
+kp_record_stats 1
+kp_green_chat 1
+kp_disable_ad 0
+
+kp_enable_streaks 1
+kp_record_events 1
+kp_mapchange_refresh 1
+
+kp_hit_sounds 1
+kp_hit_sound_file "keeper/hitbody.mp3"
+kp_head_hit_sound_file "keeper/hithead.mp3"
+
+kp_record_headshots 1
+kp_streak_file "cfg/keeper_streaks.txt"</code></pre></div>
+
+but in-game i hear this
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>kp_hit_sound_file "buttons/button10.wav"
+kp_head_hit_sound_file "npc/sniper/sniper1.wav"
+</code></pre></div></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p53952">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2009-06-02 23:16:22</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p53959">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-06-03 00:32:06</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Nice one.<br>
+Does this repleace the other plugins you have released they all seem to have different names?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p53972">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2009-06-03 04:00:48</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">lol, no only the one that does the headshot.  The next version of THIS ONE will incorporate the league and the impulse kicker.  I have some improvements to make to the league one.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55647">
+	<div class="info">
+		<p class="poster">[FF]FNDR.Jake_Brake</p>
+		<p class="dt">2009-06-23 06:02:53</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Great job as always Keeper!!  I just installed today so I am sure I will have some questions later!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55679">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-06-23 19:33:06</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I replaced many of the sounds with these, they sound more meaty.<br>
+<a href="http://files.resistance-tester.com/gametools/HL2DM/MP3.zip" class="postlink">http://files.resistance-tester.com/game ... DM/MP3.zip</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55713">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2009-06-23 23:29:57</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Didn't this plugin prevented the ma_ command that crashes servers? I though it did, but now I'm confused, cuz it's not preventing it, and I don't remember how to prevent it...</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55716">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2009-06-24 00:11:48</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yes, it bans for an hour, but right now you have to physically alter the mani binary.  I'm looking to figure out how to change that <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"><br>
+<br>
+It now completely blocks the crashing, without modifying the binaries.  Will probably have an update out soon.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p56517">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-07-03 05:45:26</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Will this work instead of the default sounds?  <br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>kp_hit_sound_file "hl1/fvox/beep.wav"
+kp_head_hit_sound_file "hl1/fvox/bell.wav"</code></pre></div></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p56525">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2009-07-03 07:34:04</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">as long as the sound files are valid, it will work.  The ones I put in will work on even sv_pure 2 servers.  But changing it to whatever suits you is better <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p56550">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-07-03 18:24:48</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">They should work on sv_pure 2 as well they are in the source sounds gcf also.  Will have to get people to test 81.19.210.38:27015</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p56722">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-07-06 23:21:11</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I changed the sound files in the keeper_sounds.cfg and restarted server but still hear the standar 2 sounds when I shoot people.  And doing a console check gives the results of<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>21:11:43 kp_head_hit_sound_file
+21:11:43 "kp_head_hit_sound_file" = "npc/sniper/sniper1.wav"
+          - Sound file that plays for the attacker when the victim is hit in the head
+21:11:43 L 07/06/2009 - 21:11:48:: command "kp_head_hit_sound_file"
+21:12:41 kp_hit_sound_file  
+21:12:41 "kp_hit_sound_file" = "buttons/button10.wav"
+          - Sound file that plays for the attacker when the victim is hit</code></pre></div>
+So it seems the plugin isn't reading the changes of path in the file?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p56735">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2009-07-07 01:18:37</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yup, that's right.  I finally remember.  I had some issues with the cvar settings on certain variables that I wanted more control over, so I made those read only and then promptly forgot about them.<br>
+<br>
+I'll fix it <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p56780">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2009-07-07 17:35:42</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">so...cool, ES chat triggers support is releasing this week, right?<br>
+ Great. you da man! <img class="smilies" src="../../../images/smilies/icon_mrgreen.gif" width="15" height="15" alt=":mrgreen:" title="Mr. Green"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p56783">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2009-07-07 18:39:45</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Valar ... hmmmmm<br>
+<br>
+<br>
+Valar ... that name sounds familiar.<br>
+<br>
+Where have I heard it before.....<br>
+<br>
+<br>
+<br>
+hmmmmmmmmmmmmmmmm  <img class="smilies" src="../../../images/smilies/icon_twisted.gif" width="15" height="15" alt=":twisted:" title="Twisted Evil"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p56835">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2009-07-09 03:50:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">ok finger is on mouse heh. waiting to click-a-link-a<br>
+i just need a link-a</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p57085">
+	<div class="info">
+		<p class="poster">KILLERm@n</p>
+		<p class="dt">2009-07-14 19:03:59</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><strong class="text-strong">keeper</strong> at me to you some questions:<br>
+<br>
+1) Does not work headshot, it works only on a colt _357 and on other weapon does not work. <br>
+I already did so: Mag, SMG, AR2, Shotgun, Pistol in the document keeper_sounds.cfg:<br>
+ <br>
+ kp_headshot_announce_weapons 31 <br>
+ <br>
+... but it does not work, what to me to do in this case??? <img class="smilies" src="../../../images/smilies/cry.gif" width="15" height="15" alt=":cry:" title="Cry"> <br>
+<br>
+2) I wish to add sounds HUMILIATION`S, am necessary to make so that this sound not only from "weapon_stunstick" was lost but also "weapon_crowbar" how me it to make that worked and with Stunstick and Crowbar? <img class="smilies" src="../../../images/smilies/cry.gif" width="15" height="15" alt=":cry:" title="Cry"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p58694">
+	<div class="info">
+		<p class="poster">nbtc971</p>
+		<p class="dt">2009-08-09 10:17:55</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Can we have a control so that if someone continues to spam chat the server they can be kicked or banned?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p58712">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2009-08-09 20:24:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">kp_mute will mute the person.<br>
+<br>
+But as I'm not working on my own admin plugin that will have to be left up to Mani or sourcemod.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p58713">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2009-08-09 20:26:34</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>KILLERm@n wrote:</cite><strong class="text-strong">keeper</strong> at me to you some questions:<br>
+<br>
+1) Does not work headshot, it works only on a colt _357 and on other weapon does not work. <br>
+I already did so: Mag, SMG, AR2, Shotgun, Pistol in the document keeper_sounds.cfg:<br>
+ <br>
+ kp_headshot_announce_weapons 31 <br>
+ <br>
+... but it does not work, what to me to do in this case??? <img class="smilies" src="../../../images/smilies/cry.gif" width="15" height="15" alt=":cry:" title="Cry"> <br>
+<br>
+2) I wish to add sounds HUMILIATION`S, am necessary to make so that this sound not only from "weapon_stunstick" was lost but also "weapon_crowbar" how me it to make that worked and with Stunstick and Crowbar? <img class="smilies" src="../../../images/smilies/cry.gif" width="15" height="15" alt=":cry:" title="Cry"></div></blockquote>
+
+THe kp_headshot_announce_weapons is no longer a setting.  You now use the keeper_sounds.txt file to define headshot weapons.  <br>
+<br>
+You also can define the humiliation weapons in the keeper_sounds.txt file.  The stunstick and crowbar are both considered melee weapons tho.  So you can just use weapon_melee <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Released Plugins</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

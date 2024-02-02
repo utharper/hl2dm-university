@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>2 Q's - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>2 Q's</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=1525">https://forum.hl2dm.community/viewtopic.php?t=1525</a>
+-->
+
+<div class="post" id="p18153">
+	<div class="info">
+		<p class="poster">stretch</p>
+		<p class="dt">2008-04-17 22:42:08</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">#1 ok i have noticed that whenever i use the vertex manipulation tool i can do something with it then save the map. but then when i load the map back up the whole brush has been changed and not what it was before. does the vertex manipulation tool only work on very simple brushes? i basically use it for a small slope, but it has many verteces to it that get moved. if i could take a pic i would show u<br>
+<br>
+#2 i have also noticed that for the 3d veiw you can change it to 3d Shaded Textured Polygons. now is this just to show a different shade for the textures or can i actually use that to put in lights to see how it looks. i am just trying to figure out faster way to put in lights without compiling then going to the game to see what it looks like only to find out that it looks bad (maybe i am just bad at lighting). is the different view able to change lighting in real time instead of the long process?<br>
+<br>
+stretch</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18200">
+	<div class="info">
+		<p class="poster">haymaker</p>
+		<p class="dt">2008-04-18 06:19:34</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">1] You're very likely creating an invalid solid, although I have never seen Hammer fix it as in alt+p by itself. Usually it will just delete it and tell you. Are you using alt+p before closing? ( i try to )<br>
+<br>
+2] Shaded textured has nothing to do with lighting, it really helps to visualize complex brushwork when you have a lot of the same texture on it, ie nodraw. Also I find it hella easier on the eyes, not so bright. I think it's a holdover from when machines needed a way to optimize performance within Hammer, similar to adjusting the far-z clip plane.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18219">
+	<div class="info">
+		<p class="poster">biotau</p>
+		<p class="dt">2008-04-18 10:41:58</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">1.)Hammer doesn't like complex vertex manipulations. There's a trick to getting them to work, but I'll leave that for a tutorial Valar can do, I'm too tired <img class="smilies" src="../../../images/smilies/icon_razz.gif" width="15" height="15" alt=":P" title="Razz">.<br>
+<br>
+2.) Yeah, like Haymaker said, it doesn't have anything to do with lighting per say. The only way to do that is compiling. UT3 editor has real time rendering, which is really nice for the map I'm working on. Would be nice if valve integrated that into hammer.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18227">
+	<div class="info">
+		<p class="poster">st00pidity</p>
+		<p class="dt">2008-04-18 14:34:04</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">dibs on vertex tutorial<br>
+<br>
+-- edit --<br>
+my bad i mean displacement brushes, i know how to work the vertex tool pretty good, but theres so many things to do with it i wouldnt know where to begin in a tutorial.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18260">
+	<div class="info">
+		<p class="poster">stretch</p>
+		<p class="dt">2008-04-18 22:02:49</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">to haymaker:<br>
+nah i don't use ctrl+p, but i do use ctrl+s to save and ctrl+t to make something can't remem...<br>
+<br>
+then #1 yea it is kind of complicated, it has many verteces. ill try and just make two brushes to make it work hopefully...heh<br>
+<br>
+yea i wish it would render right away that would be sweet. the unreal engine is really awesome tho. and the new one is gonna be even better. if i ever get the structure of this map done, does someone want to take a look so i can get another say on it. i have a few others done or almost done, but just thought it would be bad for gameplay so i stopped working on them, they may look to n00bish maybe lol...thx agn<br>
+<br>
+stretch</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18328">
+	<div class="info">
+		<p class="poster">reaper47</p>
+		<p class="dt">2008-04-19 15:46:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">About the vertex tool: The only things important are:<br>
+<br>
+a) you need to stay on-grid (switch "snap to grid" on and <em class="text-italics">never</em> switch it off again. No not even if you'd <em class="text-italics">really</em> like to)<br>
+<br>
+b) you need to create <em class="text-italics">convex</em> brushes. Imagine a rubber band around your brush in any direction you'd like. It should always smoothly touch every surface it surrounds, never hanging "in the air". Not even half a unit. To create concave geometry you have to split it in two separate brushes.<br>
+<br>
+c) you shouldn't have any "unnecessary" edges, i.e. an invisible edge splitting a flat surface.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18410">
+	<div class="info">
+		<p class="poster">biotau</p>
+		<p class="dt">2008-04-20 11:11:36</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>reaper47 wrote:</cite>About the vertex tool: The only things important are:<br>
+<br>
+a) you need to stay on-grid (switch "snap to grid" on and <em class="text-italics">never</em> switch it off again. No not even if you'd <em class="text-italics">really</em> like to)<br>
+<br>
+b) you need to create <em class="text-italics">convex</em> brushes. Imagine a rubber band around your brush in any direction you'd like. It should always smoothly touch every surface it surrounds, never hanging "in the air". Not even half a unit. To create concave geometry you have to split it in two separate brushes.<br>
+<br>
+c) you shouldn't have any "unnecessary" edges, i.e. an invisible edge splitting a flat surface.</div></blockquote>
+
+Yes, and for the love of Christ make them "func_detail". So many tutorials need to be made.  <img class="smilies" src="../../../images/smilies/icon_cool.gif" width="15" height="15" alt="8)" title="Cool"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18437">
+	<div class="info">
+		<p class="poster">stretch</p>
+		<p class="dt">2008-04-20 23:03:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">k thx reaper, biotau, and haymaker, very helpful info<br>
+<br>
+one more tho for the nodraw texture. should this be used for the sides of a brush that will not be seen. but i believe it makes a compile error? or should the brush just be covered in the actual texture being used? even when it will not be seen<br>
+<br>
+stretch</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18441">
+	<div class="info">
+		<p class="poster">haymaker</p>
+		<p class="dt">2008-04-21 00:42:22</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I try to make nodraw my default texture, it doesn't matter if you put it on culled faces. I do anyway, force of habit. You will never get compile errors because of nodraw ( except on displacements ); you may see some wierdness if you leave it "visible" in game...<br>
+<br>
+One thing to note: If you build a world brush with an alpha-texture ie grate or fence, and then change its player-visible faces to a solid texture, the brush will leak / not block vis regardless if the alpha-faces are getting culled. So always put your alphas on after construction.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

@@ -1,0 +1,290 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>question about spawn positions for players/weapons - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>question about spawn positions for players/weapons</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=4894">https://forum.hl2dm.community/viewtopic.php?t=4894</a>
+-->
+
+<div class="post" id="p67583">
+	<div class="info">
+		<p class="poster">[BK]AC1</p>
+		<p class="dt">2010-03-21 12:29:33</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">hi there..<br>
+<br>
+is it possible to force/group spawnpoints for players/weapons with/to moving things like platforms (func_tracktrain)??<br>
+googled my ass off not finding anything <img class="smilies" src="../../../images/smilies/icon_confused.gif" width="15" height="15" alt=":?" title="Confused"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67587">
+	<div class="info">
+		<p class="poster">{EE}chEmicalbuRn</p>
+		<p class="dt">2010-03-21 16:03:47</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">i think you need to restate your question.  i for one dont follow you.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67588">
+	<div class="info">
+		<p class="poster">Poor_Billy</p>
+		<p class="dt">2010-03-21 16:06:04</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">in english,<br>
+<br>
+I think he wants to spawn shit, on shit that moves.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67589">
+	<div class="info">
+		<p class="poster">[BK]AC1</p>
+		<p class="dt">2010-03-21 16:50:49</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">hehe yes <br>
+
+<blockquote class="uncited"><div>I think he wants to spawn shit, on shit that moves.</div></blockquote>
+
+short tasty spelled.. exactly this   <img class="smilies" src="../../../images/smilies/icon_lol.gif" width="15" height="15" alt=":lol:" title="Laughing"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67591">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2010-03-21 18:12:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">No spawn points are stationary and would always spawn in the same place regardless of where the moving object was.  Unless there is a function to provide for this, it would be next to impossible to get the spawn to match exactly when the moving object was in the right place.  If it wasnt, the player would fall to the next solid surface (floor underneath moving object) and  probably be killed when that object moved back to that spot if they werent clear of it.  It would be very annoying tbh.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67592">
+	<div class="info">
+		<p class="poster">[BK]AC1</p>
+		<p class="dt">2010-03-21 20:31:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">hmm ... ok, .. <br>
+<br>
+one half of my brain says u´re right..lol<br>
+that would be sad, and same time destroy the idea of the map i have in mind <br>
+<br>
+but i just talked with [B§] beast <br>
+..he had the idea to do it with the "move with parent" thing<br>
+but i´m not sure if these options are available for spawnpoints yet..<br>
+<br>
+i´ll give it try <br>
+just hope it will work.. <br>
+<br>
+thx for the fast answers guys<br>
+i´ll keep u updated if it works  <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=":wink:" title="Wink"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67598">
+	<div class="info">
+		<p class="poster">{EE}chEmicalbuRn</p>
+		<p class="dt">2010-03-21 23:44:01</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">since a spawn point is never in mid air its basicly a fixed point in a 2D array, thats simple to program.  but making a spawn point on top of an object on that plane you now have to consider working within a cube or a 3D array. i would guess because you are making a spawn point on the object you would have a 2D array nested in a 3D array. as for the moving object,  it could be done if the spawn point was fixed on the moving object.  it would work like the theory of relativity.  an observer on the ground(on the original 2D plane) would see the spawn point on the moving object to be moving at w/e rate the object is(assuming its fixed), but to an observer on moving object the spawn point wouldnt be moving at all.  so what im saying is if you programmed the spawn point as a fixed point on the moving object it shouldnt matter if its moving or not, if you can treat that object as its own separate entity.  if not you would prolly have to have the object constantly outputting its location within the cube.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67602">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2010-03-22 04:38:16</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">In HL2DM a spawn point CAN be in mind air if you put it there.  But it is not dynamic: it wont position and reposition itself relative to a moving object.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67605">
+	<div class="info">
+		<p class="poster">Charles</p>
+		<p class="dt">2010-03-22 07:37:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hm, what if you attempted what Kusa did in his CTF maps?<br>
+<br>
+Players spawn in a "black room" and are teleported depending what control points were captured/what team they were in/etc. This was done through teleport entities, and perhaps you can tie a teleport entity to whatever moving object you have?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67611">
+	<div class="info">
+		<p class="poster">[BK]AC1</p>
+		<p class="dt">2010-03-22 19:37:03</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">hi there<br>
+<br>
+@ chemical.. wooot?? sry man now i can´t follow u...lol <br>
+<br>
+@ paradox + charles ... yes your both right... <br>
+<br>
+the teleport way was the other idea i had to fix this problem..<br>
+but this is the long way..lol ..just thought i maybe could avoid all this extra work... <br>
+<br>
+did it the teleport way already in another map.. (dm_deathbox_b9) but for another reason<br>
+(spawning players with specific weapons.. by a tut from tsf sadist.. <br>
+just like on his stickin zone map.. where u spawn with crowbar/stunstick only)<br>
+<br>
+but what about the weapon/item-ammo spawns??<br>
+<br>
+let me guess.. also won´t work for them  <img class="smilies" src="../../../images/smilies/icon_question.gif" width="15" height="15" alt=":?:" title="Question"><br>
+if so.. the concept has failed anyway.. <img class="smilies" src="../../../images/smilies/icon_sad.gif" width="15" height="15" alt=":(" title="Sad"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67634">
+	<div class="info">
+		<p class="poster">The Dog</p>
+		<p class="dt">2010-03-23 20:43:44</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">It's possible for player spawns. Look at this screenshot<br>
+<a href="http://img411.imageshack.us/img411/2540/2303z.jpg" class="postlink">http://img411.imageshack.us/img411/2540/2303z.jpg</a><br>
+But this method won't work for weapons, because they lost their keyvalues on second, third, etc. spawn. Btw I've tried method with teleport to parented info_player_destination with/without this output - <a href="http://img686.imageshack.us/img686/3760/2303a.jpg" class="postlink">http://img686.imageshack.us/img686/3760/2303a.jpg</a>, but weapons ignore teleports and other triggers <img class="smilies" src="../../../images/smilies/icon_sad.gif" width="15" height="15" alt=":(" title="Sad"><br>
+
+<blockquote><div><cite>[BK]AC1 wrote:</cite>if so.. the concept has failed anyway.. <img class="smilies" src="../../../images/smilies/icon_sad.gif" width="15" height="15" alt=":(" title="Sad"></div></blockquote>
+Sorry, but I think it has.<br>
+Good luck.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67639">
+	<div class="info">
+		<p class="poster">[BK]AC1</p>
+		<p class="dt">2010-03-23 21:53:12</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">hi there <br>
+<br>
+oh at first let me say.. thx for tryin it..<br>
+really nice that u invest time to proof it  <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"> <br>
+i myself haven´t found time for it yet-..<br>
+<br>
+its nice to know it will work for player spawns in the end<br>
+but also sad i won´t for weaponspawns (after the first spawning)<br>
+<br>
+i´m not sure if i will start workin on that thing now..<br>
+cause without the weapons it just won´t make much sense  <img class="smilies" src="../../../images/smilies/icon_sad.gif" width="15" height="15" alt=":(" title="Sad"> <br>
+but if i should find another solution somehow.. i´ll let u guys know how<br>
+<br>
+thx n regards so far</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67656">
+	<div class="info">
+		<p class="poster">Charles</p>
+		<p class="dt">2010-03-24 02:12:58</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">If it means anything, Kusa coded certain weapon spawns. The orb/SLAM would respawn really slowly in 2fort's basements whereas all other weapons were insta-spawn.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67680">
+	<div class="info">
+		<p class="poster">The Dog</p>
+		<p class="dt">2010-03-24 22:10:10</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><strong class="text-strong">Charles</strong>, could you upload this map anywhere, I wanna check it out.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67729">
+	<div class="info">
+		<p class="poster">[BK]AC1</p>
+		<p class="dt">2010-03-25 19:58:10</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">hmm interesting..<br>
+<br>
+i knew it would be a good idea to ask all this stuff in here <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"> <br>
+<br>
+but i don´t know how to find/use those.. do u got a link or something for me?<br>
+would be pretty nice.. so i could tryout this stuff..<br>
+(orbs n slams slowspawning is no problem, if the others will work stable)<br>
+<br>
+thx for all ur attention guys.. greets</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68262">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2010-04-08 02:29:33</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">For the weapons is nearly impossible, afaik. Well, it's doable, but not in a moving spawn.<br>
+<br>
+The problem is that game_player_equip isn't a "dynamic" entity, it will affect all players at every spawn. But if the target spawn isn't moving, you can build a trigger_weapon_strip to take guns out of the player and, at the same time, activate a point_template to spawn the weapons you want at the player position. Even tho I don't know how well this works, I think you'd need to disable the weapons_strip immediately after to stop weapons spawning, and some trigger push on the spawn to make sure the players went through some other trigger imediately to re-activate the weapons_strip, before another player spawns there.<br>
+<br>
+In a moving plane this is quite dificult... Also in a moving plane, as I've tested, the player may fail to stand on the plane, like paradox said, depending on it's speed and the height of the spawn. Unless the plane has some walls that stop the player from falling just like that.<br>
+<br>
+Sometimes source isn't suitable for good ideas... <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68393">
+	<div class="info">
+		<p class="poster">Pseudonym</p>
+		<p class="dt">2010-04-10 03:21:17</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">info_teleport_destination has a parent option.   just set its parent to your moving platform/object then teleport players from a black room on spawn.<br>
+<br>
+what i have done in the past (eg i have 10 max teleport points i want my freshly spawned people to go to) i have 10 trigger multiples 1 unit apart on top of each other. then when 1 gets activated it triggers a logic_case to disable all of those trigger_teleports, then pickrandomshuffle to enable a new trigger_teleport for the next spawned person to appear in from the spawn room.<br>
+<br>
+This actually worked for what you wanted in regards to "dynamic" player spawning.<br>
+<br>
+On the event that two players spawned at the same time and got stuck in each other, more than 1 spawn room is needed and just make sure the logic_case isnt going to teleport two people to the same place.<br>
+<br>
+It could be done. I'm almost certain of it</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68396">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2010-04-10 04:10:47</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yea, and doing it that way you could possibly add something like what I said for the weapons, since the real spawns are still.<br>
+Maybe you can even hide everything from the players by setting the spawns and all this stuff in black rooms.<br>
+<br>
+I think this is all doable. Kinda confusing in practical terms, maybe, but I think it's very possible.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

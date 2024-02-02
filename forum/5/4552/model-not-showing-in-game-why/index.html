@@ -1,0 +1,227 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Model not showing in game, why? - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>Model not showing in game, why?</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=4552">https://forum.hl2dm.community/viewtopic.php?t=4552</a>
+-->
+
+<div class="post" id="p61764">
+	<div class="info">
+		<p class="poster">javierdl</p>
+		<p class="dt">2009-10-21 06:05:46</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hi guys, this is my first post here <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"><br>
+I am somewhat new to maps making.<br>
+<br>
+The problem:<br>
+I can load my model in ModelViewer &amp; Hammer, but it doesn't load/show when I open the map. What are the typical reasons for this?<br>
+I'm using GUIStudioMdl 2.2 to compile.<br>
+This is for HL2DM.<br>
+This is my qc file, for whatever it's worth:<br>
+<br>
+-------------------------------------------<br>
+$modelname /custom_models/concave_test_02c.mdl<br>
+$cdmaterials "models/custom_models/"<br>
+$scale 1<br>
+$staticprop<br>
+$surfaceprop "Wood_Furniture"<br>
+$body studio "concave_test_02c.smd"<br>
+$sequence idle "concave_test_02c_idle.smd" fps 1<br>
+<br>
+$collisionmodel "concave_test_02c_col.smd"<br>
+{<br>
+$mass 10<br>
+}<br>
+<br>
+$keyvalues<br>
+{<br>
+"prop_data"<br>
+{<br>
+"base" "Wood.Large"<br>
+}<br>
+}<br>
+<br>
+Thanks in advance guys,<br>
+<br>
+JDL</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p61779">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2009-10-21 09:44:21</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Welcome to the U!<br>
+<br>
+Since it's showing fine in model viewer and hammer that suggests the problem is not with the model itself.<br>
+<br>
+Using the wrong entity type for a model can cause it to vanish ingame, for example using prop_physics on a model that can only be static or vice versa.<br>
+<br>
+You can check allowed prop types by selecting your model in hammer's model viewer then choosing the info tab.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p61781">
+	<div class="info">
+		<p class="poster">javierdl</p>
+		<p class="dt">2009-10-21 10:01:08</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thank you so much for the info boshed <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"><br>
+I'll look into that then.<br>
+<br>
+JDL</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p61794">
+	<div class="info">
+		<p class="poster">javierdl</p>
+		<p class="dt">2009-10-21 21:25:36</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Ok I've had the chance to open hlmv and see what you were saying... <br>
+except there's nothing of importance different between the pumpkin that loads in the game and the table that doesn't. Except for the fact that the pumpkin uses "Body" for the bodypart dropdown menu in the Model tab, whereas the table uses "studio" (don't know why...I didn't know studio was a bodypart). Which corresponds to the $body command in the qc file.<br>
+<br>
+Here you can see the pumpking and the table, only the former shows in game.<br>
+<img src="http://z7qbsg.bay.livefilestore.com/y1pDdsPcunDag0x0TgWrWC0eyb1l4jX1Jd7izTi9Y-MwWHaidMoMui3Oeb0QdsqVTE9maNG70faNxUa7UDxBoVa6g/holloween_pumpkin.png" class="postimage" alt="Image"><br>
+<br>
+I also compared their <img src="http://z7qbsg.bay.livefilestore.com/y1p8IBxuPL1QktiFzhlWeehTEXYXnXVEJKqgnes5a03KbGTx-Oha5Ek5rOZRNaQ7SRq3sTzEgTSKnCwVIWUs3ooEhfT4ark9_qQ/hammer%20logo_20w.gif" class="postimage" alt="Image"><strong class="text-strong">Hammer Obj Properties</strong> window. They are both "prop_physics", and every single parameter is the same.<br>
+I am following this <a href="http://developer.valvesoftware.com/wiki/Modeling_props_with_Blender" class="postlink">tutorial</a> as a guideline, and although I have read it many times now, I still can't spot anything I've missed and/or done wrong  <img class="smilies" src="../../../images/smilies/icon_sad.gif" width="15" height="15" alt=":(" title="Sad"><br>
+<br>
+Any ideas?<br>
+<br>
+JDL</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p61800">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2009-10-21 22:40:00</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Wahey, another blender user. There's a few of us about on here.<br>
+
+<blockquote><div><cite>javierdl wrote:</cite>Ok I've had the chance to open hlmv and see what you were saying... </div></blockquote>
+
+Just to confirm, I meant the model browser in hammer as that will show you tickboxes for what's valid for that model.<br>
+<br>
+Thinking about it the easy way is just add your model to the map 3 times, one prop_physics, one prop static and one prop_dynamic and see if any/none of those show up ingame. If that doesn't give any clue then we need to look at something else.<br>
+<br>
+Also check your console ingame for any red errors that are occurring related to models.<br>
+<br>
+Nice pumpkin btw, thought about making the interior texture glow like its candle lit? <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p61805">
+	<div class="info">
+		<p class="poster">javierdl</p>
+		<p class="dt">2009-10-21 22:58:57</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">model browser in hammer? If it's not the Object Properties window (the one showing in my image), then could you tell me exactly where to find it? I have browsed every single menu in Hammer without avail <img class="smilies" src="../../../images/smilies/icon_sad.gif" width="15" height="15" alt=":(" title="Sad"><br>
+<br>
+I'll follow your suggestions in the meantime...<br>
+<br>
+JDL</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p61806">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2009-10-21 23:16:25</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">On your pic -&gt; click that Browse button <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"> (then info tab on the right after selecting your model)</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p61808">
+	<div class="info">
+		<p class="poster">javierdl</p>
+		<p class="dt">2009-10-21 23:46:36</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><strong class="text-strong"><span style="font-size:150%;line-height:116%">YES!!!</span></strong><br>
+Finally it worked!<br>
+The culprit:<br>
+<br>
+The entity I had been using, was a copy of another one that at some point before I made it to be a "weapon". And now although the model is no longer the same, one of its many tabs still was configured as the "Anabelle rifle weapon"!<br>
+I caught that in the game console, THANKS TO YOU, boshed <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"><br>
+So I decided to create a brand new entity and the model loaded in game as expected!<br>
+<br>
+Well, thank you kindly for sticking around patiently, and above all for your help <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"><br>
+<br>
+See ya around,<br>
+<br>
+JDL</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p61814">
+	<div class="info">
+		<p class="poster">javierdl</p>
+		<p class="dt">2009-10-22 00:11:12</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Before I forget, again...<br>
+<br>
+For the record, that Halloween pumpkin is not mine. I found it in a folder called props_outland in HL2DM.<br>
+<br>
+J</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p61817">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2009-10-22 00:17:58</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Good good, would love to see  a preview pic of the finished model in action <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=";)" title="Wink"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p61821">
+	<div class="info">
+		<p class="poster">javierdl</p>
+		<p class="dt">2009-10-22 01:06:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Sure!<br>
+<br>
+<img src="http://z7qbsg.bay.livefilestore.com/y1phAKve5dpvazO-4pWgufJNzCyWwC76avyENX2xmuzVu-t3ra5DSEqzKWUv0yXvcp_OXGJBBS_NKT9ZUqBP4dggvrEVzVZkXAW/sweetsuccess.png" class="postimage" alt="Image"><br>
+<br>
+It's nothing one could use really. <br>
+<br>
+I failed to mention that the keyvalue in my qc file: "wood.large" was wrong. It had to be "wooden.large".<br>
+<br>
+JDL</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

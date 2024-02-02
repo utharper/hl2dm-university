@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Help for mapping - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>Help for mapping</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=1851">https://forum.hl2dm.community/viewtopic.php?t=1851</a>
+-->
+
+<div class="post" id="p22718">
+	<div class="info">
+		<p class="poster">darkhead_</p>
+		<p class="dt">2008-06-03 01:30:25</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hey Guys =D<br>
+<br>
+I'm working on a map and I need some helps.<br>
+<br>
+I've just made a tunnel like this one in lock and I'd like the map to display a red light when someone is in (this light can appear at X area like a normal light) and a green light when nobody is in.<br>
+<br>
+I know I have to use Trigger etc but I have no idea that how to do it...<br>
+<br>
+If someone can help me... =D<br>
+<br>
+darkhead_</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p22856">
+	<div class="info">
+		<p class="poster">Swot</p>
+		<p class="dt">2008-06-04 14:27:03</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">you know i/o system of source?<br>
+<br>
+the problem is.. changing a lights (I am talking about a real light source, not a texture or sprite) color during runtime can only be made when using a light_<strong class="text-strong">dynamic</strong>.<br>
+<br>
+I never put one of them in my maps cause they sometimes have a strange behaviour. just try, maybe this thing works, didn't try it out.<br>
+<br>
+get a light_dynamic (set green color and the name "status_light" for example) and a trigger_multiple - add two outputs (color)<br>
+<br>
+somthing like: <br>
+OnStartTouchAll -&gt; status_light -&gt; color -&gt; "values for red color"<br>
+OnEndTouchAll -&gt; status_light -&gt; color -&gt; "values for green color"</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p22863">
+	<div class="info">
+		<p class="poster">darkhead_</p>
+		<p class="dt">2008-06-04 19:10:11</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">For the light, I mean something like on lockdown 200Charger =)<br>
+<br>
+Thanks, I'll try what you said. <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p22864">
+	<div class="info">
+		<p class="poster">Swot</p>
+		<p class="dt">2008-06-04 19:32:32</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">thats a simple light_spot with a sprite, both are only triggered on/off, just check it out by yourself. (lockdown.vmf is part of source sdk afaik)</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

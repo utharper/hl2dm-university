@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>hl2.exe - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+
+<h1>hl2.exe</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=3182">https://forum.hl2dm.community/viewtopic.php?t=3182</a>
+-->
+
+<div class="post" id="p41758">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-01-22 18:36:18</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Now for some reason when i quti the game hl2.exe keeps running using 50% processor along with the overlay.exe which casues me to get the error "this game is currently unavailable please try again"  It is easy to solve but JCVD its annoying.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p41778">
+	<div class="info">
+		<p class="poster">ziggo0</p>
+		<p class="dt">2009-01-23 00:12:07</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">overlay is steam friends, the shift-tab crap. Try verifying your install//delete clientreg blob file, who knows.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p41788">
+	<div class="info">
+		<p class="poster">Cynips</p>
+		<p class="dt">2009-01-23 01:50:21</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Does the same thing on my xp machine, and I believe it started doing it just recently. On that old cpu it grabs like 99%, so it's not like it goes without notice...</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p41866">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-01-23 22:58:31</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Tested on windows 7 and HL2.exe process ends when quti the game so seems to be an XP issue.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p41884">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-01-24 01:43:46</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I posted on stem forums about this and was told to do this so I suggest we all do it too.<br>
+<a href="http://forums.steampowered.com/forums/showpost.php?p=8937732&amp;postcount=9" class="postlink">http://forums.steampowered.com/forums/s ... ostcount=9</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p41886">
+	<div class="info">
+		<p class="poster">Beef</p>
+		<p class="dt">2009-01-24 01:50:03</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">This has happened to me a number of times. XP Pro.<br>
+I usually notice it happen when I type quti in console, rather than click quti on the UI.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p42243">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-01-27 22:34:38</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">maybe this will be easier than open task manager.<br>
+<br>
+create a batch file with the following 
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>tskill hl2
+tskill GameOverlayUI</code></pre></div>
+GameOverlayUI should end with hl2 but can take s few seconds so I added it to the file to make sure it does end.<br>
+<br>
+To create a batch file <br>
+open notepad<br>
+copy and past the above code<br>
+save As "kill_hl2.bat"<br>
+You need the quotations</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

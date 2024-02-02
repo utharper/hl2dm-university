@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>sv_downloadurl - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+
+<h1>sv_downloadurl</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=3144">https://forum.hl2dm.community/viewtopic.php?t=3144</a>
+-->
+
+<div class="post" id="p41102">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-01-14 22:32:07</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Is it possible to use it if runing a LAN server, I for the life of me cannot get it to work keeps saying "couldn't CRC map dm_joyride"  or whatever map may be.  <br>
+I have tried veryfying cache, deleting blobs, rebooting and even DMZ but nothing works, maybe its the webhost I am using?<br>
+<a href="http://keefy.co.cc/hl2mp/" class="postlink">http://keefy.co.cc/hl2mp/</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p41115">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2009-01-15 01:18:23</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I use this on my servers.   Usually that error has to do with how you have the files on the fast download server.  If you dont have the directories set up exactly as on the game server, they will not download.  Any materials or sound files that get extracted to other folders on the game server need to be in corresponding files on the fast download.  Also, you need to make sure the map files are also on the game server (some people think that you dont need to have them on the gameserver). Hope this helps.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p41119">
+	<div class="info">
+		<p class="poster">ziggo0</p>
+		<p class="dt">2009-01-15 01:27:47</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I dout this would be the problem, but if you have Comcast I would look into it. I used to run a slide server at home for CSS, used my personal webserver for hosting. I'd upload the files via FTP and test download them everytime I connected...just to find out the map I downloaded wasn't completely downloaded, but it was, from the FTP. Comcast in our area is so bad that packet loss hits 70 to 80% at 2 or 3 seperate hops on the way to uploading files to my webserver...so the maps never completely made it there. Check file sizes in bytes (map the server is running, and what is on your hosting)</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p41125">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2009-01-15 01:50:06</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">by checking the link you provided dm_joyride is not bzipped, try one of the other maps, do they work?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p41131">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-01-15 02:29:42</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">None of them work, I tried not using compression just incase it was corrupted.<br>
+Still not working, I think maybe the host is the problem by stopping things like this to happen.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p41133">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-01-15 02:34:22</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I know what the problem is, the files are corrupted ,just downlaoded one and tried to extract it.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p41137">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2009-01-15 02:40:01</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">the only other thing I see that is odd here is that when I click on your download url I see a folder to the parent directory. Maybe its your file structure on your web host, I dont see that on mine. When I click my download link I only see the maps folder. The way I have mine set up is on my web server in the public html folder I have the hl2mp folder and inside that is the map folder.<br>
+Gl</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p41143">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-01-15 02:43:45</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">The problem is the files get corruted on their way to the host, compress them on my pc I can extract them, but uploadit to server downlaod and try to extract its always corrupted.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p41181">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2009-01-15 07:11:39</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">wow thats bizare</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p41184">
+	<div class="info">
+		<p class="poster">ziggo0</p>
+		<p class="dt">2009-01-15 07:43:28</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>keefy wrote:</cite>The problem is the files get corruted on their way to the host, compress them on my pc I can extract them, but uploadit to server downlaod and try to extract its always corrupted.</div></blockquote>
+
+Note my reasoning above. Who is your ISP?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p41210">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2009-01-15 17:50:11</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>keefy wrote:</cite>The problem is the files get corruted on their way to the host, compress them on my pc I can extract them, but uploadit to server downlaod and try to extract its always corrupted.</div></blockquote>
+
+On the off chance, check that your webserver is set to serve .bz2 files with the correct mime type. If not try each of these in this order:<br>
+<br>
+application/bzip2<br>
+application/x-bzip <br>
+application/x-compressed</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p41219">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-01-15 19:50:14</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Tried everything, I think becasue its a free host they dissalow certain things, the max filesize I can upload is 3MB and mx execution time is 500seconds whatever that is?<br>
+Its not like I was going to use it for fast downloads, I just wanted to test some things.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

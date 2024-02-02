@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Disabling MOTD - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+
+<h1>Disabling MOTD</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=101">https://forum.hl2dm.community/viewtopic.php?t=101</a>
+-->
+
+<div class="post" id="p363">
+	<div class="info">
+		<p class="poster">st00pidity</p>
+		<p class="dt">2007-04-09 18:27:50</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">when i played cs 1.6 i know there was a cvar that disbaled the message of the day on the client side. I cannot find that cvar for the life of me, im pretty sure im not just imagining its existence.. im also pretty positive that amxx provided an override for this (show the motd to the client regardless of what their prefence was).<br>
+<br>
+I'd like to find this cvar if anyone knows it? i'd like to see if putting it in my server's autoexec.cfg if it'd rid us of that stupid thing. <br>
+<br>
+I deleted it, and now the window GUI comes up, minus the txt file....<br>
+<br>
+if your wondering why i want to do this: i already got up my ad decals, there is no rules = no point for motd.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p369">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2007-04-10 00:53:35</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">No idea sorry, but I will keep my eyes open for any info on it.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p372">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2007-04-10 05:23:08</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">The motd file is loaded by the server.  But the client shows it automatically without cuing from the server.  If you have a blank file, it still shows.<br>
+<br>
+There is no variable for whatever reason.  I hate this feature.  Nothing like hitting the space bar and already being dead....</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p376">
+	<div class="info">
+		<p class="poster">st00pidity</p>
+		<p class="dt">2007-04-10 06:59:58</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">arg, maybe we should make this a suggestion for the hl2dm plugin that guy is making.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p378">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2007-04-10 07:13:43</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Unless it passes through or is controlled by the server, a plugin won't be of any use.  I wish it could ....</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p379">
+	<div class="info">
+		<p class="poster">st00pidity</p>
+		<p class="dt">2007-04-10 09:32:18</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">u couldnt make the server tell the client that it already did the motd pop up? or is literally everything other than the file itself client ended?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p381">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2007-04-10 16:23:51</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">The motd is loaded and saved in the network string table.  This means that all the clients sync up with this string table.  The client then takes the portion that is MOTD and displays it itself.  So the displaying of the MOTD is purely client ended.  The file/contents of the MOTD is server ended.  This is why there's a cap on the size of the MOTD.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p382">
+	<div class="info">
+		<p class="poster">st00pidity</p>
+		<p class="dt">2007-04-10 18:22:58</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">i have a flawless way of working passed the cap, however... i dont F***ing want it to begin with. MOTD FTL</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p388">
+	<div class="info">
+		<p class="poster">ninojman</p>
+		<p class="dt">2007-04-10 21:54:28</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">magU from planet hl had a mod that took out the motd, added some models (dr.breen etc) and unlimited sprint</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p389">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2007-04-10 22:31:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">a mod?  or a plugin?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p390">
+	<div class="info">
+		<p class="poster">ninojman</p>
+		<p class="dt">2007-04-10 23:27:14</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">server side plugin<br>
+<br>
+i don't know what ever hppen to it thou</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

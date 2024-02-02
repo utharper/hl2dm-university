@@ -1,0 +1,164 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Weird lighting results... - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>Weird lighting results...</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=4724">https://forum.hl2dm.community/viewtopic.php?t=4724</a>
+-->
+
+<div class="post" id="p64622">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2010-01-01 14:01:46</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">So I made this dynamic light, that will slightly bouce when the window is opened. It works, I've tested that, and it all seems to be going well.<br>
+<img src="http://img2.pict.com/dd/9b/93/1610292/0/800/apartment0001.jpg" class="postimage" alt="Image"><br>
+<br>
+But then, when I close this door, the light will still reach the corridor as if there's no walls or door.<br>
+(The map was compiled with the door closed, and the door frames are func_details, if this matters)<br>
+<br>
+<img src="http://img2.pict.com/58/12/c0/1610294/0/800/apartment0000.jpg" class="postimage" alt="Image"><br>
+<br>
+<br>
+Any ideas why this happens or any clues to a possible solution?<br>
+EDIT: This was made in OB Ep2 engine btw.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p64628">
+	<div class="info">
+		<p class="poster">Sadist</p>
+		<p class="dt">2010-01-01 20:31:19</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Double check all walls are aligned with no gaps.  Then reduce inner and outer brightness angles in the light_dynamic entity to angles less than the direction of the wall.  If this doesnt work then you will need to turn the func_detail to regular brushes as they tend to let light through (effectively func_details work differently to brushes when compiling vrad).</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p64637">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2010-01-01 23:04:40</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Sadist wrote:</cite> If this doesnt work then you will need to turn the func_detail to regular brushes as they tend to let light through (effectively func_details work differently to brushes when compiling vrad).</div></blockquote>
+
+True this, it's why you get light bleeding across world brushes behind them an stuff like that.<br>
+<br>
+Ridiculously obvious suggestion: you've checked for leaks or other compile errors?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p64639">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2010-01-01 23:50:03</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I never test with leaks <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=";)" title="Wink"><br>
+<br>
+But the problem is, if I take out the func_details, I think the door will not block light either... <br>
+I remember testing that, but can't remember what I concluded from it. I'll try it.<br>
+<br>
+EDIT: yes, the door still lets light go through...</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p64804">
+	<div class="info">
+		<p class="poster">Pig Popper</p>
+		<p class="dt">2010-01-07 00:33:00</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I'm sure there is a use for the toolsblack texture here, i have across it in maps I have decompiled before where it as been positioned in a doorway or hallway. <br>
+Not sure what to tie it to to make it not appear in game, maybe func_wall /brush with a remove parameter of some sort.  let us know if you go this route I've been to lazy to test it myself.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p64840">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2010-01-07 10:08:19</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">hmm, I had never thought of that... will look into it. Thx.<br>
+<br>
+I have actually found a way to work around this problem, Boshed help me out on the logics of it, by turning off the light whenever teh player is on the other side of the door and the door is fully closed. And then turn it back on whenever the door opens or the player is in the room again.<br>
+<br>
+But this is hard to make it work for more than one light and door at the same time, and even despite that, it's too much time consuming and painful... <br>
+I realy would like to find a way to just block the light...</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p64847">
+	<div class="info">
+		<p class="poster">The Dog</p>
+		<p class="dt">2010-01-07 16:35:23</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Skaruts wrote:</cite>I realy would like to find a way to just block the light...</div></blockquote>
+tools/toolsblocklight? <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p64877">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2010-01-08 19:21:17</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">well, I've tried that, but not for long...<br>
+<br>
+I don't know how it can work. The way I tried was making it a func_brush inside the door, parented (much like if it were an areaportal), but it doesn't block the light. <br>
+From what I read about it, it just isn't affected by light, but doesn't really block it.<br>
+<br>
+If there's any other way of using it that works, I really don't know...</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p64881">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2010-01-08 21:51:20</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">afaik blocklight wont work when on entities, and also it's shadows are only calculated at compile time and baked into the lightmaps.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67814">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2010-03-28 14:09:46</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Well, the blocklight works in a satisfatory way. But for that situation I'll probably go with boshed's on/off system, which allows the light to illuminate the corridor while the door is open.<br>
+As long as it's one light + 1 or 2 doors it's ok. More than that it gets a bit confusing and I have a hard time making it work.<br>
+<img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"><br>
+<br>
+Thanks guys.<br>
+Cheers<br>
+<br>
+PS: Just to point one thing out: Don't put blocklights adjacent to func_details. It erases the func_detail's face on the entire area where the blocklight's face is touching, making it look like a nodraw in game. Turning the func_detail into func_brush is one solution.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

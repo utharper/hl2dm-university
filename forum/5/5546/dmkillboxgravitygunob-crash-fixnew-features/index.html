@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>dm_killbox_gravity_gun_ob (crash fix/new features) - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>dm_killbox_gravity_gun_ob (crash fix/new features)</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=5546">https://forum.hl2dm.community/viewtopic.php?t=5546</a>
+-->
+
+<div class="post" id="p78084">
+	<div class="info">
+		<p class="poster">gtamike_TSGK</p>
+		<p class="dt">2010-11-21 22:31:01</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><strong class="text-strong">Title:</strong> dm_killbox_gravity_gun_ob<br>
+<strong class="text-strong">Made by:</strong> gtamike_TSGK<br>
+<br>
+Hello<br>
+<br>
+I’ve had a lot of requests to fix killbox gravity gun as one of the teleports crash the server cause of new ob update. <br>
+Instead of just fixing the crash bug I also added lots of new map features and took advantage of new engine. <img class="smilies" src="../../../images/smilies/icon_cool.gif" width="15" height="15" alt="8)" title="Cool">   <br>
+<br>
+I've played the map 6 times on a full server and have not had any crashs or any lag. <br>
+<br>
+<img class="smilies" src="../../../images/smilies/icon_arrow.gif" width="15" height="15" alt=":arrow:" title="Arrow"> <strong class="text-strong">.:Full Update list:.</strong><br>
+Fixed teleport crash bug<br>
+Fixed map sounds not playing right after ob update.<br>
+Other textures are fixed as they didn’t render right after ob update.<br>
+Added 4 new very nice ob particle effects (near teleport areas)<br>
+If a lift touches a players head it will go up and not hurt player. When a lift comes back down and physics models are in the way instead of player the lift is not affected. <br>
+Added new spark sound for teleport near HP chargers.<br>
+2nd teleport past maps image on wall is now transparent to show you can go inside.<br>
+Overlays (much like decals) now have a fade distance to help boost frame rates.<br>
+Trap design has changed abit inside to make it abit harder to get out too fast. (also so you can’t look who is outside near trap button hehe)<br>
+Trap super charger has been player clipped so you have to look at right at charger to use it. (not crouching using super  charger looking away)<br>
+Blue texture now has an detail render added (like standard textures do after ob update)<br>
+Added prop_statics (light models) in rooms, they also have fade distance as well as some other prop_static models like buttons etc.<br>
+Loud trap creaking sound now just plays in trap area not whole map like before.<br>
+Wooden box that is used to get in teleport only breaks if teleport is used, also the box is now blue and sprite is blue instead of green.<br>
+<br>
+GTA moving orange shader/texture remade by me as valve has broken “shadertest /gooinglass”. <strong class="text-strong">Video</strong> <a href="https://www.youtube.com/watch?v=gu9yddYHZD8" class="postlink">http://www.youtube.com/watch?v=gu9yddYHZD8</a><br>
+<br>
+<img class="smilies" src="../../../images/smilies/icon_arrow.gif" width="15" height="15" alt=":arrow:" title="Arrow"> <strong class="text-strong">DOWNLOAD LINK</strong> in attachment area for map and particle files or click <a href="http://forum.tsgk.com/viewtopic.php?mode=attach&amp;id=7733" class="postlink">HERE</a><br>
+<br>
+<strong class="text-strong">Here's some videos that relate to update list!</strong><br>
+<br>
+HL2DM: Particle Demonstration <br>
+<a href="https://www.youtube.com/watch?v=WHRcICFq5qA" class="postlink">http://www.youtube.com/watch?v=WHRcICFq5qA</a><br>
+<br>
+HL2DM: Lift Demonstration <br>
+<a href="https://www.youtube.com/watch?v=2mruKxtNeNc" class="postlink">http://www.youtube.com/watch?v=2mruKxtNeNc</a><br>
+<br>
+HL2DM: Trap Demonstration <br>
+<a href="https://www.youtube.com/watch?v=2S6xwolXG14" class="postlink">http://www.youtube.com/watch?v=2S6xwolXG14</a><br>
+<br>
+I tryed to pack the particles in the map but the engine don't<br>
+want to read them inside. So particles need to be installed on<br>
+server and .res file for them to work.<br>
+<br>
+________________________________________________________<br>
+<span style="text-decoration:underline"><strong class="text-strong">Quote from older version for more detail about map features etc</strong></span> <br>
+<br>
+ 
+<blockquote class="uncited"><div><span style="text-decoration:underline"><strong class="text-strong">Title:</strong></span> dm_killbox_gravity_gun (New!)<br>
+<span style="text-decoration:underline"><strong class="text-strong">Made By:</strong></span>  gtamike_TSGK<br>
+<br>
+For this map you spawn with the gravity gun to start with, its very fun physics madness and up to 16 players. <br>
+Also the map is useful for players that want to really improve there gravity gun skill and be a better player.<br>
+<br>
+<span style="text-decoration:underline"><strong class="text-strong">About:</strong></span> Below are sub headings about the map and images to make things easy.  <br>
+<br>
+<span style="text-decoration:underline"><strong class="text-strong">Map Performance</strong></span><br>
+The map has been heavily optimized because of the mount of physics in the map. <br>
+The shadows have been disabled for the physics, and items like suit, heath, stick, crowbar, chargers etc have a fade render setting. <br>
+These settings have given the map a huge frame rate boost, so the frame rate stays high all the time ingame. <br>
+Also the trap monitor turns off if no one is the room watching it. <br>
+The map is very stable and you won’t get lag in any form or crash because of tweaks in map performance, also thanks to map testers.<br>
+<br>
+<span style="text-decoration:underline"><strong class="text-strong">Wall Curves</strong></span><br>
+The bottom walls/light areas has been designed to reflect physics model that hit it.<br>
+<img src="http://gtamike.tsgk.com/dm_killbox_gravity_gun_images/gif/wall_an.gif" class="postimage" alt="Image"><br>
+<br>
+<span style="text-decoration:underline"><strong class="text-strong">Lifts</strong></span><br>
+I have improved the lifts in the map the best I can, they are not affected by physics models that go under them and will not go back up right after hitting a physic model.<br>
+<img src="http://gtamike.tsgk.com/dm_killbox_gravity_gun_images/gif/lift_an.gif" class="postimage" alt="Image"><br>
+<br>
+<span style="text-decoration:underline"><strong class="text-strong">Containers</strong></span><br>
+People can’t camp and hide in the containers because of a useful button that forces them out after pressed by someone, then you can decide how to take care of them. <br>
+In the 2 containers there are health, suit, crowbars and stun sticks only visible/rendered when in containers or very near.<br>
+<img src="http://gtamike.tsgk.com/dm_killbox_gravity_gun_images/small_size/camp.jpg" class="postimage" alt="Image"><br>
+<br>
+<span style="text-decoration:underline"><strong class="text-strong">Teleport Room</strong></span><br>
+Only small physics (like blades) can go in the teleport room. <br>
+You do this by passing them through the blue areas at door way. <br>
+The 1st teleport is easy to see, just jump on the box then jump again forward to be teleported, then box behind you will break so no body can follow you right away.  <br>
+The 2nd teleport is in that room but you can work that one out hehe. <br>
+<img src="http://gtamike.tsgk.com/dm_killbox_gravity_gun_images/small_size/teleport_room.jpg" class="postimage" alt="Image"><br>
+<img src="http://gtamike.tsgk.com/dm_killbox_gravity_gun_images/small_size/box.jpg" class="postimage" alt="Image"><br>
+<br>
+<span style="text-decoration:underline"><strong class="text-strong">Trap</strong></span><br>
+The trap is located in the super charger room when someone is inside the room a green light will turn on from the outside of the room. <br>
+If no body is inside the room the outside light will stay red.<br>
+By pressing the button the trap will enable metal gates that will lock the player inside of the room. <br>
+The player will hear a moving metal sound and then see a solid metal crusher will slowly come down. <br>
+The metal crusher will stop at the players head, make a nasty creaking sound and then will crush the player at lightning speed, also play a sound on impact. <br>
+There’s another button that does the same thing, it is found in the teleport room with a monitor to watch the player.<br>
+<img src="http://gtamike.tsgk.com/dm_killbox_gravity_gun_images/small_size/trap.jpg" class="postimage" alt="Image"><br>
+<img src="http://gtamike.tsgk.com/dm_killbox_gravity_gun_images/small_size/mon.jpg" class="postimage" alt="Image"><br>
+<br>
+<span style="text-decoration:underline"><strong class="text-strong">The map is 100% remade/drawn from scratch and stable</strong></span><br>
+It has a new name, improved design, layout of physics, lighting, textures, sounds, models, teleports, help text, <br>
+smaller map area size, fall damage disabled, shadows, and heavily optimized, the list goes on.<br>
+<br>
+<span style="text-decoration:underline"><strong class="text-strong">Bigger Pictures</strong></span><br>
+<img src="http://gtamike.tsgk.com/dm_killbox_gravity_gun_images/dm_killbox_gravity_gun_1.jpg" class="postimage" alt="Image"><br>
+<img src="http://gtamike.tsgk.com/dm_killbox_gravity_gun_images/dm_killbox_gravity_gun_2.jpg" class="postimage" alt="Image"><br>
+<img src="http://gtamike.tsgk.com/dm_killbox_gravity_gun_images/dm_killbox_gravity_gun_3.jpg" class="postimage" alt="Image"><br>
+<br>
+Hope you enjoy the map guys  <br>
+Leave Comments <br>
+<strong class="text-strong"><span style="text-decoration:underline">gtamike_TSGK</span></strong><br>
+-------------------------------
+</div></blockquote></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p78196">
+	<div class="info">
+		<p class="poster">gtamike_TSGK</p>
+		<p class="dt">2010-11-30 13:11:26</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><span style="text-decoration:underline"><strong class="text-strong">Install Setup</strong></span> <img class="smilies" src="../../../images/smilies/icon_cool.gif" width="15" height="15" alt="8)" title="Cool"> <br>
+<br>
+<strong class="text-strong">(Server Side)</strong><br>
+hl2mp/maps/dm_killbox_gravity_gun_ob.bsp<br>
+hl2mp/maps/dm_killbox_gravity_gun_ob.res<br>
+hl2mp/maps/dm_killbox_gravity_gun_ob_particles.txt<br>
+hl2mp/particles/electrical_fx.pcf<br>
+hl2mp/particles/particles_manifest.txt<br>
+hl2mp/particles/weapon_fx.pcf<br>
+<br>
+<strong class="text-strong">(Fast Download Server)</strong><br>
+hl2mp/maps/dm_killbox_gravity_gun_ob.bsp.bz2<br>
+hl2mp/maps/dm_killbox_gravity_gun_ob.res.bz2<br>
+hl2mp/maps/dm_killbox_gravity_gun_ob_particles.txt.bz2<br>
+hl2mp/particles/electrical_fx.pcf.bz2<br>
+hl2mp/particles/particles_manifest.txt.bz2<br>
+hl2mp/particles/weapon_fx.pcf.bz2</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

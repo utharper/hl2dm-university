@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>A config issue? - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+
+<h1>A config issue?</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=1231">https://forum.hl2dm.community/viewtopic.php?t=1231</a>
+-->
+
+<div class="post" id="p12732">
+	<div class="info">
+		<p class="poster">CellarDweller</p>
+		<p class="dt">2008-03-16 06:20:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Ok, I just realized my Steam bandwith monitor always reads zero.  Have I facked up my settings somehow?  I don't notice anything different in game than the usual crashes and broadband fluctuations.<br>
+<br>
+Also, I seem to be unable to go any higher than cl_updaterate 60.  I set it to 100, it only goes to 60.  Doesnt matter if I'm on a 66 tick server or a 100 tick server.  I dont' have this issue with cl_cmdrate.  Is this some kind of hardware limitation?<br>
+<br>
+Any idears???</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p12801">
+	<div class="info">
+		<p class="poster">Epoch</p>
+		<p class="dt">2008-03-16 19:23:51</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I'm pretty sure you can set the max rates a server will allow, so you might have been on a server with cl_updaterate set to a max of 60.  I'm pretty sure I can change these things in my server cfg so thats what im guessing you experienced.  Dunno about the bandwidth thing, maybe try turning your net graph off then on lol.  The universal comp trick, restart whatever is broken and pray it works lol.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p12831">
+	<div class="info">
+		<p class="poster">Neolinkster</p>
+		<p class="dt">2008-03-16 21:37:50</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">the last few updates have brokem the bandwith monitor so its always reading zero and like epoch said the server probably had cl_maxrate 60 on so you couldnt go above what it was set at</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p12873">
+	<div class="info">
+		<p class="poster">CellarDweller</p>
+		<p class="dt">2008-03-17 01:27:32</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Okay, thanks guys.  Hey Epoch, whats your max sv_updaterate set at?  I'll visit your server and see what I get client side.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p12875">
+	<div class="info">
+		<p class="poster">Epoch</p>
+		<p class="dt">2008-03-17 01:31:14</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I believe I have mine set to a max of 100 good sir.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p12882">
+	<div class="info">
+		<p class="poster">CellarDweller</p>
+		<p class="dt">2008-03-17 01:44:08</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Ahhhhhhhhhh, no wonder your server feels sooooooooo gooooooooooooood!!!  Still get my ass kicked though.  DOH!<br>
+<br>
+But Yeah, I'll make a point of checking my client side rates while I'm there.  I just can't believe every friggin server I play maxes out at 60.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p12930">
+	<div class="info">
+		<p class="poster">CellarDweller</p>
+		<p class="dt">2008-03-17 03:38:59</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Epoch and Neo proved me wrong.  I was thrown by creating a listen server and only getting cl_updaterate 60.  But I checked both Epoch's server and the U's server... cl_updaterate 100.  Goody!  Now I just need therapy to help me work through my lack of skillz!   <img class="smilies" src="../../../images/smilies/icon_redface.gif" width="15" height="15" alt=":oops:" title="Embarassed"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

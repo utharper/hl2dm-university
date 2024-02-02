@@ -1,0 +1,200 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Problem with Water Brush - Not Rendering - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>Problem with Water Brush - Not Rendering</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=3414">https://forum.hl2dm.community/viewtopic.php?t=3414</a>
+-->
+
+<div class="post" id="p46280">
+	<div class="info">
+		<p class="poster">OD_Knuckles</p>
+		<p class="dt">2009-03-08 04:05:55</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hello there, I am making this map where there is supposed to be raining, and the ground will be wet (with very little water) in certain parts,<br>
+I did all my custom-steps to achieve this, used 2 brushes, one for the water and one for the ground, and displaced a bit of the ground under water-level so it looks wet.<br>
+<br>
+When I get ingame after the compilation, I don't see the water, but when i shoot at it it reacts like water.<br>
+<br>
+I tried changing the material, but nothing helped, water would not be rendered properly.<br>
+<br>
+Then I made a gigantic Water brush floating in the air to see if it was rendered, but it reacts really weird, when I'm inside, it looks normal, but if I look from the outside of the brush it's invisible, and it "hides" whatever it's inside it.<br>
+Some pictures below, Using dev_water2:<br>
+<br>
+In Hammer;<br>
+<a href="http://i288.photobucket.com/albums/ll183/leox001/sourceprobs/hammerwater.jpg" class="postlink">http://i288.photobucket.com/albums/ll18 ... rwater.jpg</a><br>
+<br>
+Ingame;<br>
+Inside the brush<br>
+<a href="http://i288.photobucket.com/albums/ll183/leox001/sourceprobs/hl2dm-20090307-225408.jpg" class="postlink">http://i288.photobucket.com/albums/ll18 ... 225408.jpg</a><br>
+<br>
+Outside the brush.<br>
+<a href="http://i288.photobucket.com/albums/ll183/leox001/sourceprobs/hl2dm-20090307-225413.jpg" class="postlink">http://i288.photobucket.com/albums/ll18 ... 225413.jpg</a><br>
+<br>
+Yes it's a bit dark, I know, but I think you can appreciate the problem anyways.<br>
+<br>
+Thanks for any help.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p46306">
+	<div class="info">
+		<p class="poster">Ko-Tao</p>
+		<p class="dt">2009-03-08 06:55:12</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Most likely case is that that specific water texture wasnt meant to be used in completed maps. Try one of the canals/sewers/nature water textures and the problem should vanish.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p46311">
+	<div class="info">
+		<p class="poster">OD_Knuckles</p>
+		<p class="dt">2009-03-08 09:34:34</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I tried with almost every kind of water in the list, cheap ones, normal ones, sewers, dx70 something, but it still won't render</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p46329">
+	<div class="info">
+		<p class="poster">thrash</p>
+		<p class="dt">2009-03-08 15:08:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Have you made sure every surface is nodraw texture other than the top surface?<br>
+(I think this is only relevant when the water brush is enclosed by other brushes)</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p46346">
+	<div class="info">
+		<p class="poster">Pig Popper</p>
+		<p class="dt">2009-03-08 18:57:31</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">are you compiling VRAD?<br>
+do you have an env_lighting / light source in the map?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p46352">
+	<div class="info">
+		<p class="poster">haymaker</p>
+		<p class="dt">2009-03-08 19:26:38</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">put at least one env_cubemap somewhere, and I assume there is no leak in your world geometry?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p46380">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2009-03-08 23:20:53</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">looks like a leak to me.<br>
+in Hammer - Map/ Load Pointfile<br>
+look at the red line showing you where your leak is coming from.<br>
+also, as thrash said - water brush should be all NODRAW and only water texture on the upper surface. once that's done tie it to entity and then back to world to make sure your brush is a Water brush now.<br>
+<br>
+<br>
+val</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p46435">
+	<div class="info">
+		<p class="poster">Sacrifist</p>
+		<p class="dt">2009-03-09 06:05:30</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">It certainly looks like you put a water texture on every side of the brush, which the source engine hates. Nodraw the whole thing then select the top surface of the brush and place the water texture on it only.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p46456">
+	<div class="info">
+		<p class="poster">OD_Knuckles</p>
+		<p class="dt">2009-03-09 08:52:21</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">thanks, as you said, there was a Leak, I fixed it by making a gigantic cube all around the map and making it nodraw, when hammer compiled it, the program froze about 30 minutes then calculed the lighting and after all that, the water was being rendered properly<br>
+<br>
+I am not going to wait 30 minutes for this to load, and everything has not been designed thinking in this way from the beggining, so I will leave this project aside for now, and when I got the inspiration back, I may re-do this map and do it right from the beggining.<br>
+<br>
+Thanks everyone for helping me out.<br>
+<br>
+Peace.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p46512">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2009-03-09 20:21:39</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>OD_Knuckles wrote:</cite>thanks, as you said, there was a Leak, I fixed it by making a gigantic cube all around the map and making it nodraw</div></blockquote>
+
+This is most likely the reason for the long compile time. Fix your leak as Valar has explained above and remove the gigantic cube and make sure func_detail is used properly throughout the map.<br>
+<br>
+You will probably see a drastic reduction in how long it takes to compile after this.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p46538">
+	<div class="info">
+		<p class="poster">Sadist</p>
+		<p class="dt">2009-03-10 01:55:25</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">A good trick for identifying a leak caused by func_detail is to turn off all func_detail using the auto-visgrouping tab, as seen in the visgroups toolbar.  Then look for a gap in your map between it and the void.  Switch the func_details back on and turn the brush in question into a solid world brush.<br>
+<br>
+Of course, load map pointfile would be the first option in any case for solving a leak.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p50341">
+	<div class="info">
+		<p class="poster">Duke Nukem</p>
+		<p class="dt">2009-04-17 22:40:42</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">upload the vmf and let it become fixed by a very nice person or just learn brushwork by getting rid of the error <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=";)" title="Wink"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p50345">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2009-04-17 23:13:12</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><a href="http://www.interlopers.net/errors/" class="postlink">http://www.interlopers.net/errors/</a><br>
+<br>
+after reading the bible. see the scrolls.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

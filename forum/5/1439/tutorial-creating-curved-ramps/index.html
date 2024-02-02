@@ -1,0 +1,225 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Tutorial – creating curved ramps - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>Tutorial – creating curved ramps</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=1439">https://forum.hl2dm.community/viewtopic.php?t=1439</a>
+-->
+
+<div class="post" id="p16778">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-04-08 00:21:38</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">As some you may know you cannot bunnyhop / jump while climbing up stairs. You can only do so on smooth, continuous surfaces (ramps, mounds, etc.). <br>
+However, as it so happens sometimes the design requires a curved staircase somewhere and since you still want bhoppers to enjoy your map... I give you curved ramps in hammer!!! <br>
+It looks weird and a bit of a pain in the ars to make but it’s doable and in-game as smooth as if you were bhopping on a regular ramp.<br>
+<br>
+Here goes. . <br>
+<br>
+For this tut we’re going to create a 90 degrees (quarter circle) of curved ramp.<br>
+Open Hammer and create a 256 * 256 arch. Wall width should be 96 and Height should be 8 units. In the arch properties note (see image #1) to Add Height – 8 until…so every stair is 8 units.<br>
+<br>
+<br>
+<img src="http://eyeclan.net/backup/1.jpg" class="postimage" alt="Image"><br>
+<br>
+<br>
+Now that we have our spiral staircase ready we want to clip it so we’re left with only the bottommost (quarter) portion of it (see image #2)<br>
+<br>
+<br>
+<img src="http://eyeclan.net/backup/2.jpg" class="postimage" alt="Image"><br>
+<br>
+<br>
+Highlight this quarter staircase and tie it to entity (Ctrl+T) and then untie it again (Ctrl+Shift+W). what this does is it’s separating the stairs instead of having them all glued together. You want to now touch each and every one of the stairs (in the 3D view) and stretch each stair (in the 2D view) to reach the ground. (See image #3)<br>
+<br>
+<br>
+<img src="http://eyeclan.net/backup/3.jpg" class="postimage" alt="Image"><br>
+<br>
+<br>
+Now, open the Clip tool again. At this point it may be wise to remind you that the clip tool is multi-functional…first click will highlight (white) only one side and you will be removing the other (red) side. Second click with switch between the two sides. And third click with simply highlight (white) both sides creating a cut without removing anything. This third click function is what we’re going to use now:<br>
+<br>
+Highlight each stair (see image #4) and cut it diagonally from on corner to its opposing diagonal corner (yeah, I know – see image #4 lol).<br>
+<br>
+<br>
+<img src="http://eyeclan.net/backup/4.jpg" class="postimage" alt="Image"><br>
+<br>
+<br>
+Ok, now that we have all our stairs nicely cut (see image #5) we’re going to open the Vertex tool. (the reason we’ve just clipped all our stairs the way we did is because the way the Source engine is built rules out 4-facet brushes (squares) behaving the way we’re going to make them in this tut. Only 3-facet brushes can (triangles) and this is BTW the whole essence of this tut and the big find that spun it.<br>
+<br>
+<img src="http://eyeclan.net/backup/5.jpg" class="postimage" alt="Image"><br>
+<br>
+Highlight a triangle (see image #6) and start “connecting the dots” to simply create your (diagonal) ramp. You will find that when you will be vertex’ing the bottommost stair you won’t have anywhere to drag down the dots so the way I worked around it was I simply made that stair stretch (using Vertex) a bit further <strong class="text-strong">underground</strong> – finished working on the ramp and then cut off  (clip tool) the bit that was underground (let me know if that last part made no sense).<br>
+<br>
+<br>
+<img src="http://eyeclan.net/backup/6.jpg" class="postimage" alt="Image"><br>
+<br>
+<br>
+For end result see images #7,8 and 9.<br>
+<br>
+<img src="http://eyeclan.net/backup/7.jpg" class="postimage" alt="Image"><br>
+<img src="http://eyeclan.net/backup/8.jpg" class="postimage" alt="Image"><br>
+<img src="http://eyeclan.net/backup/9.jpg" class="postimage" alt="Image"><br>
+<br>
+<br>
+Let me know if this tut helped you understand what this tut is about and if so how to actually follow it  <img class="smilies" src="../../../images/smilies/icon_lol.gif" width="15" height="15" alt=":lol:" title="Laughing"><br>
+for those of you who got it - enjoy.<br>
+<br>
+Edit: i will size down the images when i get home. <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16783">
+	<div class="info">
+		<p class="poster">[MB]Brunt</p>
+		<p class="dt">2008-04-08 01:08:35</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">ill be workin on this tonite.very nice tut.ill let you know if i got it after i try it.keepem comin bro.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16785">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2008-04-08 01:17:42</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">so people are posting mapping tutorials here now .... freaking cool <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"><br>
+Keep 'em coming man ...good job ;D !</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16790">
+	<div class="info">
+		<p class="poster">MeekMeekle</p>
+		<p class="dt">2008-04-08 01:35:05</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">very nice Valar.   It's nice to see that you took the stairs and turned it into a ramp!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16832">
+	<div class="info">
+		<p class="poster">[MB]Brunt</p>
+		<p class="dt">2008-04-08 04:29:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">wow.man i got it.allso didnt know you make the steps like that.this will come in handy.keep up the good work</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16860">
+	<div class="info">
+		<p class="poster">haymaker</p>
+		<p class="dt">2008-04-08 10:18:27</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">to take that one step further I would turn that ramp into player_clip, place it over some nice looking func_detail brushwork stairs</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16875">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-04-08 15:20:04</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>haymaker wrote:</cite>to take that one step further I would turn that ramp into player_clip, place it over some nice looking func_detail brushwork stairs</div></blockquote>
+
+no need for playerclip as it should all be turned into func_detail. It was my mistake to leave this out. Thanks!<br>
+All will be covered in a later VVIS tut. These curved ramps cannot be anything else BUT brush entities. You will most certainly get a "cluster portals saw into cluster" error if you left even one of these stairs a world brush.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p17088">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-04-10 00:20:17</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">heh. just found this on Interlopers <a href="http://www.interlopers.net/index.php?page=tutorials&amp;id=3503" class="postlink">http://www.interlopers.net/index.php?pa ... ls&amp;id=3503</a><br>
+rofl</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p17179">
+	<div class="info">
+		<p class="poster">reaper47</p>
+		<p class="dt">2008-04-10 14:25:33</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Good tut! I'd go all the way, and put all the edge vertices in the first step back on-grid (1 or 2 grid to make it precise) since the arch tool creates some wicked off-grid geometry. That way adding an adjacent wall around the curve later is less of a pain.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p17182">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-04-10 17:22:07</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Very true and Thanks for pointing that out, reaper.<br>
+Now, that we've cut our squares to triangles we can do what we want with them and no longer fear of invalid brushwork.<br>
+<br>
+Thx for taking interest in this tut.  <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p17266">
+	<div class="info">
+		<p class="poster">ninjins</p>
+		<p class="dt">2008-04-11 06:51:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">haha I was actually wondering about curved ramps myself, although i figured vertex manipulation was involved. however can I ask you why you cut each stair diagonally? if it has to do with optimization that makes sense. but is it absolutely necessary in order to do vertex manipulation on the inside vertices?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p17272">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-04-11 07:16:23</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">nothing to do with optimization (they're all turned into func_detail in the end anyway...) but hmm well...try it yourself. take a square and vertex one dot to a diff height than the other three. get out of vertex and look at the processed surface now. its all warped.<br>
+this can literaly never happen with triangles as logic has it - three dots cannot create any warp but only one toned face.<br>
+once we cut our aquares to triangles we can basically do anything we want and not risk errors.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p17320">
+	<div class="info">
+		<p class="poster">reaper47</p>
+		<p class="dt">2008-04-11 19:27:34</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">If you move vertices of a &gt;3 point (non-triangle) polygon individually, you risk creating a non-planar (not flat) polygon. <br>
+<br>
+Imagine a square piece of paper that is defined by the coordinates of its 4 corners. Now, since polygons have to be strictly flat, in order to move an individual corner up or down, you'd have to fold the paper in two flat triangles, diagonally. <br>
+<br>
+There are two possible ways of folding the paper, either diagonally through the corner point you moved and its opposite corner, or through the two remaining corners. The engine can't "guess" which way the polygon should be split in Hammer or the compile programs, thus creating an error. By splitting up the the polygon manually, you clearly define the new edge and there won't be any problems!<br>
+<br>
+This also has to do with Hammer's inability to handle concave brushes.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

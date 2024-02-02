@@ -1,0 +1,304 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Custom map dosent work on linux based server. - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>Custom map dosent work on linux based server.</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=5021">https://forum.hl2dm.community/viewtopic.php?t=5021</a>
+-->
+
+<div class="post" id="p69412">
+	<div class="info">
+		<p class="poster">Midnight</p>
+		<p class="dt">2010-05-02 14:32:51</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hello! Im new tho this Forum so im not sure where i should post this topic. If thats a wrong place, sorry about that. So my problem is that a custom map dosent work on my server wich is linux based server. Map works on windows based servers, as it was runing on my friends server ok. I've tried run map on 3 linux serves from different server providers and its always makes server crash. Dose anyone had any problem tryin run custom map on linux server? <br>
+<br>
+Regards Midnight</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p69416">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2010-05-02 16:38:25</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yes, there are a few maps out there that don't play nicely with Linux. I'm not sure what the cause would be though as I've never had this problem in any of mine. <br>
+<br>
+I think there was something to do with ladders and another was something with lifts? (Anybody got info?)</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p69417">
+	<div class="info">
+		<p class="poster">gtamike_TSGK</p>
+		<p class="dt">2010-05-02 16:54:25</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I've had this problem, BS clan helped me on this in <span style="text-decoration:underline"><a href="http://www.bloodsuckers.de/viewtopic.php?t=1154&amp;start=0" class="postlink">2007 for combat house</a></span>.<br>
+Remove all the ladder props and ladder entries from your map and then test on linux servers again.<br>
+If that don't work I guess you could keep removing other entries till you find the bug and map runs fine on linux.<br>
+<br>
+gtamike</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p69419">
+	<div class="info">
+		<p class="poster">Midnight</p>
+		<p class="dt">2010-05-02 18:28:54</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thanks for reply! I've removed all ladders props etc. but it didnt make any differents, then i started removing other stuff as textures etc. I end up with almost nothing on map (skybox and some walls letf thought) and its still dosent work:((<br>
+<br>
+Thanks for help any way!<br>
+<br>
+Cheers</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p69421">
+	<div class="info">
+		<p class="poster">gtamike_TSGK</p>
+		<p class="dt">2010-05-02 19:35:40</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">The only other thing I can think of is displacements e.g. hills etc. (A friend had problems with them)<br>
+If you got any displacements remove them and load the map on linux.<br>
+If that don't work then I don't know apart from checking "check for problems" option I think in tools. (top of my head)</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p69424">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2010-05-02 20:25:50</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Im very new to mapping and I have only made one map, but I do have a linux server.   So far Ive had no trouble with it really other than that the server gets a little laggy running the same map 24/7 for several days.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p69445">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2010-05-03 03:38:33</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">mixed case characters in the map name by any chance?<br>
+upload and post a link to the VMF and the high council of SOURCErers will give it a looksie.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p69446">
+	<div class="info">
+		<p class="poster">gtamike_TSGK</p>
+		<p class="dt">2010-05-03 03:43:35</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>[EYE] Valar wrote:</cite>mixed case characters in the map name by any chance?<br>
+upload and post a link to the VMF and the high council of SOURCErers will give it a looksie.</div></blockquote>
+
+Talking of case characters never type this "" in anything you have in a map e.g. a model name <br>
+it kills and corrupts the map big time lol. <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=":wink:" title="Wink"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p69478">
+	<div class="info">
+		<p class="poster">Midnight</p>
+		<p class="dt">2010-05-03 23:05:25</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I've gave up:( I've decided to get server based on windows! Think easiest way lol <br>
+Thanks for all your help</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p69490">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2010-05-04 02:04:50</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">you're making a mistake. Linux are better servers and i can't believe you dumping it all because of a map.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p69536">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2010-05-05 05:48:47</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>[EYE] Valar wrote:</cite>mixed case characters in the map name by any chance?<br>
+upload and post a link to the VMF and the high council of SOURCErers will give it a looksie.</div></blockquote>I was just thinking that. I recently heard about it. <br>
+<br>
+<br>
+But yea, don't just give up like that... I don't know, apart from the name, what else can prevent it from working on linux, but like Valar said, if you upload the vmf, there's lots of ppl here that can pretty much help you find the problem.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p69554">
+	<div class="info">
+		<p class="poster">Midnight</p>
+		<p class="dt">2010-05-05 20:26:57</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Well i've already got windows server! i share payment with my friend as i already have 1 server( linux), bit more expensive than my linux server but lower ping. But if any one have a look at map i will paste link to vmf. <br>
+<a href="http://svdownload.e-frag.co.uk/users/Midnight/redtower.rar" class="postlink">http://svdownload.e-frag.co.uk/users/Mi ... dtower.rar</a><br>
+<br>
+Thanks for all your help guys!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p69557">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2010-05-05 22:35:05</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">When you release it formally somewhere, you might want to make sure you mention that it doesn't work on linux so linux server owners don't waste their time putting it on their servers</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p69559">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2010-05-05 22:51:37</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hmmm... you got lots of stuff going on outside the map, in the void. Triggers and infotargets, in short, entities are outside the map. This is not good.<br>
+I prefer to wait for other ppls opinions about it, since I'm not the best person to give advice, but I find it hard to belive that you compiled the map without leaks. And this may be your problem here.<br>
+<br>
+I also got this in from VBSP in the log:<br>
+
+<blockquote class="uncited"><div>KeyValues Error: RecursiveLoadFromBuffer:  got EOF instead of keyname in file materials/MODELS/PROPS_LAB/TANK_GLASS001_DX60.vmt<br>
+UnlitTwoTexture, (*Proxies*), (*AnimatedTexture*), <br>
+KeyValues Error: RecursiveLoadFromBuffer:  got EOF instead of keyname in file materials/MODELS/PROPS_LAB/TANK_GLASS001_DX60.vmt<br>
+UnlitTwoTexture, (*Proxies*), (*AnimatedTexture*), <br>
+KeyValues Error: RecursiveLoadFromBuffer:  got EOF instead of keyname in file materials/MODELS/PROPS_LAB/TANK_GLASS001_DX60.vmt<br>
+UnlitTwoTexture, (*Proxies*), (*AnimatedTexture*), <br>
+KeyValues Error: RecursiveLoadFromBuffer:  got EOF instead of keyname in file materials/MODELS/PROPS_LAB/TANK_GLASS001_DX60.vmt<br>
+UnlitTwoTexture, (*Proxies*), (*AnimatedTexture*), </div></blockquote>
+
+First time I see this, so I can't say anything about it.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p69562">
+	<div class="info">
+		<p class="poster">Silla</p>
+		<p class="dt">2010-05-05 23:17:16</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">hi<br>
+<br>
+please provide the server console messages<br>
+<br>
+do not use the LOG files or remote UDP logs, they are not flushed and complete after the crash<br>
+<br>
+you need direct access to the running console. then you can figure out where he crash. If he crash on "Got edict" you just have too much entities in it, verify the vbsp output where he display all entities and brushes count you use<br>
+<br>
+if you have much much much luck the server will report a ASSET message where you can see where the problem is. in the most of these cases he display immediate you should report the bugs to /dev/<a href="/cdn-cgi/l/email-protection#9ff1eaf3f3dfe9fef3e9fab1fcf0f2"><span class="__cf_email__" data-cfemail="137d667f7f5365727f65763d707c7e">[email protected]</span></a> or something. Verify the last lines and start the server with a none crashing map and verify it again, to find out where he crash. Than it could be much easier<br>
+<br>
+my last crash i use google and copy paste the error message in it - i got 2 hits - both say "too much entities" - than i google what stuff count as an entity ... then i just group all func_details together and voila working - this was easy ... and lucky ...<br>
+<br>
+edit: if you not able to get the server console direct way - provide the crashing BSP - i try it than</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p69567">
+	<div class="info">
+		<p class="poster">Midnight</p>
+		<p class="dt">2010-05-06 01:00:31</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">console refresh every 10 seconds so not sure if i get all info. <br>
+Precache of sprites/redglow1 ambigious (no extension specified)<br>
+Error reading weapon data file for: weapon_annabelle<br>
+Error reading weapon data file for: weapon_bugbait<br>
+Attempted to create unknown entity type weapon_alyxgun!<br>
+Can't init weapon_alyxgun<br>
+Precache of sprites/redglow1 ambigious (no extension specified)<br>
+Precache of sprites/redglow1 ambigious (no extension specified)<br>
+Precache of sprites/redglow1 ambigious (no extension specified)<br>
+Error: Material "models/roller/rollermine_glow" : proxy "AnimatedTexture" not fo<br>
+und!<br>
+Possible team classname [team_manager]<br>
+Team index [0] Name [Unassigned]<br>
+Possible team classname [team_manager]<br>
+Team index [1] Name [Spectator]<br>
+Possible team classname [team_manager]<br>
+Team index [2] Name [Combine]<br>
+Possible team classname [team_manager]<br>
+Team index [3] Name [Rebels]<br>
+Found [4] team manager entities<br>
+./srcds_run: line 344:  5919 Segmentation fault      $HL_CMD<br>
+Add "-debug" to the ./srcds_run command line to generate a debug.log to help wit<br>
+h solving this problem<br>
+Wed May  5 21:03:29 GMT 2010: Server restart in 10 seconds</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p69595">
+	<div class="info">
+		<p class="poster">Silla</p>
+		<p class="dt">2010-05-06 22:08:42</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">in normal it should come "Got edict" ... but it is crashed before he could get all entities. This is shit, because if he crashed after Got Edict i could you better say where you have to look ... now you have to figure out ...<br>
+<br>
+Please check your spawn entities. If you only provide combine and rebels, but the server runs in deathmatch mode you get sometimes very wired errors. And crashes too. Sometimes you spawn into spectator and could not join the game, sometimes the server just crash. This is map depend, but always same result<br>
+<br>
+Try to run the map in team deathmatch and in deathmatch mode (mp_teamplay) and verify the output again, then start the server - if it still crashing - more than one time and verify output. Goal is to see if he still crash at this point<br>
+<br>
+If the server crash on randomly points, then a dynamic entity you made is corrupt. This can be timers or triggers<br>
+<br>
+If the server crash anytime on that point, go into hammer, select ALL entities you have and move these into a new vis-group and disable the vis group. Create one deathmatch player, compile it with fast settings with vvis -fast and without vrad. Than test it - than the map should be fine<br>
+<br>
+After this remove your added spawn and move all spawns from the disabled vis group back to the map. Compile it with vvis fast and vrad and test it again<br>
+<br>
+If this fine repeat these steps with all prop_statics and than all other props. Last step should be activate all other entities you have back. Dynamics and stuff<br>
+<br>
+If you activate all back and it is still running, then you can thing "wtf" - lol - than you have a VVIS or VRAD problem. But this is very rare that vvis or vrad crash a server. In most case it still crash the client<br>
+<br>
+If you follow these steps you can easy find out what kind of element makes you unhappy<br>
+<br>
+BTW: If you map crash at the beginning where you anything deactivated, go into auto-vis groups and deactivate func_details, maybe there is a detail in the map that is uncool, but most time this just crash the client and not the server<br>
+<br>
+Remember to monitor each step you do, than you can find the ugly element and report here your results. So other mappers they have maps they crash could figure out why and faster solve this problem</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p69597">
+	<div class="info">
+		<p class="poster">Midnight</p>
+		<p class="dt">2010-05-06 23:29:45</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">server crashes as soon as i change map to dm_redtower15, so for example server runing dm_lockdown...im changing to dm_redtower and it crash right away it dosent load map at all, then after 10-15 seconds server runing lockdown again. there is no rebels or combine on map...all spaws entities are info_player_deathmatch.<br>
+I've tried change teamplay to 1 and it dose exactly same thing( crashes).<br>
+the map we are talkin about has lots of trigers, teleports etc. but i've also tried other verions of redtower (older) and first redtower map, wich as far as i remeber has no teleports etc crash too.Any way redtower wasnt just upgrade to older version.. everything was built from begin ( i think  lol) so i think i can be anything...or everything lool</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

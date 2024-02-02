@@ -1,0 +1,284 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Caves, caverns, grotos... What's the best way to build one? - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>Caves, caverns, grotos... What's the best way to build one?</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=3166">https://forum.hl2dm.community/viewtopic.php?t=3166</a>
+-->
+
+<div class="post" id="p41457">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2009-01-19 06:23:35</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I have done one, but as you can see in the picture, even the nodraw faces are rendered. This is a total mess. I used displacements and noise. the only thing that went good were the ledges on the left.<br>
+<br>
+There's two things I don't know here. How to make them consistently, and how to make them with round corners.<br>
+<br>
+If anyone could help...<br>
+<br>
+<a href="http://imageshack.us" class="postlink"><img src="http://img93.imageshack.us/img93/3714/templest3.jpg" class="postimage" alt="Image"></a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p41463">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2009-01-19 08:50:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">displacements! displacements! displacements! <br>
+start experimenting with them.<br>
+<br>
+A few rules of thumb:<br>
+<br>
+Always select a texture before creating the brush from which you're making your displacement. NEVER use NODRAW. EVER. same goes for all dev and tools textures. <br>
+Displacements don't like being made out of complex brushwork. keep it simple and clean.<br>
+Displacements cannot be entities.<br>
+Displacements cannot be triangles. only have four sides (faces).<br>
+Pulling out / stretching a displacement surface to far will result in ugly looking textured face. if you're stretching a face make sure to compensate with nearby vertices.<br>
+Avoid using external programs for making displacements. Hammer has a "bit" of a problem with those.<br>
+Read <a href="http://developer.valvesoftware.com/wiki/Displacements" class="postlink">this</a><br>
+Read <a href="http://developer.valvesoftware.com/wiki/Creating_Holes_in_Displacements" class="postlink">this</a><br>
+Read <a href="http://sdknuts.net/?sdk=tutdisp" class="postlink">this</a><br>
+Read <a href="http://www.interlopers.net/tutorials/2119" class="postlink">this</a><br>
+Read <a href="http://www.interlopers.net/tutorials/1838" class="postlink">this</a><br>
+Read <a href="http://www.interlopers.net/tutorials/1838" class="postlink">this</a><br>
+<br>
+val</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p41467">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2009-01-19 10:20:36</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>[EYE]Valar wrote:</cite>
+Read <a href="http://developer.valvesoftware.com/wiki/Displacements" class="postlink">this</a><br>
+Read <a href="http://developer.valvesoftware.com/wiki/Creating_Holes_in_Displacements" class="postlink">this</a><br>
+Read <a href="http://sdknuts.net/?sdk=tutdisp" class="postlink">this</a><br>
+Read <a href="http://www.interlopers.net/tutorials/2119" class="postlink">this</a><br>
+Read <a href="http://www.interlopers.net/tutorials/1838" class="postlink">this</a><br>
+Read <a href="http://www.interlopers.net/tutorials/1838" class="postlink">this</a><br>
+<br>
+val</div></blockquote>
+ <img class="smilies" src="../../../images/smilies/icon_lol.gif" width="15" height="15" alt=":lol:" title="Laughing">  <img class="smilies" src="../../../images/smilies/icon_lol.gif" width="15" height="15" alt=":lol:" title="Laughing">  <img class="smilies" src="../../../images/smilies/icon_lol.gif" width="15" height="15" alt=":lol:" title="Laughing"> <br>
+<br>
+Thx a lot Valar</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p41471">
+	<div class="info">
+		<p class="poster">Sadist</p>
+		<p class="dt">2009-01-19 13:33:46</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">For me (I could be wrong) using noise on displacements can lead to problems, as the noise is distributed upwards so that the edges do not match other displacement edges - causing a need to match them up (more work).<br>
+<br>
+I would do each geometry individually (even though it takes longer, you have greater control and more potential to create more natural curves), using a value that is a factor of 2 - not 5 which is the default, as you are already working on a grid of 2, then displacements can match with solid brushes correctly,<br>
+<br>
+Lastly, brushes intended to be turned to displacements should tessellate <a href="http://www.revisioncentre.co.uk/gcse/maths/tessellate1.gif" class="postlink">like this</a> so that two displacements align on the grid, with each triangle aligned as well.  This is necessary to avoid gaps showing.<br>
+<br>
+I could be wrong, but by using these guidelines I have been able to create displacements without gaps.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p41484">
+	<div class="info">
+		<p class="poster">Jelly Fox</p>
+		<p class="dt">2009-01-19 21:30:10</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">just decompile and steal all the maps from kreedz climbing.....lol jk<br>
+<br>
+although it might be worth adding soul father to steam and asking him for a few tips, as this map is amazing <a href="http://kzmod.com/e107_plugins/autogallery/autogallery.php?show=kz_caverns_deep*by*SoUlFaThEr" class="postlink">http://kzmod.com/e107_plugins/autogalle ... SoUlFaThEr</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p41489">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2009-01-19 22:27:29</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Sadist wrote:</cite>For me (I could be wrong) using noise on displacements can lead to problems, as the noise is distributed upwards so that the edges do not match other displacement edges - causing a need to match them up (more work).</div></blockquote>
+
+Sewing them doesn't solve all your gap-related problems?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p41492">
+	<div class="info">
+		<p class="poster">Sadist</p>
+		<p class="dt">2009-01-20 00:09:56</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>boshed wrote:</cite><blockquote><div><cite>Sadist wrote:</cite>For me (I could be wrong) using noise on displacements can lead to problems, as the noise is distributed upwards so that the edges do not match other displacement edges - causing a need to match them up (more work).</div></blockquote>
+
+Sewing them doesn't solve all your gap-related problems?</div></blockquote>
+
+Sometimes the sew tool doesnt work? Maybe because hammer is gay?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p41496">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2009-01-20 00:23:19</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hammer doing odd things? Shocking, who would have thought it  <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=":wink:" title="Wink"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p41497">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2009-01-20 00:37:36</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hammer is not gay...it's just afraid of commitment</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p41512">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2009-01-20 05:28:59</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yea, some stuff are well sewed and some aren't. I learned that the hard way, as wel as for not using triangles. <br>
+<br>
+Hammer doesn't do odd things, ppl just don't know him that good. It's all pretty natural to him. <img class="smilies" src="../../../images/smilies/icon_mrgreen.gif" width="15" height="15" alt=":mrgreen:" title="Mr. Green">  <img class="smilies" src="../../../images/smilies/icon_mrgreen.gif" width="15" height="15" alt=":mrgreen:" title="Mr. Green"><br>
+
+<blockquote><div><cite>Jelly Fox wrote:</cite>just decompile and steal all the maps from kreedz climbing.....lol jk<br>
+<br>
+although it might be worth adding soul father to steam and asking him for a few tips, as this map is amazing <a href="http://kzmod.com/e107_plugins/autogallery/autogallery.php?show=kz_caverns_deep*by*SoUlFaThEr" class="postlink">http://kzmod.com/e107_plugins/autogalle ... SoUlFaThEr</a></div></blockquote>
+HOLY FFFFF!!! That map looks just like what's in my mind for mine! Is "soulf father" the name I should add <img class="smilies" src="../../../images/smilies/icon_question.gif" width="15" height="15" alt=":?:" title="Question"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p41548">
+	<div class="info">
+		<p class="poster">Jelly Fox</p>
+		<p class="dt">2009-01-20 16:14:36</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">not sure, I'll PM you his steam id when I get it.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p41571">
+	<div class="info">
+		<p class="poster">Sacrifist</p>
+		<p class="dt">2009-01-20 21:36:26</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Ive found that it helps to right click on an entire wall of many brushes while working with displacements for canyon walls. It is easier to avoid cracks imo.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p41577">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2009-01-20 22:35:35</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I tried to do some right-clicks... nothing happened...  <img class="smilies" src="../../../images/smilies/icon_question.gif" width="15" height="15" alt=":?:" title="Question">  <img class="smilies" src="../../../images/smilies/icon_exclaim.gif" width="15" height="15" alt=":!:" title="Exclamation">  <img class="smilies" src="../../../images/smilies/icon_question.gif" width="15" height="15" alt=":?:" title="Question"> <br>
+<br>
+I think I'm getting the hang of it to make stuff like "canyon walls". But to make a cave that looks like a cave, I don't understand how to make the walls connect to the ciling in the corners. Without using triangles is a really hard thing to do. At least for me cuz  don't know how to. I did this in Ms Paint just to demonstrate what I mean:<br>
+<br>
+The black lines are the cave. The red lines are how the door frames, ceilling, and near-ground walls should be - rounded. I don't have any trouble making doors like that, and for the rest either. My real only problem is connecting two walls and a ceilling together in a rounded shape. Much like a cilinder. If you put two flat walls and a flat ceiling, it will be rounded after subdividing, but it's more like a cube with rounded corners and less of a cilinder-like shape. I tryed to mess with it for a while yesterday and came up with a diamond shape with a certain rotation in both X and Y axis. But it was a real pain to achieve, without having "invalid solid" warnings, and I don't know if there's any better way.<br>
+<br>
+<br>
+<a href="http://imageshack.us" class="postlink"><img src="http://img246.imageshack.us/img246/1223/semttulovs2.png" class="postimage" alt="Image"></a><br>
+<a href="http://g.imageshack.us/img246/semttulovs2.png/1/" class="postlink"><img src="http://img246.imageshack.us/img246/semttulovs2.png/1/w400.png" class="postimage" alt="Image"></a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p41647">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2009-01-21 08:09:14</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">hmm, seems to show some pretty good results with nicely tesselated canyon walls. And makes intersting corners too. <br>
+<br>
+A question came up to my mind: if I cut some 1500 long per 600 high wall into 16x16 peaces and create a real work of art  <img class="smilies" src="../../../images/smilies/icon_mrgreen.gif" width="15" height="15" alt=":mrgreen:" title="Mr. Green"> , will that be too heavy to the engine?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p41648">
+	<div class="info">
+		<p class="poster">Sacrifist</p>
+		<p class="dt">2009-01-21 08:16:11</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Skaruts wrote:</cite>I tried to do some right-clicks... nothing happened...  <img class="smilies" src="../../../images/smilies/icon_question.gif" width="15" height="15" alt=":?:" title="Question">  <img class="smilies" src="../../../images/smilies/icon_exclaim.gif" width="15" height="15" alt=":!:" title="Exclamation">  <img class="smilies" src="../../../images/smilies/icon_question.gif" width="15" height="15" alt=":?:" title="Question"> <br>
+<br>
+I think I'm getting the hang of it to make stuff like "canyon walls". But to make a cave that looks like a cave, I don't understand how to make the walls connect to the ciling in the corners. Without using triangles is a really hard thing to do. At least for me cuz  don't know how to. I did this in Ms Paint just to demonstrate what I mean:<br>
+<br>
+The black lines are the cave. The red lines are how the door frames, ceilling, and near-ground walls should be - rounded. I don't have any trouble making doors like that, and for the rest either. My real only problem is connecting two walls and a ceilling together in a rounded shape. Much like a cilinder. If you put two flat walls and a flat ceiling, it will be rounded after subdividing, but it's more like a cube with rounded corners and less of a cilinder-like shape. I tryed to mess with it for a while yesterday and came up with a diamond shape with a certain rotation in both X and Y axis. But it was a real pain to achieve, without having "invalid solid" warnings, and I don't know if there's any better way.<br>
+<br>
+<br>
+<a href="http://imageshack.us" class="postlink"><img src="http://img246.imageshack.us/img246/1223/semttulovs2.png" class="postimage" alt="Image"></a><br>
+<a href="http://g.imageshack.us/img246/semttulovs2.png/1/" class="postlink"><img src="http://img246.imageshack.us/img246/semttulovs2.png/1/w400.png" class="postimage" alt="Image"></a></div></blockquote>
+
+Use the subdivide command. Check out some displacement tutorials dealing with caves or take a look at this detailed thread <a href="http://forums.tf2maps.net/showthread.php?t=798" class="postlink">http://forums.tf2maps.net/showthread.php?t=798</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p41653">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2009-01-21 08:50:43</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Skaruts wrote:</cite>hmm, seems to show some pretty good results with nicely tesselated canyon walls. And makes intersting corners too. <br>
+<br>
+A question came up to my mind: if I cut some 1500 long per 600 high wall into 16x16 peaces and create a real work of art  <img class="smilies" src="../../../images/smilies/icon_mrgreen.gif" width="15" height="15" alt=":mrgreen:" title="Mr. Green"> , will that be too heavy to the engine?</div></blockquote>
+
+hard to do a tradeoff here; the more triangles the engine sees the tougher it will be for it to render. in simple terms, the more displacements an area has it will lower FPS and no questions about it.<br>
+BUT - this does not necessarily have to bring down performance with it. it depends on the type of textures, amount of models / other details in that area and so on.<br>
+Best thing to do is experiment often and check your frames AND your performance.<br>
+Remember that chapter in ep2 in the endless caves where the poison antlions live? checked the frames on it? yea, way low...but performance was good. so, that's what i mean.  <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"> <br>
+<br>
+BTW...16x16 size displacements? you must be mad. you will need a LOT of displacement and a fire-extinguisher to take out the fire your computer will catch when you load your map. try working with larger displacements. a lot larger than 16x16 man.<br>
+<br>
+val</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p41658">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2009-01-21 09:31:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">lol 16x16 was just to illustrate my question. I'm using some 16 sided (long or high, not both) blocks in my map, but in the overal all are bigger than 64. The 16 ones are to give a little more detail here and there and to make climbable path.<br>
+Thx</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

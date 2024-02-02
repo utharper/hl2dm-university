@@ -1,0 +1,233 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Repositioning cl_showpos - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+
+<h1>Repositioning cl_showpos</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=1849">https://forum.hl2dm.community/viewtopic.php?t=1849</a>
+-->
+
+<div class="post" id="p22694">
+	<div class="info">
+		<p class="poster">Jelly Fox</p>
+		<p class="dt">2008-06-02 23:07:16</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Just wondering if there is a way to reposition cl_showpos and cl_showfps like you can do with the netgraph?<br>
+<br>
+I would like to move it over to the left so I can see the kill info better.<br>
+<br>
+<img src="http://i7.photobucket.com/albums/y287/HoopR/HL2DM/dm_fool_day0003-1.jpg" class="postimage" alt="Image"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p22697">
+	<div class="info">
+		<p class="poster">Slice @ Dice</p>
+		<p class="dt">2008-06-02 23:20:12</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">hi<br>
+<br>
+i think net_graphpos 2 or net_graphhight(standard 64)</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p22698">
+	<div class="info">
+		<p class="poster">Slice @ Dice</p>
+		<p class="dt">2008-06-02 23:21:50</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">sorry i was wrong.I tought you asked about the net_graph pos.I happy that i could answer a question instead of asking .LOL.it wont work with me either.It stays always at the same place.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p22713">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2008-06-03 00:51:35</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">insteadd of moving showpos, move the death notice.<br>
+You need a file called <strong class="text-strong">HudLayout.res</strong> which goes in C:\Program Files\Steam\steamapps\username\half-life 2 deathmatch\hl2mp\scripts<br>
+<a href="http://www.megaupload.com/?d=W416RFL3" class="postlink">http://www.megaupload.com/?d=W416RFL3</a><br>
+Heres how it looks on my scren, not sure if it will look different on other resolutions.<br>
+<a href="http://img362.imageshack.us/my.php?image=dmforgottensanctuary000ep0.jpg" class="postlink"><img src="http://img362.imageshack.us/img362/8820/dmforgottensanctuary000ep0.th.jpg" class="postimage" alt="Image"></a><br>
+<br>
+If it looks different just move it to where ever you think is best, find this entry.:-<br>
+<br>
+	HudDeathNotice<br>
+	{<br>
+		"fieldName" "HudDeathNotice"<br>
+		"visible" "1"<br>
+		"enabled" "1"<br>
+		<strong class="text-strong">"xpos"	 "r640"</strong>  //change this moves left or rght. Default is<strong class="text-strong">r640</strong><br>
+		<strong class="text-strong">"ypos"	 "25</strong>"  //change this moves it up or down 12 is default value.<br>
+		"wide"	 "628"<br>
+		"tall"	 "468"<br>
+<br>
+		"MaxDeathNotices" "4"  //how many deaths show on screen at once.<br>
+		"LineHeight"	  "22"<br>
+		"RightJustify"	  "1"	// If 1, draw notices from the right<br>
+<br>
+		"TextFont"				"Default"<br>
+	}</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p22741">
+	<div class="info">
+		<p class="poster">Jelly Fox</p>
+		<p class="dt">2008-06-03 04:06:44</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">SWEEEEEEEEEEEET, thanks keefy, not exactly what I was look for but even better  <img class="smilies" src="../../../images/smilies/icon_mrgreen.gif" width="15" height="15" alt=":mrgreen:" title="Mr. Green"> <br>
+<br>
+Heres what mines looks like now:<br>
+<br>
+<img src="http://i7.photobucket.com/albums/y287/HoopR/HL2DM/dm_roman_sanctuary0002-1.jpg" class="postimage" alt="Image"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p22782">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2008-06-03 14:00:53</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">good tip.<br>
+There might be a way to move the showpos though ..I'll have to dig on that.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p22783">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2008-06-03 15:24:07</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Probably is possible but I couldnt find it and was almost going to give up then I rememdered seeing a deathnotice in one of the res files.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p22826">
+	<div class="info">
+		<p class="poster">s0iz</p>
+		<p class="dt">2008-06-04 04:03:49</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I recommend to disable both of them.<br>
+<br>
+bind "MWHEELUP" "net_graph 3; cl_showpos 1"<br>
+bind "MWHEELDOWN" "net_graph 0; cl_showpos 0"</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p22834">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2008-06-04 06:14:07</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Try this it uses only 1 key
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>bind "key" "incrementvar net_graph 0 3 3;incrementvar cl_showpos 0 1 1"</code></pre></div>
+I supose it can have a  downside since net_graph 3 stays on when you exit game  so i advise you to insert either cl_showpos 1 or net_graph 0 into your autoexec to get full use otherwise 1 will be on and 1 off when you press key.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p22852">
+	<div class="info">
+		<p class="poster">Jelly Fox</p>
+		<p class="dt">2008-06-04 13:10:40</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>s0iz wrote:</cite>I recommend to disable both of them.<br>
+<br>
+bind "MWHEELUP" "net_graph 3; cl_showpos 1"<br>
+bind "MWHEELDOWN" "net_graph 0; cl_showpos 0"</div></blockquote>
+
+why do you recommend disabling them?<br>
+<br>
+I like cl_showpos and cl_showfps on, but I have net_graph on/off binded to del on the num pad.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p22967">
+	<div class="info">
+		<p class="poster">s0iz</p>
+		<p class="dt">2008-06-06 02:35:43</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">They may desconcentrate you, plus they occupate a good part of your screen and they are perfomance-eaters <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p23005">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2008-06-06 18:56:11</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>s0iz wrote:</cite>They may desconcentrate you, plus they occupate a good part of your screen and they are perfomance-eaters <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div></blockquote>
+True about taking up screen but if you have decent enough hardware you shouldnt notice the tiny hit on performance, I don't <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"><br>
+I only use net_graph and sometimes showpos.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p23278">
+	<div class="info">
+		<p class="poster">Anonymous</p>
+		<p class="dt">2008-06-11 03:08:04</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><strong class="text-strong">I never been able to get netgraph to stick around, I never mess with the auto exec but is that where it goes? I was messing with my config and somehow managed to disable my plugins.. grrr...<br>
+<br>
+<br>
+POMP</strong></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p23284">
+	<div class="info">
+		<p class="poster">Jelly Fox</p>
+		<p class="dt">2008-06-11 03:29:06</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>s0iz wrote:</cite>They may desconcentrate you, plus they occupate a good part of your screen and they are perfomance-eaters <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div></blockquote>
+
+Well you're right I seem to be playing better without it........haha, thanks <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"><br>
+
+<blockquote><div><cite>MF'erPOMP wrote:</cite><strong class="text-strong">I never been able to get netgraph to stick around, I never mess with the auto exec but is that where it goes?</strong></div></blockquote><strong class="text-strong"><br>
+<br>
+Yup  <img class="smilies" src="../../../images/smilies/icon_mrgreen.gif" width="15" height="15" alt=":mrgreen:" title="Mr. Green"></strong></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p50937">
+	<div class="info">
+		<p class="poster">Pig Popper</p>
+		<p class="dt">2009-04-24 04:12:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">can anyone link me the code/text to <em class="text-italics">enlarge </em>the cl_showpos info? Jelly hooked me up ages ago but i forget the actual text it uses.. many thanks</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

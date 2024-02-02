@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Vsync - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+
+<h1>Vsync</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=3016">https://forum.hl2dm.community/viewtopic.php?t=3016</a>
+-->
+
+<div class="post" id="p39877">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-01-03 17:14:14</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Why does it feel so sluggish and laggy?  And surly wouldn't 60tick have been better option because whose monitor refreshes at 66Hz?  its usually  60  or 100 (CRT)</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39883">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2009-01-03 21:26:43</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">With Vsync on you are cutting your monitors ability to render frames by about 50%, if you have a lcd with a 60hz refresh rate that means you are now getting about 30 fps. Vsync works ok on some CRT monitors that can run like a 150 hz refresh rate (therefore giving you 75 fps) but its not really necessary. I have such a CRT (Sony FW-900) and I choose not to run Vsync, the 150hz refresh rate makes the game smooth as butter.<br>
+Here is a little bit about Vsync from tweakguides:<br>
+<br>
+FPS &amp; VSync<br>
+<br>
+When VSync is disabled, your FPS and refresh rate have no relationship to each other as such. This lets your graphics card work as fast as it wants, sending frames to the monitor as fast as it can draw them. Whether the monitor can actually show all these frames properly or not is another matter, which we've already discussed above. Clearly if disabling VSync can cause graphical glitches, however minor they may be, wouldn't it make sense to always enable VSync so that your graphics card doesn't wind up wasting its efforts only to generate more tearing? Well once again, things are not as simple as that.<br>
+<br>
+When VSync is enabled, what happens is that your graphics card is told to wait for your monitor to signal when it's ready for a new frame before supplying a single whole frame, each and every time. It can't race ahead, it can't just pump out lots of partially completed frames over old ones whenever it's ready - it has to provide a single whole frame to the monitor whenever the monitor says it's ready to refresh itself during VBI. The first noticeable impact is that your FPS becomes capped at a maximum equal to your current refresh rate. So if your refresh rate is 60Hz for example, your framerate can now only reach a maximum of 60FPS. By itself this isn't really a problem, since every monitor can do at least a 60Hz refresh rate at any resolution, and as we've discussed under the Frames Per Second section, if your system can produce 60FPS consistently in a game this should be more than enough FPS to provide smooth natural motion for virtually any type of game.<br>
+<br>
+There is however a more fundamental problem with enabling VSync, and that is it can significantly reduce your overall framerate, often dropping your FPS to exactly 50% of the refresh rate. This is a difficult concept to explain, but it just has to do with timing. As we know, when VSync is enabled, your graphics card pretty much becomes a slave to your monitor. If at any time your FPS falls just below your refresh rate, each frame starts taking your graphics card longer to draw than the time it takes for your monitor to refresh itself. So every 2nd refresh, your graphics card just misses completing a new whole frame in time. This means that both its primary and secondary frame buffers are filled, it has nowhere to put any new information, so it has to sit idle and wait for the next refresh to come around before it can unload its recently completed frame, and start work on a new one in the newly cleared secondary buffer. This results in exactly half the framerate of the refresh rate whenever your FPS falls below the refresh rate.<br>
+<br>
+As long as your graphics card can always render a frame faster than your monitor can refresh itself, enabling VSync will not reduce your average framerate. All that will happen is that your FPS will be capped to a maximum equivalent to the refresh rate. But since most monitors refresh at 60Hz or above, and in most recent games it is difficult to achieve 60FPS consistently at your desired resolution and settings, enabling VSync usually ends up reducing your FPS. Fortunately, because this problem is pretty much caused by the frame buffers becoming filled up, there is a solution and that's to enable a third frame buffer to allow more headroom. However this is not a straightforward solution, and to read more about this see the Triple Buffering section.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

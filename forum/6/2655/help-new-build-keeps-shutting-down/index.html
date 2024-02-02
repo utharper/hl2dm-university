@@ -1,0 +1,911 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HELP!  new build keeps shutting down... - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+
+<h1>HELP!  new build keeps shutting down...</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=2655">https://forum.hl2dm.community/viewtopic.php?t=2655</a>
+-->
+
+<div class="post" id="p33711">
+	<div class="info">
+		<p class="poster">CellarDweller</p>
+		<p class="dt">2008-11-03 18:06:06</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">i need some advice.  first, the system:<br>
+<br>
+Ultra XBlaster Clear Side Blk Mid-Tower Case <br>
+Asus P5N-D nForce 750i SLI Socket 775 Motherboard <br>
+CPU INTEL|Core 2 Duo E8500 3.16G 775 45N R<br>
+MEM OCZ SLI-Ready Edition 4GB (2 x 2GB) 240-Pin DDR2 800 (PC2 6400) Dual Channel Kit <br>
+PSU Thermaltake W0106RU 700W Complies with ATX 12V 2.2 &amp; EPS 12V version SLI Certified <br>
+EVGA GeForce 9800 GTX + 512MB PCIe w/Dual Link DVI <br>
+Masscool 120mm Sleeve Bearing Case Fan (x2)<br>
+<br>
+problem:  system powers off within 5 to 10 seconds of playing hl2dm.  no warning message prior to shutdown.  system can manually be powered on (doesn't reboot itself).  no warning message after powering back on.  system seems to run fine with all other operations (only hl2dm causes shutdown).<br>
+<br>
+some diagnostics that i dont know how to interpret:<br>
+<br>
+SPEEDFAN APPLICATION:<br>
+Temperatures -<br>
+Fan 1 (cpu) 1772rpm 37C<br>
+Fan 2 (exhaust/back case) 2103 rpm 39C<br>
+Fan 3 (intake/front case) 1974 rpm 22C<br>
+Hard Drive 1 - 29C<br>
+Hard Drive 2 - 28C<br>
+ACPI (not sure what this really is, mobo?) 40C<br>
+Core 1 (cpu) 35C<br>
+Core 2 (cpu) 38C<br>
+<strong class="text-strong">Core (graphics card) 49C</strong><br>
+<br>
+Volts (i know nothing about these)<br>
+Vcore 1:  1.07v<br>
+Vcore 2:  3.30v<br>
+<strong class="text-strong">+3.3V:  0.00v</strong><br>
++5V:  5.05v<br>
++12V:  12.03v<br>
+<strong class="text-strong">-12V:  -16.72v</strong><br>
+-5V:  -5.96v<br>
++5V:  5.08v<br>
+Vbat: 3.12v <br>
+<br>
+i bolded a couple items above that look suspicious to me, but i don't know how to interpret them.  i will say that although the graphics card idles hot, i can run the fan at 100%, cool it down to 39C, and hl2dm will still shutdown the system after 5-10 seconds.  so i really dont think its the graphics being a heat problem.  i also think the cpu temps look good.  so i'm leaning towards a power problem, and looking at those two bolded volt readings as an indicator of something.  but what???<br>
+<br>
+another possibility suggested to me is a problem with the memory.  i dont really know how to check that.  the bios sees the ram and it looks ok.  xp device manager also sees the ram and reports no problem.  but... i noticed the asus mobo guide does NOT list ocz memory under its qualified vender list (qvl) <a href="http://www.asus.com/999/download/products/2033/2033_10.pdf" class="postlink">http://www.asus.com/999/download/produc ... 033_10.pdf</a>  is that a possible problem, or is that just a brand asus never tested?<br>
+<br>
+lastly, the bios.  i've tried the default and i've tried changing a few things.  bottom line is that some of the bios settings are vague and google has been no help thus far.<br>
+<br>
+so... any and all suggestions are welcome.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p33716">
+	<div class="info">
+		<p class="poster">Rachkir</p>
+		<p class="dt">2008-11-03 18:27:02</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">well, Im not going to be much of a help here, but I feel your cpu is high for the rpm your running, my cpu runs at that temp when my fan is around 900 rpm...<br>
+<br>
+the powersupply thing is suspect to. i agree.  heres a link for the system monitor that I use.<br>
+<br>
+<a href="http://www.cpuid.com/" class="postlink">http://www.cpuid.com/</a><br>
+<br>
+there is the regular hwmonitor and then there is the pro.<br>
+<br>
+the nvidia control panel monitors, but its not accurate in my opinion, and my asus mobo has pcprobe to monitor and its the same as hwmonitor.  but hwmonitor uses way less resources and cpu time.  so,  maybe this will give you a different reading.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p33717">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2008-11-03 18:28:29</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">the 3.3 Volt if indeed at 0.00 can be the problem, try a different power supply as it should be showing a minimum of 3.3 volts.<br>
+To test your ram run a program called memtest 86.<br>
+<br>
+Also in your bios you may have a thermalshut down temp which is lower than it should be, check that to see what it is. If you did not do a good job with your thermalpaste and Heatsink installation the temp could be spiking and shut down occurs to prevent damage, by the time you turn it back on the temp has lowered.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p33718">
+	<div class="info">
+		<p class="poster">Rachkir</p>
+		<p class="dt">2008-11-03 18:31:03</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">hi</div>
+<dl class="attachbox">
+					<dt>
+						Attachments
+					</dt>
+											<dd>
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="Monitor.jpg" class="postimage" alt="Monitor.jpg" onclick="viewableArea(this);"></dt>
+						<dd>Monitor.jpg (58.54 KiB) Viewed 842 times</dd>
+		</dl>
+		
+		
+			</dd>
+									</dl>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p33727">
+	<div class="info">
+		<p class="poster">{EE}chEmicalbuRn</p>
+		<p class="dt">2008-11-03 19:09:42</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">APCI is a power mananement system.<br>
+<br>
+your temps are ok.<br>
+<br>
+<br>
+ill try and get a hold of you on steam, and we can talk.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p33728">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2008-11-03 19:10:50</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">You could try the following. (its a long shot)  I had problems of my PC going into sleep mode when the HD was busy I found out if I changed my power settings it stopped this.<br>
+<br>
+control panel&gt;&gt; Performance &amp; maintenance&gt;&gt; Power options<br>
+ "system standby" = NEVER <br>
+and under ADVANCED tab "when i press X button"  set all to "do nothing"<br>
+<a href="http://img159.imagevenue.com/img.php?image=28746_powa_122_348lo.JPG" class="postlink">http://img159.imagevenue.com/img.php?im ... _348lo.JPG</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p33780">
+	<div class="info">
+		<p class="poster">dothedew</p>
+		<p class="dt">2008-11-04 02:32:43</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Have u checked your mem timings? Did you run a burn in program like Sandra before jumping right in and playing? If you do a burn in, all of your problems should come up during the first couple of hours.  Your over-all configuration should run fine, but memory can be very picky.  Even if its on the vendor list from the motherboard.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p33796">
+	<div class="info">
+		<p class="poster">scott5245</p>
+		<p class="dt">2008-11-04 04:11:47</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">you should hit it with a hammer then take a glorious piss on it</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p33804">
+	<div class="info">
+		<p class="poster">CellarDweller</p>
+		<p class="dt">2008-11-04 04:56:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">keefy:  boy did i have my fingers crossed it would be that easy.  but no.<br>
+<br>
+dothedew: even if i look at the mem timings, i wouldnt know wtf they are telling me.  no, i did not run a burn in program.  why the *$%^%%*##&amp;^ arent you in irc so you could have told me that BEFORE i started this project?<br>
+<br>
+chem:  i know you think its underpowered, but every wattage calculator ive used puts it at 700w or below.<br>
+<br>
+ok, d/led everest and ran a 50 second stability test stressing CPU, FPU, cache, and system memory. results: <br>
+<br>
+Temps: <br>
+mobo min=41, max=41, ave=41 <br>
+cpu min=38, max=62, ave=43.1 <br>
+core1 min=35, max=52, ave=36.9 <br>
+core2 min=38, max=52, ave=39.4 <br>
+<br>
+Volts: <br>
+cpu core min=1.06, max=1.20, ave=1.08 <br>
++3.3v min=3.30, max=3.34, ave=3.32 <br>
++5v min=5.05, max=5.08, ave=5.06 <br>
++12 min=12.03, max=12.03, ave=12.03 <br>
+<br>
+the cpu core volts look low to me.  but i dont know shit.<br>
+<br>
+currently d/ling 3dmark to test graphics card <br>
+<br>
+later will d/l memtest86 <br>
+<br>
+suggestions?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p33812">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2008-11-04 05:25:47</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">your temps look fine, volts look fine and a 700w power supply is more than enough for that build.<br>
+<br>
+So back to your OP is it only hl2dm that makes it shut down or will other games do it too?<br>
+<br>
+Have you checked to see if there is a updated version of BIOS?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p33814">
+	<div class="info">
+		<p class="poster">badinfluence</p>
+		<p class="dt">2008-11-04 05:30:07</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Remember remember?<br>
+<br>
+You need a reformat.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p33853">
+	<div class="info">
+		<p class="poster">dothedew</p>
+		<p class="dt">2008-11-04 16:10:26</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I see you have a post on the ASUS Forum too.  L2k is right about the BIOS.  Make sure you have the most recent build.  In the ASUS forum, there are a couple of posts about memory settings like SLI and timings.  You should also go to any forums on the OCZ site too.  All of the symtoms that you have, to me anyway, look like bad timings.  Look at your ASUS manual for instructions for setting the memory timings.  There should be a "By SPD" and "Manual" setting somewhere on the Advanced section of your BIOS.  You should also d/l  SiSoft Sandra Lite.  There is also a trialpay deal that you can look at if you would like the Pro Home Version.  Here's the link <a href="http://www.sisoftware.net/index.html?dir=dload&amp;location=sware_dl_3264&amp;langx=en&amp;a=" class="postlink">http://www.sisoftware.net/index.html?di ... angx=en&amp;a=</a><br>
+GOOD LUCK!!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p33876">
+	<div class="info">
+		<p class="poster">CellarDweller</p>
+		<p class="dt">2008-11-04 18:07:06</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">thanks for all the advice!  im still slogging through with no results... but all your suggestions are much appreciated.<br>
+<br>
+l2k:  its only a problem with hl2dm... no other operations/programs cause the shut down.  i have no other games to try.  i have flashed the bios to the latest revision 0801.<br>
+<br>
+dothedew:  im thinking you are on the right track with the memory timing and plan on looking into the forums at ocz.  unfortunately, the asus manual is pretty useless concerning the bios setup.  its just too vague.  i'll show you an example below... a list of my lastest reasearch projects.  yes, i posted on the asus forums... i tried to submit a technical question through their "form" and the drop down menu would allow me to enter or choose the correct mobo specs.  GAY!<br>
+<br>
+ok... used the 3dmark graphics test.  the system didnt shut down.  nothing of note reported.  i couldnt get the memtest86 to load during boot... <img class="smilies" src="../../../images/smilies/icon_sad.gif" width="15" height="15" alt=":(" title="Sad"><br>
+i'm such a tard!<br>
+<br>
+some of the bios choices i dont understand that im researching (anyone who knows what these are please chime in!!!):<br>
+<br>
+C state compatibility (choices are c2, c3, or c4)<br>
+ACPI suspend type (choices are s1&amp;s2, s1 POS, s2 STR)<br>
+cpu multiplier (choices are a variety of numbers)<br>
+ai timing (choices are auto, manual, standard, or ai overclock)<br>
+<br>
+memory timing setting (choices follow):<br>
+tCL (cas latency)<br>
+tRCD<br>
+tRP<br>
+command per clock (cnd)<br>
+<br>
+advanced memory setting (choices follow):<br>
+tRRD<br>
+tRC<br>
+tWR<br>
+tWTR<br>
+tREF<br>
+tRD<br>
+tRFC<br>
+<br>
+*now, all those memory settings above default to AUTO in the bios.  the choice besides AUTO are numbers... like 1 thru 33.  so i need to understand what the t-letters mean!<br>
+<br>
+some other bios settings that i only glanced at:<br>
+spread spectrum control<br>
+LTD frequency</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p33878">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2008-11-04 18:17:17</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">you should be able to leave those ram settings on auto although since it is ram that is not on the qvl *auto* may be selecting undesirable values, in which case you would want to set them. In order to set them you should be able to get some idea from the people at OCZ as to what they should be give a call to tech support at ocz they are real helpfull. Something to try meanwhile since you cant run memtest is to pull one stick of ram out and try running just one, if it still does it swap them. It would also be nice to run another game something that isnt source engine for a test. DId you say you were able to run 3dmark 06 and get all the way thru the tests?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p33890">
+	<div class="info">
+		<p class="poster">CellarDweller</p>
+		<p class="dt">2008-11-04 19:05:44</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>L2k wrote:</cite>you should be able to leave those ram settings on auto although since it is ram that is not on the qvl *auto* may be selecting undesirable values, in which case you would want to set them. In order to set them you should be able to get some idea from the people at OCZ as to what they should be give a call to tech support at ocz they are real helpfull. Something to try meanwhile since you cant run memtest is to pull one stick of ram out and try running just one, if it still does it swap them. It would also be nice to run another game something that isnt source engine for a test. DId you say you were able to run 3dmark 06 and get all the way thru the tests?</div></blockquote>
+
+thats exactly what i was thinking about the AUTO settings since ocz isnt on the the qvl.  manually entering the correct timings might do the trick.<br>
+<br>
+yes, i ran 3dmark06 all the way through w/o a shut down.  i think that points away from the graphics card.<br>
+<br>
+i found this on toms hardware that is helpful for understanding regular timing settings:<br>
+<br>
+Q: How does memory access work, and what do the timings stand for? <br>
+A: MEMORY ACCESS: <br>
+1. tRCD (RAS to CAS Delay) 2-3 cycles, The row is selected by the Memory Controller. <br>
+2. CAS (Column Address Strobe) 2,2.5,3 cycles (DDR), The Memory Controller selects the column and now the ROW is <br>
+ACTIVE, and the READ COMMAND is sent. <br>
+3. Data is sent to the DQ pins after CAS delay. <br>
+4. tRAS (Row address Strobe) 6 cycles, The module waits a certain period of time for the data to be active. <br>
+5. tRP (RAS precharge) 2 cycles, The Memory Controller DEACTIVATES the row. <br>
+6. Memory Cycle repeats as requested by the Memory Controller. <br>
+<br>
+The timings are represented as follows: <br>
+2-3-2-6 1T (CAS, tRCD, tRP, tRAS)<br>
+<br>
+havent found an explanation for the advanced timing settings yet.  <img class="smilies" src="../../../images/smilies/icon_sad.gif" width="15" height="15" alt=":(" title="Sad"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p33894">
+	<div class="info">
+		<p class="poster">Rachkir</p>
+		<p class="dt">2008-11-04 19:23:58</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">hey cellar.  <br>
+<br>
+i noticed your 3.0 volt was zero, then you ran another test and it was 3.3 or something like that instead of 0.0  <br>
+<br>
+did you change something? or was it just a fualty diagnostic test?<br>
+<br>
+and also, in my unprofessional opinon about computer hardware, 65c for cpu temps is high.  <br>
+i dont think ive ever gotten over 47c and thats was with some hardcore overclocking when i was experimenting...i was afraid my memory would burn up, becuase it overclocks that as well, at least the way I did it.  stock heatsink and fan.  i had 667 memory up to 760 something if i remember correctly.  <br>
+<br>
+did you apply thermal grease?  if you use to much it will act as a insulator instead of transfering it to the heat sink.  when i first assembled my asus m2n-sli board i used to much grease and my cpu was at those temps...i said, that aint right, this cpu never ran that high on my other mobo.  so i redid it and I have nice cool temps now for it.<br>
+<br>
+and it seems i read somewhere AMD run hotter than Intel...and I use AMD and you use Intel...<br>
+I know nothing, but its fun posting.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p33902">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2008-11-04 20:04:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>CellarDweller wrote:</cite>
+The timings are represented as follows: <br>
+2-3-2-6 1T (CAS, tRCD, tRP, tRAS)</div></blockquote>
+IS that what your at or just a example?<br>
+ that seems pretty tight if thats what your at, loosen it up try 5-5-5-15<br>
+you can use a utility to see what its at something like sandra I belive shows you what it is if you dont know.<br>
+also check your ram voltage</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p33904">
+	<div class="info">
+		<p class="poster">Rachkir</p>
+		<p class="dt">2008-11-04 20:14:43</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">5-5-5-15 is standard timeing I believe for 667 memory<br>
+4-4-4-12 is typical for 800 memory I believe.<br>
+<br>
+but yeah, what l2k said.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p33910">
+	<div class="info">
+		<p class="poster">CellarDweller</p>
+		<p class="dt">2008-11-04 20:38:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">the voltage change is just a faulty reading from speedfan.  everest is more reliable.  im not sure what the cpu temp is actually reading (the point of contact with heatsink?)... but the 2 core numbers seem to make everyone happy.  the max temp according to intel is 100C.  yes i used thermal paste.  and in fact, i used the crap intel had applied on the heatsink first and the temperatures were about double under load than what they are now.  so i disconnected the heatsink, cleaned it and the cpu, then applied a quality thermal paste.<br>
+<br>
+the timings i posted were just an example.  trying to find recommended timings now.  will try to view actual timings when i get home.  (according to the specs on newegg, the timing should be 5-4-4-15)</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p34015">
+	<div class="info">
+		<p class="poster">CellarDweller</p>
+		<p class="dt">2008-11-05 17:12:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">this may be a game ending problem for me.<br>
+<br>
+UPDATE:<br>
+<br>
+last night i finally figured out how to run memtest86.  so it ran for 1hr 50 minutes... one complete pass... no errors.   <img class="smilies" src="../../../images/smilies/sketchy.gif" width="15" height="15" alt=":sketchy:" title="Unsure"> <br>
+<br>
+i also ran cpu-z (from cpuid) so i could see what the bios auto option set the memory timings to.  the timing was showing 6-6-6-18.  so, i manually entered the ocz recommended timings of 5-4-4-15.  while i was at it, i also changed the voltage from 1.8 to 2.1, as recommended by ocz.  those changes DID have a positive effect.  hl2dm now runs almost 5 minutes (instead of 5-10 seconds)... but it eventually shuts down the system.   <img class="smilies" src="../../../images/smilies/cry.gif" width="15" height="15" alt=":cry:" title="Cry"> <br>
+<br>
+okay weird.  so i took some other advice and d/led a demo game from outside source.  i chose the smallest d/l i could find.  unreal tournament 4.  i ran ut4 for 30 minutes... no system shutdown.  seemed to run perfectly.   <img class="smilies" src="../../../images/smilies/icon_eek.gif" width="15" height="15" alt=":shock:" title="Shocked"> <br>
+<br>
+thinking i had a buggy hl2dm game, i decided to uninstall hl2dm.  low and behold... there was no steam, no hl2, no hl2dm NOTHING showing in the add/remove programs.  wtf???  so i go to the start/all programs/steam menu... no uninstall option.  ???  so i go inside the steam folder itself... NO UNINSTALL!  WTF!  so my only option is right-click delete.  i hate doing that because im always afraid things linger in the registry w/o a proper uninstall.  now... i install hl2dm again.  this time from my disk.  run the game, same results... system shuts down within 5 minutes of playing.   <img class="smilies" src="../../../images/smilies/icon_exclaim.gif" width="15" height="15" alt=":!:" title="Exclamation">  <img class="smilies" src="../../../images/smilies/icon_exclaim.gif" width="15" height="15" alt=":!:" title="Exclamation">  <img class="smilies" src="../../../images/smilies/icon_exclaim.gif" width="15" height="15" alt=":!:" title="Exclamation"><br>
+<br>
+i'm running out of options/ideas.  there could still be an issue in the bios settings that im getting no help for from asus.  this mobo also has some new fangled energy conserving properties that could be the issue... but again that would seem to point at a bios setting.  the fact that changing the memory timing made some improvement seems to point at the ram still.  not that the memory itself is bad, but that the bios auto is incapable of the proper settings. another unknown is that memory is also sli memory.  i could find no settings in the bios regarding memory sli.  but i dont really know what sli memory means.  i thought it meant that the memory was ready/capable of handling sli video card set ups.  but now im thinking it really means the memory itself has a sli setting?<br>
+<br>
+anyway, tonight i pull each memory stick and try to run hl2dm.  i havent gotten around to that because d/ling all those other things has been so time consuming.  i dont think this will point to a bad stick, but hopefully it may indicate that the memory sli options are borked.<br>
+<br>
+any other suggestions/ideas are welcome!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p34018">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2008-11-05 18:15:56</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">wow this is really a good one, hard to think its hl2dm itself.<br>
+<br>
+I would proceed with the removal of one ram module at a time, I would also do a couple of other things.<br>
+<br>
+1. go to system tools and look in event viewer then look under application and check the log, also check system log see what kind of events are taking place and google any error codes to see what they mean.<br>
+2.download nvidia's ntune, run the system stability test, see what your results are.<br>
+3.download nvidia monitor and run the system monitoring tools with graphs, then start and run hl2dm for a few minutes before it crashes alt tab out or quti game and look at graphs, see how the temps and resources (esp memory resources) were behaving while game was running.<br>
+4. Be aware that drivers can cause this type of problem, go back over your driver installs and make sure that you installed the most current drivers for your chipset, graphics card, sound card and any other driver that should be installed.<br>
+ <br>
+you never mentioned what operating system you were using, what it is?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p34024">
+	<div class="info">
+		<p class="poster">CellarDweller</p>
+		<p class="dt">2008-11-05 19:09:56</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">maybe a breakthrough?<br>
+<br>
+<a href="http://processorfinder.intel.com/details.aspx?sspec=slapk#" class="postlink">http://processorfinder.intel.com/detail ... pec=slapk#</a><br>
+<br>
+according to that info, i'm well within the cpu voltage range.<br>
+<br>
+seems i was incorrect about the 100C (not sure wtf i came up with that), the thermal specification is 72.4°C... "The thermal specification shown is the maximum case temperature at the maximum Thermal Design Power (TDP) value for that processor. It is measured at the geometric center on the topside of the processor integrated heat spreader."<br>
+<br>
+looking back at that Everest stress test i ran for only 50 seconds, the temp at that specific cpu point (mentioned above) climbed to 62C.  i dont think its bad to assume that hl2dm running for 5 minutes before system shutdown is pushing that temperature to 72.4 C.  so maybe i need to pull the cpu and thermal paste it again.<br>
+<br>
+i'll run that everest stress test longer tonight and watch that specific temp.  still, seems odd that hl2dm stresses the cpu more than ut4.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p34025">
+	<div class="info">
+		<p class="poster">CellarDweller</p>
+		<p class="dt">2008-11-05 19:30:00</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">l2k:  sry, i thought i mentioned that i was running xp.   <img class="smilies" src="../../../images/smilies/icon_redface.gif" width="15" height="15" alt=":oops:" title="Embarassed"><br>
+<br>
+i initially did look at the events through administrative tools.  are those the logs you're referring too?  there were no warning or error events.  only informational events like... blahservice started or stopped.  very benign stuff.<br>
+<br>
+i think i may be overthinking this.  maybe occums razor applies.  power or heat.  <br>
+<br>
+ive triple checked drivers.  shouldn't be an issue.  but i will look into the ntune and nvidia monitor.  i had ntune on my old system so im familiar with that.  never heard of the nvidia monitor before... that might be a good tool to have.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p34029">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2008-11-05 19:53:21</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I just did a small test for you.<br>
+I ran nvidia monitor and at idle my cpu is 22 c<br>
+I ran hl2dm for 5 mins and my cpu temp was 36 c<br>
+so the game raised my cpu temp 14 c which in your case could put you near or over the temp threshold.<br>
+I am running a AMD dual core that is water cooled with a very good water cooler system so the temps are going to be a lot different but I think it shows that if you are on air cooling the potential is there for your cpu to go up 10-20 c when running hl2dm.<br>
+I kinda suspected based on the rapid shut down that it was due to the thermal protection feature in your bios and it looks like it very well could be.<br>
+Good luck getting this resolved, hope that does it!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p34037">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2008-11-05 21:03:06</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">What heatsink fan are you using, the one that came with the CPU? My rig runs at 33 degrees idle with aftermarket HSF and doesnt rise much at all with HL2DM running (dont recall the exact numbers but its nowhere near 60).<br>
+<br>
+It is possible that HL2DM is putting more load on the CPU than other games. I have always suspected it to be quite CPU intensive since I believe that was a major bottleneck for me on my old PC.<br>
+<br>
+I would perhaps consider purchasing a good aftermarket HSF and arctic silver thermal paste (I applied mine using an old credit card). Zalman and Thermaltake both get good reviews. Just make sure you have enough room for them as they can be quite big. Mine was pressed up against the north bridge when oriented in the direction I wanted, so I had to turn it so it extracted upwards. Fortunately my case has a 200mm fan up top.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p34066">
+	<div class="info">
+		<p class="poster">Rachkir</p>
+		<p class="dt">2008-11-05 23:59:42</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">*clears throat*<br>
+<br>
+Hm, maybe I was right about the CPU temp being suspect after all....you can all applaud later.<br>
+It still may not be the case, but it looks like it was.  <br>
+I did all I could to be polite when pointing in this direction...I really just wanted to say do it over...like I did when I first installed my current CPU, I had way to much paste on.  <br>
+<br>
+good luck cellar<br>
+<br>
+ <img class="smilies" src="../../../images/smilies/icon_mrgreen.gif" width="15" height="15" alt=":mrgreen:" title="Mr. Green"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p34070">
+	<div class="info">
+		<p class="poster">CellarDweller</p>
+		<p class="dt">2008-11-06 00:17:57</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Rachkir wrote:</cite>*clears throat*<br>
+<br>
+Hm, maybe I was right about the CPU temp being suspect after all....you can all applaud later.<br>
+It still may not be the case, but it looks like it was.  <br>
+I did all I could to be polite when pointing in this direction...I really just wanted to say do it over...like I did when I first installed my current CPU, I had way to much paste on.  <br>
+<br>
+good luck cellar<br>
+<br>
+ <img class="smilies" src="../../../images/smilies/icon_mrgreen.gif" width="15" height="15" alt=":mrgreen:" title="Mr. Green"></div></blockquote>
+
+well, i really wasnt discounting what you said.  i used the thermal compound on the intel provided heatsink first.  the cpu obviously ran hot, with both cores idling at 42-45C and the cpu case about the same.  i could watch those temps soar into the 70+ range within seconds of starting hl2dm.<br>
+<br>
+so when i pulled the cpu, wiped the factory thermal paste... applied new paste and reinstalled the cpu... i was ecstatic at seeing idle temps in the 38C range and stess test max in the mid 60's range.  those temps seemed to please other people too.  i think i just didnt run the stress test long enough... cause i'm a big chicken!  lol<br>
+<br>
+now that i've done more research, i think i applied the paste in the wrong direction for core 2.  but the paste i used is clearly superior to that factory shite and still showed major improvement in temps.  i dont think i used too much.  i'll be interested to see what it looks like after pulling the cpu tonight.  should be a good indicator of too much or too little.<br>
+<br>
+then im going to run a stress test called Prime95.  if the temps arent significantly better, i may pull the cpu yet again and try lapping the heatsink.  since lapping voids the warranty... i'll be forced to buy a different heatsink.  which i may have to do anyway.<br>
+<br>
+so... maybe you get a cookie... maybe you dont.   <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=":wink:" title="Wink"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p34099">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2008-11-06 03:32:20</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Walking Target wrote:</cite>arctic silver thermal paste (I applied mine using an old credit card).</div></blockquote>
+
+I did the same thing after reading the instructions on the website.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p34129">
+	<div class="info">
+		<p class="poster">Rachkir</p>
+		<p class="dt">2008-11-06 10:06:42</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">So is it safe to say this problem is resolved?<br>
+<br>
+Can you play dm now? <br>
+<br>
+Amazing at the differences in temp isn't it.  Damn you factory products.  Cheap bastards I tell you.  <br>
+<br>
+No worries Cellar, I know how to share, especially cookies.  <br>
+Catch ya in game dude.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p34142">
+	<div class="info">
+		<p class="poster">CellarDweller</p>
+		<p class="dt">2008-11-06 17:00:02</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">FIXED!!!<br>
+<br>
+Rachkir gets a cookie!<br>
+<br>
+I pulled and pasted that @#$##$$#@# cpu heatsink four times!  Surprisingly to me, MOAR PASTE did the trick.  I still dont see a significant heat reduction in the two cores at idle.  Both stay around 37C-38C.  But the cpu case itself never gets above 64C while playing hl2dm.  The Prime95 stress test ran for 20 minutes and the cpu case temp topped out at 75C <img class="smilies" src="../../../images/smilies/icon_exclaim.gif" width="15" height="15" alt=":!:" title="Exclamation">   But the system didnt shutdown, and Prime95 reported no errors.<br>
+<br>
+Thats still too hot for my liking.  I would have to say that the heatsink intel provides for its E8500 is BARELY ADEQUATE!  You would think they could include a better designed system for their own chip.<br>
+<br>
+Thanks to everyone for your help and suggestions!<br>
+<br>
+So, I'll be shopping around for another heatsink in the future.  But for now, I'm just tired of fucking with it.  Plus, I'm a bit cash strapped atm.   <img class="smilies" src="../../../images/smilies/icon_sad.gif" width="15" height="15" alt=":(" title="Sad"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p34164">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2008-11-06 20:14:12</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I have this one:<br>
+<br>
+<a href="http://www.newegg.com/Product/Product.aspx?Item=N82E16835186134" class="postlink">http://www.newegg.com/Product/Product.a ... 6835186134</a><br>
+<br>
+$26 with free shipping right now is pretty cheap. It's bigger than it looks so you would have to check the clearance, plus I do recommend you familiarize yourself with the connecter pegs before trying to install it. Learn how they set and reset and it will make it easier. I had one peg that just refused to snap down until I pulled it out and clicked it in and out a few times, it was jamming for some reason.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p34174">
+	<div class="info">
+		<p class="poster">CellarDweller</p>
+		<p class="dt">2008-11-06 21:42:30</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">heh, i seriously doubt that would fit in my case WT.<br>
+<br>
+not to mention, it looks like most of the better heatsinks have side mounted fans.  my case has this nice airflow tube that can be extended all the way to the top of top mounted fans.  wouldnt i be wasting that advantage with a sidemount fan?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p34185">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2008-11-06 23:04:30</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yeah, possibly. If your case has decent airflow it shouldnt be an issue tho, can the tube be removed?<br>
+<br>
+What case you get?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p34190">
+	<div class="info">
+		<p class="poster">CellarDweller</p>
+		<p class="dt">2008-11-07 00:10:56</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">yes, the air tube can be screwed off.  but the big round threaded plastic thingy the tube srews onto...?  seems like those threads are at least one or two inches into the interior of the case even w/o the extension tube.  i'll have to look and see how that thing is attached to the side of the case.  iirc, it has a shiny metal grate on the outside of the case... so maybe it can be detached too.<br>
+<br>
+here's the case:  <a href="http://www.tigerdirect.com/applications/SearchTools/item-details.asp?EdpNo=2337812&amp;CatId=1842" class="postlink">http://www.tigerdirect.com/applications ... CatId=1842</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p34191">
+	<div class="info">
+		<p class="poster">{EE}chEmicalbuRn</p>
+		<p class="dt">2008-11-07 00:20:28</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">There's your problem CD,  i should have asked to look at your heat sink.  thats junk.  NEVER get a heat sink with those shitty plastic push connectors.  one alwasy pops up, leaving a bad connection to the cpu.  get a heat sink that has a plate that attaches to the back of the mobo and the heat sink screws into that plate.  throw that other one out.  as for the paste.  half of a pea.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p35323">
+	<div class="info">
+		<p class="poster">CellarDweller</p>
+		<p class="dt">2008-11-19 21:51:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">FUCK A DUCK!!!  i spoke too soon.  after many hours on the asus forum, i've discovered that this mobo is very sketchy using the bios AUTO options.  so i've settled on these bios settings (which may mean absolutely NOTHING to most of you... but seem to be the most recommended setting in the asus community concerning this board):<br>
+<br>
+AI Tuning - manual<br>
+Overclocking - disabled<br>
+NB PCI Freq - 100<br>
+CPU Voltage - 1.225 (intel recommended default)<br>
+DRAM - 2.1v (OCZ recommended setting)<br>
+HT Volt - 1.40<br>
+NB Volt - 1.40<br>
+SB Volt - 1.60<br>
+FSB memory Clock Mode - unlinked<br>
+FSB QDR: 1540.1Mhz (16% overclock)<br>
+Memory DDR - 800<br>
+<br>
+???Parallel Port Mode??? - this is currently set to EPP.  other choices are normal, ECP, bi-directional.  the OCZ ram is sli enabled (epp).  should i change this setting or is it really referring to the memory???  i see NO other epp options anywhere in the bios.<br>
+<br>
+CPU Thermal - disabled<br>
+Limited CPUID Maxval - disabled<br>
+Execute Disable Bit - enabled<br>
+Virtualization Tech - disabled<br>
+CPU Multiplier - 9.5<br>
+Enhanced Intel Speed Step Tech - disabled<br>
+Memory Timing - 5-4-4-15 2T (OCZ recommended)  extended memory left to auto.<br>
+Speed Spectrum Controls - all disabled<br>
+LDT - 5x<br>
+PlugnPlay - enabled<br>
+Primary Display Adapter - PCI-E<br>
+HPET - disabled (running XP)<br>
+<br>
+something is still askew.  <img class="smilies" src="../../../images/smilies/cry.gif" width="15" height="15" alt=":cry:" title="Cry">     <br>
+<br>
+the above settings seemed to be performing perfectly.  idle cpu temp of 40C load 52C.  until last night.  while playing hl2dm for about 3 hours, the power suddenly shut off (no reboot).  exactly what was happening during the initial hsf overheating issue.  so checked temps again under load and the temps were as reported above.  the system still passes stress tests from Everest, 3DMark, Sandra, Memtest... w/o any errors or shutdowns.  grrrrrrrr!!!!!  <br>
+<br>
+back to the drawing board.  <br>
+<br>
+can low cpu voltage cause this type of shut down?  <br>
+<br>
+can HT, NB and SB volts cause this type of shut down?  <br>
+<br>
+memory... well i'm pretty clueless on this subject.  my rudimentary understanding is that as the cpu gets faster in an oc, memory should be loosened.  so again, can the memory timings cause this type of shut down?  if yes... what are some timings i should try?  5-5-5-15 2T?  6-6-6-18 2T???<br>
+<br>
+im really starting to suspect the psu now, so ive opened a ticket with thermaltake.  i still cant believe that 700w is insufficient.  but im wondering if the psu itself is overheating.  it has a large (140mm) fan on the bottom side... right over the top the cpu.  the fan is capable of moving air at 85 cfm.  but there is hardly any air discharge out the back of the psu.  i can visibly see the fan moving... but it still seems like a low air discharge out the back.  especially when compared to the 120mm masscool fan.<br>
+<br>
+all suggestions welcome!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p35362">
+	<div class="info">
+		<p class="poster">{EE}chEmicalbuRn</p>
+		<p class="dt">2008-11-20 02:19:45</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">well, from the start i said it was the PSU.  again. yes 700watts is prolly enough.....BUT, there are a lot of shitty psu's being made these days.  i had a PC that would shut down just like yours right before it died.  you prolly have a shit psu, not the brand per say, but the psu itself.  its more than likely sending out fluctuating currents.  which is why you're fine for a while but then when you start to use more power you get a power hickup, or hickdown if you will, and the cpu doesnt get the necassary power and shut down.  go to bestbuy and buy a new psu, im sure you can return it if you are still having issues.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p35419">
+	<div class="info">
+		<p class="poster">Rachkir</p>
+		<p class="dt">2008-11-20 18:56:40</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I use BFG products.  They are good.  They have excellant help/support as well.  I had a fan go bad on my Video card, I had no proof of purchase, and I registered it over the phone while I put in a ticket for RMA, no questions asked.  Now await my SLI again.  Oh, I use BFG GS 650 watt PS.<br>
+<br>
+I have an ASUS board, the asus updater is something I am not very confident in to flash the bios for me and install a new one...  I downloaded the newest bios for my board off their site, and I have a Flash Utitlity built into my bios.  I used that, then chose where to get the new bios from, and presto. New Bios, no quirks, no jerks.  I did try the updater first, and it was gay as hell. I uninstalled asus update and their asus probe that uses so much cpu and ram.<br>
+<br>
+<a href="http://www.antec.com/Detail.bok?no=498" class="postlink">http://www.antec.com/Detail.bok?no=498</a>  better pictures out there somewhere Im sure.  <br>
+<br>
+this case came with 5 extra fans because I guess when it intially shipped some of the fans that came with it would not power on when set to low, all 3 speed fans.  I did not have this issue so I got to use all the fans, plus I got 5 extras, and it comes with a mount for the middle of the case to add another internal one.  Not sure if their still shipped with the extra fans or not... I got this case roughly 3 months ago from best buy with some reward zone money and some cash from scraping junk metal.  theres a junior version of this out there to, but it's significantly smaller.  <br>
+<br>
+Oh, W.T. I got that same cooler, for amd sockets, <a href="http://www.newegg.com/Product/Product.aspx?Item=N82E16835185125&amp;Tpk=freezer%2064%20pro" class="postlink">http://www.newegg.com/Product/Product.a ... 2064%20pro</a> I think it's the same. I bought one after you posted it.  Thanks Man.  That thing rules dude, looks pretty too.  Lowered my idle by almost 10 celcious and in game my cpu for dm does not get above 38 celcious after a few hours of play.  L4D however tops my cpu temp out at 44 celcious.  And it blows the air right out the back exhaust fan as well, god bless that cpu cooler.  MUST BUY.<br>
+<br>
+Oh snap, just read my box that came with it...I installed it backwards.  the fan is facing the back, by the exhaust...but thats psuhing air through the cooler and the heat is being dispated towards the front of my case now...I need to flip this sucker around, might get a couple more degrees shaved off...now where's that damn thermal paste.  I assumed the fan was drawing it the other way, thus pushing it out the back of the case...nope, the fan pushed air through the cooler on this, not drawing through it...if that makes sense.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p35445">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2008-11-20 22:23:12</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Glad you like it man, mine has been performing like a champ also. Orientation, yeah it's blowing the air through all those little fins, so you want the fins on the exhaust side. As I said, I couldn't fit mine without pointing it upwards, but that's fine because heat rises and it is sending the air straight into the 200mm fan on the top of my case.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p35540">
+	<div class="info">
+		<p class="poster">CellarDweller</p>
+		<p class="dt">2008-11-21 17:32:11</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">well, i pulled the psu and sent it back to newgg.  waiting for a new one.   <img class="smilies" src="../../../images/smilies/icon_neutral.gif" width="15" height="15" alt=":|" title="Neutral"><br>
+<br>
+wasnt ignoring your advice chem... but the only psu's bestbuy had over 700W cost $199.   <img class="smilies" src="../../../images/smilies/icon_surprised.gif" width="15" height="15" alt=":o" title="Surprised">  <br>
+<br>
+when i pulled the psu, i noticed the heatsink on the mobo was frickin hot!  maybe thats the thing overheating.   <img class="smilies" src="../../../images/smilies/icon_confused.gif" width="15" height="15" alt=":?" title="Confused"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p35542">
+	<div class="info">
+		<p class="poster">The Argumentalizer</p>
+		<p class="dt">2008-11-21 17:42:03</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Do you still have an overclock going?  Reset everything to normal and get everything working before you go off running the FSB up.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p35556">
+	<div class="info">
+		<p class="poster">CellarDweller</p>
+		<p class="dt">2008-11-21 20:09:25</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">its weird impala... the stability was worse with the standard clocks.  screen froze up within 15 seconds of loading windows.  the only semblence of stability came from a mild oc.  everything worked perfectly... except hl2dm after 2-3 hrs.<br>
+<br>
+anyways, here's a review of the psu im getting.  i upped the watts to 750, and with the newegg price and rebate... i'll break about even after the restocking fee and the shipping back costs for the older psu.<br>
+<br>
+<a href="http://www.hardwaresecrets.com/article/553/1" class="postlink">http://www.hardwaresecrets.com/article/553/1</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p35559">
+	<div class="info">
+		<p class="poster">The Argumentalizer</p>
+		<p class="dt">2008-11-21 20:19:12</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Something is wrong with that MB. Something is not set properly. Stability should not get better with OC'ing.<br>
+Forget the temp readings from BIOS. It MAY not be accurate. Temps of 30 to 40 c is good.<br>
+60s for chipset sounds excessive.<br>
+<br>
+You only need the thinnest of paste to do the job. Spreading your paste with a business card for a uniform thin coat is good.<br>
+<br>
+Try linking your Ram and FSB.<br>
+Turn on spread spectrum.<br>
+Try everything with one stick of RAM and see if all runs well.<br>
+Use default RAM speeds.<br>
+Ensure you are running the proper FSB. 800/1000/1333? <br>
+Is 9.5 multifier correct?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p35563">
+	<div class="info">
+		<p class="poster">CellarDweller</p>
+		<p class="dt">2008-11-21 21:46:34</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>The Argumentalizer wrote:</cite>Something is wrong with that MB. Something is not set properly. Stability should not get better with OC'ing.<br>
+Forget the temp readings from BIOS. It MAY not be accurate. Temps of 30 to 40 c is good.<br>
+60s for chipset sounds excessive.<br>
+<br>
+You only need the thinnest of paste to do the job. Spreading your paste with a business card for a uniform thin coat is good.<br>
+<br>
+Try linking your Ram and FSB.  <em class="text-italics">when linked at normal clocks=screen freeze</em><br>
+Turn on spread spectrum.  <em class="text-italics">when enabled at normal clocks=screen freeze</em><br>
+Try everything with one stick of RAM and see if all runs well.  <em class="text-italics">passed memtest, but may try </em><br>
+Use default RAM speeds.  <em class="text-italics">i am still using default (ocz rec.) speeds</em><br>
+Ensure you are running the proper FSB. 800/1000/1333? <em class="text-italics">@1333 screen freeze, 1400+ no freeze</em> <br>
+Is 9.5 multifier correct?  <em class="text-italics">that is the correct multiplier</em></div></blockquote>
+
+if the new psu doesnt resolve the issue, i'll try the one memory stick test and standard clocks again.  asus assured me that mobo temps would not cause this kind of power shutdown, although it could contribute to an overall heating issue within the case.  i've known all along the BIOS settings were a part of the problem.  but i think i have that corrected for now.  we'll see.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p35824">
+	<div class="info">
+		<p class="poster">CellarDweller</p>
+		<p class="dt">2008-11-24 17:53:03</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">fixed!!!  for realz this time.<br>
+<br>
+definately the power supply unit.<br>
+<br>
+the heat production on this psu compared to the other one is noticeably lower.  im sure the other psu had a fan issue and just wasn't spinning as designed to prevent the psu from overheating.<br>
+<br>
+not only does the psu run cooler, but the entire insides of the case now run 5C-10C cooler than before.<br>
+<br>
+played for about 3-4 hrs yesterday with no shut downs.<br>
+<br>
+ <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p35838">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2008-11-24 20:09:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Awesome man, glad to hear it.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p35839">
+	<div class="info">
+		<p class="poster">{EE}chEmicalbuRn</p>
+		<p class="dt">2008-11-24 20:23:47</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>CellarDweller wrote:</cite>fixed!!!  for realz this time.<br>
+<br>
+definately the power supply unit.<br>
+<br>
+the heat production on this psu compared to the other one is noticeably lower.  im sure the other psu had a fan issue and just wasn't spinning as designed to prevent the psu from overheating.<br>
+<br>
+not only does the psu run cooler, but the entire insides of the case now run 5C-10C cooler than before.<br>
+<br>
+played for about 3-4 hrs yesterday with no shut downs.<br>
+<br>
+ <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div></blockquote>
+
+<br>
+eehhhhheeeemmmm.   if you had only listened to your buddy chem when you first had this problem.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p35843">
+	<div class="info">
+		<p class="poster">CellarDweller</p>
+		<p class="dt">2008-11-24 21:43:16</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">yes, yes, u get a cookie too CB.   <img class="smilies" src="../../../images/smilies/icon_lol.gif" width="15" height="15" alt=":lol:" title="Laughing"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

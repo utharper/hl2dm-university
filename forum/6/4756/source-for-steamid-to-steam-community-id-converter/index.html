@@ -1,0 +1,283 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SOURCE for SteamId to Steam Community ID converter - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+
+<h1>SOURCE for SteamId to Steam Community ID converter</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=4756">https://forum.hl2dm.community/viewtopic.php?t=4756</a>
+-->
+
+<div class="post" id="p65317">
+	<div class="info">
+		<p class="poster">provost</p>
+		<p class="dt">2010-01-16 00:28:37</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">// ==UserScript==<br>
+// @name SteamId/Steam Community ID convert<br>
+// @namespace tag:URI<br>
+// @Description Convert SteamId to SteamCommunity Profile page and vice versa<br>
+// @include <a href="http://www.enemydown.co.uk/clanmembers.php" class="postlink">http://www.enemydown.co.uk/clanmembers.php</a>*<br>
+// @include <a href="http://enemydown.co.uk/clanmembers.php" class="postlink">http://enemydown.co.uk/clanmembers.php</a>*<br>
+// @include <a href="http://www.enemydown.co.uk/clanmembers.php" class="postlink">www.enemydown.co.uk/clanmembers.php</a>*<br>
+// @include enemydown.co.uk/clanmembers.php*<br>
+// @include <a href="http://www.enemydown.co.uk/userprofile.php" class="postlink">http://www.enemydown.co.uk/userprofile.php</a>*<br>
+// @include <a href="http://enemydown.co.uk/userprofile.php" class="postlink">http://enemydown.co.uk/userprofile.php</a>*<br>
+// @include <a href="http://www.enemydown.co.uk/userprofile.php" class="postlink">www.enemydown.co.uk/userprofile.php</a>*<br>
+// @include enemydown.co.uk/userprofile.php*<br>
+// ==/UserScript==<br>
+<br>
+//Object to handle long bigdecimal numbers.. //IGNORE UNTIL LINE 153<br>
+//+ Jonas Raoni Soares Silva<br>
+//@ <a href="http://jsfromhell.com/classes/bignumber" class="postlink">http://jsfromhell.com/classes/bignumber</a> [rev. #3]<br>
+<br>
+BigNumber = function(n, p, r){<br>
+    var o = this, i;<br>
+    if(n instanceof BigNumber){<br>
+        for(i in {precision: 0, roundType: 0, _sign: 0, _dec: 0}) o<em class="text-italics"> = n<em class="text-italics">;<br>
+        o._buffer = n._buffer.slice();<br>
+        return;<br>
+    }<br>
+    o.precision = isNaN(p = Math.abs(p)) ? BigNumber.defaultPrecision : p;<br>
+    o.roundType = isNaN(r = Math.abs(r)) ? BigNumber.defaultRoundType : r;<br>
+    o._sign = (n += "").charAt(0) == "-";<br>
+    o._dec = ((n = n.replace(/[^\d.]/g, "").split(".", 2))[0] = n[0].replace(/^0+/, "") || "0").length;<br>
+    for(i = (n = o._buffer = (n.join("") || "0").split("")).length; i; n[--i] = +n<em class="text-italics">);<br>
+    o.round();<br>
+};<br>
+with({$: BigNumber, o: BigNumber.prototype}){<br>
+    $.ROUND_HALF_EVEN = ($.ROUND_HALF_DOWN = ($.ROUND_HALF_UP = ($.ROUND_FLOOR = ($.ROUND_CEIL = ($.ROUND_DOWN = ($.ROUND_UP = 0) + 1) + 1) + 1) + 1) + 1) + 1;<br>
+    $.defaultPrecision = 40;<br>
+    $.defaultRoundType = $.ROUND_HALF_UP;<br>
+    o.add = function(n){<br>
+        if(this._sign != (n = new BigNumber(n))._sign)<br>
+            return n._sign ^= 1, this.subtract(n);<br>
+        var o = new BigNumber(this), a = o._buffer, b = n._buffer, la = o._dec,<br>
+        lb = n._dec, n = Math.max(la, lb), i, r;<br>
+        la != lb &amp;&amp; ((lb = la - lb) &gt; 0 ? o._zeroes(b, lb, 1) : o._zeroes(a, -lb, 1));<br>
+        i = (la = a.length) == (lb = b.length) ? a.length : ((lb = la - lb) &gt; 0 ? o._zeroes(b, lb) : o._zeroes(a, -lb)).length;<br>
+        for(r = 0; i; r = (a[--i] = a<em class="text-italics"> + b<em class="text-italics"> + r) / 10 &gt;&gt;&gt; 0, a<em class="text-italics"> %= 10);<br>
+        return r &amp;&amp; ++n &amp;&amp; a.unshift(r), o._dec = n, o.round();<br>
+    };<br>
+    o.subtract = function(n){<br>
+        if(this._sign != (n = new BigNumber(n))._sign)<br>
+            return n._sign ^= 1, this.add(n);<br>
+        var o = new BigNumber(this), c = o.abs().compare(n.abs()) + 1, a = c ? o : n, b = c ? n : o, la = a._dec, lb = b._dec, d = la, i, j;<br>
+        a = a._buffer, b = b._buffer, la != lb &amp;&amp; ((lb = la - lb) &gt; 0 ? o._zeroes(b, lb, 1) : o._zeroes(a, -lb, 1));<br>
+        for(i = (la = a.length) == (lb = b.length) ? a.length : ((lb = la - lb) &gt; 0 ? o._zeroes(b, lb) : o._zeroes(a, -lb)).length; i;){<br>
+            if(a[--i] &lt; b<em class="text-italics">){<br>
+                for(j = i; j &amp;&amp; !a[--j]; a[j] = 9);<br>
+                --a[j], a<em class="text-italics"> += 10;<br>
+            }<br>
+            b<em class="text-italics"> = a<em class="text-italics"> - b[i];<br>
+        }<br>
+        return c || (o._sign = n._sign), o._dec = d, o._buffer = b, o.round();<br>
+    };<br>
+    o.multiply = function(n){<br>
+        var o = new BigNumber(this), r = o._buffer.length &gt;= (n = new BigNumber(n))._buffer.length, a = (r ? o : n)._buffer,<br>
+        b = (r ? n : o)._buffer, la = a.length, lb = b.length, x = new BigNumber, i, j, s;<br>
+        for(i = lb; i; r &amp;&amp; s.unshift(r), x.set(x.add(new BigNumber(s.join("")))))<br>
+            for(s = (new Array(lb - --i)).join("0").split(""), r = 0, j = la; j; r += a[--j] * b[i], s.unshift(r % 10), r = (r / 10) &gt;&gt;&gt; 0);<br>
+        return o._dec = ((r = la + lb - o._dec - n._dec) &gt;= (j = (o._buffer = x._buffer).length) ? this._zeroes(o._buffer, r - j + 1, 1).length : j) - r, o.round();<br>
+    };<br>
+    o.divide = function(n){<br>
+        if((n = new BigNumber(n)) == "0")<br>
+            throw new Error("Division by 0");<br>
+        else if(this == "0")<br>
+            return new BigNumber;<br>
+        var o = new BigNumber(this), a = o._buffer, b = n._buffer, la = a.length - o._dec,<br>
+        lb = b.length - n._dec, r = new BigNumber, i = 0, j, s, last;<br>
+        r._sign = o._sign != n._sign, r.precision = Math.max(o.precision, n.precision),<br>
+        r._dec = +r._buffer.pop(), la != lb &amp;&amp; o._zeroes(la &gt; lb ? b : a, Math.abs(la - lb));<br>
+        n._dec = b.length, b = n, b._sign = false, b = b.round();<br>
+        for(n = new BigNumber; a[0] == "0"; a.shift());<br>
+        out:<br>
+        do{<br>
+            for(n == "0" &amp;&amp; (n._buffer = [], n._dec = 0), last = 0; i &lt; a.length &amp;&amp; n.compare(b) == -1; ++i){<br>
+                if(last = i + 1 == a.length, n == "0" &amp;&amp; a[i] == "0"){<br>
+                    if(r._dec == r._buffer.length &amp;&amp; ++r._dec, r._buffer.push(0), last)<br>
+                        break out;<br>
+                }<br>
+                else if(n._buffer.push(a[i]), ++n._dec, (last &amp;&amp; n.compare(b) == -1 &amp;&amp; (r._dec == r._buffer.length &amp;&amp; ++r._dec, 1)) || (last = 0))<br>
+                    do<br>
+                        r._buffer.push(0), n._buffer.push(0), ++n._dec;<br>
+                    while(n.compare(b) == -1);<br>
+            }<br>
+            if(n.compare(b) == -1 &amp;&amp; !(last = 0))<br>
+                do<br>
+                    last ? r._buffer.push(0) : last = 1, n._buffer.push(0), ++n._dec;<br>
+                while(n.compare(b) == -1);<br>
+            for(s = new BigNumber, j = 0; n.compare(y = s.add(b)) + 1 &amp;&amp; ++j; s.set(y));<br>
+            n.set(n.subtract(s)), !last &amp;&amp; r._dec == r._buffer.length &amp;&amp; ++r._dec, r._buffer.push(j);<br>
+        }<br>
+        while((i &lt; a.length || n != "0") &amp;&amp; (r._buffer.length - r._dec) &lt;= r.precision);<br>
+        return r.round();<br>
+    };<br>
+    o.mod = function(n){<br>
+        return this.subtract(this.divide(n).intPart().multiply(n));<br>
+    };<br>
+    o.pow = function(n){<br>
+        var o = new BigNumber(this), i;<br>
+        if((n = (new BigNumber(n)).intPart()) == 0) return o.set(1);<br>
+        for(i = Math.abs(n); --i; o.set(o.multiply(this)));<br>
+        return n &lt; 0 ? o.set((new BigNumber(1)).divide(o)) : o;<br>
+    };<br>
+    o.set = function(n){<br>
+        return this.constructor(n), this;<br>
+    };<br>
+    o.compare = function(n){<br>
+        var a = this, la = this._dec, b = new BigNumber(n), lb = b._dec, r = [-1, 1], i, l;<br>
+        if(a._sign != b._sign)<br>
+            return a._sign ? -1 : 1;<br>
+        if(la != lb)<br>
+            return r[(la &gt; lb) ^ a._sign];<br>
+        for(la = (a = a._buffer).length, lb = (b = b._buffer).length, i = -1, l = Math.min(la, lb); ++i &lt; l;)<br>
+            if(a[i] != b[i])<br>
+                return r[(a[i] &gt; b[i]) ^ a._sign];<br>
+        return la != lb ? r[(la &gt; lb) ^ a._sign] : 0;<br>
+    };<br>
+    o.negate = function(){<br>
+        var n = new BigNumber(this); return n._sign ^= 1, n;<br>
+    };<br>
+    o.abs = function(){<br>
+        var n = new BigNumber(this); return n._sign = 0, n;<br>
+    };<br>
+    o.intPart = function(){<br>
+        return new BigNumber((this._sign ? "-" : "") + (this._buffer.slice(0, this._dec).join("") || "0"));<br>
+    };<br>
+    o.valueOf = o.toString = function(){<br>
+        var o = this;<br>
+        return (o._sign ? "-" : "") + (o._buffer.slice(0, o._dec).join("") || "0") + (o._dec != o._buffer.length ? "." + o._buffer.slice(o._dec).join("") : "");<br>
+    };<br>
+    o._zeroes = function(n, l, t){<br>
+        var s = ["push", "unshift"][t || 0];<br>
+        for(++l; --l;  n<span style="text-decoration:line-through">(0));<br>
+        return n;<br>
+    };<br>
+    o.round = function(){<br>
+        if("_rounding" in this) return this;<br>
+        var $ = BigNumber, r = this.roundType, b = this._buffer, d, p, n, x;<br>
+        for(this._rounding = true; this._dec &gt; 1 &amp;&amp; !b[0]; --this._dec, b.shift());<br>
+        for(d = this._dec, p = this.precision + d, n = b[p]; b.length &gt; d &amp;&amp; !b[b.length -1]; b.pop());<br>
+        x = (this._sign ? "-" : "") + (p - d ? "0." + this._zeroes([], p - d - 1).join("") : "") + 1;<br>
+        if(b.length &gt; p){<br>
+            n &amp;&amp; (r == $.DOWN ? false : r == $.UP ? true : r == $.CEIL ? !this._sign<br>
+            : r == $.FLOOR ? this._sign : r == $.HALF_UP ? n &gt;= 5 : r == $.HALF_DOWN ? n &gt; 5<br>
+            : r == $.HALF_EVEN ? n &gt;= 5 &amp;&amp; b[p - 1] &amp; 1 : false) &amp;&amp; this.add(x);<br>
+            b.splice(p, b.length - p);<br>
+        }<br>
+        return delete this._rounding, this;<br>
+    };<br>
+}<br>
+<br>
+//FOR DEBUGGING<br>
+if(unsafeWindow.console){<br>
+   var GM_log = unsafeWindow.console.log;<br>
+<br>
+}<br>
+<br>
+var converted_ids = ""; //IDs that have already been converted, used to prevent endless loop if the same ID exists more than once on the page.<br>
+var document_html = document.body.innerHTML;<br>
+var all_steam_ids = new String(document.body.innerHTML.match(/STEAM_[0-9]:[0-9]:[0-9]+/gi)); //all matched steam IDs on the page<br>
+<br>
+var start_pos = end_pos = count = 0; //indexes to parse steam IDs from all_steam_ids<br>
+var steam_id, parsed_id, authSrv;<br>
+if(all_steam_ids.search(",") == -1){ //if only one occurence of a steam ID is on the page<br>
+	steam_id = all_steam_ids;<br>
+	parsed_id = steam_id.substring(steam_id.lastIndexOf(":")+1);<br>
+	document.body.innerHTML = document.body.innerHTML.replace(steam_id ,'&lt;a href="<a href="http://steamcommunity.com/profiles/%27+convertSteamId%28parsed_id%29+%27%22%3E%27+steam_id+%27%3C%5Ca" class="postlink">http://steamcommunity.com/profiles/'+co ... am_id+'&lt;\a</a>&gt;');<br>
+}<br>
+else{<br>
+	while(end_pos != -1){<br>
+		end_pos = all_steam_ids.indexOf(",",start_pos);<br>
+		if(end_pos == -1)<br>
+			steam_id = all_steam_ids.substring(start_pos, all_steam_ids.length);<br>
+		else<br>
+			steam_id = all_steam_ids.substring(start_pos, end_pos);<br>
+		parsed_id = steam_id.substring(steam_id.lastIndexOf(":")+1);<br>
+		authSrv = steam_id.substring(steam_id.indexOf(":")+1,steam_id.lastIndexOf(":"));<br>
+		if(converted_ids.search(steam_id) != -1){ //ID has already been converted<br>
+			start_pos = end_pos + 1;<br>
+			continue;<br>
+		}<br>
+		document_html = replaceAll(document_html, steam_id ,'&lt;a href="<a href="http://steamcommunity.com/profiles/%27+convertSteamId%28parsed_id,authSrv%29" class="postlink">http://steamcommunity.com/profiles/'+co ... d,authSrv)</a>+'" target="_blank"&gt;'+steam_id+'&lt;\a&gt;');<br>
+		converted_ids += steam_id;<br>
+	}<br>
+	document.body.innerHTML = document_html;<br>
+}<br>
+<br>
+<br>
+<br>
+<br>
+function convertSteamId(steamID, authSrv){ //No fuckin idea why (new BigNumber((steamID * 2) + authSrv)).add("76561197960265728"); returns weird results o.0<br>
+	if(authSrv == 1)<br>
+		return (new BigNumber((steamID * 2) + 1)).add("76561197960265728");<br>
+	else<br>
+		return (new BigNumber(steamID * 2)).add("76561197960265728");<br>
+}<br>
+<br>
+// Replaces all instances of the given substring.<br>
+function replaceAll(textToSearch, strTarget, strSubString){<br>
+	var intIndexOfMatch = textToSearch.indexOf(strTarget); //find first occurence of steamid<br>
+	var temp_text, final_text="";<br>
+	var start_pos= 0;<br>
+	while (intIndexOfMatch != -1){<br>
+	    temp_text = textToSearch.substring(start_pos, intIndexOfMatch + strTarget.length); //substring until the end of the first steamid occurence<br>
+		temp_text = temp_text.replace(strTarget, strSubString);<br>
+	    final_text += temp_text;<br>
+		start_pos = intIndexOfMatch + strTarget.length;<br>
+		intIndexOfMatch = textToSearch.indexOf(strTarget, intIndexOfMatch + strSubString.length);<br>
+    }<br>
+	final_text += textToSearch.substr(start_pos);<br>
+    return final_text;<br>
+}</span></em></em></em></em></em></em></em></em></em></em></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p65353">
+	<div class="info">
+		<p class="poster">badinfluence</p>
+		<p class="dt">2010-01-17 06:04:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">So what are we suppose to do with this?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p65354">
+	<div class="info">
+		<p class="poster">provost</p>
+		<p class="dt">2010-01-17 07:24:14</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">No idea. I tought maybe someone would like to get that so here it is!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p65377">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2010-01-17 23:31:34</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Looks like a greasemonkey script.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

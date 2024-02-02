@@ -1,0 +1,391 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>(!) Onti's Advice - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Film Discussion</a></p>
+</div>
+
+<h1>(!) Onti's Advice</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=2262">https://forum.hl2dm.community/viewtopic.php?t=2262</a>
+-->
+
+<div class="post" id="p27809">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2008-08-14 02:28:31</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Ok people, I've recently found out some stuff that might help all those movie makers out there !<br>
+<br>
+First of all, my hud had one, ONE, single issue... it kept showing when a weapon was full. If you use <span style="color:#FF0000">hud_drawhistory_time 0</span> that won't be a problem anymore !<br>
+Use this commands to get a completly clean screen, while keeping the death notices (if using my hud remover)<br>
+<br>
+<span style="color:#FF0000">crosshair 0 </span><br>
+Will remove the crosshair, use a single dot .png file as the crosshair, which you have to add during the editining on vegas/adobe. (pm me if you need it)<br>
+<br>
+<span style="color:#FF0000">hud_saytext_time 0</span><br>
+Will remove text messages from chat<br>
+<br>
+<span style="color:#FF0000">net_graph 0</span><br>
+Makes sure there is no net_graph on the screen<br>
+<br>
+<span style="color:#FF0000">cl_showpos 0</span><br>
+No position/angle/speed notification<br>
+<br>
+<span style="color:#FF0000">cl_showtextmsg 0</span><br>
+No plug in messages poping up at the upper left part of your screen<br>
+<br>
+<span style="color:#FF0000">Voice_enable 0</span><br>
+Will remove microphone talk, while also taking out the notifications of who was talking<br>
+<br>
+<span style="color:#FF0000">r_drawparticles 0</span><br>
+good to remove the fire effect when recamming<br>
+<br>
+<span style="color:#FF0000">r_drawvgui 0</span><br>
+might be useful in certain situations to remove some stuff you don't want to appear and couldn't do it any other way. Using this command will remove EVERYTHING that is additional to the 3d stuff the game renders, so no hp, suit, ammo, death notices, net_graph, crosshair, whatever.....<br>
+even console and game menu ! so be sure to bind a key to turn it back to 1 again...otherwise it can be a pain in the ass...<br>
+(only thing I don't know so far is how to remove all the server notifications/ dominating and all the stuff signs, pm if you know, will update later if I found out..)<br>
+<br>
+<br>
+Also, here you have a list of some commands I found out which can be used for some sexy effects by overlaying them with less opacity or masking them on vegas/premier.<br>
+<br>
+<a href="http://i309.photobucket.com/albums/kk382/0nti/r_drawdisp0.jpg" class="postlink"><strong class="text-strong">r_drawdisp 0</strong></a><br>
+<a href="http://i309.photobucket.com/albums/kk382/0nti/r_drawlightcache1.jpg" class="postlink"><strong class="text-strong">r_drawlightcache 1</strong></a><br>
+<a href="http://i309.photobucket.com/albums/kk382/0nti/r_drawclipbrushes1.jpg" class="postlink"><strong class="text-strong">r_drawclipbrushes 1</strong></a><br>
+<a href="http://i309.photobucket.com/albums/kk382/0nti/mat_wireframe1.jpg" class="postlink"><strong class="text-strong">mat_wireframe 1</strong></a> <a href="http://i309.photobucket.com/albums/kk382/0nti/mat_wireframe2.jpg" class="postlink"><strong class="text-strong">mat_wireframe 2</strong></a> <a href="http://i309.photobucket.com/albums/kk382/0nti/mat_wireframe3.jpg" class="postlink"><strong class="text-strong">mat_wireframe 3</strong></a><br>
+<a href="http://i309.photobucket.com/albums/kk382/0nti/r_showenvcubemap1.jpg" class="postlink"><strong class="text-strong">r_showenvcubemap 1</strong></a><br>
+<a href="http://i309.photobucket.com/albums/kk382/0nti/r_shadowwireframe1.jpg" class="postlink"><strong class="text-strong">r_shadowwireframe 1</strong></a><br>
+<a href="http://i309.photobucket.com/albums/kk382/0nti/r_overlaywireframe1.jpg" class="postlink"><strong class="text-strong">r_overlaywireframe 1</strong></a><br>
+<a href="http://i309.photobucket.com/albums/kk382/0nti/r_drawtranslucentrenderables0.jpg" class="postlink"><strong class="text-strong">r_drawtranslucentrenderables 0</strong></a><br>
+<a href="http://i309.photobucket.com/albums/kk382/0nti/r_drawrenderboxes1.jpg" class="postlink"><strong class="text-strong">r_drawrenderboxes 1</strong></a><br>
+<a href="http://i309.photobucket.com/albums/kk382/0nti/r_drawopaqueworld0.jpg" class="postlink"><strong class="text-strong">r_drawopaqueworld 0</strong></a><br>
+<a href="http://i309.photobucket.com/albums/kk382/0nti/r_drawopaquerenderables0.jpg" class="postlink"><strong class="text-strong">r_drawopaquerenderables 0</strong></a><br>
+<a href="http://i309.photobucket.com/albums/kk382/0nti/r_DrawModelLightOrigin1.jpg" class="postlink"><strong class="text-strong">r_DrawModelLightOrigin 1</strong></a><br>
+<a href="http://i309.photobucket.com/albums/kk382/0nti/r_drawleaf0.jpg" class="postlink"><strong class="text-strong">r_drawleaf 0</strong></a><br>
+<a href="http://i309.photobucket.com/albums/kk382/0nti/mat_showlowresimage1.jpg" class="postlink"><strong class="text-strong">mat_showlowresimage 1</strong></a><br>
+<a href="http://i309.photobucket.com/albums/kk382/0nti/r_modelwireframedecal1.jpg" class="postlink"><strong class="text-strong">r_modelwireframedecal 1</strong></a><br>
+<a href="http://i309.photobucket.com/albums/kk382/0nti/mat_yuv1.jpg" class="postlink"><strong class="text-strong">mat_yuv 1</strong></a><br>
+<a href="http://i309.photobucket.com/albums/kk382/0nti/mat_reversedepth1.jpg" class="postlink"><strong class="text-strong">mat_reversedepth 1</strong></a><br>
+<a href="http://i309.photobucket.com/albums/kk382/0nti/vcollide_wireframe1.jpg" class="postlink"><strong class="text-strong">vcollide_wireframe 1</strong></a><br>
+<a href="http://i309.photobucket.com/albums/kk382/0nti/mat_leafvis1.jpg" class="postlink"><strong class="text-strong">mat_leafvis 1</strong> (can be good while moving, try it :] )</a><br>
+<a href="http://i309.photobucket.com/albums/kk382/0nti/r_DispBuildable1.jpg" class="postlink"><strong class="text-strong">r_DispBuildable 1</strong></a><br>
+<a href="http://i309.photobucket.com/albums/kk382/0nti/r_colorstaticprops1.jpg" class="postlink"><strong class="text-strong">r_colorstaticprops 1</strong></a><br>
+<a href="http://i309.photobucket.com/albums/kk382/0nti/mat_luxels.jpg" class="postlink"><strong class="text-strong">mat_luxels 1</strong></a><br>
+<a href="http://i309.photobucket.com/albums/kk382/0nti/mat_normalmaps1.jpg" class="postlink"><strong class="text-strong">mat_normalmaps 1</strong></a><br>
+<a href="http://i309.photobucket.com/albums/kk382/0nti/mat_normals1.jpg" class="postlink"><strong class="text-strong">mat_normals 1</strong></a><br>
+<a href="http://i309.photobucket.com/albums/kk382/0nti/mat_measurefillrate1.jpg" class="postlink"><strong class="text-strong">mat_measurefillrate 1</strong></a><br>
+<a href="http://i309.photobucket.com/albums/kk382/0nti/mat_showmiplevels1.jpg" class="postlink"><strong class="text-strong">mat_showmiplevels 1</strong></a><br>
+<a href="http://i309.photobucket.com/albums/kk382/0nti/mat_fillrate1.jpg" class="postlink"><strong class="text-strong">mat_fillrate 1</strong></a><br>
+<a href="http://i309.photobucket.com/albums/kk382/0nti/r_dispwalkable1.jpg" class="postlink"><strong class="text-strong">r_DispWalkable 1</strong></a><br>
+<a href="http://i309.photobucket.com/albums/kk382/0nti/r_drawlights1.jpg" class="postlink"><strong class="text-strong">r_drawlights 1</strong></a><br>
+<a href="http://i309.photobucket.com/albums/kk382/0nti/mat_depthbias_normal1.jpg" class="postlink"><strong class="text-strong">mat_depthbias_normal 1</strong></a><br>
+<strong class="text-strong">mat_drawflat 1</strong><br>
+<strong class="text-strong">r_nohw 1</strong><br>
+<strong class="text-strong">r_shadowcolor</strong>   <br>
+<strong class="text-strong">r_drawsprites 0</strong><br>
+<br>
+<br>
+I hope this is of any use for all those movie makers out there, have fun <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"> &lt;3 !</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p27844">
+	<div class="info">
+		<p class="poster">darkhead_</p>
+		<p class="dt">2008-08-14 12:32:37</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thanks Onti ;D</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p27935">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2008-08-15 07:00:36</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">thanks!<br>
+hey any admin out there, I believe this would be nice sticked ;P</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p28026">
+	<div class="info">
+		<p class="poster">blutonium boy</p>
+		<p class="dt">2008-08-16 15:11:31</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">hey, i've tried these commands. some are usefull, some not (in my opinion)<br>
+good job so far. correct me if something's wrong<br>
+<br>
+r_drawdisp 0<br>
+r_drawlightcache 1   shows the direction where the light comes from<br>
+mat_drawflat 1   useless<br>
+r_drawclipbrushes 0  useless<br>
+mat_wireframe  <br>
+r_showenvcubemap 1  useless<br>
+r_shadowwireframe 1   don`t know what has changed ^^<br>
+r_overlaywireframe 1   don`t know what has changed ^^<br>
+r_drawtranslucentrenderables 0   don`t know what has changed ^^<br>
+r_drawsprites 0 // Removes sprites --&gt; Note: this can be really useful when recaming orbs, mags, etc, to remove the fire animation!<br>
+r_drawrenderboxes 1   useless<br>
+r_drawopaqueworld 0  useless<br>
+r_drawopaquerenderables 0   barrels, fences, handrail, and lot more disappears<br>
+r_DrawModelLightOrigin 1   useless<br>
+r_drawleaf 0        useless<br>
+mat_showlowresimage 1    super nintendo effect xD<br>
+r_modelwireframedecal 1   don`t know what has changed ^^<br>
+mat_yuv 1 // Monochrome effect    nice, but could ne done with the movieprog you use<br>
+mat_reversedepth 1   useless<br>
+vcollide_wireframe 1   <br>
+mat_leafvis 1 // Draw wireframe of current leaf  useless<br>
+r_DispBuildable 1    don`t know what has changed ^^<br>
+r_colorstaticprops 1   again super nes effect <br>
+r_shadowcolor // sets shadow color, being 171 171 230 the default one<br>
+mat_luxels 1 // Blue squares all over the map   useless<br>
+mat_normalmaps 1    shows you the vtf. files ( if you like to replace something)<br>
+mat_normals 1     don`t know what has changed ^^<br>
+mat_measurefillrate 1    useless<br>
+mat_fillrate 1     useless<br>
+mat_depthbias_normal 1   useless<br>
+r_nohw 1  same as r_drawopaquerenderables 0 ?<br>
+r_DispWalkable 1   useless for moviemaking, but good for new maps <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=";)" title="Wink"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p28029">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2008-08-16 17:09:34</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">lol they are far from useless if you applied them in the way I said.... the idea is sync'ing it and overlay it with opacity for less than a second ... like about 9 frames.<br>
+You have plenty of people using it on css movies, even at warsow I've seen it. try watching movies like "get alive 2" (css) or another short one of warsow from team logitech, just to name a few...<br>
+<br>
+I'll update the thread today with pictures of the effects...</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p28043">
+	<div class="info">
+		<p class="poster">blutonium boy</p>
+		<p class="dt">2008-08-16 23:07:27</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">well, in this case some of them makes sense, but why should i need (for example) the shadowframe, renderboxes or mat_luxels?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p28050">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2008-08-17 01:51:56</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>blutonium boy wrote:</cite>well, in this case some of them makes sense, but why should i need (for example) the shadowframe, renderboxes or mat_luxels?</div></blockquote>
+well, I also saw for instance mat_luxes as hard to use, but I asure you someone with the right knowledge in masking can find a use for it. <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=";)" title="Wink"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p28079">
+	<div class="info">
+		<p class="poster">blutonium boy</p>
+		<p class="dt">2008-08-17 18:47:34</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">hey, got another problem. i don't want to show the player names, i used hud_showtargetid "0" but i does'nt work, sv_cheats was on, hud was on, crosshair and deathnotice time was off<br>
+i read somewhere theres a comand like hud_drawnames "0" but it's unknown in console.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p28081">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2008-08-17 19:06:53</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">the real command is "hud_showtargetid 0" but it doesn't seem to work on hl2dm.<br>
+All I can think of is making a modification to the hud so that it doesn't show up... if you have no idea on how to do it let me know and I'll try....</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p29997">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2008-09-13 10:20:02</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>0nti wrote:</cite>only thing I don't know so far is how to remove all the server notifications/ dominating and all the stuff signs, pm if you know, will update later if I found out.<br>
+
+</div></blockquote>
+Try this, <br>
+cl_showpluginmessages 0<br>
+
+<blockquote><div><cite>blutonium boy wrote:</cite>hey, got another problem. i don't want to show the player names, i used hud_showtargetid "0" but i does'nt work, sv_cheats was on, hud was on, crosshair and deathnotice time was off<br>
+i read somewhere theres a comand like hud_drawnames "0" but it's unknown in console.</div></blockquote>
+
+<br>
+<br>
+Easy peasy. Use the attatched text file. These ones to be precise.
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>//"Playerid_sameteam"		"Don't shoot: %s1 Health: %s2"
+//"Playerid_diffteam"		"Shoot me: %s1"
+//"Playerid_noteam"		"%s1 Health:%s2"</code></pre></div>
+<div class="inline-attachment">
+			
+		
+		
+				<dl class="file">
+			<dt><span class="imageset icon_topic_attach"></span> <a class="postlink" href="hl2mp_english.zip">hl2mp_english.zip</a></dt>
+						<dd>(1.34 KiB) Downloaded 54 times</dd>
+		</dl>
+		
+			</div>
+
+Download and place in C:\program files\Steam\steamapps\username\half-life 2 deathmatch\hl2mp\resource <br>
+ If you want o go back to default just move the file to a different folder or delete the slashes<strong class="text-strong"> //  </strong></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p30046">
+	<div class="info">
+		<p class="poster">blutonium boy</p>
+		<p class="dt">2008-09-14 01:51:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">cool, wil try this. thanks</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p30454">
+	<div class="info">
+		<p class="poster">FENIX</p>
+		<p class="dt">2008-09-18 23:31:46</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hi, sry 4 my english. I know only russian. <img class="smilies" src="../../../images/smilies/icon_neutral.gif" width="15" height="15" alt=":|" title="Neutral"> <br>
+
+<blockquote class="uncited"><div>only thing I don't know so far is how to remove all the server notifications/ dominating </div></blockquote>
+cl_showtextmsg 0 maybe? And.. is it possible to remove plugin SOUNDS ("Headsot" etc<br>
+) and how to do this?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p30458">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2008-09-18 23:49:39</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">cl_showtextmsg 0  fixed those black messages that pop up randomly on servers (and are stored on demos) at the upper left part of your screen.<br>
+If I recall correctly, it didn't fix the dominating and stuff. You could try using r_drawvgui 0 though, that should work.<br>
+About the sounds... delete the files or move them from your folder and they shouldn't be played :]</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p30549">
+	<div class="info">
+		<p class="poster">FENIX</p>
+		<p class="dt">2008-09-20 20:36:49</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">One else good cvar for drive mode - r_drawparticles 0<br>
+<br>
+remove weapon fire effect<br>
+<br>
+Before:<br>
+<a href="http://radikal.ru/F/s48.radikal.ru/i119/0809/4c/4196a183e74d.jpg.html" class="postlink"><img src="http://s48.radikal.ru/i119/0809/4c/4196a183e74dt.jpg" class="postimage" alt="Image"></a><br>
+<br>
+After:<br>
+<a href="http://radikal.ru/F/s48.radikal.ru/i121/0809/74/ae690f9613bb.jpg.html" class="postlink"><img src="http://s48.radikal.ru/i121/0809/74/ae690f9613bbt.jpg" class="postimage" alt="Image"></a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p30550">
+	<div class="info">
+		<p class="poster">poconut</p>
+		<p class="dt">2008-09-20 20:44:07</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>0nti wrote:</cite>cl_showtextmsg 0  fixed those black messages that pop up randomly on servers (and are stored on demos) at the upper left part of your screen.
+</div></blockquote>
+Thanks again Onti <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p33403">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2008-10-31 22:38:00</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote class="uncited"><div>No one take onti's advice, its a trick!</div></blockquote>
+
+ <img class="smilies" src="../../../images/smilies/shhh.gif" width="15" height="20" alt=":shhh:" title="Be Quiet"> ( <img class="smilies" src="../../../images/smilies/icon_twisted.gif" width="15" height="15" alt=":twisted:" title="Twisted Evil">  )</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p33696">
+	<div class="info">
+		<p class="poster">Dazzle</p>
+		<p class="dt">2008-11-03 10:58:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">lol cute emo</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p36417">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2008-11-30 15:40:27</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>0nti wrote:</cite>lol they are far from useless if you applied them in the way I said.... the idea is sync'ing it and overlay it with opacity for less than a second ... like about 9 frames.<br>
+You have plenty of people using it on css movies, even at warsow I've seen it. try watching movies like "get alive 2" (css) or another short one of warsow from team logitech, just to name a few...<br>
+<br>
+I'll update the thread today with pictures of the effects...</div></blockquote>
+I'll be damned, that video's amazing!<br>
+Starts amazingly and keeps amazing all the way.<br>
+<br>
+sry for the offtopic.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p40141">
+	<div class="info">
+		<p class="poster">herbalizer</p>
+		<p class="dt">2009-01-06 09:31:18</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">&lt;3 onti!  <img class="smilies" src="../../../images/smilies/icon_redface.gif" width="15" height="15" alt=":oops:" title="Embarassed"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p65387">
+	<div class="info">
+		<p class="poster">Energy_system</p>
+		<p class="dt">2010-01-18 04:11:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hum Doesn't work if i'm watching a .dem file with shift + f2 ..<br>
+<br>
+Tried everything .. also impulse 200 but in watching mode i can't remove the weapons some one know's how?  <img class="smilies" src="../../../images/smilies/icon_neutral.gif" width="15" height="15" alt=":|" title="Neutral"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Film Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

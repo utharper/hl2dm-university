@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Server RCON question - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+
+<h1>Server RCON question</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=2443">https://forum.hl2dm.community/viewtopic.php?t=2443</a>
+-->
+
+<div class="post" id="p30252">
+	<div class="info">
+		<p class="poster">dbanimal</p>
+		<p class="dt">2008-09-16 05:25:43</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hello ladies and gents,<br>
+<br>
+Once again I am far away from home (Cleveland, OH) and was wondering how I get rcon to work?  I have my steam ID added in the mani config file on the server and was always able to rcon while playing LAN but now that I'm 700+ miles away from home, it is not working.  What needs to be done?<br>
+<br>
+Thanks in advance!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p30254">
+	<div class="info">
+		<p class="poster">&lt;kyle&gt;</p>
+		<p class="dt">2008-09-16 05:39:32</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">ma_rcon command</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p30256">
+	<div class="info">
+		<p class="poster">dbanimal</p>
+		<p class="dt">2008-09-16 05:54:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Actually, to be more specific, I have my steam ID in the adminlist within the mani config folder and the rcon_password is in my server.cfg.  Will this still work?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p30258">
+	<div class="info">
+		<p class="poster">s0iz</p>
+		<p class="dt">2008-09-16 06:05:48</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Use original RCON<br>
+<br>
+rcon_password "put password here"<br>
+rcon command<br>
+<br>
+Or ma_rcon as well.<br>
+<br>
+You need to set your privileges in that config.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p30335">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2008-09-17 03:59:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">admin with mani is tied to your steam id so yea it should still work of you are using that steam account.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p30406">
+	<div class="info">
+		<p class="poster">dbanimal</p>
+		<p class="dt">2008-09-18 08:08:29</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">OK, so in my server.cfg I have my rcon_password "password"<br>
+In my autoexec.cfg folder on my client PC I have rcon_password "password"<br>
+In my mani admin cfg folder, adminlist.txt on the server I have my steam ID.<br>
+rcon while playing via LAN always works.<br>
+Now I am 700+ miles away from home and unable to connect via LAN (obvious) and rcon does not work.  What am I missing?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p30408">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2008-09-18 08:41:19</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Variable: rcon_address<br>
+Description: Allows you to set the address of the server you wish to take remote control of.<br>
+Default: N/A<br>
+Valid values: server_ip:port<br>
+Tested: Yes<br>
+Recommendation/Notes: This can be used to admin a server without joining it by just bringing up the console. You can even use this to admin a server while you are playing in another.<br>
+<br>
+Example:<br>
+<br>
+rcon_address 73.5.250.233:27015<br>
+rcon_password mypassword<br>
+rcon mp_teamplay 1<br>
+rcon changelevel dm_lockdown<br>
+rcon exec cal2v2<br>
+<br>
+PS: not recommended to store rcon password in your autoexec, there is risk of compromise.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p30440">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2008-09-18 21:57:18</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">also the file for admins in a mani is clients.txt not adminlist.  I am about 400 miles from home this week not only does admin work on my server with mani but I can use rcon on my CAL server.  Not sure why you are having difficulty.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p30451">
+	<div class="info">
+		<p class="poster">BuckyKatt</p>
+		<p class="dt">2008-09-18 23:10:59</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Paradox wrote:</cite>also the file for admins in a mani is clients.txt not admin list.</div></blockquote>
+
+Adminlist.txt was the old way mani maintained its admin list.  I believe that you can still edit it and mani will pick up the edits and convert them into the clients.txt file it currently uses (overwriting your existing clients.txt file in the process).</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p30452">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2008-09-18 23:14:07</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">But doesn't it only work if your clients.txt file is deleted?  Otherwise I don't think it checks it.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p30461">
+	<div class="info">
+		<p class="poster">BuckyKatt</p>
+		<p class="dt">2008-09-19 00:01:37</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Keeper wrote:</cite>But doesn't it only work if your clients.txt file is deleted?  Otherwise I don't think it checks it.</div></blockquote>
+
+Could be... that's why I said "I believe".   <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=":wink:" title="Wink"> <br>
+<br>
+It has been a while since I used adminlist.txt.  I stuck with it after the change to clients.txt for a while because it had what each of the permission codes meant in it and I was too lazy to cut and paste the comments over to the clients.txt file.  <img class="smilies" src="../../../images/smilies/icon_lol.gif" width="15" height="15" alt=":lol:" title="Laughing"> Eventually the power of using clients.txt to maintain groups (both admin and immunity) won out.<br>
+<br>
+I will test it here shortly to see if you need to delete the clients.txt file before making changes to adminlist and report back.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p30478">
+	<div class="info">
+		<p class="poster">dbanimal</p>
+		<p class="dt">2008-09-19 06:55:01</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thanks everyone for the information, I'll give it a shot.  I know the adminlist.txt is being read as the server always says "autokick disabled for dbanimal".</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p30484">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2008-09-19 09:19:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I think server always says that when you do rcon commands, mani or not, listed in file or not.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p30498">
+	<div class="info">
+		<p class="poster">dbanimal</p>
+		<p class="dt">2008-09-19 21:54:59</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Well I tried it with rcon_address and I still can't use rcon.  Any other ideas?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

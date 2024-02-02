@@ -1,0 +1,272 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Course on managing and running a server? - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Site Suggestions and Questions</a></p>
+</div>
+
+<h1>Course on managing and running a server?</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=1761">https://forum.hl2dm.community/viewtopic.php?t=1761</a>
+-->
+
+<div class="post" id="p21466">
+	<div class="info">
+		<p class="poster">Strange</p>
+		<p class="dt">2008-05-18 09:09:05</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Can some one make a Course on managing and running a server.<br>
+<br>
+I am sure there are many people like me who dont have and idea how to run/manage a server, add plugins like headshots, the rcon commands, etc.<br>
+<br>
+A course like this will proberly encourage people who want to get a server but not sure about how to run it.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p21468">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2008-05-18 09:48:55</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I started it but never completed. Will try to get back on it.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p21490">
+	<div class="info">
+		<p class="poster">Jelly Fox</p>
+		<p class="dt">2008-05-18 20:28:23</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Good idea, <br>
+<br>
+I would like to know the perfect server.cfg to run on my srcds. PM me if you have one or a link etc  <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p21496">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2008-05-18 21:03:45</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">WT I might be able to help with this. I currently run 3 DM (both CAL and pub with plugins) servers out of a total of 5 I have run and also 2 TF2.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p21514">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2008-05-18 23:42:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">OK sounds good, thanks.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p21528">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2008-05-19 03:24:39</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yeah now that I think of it, it would be important having something like this.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p21716">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2008-05-21 08:28:40</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">There are so many variables for servers it is hard to define the best config teams on or off, Friendly Fire on or off, weaponstay etc.<br>
+I think most servers out there have the Bandwidth settigns wrong sure if you run it form your own PC then bandwidth is limited but when you rent you have unlimited you may as well set them as high as possible. <br>
+I restart my server once per day.<br>
+Here is my cfg may not be the best but it feels smooth whith 10 players.<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>// server name
+hostname "keefys server -- KillerCreation.co.uk"
+
+// rcon passsword
+rcon_password "dontbesilly"  //for remote control of server
+
+// Server password
+sv_password ""  //server password
+
+// bandwidth rates/settings
+sv_maxrate 100000
+sv_mincmdrate 30  //default
+sv_maxcmdrate 66
+sv_maxupdaterate 66
+sv_minupdaterate 30  //default
+sv_client_predict -1  //-1 allows clients to choose their setting
+sv_client_interpolate -1  // as above
+sv_client_interp 0.01  
+sv_client_cmdrate_difference 30
+sv_client_min_interp_ratio 1
+sv_client_max_interp_ratio 2
+decalfrequency 5
+sv_unlag 1
+sv_maxunlag 1
+
+fps_max "500"  
+
+
+sv_allowdownload "1"  //allows cliets to download maps and sounds
+sv_allowupload "1"  //for sprays i think
+sv_downloadurl ""insert URL here"  //fast downloads
+
+//Game settings
+sv_pure "0"   //pure serever  2=pure 0=Not pure 
+sv_pure_kick_clients "0"  //
+sv_hl2mp_weapon_respawn_time "20"
+mp_friendlyfire 1  
+mp_teamplay 0   
+mp_timelimit 20
+mp_flashlight 1
+mp_allowspectators 1
+sv_pausable 0
+mp_chattime "10"
+sv_cheats 0
+sv_alltalk 1
+
+sv_contact your@email
+
+//Source TV settings
+//tv_transmitall 1  //allows spectators to choose who to view in STV
+tv_enable 0
+//tv_maxclients "0"
+//tv_name "Match recorder"
+//tv_password ""
+//tv_autorecord 0
+//tv_delay 30
+</code></pre></div>
+
+Thanks to this guide on rates/network etc <a href="http://www.jason35.com/Netcode.htm" class="postlink">http://www.jason35.com/Netcode.htm</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p21739">
+	<div class="info">
+		<p class="poster">Jelly Fox</p>
+		<p class="dt">2008-05-21 17:24:22</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>keefy wrote:</cite>
+Here is my cfg may not be the best but it feels smooth whith 10 players.
+</div></blockquote>
+
+I agree mate, it's definitely one of the smoothest I've play on, had some gg's on your server <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p21740">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2008-05-21 18:08:26</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Don't forget to keep your downloads directory cleaned out on a weekly basis.  This is where the temp files get stored for sprays and things like that.  It can cause some issues the bigger the directory gets.  I also kept my log file directory cleaned out every week.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p21967">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-05-24 04:36:30</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Keeper wrote:</cite>Don't forget to keep your downloads directory cleaned out on a weekly basis.  This is where the temp files get stored for sprays and things like that.  It can cause some issues the bigger the directory gets.  I also kept my log file directory cleaned out every week.</div></blockquote>
+
+you are referring to server dirs just making clear..</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p21999">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2008-05-24 16:57:11</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">anyone know the right settings for a listening server? That could help me. <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p59874">
+	<div class="info">
+		<p class="poster">Jelly Fox</p>
+		<p class="dt">2009-09-08 04:36:20</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Bump...<br>
+<br>
+If anyone knows any good sites with guides on running a server then post em here please <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p59877">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2009-09-08 06:37:35</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">A guide for running a server will take a long time to write and would be a lot of pages.<br>
+The best way to learn is to get a server and learn.   Often, the server provider has a forums where people ask questions and get help on server setup.  <br>
+If you need help ask someone you know well that has a server.  Most of the time they are willing to help.  I learned alot from doing web searches and asking people I know that had servers.  I also learned through trial and error.<br>
+<br>
+The main things with running a server are<br>
+<br>
+If you are running mods and plugins, make sure that you dont run mods that conflict.<br>
+It is impossible to list all the mods and plugins and which ones might or might not conflict, its all trial and error.<br>
+Best advice is to install one at a time and see how it goes before you install the next<br>
+<br>
+Maps:<br>
+Make sure you dont load bad maps (ie maps that are corrupt or crash the server).<br>
+Again its impossible to list them all, again this is trial and error.<br>
+Load a few then run through them to test them.<br>
+<br>
+Configs are basically what you as the server owner wants.  There is no "good" or "bad" config, only preference.<br>
+Possible options include things like sv_pure as well as gravity, map timelimits/fraglimits etc <br>
+<br>
+I would recommend restarting the server at least once a week and clearing out the logs once a month minumum.<br>
+<br>
+I would recommend having a fast DL redirect so that people dont have to wait 10 minutes for a map to download<br>
+the file directory path of the fast DL has to match the file directory path where your maps are on the server so you need to make folder and subfolders to match so in the public directory of the fast DL you have a hl2mp folder which contains a maps folder, and whatever else needs to be downloaded to the clients.<br>
+<br>
+There is not a quick and dirty manual to learning about setting up and maintaining a server. Every game is different.   There really isnt much that can be applied across the board for every game server type out there. It takes a lot of time to get it down.  You just have to do it and learn.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p59878">
+	<div class="info">
+		<p class="poster">Ghost Dog_TSGK</p>
+		<p class="dt">2009-09-08 07:27:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Jelly Fox wrote:</cite>Bump...<br>
+<br>
+If anyone knows any good sites with guides on running a server then post em here please <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div></blockquote>
+
+<a href="http://forum.tsgk.com/index.php?f=34" class="postlink">http://forum.tsgk.com/index.php?f=34</a><br>
+<br>
+Check the stickies.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Site Suggestions and Questions</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

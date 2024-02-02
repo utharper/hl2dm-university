@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Outlined crosshair - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+
+<h1>Outlined crosshair</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=5473">https://forum.hl2dm.community/viewtopic.php?t=5473</a>
+-->
+
+<div class="post" id="p77009">
+	<div class="info">
+		<p class="poster">SND</p>
+		<p class="dt">2010-10-03 23:11:21</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Has anyone figured out how to add a outline to their xhair since after the port. I usually have a small green dot with a black outline to make it pop but since this port I have no black outline. With out it I lose track of my xhair during play.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p77013">
+	<div class="info">
+		<p class="poster">Neolinkster</p>
+		<p class="dt">2010-10-03 23:59:59</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>SND wrote:</cite>Has anyone figured out how to add a outline to their xhair since after the port. I usually have a small green dot with a black outline to make it pop but since this port I have no black outline. With out it I lose track of my xhair during play.</div></blockquote>
+
+ditto ive been trying myself, tried removing alpha channel as well with no help might have to go sprites for it wouldn't be so bad if we could at least make it solid eh? My whole clientscheme b4 the update had outlines on almost all the HUD items on the screen now it causes it to crash and the only thing i can add an outline to is the names mybe sacrifist could point us in the right direction</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p77018">
+	<div class="info">
+		<p class="poster">Sacrifist</p>
+		<p class="dt">2010-10-04 02:09:05</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Care to link me to a crosshair that has an outline? I dont have one for me to test out and mess with. I know valve started using sprites for a lot of stuff when they moved to the OB engine, so you may be on the right track. I know Tf2's crosshairs are sprites. cl_crosshair_"color" is a convar for some OB engine games as well and it doesnt seem to work for DM. Perhaps Valar should add that to the "wish/bug" list. No real reason to not be able to take avantage of that OB code and be able to change the crosshair color. I'd like to mess with an outlined custom crosshair though to see if I can get it to work.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p77024">
+	<div class="info">
+		<p class="poster">SND</p>
+		<p class="dt">2010-10-04 02:41:44</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I got my outlined xhair from Neo xhair pack on hl2dm download section.<br>
+<a href="http://www.hl2dm-university.com/crosshairs/Crosshair_Colors_Neos_HUDs_v2.zip" class="postlink">http://www.hl2dm-university.com/crossha ... UDs_v2.zip</a><br>
+<br>
+*edit <br>
+I think the colour works. I had to relaunch my hl2dm customizer ap to make it green. You should be able to change colour same way as usual.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p77028">
+	<div class="info">
+		<p class="poster">Sacrifist</p>
+		<p class="dt">2010-10-04 03:22:42</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">What happens if you create an outlined crosshair and add it into the halflife2.ttf font file? As in, a straight up outline with nothing inside the crosshair font. Is it just a clear crosshair with a black outline? Or is it the default color crosshair with the outline? If it works that way and it's a default color, why wouldnt you be able to do that with that particular ttf file and then use the clientscheme to color it?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p77038">
+	<div class="info">
+		<p class="poster">Neolinkster</p>
+		<p class="dt">2010-10-04 05:16:59</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Sacrifist wrote:</cite>What happens if you create an outlined crosshair and add it into the halflife2.ttf font file? As in, a straight up outline with nothing inside the crosshair font. Is it just a clear crosshair with a black outline? Or is it the default color crosshair with the outline? If it works that way and it's a default color, why wouldnt you be able to do that with that particular ttf file and then use the clientscheme to color it?</div></blockquote>
+
+what happens with the outline is that it makes our crosshairs solid not transparent at all with a strong contrasting black outer edge for which ever color making it easy to see and stand out you previously changed the affinity and then added the line "outline" "1" but now that doesnt seem to work it was all edited in the clientscheme which ever crosshair somebody used it would ad a thin outline to it now I can't find a way how other than to create sprites</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p77045">
+	<div class="info">
+		<p class="poster">SND</p>
+		<p class="dt">2010-10-04 05:45:47</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Sacrifist wrote:</cite>What happens if you create an outlined crosshair and add it into the halflife2.ttf font file? As in, a straight up outline with nothing inside the crosshair font. Is it just a clear crosshair with a black outline? Or is it the default color crosshair with the outline? If it works that way and it's a default color, why wouldnt you be able to do that with that particular ttf file and then use the clientscheme to color it?</div></blockquote>
+yea im not too sure that's possible over laying two font character from halflife2 type face. You either have to create a new character and tell the game to overlay over the crosshair position which I don't think can be done in client scheme it more likely done in the game code which we can't touch. Or a work around can be done such as editing the info bars and creating the outline there. Then possibly switching them on (remembering to leave the full info bars characters blank) with the colour changes in client scheme but I got a funny feeling that they are clipped and that any solid out of the clip will be cut off. Plus you got the problem with alignment which could be fixed with trial and error. Not 100% with this, yet to try it.<br>
+
+<blockquote><div><cite>Neolinkster wrote:</cite>
+I can't find a way how other than to create sprites</div></blockquote>
+On the creating sprites how would we do that and where would we place these. This is mainly because I don't see where they are used it looks like the game using the true type font for graphics and text.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p77047">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2010-10-04 05:55:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Custom Sprites get replaced with the defaults when playing on sv_pure 2 servers thats the down side to them.<br>
+If you have AG2 installed check the crosshairs folder<br>
+ag2\materials\crosshairs<br>
+<br>
+Jerk created a guide how to use them and make different crosshairs per weapon.<br>
+<a href="http://www.hl2dm-university.com/forum/phpBB3/viewtopic.php?f=6&amp;t=3282" class="postlink">http://www.hl2dm-university.com/forum/p ... f=6&amp;t=3282</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p77048">
+	<div class="info">
+		<p class="poster">CellarDweller</p>
+		<p class="dt">2010-10-04 06:12:40</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>keefy wrote:</cite>Custom Sprites get replaced with the defaults when playing on sv_pure 2 servers thats the down side to them.<br>
+If you have AG2 installed check the crosshairs folder<br>
+ag2\materials\crosshairs<br>
+<br>
+Jerk created a guide how to use them and make different crosshairs per weapon.<br>
+<a href="http://www.hl2dm-university.com/forum/phpBB3/viewtopic.php?f=6&amp;t=3282" class="postlink">http://www.hl2dm-university.com/forum/p ... f=6&amp;t=3282</a></div></blockquote>
+
+you're saying there can be no custom crosshair on pure 2 servers?   <img class="smilies" src="../../../images/smilies/icon_eek.gif" width="15" height="15" alt=":shock:" title="Shocked"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p77053">
+	<div class="info">
+		<p class="poster">Sacrifist</p>
+		<p class="dt">2010-10-04 07:27:31</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>CellarDweller wrote:</cite><blockquote><div><cite>keefy wrote:</cite>Custom Sprites get replaced with the defaults when playing on sv_pure 2 servers thats the down side to them.<br>
+If you have AG2 installed check the crosshairs folder<br>
+ag2\materials\crosshairs<br>
+<br>
+Jerk created a guide how to use them and make different crosshairs per weapon.<br>
+<a href="http://www.hl2dm-university.com/forum/phpBB3/viewtopic.php?f=6&amp;t=3282" class="postlink">http://www.hl2dm-university.com/forum/p ... f=6&amp;t=3282</a></div></blockquote>
+
+you're saying there can be no custom crosshair on pure 2 servers?   <img class="smilies" src="../../../images/smilies/icon_eek.gif" width="15" height="15" alt=":shock:" title="Shocked"></div></blockquote>
+No he is not saying that. He is saying there cant be a custom sprite crosshair on a pure2 server because sprites are placed in the materials folder and is considered a custom file. There is no doubt that an edited Half-life.ttf font file will work as Im using one. I wasnt asking about having 2 fonts overlaying each other. Im just curious what happens if you use a crosshair font that is just an outline with nothing in the center. Does it show up with the default white/yellow color and the outline that was made via the font sheet? Im just curious.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p77058">
+	<div class="info">
+		<p class="poster">Neolinkster</p>
+		<p class="dt">2010-10-04 08:23:13</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">not sure how making an outline of a xhair will help any it will still be losable since it will be the same color and just as transparent<br>
+<span style="font-size:150%;line-height:116%"><span style="color:#804000">Before</span></span><br>
+<img src="https://dl.dropbox.com/u/5896411/dm_killbox_kbh_2p.jpg" class="postimage" alt="Image"><br>
+<img src="https://dl.dropbox.com/u/5896411/dm_biohazard_cal0000.jpg" class="postimage" alt="Image"><br>
+<span style="color:#804000"><span style="font-size:150%;line-height:116%">After</span></span><br>
+<img src="https://dl.dropbox.com/u/5896411/dm_lockdown0004.jpg" class="postimage" alt="Image"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p77063">
+	<div class="info">
+		<p class="poster">Sacrifist</p>
+		<p class="dt">2010-10-04 08:53:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">You are right Neo. Im trying to get a grasp on all the options here and Im coming up empty. Perhaps someone with OB coding experience would be able to give a clear answer on if it can be done.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

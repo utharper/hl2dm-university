@@ -1,0 +1,399 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Strange error in my map, any help appreciated - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>Strange error in my map, any help appreciated</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=2440">https://forum.hl2dm.community/viewtopic.php?t=2440</a>
+-->
+
+<div class="post" id="p30233">
+	<div class="info">
+		<p class="poster">Talented</p>
+		<p class="dt">2008-09-16 03:22:26</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">OK, so I have nearly got my first proper map to its beta stage (so close now^), but I'm having a really strange error with the map when testing it......all my entities and func's work perfectly well for a few minutes, then, for some reason the func_doors in my map stop working, and players are unable to pick up any of the weapons and health in the map, they just behave like objects. <br>
+<br>
+When running my map on a self created server i usually get a crash shortly after this happens, with the error "ED_Alloc: No free edicts", though I have read in other help forums that this means there are too many entities....but in the compiling text it says i have used far less than the maximum number of entities allowed. (also when running the map on a normal server there are no crashing issues , server or user side)<br>
+<br>
+I have done the usual forum scanning to find any similar probs but so far I cant find anything, i just wondered if any of the experienced mappers here may have encountered anythin similar, or have a inkling as to what is causing this....<br>
+<br>
+as always, any help is much appreciated, and if anyone wanting to help feels they would need a look at the map themselves, that is better at directly analysing map errors via console or w/e then I'll happily provide it.<br>
+<br>
+Thanks,<br>
+<br>
+Talented</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p30235">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2008-09-16 03:28:27</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I am not a mapper, so I am not really qualified to comment, but I did have someone tell me something about maximum entities once, something about it being fine when editing the map, but when you run the map you can go over at some point during the round because the items that are repawning add to the count...or something like that?<br>
+<br>
+Anyone else know more about how this works?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p30238">
+	<div class="info">
+		<p class="poster">Talented</p>
+		<p class="dt">2008-09-16 03:40:14</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">thanks for the swift response WT, and yes another mapper i know suggested it could be something to do with max entities, but he couldn't elaborate more, and I'm very much a noob mapper atm so its a bit beyond my knowledge aswell.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p30241">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-09-16 04:01:57</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">post the compile log and a link to DL the vmf</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p30286">
+	<div class="info">
+		<p class="poster">Talented</p>
+		<p class="dt">2008-09-16 15:40:59</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">OK, this is the compile log, I compiled in fastvis because it takes about 6-10hours to compile in normalvis, so I hope this is alright.<br>
+
+<blockquote class="uncited"><div>
+** Executing...<br>
+** Command: "c:\program files\valve\steam\steamapps\STEAMNAME\sourcesdk\bin\ep1\bin\vbsp.exe"<br>
+** Parameters: -game "c:\program files\valve\steam\steamapps\STEAMNAME\half-life 2 deathmatch\hl2mp" "C:\Program Files\Valve\Steam\SteamApps\STEAMNAME\sourcesdk_content\hl2mp\mapsrc\dm_xerces_m22"<br>
+<br>
+Valve Software - vbsp.exe (Dec 11 2006)<br>
+2 threads<br>
+materialPath: c:\program files\valve\steam\steamapps\STEAMNAME\half-life 2 deathmatch\hl2mp\materials<br>
+Loading C:\Program Files\Valve\Steam\SteamApps\STEAMNAME\sourcesdk_content\hl2mp\mapsrc\dm_xerces_m22.vmf<br>
+material "bro_21-icon" not found<br>
+Material not found!: /BRO_21-ICON<br>
+fixing up env_cubemap materials on brush sides...<br>
+ProcessBlock_Thread: 0...1...2...3...4...5...Brush 295748: WARNING, microbrush<br>
+Brush 295714: WARNING, microbrush<br>
+6...7...8...9...10 (2)<br>
+<br>
+FindPortalSide: Couldn't find a good match for which brush to assign to a portal near (295.1, -223.8, 384.0)<br>
+Leaf 0 contents: CONTENTS_SOLID <br>
+Leaf 1 contents: <br>
+viscontents (node 0 contents ^ node 1 contents): CONTENTS_SOLID <br>
+This means that none of the brushes in leaf 0 or 1 that touches the portal has CONTENTS_SOLID <br>
+Check for a huge brush enclosing the coordinates above that has contents CONTENTS_SOLID <br>
+Candidate brush IDs: Brush 295714: <br>
+<br>
+ProcessBlock_Thread: 0...1...2...3...4...5...Brush 295748: WARNING, microbrush<br>
+Brush 295714: WARNING, microbrush<br>
+6...7...8...9...10 (1)<br>
+<br>
+FindPortalSide: Couldn't find a good match for which brush to assign to a portal near (295.1, -223.8, 384.0)<br>
+Leaf 0 contents: CONTENTS_SOLID <br>
+Leaf 1 contents: <br>
+viscontents (node 0 contents ^ node 1 contents): CONTENTS_SOLID <br>
+This means that none of the brushes in leaf 0 or 1 that touches the portal has CONTENTS_SOLID <br>
+Check for a huge brush enclosing the coordinates above that has contents CONTENTS_SOLID <br>
+Candidate brush IDs: Brush 295714: <br>
+<br>
+Processing areas...done (0)<br>
+Building Faces...error: material STONE/MARBLEFLOOR001B doesn't have a $bottommaterial<br>
+error: material STONE/MARBLEFLOOR001B doesn't have a $bottommaterial<br>
+error: material STONE/MARBLEFLOOR001B doesn't have a $bottommaterial<br>
+error: material STONE/MARBLEFLOOR001B doesn't have a $bottommaterial<br>
+error: material STONE/MARBLEFLOOR001B doesn't have a $bottommaterial<br>
+error: material STONE/MARBLEFLOOR001B doesn't have a $bottommaterial<br>
+error: material CUSTOM/TALENTEDWOODWALLPANEL4 doesn't have a $bottommaterial<br>
+error: material CUSTOM/TALENTEDWOODWALLPANEL4 doesn't have a $bottommaterial<br>
+error: material CUSTOM/TALENTEDWOODWALLPANEL4 doesn't have a $bottommaterial<br>
+done (1)<br>
+Chop Details...done (0)<br>
+Find Visible Detail Sides...<br>
+Merged 742 detail faces...done (0)<br>
+Merging details...done (1)<br>
+FixTjuncs...<br>
+PruneNodes...<br>
+WriteBSP...<br>
+done (1)<br>
+writing C:\Program Files\Valve\Steam\SteamApps\STEAMNAME\sourcesdk_content\hl2mp\mapsrc\dm_xerces_m22.prt...done (1)<br>
+Creating default cubemaps for env_cubemap using skybox materials:<br>
+skybox/sky_day03_06*.vmt<br>
+Run buildcubemaps in the engine to get the correct cube maps.<br>
+<br>
+No such variable "$hdrbasetexture" for material "skybox/sky_day03_06rt"<br>
+Can't load skybox file skybox/sky_day03_06 to build the default cubemap!<br>
+Finding displacement neighbors...<br>
+Finding lightmap sample positions...<br>
+Displacement Alpha : 0...1...2...3...4...5...6...7...8...9...10<br>
+Building Physics collision data...<br>
+done (1) (1090962 bytes)<br>
+Static prop models/props_c17/light_cagelight02_off.mdl outside the map (303.00, 816.00, 512.00)<br>
+Static prop models/props_c17/light_cagelight02_off.mdl outside the map (-49.00, 592.00, 512.00)<br>
+Static prop models/props_interiors/lightbulb01a.mdl outside the map (129.00, -653.00, 0.00)<br>
+Static prop models/props_c17/light_cagelight02_off.mdl outside the map (305.00, 592.00, 512.00)<br>
+Error! prop_static using model "models/props_c17/furnituretable001a.mdl", which must be used on a dynamic entity (i.e. prop_physics). Deleted.<br>
+Error loading studio model "models/props_c17/furnituretable001a.mdl"!<br>
+Static prop models/props_c17/light_domelight02_on.mdl outside the map (-834.67, -1.00, 319.18)<br>
+Placing detail props : 0...1...2...3...4...5...6...7...8...9...10<br>
+Compacting texture/material tables...<br>
+Reduced 756 texinfos to 511<br>
+Reduced 133 texdatas to 90 (4702 bytes to 2985)<br>
+Writing C:\Program Files\Valve\Steam\SteamApps\STEAMNAME\sourcesdk_content\hl2mp\mapsrc\dm_xerces_m22.bsp<br>
+11 seconds elapsed<br>
+<br>
+** Executing...<br>
+** Command: "c:\program files\valve\steam\steamapps\STEAMNAME\sourcesdk\bin\ep1\bin\vvis.exe"<br>
+** Parameters: -game "c:\program files\valve\steam\steamapps\STEAMNAME\half-life 2 deathmatch\hl2mp" -fast "C:\Program Files\Valve\Steam\SteamApps\STEAMNAME\sourcesdk_content\hl2mp\mapsrc\dm_xerces_m22"<br>
+<br>
+Valve Software - vvis.exe (Nov  8 2007)<br>
+fastvis = true<br>
+2 threads<br>
+reading c:\program files\valve\steam\steamapps\STEAMNAME\sourcesdk_content\hl2mp\mapsrc\dm_xerces_m22.bsp<br>
+reading c:\program files\valve\steam\steamapps\STEAMNAME\sourcesdk_content\hl2mp\mapsrc\dm_xerces_m22.prt<br>
+4067 portalclusters<br>
+13529 numportals<br>
+BasePortalVis:       0...1...2...3...4...5...6...7...8...9...10 (26)<br>
+WARNING: Cluster portals saw into cluster<br>
+WARNING: Cluster portals saw into cluster<br>
+WARNING: Cluster portals saw into cluster<br>
+WARNING: Cluster portals saw into cluster<br>
+WARNING: Cluster portals saw into cluster<br>
+WARNING: Cluster portals saw into cluster<br>
+WARNING: Cluster portals saw into cluster<br>
+WARNING: Cluster portals saw into cluster<br>
+WARNING: Cluster portals saw into cluster<br>
+WARNING: Cluster portals saw into cluster<br>
+WARNING: Cluster portals saw into cluster<br>
+WARNING: Cluster portals saw into cluster<br>
+WARNING: Cluster portals saw into cluster<br>
+WARNING: Cluster portals saw into cluster<br>
+WARNING: Cluster portals saw into cluster<br>
+WARNING: Cluster portals saw into cluster<br>
+WARNING: Cluster portals saw into cluster<br>
+Optimized: 925561 visible clusters (0.00%)<br>
+Total clusters visible: 11473087<br>
+Average clusters visible: 2821<br>
+Building PAS...<br>
+Average clusters audible: 4054<br>
+visdatasize:3959977  compressed from 4164608<br>
+writing c:\program files\valve\steam\steamapps\STEAMNAME\sourcesdk_content\hl2mp\mapsrc\dm_xerces_m22.bsp<br>
+30 seconds elapsed<br>
+<br>
+** Executing...<br>
+** Command: "c:\program files\valve\steam\steamapps\STEAMNAME\sourcesdk\bin\ep1\bin\vrad.exe"<br>
+** Parameters:  -game "c:\program files\valve\steam\steamapps\STEAMNAME\half-life 2 deathmatch\hl2mp" "C:\Program Files\Valve\Steam\SteamApps\STEAMNAME\sourcesdk_content\hl2mp\mapsrc\dm_xerces_m22"<br>
+<br>
+Valve Software - vrad.exe SSE (Nov  8 2007)<br>
+----- Radiosity Simulator ----<br>
+2 threads<br>
+[Reading texlights from 'lights.rad']<br>
+[45 texlights parsed from 'lights.rad']<br>
+<br>
+Loading c:\program files\valve\steam\steamapps\STEAMNAME\sourcesdk_content\hl2mp\mapsrc\dm_xerces_m22.bsp<br>
+16797 faces<br>
+39 degenerate faces<br>
+324122 square feet [46673624.00 square inches]<br>
+22 displacements<br>
+2275 square feet [327712.16 square inches]<br>
+16758 patches before subdivision<br>
+zero area child patch<br>
+zero area child patch<br>
+65582 patches after subdivision<br>
+light has _fifty_percent_distance of 300.000000 but no zero_percent_distance<br>
+light has _fifty_percent_distance of 600.000000 but no zero_percent_distance<br>
+light has _fifty_percent_distance of 500.000000 but no zero_percent_distance<br>
+light has _fifty_percent_distance of 500.000000 but no zero_percent_distance<br>
+light has _fifty_percent_distance of 500.000000 but no zero_percent_distance<br>
+light has _fifty_percent_distance of 500.000000 but no zero_percent_distance<br>
+light has _fifty_percent_distance of 500.000000 but no zero_percent_distance<br>
+light has _fifty_percent_distance of 500.000000 but no zero_percent_distance<br>
+light has _fifty_percent_distance of 300.000000 but no zero_percent_distance<br>
+light has _fifty_percent_distance of 500.000000 but no zero_percent_distance<br>
+light has _fifty_percent_distance of 500.000000 but no zero_percent_distance<br>
+light has _fifty_percent_distance of 500.000000 but no zero_percent_distance<br>
+light has _fifty_percent_distance of 500.000000 but no zero_percent_distance<br>
+light has _fifty_percent_distance of 700.000000 but no zero_percent_distance<br>
+light has _fifty_percent_distance of 500.000000 but no zero_percent_distance<br>
+light has _fifty_percent_distance of 200.000000 but no zero_percent_distance<br>
+light has _fifty_percent_distance of 200.000000 but no zero_percent_distance<br>
+light has _fifty_percent_distance of 200.000000 but no zero_percent_distance<br>
+light has _fifty_percent_distance of 500.000000 but no zero_percent_distance<br>
+light has _fifty_percent_distance of 500.000000 but no zero_percent_distance<br>
+light has _fifty_percent_distance of 500.000000 but no zero_percent_distance<br>
+light has _fifty_percent_distance of 500.000000 but no zero_percent_distance<br>
+light has _fifty_percent_distance of 300.000000 but no zero_percent_distance<br>
+light has _fifty_percent_distance of 500.000000 but no zero_percent_distance<br>
+light has _fifty_percent_distance of 500.000000 but no zero_percent_distance<br>
+light has _fifty_percent_distance of 200.000000 but no zero_percent_distance<br>
+light has _fifty_percent_distance of 800.000000 but no zero_percent_distance<br>
+light has _fifty_percent_distance of 500.000000 but no zero_percent_distance<br>
+light has _fifty_percent_distance of 800.000000 but no zero_percent_distance<br>
+light has _fifty_percent_distance of 800.000000 but no zero_percent_distance<br>
+light has _fifty_percent_distance of 500.000000 but no zero_percent_distance<br>
+light has _fifty_percent_distance of 500.000000 but no zero_percent_distance<br>
+53 direct lights<br>
+BuildFacelights:     0...1...2...3...4...5...6...7...8...9...10 (121)<br>
+BuildVisLeafs:       0...1...2...3...4...5...6...7...8...9...10 (198)<br>
+transfers 14110590, max 2351<br>
+transfer lists: 107.7 megs<br>
+GatherLight:         0...1...2...3...4...5...6...7...8...9...10 (0)<br>
+	Bounce #1 added RGB(583184, 425791, 180670)<br>
+GatherLight:         0...1...2...3...4...5...6...7...8...9...10 (1)<br>
+	Bounce #2 added RGB(49005, 29827, 12033)<br>
+GatherLight:         0...1...2...3...4...5...6...7...8...9...10 (0)<br>
+	Bounce #3 added RGB(11857, 8694, 3026)<br>
+GatherLight:         0...1...2...3...4...5...6...7...8...9...10 (1)<br>
+	Bounce #4 added RGB(2638, 2048, 735)<br>
+GatherLight:         0...1...2...3...4...5...6...7...8...9...10 (0)<br>
+	Bounce #5 added RGB(1084, 816, 255)<br>
+GatherLight:         0...1...2...3...4...5...6...7...8...9...10 (0)<br>
+	Bounce #6 added RGB(311, 235, 76)<br>
+GatherLight:         0...1...2...3...4...5...6...7...8...9...10 (1)<br>
+	Bounce #7 added RGB(140, 98, 28)<br>
+GatherLight:         0...1...2...3...4...5...6...7...8...9...10 (0)<br>
+	Bounce #8 added RGB(43, 30, 9)<br>
+GatherLight:         0...1...2...3...4...5...6...7...8...9...10 (1)<br>
+	Bounce #9 added RGB(20, 13, 4)<br>
+GatherLight:         0...1...2...3...4...5...6...7...8...9...10 (0)<br>
+	Bounce #10 added RGB(6, 4, 1)<br>
+GatherLight:         0...1...2...3...4...5...6...7...8...9...10 (1)<br>
+	Bounce #11 added RGB(3, 2, 1)<br>
+GatherLight:         0...1...2...3...4...5...6...7...8...9...10 (0)<br>
+	Bounce #12 added RGB(1, 1, 0)<br>
+Build Patch/Sample Hash Table(s).....Done&lt;0.0427 sec&gt;<br>
+FinalLightFace:      0...1...2...3...4...5...6...7...8...9...10 (2)<br>
+FinalLightFace Done<br>
+Computing detail prop lighting : 0...1...2...3...4...5...6...7...8...9...10<br>
+0 of 0 (0% of) surface lights went in leaf ambient cubes.<br>
+ComputePerLeafAmbientLighting: 0...1...2...3...4...5...6...7...8...9...10<br>
+Ready to Finish<br>
+<br>
+Object names       Objects/Maxobjs  Memory / Maxmem  Fullness <br>
+------------       ---------------  ---------------  -------- <br>
+models                  19/1024          912/49152    ( 1.9%) <br>
+brushes               3181/8192        38172/98304    (38.8%) <br>
+brushsides           26334/65536      210672/524288   (40.2%) <br>
+planes               20372/65536      407440/1310720  (31.1%) <br>
+vertexes             29473/65536      353676/786432   (45.0%) <br>
+nodes                 8284/65536      265088/2097152  (12.6%) <br>
+texinfos               511/12288       36792/884736   ( 4.2%) <br>
+texdata                 90/2048         2880/65536    ( 4.4%) <br>
+dispinfos               22/0            3872/0        ( 0.0%) <br>
+disp_verts             550/0           11000/0        ( 0.0%) <br>
+disp_tris              704/0            1408/0        ( 0.0%) <br>
+disp_lmsamples       13472/0           13472/0        ( 0.0%) <br>
+faces                16797/65536      940632/3670016  (25.6%) <br>
+hdr faces                0/65536           0/3670016  ( 0.0%) <br>
+origfaces            10804/65536      605024/3670016  (16.5%) <br>
+leaves                8304/65536      265728/2097152  (12.7%) <br>
+leaffaces            19661/65536       39322/131072   (30.0%) <br>
+leafbrushes           8266/65536       16532/131072   (12.6%) <br>
+areas                    2/256            16/2048     ( 0.8%) <br>
+surfedges           122160/512000     488640/2048000  (23.9%) <br>
+edges                68219/256000     272876/1024000  (26.6%) <br>
+LDR worldlights         53/8192         4664/720896   ( 0.6%) <br>
+HDR worldlights          0/8192            0/720896   ( 0.0%) <br>
+waterstrips           1591/32768       15910/327680   ( 4.9%) <br>
+waterverts               0/65536           0/786432   ( 0.0%) <br>
+waterindices         27672/65536       55344/131072   (42.2%) <br>
+cubemapsamples           6/1024           96/16384    ( 0.6%) <br>
+overlays                 0/512             0/180224   ( 0.0%) <br>
+LDR lightdata         [variable]     1999284/0        ( 0.0%) <br>
+HDR lightdata         [variable]           0/0        ( 0.0%) <br>
+visdata               [variable]     3959977/16777216 (23.6%) <br>
+entdata               [variable]       47999/393216   (12.2%) <br>
+LDR leaf ambient      8304/65536      199296/1572864  (12.7%) <br>
+HDR leaf ambient         0/65536           0/1572864  ( 0.0%) <br>
+occluders                0/0               0/0        ( 0.0%) <br>
+occluder polygons        0/0               0/0        ( 0.0%) <br>
+occluder vert ind        0/0               0/0        ( 0.0%) <br>
+detail props          [variable]           1/8868     ( 0.0%) <br>
+dtl prp lght          [variable]           1/74       ( 1.4%) <br>
+HDR dtl prp lght      [variable]           1/4        (25.0%) <br>
+static props          [variable]           1/7666     ( 0.0%) <br>
+pakfile               [variable]       85834/0        ( 0.0%) <br>
+<br>
+Level flags = 0<br>
+<br>
+Win32 Specific Data:<br>
+physics               [variable]     1090962/4194304  (26.0%) <br>
+==== Total Win32 BSP file data space used: 11433524 bytes ====<br>
+<br>
+Total triangle count: 46018<br>
+Writing c:\program files\valve\steam\steamapps\STEAMNAME\sourcesdk_content\hl2mp\mapsrc\dm_xerces_m22.bsp<br>
+5 minutes, 30 seconds elapsed<br>
+<br>
+** Executing...<br>
+** Command: Copy File<br>
+** Parameters: "C:\Program Files\Valve\Steam\SteamApps\STEAMNAME\sourcesdk_content\hl2mp\mapsrc\dm_xerces_m22.bsp" "c:\program files\valve\steam\steamapps\STEAMNAME\half-life 2 deathmatch\hl2mp\maps\dm_xerces_m22.bsp"
+</div></blockquote>
+
+Here's the link to the .vmf<br>
+<a href="http://files.filefront.com/dm+xerces+m22vmf/;11806893;/fileinfo.html" class="postlink">http://files.filefront.com/dm+xerces+m2 ... einfo.html</a><br>
+<br>
+and here's a link to my custom textures so the whole map isnt just a mass of pink and black squares ^(as pretty much every texture is custom)<br>
+<a href="http://files.filefront.com/My+Custom+texturesrar/;11806960;/fileinfo.html" class="postlink">http://files.filefront.com/My+Custom+te ... einfo.html</a><br>
+<br>
+if there's nething else you need then just ask. also, appologies if my mapping is sloppy by your standards!<br>
+<br>
+Cheers.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p30289">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-09-16 16:13:22</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">material "bro_21-icon" not found - missing a custom texture<br>
+Material not found!: /BRO_21-ICON - missing a custom texture<br>
+ProcessBlock_Thread: 0...1...2...3...4...5...Brush 295748: WARNING, microbrush<br>
+Brush 295714: WARNING, microbrush<br>
+then it proceeds to show you all your "CONTENTS_SOLID" brushes. this means you have a leak. a major one and definitly a brush mess.<br>
+further down the log you see models sticking outside the map borders.<br>
+and then you have 13529 numportals. you can't have that in a map. this is way too much than what you should have. for reference - 3000 numportals is too much.<br>
+then this:  "WARNING: Cluster portals saw into cluster" this means you got illegal brushes or brushes colliding with other brushes. bad.<br>
+<br>
+pretty much every aspect of your map has errors in it. <br>
+<br>
+It always comes to mind when i see new mappers making huge, overkill detailed maps - wouldn't it make more sense to start smaller? and learn while working ?<br>
+<br>
+ill look at the vmf.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p30293">
+	<div class="info">
+		<p class="poster">Talented</p>
+		<p class="dt">2008-09-16 18:16:43</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Ahhhh, damn  <img class="smilies" src="../../../images/smilies/icon_confused.gif" width="15" height="15" alt=":?" title="Confused"> well I will have to have a really hard look at the map n try to fix these errors. And ofc everything starts small, i didnt set out to make an overly complicated map, but I got my basic theme idea and ran with it, thought, 'it'd be nice if my map had this' , found a tut, made it, added it, etcetc and it soon became quite complicated, BUT I think my map has potential with this theme etc so I'll attempt to fix the problems rather than start from scratch, atleast to begin with <img class="smilies" src="../../../images/smilies/icon_confused.gif" width="15" height="15" alt=":?" title="Confused"> ^</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

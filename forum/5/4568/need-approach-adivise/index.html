@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Need approach adivise - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>Need approach adivise</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=4568">https://forum.hl2dm.community/viewtopic.php?t=4568</a>
+-->
+
+<div class="post" id="p62131">
+	<div class="info">
+		<p class="poster">javierdl</p>
+		<p class="dt">2009-10-29 06:27:07</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Correction: Need approach <strong class="text-strong">ADVICE</strong><br>
+<br>
+<img src="http://z7qbsg.bay.livefilestore.com/y1pZm1cFmDXsiKaqyoWjgaYKFhZNRwN_8Laa9CfDe7YBrAFfdE2g7mczZAqXYiKjWlZfYkiHD-vWe_kUqsb00i2_keZLoFml78J/burger.png" class="postimage" alt="Image"><br>
+3D Application: <img src="http://www.foro3d.com/images/smilies/iconomilies_soft/Suites3d/blender.png" class="postimage" alt="Image"> Blender<br>
+<br>
+I am making a burger just to learn more about making props for HL2. The main thing I am working on now is on the use of Normal Maps. Reason why I need to make as many details as possible on this model, as it is the one I'll use for the higher res, and details. <br>
+As far as I understand this model has to be one piece before I can use it to transfer its details to the lower res. And as you can see it's far from being one piece now. I thought I could relay on using Booleans to merge all these pieces together, but the results are not very good really (see image below):<br>
+<br>
+<img src="http://z7qbsg.bay.livefilestore.com/y1psO2B_vBZ93jJXu3Oj-mBnoe0hjWXM292bj4sg0YpVM_ScNgv5h3E0VNoUY4pcJ5Re4CDxQjAkE_3EuCJ_Eg3Tw/booleanintersection.png" class="postimage" alt="Image"><br>
+<br>
+As you can see many faces were erased in the process. <br>
+<br>
+Any suggestions?<br>
+I don't need to be explained in details at this point, I'm just looking for advice on what approach to take, so rather a general suggestion would do.<br>
+<br>
+Thanks guys,<br>
+<br>
+JDL</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p62133">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2009-10-29 10:08:07</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Join your individual meshes into one with ctrl+j</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p62146">
+	<div class="info">
+		<p class="poster">javierdl</p>
+		<p class="dt">2009-10-29 19:39:43</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Boshed to the rescue!<br>
+<br>
+That's a new one for me <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"><br>
+Thank you Boshed.<br>
+<br>
+Unfortunately this tool is not working on meshes with w/MultiRes though... do you happen to know how to make it a regular mesh w/out MultiRes, but preserving the added subdivisions ?<br>
+I already tried "Convert Object Type..." (Alt c) but it doesn't really do a thing in the end.<br>
+<br>
+Any ideas?<br>
+<br>
+Thank you in advance,<br>
+<br>
+JDL<br>
+<img src="http://www.foro3d.com/images/smilies/iconomilies_soft/Suites3d/blender.png" class="postimage" alt="Image"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p62177">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2009-10-30 05:01:55</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Skaruts get in here! <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p62178">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2009-10-30 05:14:03</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hmmm. I never worked with multires so far. I usualy use subsurfs, cuz I never got to sculpt anything yet.<br>
+But I'll take a look at this when I have a little more time.<br>
+<br>
+EDIT: did you "apply" the multires to the model? Cuz you must apply multires before being able to join meshes.<br>
+<br>
+EDIT2: and yes, everything must be in that same model. No matter how many parts it has, it has to be one single mesh in the end. You can leave doubled vertices detached if you like (that's how it's done for animating).<br>
+<br>
+Just a warning tho, multires (and subsurfs) can take the number of polygons (faces) on a simple bread model up to even higher that a gun model in a close up.<br>
+Remember that a good UV and normal mapping work can make a low poly model look as good as a high poly one.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p62223">
+	<div class="info">
+		<p class="poster">javierdl</p>
+		<p class="dt">2009-11-01 07:32:14</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thank you kindly for trying guys <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"><br>
+It's ok now. I simply decided to do the lettuce again, this time with a manually subdivided mesh plane. This one I can join together with the rest of the parts without a problem.<br>
+
+<blockquote class="uncited"><div>Just a warning tho, multires (and subsurfs) can take the number of polygons...</div></blockquote>
+Thanks for the warning. I know. That's why this one will be the one providing the details when I use it for creating the "normal map" <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=";)" title="Wink"><br>
+<br>
+JDL</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p62224">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2009-11-01 07:49:50</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>javierdl wrote:</cite>Thanks for the warning. I know. That's why this one will be the one providing the details when I use it for creating the "normal map" <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=";)" title="Wink"><br>
+JDL</div></blockquote>
+aaah. Then that's more than ok to do it that way. The more detail, the better, I guess. (Boshed is the one with expertise on those matters  <img class="smilies" src="../../../images/smilies/icon_mrgreen.gif" width="15" height="15" alt=":mrgreen:" title="Mr. Green">)</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

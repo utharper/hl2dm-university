@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Net settings (getting them right) - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+
+<h1>Net settings (getting them right)</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=1000">https://forum.hl2dm.community/viewtopic.php?t=1000</a>
+-->
+
+<div class="post" id="p8963">
+	<div class="info">
+		<p class="poster">SND</p>
+		<p class="dt">2008-02-15 02:37:55</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Been looking for some help in getting my net settings right. I got at least some people i play against saying i lag when my ping is like 30 and im getting zero choke I thought they were just complaining lol . Then one of my clan m8 was spectating me and said that it was jumpy and recently i have been playing badly compared to my usual self. So a friend of mine gave me a link to a site to get my net settings right. So he gave me a site to explain it to me and it help but i not sure that the Net_graph 2 look ok here a bit i copied from <a href="http://ucguides.savagehelp.com/ConnectionFAQ/Halflife.htm" class="postlink">http://ucguides.savagehelp.com/Connecti ... lflife.htm</a><br>
+<br>
+fps_max While this setting will no longer improve your connection it does help stop the confusion between connection lag and graphics related lag when, for example, jumping from 85 FPS to 23 FPS. Set this by monitoring your FPS while playing using net_graph 3 or cl_showFPS "1", then set fps_max to your average steady FPS  <br>
+ <br>
+ <br>
+rate This controls network packets so that your connection bandwidth does not get saturated, setting is for maximum bytes per second. Note that with 1.1.04 or above and a Stac/Microsoft compressed connection you can no longer use higher rates than normal for your connection type, connection tweak tables have been adjusted to reflect that. See net_graph for a guide on how to adjust this setting or try the suggested settings that appear at the foot of this page. <br>
+ <br>
+ <br>
+cl_cmdrate<br>
+ In HalfLife patches prior to 1.1.0.0 your FPS governed how many gameworld updates you sent to the server, this is no longer the case in 1.1.0.0 and above. Similar to cl_maxpackets in Quake3 this setting restricts the number of packets being sent to the server by your client and can be used to help connection bandwidth related problems for those with low upload bandwidth. Note that 56K modems, while downloading at up to 56000 BPS, only upload at 33600 BPS or less. You may wish to experiment with a higher or lower setting based on your connection type, for example 40 or higher for a digital connection.<br>
+<br>
+Further tweaking, try to set cl_cmdrate to equal your average framerate or your fps_max setting or a divisor of it without saturating your upstream bandwidth. Example, if you are currently at fps_max "76" then try a cl_cmdrate value of 38 or 76 for a digital connection. <br>
+ <br>
+ <br>
+cl_updaterate<br>
+ Similar to snaps setting in Quake3, the cl_updaterate setting is used to calculate how many gameworld updates you receive from the server. See net_graph for a guide on how to adjust this setting. <br>
+ <br>
+ <br>
+cl_lc<br>
+ To use this setting the server and modification must support lag compensation. On servers that have lag compensation enabled this setting toggles its use of lag compensation for the client, 1 to enable, 0 to disable. When set to 1 the server will take into account your ping when deciding if you hit your target or not. If you have a very low ping or wish the older style of play then set this to 0. <br>
+ <br>
+ <br>
+cl_lw This setting determines how weapons fire is controlled, for example with regard to sounds and animation. When set to 0 the client will perform as it used to prior to 1.1.0.0, the server returns/confirms weapon related sounds and animation fire information. <br>
+<br>
+If you set this to 1 the clients weapon sound and animation will all happen client side as soon as you press fire. It should be noted that when set to 1 the animations and marks displayed are determined client side, as a result they may not be an accurate representation of where you are actually hitting.<br>
+<br>
+It should be noted that the server always determines if you have hit your target or not, only weapon related sounds and animation are controlled by cl_lw.<br>
+<br>
+You may find it useful to bind different settings of cl_lw and cl_lc for different weapons. It is very important to note that if you use a setting of 0 for cl_lw that the cl_lc setting should be set to 0. While cl_lc is supposed to be ignored when cl_lw is set to 0, some users have reported that manually setting to cl_lc to 0 was needed. <br>
+ <br>
+ <br>
+cl_lb<br>
+ Very similar to cl_lw, however this setting determines how blood and damage trails are displayed. When set to 0 the client will perform as it used to prior to 1.1.0.0, It should be noted that when set to 1 the animations and marks displayed are determined client side, as a result they may not be an accurate representation of where you are actually hitting.  <br>
+ <br>
+ <br>
+pushlatency You should no longer need to adjust this setting and our suggestion is to leave it at default. This affects the client prediction code, depending on the modification 0 or -1000 is default. When using 1.1.0.0 or above default is the suggested setting if you have set cl_lc and/or cl_lw to 1. <br>
+<br>
+To reiterate, altering pushlatency from the default is not recommended if you are taking advantage of lag compensation commands mentioned above, if however you do wish to alter pushlatency then there are two options. Set it to -1000 and let HalfLife do full prediction as it will ignore anything that is higher than your current latency or try setting your pushlatency to a negative value that is around 50% to 100% of your average ping. Example if you are pinging 200 on average then try a setting of -100. If you are unsure leave this at its default value. <br>
+ <br>
+ <br>
+net_graph<br>
+ When setting this to 3 or 1 you will see a figure display(3) or graph display(1) appear at the base of your screen. On the graph display, just below the numeric readout, green lines mean packets are being received okay, yellow that rate capping is causing your client to reject packets and red that the packet was lost. If you have steady flat green line then all is well. In the case of long rising/falling green hills lower your rate or decrease your cl_updaterate, for yellow increase your rate. If you have a lot of red then change ISP or server. If you have to play on the server or use the ISP then try adjusting cl_resend or cl_cmdbackup to compensate for the lost packets. <br>
+ <br>
+ <br>
+cl_cmdbackup<br>
+cl_resend These settings determine if duplicate commands(cl_cmdbackup) or packets(cl_resend) are sent, if a command gets lost then a 'backup command' in the latest packet may still be received. If you have an excellent connection with very little or no packetloss at all then try setting cl_cmdbackup to 0 and raising cl_cmdrate. However, as with all settings experiment to see which is best suited for your connection - See net_graph for a guide on how to determine if you need to adjust this setting. <br>
+ <br>
+ <br>
+cl_download_ingame<br>
+ This determines if downloads are allowed during a multiplayer game. this to 0 to stop downloading of decals etc. while playing. <br>
+  <br>
+<br>
+Suggested settings are in the table that follows. They are however guidelines, adjust them as needed by monitoring your connection using net_graph and alter settings based on its information. See the description of how to use and interpret the information that net_graph shows in the above table. It is very important that you read the net_graph, rate, cl_cmdrate and cl_updaterate notes before you use these settings. If you do not see an exact connection speed setting then use the closest. Example, perhaps you connect at 53000 or 52000 on modem, use the 50000 setting from the table.<br>
+<br>
+If you are using voice communication programs such as RogerWilco, Battlecom, Teamsound etc. then please adjust settings accordingly. Allow 1024 bytes for downstream and 512 bytes for upstream usage by the voice communication program.<br>
+<br>
+ <br>
+  <br>
+LAN cl_updaterate "40"<br>
+cl_cmdrate "100"<br>
+rate "25000"<br>
+ <br>
+ <br>
+ <br>
+ADSL / Cable / Wireless cl_updaterate "40"<br>
+cl_cmdrate "60"<br>
+rate "25000"<br>
+ <br>
+ <br>
+ <br>
+ISDN Bonded cl_updaterate "40"<br>
+cl_cmdrate "60"<br>
+rate "(See Table Below)"<br>
+128000 BPS: rate "14000"<br>
+112000 BPS: rate "12250"<br>
+ <br>
+ <br>
+ <br>
+ISDN Single cl_updaterate "20"<br>
+cl_cmdrate "60"<br>
+rate "(See Table Below)"<br>
+64000 BPS: rate "7000"<br>
+56000 BPS: rate "6200"<br>
+ <br>
+ <br>
+ <br>
+56K Modem cl_updaterate "20"<br>
+cl_cmdrate "30"<br>
+rate "(See Table Below)"<br>
+50000 BPS: rate "5500"<br>
+48000 BPS: rate "5200"<br>
+46000 BPS: rate "5000"<br>
+44000 BPS: rate "4800"<br>
+42000 BPS: rate "4500"<br>
+40000 BPS: rate "4300"<br>
+38000 BPS: rate "4100"<br>
+36000 BPS: rate "4000"<br>
+ <br>
+ <br>
+ <br>
+V34 Modem cl_updaterate "20"<br>
+cl_cmdrate "30"<br>
+rate "(See Table Below)"<br>
+33600 BPS: rate "3500"<br>
+31200 BPS: rate "3300"<br>
+28000 BPS: rate "3000"<br>
+ <br>
+ <br>
+ <br>
+28.8 Modem cl_updaterate "20"<br>
+cl_cmdrate "25"<br>
+rate "(See Table Below)"<br>
+28000 BPS: rate "3000"<br>
+26400 BPS: rate "2800"<br>
+<br>
+Mine right now is set at rate 20000 cl_cmrate 60-100 depending on server cl_updaterate 40 I will post images of my net graph to look at. <br>
+(if my first post is too big i can always slim it down.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p8966">
+	<div class="info">
+		<p class="poster">joule</p>
+		<p class="dt">2008-02-15 02:45:18</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Nice guide. I bookmarked this about a year ago. <br>
+<br>
+By the way, you might want to fix your url. Remove the period in the link.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p8975">
+	<div class="info">
+		<p class="poster">SND</p>
+		<p class="dt">2008-02-15 03:10:34</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">here it is tell me if its ok or not<br>
+<a href="http://img219.imageshack.us/my.php?image=ctfnfsb20000wr1.jpg&amp;s=1" class="postlink"><img src="http://img219.imageshack.us/img219/8729/ctfnfsb20000wr1.th.jpg" class="postimage" alt="Image"></a><br>
+<a href="http://img228.imageshack.us/my.php?image=ctfnfsb20001cn6.jpg&amp;s=1" class="postlink"><img src="http://img228.imageshack.us/img228/8356/ctfnfsb20001cn6.th.jpg" class="postimage" alt="Image"></a><br>
+<a href="http://img301.imageshack.us/my.php?image=ctf2fortb8d0023hi1.jpg&amp;s=1" class="postlink"><img src="http://img301.imageshack.us/img301/7017/ctf2fortb8d0023hi1.th.jpg" class="postimage" alt="Image"></a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p9067">
+	<div class="info">
+		<p class="poster">old time no.7</p>
+		<p class="dt">2008-02-15 20:31:46</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>SND wrote:</cite>here it is tell me if its ok or not</div></blockquote>
+
+when i use this style of net graph it actually makes game play even more choppy.<br>
+<br>
+<br>
+are there any recomendations for wireless connection?<br>
+i have a cable modem in tv room. 54g wireless, still very choppy.<br>
+<br>
+rates 25000/56/42<br>
+<br>
+there was .cfg command list someone had drawn up with allias bound to F2 on teh steam boards, where everytime F2 was pressed it cycled to a preset of rates.<br>
+like press once for fastest, then again for second fastesst...anyone know what i'm reffering to?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

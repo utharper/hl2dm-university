@@ -1,0 +1,299 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Weird bug in dm_airfusion (air tunnel) - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>Weird bug in dm_airfusion (air tunnel)</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=4188">https://forum.hl2dm.community/viewtopic.php?t=4188</a>
+-->
+
+<div class="post" id="p55749">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2009-06-24 06:41:46</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">This map lacks a thread for feedback, and I don't share the problems of BlackRaven so I made a new thread to not interrupt the discussion in his topic.<br>
+<br>
+One of the short lift-like air tunnels (the longest one) got me and a friend stuck just before I wrote this. Everything was fine when I tried the map in a local server on my own. Now it was the second time I was there and this happened right after my friend had told me about it.<br>
+<br>
+We both got stuck there (he more than me) and there's no way to get out mostly.<br>
+See a demo <a href="http://www.mediafire.com/file/myn2jmiizm4/air_tunnel.dem" class="postlink"><strong class="text-strong"><span style="text-decoration:underline">here</span></strong></a>.<br>
+<br>
+The weirdest part is that ping or latency certainly have nothing to do with this, since while I had 60-70 ping, he had about 5-10 and such as low latency cuz he owns the server. It's not a local server of him, he just has the server very near his place of living, and he was getting more stuck than me.<br>
+<br>
+In my understanding something is wrong with the trigger_push entities there. Bad push speed, bad placing, dunno, but something is wrong.<br>
+<br>
+<br>
+EDIT: I take back what I said about working well in the local server. Been there now and got stuck the same. But this time in both short tunnels</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55753">
+	<div class="info">
+		<p class="poster">haymaker</p>
+		<p class="dt">2009-06-24 08:11:50</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I can second that, although it happened on a server with weird settings. LMPQ something or other</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55771">
+	<div class="info">
+		<p class="poster">[FF]Assn.Juim</p>
+		<p class="dt">2009-06-24 17:14:14</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I also got stuck in the long wind tunnel, and could'nt get out. I seems as if there's a spot there that is'nt clipped or something, as I wound up outside and on top of the thing near the exit.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55775">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-06-24 19:51:33</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yes I nearly always get stuck in those darned things which is why I do not use them now whenever  I play this map which inturn limits my access routes.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55776">
+	<div class="info">
+		<p class="poster">{EE}chEmicalbuRn</p>
+		<p class="dt">2009-06-24 20:10:17</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>[FF]Assn.Juim wrote:</cite>I also got stuck in the long wind tunnel, and could'nt get out. I seems as if there's a spot there that is'nt clipped or something, as I wound up outside and on top of the thing near the exit.</div></blockquote>
+
+hummm, thats weird. of all the play testing we did, i never heard that. (not saying i dont believe, just saying i never saw that)  where in the tunnel?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55802">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2009-06-24 22:46:56</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>{EE}chEmicalBurn wrote:</cite>(...) where in the tunnel?</div></blockquote>These tunnels. <br>
+<a href="http://img265.imageshack.us/my.php?image=dmairfusion0003.jpg" class="postlink"><img src="http://img265.imageshack.us/img265/4628/dmairfusion0003.th.jpg" class="postimage" alt="Image"></a><br>
+<br>
+<a href="http://img522.imageshack.us/my.php?image=dmairfusion0002.jpg" class="postlink"><img src="http://img522.imageshack.us/img522/7798/dmairfusion0002.th.jpg" class="postimage" alt="Image"></a><br>
+<br>
+<br>
+Ok, I decompiled it to take a look at on how they were made and my suspicions were correct. The problem here is the trigger_push entities placements. Fortunatelly it seems it all works well in the big long air tunnel. This is good cuz that tunnel would be a bigger pain for abnoksius to revise. <br>
+<br>
+The big diference between both is that the big one actually has push triggers all along every tunnel and direction, while the small tunnels only have 2 triggers, one at entrance and one at exit. If something fails in between them you're screwed (It happens sometimes that you hit the round wall and instead of being conducted upwards you just stop).<br>
+<br>
+So this has nothing to do with server/client stuff. It's all in the map.<br>
+<br>
+However, it'd be good to know if anyone has had any problems in the big long tunnel.<br>
+<br>
+To abnoksius: I recriated your tunnels in a sketchy test map. If you're interested I can pm you a download link. Although I think you may get the point here.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55832">
+	<div class="info">
+		<p class="poster">[FF]Assn.Juim</p>
+		<p class="dt">2009-06-25 01:36:07</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">It was the big long tunnell I got stuck in. I was trying to keep myself oriented throughout the push, I got all scrambled as to where I was, and I think I moved upwards near the end before the last curve. I wound up outside the tube(more on top actually) against the wall, and I could'nt move or get myself back in. I had to "kill" out of it.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55844">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2009-06-25 03:56:49</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">well, I never got permanently stuck on that tunnel, but I noticed geting stoped on the curves, but the push trigger eventually pushed me forward. This happened mostly when I tried contrarying the push direction, or at least pressing direction keys in some way.<br>
+<br>
+If that happens only seldomly then I guess it may be an engine colisions problem, as many others. If not, then there may be some more tweeking for obnoksius to make.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55847">
+	<div class="info">
+		<p class="poster">Jelly Fox</p>
+		<p class="dt">2009-06-25 04:54:16</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I get stuck in them all the time, pisses me off  <img class="smilies" src="../../../images/smilies/icon_twisted.gif" width="15" height="15" alt=":twisted:" title="Twisted Evil"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55852">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2009-06-25 06:08:28</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Steer yourself away from the wall? I went through many times and never got stuck. Very odd that this affects some people so often.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55856">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2009-06-25 06:47:37</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">yea, I think this may be another one of those collision issues that we must go around while mapping. Some ppl will have it more than others depending on who knows what. I know I have many issues while playing that no one else seem to have. Especially with props. And that leads me to leave some maps aside.<br>
+<br>
+And this would be one map to put aside for some ppl, cuz of getting stuck in the tunnels so often as I've been while testing them. <img class="smilies" src="../../../images/smilies/icon_sad.gif" width="15" height="15" alt=":(" title="Sad"> Unless they learn to play it with lack of connectivity between routes...<br>
+<br>
+Since valve never improved this game we're limited on mapping, cuz every new big thing we may find funny to play with, can end up in working pretty badly for some. <br>
+<br>
+On this I have some sympathy for obnoksius: great idea, bad engine...<br>
+<br>
+ffs...</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55911">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-06-25 18:59:06</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Sorry to say this but I feel it shouldn't have won in its current state. I try not to play this map but when I do I find myself never using those tunnels it truly is map breakign problem which is a shame.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55917">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2009-06-25 20:30:10</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>keefy wrote:</cite>Sorry to say this but I feel it shouldn't have won in its current state. (...)</div></blockquote>
+I must disagree with that. The map is indeed a great map and the tunnels are a great thing. It's not his fault for the most part, that it ended up not working.<br>
+<br>
+I know this for personal experience on trying to make jump maps and for playing existing jump maps and even dm maps. While I see ppl going through briggs map in 20 secs I see myself taking the whole time to reach the final part. This is a good example for the same reason, it works well for some ppl, but it doesn't work at all for me and for many more ppl. I simply get stuck in between each bar. The only solution there is to remove the upper bars. <br>
+<br>
+In the end the mapper can possibly find a way to go around it, either by tweeking it or by redesigning it, but that doesn't mean he doesn't deserve good criticism on his creation.<br>
+<br>
+This map is indeed a great map and I think it's well deserved. I rly blame the engine mostly for being so fkn unpredictable.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p56082">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-06-27 02:23:23</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">These airlift things work perfect in dmpro me and others from s-uk have not got stuck once..</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p56086">
+	<div class="info">
+		<p class="poster">{EE}chEmicalbuRn</p>
+		<p class="dt">2009-06-27 02:51:25</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Walking Target wrote:</cite>Steer yourself away from the wall? I went through many times and never got stuck. Very odd that this affects some people so often.</div></blockquote>
+
+never once got stuck, and i play tested and tested this map prolly a 50 times, and went thru that tunnel well over a hundred times<br>
+<br>
+i have a hard time believing that its the map itself. because the judging panel was made up of some of the most experienced hl2dm players in the community and i didnt hear anybody mention this issue in the 5 or so months of the judging process.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p56088">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2009-06-27 03:03:21</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Indeed, and
+<blockquote><div><cite>keefy wrote:</cite>These airlift things work perfect in dmpro me and others from s-uk have not got stuck once..</div></blockquote>Indeed! No problem at all there. I also tested it in Hl2dm:OB and it's fine aswell. Could use a little tweek as the upper trigger is pushing you out too soon and you bump the upper floor before getting out, but for as much as I tried to stay in the tunnel, it just didn't let me.  <img class="smilies" src="../../../images/smilies/icon_lol.gif" width="15" height="15" alt=":lol:" title="Laughing"> <br>
+I just love pro mod.<br>
+<br>
+So, like I said, it's the damn engine. The most it can be done is to tweek the triggers so that it'll work better for who doesn't and still work for who does.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p56091">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-06-27 03:41:30</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">As far as I know pro uses the same engine becasue it asks you to install <strong class="text-strong">source SDK base</strong> not <strong class="text-strong">Source SDK Base - Orange box.</strong>  it must be something else.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p56100">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2009-06-27 05:50:12</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">It is, I know. I was just saying I tested in that one aswell. Both hl2dmpro and hl2dm:OB. Works well in both.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p56103">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2009-06-27 07:36:55</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">its wierd I havent got stuck in there one time yet and I tried to get stuck, did the vent 50+times</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p56181">
+	<div class="info">
+		<p class="poster">haymaker</p>
+		<p class="dt">2009-06-28 20:00:33</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><object width="320" height="265"><param name="movie" value="http://www.youtube.com/v/sUtqwfXW5P8&amp;hl=en&amp;fs=1&amp;rel=0&amp;color1=0x234900&amp;color2=0x4e9e00"><param name="allowFullScreen" value="true"><param name="allowscriptaccess" value="always"><embed src="https://www.youtube.com/v/sUtqwfXW5P8&amp;hl=en&amp;fs=1&amp;rel=0&amp;color1=0x234900&amp;color2=0x4e9e00" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="320" height="265"></embed></object><br><a href="https://www.youtube.com/watch?v=sUtqwfXW5P8" target="_blank" rel="noreferrer">Link</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p56222">
+	<div class="info">
+		<p class="poster">Book</p>
+		<p class="dt">2009-06-29 08:32:20</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">dm_airfusion_r1</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p56230">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2009-06-29 11:52:32</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">So weird, I never got that in the many many times I went through it.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

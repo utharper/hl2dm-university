@@ -1,0 +1,426 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Network Config Script - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+
+<h1>Network Config Script</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=1038">https://forum.hl2dm.community/viewtopic.php?t=1038</a>
+-->
+
+<div class="post" id="p9482">
+	<div class="info">
+		<p class="poster">Van Occupanther</p>
+		<p class="dt">2008-02-19 03:22:45</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I've noticed how much of an impact on gameplay your network settings can have, so I made this network config to allow you to adjust your settings on the fly. Once you load the config, and make changes, you'll see the difference instantly!  It's based on the <a href="http://www.tf2wiki.net/wiki/General_scripts" class="postlink"><span style="color:blue">TF2 Network Tweaker by A1DS</span></a> so all credit should go to him, I just modified what he did to make the script more HL2DM friendly!<br>
+<br>
+<strong class="text-strong"><span style="text-decoration:underline"><span style="font-size:150%;line-height:116%">Brief Description of How to Use This Script:</span></span></strong><em class="text-italics">  (see further down for a more detailed description)</em><br>
+<br>
+<strong class="text-strong">1.</strong>  Copy the contents of the script to your 'autoexec.cfg', or create a new cfg file named 'network.cfg' and make a bind key in your 'autoexec.cfg' to execute it.  Take note that the script starts you out with these network settings:<br>
+<br>
+rate 66000 <br>
+cl_cmdrate 100<br>
+cl_updaterate 66 <br>
+cl_interp 0.01  <br>
+cl_interp_ratio 2.0 <br>
+<br>
+...it also gives you a Netgraph toggle:<br>
+<br>
+  <strong class="text-strong">L</strong>     toggles netgraph.  Press it once to turn it on, then again to turn it off.<br>
+<br>
+<strong class="text-strong">2.</strong>  To change your net settings, use these keys:<br>
+<br>
+  <strong class="text-strong">=</strong>     Rate Increase.<br>
+  <strong class="text-strong">-</strong>     Rate Decrease.<br>
+<br>
+  <strong class="text-strong">]</strong>     Update Rate Increase.<br>
+  <strong class="text-strong">[</strong>     Update Rate Decrease.<br>
+<br>
+  <strong class="text-strong">'</strong>     Interp Ratio Increase.<br>
+  <strong class="text-strong">;</strong>     Interp Ratio Decrease.<br>
+<br>
+  <strong class="text-strong">\</strong>     Cmd Rate Increase.<br>
+  <strong class="text-strong">/</strong>     Cmd Rate Decrease.<br>
+<br>
+Start with your Rates, then move on to Update Rate - In that order.  If you still see choke in your netgraph, lower your Interp Ratio once, then change your Update Rate until your choke goes away.  One pass always works for me as the changes are instant and will also be echoed in console. <br>
+<br>
+<strong class="text-strong"><span style="text-decoration:underline"><span style="font-size:150%;line-height:116%">Detailed Description of How to Use This Script:</span></span></strong><br>
+<br>
+<strong class="text-strong">1.</strong>  You need to make a new config file.  Start by making sure that Windows shows file extensions:<br>
+<br>
+Start &gt; Control Panel &gt; Folder Options <br>
+<br>
+Click on the View Tab, then put a tick beside Show extensions for known file types, click apply to save the changes, then click ok.<br>
+<br>
+<strong class="text-strong">2.</strong>  Go to your HL2DM config folder:<br>
+<br>
+C &gt; Program Files &gt; Steam &gt; steamapps &gt; username &gt; half-life 2 deathmatch &gt; hl2mp &gt; cfg<br>
+<br>
+<strong class="text-strong">3.</strong>  Now right click on an empty spot inside this folder to open the context menu.  Select New &gt; Text Document.  Don't worry about its name for now, double click it to open it.  inside you should copy and paste this code:<br>
+<br>
+bind "F1" "exec network.cfg"<br>
+<br>
+Now save the document by clicking File &gt; Save.  and close it.  Now we can rename it to autoexec.cfg<br>
+<br>
+<strong class="text-strong">*NOTE</strong> <em class="text-italics">be sure you are editing and creating cfg files with notepad.  you can find this program in</em>:<br>
+<br>
+Start &gt; Program Files &gt; Accessories<br>
+<br>
+<em class="text-italics">...you can also make notepad the default editor for cfg files.  After you have renamed the txt file to .cfg, double clicked on it, a window opens asking you to 'use a web service to open this file', or 'select a program from a list of installed programs'.  Put a tick beside 'a list of installed programs' and click ok.  From there you should see note notepad from among a list of programs, if not browse to</em>: C &gt; Windows and you'll find it there.  <em class="text-italics">Once notepad is selected, put a tick beside 'always use the selected program to open this kind of file', then click ok to save your changes.</em><br>
+<br>
+<strong class="text-strong">4.</strong>  We're going to make another document, so right click on an empty spot inside this folder to open the context menu.  Select New &gt; Text Document.  Don't worry about its name for now, double click it to open it.  inside you should copy and paste this code:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>echo
+echo -----&gt; Starting to load network.cfg
+echo 
+
+// NETWORK SETTINGS...
+
+echo -----&gt; loading NETWORK SETTINGS...
+echo
+cl_allowdownload "1"			// [0,1] Enables downloads of maps models sounds etc.
+cl_allowupload "1"			// [0,1] Client uploads customization files.
+cl_downloadfilter "nosounds"		// [all, none, nosounds] Determines which files can be downloaded from the server.
+cl_interpolate "1.0"			// [x] Interpolate entities on the client.
+cl_lagcompensation "1"       		// [0,1] Perform server side lag compensation of weapon firing events (for very low ping).
+cl_lagcomp_errorcheck "0"		// [0,1] Player index of other player to check for position errors.
+cl_smooth "1"                		// [0,1] Smooth view/eye origin after prediction errors.
+cl_smoothtime "0.1" 			// [seconds] Time over which to smooth the view after prediction errors.
+cl_forcepreload "1"          		// [0,1] Force server side preloading.
+rate "66000"         			// [bytes/sec] Max bytes/sec the host can receive data.
+cl_cmdrate "100"         		// [packets/sec] Max number of command packets sent to server per second. 
+cl_updaterate "66"      		// [packets/sec] Number of packets per second of updates you are requesting from the server.
+cl_interp "0.01"      			// [x] Determined by Update Rate and Interp Ratio.  Tries to elminate the lagging hitbox issue. 
+cl_interp_ratio "2.0"      		// [x] Sets the interpolation amount, final amount is cl_interp_ratio / cl_updaterate. 
+echo Rate SET to 66000
+echo CMD Rate SET to 100
+echo Update Rate SET to 66
+echo Interp SET to 0.01 
+echo Interp_Ratio SET to 2.0 
+
+echo -----&gt; loading NETWORK ALIASES... 
+echo
+
+// RATE INCREASE ALIASES...
+
+alias "rate_up" "rate_up_70000"
+alias "rate_up_25000" "rate 25000; alias rate_up rate_up_30000; alias rate_down rate_down_20000; echo -----&gt; Rate INCREASED to 25000"
+alias "rate_up_30000" "rate 30000; alias rate_up rate_up_35000; alias rate_down rate_down_25000; echo -----&gt; Rate INCREASED to 30000"
+alias "rate_up_35000" "rate 35000; alias rate_up rate_up_40000; alias rate_down rate_down_30000; echo -----&gt; Rate INCREASED to 35000"
+alias "rate_up_40000" "rate 40000; alias rate_up rate_up_45000; alias rate_down rate_down_35000; echo -----&gt; Rate INCREASED to 40000"
+alias "rate_up_45000" "rate 45000; alias rate_up rate_up_50000; alias rate_down rate_down_40000; echo -----&gt; Rate INCREASED to 45000"
+alias "rate_up_50000" "rate 50000; alias rate_up rate_up_55000; alias rate_down rate_down_45000; echo -----&gt; Rate INCREASED to 50000"
+alias "rate_up_55000" "rate 55000; alias rate_up rate_up_60000; alias rate_down rate_down_50000; echo -----&gt; Rate INCREASED to 55000"
+alias "rate_up_60000" "rate 60000; alias rate_up rate_up_66000; alias rate_down rate_down_55000; echo -----&gt; Rate INCREASED to 60000"
+alias "rate_up_66000" "rate 66000; alias rate_up rate_up_70000; alias rate_down rate_down_60000; echo -----&gt; Rate INCREASED to 66000"
+alias "rate_up_70000" "rate 70000; alias rate_up rate_up_75000; alias rate_down rate_down_66000; echo -----&gt; Rate INCREASED to 70000"
+alias "rate_up_75000" "rate 75000; alias rate_up rate_up_80000; alias rate_down rate_down_70000; echo -----&gt; Rate INCREASED to 75000"
+alias "rate_up_80000" "rate 80000; alias rate_up rate_up_85000; alias rate_down rate_down_75000; echo -----&gt; Rate INCREASED to 80000"
+alias "rate_up_85000" "rate 85000; alias rate_up rate_up_90000; alias rate_down rate_down_80000; echo -----&gt; Rate INCREASED to 85000"
+alias "rate_up_90000" "rate 90000; alias rate_up rate_up_95000; alias rate_down rate_down_85000; echo -----&gt; Rate INCREASED to 90000"
+alias "rate_up_95000" "rate 95000; alias rate_up rate_up_100000; alias rate_down rate_down_90000; echo -----&gt; Rate INCREASED to 95000"
+alias "rate_up_100000" "rate 100000; alias rate_up rate_up_100000; alias rate_down rate_down_95000; echo -----&gt; Rate INCREASED to 100000"
+
+
+// RATE DECREASE ALIASES...
+
+alias "rate_down" "rate_down_60000"
+alias "rate_down_95000" "rate 95000; alias rate_down rate_down_90000; alias rate_up rate_up_100000; echo -----&gt; Rate DECREASED to 95000"
+alias "rate_down_90000" "rate 90000; alias rate_down rate_down_85000; alias rate_up rate_up_95000; echo -----&gt; Rate DECREASED to 90000"
+alias "rate_down_85000" "rate 85000; alias rate_down rate_down_80000; alias rate_up rate_up_90000; echo -----&gt; Rate DECREASED to 85000"
+alias "rate_down_80000" "rate 80000; alias rate_down rate_down_75000; alias rate_up rate_up_85000; echo -----&gt; Rate DECREASED to 80000"
+alias "rate_down_75000" "rate 75000; alias rate_down rate_down_70000; alias rate_up rate_up_80000; echo -----&gt; Rate DECREASED to 75000"
+alias "rate_down_70000" "rate 70000; alias rate_down rate_down_66000; alias rate_up rate_up_75000; echo -----&gt; Rate DECREASED to 70000"
+alias "rate_down_66000" "rate 66000; alias rate_down rate_down_60000; alias rate_up rate_up_70000; echo -----&gt; Rate DECREASED to 66000"
+alias "rate_down_60000" "rate 60000; alias rate_down rate_down_55000; alias rate_up rate_up_66000; echo -----&gt; Rate DECREASED to 60000"
+alias "rate_down_55000" "rate 55000; alias rate_down rate_down_50000; alias rate_up rate_up_60000; echo -----&gt; Rate DECREASED to 55000"
+alias "rate_down_50000" "rate 50000; alias rate_down rate_down_45000; alias rate_up rate_up_55000; echo -----&gt; Rate DECREASED to 50000"
+alias "rate_down_45000" "rate 45000; alias rate_down rate_down_40000; alias rate_up rate_up_50000; echo -----&gt; Rate DECREASED to 45000"
+alias "rate_down_40000" "rate 40000; alias rate_down rate_down_35000; alias rate_up rate_up_45000; echo -----&gt; Rate DECREASED to 40000"
+alias "rate_down_35000" "rate 35000; alias rate_down rate_down_30000; alias rate_up rate_up_40000; echo -----&gt; Rate DECREASED to 35000"
+alias "rate_down_30000" "rate 30000; alias rate_down rate_down_25000; alias rate_up rate_up_35000; echo -----&gt; Rate DECREASED to 30000"
+alias "rate_down_25000" "rate 25000; alias rate_down rate_down_20000; alias rate_up rate_up_30000; echo -----&gt; Rate DECREASED to 25000"
+alias "rate_down_20000" "rate 20000; alias rate_down rate_down_20000; alias rate_up rate_up_25000; echo -----&gt; Rate DECREASED to 20000"
+
+// CMDRATE INCREASE ALIASES...
+
+alias "cmd_up" "cmd_up_100"
+alias "cmd_up_100" "cl_cmdrate 100; alias cmd_up cmd_up_100; alias cmd_down cmd_down_90; echo -----&gt; CMD RATE INCREASED to 100"
+alias "cmd_up_90"  "cl_cmdrate 90; alias cmd_up cmd_up_100; alias cmd_down cmd_down_80; echo -----&gt; CMD RATE INCREASED to 90"
+alias "cmd_up_80"  "cl_cmdrate 80; alias cmd_up cmd_up_90; alias cmd_down cmd_down_70; echo -----&gt; CMD RATE INCREASED to 80"
+alias "cmd_up_70"  "cl_cmdrate 70; alias cmd_up cmd_up_80; alias cmd_down cmd_down_60; echo -----&gt; CMD RATE INCREASED to 70"
+alias "cmd_up_60"  "cl_cmdrate 60; alias cmd_up cmd_up_70; alias cmd_down cmd_down_50; echo -----&gt; CMD RATE INCREASED to 60"
+alias "cmd_up_50"  "cl_cmdrate 50; alias cmd_up cmd_up_60; alias cmd_down cmd_down_40; echo -----&gt; CMD RATE INCREASED to 50"
+alias "cmd_up_40"  "cl_cmdrate 40; alias cmd_up cmd_up_50; alias cmd_down cmd_down_30; echo -----&gt; CMD RATE INCREASED to 40"
+alias "cmd_up_30"  "cl_cmdrate 30; alias cmd_up cmd_up_40; alias cmd_down cmd_down_30; echo -----&gt; CMD RATE INCREASED to 30"
+
+// CMDRATE DECREASE ALIASES...
+
+alias "cmd_down" "cmd_down_90"
+alias "cmd_down_90"  "cl_cmdrate 90; alias cmd_down cmd_down_80; alias cmd_up cmd_up_100; echo -----&gt; CMD RATE DECREASED to 90"
+alias "cmd_down_80"  "cl_cmdrate 80; alias cmd_down cmd_down_70; alias cmd_up cmd_up_80; echo -----&gt; CMD RATE DECREASED to 80"
+alias "cmd_down_70"  "cl_cmdrate 70; alias cmd_down cmd_down_60; alias cmd_up cmd_up_70; echo -----&gt; CMD RATE DECREASED to 70"
+alias "cmd_down_60"  "cl_cmdrate 60; alias cmd_down cmd_down_50; alias cmd_up cmd_up_60; echo -----&gt; CMD RATE DECREASED to 60"
+alias "cmd_down_50"  "cl_cmdrate 50; alias cmd_down cmd_down_40; alias cmd_up cmd_up_50; echo -----&gt; CMD RATE DECREASED to 50"
+alias "cmd_down_40"  "cl_cmdrate 40; alias cmd_down cmd_down_30; alias cmd_up cmd_up_40; echo -----&gt; CMD RATE DECREASED to 40"
+alias "cmd_down_30"  "cl_cmdrate 30; alias cmd_down cmd_down_30; alias cmd_up cmd_up_30; echo -----&gt; CMD RATE DECREASED to 30"
+
+// UPDATERATE INCREASE ALIASES...
+
+alias "upd_up" "upd_up_75"
+alias "upd_up_100" "cl_updaterate 100; alias upd_up upd_up_100; alias upd_down upd_down_80; echo -----&gt; UPDATE RATE INCREASED to 100"
+alias "upd_up_80"  "cl_updaterate 80; alias upd_up upd_up_100; alias upd_down upd_down_75; echo -----&gt; UPDATE RATE RATE INCREASED to 80"
+alias "upd_up_75"  "cl_updaterate 75; alias upd_up upd_up_80; alias upd_down upd_down_66; echo -----&gt; UPDATE RATE RATE INCREASED to 75"
+alias "upd_up_66"  "cl_updaterate 66; alias upd_up upd_up_75; alias upd_down upd_down_50; echo -----&gt; UPDATE RATE RATE INCREASED to 66"
+alias "upd_up_60"  "cl_updaterate 60; alias upd_up upd_up_66; alias upd_down upd_down_40; echo -----&gt; UPDATE RATE RATE INCREASED to 60"
+alias "upd_up_50"  "cl_updaterate 50; alias upd_up upd_up_50; alias upd_down upd_down_35; echo -----&gt; UPDATE RATE RATE INCREASED to 50"
+alias "upd_up_40"  "cl_updaterate 40; alias upd_up upd_up_40; alias upd_down upd_down_40; echo -----&gt; UPDATE RATE RATE INCREASED to 40"
+alias "upd_up_35"  "cl_updaterate 35; alias upd_up upd_up_35; alias upd_down upd_down_30; echo -----&gt; UPDATE RATE RATE INCREASED to 35"
+alias "upd_up_30"  "cl_updaterate 30; alias upd_up upd_up_30; alias upd_down upd_down_30; echo -----&gt; UPDATE RATE RATE INCREASED to 30"
+
+// UPDATERATE DECREASE ALIASES...
+
+alias "upd_down" "upd_down_60"
+alias "upd_down_80"  "cl_updaterate 80; alias upd_down upd_down_75; alias upd_up upd_up_100; echo -----&gt; UPDATE RATE DECREASED to 80"
+alias "upd_down_75"  "cl_updaterate 75; alias upd_down upd_down_66; alias upd_up upd_up_80; echo -----&gt; UPDATE RATE DECREASED to 75"
+alias "upd_down_66"  "cl_updaterate 66; alias upd_down upd_down_60; alias upd_up upd_up_75; echo -----&gt; UPDATE RATE DECREASED to 66"
+alias "upd_down_60"  "cl_updaterate 60; alias upd_down upd_down_50; alias upd_up upd_up_66; echo -----&gt; UPDATE RATE DECREASED to 60"
+alias "upd_down_50"  "cl_updaterate 50; alias upd_down upd_down_40; alias upd_up upd_up_60; echo -----&gt; UPDATE RATE DECREASED to 50"
+alias "upd_down_40"  "cl_updaterate 40; alias upd_down upd_down_35; alias upd_up upd_up_50; echo -----&gt; UPDATE RATE DECREASED to 40"
+alias "upd_down_35"  "cl_updaterate 35; alias upd_down upd_down_30; alias upd_up upd_up_40; echo -----&gt; UPDATE RATE DECREASED to 35"
+alias "upd_down_30"  "cl_updaterate 30; alias upd_down upd_down_30; alias upd_up upd_up_35; echo -----&gt; UPDATE RATE DECREASED to 30"
+
+// INTERP RATIO INCREASE ALIASES...
+
+alias "ratio_inc" "ratio_inc_2.0"
+alias "ratio_inc_1.5" "cl_interp_ratio 1.5; alias ratio_inc ratio_inc_2.0; alias ratio_dec ratio_dec_1.0; echo -----&gt; Interp. Ratio INCREASED to 1.5"
+alias "ratio_inc_2.0" "cl_interp_ratio 2.0; alias ratio_inc ratio_inc_2.0; alias ratio_dec ratio_dec_1.5; echo -----&gt; Interp. Ratio INCREASED to 2.0"
+
+// INTERP RATIO DECREASE ALIASES...
+
+alias "ratio_dec" "ratio_dec_1.5"
+alias "ratio_dec_1.5" "cl_interp_ratio 1.5; alias ratio_dec ratio_dec_1.0; alias ratio_inc ratio_inc_2.0; echo -----&gt; Interp. Ratio DECREASED to 1.5"
+alias "ratio_dec_1.0" "cl_interp_ratio 1.0; alias ratio_dec ratio_dec_1.0; alias ratio_inc ratio_inc_1.5; echo -----&gt; Interp. Ratio DECREASED to 1.0"
+
+// NETWORK RELATED KEYPAD BINDS...
+
+echo -----&gt; loading NETWORK RELATED KEYPAD BINDS...  
+echo
+
+// RATE ADJUSTMENTS...
+	
+bind "=" "rate_up" 			// Rate Increase.
+bind "-" "rate_down" 			// Rate Decrease.
+
+// UPDATERATE ADJUSTMENTS...
+
+bind "]" "upd_up" 			// Update Rate Increase.
+bind "[" "upd_down" 			// Update Rate Decrease.
+
+// CL_INTERP_RATIO ADJUSTMENTS...
+
+bind "'" "ratio_inc" 			// Interp Ratio Increase.
+bind ";" "ratio_dec" 			// Interp Ratio Decrease.
+
+// CMDRATE ADJUSTMENTS...
+
+bind "\" "cmd_up" 			// Cmd Rate Increase.
+bind "/" "cmd_down" 			// Cmd Rate Decrease.
+
+bind "l" "toggle net_graph 0 3"	// Quick Toggle for NetGraph.
+
+echo
+echo -----&gt; Finished loading network.cfg
+echo
+</code></pre></div>
+Now save the document by clicking File &gt; Save.  and close it.  Now we can rename it to network.cfg<br>
+<br>
+What this does is tells HL2DM to execute an autoexec config by itself without you having to do anything.  Nothing will be changed until you hit F1 at any time, in game or at the GUI screen, that will load your network config.  To confirm that it has loaded, just open the console where you'll see the loading sequence.<br>
+<br>
+<strong class="text-strong">5.</strong>  <strong class="text-strong"><span style="text-decoration:underline">In Game Usage</span></strong>:  The config starts you out with default network settings and allows you to change them.  What you want to do is first execute the config, then while connected to a server, hit the <strong class="text-strong">L</strong> key to bring up your netgraph.  What you're looking for is the amount of choke/loss as shown in your Netgraph. Start with your RATES. Usually when I join a server, right away, I'll see between 30 to 60 choke. By pressing the <strong class="text-strong">=</strong> key, it raises your RATE by 5000 bytes, the effect is instant and you can see your choke go down. Continue to raise ( <strong class="text-strong">=</strong> ) and lower ( <strong class="text-strong">-</strong> ) until you can get it as low as it will go. <br>
+<br>
+From there, work your way down to UPDATE RATE by using the <strong class="text-strong">;</strong> and <strong class="text-strong">'</strong> keys to raise and lower this rate, it goes by 33 - 50 - 66 - 75 - 80 - 100.<br>
+<br>
+If you still find that there is choke present, change your INTERP_RATIO by using the <strong class="text-strong">/</strong> and <strong class="text-strong">\</strong> keys. The changes are: 1.0 - 1.5 - 2.0. Lower it only once, then go back to your UPDATERATE and find a setting that works best. The script will also echo the changes in console.   <br>
+<br>
+Thanks for your interest guys.  To be truthful, this is my first attempt at something like this and any criticism, constructive input, suggestions comments are grreatly apreciated <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"><br>
+<br>
+<strong class="text-strong"><span style="text-decoration:underline">References</span></strong>:<br>
+<em class="text-italics"><a href="http://www.tf2wiki.net/wiki/General_scripts" class="postlink"><span style="color:blue">TF2 Network Tweaker by A1DS</span></a><br>
+<a href="http://developer.valvesoftware.com/wiki/Source_Multiplayer_Networking" class="postlink"><span style="color:blue">Source Multiplayer Networking</span></a><br>
+<a href="http://whisper.ausgamers.com/wiki/index.php/Tickrate" class="postlink"><span style="color:blue">TickRate</span></a><br>
+<a href="http://www.counter-strike.com/tickrate.php" class="postlink"><span style="color:blue">Tickrate / Net_Graph</span></a><br>
+<a href="http://home.covad.net/~k25125/SteamyThings/NetGraph_Steam.htm" class="postlink"><span style="color:blue">Net_Graph FAQ</span></a><br>
+<a href="http://www.pro-hl.com/column_bomberman_1.shtml" class="postlink"><span style="color:blue">Netcode Tales</span></a><br>
+<a href="http://forums.steampowered.com/forums/showthread.php?t=490324&amp;highlight=jittery" class="postlink"><span style="color:blue">Net-Code-FIX for COMPETITIVE gaming</span></a></em></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p9522">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2008-02-19 06:55:25</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I never understood all tis business about rates?<br>
+<br>
+You can use this to change the posiotion on screen from right, middle, left
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>bind "F8" "incrementvar net_graphpos 1 3 1"</code></pre></div>
+
+and this cycles through 3 types of net_graph 
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>bind "F9" "incrementvar net_graph 0 3 1"</code></pre></div>
+
+Shows all bound keys and what they do
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>key_listboundkeys</code></pre></div></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p9527">
+	<div class="info">
+		<p class="poster">Van Occupanther</p>
+		<p class="dt">2008-02-19 07:28:42</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>keefy wrote:</cite>I never understood all tis business about rates?</div></blockquote>
+
+well, what it boils down to it your online experience really.  because you're playing on teh interwebz you and other clients have to communicate with the server you're playing on.  when that happens sometimes the server doesn't accurately display your player's model in game.  netgraph displays possible 'inconsistencies' and provides you with a visual aid in trying to get a more 'accurate' online playing experience.<br>
+<br>
+if you're into teh readingz, you can check out some links...<br>
+<br>
+<em class="text-italics"><a href="http://developer.valvesoftware.com/wiki/Source_Multiplayer_Networking" class="postlink"><span style="color:blue">Source Multiplayer Networking</span></a><br>
+<a href="http://whisper.ausgamers.com/wiki/index.php/Tickrate" class="postlink"><span style="color:blue">TickRate</span></a><br>
+<a href="http://www.counter-strike.com/tickrate.php" class="postlink"><span style="color:blue">Tickrate / Net_Graph</span></a><br>
+<a href="http://home.covad.net/~k25125/SteamyThings/NetGraph_Steam.htm" class="postlink"><span style="color:blue">Net_Graph FAQ</span></a><br>
+<a href="http://www.pro-hl.com/column_bomberman_1.shtml" class="postlink"><span style="color:blue">Netcode Tales</span></a><br>
+<a href="http://forums.steampowered.com/forums/showthread.php?t=490324&amp;highlight=jittery" class="postlink"><span style="color:blue">Net-Code-FIX for COMPETITIVE gaming</span></a></em></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p9847">
+	<div class="info">
+		<p class="poster">SND</p>
+		<p class="dt">2008-02-22 06:50:26</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">tks for the config i had enuff of joinning a server finding out i got 50 choke and have to spend 5mins tweaking my net setting to get it right. But really this net settings stuff is getting on my nerves because i have to play on a server that does not have good connections or is not set up properly. But i noticed more and more servers i connect to i suffer from choke and sometimes loss.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p9914">
+	<div class="info">
+		<p class="poster">Epoch</p>
+		<p class="dt">2008-02-23 00:04:18</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">So if I make this a config file or put it in my current config, those keys you reffered to will be bound once I run the config file?  I'm just currious cause when it comes to anything more complicated then general use of the console its all greek to me.  And if i were to add this to my current config, where do I put it?  Can it just go at the bottom?  Also how do I execute the config file from the console if I do choose to make a seperate config file?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p9947">
+	<div class="info">
+		<p class="poster">SND</p>
+		<p class="dt">2008-02-23 04:27:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">just paste that stuff at the bottom of the config and it should work but on making a certain config run im not sure because i got a movie config but i can not run it. I don't know why the cm and uprate move at the same values i uses different values for each which work better. But it is not hard to make them separate functions. I wish there was a way that it did it automatically to find the best net settings when you connect to a server would make life so make easier.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p9972">
+	<div class="info">
+		<p class="poster">Epoch</p>
+		<p class="dt">2008-02-23 19:00:08</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thanks for the post SND  <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=":wink:" title="Wink"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p9982">
+	<div class="info">
+		<p class="poster">Van Occupanther</p>
+		<p class="dt">2008-02-23 21:42:10</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">@ Epoch I've updated the first post with comlpete instructions, if you still need it...<br>
+<br>
+@ SND I've updated the script to have CMD_RATE seperate...and to be honest, I'm not sure why the update rate and cmd rate are together, this script is based on the one by A1DS for TF2, maybe that game has a different network code than the older source engine?  anyway I've tested and verified the changes by typing 'differences' in console, the changes are now sequential and do not jump around...the update makes it more HL2DM friendly!<br>
+<br>
+I'm glad you guys are showing interest and that it's useful for some people.  I appreciate the input guys, and to be truthful, this is my first attempt at something like this and any criticism, constructive input, suggestions comments are grreatly apreciated <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"><br>
+<br>
+By the way, can an Admin move this thread, I think it would be better served in the Department of Engineering, thanks!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p9984">
+	<div class="info">
+		<p class="poster">SND</p>
+		<p class="dt">2008-02-23 22:15:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">wow tks now this is even more useful it should be moved to engineering and made a sticky this stuff is very important and i been looking for ways to sort out my network settings so it should be useful to everyone.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p9994">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2008-02-23 23:07:02</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Dept of engineering is for hardware, development and server admin. This is a client side script that helps you play better, therefore it belongs in the athletic center.<br>
+<br>
+I will move it there and sticky once it runs it's course.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p10099">
+	<div class="info">
+		<p class="poster">SND</p>
+		<p class="dt">2008-02-24 22:02:55</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">when i make the two cfg files and load the game the f1 bind keys does nothing I tried putting the bind key command into my config file but when i try it in game it says that it can not run network.cfg. Right now im running it in my config file would prefer to have it separate.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p10106">
+	<div class="info">
+		<p class="poster">Van Occupanther</p>
+		<p class="dt">2008-02-24 22:22:28</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">hey SND, make sure the config files end in .cfg as in 'network.cfg' and 'autoexec.cfg' and not 'network.cfg.txt'  <br>
+<br>
+make sure you're creating and editing your cfg files with notepad, and not wordpad or MS Word, add this line at the end of your autoexec.cfg:<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>echo 
+echo -----&gt; Finished loading autoexec.cfg 
+echo
+</code></pre></div>
+
+that way you can determine whether or not the problem is with the autoexec.cfg being loaded.  check your console after the game loads up, what you're looking for is the echo 'Finished loading autoexec.cfg'<br>
+<br>
+also do you have anything else in your autoexec.cfg?  check to see if there are any other binds to the F1 key.  that could prevent the network.cfg from executing.<br>
+<br>
+last thing you can do to figure out what's wrong, open your console and check what the error message is, copy and past it in a reply starting from the autoexec.cfg echo, that way I'll have more info to go on... <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

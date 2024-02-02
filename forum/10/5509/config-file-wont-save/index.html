@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Config File Won't save - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+
+<h1>Config File Won't save</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=5509">https://forum.hl2dm.community/viewtopic.php?t=5509</a>
+-->
+
+<div class="post" id="p77571">
+	<div class="info">
+		<p class="poster">[FF]FNDR.Jake_Brake</p>
+		<p class="dt">2010-10-25 07:27:42</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hi all,<br>
+<br>
+Some members and friends seem to be having issues with their config.cfg file not saving since the OB update.  Is anyone aware of a fix for this?<br>
+<br>
+Thanks!  Any help is appreciated.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p77572">
+	<div class="info">
+		<p class="poster">Neolinkster</p>
+		<p class="dt">2010-10-25 09:07:38</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Several different things can be done usually its really simple after there done making all there adjustments in options they type in console <span style="color:#FF0000">host_writeconfig</span> verbatim.  They should be seeing this feedback in console "Host_WriteConfiguration: Wrote cfg/config.cfg" if it says file is read-only they need to follow the reverse of the instructions in this file <span style="color:#00BF00"><a href="https://dl.dropbox.com/u/5896411/Crosshair_Colors_Neos_HUDs_v3.zip" class="postlink">http://dl.dropbox.com/u/5896411/Crossha ... UDs_v3.zip</a></span> to make it not read-only. <br>
+<br>
+           Now if its still not saving there gonna have to make a new file in there <span style="color:#FF4000">C:/Program Files/Steam/steamapps/&lt;account&gt;/half life 2 deathmatch/hl2mp/cfg</span>  directory by right clicking&gt;new&gt;text document rename it autoexec.cfg and write out the commands in there individually format for binds is<br>
+<br>
+bind k "+use"<br>
+<br>
+the different general console binds are<br>
+messagemode2  == team chat<br>
+messagemode  == normal chat<br>
++duck<br>
+slot1<br>
+slot2<br>
+slot3<br>
+slot4<br>
+slot5<br>
+use weapon_shotgun<br>
+use weapon_physcannon<br>
+use weapon_357<br>
+use weapon_crossbow<br>
+use weapon_crowbar<br>
+use weapon_rpg<br>
+use weapon_pistol<br>
+use weapon_smg<br>
+use weapon_ar2<br>
+use weapon_frag<br>
++reload<br>
+impulse 100  == Flashlight<br>
+impulse 201  == Spray<br>
+timeleft<br>
+toggleconsole<br>
++showscores<br>
++use<br>
++speed<br>
++voicerecord<br>
++forward<br>
++moveleft<br>
++back<br>
++moveright<br>
+spectate<br>
+jpeg<br>
+quti<br>
++attack<br>
++attack2<br>
++zoom<br>
+lastinv  == last weapon used<br>
+invprev  == scroll for weapons up<br>
+invnext  == scroll for weapons down<br>
++jump<br>
+phys_swap</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p77573">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2010-10-25 13:29:20</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Just have a seperate config with your binds and graphics settings stored in it then have autoexec execute that.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p77574">
+	<div class="info">
+		<p class="poster">{EE}chEmicalbuRn</p>
+		<p class="dt">2010-10-25 17:19:59</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">lol @Neo.  i think you over killed that bro.  Gary, just have them right click on the file and make sure its read only.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p77585">
+	<div class="info">
+		<p class="poster">Neolinkster</p>
+		<p class="dt">2010-10-26 04:59:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">guys if its parsing that file each time it loads and it keeps defaulting to what they dont use.  Then its kinda useless to copy and paste, or read-only a file especially when its not retaining said changes and besides theres usually a lot of adjustments that are made to a config while playing</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p77611">
+	<div class="info">
+		<p class="poster">The Argumentalizer</p>
+		<p class="dt">2010-10-27 00:42:01</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">If it is set to read only, he can't save the newer cfg settings in it.<br>
+Change it from Read Only, edit it, close it, and make it read only again.<br>
+<br>
+Problem solved.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

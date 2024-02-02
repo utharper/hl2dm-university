@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Unbinded commands, exec movie, no mic. - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+
+<h1>Unbinded commands, exec movie, no mic.</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=3948">https://forum.hl2dm.community/viewtopic.php?t=3948</a>
+-->
+
+<div class="post" id="p52380">
+	<div class="info">
+		<p class="poster">PandorasAssassin</p>
+		<p class="dt">2009-05-10 03:00:45</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I exec movie, a thing that helps you go threw you demos and I was haivng problems so I got rid of it, I had to reset some of my keys, ie. crouch, weapon switch ect. And my mic wasn't binded so I bound it back to k and it still doesn't work. Please help. I'll post boobs?  <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"><br>
+<br>
+Problem solved thanks to everyone who helped, it was the voice_enabled 0. guess the exec movie turned it off.  <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"> <br>
+<br>
+As promised. <br>
+<br>
+<img src="http://i576.photobucket.com/albums/ss204/gothic_lamb/boobs.jpg" class="postimage" alt="Image"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p52382">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2009-05-10 03:43:47</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">you can try unbindall<br>
+then you have to rebind everything</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p52398">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-05-10 14:06:23</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Rebind all your keys and settings etc then copy your config.cfg rename it something easy "gaming" say so whern you next <strong class="text-strong">exec movie</strong> you can just <strong class="text-strong">exec gaming</strong> after you are done.<br>
+Aslo add these 2 to your "gaming" cfg otherwise you will walk around at 100 vel<br>
+cl_forwardspeed 320<br>
+cl_backspeed 320<br>
+<strong class="text-strong">Voice_enable 1</strong> should get your mic to work</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p52400">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2009-05-10 18:07:54</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">keefy pretty much said it all.<br>
+You could also keep your config.cfg @ "read only".</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p52401">
+	<div class="info">
+		<p class="poster">PandorasAssassin</p>
+		<p class="dt">2009-05-10 18:09:10</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thanks I'm going to try this, I'll let you know if it works. <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p52406">
+	<div class="info">
+		<p class="poster">badinfluence</p>
+		<p class="dt">2009-05-10 20:36:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I don't know why nobody has said it yet, but an autoexec is the same as read only. I don't know the advantages of an autoexec, maybe Punk can fill us in.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p52417">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-05-10 22:58:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">You can make any file  autoexec if you add it to the valve.rc<br>
+<br>
+I keep all alias in "autoexec" and have valve.rc exec "keefy.cfg" as well everytime the game is started up.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p52421">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2009-05-10 23:59:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">the autoexec will run itself everytime you start the game, so what I did was to make a copy of my cfg renamed it autoexec and put it in the cfg directory. Now no matter what I type in console or what I change my name to it will always go back to normal once I restart the game. This was pretty helpfull back in the day when it was commonplace for admins to screw with your cfg via mani and I think is a better way than making your cfg read only because it allows you to fine tune your net settings while in different servers and change your name ect, where as a read only cfg wont let you.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p52441">
+	<div class="info">
+		<p class="poster">Uncle Rico</p>
+		<p class="dt">2009-05-11 04:05:22</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>L2k wrote:</cite>back in the day when it was commonplace for admins to screw with your cfg via mani</div></blockquote>
+
+Man, I miss those days.   'bind mouse1 kill' FTW.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p52476">
+	<div class="info">
+		<p class="poster">s0iz</p>
+		<p class="dt">2009-05-12 00:18:39</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">bind MOUSE1 "ma_slay %n"<br>
+<br>
+IMMA FIRIN MAH LAZOR.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p52571">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2009-05-13 15:55:29</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote class="uncited"><div> I think is a better way than making your cfg read only because it allows you to fine tune your net settings while in different servers and change your name ect, where as a read only cfg wont let you.
+</div></blockquote>
+Yes it does, commands are exec'ed at the beginning of the game (or whenever you exec the config) not constantly. If you change any command like rate, cl_cmdrate, cl_updaterate or whatever, it will change, it just won't be stored so when you close the game it will go back to default.<br>
+I have my own config like keefy does, difference is I got it to exec it automatically through the launch options instead of the valve.rc , same shit though.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p52574">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2009-05-13 17:31:46</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">even if your config.cfg is read-only all commands and changes you make ingame in your console will sure enough take - for that session only - and they will reset on game launch.<br>
+in any case, working with an autoexec.cfg is better.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Config files: quotes within quotes - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+
+<h1>Config files: quotes within quotes</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=584">https://forum.hl2dm.community/viewtopic.php?t=584</a>
+-->
+
+<div class="post" id="p6868">
+	<div class="info">
+		<p class="poster">A-Master</p>
+		<p class="dt">2008-01-25 16:17:22</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Grape wrote:</cite><span style="text-decoration:underline">Proposed solution for name-change binding:</span><br>
+<strong class="text-strong">alias the_name "{HE} Grape" // puts the name in quotes<br>
+bind "0" "name the_name"</strong></div></blockquote>
+This method will work if you just remember that you can't alias only <em class="text-italics">values (like {HE} Grape)</em>, you will need also the command <em class="text-italics">(name)</em> in the alias.<br>
+<br>
+This works:
+<blockquote class="uncited"><div><strong class="text-strong">alias name1 "name {HE} Grape"<br>
+bind "0" "name1"</strong></div></blockquote></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p6871">
+	<div class="info">
+		<p class="poster">Pernicious</p>
+		<p class="dt">2008-01-25 17:30:27</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I use one cfg file for several special character names, and save it as UTF-8 or wateva.<br>
+In the cfg i have:<br>
+<br>
+//name change script<br>
+alias nameswap "namech1"<br>
+alias namech1 "name1; alias nameswap namech2"<br>
+alias namech2 "name2; alias nameswap namech3" <br>
+alias namech3 "name3; alias nameswap namech4"<br>
+alias namech4 "name4; alias nameswap namech5"<br>
+alias namech5 "name5; alias nameswap namech6"<br>
+alias namech6 "name6; alias nameswap namech7"<br>
+alias namech7 "name7; alias nameswap namech1"<br>
+alias namech8 "name8; alias nameswap namech9"<br>
+alias namech9 "name9; alias nameswap namech1"<br>
+<br>
+alias name1 "name &lt;insert&gt;"<br>
+alias name2 "name &lt;insert&gt;"<br>
+alias name3 "name &lt;insert&gt;"<br>
+alias name4 "name &lt;insert&gt;"<br>
+alias name5 "name &lt;insert&gt;"<br>
+alias name6 "name &lt;insert&gt;"<br>
+alias name7 "name &lt;insert&gt;"<br>
+Bind "key" "nameswap"<br>
+<br>
+Then i Autoexec the file. Simple, u have to like go through all the names but just put the most inportant one as the first, and make it so u start off with wateva name u use for pubs, ie at start of autoexec have name "startname here" etc</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

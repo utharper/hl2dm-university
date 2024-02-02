@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>weird teleport issue - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>weird teleport issue</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=4229">https://forum.hl2dm.community/viewtopic.php?t=4229</a>
+-->
+
+<div class="post" id="p56504">
+	<div class="info">
+		<p class="poster">kingloser</p>
+		<p class="dt">2009-07-03 04:00:36</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">im relatively new to mapping and have never encountered this error b4. I have a room that had objects u have to destroy. i have a teleport brush the size of the room and have it disabled. then i have a math_counter and logic_case so that when the objects are all destroyed they send their point values to the counter and then when u hit the correct point value the teleport should become enable via the logic_case it is however not becoming enabled. does neone know what my problem is ( besides me being a complete idiot and probably over looking something)</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p56598">
+	<div class="info">
+		<p class="poster">cyboy bunny</p>
+		<p class="dt">2009-07-04 03:51:04</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">do you reset the math_counter?? and do you give a disable command to the tele brush afterwards??</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p56906">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2009-07-10 21:26:29</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">How are you destroying the objects? If you're using "kill" then that actually deletes them and they won't send their outputs.<br>
+<br>
+You shouldn't need a logic_case for enabling the teleport, just use the math counters OnHitMax output.<br>
+<br>
+Add an ambient_generic that plays a sound when the counter hits max, that way you can diagnose whether its actually hitting max or not and work from there.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

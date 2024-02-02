@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>random targets help - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>random targets help</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=4189">https://forum.hl2dm.community/viewtopic.php?t=4189</a>
+-->
+
+<div class="post" id="p55756">
+	<div class="info">
+		<p class="poster">kingloser</p>
+		<p class="dt">2009-06-24 09:42:25</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Ok the idea here is to have a player enter a room through a door or teleport. there will be a total of 10 bullseye targets in the room, however when they come in only 1 is visible. ill make them func_buttons and have them on damaged kill this entity and add a counter to a math counter. then when its shot i want another target to appear and the same happens until all 10 have appeared and been shot. then the final one is shot and gives the math_counter a total of 10 and that unlocks the door for them to leave. i know how to make them appear in a sequence but i was wondering if there was a way to make them appear randomly. that way its not the same sequence every time u enter the room. is this possible?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55766">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2009-06-24 14:52:47</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yes <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"><br>
+<br>
+Instead of hiding / showing them you could make them pop out of the floor : that way you also make some of them move side to side or up and down as it you wouldnt have to stop or start the movement, just let them move but out of view and pop them up into view when needed.<br>
+<br>
+<a href="http://developer.valvesoftware.com/wiki/Logic_case" class="postlink"><span style="text-decoration:underline">logic_case</span></a> has the inputs PickRandom and PickRandomShuffle which will deal with the randomising.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55772">
+	<div class="info">
+		<p class="poster">kingloser</p>
+		<p class="dt">2009-06-24 17:47:28</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">do i just make the first target activate the second one then? and trigger it to move or what? thanks for all the help ur givin too.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p56267">
+	<div class="info">
+		<p class="poster">kingloser</p>
+		<p class="dt">2009-06-30 02:04:55</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">ok like boshed suggested i moved the buttons to inside the walls. then i put their move directions so that they will come out of the wall and put the return button to -1 so it stays out. However they are not coming out of the wall. i have the first target in view and have it set with <br>
+<br>
+outputs:<br>
+on damaged "buttonname" press<br>
+on damaged  add 1 to math counter<br>
+on damaged "thisbutton" kill<br>
+<br>
+when i shoot the first target i got it set that i know where the next one should be but it either doesnt move far enough or doesnt move at all. any help would be greatly appreciated. thanks.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p56905">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2009-07-10 21:23:11</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Late as usual. Did you get this sorted?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

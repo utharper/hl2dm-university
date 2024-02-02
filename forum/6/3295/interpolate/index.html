@@ -1,0 +1,233 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>interpolate - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+
+<h1>interpolate</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=3295">https://forum.hl2dm.community/viewtopic.php?t=3295</a>
+-->
+
+<div class="post" id="p43910">
+	<div class="info">
+		<p class="poster">SND</p>
+		<p class="dt">2009-02-16 18:13:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">When I was drafting up the CU config I did allot of searching on interpolate. <br>
+<br>
+I found two sides of story. One with those U-tube vids showing the guy moving with different settings and stating reasons for "-1" and other articles on why it should be "1". I looked at the wiki page by steam on this and according to it should be "1" if lag compensation is on. I also noticed that latest update of tf2 and ported games to orange box is locked at "1" and that "-1" should be used for LAN connections not Net. So I changed it to "interpolate_1" for the league since it fitted the sort of connection we use.<br>
+<br>
+But in the CAL config I noticed its minus "-1" that’s got thinking how game feel to you when you play. Any issues that you see or if any. Because we have used this command for a long time now and we have had no problems with it. <br>
+<br>
+Would be nice to hear views and have discussion on this because the message on this is very mixed.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p43921">
+	<div class="info">
+		<p class="poster">SND</p>
+		<p class="dt">2009-02-16 20:08:20</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><a href="http://developer.valvesoftware.com/wiki/Source_Multiplayer_Networking" class="postlink">http://developer.valvesoftware.com/wiki ... Networking</a><br>
+<br>
+This is what I picked up on<br>
+<br>
+"This technique is called client side entity interpolation and is enabled by default with cl_interpolate 1"<br>
+<br>
+"Failing to turn off lag compensation (cl_lagcompensation 0) at the same time as interpolation on can lead to undesired results"<br>
+<br>
+"Command Execution Time = Current Server Time - Packet Round-Trip-Time - Client View Interpolation"<br>
+<br>
+"The default networking settings are designed for playing on dedicated server on the Internet. The settings are balanced to work well for most client/server hardware and network configurations. For Internet games the only console variable that should be adjusted on the client is "rate", which defines your available bytes/second bandwidth of your network connection. Good values for "rate" is 4500 for modems, 6000 for ISDN, 10000 DSL and above"<br>
+<br>
+"Don't turn off view interpolation and/or lag compensation<br>
+    It will not improve movement or shooting precision."<br>
+<br>
+there was another site that surrported I will find it latter.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p43925">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2009-02-16 20:19:47</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">interesting question, as you are correct the CAL cfg does show cl_interpolate -1, however by testing it real quick I see that when the CAL cfg is exec'd my client is still set to cl_interpolate 1. I think to turn it off you would have to do cl_interpolate 0</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p43938">
+	<div class="info">
+		<p class="poster">ziggo0</p>
+		<p class="dt">2009-02-17 00:00:50</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">cl_ = client<br>
+sv_ = server<br>
+<br>
+Server = not a client<br>
+<br>
+Servers cannot enforce a cl command, however they can mipulate it (i.e. sv_min/max updaterate) - but there is not one for interpolate. Trying to play with interpolate and lagcomp off without LAN or sub 20 pings is a joke. <br>
+<br>
+Just gotta face, no matter the tweaking, the netcode in hl2dm will be fking retarded until it's updated properly.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p43950">
+	<div class="info">
+		<p class="poster">SND</p>
+		<p class="dt">2009-02-17 01:22:18</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">well the main concern I had was that if the command was left open like "-1" the client could some how tweak and manipulate it to there advantage. <br>
+<br>
+My theory is that this would give you a slight time advantage. For example you play on a server you have low ping no lag_comp is needed and so u can use turn off interpolate but other player has bigger ping and has to use lag_comp and interpolate in order for it to work. The player with low ping will have a far greater time advantage since low ping and no interpolate you get the best connection which is a is LAN setup. With turning interpolate off no calculation is used to predict player position by canceling it out you be 1 steep ahead or in this case m/sec ahead of your opponent (see them around corner before they see u). Well this could be wrong but is mainly based on what I have read and experienced in game.<br>
+<br>
+Also I heard other leagues banning "0" and force "1" something about interpolate hack not sure if this has any credibility. Thing it is complicated on how this command works and its hard to rap you head around it.   <br>
+<br>
+<a href="http://www.techenclave.com/guides-and-tutorials/cs-source-lag-compensation-70467.html" class="postlink">http://www.techenclave.com/guides-and-t ... 70467.html</a><br>
+<a href="http://wiki.koshatul.com/CS:_Source_Lag_Compensation" class="postlink">http://wiki.koshatul.com/CS:_Source_Lag_Compensation</a><br>
+yea I know its css but they had a big fuss about this for some reason.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p44024">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-02-17 14:31:13</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Sounds like unlagged.<br>
+<a href="http://unlagged.com/" class="postlink">http://unlagged.com/</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p44027">
+	<div class="info">
+		<p class="poster">SND</p>
+		<p class="dt">2009-02-17 15:40:51</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">well yea in other words lagcompensation. But there is a relationship between these commands. <br>
+<br>
+heres a sample of finding on relationship and effect of these commands. What its saying is that cl_interpolate 1 and cl_lagcompensation 1 should be forced on internet leagues. This was a old post so video links are dead.<br>
+<a href="http://forums.steampowered.com/forums/showthread.php?t=490324&amp;highlight=interpolate" class="postlink">http://forums.steampowered.com/forums/s ... nterpolate</a>
+<blockquote class="uncited"><div>3) The tests:<br>
+3.1) cl_interpolate 0/1:<br>
+First of all you should watch the following video several times:<br>
+<a href="http://www.thegladbacher.de/n-css/hi...rpolate1-0.wmv" class="postlink">http://www.thegladbacher.de/n-css/hi...rpolate1-0.wmv</a><br>
+<br>
+On that video you can recognize, that at “cl_interpolate 1” the model that stands still, sees the moving model delayed. In this situation, as a waiting/camping player you have a reaction-disadvantage, because the moving model sees the standing model sooner and because of that the moving model can react faster than the camping player!<br>
+At “cl_interpolate 0” you are seeing the moving model at the same time as the moving model sees you! So there is neither a reaction advantage nor a reaction disadvantage at “cl_interpolate 0”!!<br>
+The next image makes that clear:<br>
+<a href="http://www.thegladbacher.de/n-css/hi...rpolate1-0.jpg" class="postlink">http://www.thegladbacher.de/n-css/hi...rpolate1-0.jpg</a><br>
+<br>
+Result:<br>
+You should assume, that “cl_interpolate 0” is the best setting, BUT there is a bug in the lagcompensation (see below).<br>
+<br>
+3.2) cl_interpolate &amp; cl_lagcompensation:<br>
+cl_interpolate 0 &amp; cl_lagcompensation 1:<br>
+These settings are bad, because you have to shoot behind the model to hit it.<br>
+<a href="http://www.thegladbacher.de/n-css/hi...id_ip0_lc1.wmv" class="postlink">http://www.thegladbacher.de/n-css/hi...id_ip0_lc1.wmv</a><br>
+<a href="http://www.thegladbacher.de/n-css/hi...ic_ip0_lc1.jpg" class="postlink">http://www.thegladbacher.de/n-css/hi...ic_ip0_lc1.jpg</a><br>
+<br>
+cl_interpolate 0 &amp; cl_lagcompensation 0:<br>
+These settings are perfect! The hit-boxes are on the model and because of “cl_interpolate 0” nobody has a reaction-disadvantage! But you can ONLY use these settings on LAN (because of the low-latency), because the lag-compensation is disabled!<br>
+<a href="http://www.thegladbacher.de/n-css/hi...id_ip0_lc0.wmv" class="postlink">http://www.thegladbacher.de/n-css/hi...id_ip0_lc0.wmv</a><br>
+<a href="http://www.thegladbacher.de/n-css/hi...ic_ip0_lc0.jpg" class="postlink">http://www.thegladbacher.de/n-css/hi...ic_ip0_lc0.jpg</a><br>
+<br>
+cl_interpolate 1 &amp; cl_lagcompensation 1:<br>
+These settings are forced on LAN tournaments (unfortunately)… and on internet leagues. But they are also bad, because of the reaction-disadvantage by “cl_interpolate 1”!!!<br>
+<a href="http://www.thegladbacher.de/n-css/hi...id_ip1_lc1.wmv" class="postlink">http://www.thegladbacher.de/n-css/hi...id_ip1_lc1.wmv</a><br>
+<a href="http://www.thegladbacher.de/n-css/hi...ic_ip1_lc1.jpg" class="postlink">http://www.thegladbacher.de/n-css/hi...ic_ip1_lc1.jpg</a><br>
+<br>
+cl_interpolate 1 &amp; cl_lagcompensation 0:<br>
+These settings are just too bad, because you have to shoot in front of the model to hit it!<br>
+<a href="http://www.thegladbacher.de/n-css/hi...id_ip1_lc0.wmv" class="postlink">http://www.thegladbacher.de/n-css/hi...id_ip1_lc0.wmv</a><br>
+<a href="http://www.thegladbacher.de/n-css/hi...ic_ip1_lc0.jpg" class="postlink">http://www.thegladbacher.de/n-css/hi...ic_ip1_lc0.jpg</a><br>
+<br>
+Result:<br>
+As you can see above, the best client-settings are clearly “cl_interpolate 0” AND “cl_lagcompensation 0”, BUT you can ONLY use these settings on LAN, because the lag-compensation is (client-sided) disabled! However this is no problem on LAN, because every player has got a ping under 15ms!<br>
+On the internet the players has got a ping from 25ms and higher. On that “high-ping”-gamers and the settings “cl_interpolate 0” AND “cl_lagcompensation 0”, you have to shoot in FRONT of the model so that it is not adaptable to the internet! And because of that, we all have to play on “cl_interpolate 1” AND “cl_lagcompensation 1” online! That’s just the lesser of two evils!<br>
+<br>
+3.3) cl_interpolate &amp; cl_interp:<br>
+If you take a look at the picture:<br>
+<a href="http://www.thegladbacher.de/n-css/hi...pic_interp.jpg" class="postlink">http://www.thegladbacher.de/n-css/hi...pic_interp.jpg</a><br>
+You should recognize that the “cl_interp”-Value doesn’t matter on “cl_interpolate 0”, because the lag-compensation is disabled!<br>
+The higher the “cl_interp”-Value is chosen at “cl_interpolate 1” the later you see the model!<br>
+<br>
+Result:<br>
+The setting “cl_interp 0.01” is obviously the best.<br>
+<br>
+4) Conclusion:<br>
+My conclusion is easy:<br>
+On LAN with a tickrate-100-server you have to configure the following client-settings: cl_interpolate 0, cl_lagcompensation 0, cl_interp 0.01 and the following server-setting: sv_unlag 0 (“0” = disables player lag-compensation).<br>
+Unfortunately, we all have to play with the lesser of two evils in the internet (that means: “cl_interpolate 1”, “cl_lagcompensation 1”)! And here Valve comes into play!<br>
+<br>
+VALVE! PLEASE FINALLY FIX THE LAG-COMPENSATION!!!!!!!!!</div></blockquote></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p60409">
+	<div class="info">
+		<p class="poster">whitewolf</p>
+		<p class="dt">2009-09-19 01:22:38</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><img class="smilies" src="../../../images/smilies/icon_lol.gif" width="15" height="15" alt=":lol:" title="Laughing"><br>
+<br>
+amazed at the lack of interest in this thread     <img class="smilies" src="../../../images/smilies/sketchy.gif" width="15" height="15" alt=":sketchy:" title="Unsure"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p60427">
+	<div class="info">
+		<p class="poster">Blasphemy</p>
+		<p class="dt">2009-09-19 07:28:17</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">i mess with my interpolate.   <img class="smilies" src="../../../images/smilies/shhh.gif" width="15" height="20" alt=":shhh:" title="Be Quiet"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67009">
+	<div class="info">
+		<p class="poster">.::TTK::.TW3@K3R</p>
+		<p class="dt">2010-03-02 01:46:20</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">First off the hitboxes vs player isn't really what the server is vs your real player position showing hitboxes takes whatever interp is and shows you how much in the past you can go back for interpolation.. go to netcode explained thread I posted in there and I am very interested if you want to spark this back up.. I figured out the netcode for the most part surely with you guys helping we can figure out this interp.    One you have to have interp no matter what even with low pings like 20 or so.  You may never need interp but you must enable it cause if you don't and you do lose packets you would extrapolate and that is more like random guessing on player positions and stuff.  You want a calculated guess using interpolation.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67013">
+	<div class="info">
+		<p class="poster">The Argumentalizer</p>
+		<p class="dt">2010-03-02 03:13:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Forget Interpolite. I want Shottypolate... NOW!<br>
+<br>
+And 6 ping.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

@@ -1,0 +1,422 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Video recording troubles.... - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Film Discussion</a></p>
+</div>
+
+<h1>Video recording troubles....</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=2839">https://forum.hl2dm.community/viewtopic.php?t=2839</a>
+-->
+
+<div class="post" id="p36383">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2008-11-30 04:52:02</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I read Holymoly's video guide, which is btw very well done, but I couldn't get the ingame video recording working.<br>
+<br>
+I built a movie.cfg from the <a href="http://www.hl2dm-university.com/hl2dm_105.htm" class="postlink">frag video fundamentals</a> University page and with that I can record a video. But many good functions are missing in this one and sometimes the sounds are badly recorded.<br>
+<br>
+With the holymoly's movie.cfg I can't get the .tga files generated.  <img class="smilies" src="../../../images/smilies/icon_eek.gif" width="15" height="15" alt=":shock:" title="Shocked"> That's my main problem.<br>
+Also I can't get the Sourctv functions working (small problem for now), like 3rd person view.<br>
+<br>
+There's these comands in the cfg file that make me think I should have some other files I don't have:<br>
+<strong class="text-strong">alias "menu" "exec movie/menu.cfg"<br>
+alias "sourcetv" "exec movie/sourcetvmenu.cfg<br>
+exec movie/commandlock.cfg</strong><br>
+<br>
+<br>
+Also, one doubt I have: I've noticed once in my autoexec.cfg that it had some mistakes happening in it's execution. I saved it in UFT-8 and everything worked fine afterwords. It was Unicode before. The same didn't happen with the movie.cfg, but, anyway, what's the correct codification to it? Or, does it make any diference?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p36387">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2008-11-30 06:09:44</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Are you sure you are pressing the right buttons when using the movie config?<br>
+And the sctv demos aren't good at all for smoothing. 3rd person view should be easy to put, it's like when you spectate...<br>
+Commandlock.cfg "might" (not always) be needed, the other 2 aren't really that important...</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p36393">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2008-11-30 07:07:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>0nti wrote:</cite>Are you sure you are pressing the right buttons when using the movie config?</div></blockquote>
+I was pressing F10 to "record avi" but after doing some reading I think you may be right:
+<blockquote class="uncited"><div><span style="font-size:150%;line-height:116%"><strong class="text-strong">Holy's Knowledge</strong></span><blockquote><div><cite>Walking Target wrote:</cite>I missed this awesome text file the first time I was browsing the pack holymoly put together for movie makers. I though it would be good to repost it here as it contains lots of great advice.<br>
+<br>
+n1 holy <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=";)" title="Wink">
+<blockquote class="uncited"><div>(...)Use anX's Movie Config. The config contains extrememly useful settings which will let you record up to 26 different TGA series without having to specify new names. You click the same key (F11) and it will cycle to the next sequence name every time you press it. (...)</div></blockquote></div></blockquote></div></blockquote>But in the config F11 is related to the record screenshots command, that's what made me think it was F10. I was thinking that F11 would record 1 screenshot each time I press it.<br>
+
+<blockquote><div><cite>0nti wrote:</cite>And the sctv demos aren't good at all for smoothing. 3rd person view should be easy to put, it's like when you spectate...<br>
+Commandlock.cfg "might" (not always) be needed, the other 2 aren't really that important...</div></blockquote>I can't get any spectator-like freedom at all. I just see myself in 1st person and that's it. I'll try to type tv_transmitall 1 and sv_client_predict 0 manually to see if it does any good.<br>
+
+<blockquote><div><cite>0nti wrote:</cite>Commandlock.cfg "might" (not always) be needed, the other 2 aren't really that important...</div></blockquote>Well, if only I could get my demos exported, I wouldn't care much for some details. But anyway, I don't have any files by those names.  <img class="smilies" src="../../../images/smilies/icon_eek.gif" width="15" height="15" alt=":shock:" title="Shocked">  And I haven't seen anyone talk about that either.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p36413">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2008-11-30 10:54:47</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">you could try downloading the original config files which were made by anX for css. That one has 5 configs iirc.<br>
+And yeah it is F11 not F10 ^_^</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p36414">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2008-11-30 11:11:22</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">loool, thx. But that leads me to one simple question:<br>
+<br>
+In that case, wth is F10 for?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p36439">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2008-12-01 02:06:17</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">F10 records avi<br>
+<br>
+<br>
+This is the config i use for making short clips.
+<blockquote class="uncited"><div>//Movie Config by anX v2.3<br>
+//Last updated April 12th, 2007<br>
+//Credits: Wim Barelds, CAL|Stone, csflicks.net, Casey's Config, and myself<br>
+<br>
+<br>
+//This is your movie menu which can be viewed via console<br>
+<br>
+clear<br>
+echo "========================"<br>
+echo "Movie Config by anX v2.3"<br>
+echo "========================"<br>
+echo " "<br>
+echo "Configuration and Menu"<br>
+echo "------------------------"<br>
+echo "F5 - Execute movie.cfg"<br>
+echo "F6 - Clear Console and Bring Up Movie Menu"<br>
+echo "F7 - Clear Console and Bring Up SourceTV Control Menu"<br>
+echo " "<br>
+echo "Recording"<br>
+echo "------------------------"<br>
+echo "F8 - DemoUI"<br>
+echo "F9 - Take Single Screenshot"<br>
+echo "F10 - Record avi"<br>
+echo "F11 - Record Screenshots"<br>
+echo "F12 - Endmovie"<br>
+echo " "<br>
+echo "Framerates"<br>
+echo "------------------------"<br>
+echo "Control - Revert host_framerate for Functional DemoUI"<br>
+echo "Left Arrow - Capture @ 30 fps"<br>
+echo "Down Arrow - Capture @ 90 fps"<br>
+echo "Right Arrow - Capture @ 120 fps"<br>
+echo "Up Arrow - Capture @ 240 fps"<br>
+echo " "<br>
+echo "Demo Playback Speed"<br>
+echo "------------------------"<br>
+echo "Keypad 0 - 25% Speed"<br>
+echo "Keypad 1 - 50% Speed"<br>
+echo "Keypad 2 - 100% Speed"<br>
+echo "Keypad 3 - 200% Speed"<br>
+echo "Keypad 4 - 600% Speed"<br>
+echo " "<br>
+echo "HUD"<br>
+echo "------------------------"<br>
+echo "1 - Toggle Player Model"<br>
+echo "2 - Toggle Crosshair"<br>
+echo "3 - Toggle Radar"<br>
+echo "4 - Toggle Spectator Bars"<br>
+echo "5 - Toggle Text"<br>
+echo "6 - Toggle HUD"<br>
+echo "7 - First/3rd Person"<br>
+echo " "<br>
+echo "CVAR Cheats"<br>
+echo "------------------------"<br>
+echo "8 - Toggle Wireframe ( full )"<br>
+echo "9 - Toggle Wireframe ( models only )"<br>
+echo "0 - Toggle mat_proxy"<br>
+echo "- - Toggle mat_fillrate"<br>
+echo "= - Toggle Overlay Wallhack"<br>
+echo "Backspace - Toggle Smoke/Dust"<br>
+echo " "<br>
+showconsole</div></blockquote></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p36447">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2008-12-01 03:46:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>keefy wrote:</cite>F10 records avi<br>
+<br>
+<br>
+This is the config i use for making short clips.
+<blockquote class="uncited"><div>//Movie Config by anX v2.3<br>
+//Last updated April 12th, 2007<br>
+//Credits: Wim Barelds, CAL|Stone, csflicks.net, Casey's Config, and myself<br>
+<br>
+<br>
+//This is your movie menu which can be viewed via console<br>
+<br>
+clear<br>
+echo "========================"<br>
+echo "Movie Config by anX v2.3"<br>
+echo "========================"<br>
+echo " "<br>
+echo "Configuration and Menu"<br>
+echo "------------------------"<br>
+echo "F5 - Execute movie.cfg"<br>
+echo "F6 - Clear Console and Bring Up Movie Menu"<br>
+echo "F7 - Clear Console and Bring Up SourceTV Control Menu"<br>
+echo " "<br>
+echo "Recording"<br>
+echo "------------------------"<br>
+echo "F8 - DemoUI"<br>
+echo "F9 - Take Single Screenshot"<br>
+echo "F10 - Record avi"<br>
+echo "F11 - Record Screenshots"<br>
+echo "F12 - Endmovie"<br>
+echo " "<br>
+echo "Framerates"<br>
+echo "------------------------"<br>
+echo "Control - Revert host_framerate for Functional DemoUI"<br>
+echo "Left Arrow - Capture @ 30 fps"<br>
+echo "Down Arrow - Capture @ 90 fps"<br>
+echo "Right Arrow - Capture @ 120 fps"<br>
+echo "Up Arrow - Capture @ 240 fps"<br>
+echo " "<br>
+echo "Demo Playback Speed"<br>
+echo "------------------------"<br>
+echo "Keypad 0 - 25% Speed"<br>
+echo "Keypad 1 - 50% Speed"<br>
+echo "Keypad 2 - 100% Speed"<br>
+echo "Keypad 3 - 200% Speed"<br>
+echo "Keypad 4 - 600% Speed"<br>
+echo " "<br>
+echo "HUD"<br>
+echo "------------------------"<br>
+echo "1 - Toggle Player Model"<br>
+echo "2 - Toggle Crosshair"<br>
+echo "3 - Toggle Radar"<br>
+echo "4 - Toggle Spectator Bars"<br>
+echo "5 - Toggle Text"<br>
+echo "6 - Toggle HUD"<br>
+echo "7 - First/3rd Person"<br>
+echo " "<br>
+echo "CVAR Cheats"<br>
+echo "------------------------"<br>
+echo "8 - Toggle Wireframe ( full )"<br>
+echo "9 - Toggle Wireframe ( models only )"<br>
+echo "0 - Toggle mat_proxy"<br>
+echo "- - Toggle mat_fillrate"<br>
+echo "= - Toggle Overlay Wallhack"<br>
+echo "Backspace - Toggle Smoke/Dust"<br>
+echo " "<br>
+showconsole</div></blockquote></div></blockquote>
+
+Yea, I now found the .avi's, they are saved in the hl2dm's root, but they have pretty hazardous results. Chunk problems and the like.<br>
+I rather use F11 and compile with Vdub.<br>
+<br>
+<br>
+What exactly happens when these 3 are on?<br>
+mat_proxy<br>
+mat_fillrate<br>
+Overlay Wallhack</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p36451">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2008-12-01 05:41:29</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">overlay wallhack doesn't work, just on css.<br>
+The other 2 can be used to give a wallhack effect... pretty cool for some scenes in videos..</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p36514">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2008-12-02 00:28:21</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Skaruts wrote:</cite>
+<br>
+Yea, I now found the .avi's, they are saved in the hl2dm's root, but they have pretty hazardous results. Chunk problems and the like.<br>
+I rather use F11 and compile with Vdub.<br>
+<br>
+<br>
+What exactly happens when these 3 are on?<br>
+mat_proxy<br>
+mat_fillrate<br>
+Overlay Wallhack</div></blockquote>
+Indeed taking shots is a little bit more reliable I find, for starters it actualy works everytime unlike the other way which asks you to then select a codec (i use uncompressed) but sometimes the selection box fails to appear.<br>
+<br>
+Just press the buttons to see what they do it won't break your game.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p36774">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2008-12-04 03:30:21</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I still don't get this: in some videos I've watched, and in some pertinent occasions, there's the frag and then there's the same shot viewed from a diferent angle/place. I remember seeing this a lot in shots made with RPG or x-bow.<br>
+<br>
+How is it possible to get spectator freedom in a demo? (without using the "drive" button of the demo UI)<br>
+<br>
+Does it have to be recorded by Source tv?<br>
+<br>
+ <img class="smilies" src="../../../images/smilies/sketchy.gif" width="15" height="15" alt=":sketchy:" title="Unsure"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p36802">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2008-12-04 07:37:38</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">it's called demo smoothing<br>
+Here you have the best tutorial you will find in the net.<br>
+<br>
+<a href="http://www.infprod.com/index.php?site=tutorials&amp;action=show&amp;tutorialsID=17" class="postlink">http://www.infprod.com/index.php?site=t ... rialsID=17</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p36808">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2008-12-04 09:15:07</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">oh... I had seen the other tutorial called Basic demosmoothing, in which the guy does nothing for 2 mins and I though it would be only useful for map demonstration purposes. Since the guy seemed to speek inwards I didn't understand much of what he says.<br>
+but now this tut is just what I needed.<br>
+<br>
+Thx a lot.<br>
+ <img class="smilies" src="../../../images/smilies/party.gif" width="52" height="24" alt=":party:" title="Party"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p36817">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2008-12-04 15:16:26</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">np, I hope it helps ^_^</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p37005">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2008-12-06 08:40:39</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">ok. I'm getting to where I want in all these maters. I still haven't done any real movie (not even experimental) cuz I still must learn about Vegas. But anyway I want to thank you all that helped me.<br>
+<br>
+But now, yet another thing came into my way:<br>
+While I was experimenting with the demo smoother, I accidentaly loaded a demo in which someone else was playing while I spectated, and realized that the Drive button didn't work. Or rather.. it did work, but I couldn't get detached from the player view. In demos where it's me playing I can fly around, no problem.<br>
+<br>
+Is this normal?<br>
+<br>
+Cuz if it is it, then I got a problem. Because of <a href="http://www.hl2dm-university.com/forum/phpBB3/viewtopic.php?f=13&amp;t=1710" class="postlink"><span style="text-decoration:underline"><span style="color:#0080FF">that demos fluency problem</span></span></a> that onti posted about, I would want some one else to record me playing and vice versa, and then get the juice from those demos. But in this case I feel I'm outta luck.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p37015">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2008-12-06 14:40:29</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote class="uncited"><div>
+Cuz if it is it, then I got a problem. Because of that demos fluency problem that onti posted about, I would want some one else to record me playing and vice versa, and then get the juice from those demos. But in this case I feel I'm outta luck.</div></blockquote>
+Nah I wouldn't do that. First, instead of getting someone to record yourself, use sourcetv. It will be the same, and you will have many more views. Apart from that, 1st person view from source tv / spectator, is really smooth yeah, but totally inaccurate, and with several bugs (ever seen the gravity gun from spectator? :/ )<br>
+<br>
+On the drive not functioning, it is normal iirc.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p37019">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2008-12-06 15:44:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">It always seemed more accurate than my own gameplay demos, but I may be wrong...<br>
+<br>
+The source tv is server side recordings, right?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p37025">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2008-12-06 18:04:29</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">yes, the demo will stay on the server, so  you will need someone with ftp access to it if you want the demo.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p37071">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2008-12-07 02:04:40</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Source TV has no lag compensation so shots that hit can look like they missed <img class="smilies" src="../../../images/smilies/icon_sad.gif" width="15" height="15" alt=":(" title="Sad">  Same when spectate.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p37096">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2008-12-07 09:37:57</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yes that I have noticed. But the ggun seems more smooth when I spectate. But I guess it's also true to the ggun, while a person turns like 90º, the object held turns too but with a slight delay.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Film Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

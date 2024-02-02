@@ -1,0 +1,403 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Framerate issues in vdub - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Film Discussion</a></p>
+</div>
+
+<h1>Framerate issues in vdub</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=5766">https://forum.hl2dm.community/viewtopic.php?t=5766</a>
+-->
+
+<div class="post" id="p80733">
+	<div class="info">
+		<p class="poster">Ade</p>
+		<p class="dt">2011-05-23 16:54:49</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hi, hope I'm not pissing anyone off by asking noob questions but I've googled and even read the n-year-old video guide with missing links and images bla bla and can't get this to work properly.<br>
+It's not the first time I recorded stuff and put it together with VirtualDub and so far I didn't have any issues - framerate wise, atm not interested in quality and editing, I just want proper frames. I'd just record a demo, play it and record the movie then idk what magic tutorial on youtube I followed but worked like a charm! I'd open the first tga, change audio and video to full processing, select Audio from other file.., change video-&gt;framerate to 30 ( I think that's what I did last time) and it would just WORK!<br>
+Now I twist and turn it, play with different framerates and nothing.. I get a slow choppy vid with a choppy sound. If I remove the sound, it's still a crappy vid. I tried host_framerate 30 in console and made no difference.<br>
+I then tried to decimate the frames, by 3 or by 5 (by 2 was still crap) and finally it was at normal/slightly higher speed and sound was good except, of course, it skips some frames so now the flow is gone like I'm lagging in game.<br>
+Help?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p80748">
+	<div class="info">
+		<p class="poster">Ghost Dog_TSGK</p>
+		<p class="dt">2011-05-23 22:06:10</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Seems like you got the basic settings close enough for a final product that's not choppy and stuttering.<br>
+<br>
+The question is are you rendering 1280 x 720 for HD?<br>
+<br>
+If so then your PC is going to need a lot of power to play a raw HD video, if it doesn't have that power it will freeze and stutter like you said.<br>
+<br>
+Open sony vegas and try watching your raw HD video through the preview using low draft settings, if it's smooth you know you need more power. You can still edit and render your clips but you will have to review everything through vegas previews.<br>
+<br>
+Another test you can try is render the raw footage into any select codec (xvid, wmv, mp4) and see if it plays smoothly. Again if so your PC can't process raw HD fast enough.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p80750">
+	<div class="info">
+		<p class="poster">Mr. Nervous</p>
+		<p class="dt">2011-05-24 02:18:06</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">It's most likely because it's raw footage. It will come out smooth once you render it. If you're using Sony Vegas, put the clip on the timeline, highlight it, and press Shift + B (or CTRL + B, can't remember) which will prerender it and you will see it smoothly on the preview.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p80758">
+	<div class="info">
+		<p class="poster">Ade</p>
+		<p class="dt">2011-05-24 16:58:44</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">That's all fine and dandy but I never used sony vegas, never rendered my previous vids and they worked fine before. I'm guessing now I'm doing something wrong in the record phase or vdub phase..?<br>
+<br>
+EDIT: I noticed I can see the proper vid after I convert the avi to mpeg but.. I don't want to do this eeeverytime I want to check an avi output <img class="smilies" src="../../../images/smilies/icon_neutral.gif" width="15" height="15" alt=":|" title="Neutral"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p80766">
+	<div class="info">
+		<p class="poster">Ghost Dog_TSGK</p>
+		<p class="dt">2011-05-24 23:26:45</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I don't know man were you doing HD videos smoothly?<br>
+<br>
+What you're describing is textbook lack of performance, be it hardware or software something is not right.<br>
+<br>
+EDIT: Don't let VDUB steer you wrong, you can screw up the settings pretty bad and still get smooth results, I don't think you caused this problem.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p80854">
+	<div class="info">
+		<p class="poster">zeiken</p>
+		<p class="dt">2011-05-27 05:27:57</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">add me on steam, ill fix this in a blink of an eye.<br>
+<br>
+steam : z4kx</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p80868">
+	<div class="info">
+		<p class="poster">Ghost Dog_TSGK</p>
+		<p class="dt">2011-05-27 23:32:07</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">No he won't.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p80870">
+	<div class="info">
+		<p class="poster">Ade</p>
+		<p class="dt">2011-05-27 23:47:40</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Ghost Dog_TSGK wrote:</cite>I don't know man were you doing HD videos smoothly?</div></blockquote>
+<a href="https://www.youtube.com/watch?v=f4XdQeVRLYI&amp;hd=1" class="postlink">http://www.youtube.com/watch?v=f4XdQeVRLYI&amp;hd=1</a> Apparently yt sees that shit as HD..<br>
+<br>
+Hey zeik, didn't know u still play<br>
+Dog, don't jinx it <img class="smilies" src="../../../images/smilies/icon_neutral.gif" width="15" height="15" alt=":|" title="Neutral"> btw ur sig is rly disturbing (me) lol</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p80871">
+	<div class="info">
+		<p class="poster">zeiken</p>
+		<p class="dt">2011-05-28 00:49:28</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Ade wrote:</cite><blockquote><div><cite>Ghost Dog_TSGK wrote:</cite>I don't know man were you doing HD videos smoothly?</div></blockquote>
+<a href="https://www.youtube.com/watch?v=f4XdQeVRLYI&amp;hd=1" class="postlink">http://www.youtube.com/watch?v=f4XdQeVRLYI&amp;hd=1</a> Apparently yt sees that shit as HD..<br>
+<br>
+Hey zeik, didn't know u still play<br>
+Dog, don't jinx it <img class="smilies" src="../../../images/smilies/icon_neutral.gif" width="15" height="15" alt=":|" title="Neutral"> btw ur sig is rly disturbing (me) lol</div></blockquote>
+yeah i dont play lol, but i still edit <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"><br>
+<br>
+Hey ghost, what do you know about editing?<br>
+you dont know shit.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p80884">
+	<div class="info">
+		<p class="poster">Ghost Dog_TSGK</p>
+		<p class="dt">2011-05-28 21:23:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Neither do you nor any of us kiddo, quti striving to be pro at anything you can.<br>
+<br>
+@ade that looks like youtubes idea of HD to me.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p80888">
+	<div class="info">
+		<p class="poster">zeiken</p>
+		<p class="dt">2011-05-28 23:36:47</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Ghost Dog_TSGK wrote:</cite>Neither do you nor any of us kiddo, quti striving to be pro at anything you can.<br>
+<br>
+@ade that looks like youtubes idea of HD to me.</div></blockquote>
+You're a pure fucking ignorant bitch, look at my video in my sig.<br>
+Im on a whole new level, no one in DM can do what i can do, only Dark Soul can because we work/edit together and im showing him some stuff.<br>
+I doubt you could do the same or even try to do it, dumbass.<br>
+L2edit.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p80892">
+	<div class="info">
+		<p class="poster">Ghost Dog_TSGK</p>
+		<p class="dt">2011-05-29 03:54:49</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Cool, I forgot Pixar and Universal were chomping at the bit to get you on the team. Clearly a professional. You couldn't even make infprod</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p80895">
+	<div class="info">
+		<p class="poster">zeiken</p>
+		<p class="dt">2011-05-29 08:29:02</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Ghost Dog_TSGK wrote:</cite>Cool, I forgot Pixar and Universal were chomping at the bit to get you on the team. Clearly a professional. You couldn't even make infprod</div></blockquote>
+1.Infprod is dead.<br>
+2.Back in the days when it was active, i didnt know shit about editing.<br>
+3.Learn to fucking edit THEN come back to me, and you know that you enjoyed my video.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p80896">
+	<div class="info">
+		<p class="poster">Ghost Dog_TSGK</p>
+		<p class="dt">2011-05-29 10:07:39</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">So you're saying when infprod was active you didn't know shit about editing? Interesting.<br>
+<br>
+I didn't watch your video, I hope it's about a mediocre source player hopping from game to game cheating and making an ass of himself in each community still not realizing everyone thinks he is full of shit.  Otherwise what experience could you possibly lend to it?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p80897">
+	<div class="info">
+		<p class="poster">zeiken</p>
+		<p class="dt">2011-05-29 10:41:56</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yo, the thing is, you fucking cry about me cheating, then you bring up infprod? lmao.<br>
+You're better than me in editing? prove it or shut the hell up, mister TSGK member.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p80898">
+	<div class="info">
+		<p class="poster">Ghost Dog_TSGK</p>
+		<p class="dt">2011-05-29 13:49:31</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Just stating the facts is all.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p80901">
+	<div class="info">
+		<p class="poster">phantom</p>
+		<p class="dt">2011-05-29 21:24:44</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">dont you dare talk to ghost dog like that idiot</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p80902">
+	<div class="info">
+		<p class="poster">Ghost Dog_TSGK</p>
+		<p class="dt">2011-05-30 00:20:42</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Phantom Punch</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p80905">
+	<div class="info">
+		<p class="poster">zeiken</p>
+		<p class="dt">2011-05-30 00:54:19</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">damn man, i wish you guys could set up a LAN party so i can come and see how much shit you can talk in front of me, cause i know for a fact that you won't fucking say shit to me.<br>
+<br>
+But yeah dude if you still want to talk shit, go ahead tough guy, keep doing it. That monitor of yours gives you balls isnt it?.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p80908">
+	<div class="info">
+		<p class="poster">Ghost Dog_TSGK</p>
+		<p class="dt">2011-05-30 03:31:07</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yeah I'm not at all a total asshole irl and wouldn't beat the shit out of your pretentious angst filled ass. You don't realize I use gaming to keep my rowdy ass off the street, all the people I see bragging about getting wasted and being tough fighting people makes me smirk.<br>
+<br>
+ The fact that you announce that you want to fight is all the proof I need that it's foreign to you, people like you used to stop and watch people like me beat the breaks off of habitual line steppers, you are a nervous spectator,  By all means come whoop my ass.  Get mad at phantom I assure you he gives 1/4 of a fuck, he also thinks it's stupid to let a pretender like you paste this site with your bullshit.<br>
+<br>
+Lets summarize:<br>
+<br>
+Zeik: I'm pretty pro gamer<br>
+<br>
+Us: No you cheat and are terrible still<br>
+<br>
+Zeik: Oh I pro hack coder none stop me<br>
+<br>
+Us: You're getting them from another person and we have proof<br>
+<br>
+Zeik: Oh well than I pro troll I troll you and claim to be anonymous on an account with a username <br>
+<br>
+Us: No you're awful at trolling<br>
+<br>
+Zeik: Oh then I pro editor better than u and him<br>
+<br>
+Us: ?<br>
+<br>
+What's next?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p80920">
+	<div class="info">
+		<p class="poster">Uncle Rico</p>
+		<p class="dt">2011-05-30 21:17:19</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>zeiken wrote:</cite>damn man, i wish you guys could set up a LAN party so i can come and see how much shit you can talk in front of me, cause i know for a fact that you won't fucking say shit to me.</div></blockquote>
+<div class="inline-attachment">
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="samp2badd22e7cad51a2.jpg" class="postimage" alt="samp2badd22e7cad51a2.jpg" onclick="viewableArea(this);"></dt>
+						<dd>samp2badd22e7cad51a2.jpg (42.95 KiB) Viewed 355 times</dd>
+		</dl>
+		
+		
+			</div></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p80922">
+	<div class="info">
+		<p class="poster">Ghost Dog_TSGK</p>
+		<p class="dt">2011-05-30 23:24:39</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">The man can do it all</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p80927">
+	<div class="info">
+		<p class="poster">zeiken</p>
+		<p class="dt">2011-05-31 07:55:26</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Does not make sens at all. Thing is, i wanted to help Ade, and you start shit.<br>
+You do realize are few people think i still cheat? Yes, the number decreased, i bought all my games back + other expensive games (brink, bo, mw2, etc), why would i hack on a new account, to get myself vac banned? Does not make any sens to me.<br>
+I wasnt here to start shit with you, i told Ade i could help him and for some reason you replied with a bad comment.<br>
+I dont understand, really i don't.<br>
+Okay, i will be mature this time, if you wanna make peace with me, and forget all the crap that i did or said, let's do it now.<br>
+Your choice.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p80928">
+	<div class="info">
+		<p class="poster">Pernicious</p>
+		<p class="dt">2011-05-31 09:29:57</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>zeiken wrote:</cite>damn man, i wish you guys could set up a LAN party so i can come and see how much shit you can talk in front of me, cause i know for a fact that you won't fucking say shit to me.</div></blockquote>
+
+Rofl, not that anyone would have any reason to go to a lan party with u, but seriously, i doubt that.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p80931">
+	<div class="info">
+		<p class="poster">Ghost Dog_TSGK</p>
+		<p class="dt">2011-05-31 22:16:12</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I'm okay with that. My comment was there because you practically insisted you could fix a problem you don't really know if it's fixable, it's a bad way to approach things.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p80932">
+	<div class="info">
+		<p class="poster">zeiken</p>
+		<p class="dt">2011-06-01 03:12:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Ghost Dog_TSGK wrote:</cite>I'm okay with that. My comment was there because you practically insisted you could fix a problem you don't really know if it's fixable, it's a bad way to approach things.</div></blockquote>
+Actualy, it is fixable, but the problem isnt the programs or w.e, Ade is lol, i mean he does not want to install vegas or even record on 1280x720. I guess i can't help him unless he installs vegas and do all the other things.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p81327">
+	<div class="info">
+		<p class="poster">Ade</p>
+		<p class="dt">2011-06-08 05:37:01</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">mk<br>
+hate it when err1s on vacation and i start threads that no one cares to answer or the 2 ppl that cared to answer this 1 clearly didn't understand my issue but tried to help nonetheless (TY!) and ended up like 2 kids fighting over who edits the prettiest sandcastle. and no parent around to send them both in timeout or delete this fkn thread lol<br>
+no offense<br>
+my q was if i missed a step in vdub since it was fine before and now it's not. it's that simple. answer was no. maybe my gfx card is going to hell since it's crashing more n more often. moving along now.<br>
+<br>
+pwetty pweeease close this thread.<br>
+<br>
+PS: zeiken for the last time, i'm a SIS</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p81331">
+	<div class="info">
+		<p class="poster">Ghost Dog_TSGK</p>
+		<p class="dt">2011-06-08 06:49:12</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Meanwhile both of us still offered to help you.<br>
+<br>
+Shut up.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Film Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

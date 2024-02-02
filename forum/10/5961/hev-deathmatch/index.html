@@ -1,0 +1,316 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>H.E.V: Deathmatch - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+
+<h1>H.E.V: Deathmatch</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=5961">https://forum.hl2dm.community/viewtopic.php?t=5961</a>
+-->
+
+<div class="post" id="p83664">
+	<div class="info">
+		<p class="poster">srslyNOTnewguy</p>
+		<p class="dt">2012-01-27 04:34:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">173.193.29.63:27015 <br>
+Password: efps <br>
+Location: Dallas <br>
+<a href="http://hl2dmpro.com/index.php?site=files&amp;file=172" class="postlink">http://hl2dmpro.com/index.php?site=files&amp;file=172</a> <br>
+<br>
+The premise of HEV:DM is dynamic hl2dm movement with balanced weapons, which of course greatly raises the skill ceiling. <br>
+<br>
+The biggest and most legitimate change to hl2dm's broken weapons is the removal of the headshot damage for explosives; I was so fucking pissed when I learned that detail. The rest of the weapons - aside from the crossbow since its the only balanced thing valve ever made - have undergone a very-quake like overhaul. This balance brings about a precedence on Super-Charger domination, gathering, and map control, and because of the balance to the weapons, they now respawn ever 4 seconds to ensure everyone has an opportunity to enter combat as they wish. This is provided that they know how to move and can be dynamic in their combat style. Those who can only whore overpowered and out-of-place weapons like the shotgun (vapor) or focus on nerding a single, boring, skill like long-range-hitscan (choco,) will find themselves unable to achieve the success they had in the broken, joke-of-a-game, hl2:dm in my gSDK mod of ag2. <br>
+<br>
+It has had ALOT of testing from REAL hl2dm players such as phanty-blast, but I of course value any input from the rest of you still stewing in this community. <br>
+More feedback, not matter who it is from, is very valuable. <br>
+<br>
+Games in HEV are much more fun to watch and play - do give it a try bitches. <br>
+That server also has a the option of play stock, pro, or what-have-you with better hit registration and movement. <br>
+<br>
+Here is a list of all I changed, do try it in application... <br>
+Phantom was very wary when he first read it, but now he loves as well as rapes the fuck out of it. <br>
+<br>
+HEV Weapons:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>"357_DamageValue"		"45.000000"
+	"357_HeadShotFactor"		"2.000000"
+	"357_ArmorRatio"		        "0.200000"
+	"ar2_DamageValue"		"8.000000"
+	"ar2_HeadShotFactor"		"2.000000"
+	"ar2_ArmorRatio"		        "0.200000"
+	"ar2_Spread"			"3.000000"
+	"crossbow_DamageValue"	"100.000000"
+	"crossbow_HeadShotFactor"	"1.000000"
+	"crossbow_ArmorRatio"		"0.200000"
+	"crowbar_DamageValue"		"10.000000"
+	"crowbar_HeadShotFactor"	"1.000000"
+	"crowbar_ArmorRatio"		"0.200000"
+	"frag_DamageValue"		"100.000000"
+	"frag_HeadShotFactor"		"1.000000"
+	"frag_ArmorRatio"		        "0.200000"
+	"frag_Radius"			"250.000000"
+	"pistol_DamageValue"		"6.000000"
+	"pistol_HeadShotFactor"	"2.000000"
+	"pistol_ArmorRatio"		"0.200000"
+	"pistol_Spread"			"0.000000"
+	"rpg_DamageValue"		"250.000000"
+	"rpg_HeadShotFactor"		"1.000000"
+	"rpg_ArmorRatio"		        "0.200000"
+	"rpg_Radius"			"300.000000"
+	"shotgun_DamageValue1"	"4.000000"
+	"shotgun_DamageValue2"	"4.000000"
+	"shotgun_HeadShotFactor"	"1.500000"
+	"shotgun_ArmorRatio"		"0.200000"
+	"shotgun_Spread"		        "10.000000"
+	"smg1_DamageValue"		"4.000000"
+	"smg1_HeadShotFactor"		"1.500000"
+	"smg1_ArmorRatio"		"0.200000"
+	"smg1_Spread"			"3.000000"
+	"smg1nade_DamageValue"	"50.000000"
+	"smg1nade_HeadShotFactor"	"1.000000"
+	"smg1nade_ArmorRatio"		"0.200000"
+	"smg1nade_Radius"		"250.000000"
+	"physcannon_DamageValue"	"0.000000"
+	"other_HeadShotFactor"	"1.000000"
+	"DeploymentTime"		        "0.500000"
+	"WalkSpeed"	"150.000000"
+	"NormalSpeed"	"190.000000"
+	"SprintSpeed"	"320.000000"
+	"LongJump"		"0.000000"
+	"WallJump"		"0.000000"
+	"DropWeapons"	"1.000000"
+	"357Zoom"		"1.000000"
+
+	"357_Clip"				"6.000000"
+	"Shotgun_Clip"			"8.000000"
+	"SMG1_Clip"			        "60.000000"
+	"SMG1Grenade_Clip"		"2.000000"
+	"AR2_Clip"				"45.000000"
+	"AR2AltFire_Clip"		        "1.000000"
+	"Pistol_Clip"			        "24.000000"
+	"Crossbow_Clip"			"1.000000"
+	"RPG_Clip"				"1.000000"
+</code></pre></div>
+
+tl:dr = I am better than all of you combined. Just say'n brah.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p83665">
+	<div class="info">
+		<p class="poster">phantom</p>
+		<p class="dt">2012-01-27 04:44:08</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">In my 5 years of playing this game I have never found this game to be as fun as i do now. The game has been BALANCED to where you are rewarded for being smarter than your opponent, I no longer find myself randomly dying from shotgun blasts from across the map and completely shit on anyone who rushes without getting any pickups or armor.<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+This IS the best thing that has ever happened to this game</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p83666">
+	<div class="info">
+		<p class="poster">KILLER_K™</p>
+		<p class="dt">2012-01-27 04:55:33</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I really enjoy playing with you guys. Even though I'm basically just target practice or getting in the way. It is very nice to get to play with people that aren't always trying to make people feel bad. Great to be able to just play a game, have fun and learn stuff.<br>
+<br>
+Thanks</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p83667">
+	<div class="info">
+		<p class="poster">srslyNOTnewguy</p>
+		<p class="dt">2012-01-27 05:46:38</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Some things I forgot: <br>
+When you first join the server and it is running a custom gSDK, like the HEV ones, your client loads and launches the environment before the gSDK is loaded. <br>
+<br>
+So when you first connect, movement will be weird and you will have 0 gravity ragdolls. <br>
+The ice-skating will subside, and the ragdolls will normalize on a map change, since by then you client has fully "digested" the gSDK.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p83668">
+	<div class="info">
+		<p class="poster">Batter</p>
+		<p class="dt">2012-01-27 07:56:35</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Considering I haven't been on steam for five months and haven't played any form of HL2:DM since OB mod, I have two very basic questions:<br>
+<br>
+1. Is H.E.V: Deathmatch a new mod which balances HL2:DM, or is it some sort of game type within AG2?<br>
+2. What is H.E.V an acronym for?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p83669">
+	<div class="info">
+		<p class="poster">Blasphemy</p>
+		<p class="dt">2012-01-27 08:05:26</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Mod is backed, I guess I don't need 3 orbs to still be decent at this game. Who would have thought?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p83671">
+	<div class="info">
+		<p class="poster">srslyNOTnewguy</p>
+		<p class="dt">2012-01-27 08:53:05</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Before I forget to say: <br>
+If you ever enter my server and you are unable to see rebels, it is because your bright skins could not sync with the sv_pure stuff on the server. <br>
+As of right now, the fix is to load the _debug version of w/e gameplaySDK you are using and it will use hl2mp stock skins, or the lame ones.<br>
+
+<blockquote><div><cite>Batter wrote:</cite>
+1. Is H.E.V: Deathmatch a new mod which balances HL2:DM, or is it some sort of game type within AG2?<br>
+2. What is H.E.V an acronym for?</div></blockquote> <br>
+1. This is a custom gSDK mod within AG2, so you do need ag2 to play it. <br>
+2. HEV = Hazardous Environment Suit and is a staple of the half-life franchise. <br>
+<br>
+The reason I am calling is HEV is because that is the working title for what I hope to be a source 2011 mod, but considering how Valve will likely NOT invest any time and money into making a Half-life 3 DM, I will likely have to overhaul the 2011:SDK (in a custom modeling sense) in order to make my game look the way I want it to. Players in the DM style game will be wearing HEV suits (HEV mark XII) which will have quite a bit of new features that are mostly amalgamations of hl2dm and hl2dm:pro. Right now I am just developing game theory and high concept crap to bring to Janek and see if he will use his coding skills on this project. I am currently in a game development program and will have to learn quite a bit of C++ coding (the language the source engine uses,) but it is not my cup of tea to say the least. I will be doing the modeling an creative development crap for this project, and I will need to find hardline coders as well as sound and animation. <br>
+<br>
+I will not be denied. This shit will happen.<br>
+If I can't market this hev/half-life crap to valve, it will be some fast paced mega man DM or any number of aesthetic scenario concepts. <br>
+The shit being worked on as of right now will be the core components of combat. <br>
+<br>
+Thank any and all of you who try this out. <br>
+Those who don't are fucking noobs who are not good at anything and therefore will not breed. <br>
+<br>
+Play my shit and better yourself - lamers.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p83672">
+	<div class="info">
+		<p class="poster">Heart1ess</p>
+		<p class="dt">2012-01-28 00:30:45</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Since when did new guy get so haaaaaaaarrrrd. It's get down or lay down huh.... <br>
+<br>
+Here's my advice to you since you didn't get the memo. I'll do it in point form so you get it hard guy. <br>
+<br>
+1) After seeing the success of hl2ctf and Ag2.... a smart guy would understand the dummies find it too difficult to install such a mod. Hence you doing this coding would MAYBE attract 10 gamers at best.<br>
+<br>
+2) Telling people they are noobs and good for nothings will not make people play.<br>
+<br>
+<br>
+  ***Dislcaimer***  I do not think this is the best option but maybe your <strong class="text-strong">only</strong> one. <br>
+<br>
+3) Your best chance on seeing this go anywhere is contacting those cunts that are working on black mesa. A birdie from around the way told me that they're trying to get it out this year...<br>
+<br>
+Do i believe em?....Nahhh<br>
+<br>
+Do i think 2012 is the year they release it???...possible. I already see lots of people posting pics on steam of them playing the game in alpha phase 6. <br>
+<br>
+Will they have a DM? ..........They said they would. I feel that if they did it would bring in ALOT more people then what hl2dm is seeing right now. <br>
+<br>
+<br>
+Here's what you do....You write up your coding. You send an email telling them you're the best of the remaining best in hl2. You know this community inside out and tell them after 7 years this is what people want. See if you get a response....</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p83673">
+	<div class="info">
+		<p class="poster">srslyNOTnewguy</p>
+		<p class="dt">2012-01-28 03:51:39</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">All valid stuff Ace, I thank you. <br>
+<br>
+However: <br>
+The morons who are unable or unwilling to download and use the mod(s) are not the kind of people who's input I need; I could just throw the software at a primate that has suffered severe frontal lobe damage and get the same amount of viable feedback. Why bother?  <br>
+EDIT: This does seem to contradict my OP in this thread, but feedback from anyone NOT within the aforementioned grouping is what I consider "valuable." <br>
+         I tried being nice in the early going of OB mod; gayfags were gay.<br>
+<br>
+The goal right now is to attempt to tweak and to learn how to tweak the gameplay so that it has a legitimate skill ceiling and to attempt to remove the randomness from the game. <br>
+Remove the random from hl2dm - a huge undertaking indeed. <br>
+<br>
+As of right now, I would need to ask janek to do things like expand the gSDK so I can change properties like the wind-up period for orbs, their active duration (from 5 sec to 2.75-2.8 sec,) as well as an ability to [mouse1] an orb that is being held in another client's ggun and make it instantly dissipate. <br>
+That would be the best method to advance this game theory ASAP. <br>
+<br>
+I would not appeal to BM:S team and ask them to completely redo their MP side of the project on faith... <br>
+What will likely be the case is me having to learn to do these small things myself and then sell the substance I put forth to a team a experts who buy into it and are willing to work with me. <br>
+A lot of people do want to work with me, for I am fucking awesome, but as of now doubt that I will do anything more than "sound good." <br>
+<br>
+Then we make something totally badass (but the DM skill-based shit will likely have to be free) then try to sell it as an attachment to some borderlands/wow combination of a FPS game or w/e type of platform we will have to adapt to in 4-6 years. <br>
+Dynamic market is dynamic. <br>
+<br>
+So again, to any and all real hl2dm players who have real respect for skill - try my shit out. <br>
+<br>
+My dick is small.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p83674">
+	<div class="info">
+		<p class="poster">ninojman</p>
+		<p class="dt">2012-01-28 06:18:01</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">will it come with a zombie mode?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p83675">
+	<div class="info">
+		<p class="poster">srslyNOTnewguy</p>
+		<p class="dt">2012-01-28 06:43:42</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yes actually, and infestation game mode. <br>
+<br>
+Not sure why valve didn't do it already, and AvP(1999)/AvP2 modeled it very well and it proved itself to be quite popular. <br>
+<br>
+It can be added to the majority of game modes, but the premise is very similar (if not, exact) to playing the life-cycle mod of Aliens vs Predator. <br>
+You spawn as a type of head-crab, posses humans  - be them other clients with weapons or the additional AI civilians that the other team of HEV players is charged to protect - and try to stay alive whilst mauling the bidde's and nurture the hive. <br>
+<br>
+Should be fun.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p83677">
+	<div class="info">
+		<p class="poster">srslyNOTnewguy</p>
+		<p class="dt">2012-02-03 02:03:06</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I recently adjusted the smg_nade and frag_nade damage, increasing frag's by 20% from previous version and the smg_nades now do 60 dmg max with same hl2mp_stock splash radius. <br>
+Both 'nades are still quite nerf'd from the removal of the HS bonus for explosives, and - as it is now - smg_nades dmg is reduced by 40% from valve's silly value of 100. <br>
+Frag nades are reduced from 150 to 120 base dmg value from hl2mp_stock and were not as nerf'd as smg_nades due to the fact that it can be caught and no over-the-shoulder bias is present. <br>
+<br>
+As for the hev_hero cfg, speed was tweaked so that it is not playable on hl2mp_stock maps; good bunny hoppers can still get up to over 700 velocity with application of proper jumps. <br>
+Even an avg bhopper like myself can be over 700 velocity if allowed to have a dozen jumps or so. <br>
+<br>
+Faster game and balanced weapons make newguy a good boy.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

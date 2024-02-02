@@ -1,0 +1,372 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Making a Server for 1on1 matches - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+
+<h1>Making a Server for 1on1 matches</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=372">https://forum.hl2dm.community/viewtopic.php?t=372</a>
+-->
+
+<div class="post" id="p2168">
+	<div class="info">
+		<p class="poster">s0iz</p>
+		<p class="dt">2007-08-31 01:17:06</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">In the last days I been working on a server made exclusivly for running one on one matches.<br>
+<br>
+<strong class="text-strong">&gt; What the F am I talking about?</strong><br>
+<br>
+It's a Source Dedicated Server running under Windows 2003 Server Edition SP2 at 67Tickrate and 500FPS (extremely tweaked to be REAL 67tick-500fps)<br>
+<br>
+It is limited to 4 slots, 2 free for players, 1 reserved for an admin and another one that is going to be always used by SourceTV.<br>
+<br>
+<strong class="text-strong">&gt; What is the difference with the rest of servers?</strong><br>
+<br>
+This server will be perfectly set to have the minus latency possible and the highest rates avaible, giving the less hit-registration problems as possible.<br>
+<br>
+Why? Simple, it's based to be played by regional players, with less than 100ms. So the frame interpolation and prediction will be disabled, reducing hit registration problems a LOT (of course that having a real cmd/updaterate 67 and a smoothly 500fps helps, too). Also, both players will be forced to use cl_cmdrate "66" as min and "67" as max.<br>
+<br>
+<strong class="text-strong">&gt; Which plug-ins would this server use?</strong><br>
+<br>
+The server MUST use Source MetaMod (<a href="http://www.sourcemm.net/" class="postlink">http://www.sourcemm.net/</a>) with the following addons:<br>
+<br>
+- <a href="http://forums.alliedmods.net/showthread.php?t=39356" class="postlink">Basic Admin Tool (BAT)</a> by <em class="text-italics">EKS</em><br>
+<br>
+- <a href="http://forums.alliedmods.net/showthread.php?t=47900" class="postlink">Country Filter</a> by <em class="text-italics">Knagg0</em> (OPTIONAL, not really necessary)<br>
+<br>
+- <a href="http://forums.alliedmods.net/showthread.php?t=39223" class="postlink">FPS Boost</a> by <em class="text-italics">sslice</em><br>
+<br>
+- <a href="http://forums.alliedmods.net/showthread.php?t=47374" class="postlink">High Ping Kicker (HPK)</a> by <em class="text-italics">EKS</em><br>
+<br>
+- <a href="http://forums.alliedmods.net/showthread.php?p=340690" class="postlink">SteamBans.com CVAR-X</a> by <em class="text-italics">sslice</em><br>
+<br>
+- <a href="http://forums.alliedmods.net/showthread.php?t=39479" class="postlink">STEAMID_PENDING Fixer</a> by <em class="text-italics">dackz</em><br>
+<br>
+- <a href="http://forums.hl2plugins.com/index.php?topic=50.0" class="postlink">Hitsound</a> by <em class="text-italics">Keeper</em><br>
+<br>
+--------------------<br>
+<br>
+If you guys are really interested on HowTo set up a high-perfomance server for 1on1 matches, I can make a guide so most of countries/areas are able to have one.<br>
+<br>
+Thanks for your time.<br>
+<br>
+PS: Sorry if there are some mistakes over there, my english is not perfect.<br>
+<br>
+EDIT: Not sure if this thread should be here or in Engineering, moderators feel free of moving it to the corresponding sub-forum.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2170">
+	<div class="info">
+		<p class="poster">MeekMeekle</p>
+		<p class="dt">2007-08-31 03:12:20</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">this sounds awesome!  <br>
+<br>
+Which maps do you have in mind?  I'd like to see very short and fast rounds personally so other players can have turns!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2171">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2007-08-31 03:24:23</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">This is a great idea, from which I'll have loads of fun ^^</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2174">
+	<div class="info">
+		<p class="poster">s0iz</p>
+		<p class="dt">2007-08-31 04:33:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>MeekMeekle wrote:</cite>this sounds awesome!  <br>
+<br>
+Which maps do you have in mind?  I'd like to see very short and fast rounds personally so other players can have turns!</div></blockquote>
+
+Well, maps maybe choose by everyone. In my server I already have:<br>
+<br>
+aim_arena_reloaded<br>
+dm_lockdown_r3<br>
+dm_lockdown2<br>
+dm_zeta_prefinal<br>
+dm_lostvillage<br>
+dm_resistance_r1<br>
+dm_7hour<br>
+dm_overwatch<br>
+dm_underpass<br>
+dm_crossfire<br>
+dm_biohazard<br>
+<br>
+But I have aim_arena_reloaded 24/7 till the map begins (because it's 4 slots only)</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2176">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2007-08-31 04:54:07</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I run a similar server called the Dueling Grounds. It is on a premium connection ($5/slot) and is plugin free. WIn32 66 tick.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2184">
+	<div class="info">
+		<p class="poster">s0iz</p>
+		<p class="dt">2007-08-31 23:07:29</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Vote please.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2186">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2007-08-31 23:24:57</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Why would you need all those plugins for a 1v1 server?<br>
+<br>
+Just curious...</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2187">
+	<div class="info">
+		<p class="poster">Ko-Tao</p>
+		<p class="dt">2007-09-01 00:23:50</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">The best 1v1 / match server is one with no plugins at all.<br>
+<br>
+But if you want randoms to be able to join and run matches, all theyd need is a way to change the map. Everything else can be left stock.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2188">
+	<div class="info">
+		<p class="poster">{rAc}MikeyCSniper</p>
+		<p class="dt">2007-09-01 17:34:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yeah plug-ins tend to slow things down.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2189">
+	<div class="info">
+		<p class="poster">Blasphemy</p>
+		<p class="dt">2007-09-01 17:54:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">1 V 1 Central - NO NOOBS! -  <img class="smilies" src="../../../images/smilies/icon_cool.gif" width="15" height="15" alt="8)" title="Cool"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2190">
+	<div class="info">
+		<p class="poster">s0iz</p>
+		<p class="dt">2007-09-01 20:15:04</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">- Basic Admin Tool: To give privilegies to your friends so they can make 1v1 matches and another stuff without having the RCON.<br>
+<br>
+- Country Filter: As I said, it's a regional server but this is OPTIONAL, not really necessary if HPK is activated.<br>
+<br>
+- FPS Boost: "Fixes" the 64FPS issue, boosting it to 500.<br>
+<br>
+- High Ping Kicker (HPK): The server will be a regional one, people with 100ms or more won't be allowed to play (because the server been set to play with low-latency people)<br>
+<br>
+- SteamBans.com CVAR-X: Block certain commands that allow players advantages on you or they just produce negative things for theirselves but they don't know about it.<br>
+<br>
+- STEAMID_PENDING Fixer: You need to confirm with who you are playing with (if CAL match), there is an exploit to not show your STEAM_ID; and well, this fixes it.<br>
+<br>
+- Hitsound: Nothing better for a 1v1 match <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2191">
+	<div class="info">
+		<p class="poster">Charles</p>
+		<p class="dt">2007-09-01 20:48:21</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">If you're going to have hitsounds, don't enable them for explosives. You can spam in random areas and tell if they're there, which is a tactic you normally can't rely on.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2192">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2007-09-01 23:45:32</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yeah, WT asked me about this.<br>
+<br>
+It will be fixed soon.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2193">
+	<div class="info">
+		<p class="poster">Charles</p>
+		<p class="dt">2007-09-02 01:25:34</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Don't forget Crossbow.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2194">
+	<div class="info">
+		<p class="poster">Ko-Tao</p>
+		<p class="dt">2007-09-02 01:50:42</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>[KBH] Keeper wrote:</cite>Yeah, WT asked me about this.<br>
+<br>
+It will be fixed soon.</div></blockquote>
+
+Ah, excellent. To expand slightly on Charles comment, anything non-hitscan is abuseable, which is the only reason hitsounds are still banned in CAL. A version of the plugin with sounds for only pistol / smg primary / ar2 primary / shotgun / mag would be great for competitive play.<br>
+<br>
+Mag headshot notification with a default sound and no screen text would be great too.  <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"><br>
+<br>
+Btw, would it be possible to allow the choice of stock sound during setup?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2195">
+	<div class="info">
+		<p class="poster">s0iz</p>
+		<p class="dt">2007-09-02 03:49:11</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Ko-Tao wrote:</cite>Btw, would it be possible to allow the choice of stock sound during setup?</div></blockquote>
+
+Yes indeed, I been testing lot of configurations of all the plug-ings. I must say that Keeper made an excellent job, his plug-in is highly-configurable.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2196">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2007-09-02 03:53:23</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Ko-Tao wrote:</cite>Ah, excellent. To expand slightly on Charles comment, anything non-hitscan is abuseable,</div></blockquote>
+
+I will make it so it is configureable.  I for one don't see the xbow as a non hitscan weapon.  I know technically it is.  But it doesn't fall in the same vein as the splash damage and self directing orbs.<br>
+<br>
+On the other hand, I don't know if it is abusable.  My arena is wide open and usually a straight shot, so I'll have to rely on your guys judgement.<br>
+<br>
+My plan is a non hacking plugin that will allow hitsounds and overtime or sudden death.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2197">
+	<div class="info">
+		<p class="poster">Charles</p>
+		<p class="dt">2007-09-02 04:31:33</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">You can spam XBow ricochets and wait to hear a sound.<br>
+<br>
+It'd also be nice if you could customize the sound. That BEEEEEEEP is kinda annoying compared to other hitsounds I've heard.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2198">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2007-09-02 05:35:19</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Well I might wait for the next update to finish this off.<br>
+<br>
+Supposedly they are going to add hitbox recognition to the player_hurt and player_death events so I won't have to hack.<br>
+<br>
+Also, they can also add the "(headshot)" into the logs.  It took 5 lines of code, and I forwarded it onto VALVe.  Hopefully, since they won't have to do much work they'll include it.<br>
+<br>
+So the question is, release a plugin now with hacks?  or wait for the one without hacks?<br>
+<br>
+And for the most part, plugins do not do anything to affect the performance of the game.  The problem is when we (the plugin makers) do calculations during the gameframes.  The only reason we need to do this is multikill and JIHAD determination.  The rest get called by the engine only when necessary.  I guess if somebody did a lot of useless code during death/connecting events that could slow some things down.  For this plugin tho, I wouldn't even use gameframe calcs, so you wouldn't even notice it was there.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2199">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2007-09-02 11:27:37</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Agree on xbow, hitsound is game changing when you happen to land a blind bank shot.<br>
+<br>
+I think non-hack version is worth waiting for, assuming they release the updates you require.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2201">
+	<div class="info">
+		<p class="poster">Ko-Tao</p>
+		<p class="dt">2007-09-02 11:30:13</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hitsounds on crossbow bolts are abuseable in a number of situations and maps. Basically anything that can hit an opponent you cant see becomes a problem as it can have game-altering effects on tactics and player behavior. Hitscan of course is the opposite in that it solves a problem instead, specifically the unreliablility of blood as a hit detection method.<br>
+<br>
+Id personally say hold off until it can be done without hacks. The cleaner the plugin ultimately is, the better; any decrease in the chance of glitches or crashes in a match is worth waiting for.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2205">
+	<div class="info">
+		<p class="poster">s0iz</p>
+		<p class="dt">2007-09-02 20:45:00</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Right, but do not forget that Valve got us waiting for many things. What makes you so sure about this update?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2206">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2007-09-02 20:52:31</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I know one is coming.  Whether or not these changes get into it are a toss up.<br>
+<br>
+I made the code changes and tested.  I then e-mailed them to valve and I know they got sent to the programming team.<br>
+<br>
+The person I contacted has a history of making plugins before he started working for valve.  He has always helped me in the past.  Especially when I do the leg work for them <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=";)" title="Wink"><br>
+<br>
+That being said.  They are extremely busy getting the final touches on the orange box.  So I wouldn't be surprised if it gets left out.<br>
+<br>
+The switch between hacking and non hacking is easy for me.  I might just release the former until the update.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

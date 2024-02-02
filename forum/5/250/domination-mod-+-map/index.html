@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Domination Mod + Map - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>Domination Mod + Map</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=250">https://forum.hl2dm.community/viewtopic.php?t=250</a>
+-->
+
+<div class="post" id="p1274">
+	<div class="info">
+		<p class="poster">st00pidity</p>
+		<p class="dt">2007-06-30 22:14:28</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I've begun testing of my map / mod, its technically the 2nd test, but we did find a few problems, i didnt exactly track them down though because i was so fucked up last night.... but give it a play andd try and help me out, its kind of overwhelming because all i want to do is play it now...<br>
+<br>
+how it works:<br>
+<br>
+There are 3 capture point in the level, Area 1, Area 2, and Area 3, its your teams objective to catch, and then dominate these points for 30 seconds, the team who dominates 2/3 places first wins.<br>
+<br>
+Each domination earns the player 3 points, and the team 6 points.<br>
+<br>
+Area 1 seemed to be glitchy last night for the rebel team.... so if anyone expierenceed with source sdk, or not a retard in general, if you can try and recreate this gltich and tell me wtf is happening that'd be swell.<br>
+<br>
+The map is called dom_modus, i named it after my bestest member, its an arena map that can comfortably hold 12 players, fps is a little whacky in areas.. i could REALLY use some help with that, im not sure if its my architecture, Koa suggested i might just be overloading the engine (which is possible because i relay the game_texts that carry the current score every 1.5 seconds.)<br>
+<br>
+if your interested in helping me with this, my xfire is st00p and the server ip is 69.28.220.4:27025 im running the map 24/7 until i get it popular as shit!<br>
+<br>
+once i get it all figured out i'lll have more maps made/converted to support the mod.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1275">
+	<div class="info">
+		<p class="poster">ninjins</p>
+		<p class="dt">2007-06-30 23:56:29</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yeah man I definitely give you props for your map. I understand you're trying to work things out still and get everything refined before you start making new maps, but when you do, I'd like to suggest not just an arena map where everything can be seen from any point in the map but something more like a real level with domination points. Bigger maps too, something like np_refinery with even more domination points for larger team games. Heck I bet you could even do it on lockdown with the sdk version. Anyways good luck with your work, and I hope to see new maps soon.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1291">
+	<div class="info">
+		<p class="poster">Jelly Fox</p>
+		<p class="dt">2007-07-01 21:21:18</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Cool idea, I just checked it out and it looked good but unfortunately there was nobody to play with...although at one point someone joined so I shot him and he said something like "yeah your mother" and then left shortly afterwards  <img class="smilies" src="../../../images/smilies/icon_lol.gif" width="15" height="15" alt=":lol:" title="Laughing"> <br>
+<br>
+when I was looking around I noticed that one of the saw blades up against the tree send you flying half way across the map... is it meant to do that?<br>
+<br>
+I made a demo to show you in case it's a bug.<br>
+<br>
+Anyway, if I see people on it a bit late I'll join in for a banter  <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1292">
+	<div class="info">
+		<p class="poster">st00pidity</p>
+		<p class="dt">2007-07-02 01:13:38</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">the saw blade isn't even suppose to be laying on the ground, im still a source sdk newb and totally forgot to check the disable motion and enable motion on phys cannon grab flags. Thats been taken care of.<br>
+<br>
+i also added env_fog_controller to help with the fps a little bit, im still tweaking that as i type this.<br>
+<br>
+I took a look at my triggers to try and figure out what was troubling the scoring. I thought i had just slipped up with one or two of the area capture points but that doesn't appear to be it, so i'm going to take a closer look at another part i think might be the issue (i hope anyways).<br>
+<br>
+I've gotten in touch with a modeler and i plan on making my brushes into models, and hopefully i can make them into entities of my own, but if i can't do that, models will be great all on there own (i could get rid of a few movers and use animations instead). If i could find someone able to write a <strong class="text-strong">mani mod plugin</strong> to somehow add variables that keep score for each team (and possibly display them on the hud better then a game_text entity can) set score limit, time limit and different configurations for maps with the dom_ prefix... it'd really be swell.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1298">
+	<div class="info">
+		<p class="poster">st00pidity</p>
+		<p class="dt">2007-07-03 18:18:43</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">thinking of putting a delay between capture triggers. it honestly looks like i've covered all my bases correctly, i'l spend a few more days digging through it and see if i can indeed find a problem, but at this point i think the only problem is the source engine itself.<br>
+<br>
+I could really use a coder to bring this game type to its full potential, maybe i'll just have to learn it myself (i really know to many things already tho).<br>
+<br>
+look for build 2 to be up before friday.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

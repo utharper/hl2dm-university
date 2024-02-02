@@ -1,0 +1,281 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Warnning!!! do not type exec_lab! - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+
+<h1>Warnning!!! do not type exec_lab!</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=3199">https://forum.hl2dm.community/viewtopic.php?t=3199</a>
+-->
+
+<div class="post" id="p42144">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2009-01-26 23:24:37</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I've been hearing and seeing a few cases lately of people who were told by "friends" to type in their ingame console the following cmd:  <span style="font-size:150%;line-height:116%"><strong class="text-strong">exec_lab</strong></span><br>
+Be warned this will completely and immediately ruin your game and you will need to reinstall DM from scratch. there is absolutely no (known) way of avoiding the problems as this cmd unbinds all in your cfg's and reverts to unrecoverable state.<br>
+<br>
+If someone is suggesting this to you know this person is no friend of yours and is out to do harm.<br>
+<strong class="text-strong">exec_joy</strong>  <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"> <br>
+<br>
+val</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p42156">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-01-27 01:34:03</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">These 2 should get your listen server back to relative normality.<br>
+sv_friction 4<br>
+cl_forwardspeed "320"<br>
+cl_backspeed "320"<br>
+<br>
+If you want to see the cfg file it is in the hl2\cfg folder of <strong class="text-strong">source engine.gcf</strong></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p42157">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2009-01-27 01:41:28</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">this is not simple effecting your config_cfg m8. its ruins the whole game. not only locale.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p42160">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-01-27 01:55:01</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I have a backup of my cfg which i <strong class="text-strong">exec match</strong> in console bbut that did not solve my slow speed or little friction on a listen server so i now added them and am back to normal, no reinstalling needed.<br>
+You could sift through the LAB.cfg to find out whats different, at the end of the day its only cvars and commands that have changed its just finding out which ones.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p42162">
+	<div class="info">
+		<p class="poster">Blasphemy</p>
+		<p class="dt">2009-01-27 01:57:47</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">exec lab in console for free hacks, it works!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p42163">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2009-01-27 02:03:11</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>keefy wrote:</cite>I have a backup of my cfg which i <strong class="text-strong">exec match</strong> in console bbut that did not solve my slow speed or little friction on a listen server so i now added them and am back to normal, no reinstalling needed.<br>
+You could sift through the LAB.cfg to find out whats different, at the end of the day its only cvars and commands that have changed its just finding out which ones.</div></blockquote>
+
+i didn't see a lab.cfg anywhere?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p42166">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-01-27 02:09:36</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Steamapps folder  <strong class="text-strong">Source engine.gcf</strong> 
+<blockquote class="uncited"><div>unbindall<br>
+bind "TAB" "+showscores"<br>
+bind "ENTER" "+attack"<br>
+bind "ESCAPE" "cancelselect"<br>
+bind "SPACE" "+jump"<br>
+bind "'" "+moveup"<br>
+bind "," "+moveleft"<br>
+bind "." "+moveright"<br>
+bind "/" "+movedown"<br>
+bind "1" "slot1"<br>
+bind "2" "slot2"<br>
+bind "3" "slot3"<br>
+bind "4" "slot4"<br>
+bind "5" "slot5"<br>
+bind "6" "slot6"<br>
+bind "7" "ent_fire scene_1_acting_intro start"<br>
+bind ";" "+mlook"<br>
+bind "[" "invprev"<br>
+bind "]" "invnext"<br>
+bind "`" "toggleconsole"<br>
+bind "a" "+moveleft"<br>
+bind "c" "+movedown"<br>
+bind "d" "+moveright"<br>
+bind "e" "+use"<br>
+bind "f" "impulse 100"<br>
+bind "g" "dropprimary"<br>
+bind "i" "impulse 101"<br>
+bind "n" "noclip"<br>
+bind "p" "snapshot"<br>
+bind "q" "lastinv"<br>
+bind "r" "+reload"<br>
+bind "s" "+back"<br>
+bind "t" "+zoom"<br>
+bind "u" "messagemode2"<br>
+bind "v" "+moveup"<br>
+bind "w" "+forward"<br>
+bind "y" "messagemode"<br>
+bind "z" "+strafe"<br>
+bind "UPARROW" "+forward"<br>
+bind "DOWNARROW" "+back"<br>
+bind "LEFTARROW" "+left"<br>
+bind "RIGHTARROW" "+right"<br>
+bind "ALT" "+speed"<br>
+bind "CTRL" "+duck"<br>
+bind "SHIFT" "+walk"<br>
+bind "F5" "snapshot"<br>
+bind "F6" "save quick"<br>
+bind "F7" "load quick"<br>
+bind "INS" "+klook"<br>
+bind "PGDN" "+lookdown"<br>
+bind "PGUP" "+lookup"<br>
+bind "END" "centerview"<br>
+bind "MWHEELDOWN" "invnext"<br>
+bind "MWHEELUP" "invprev"<br>
+bind "MOUSE1" "+attack"<br>
+bind "MOUSE2" "+attack2"<br>
+bind "PAUSE" "pause"<br>
+ai_report_task_timings_on_limit "0"<br>
+suitvolume "0.25"<br>
+sv_aim "1"<br>
+hud_quickinfo "1"<br>
+muzzleflash_light "1"<br>
+hud_toggle "0"<br>
+phonemedelay "0"<br>
+phonemefilter "0.08"<br>
+flex_rules "1"<br>
+hud_fastswitch "0"<br>
+closecaption "0"<br>
+cc_linger_time "2.0"<br>
+crosshair "1"<br>
+cam_command "0"<br>
+cam_snapto "0"<br>
+cam_idealyaw "90"<br>
+cam_idealpitch "0"<br>
+cam_idealdist "64"<br>
+c_maxpitch "90"<br>
+c_minpitch "0"<br>
+c_maxyaw "135"<br>
+c_minyaw "-135"<br>
+c_maxdistance "200"<br>
+c_mindistance "30"<br>
+c_orthowidth "100"<br>
+c_orthoheight "100"<br>
+cl_upspeed "320"<br>
+sv_maxspeed "50"<br>
+lookspring "0"<br>
+lookstrafe "0"<br>
+joystick "0"<br>
+m_pitch "0.022"<br>
+m_filter "0"<br>
+sensitivity "2"<br>
+m_side "0.8"<br>
+m_yaw "0.022"<br>
+m_forward "1"<br>
+sv_noclipaccelerate "5"<br>
+sv_noclipspeed "2000"<br>
+sv_skyname "sky_white"<br>
+sv_backspeed "0.6"<br>
+cl_idealpitchscale "0.8"<br>
+hud_centerid "0"<br>
+net_graphwidth "192"<br>
+net_scale "5"<br>
+net_graphpos "1"<br>
+net_graphsolid "1"<br>
+r_viewcubemapsize "96"<br>
+voice_modenable "1"<br>
+voice_forcemicrecord "1"<br>
+voice_enable "1"<br>
+voice_scale "1"<br>
+snd_mixahead "0.1"<br>
+snd_surround "0"<br>
+hisound "0"<br>
+volume "0.680000"<br>
+sv_voiceenable "1"<br>
+sv_forcepreload "0"<br>
+r_eyesize "0"<br>
+r_eyeshift_z "0"<br>
+r_eyeshift_y "0"<br>
+r_eyeshift_x "0"<br>
+r_eyemove "1"<br>
+r_eyegloss "1"<br>
+skill "1"<br>
+mp_decals "300"<br>
+r_speedsquiet "0"<br>
+r_anamorphic "0"<br>
+mat_compressedtextures "1"<br>
+mat_picmip "0"<br>
+con_alpha "192"<br>
+con_color "200 200 200"<br>
+cl_forcepreload "0"<br>
+cl_updaterate "20"<br>
+cl_dlmax "128"<br>
+rate "2500"<br>
+bottomcolor "0"<br>
+topcolor "0"<br>
+model ""<br>
+skin ""<br>
+team ""<br>
+name "unnamed"<br>
+cl_timeout "305"<br>
+cl_captions "0"<br>
+cl_cmdbackup "2"<br>
+cl_cmdrate "30"<br>
+bgmvolume "1"<br>
++mlook<br>
+sv_friction "1"<br>
+cl_hudenable 0<br>
+bind h “ent_fire scene_1_acting_intro start”
+</div></blockquote></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p42188">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2009-01-27 06:17:10</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">what makes you think this is <em class="text-italics"><strong class="text-strong">lab</strong></em>? the cmd reads exec_lab meaning; we're looking for a file called lab.cfg...one which i have not found til now.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p42208">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-01-27 12:37:30</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">It is lab.cfg<br>
+<a href="http://s524.photobucket.com/albums/cc324/k33fy/screenshots/?action=view&amp;current=labcfg.jpg" class="postlink"><img src="http://i524.photobucket.com/albums/cc324/k33fy/screenshots/th_labcfg.jpg" class="postimage" alt="Image"></a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

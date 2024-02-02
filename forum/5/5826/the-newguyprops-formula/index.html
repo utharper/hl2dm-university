@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>The newguyprops Formula - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>The newguyprops Formula</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=5826">https://forum.hl2dm.community/viewtopic.php?t=5826</a>
+-->
+
+<div class="post" id="p81826">
+	<div class="info">
+		<p class="poster">srslyNOTnewguy</p>
+		<p class="dt">2011-06-28 01:06:40</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">All simple shit, and it fucking works:<br>
+<strong class="text-strong">NewGuyProps</strong>:<br>
+let pT = Prop Total <br>
+let p1 = Indestructible Props (gay shit) <br>
+let p2 = Non-Volatile Destructible Props (boxes) <br>
+let p3 = Volatile/Explosive Destructible Props (barrels) <br>
+let sT = Shotgun entity Total<br>
+pT = p1 + p2 + p3  <br>
+p1 = Range : {(sT) : [(1.25*(sT))+1.3]}<br>
+p2 = Range : {[((0.8)*p1)-(0.5)] : [((1.2)*p1)+(1.3])}<br>
+p3 = Range : {[((0.8)*p1)-(0.5)] : [((1.2)*p1)+(1.3)]} <br>
+(**p2&amp;p3 range's are to w/e the whole integer value is; i.e: 5.9 = 5 and 0.9 = 0; no rounding needed) <br>
+It is recommended that you use volatile props around control/vital areas (SC, RPG, ar2) and use non-volatile destructible props in areas of spam gathering to slightly ostracize the smg_nades and orbs. <br>
+This way a map has that gravity_gun driven feel to it and does NOT have a lot of BS props in the way fucking up combat and such. <br>
+You try to spread the props you have within this formula, not just spam them everywhere like in Lockdown. <br>
+<br>
+The map is then balanced between engaging-props and clutter. <br>
+<br>
+<strong class="text-strong">Current Map examples</strong>: <br>
+dm_airfusion_final<br>
+pT = p1 + p2 + p3  <br>
+p1 = Range : {(4) : [(1.25*(4))+1.3]} = {4:6} ; currently 4.<br>
+p2 = Range : {[((0.8)*(4))-(0.5)] : [((1.2)*(4))+(1.3)]} = {2:6} ; currently 5<br>
+p3 = Range : {[((0.8)*(4))-(0.5)] : [((1.2)*(4))+(1.3)]} = {2:6} ; currently 5<br>
+pT = 14 <br>
+<br>
+dm_minelab_rc3:<br>
+pT = p1 + p2 + p3  <br>
+p1 = Range : {(4) : [(1.25*(4))+1.3]} = {4:6} ; currently 5.<br>
+p2 = Range : {[((0.8)*(5))-(0.5)] : [((1.2)*(5))+(1.3)]} = {3:7} ; currently 6<br>
+p3 = Range : {[((0.8)*(5))-(0.5)] : [((1.2)*(5))+(1.3)]} = {3:7} ; currently 6<br>
+pT = 17  <br>
+<br>
+EDIT: dm_asylum_final (...please, Valar?): <br>
+pT = p1 + p2 + p3  <br>
+p1 = Range : {(5) : [(1.25*(5))+1.3]} = {5:7} ; currently 7.<br>
+p2 = Range : {[((0.8)*(7))-(0.5)] : [((1.2)*(7))+(1.3)]} = {5:9} ; currently 9<br>
+p3 = Range : {[((0.8)*(7))-(0.5)] : [((1.2)*(7))+(1.3)]} = {5:9} ; currently 8<br>
+pT = 24 (suggestion) <br>
+<br>
+EDIT: dm_rapidfire_final <br>
+pT = p1 + p2 + p3  <br>
+p1 = Range : {(5) : [(1.25*(5))+1.3]} = {5:7} ; currently 6.<br>
+p2 = Range : {[((0.8)*(6))-(0.5)] : [((1.2)*(6))+(1.3)]} = {4:8} ; currently 7<br>
+p3 = Range : {[((0.8)*(6))-(0.5)] : [((1.2)*(6))+(1.3)]} = {4:8} ; currently 8<br>
+pT = 21  <br>
+<br>
+The ranges are for the mappers themselves to decide, and even such a small change can effect the flow and feel of a map to a very high degree. <br>
+The spamming of props was Valve way of forcing people to see how gay their new physics system was, and we saw. <br>
+<br>
+This formula helps for a standardization for gameplay that the majority of competitive hl2dm players come to expect from the environments they play in. <br>
+And yah, both caverns and lostarena are outside of these ranges and I guarantee they would BOTH be more playable if they were within the newguy formula. <br>
+No map should have 0 indestructible props just as it should NOT have too many. <br>
+Having such a wide variance between different environments of the same game is just fetal, benign, and unprofessional.  <br>
+<br>
+This formula takes the wide-open and complex creative task of what to do about props in a mappers environment and breaks it down to some kind of sense of order and reason.
+<blockquote><div><cite>Albert Einstein wrote:</cite>Any intelligent fool can make things bigger and more complex... It takes a touch of genius - and a lot of courage - to move in the opposite direction.</div></blockquote></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p83603">
+	<div class="info">
+		<p class="poster">srslyNOTnewguy</p>
+		<p class="dt">2011-12-13 23:50:48</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Fucking hell yes; this shit be saved. <br>
+<br>
+My nipples are awesome.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p83604">
+	<div class="info">
+		<p class="poster">The Argumentalizer</p>
+		<p class="dt">2011-12-14 05:09:43</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Game died.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p83608">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2011-12-19 00:45:57</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">My mobo died and i'm too busy with RL stuff to take care of it. game died my ass. when i'm back to it i'll get back to mapping.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p84441">
+	<div class="info">
+		<p class="poster">Ade</p>
+		<p class="dt">2013-05-27 12:52:32</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">so yea, waitin for a comeback ^_^</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>custom exploding objects - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>custom exploding objects</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=4989">https://forum.hl2dm.community/viewtopic.php?t=4989</a>
+-->
+
+<div class="post" id="p68971">
+	<div class="info">
+		<p class="poster">Ade</p>
+		<p class="dt">2010-04-22 04:55:55</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Please help me out, I've googled my eyes out and I still don't know how to make this stuff. I just want to somehow create a small/medium object (brush, entity, I don't care), put a simple texture on it and in-game I want it to break and explode upon impact and why not, respawn! Bear in mind I'm a beginner at this.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68973">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2010-04-22 05:16:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Should be possible with a <span style="text-decoration:underline"><a href="http://developer.valvesoftware.com/wiki/Func_physbox" class="postlink">func_physbox</a></span> with explosion magnitude and radius etc set. Don't think it's possible to make these respawn.<br>
+<br>
+Be aware that brush-based physics entities lighting is set at compile time and does not change when moving them around like it does with models, and that models perform much better.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68979">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2010-04-22 07:21:42</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Well, if you're doing it with a brush entity, I think it may be possible to respawn it with a point_template, with a timer controling it or something.<br>
+If it works fine then it's ok. Mind what boshed said tho. It means the brush (entity) must be visible to lights on the compile time. Otherwise it will look like you forgot it on the grill 6 hours ago. Black.<br>
+<br>
+But how about models? How do we make them KABOOOM! ? (I've been talking about this with ade, I can't see any diference between the normal oildrum and the explosive oildrum.. 0o)</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68997">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2010-04-22 19:00:07</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Skaruts wrote:</cite>But how about models? How do we make them KABOOOM! ? (I've been talking about this with ade, I can't see any diference between the normal oildrum and the explosive oildrum.. 0o)</div></blockquote>
+You can embed prop_data in the model using it's .qc - explosive oildrum has this set, see <span style="text-decoration:underline"><a href="http://developer.valvesoftware.com/wiki/Propdata#Exploding_props" class="postlink">here</a></span><br>
+<br>
+You'll notice how it's very similar to the properties available to a physics prop, but this as actually stored in the model.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p69021">
+	<div class="info">
+		<p class="poster">Ade</p>
+		<p class="dt">2010-04-23 04:00:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>boshed wrote:</cite>with explosion magnitude and radius etc set.</div></blockquote>
+Well can you expand that 'etc'? I added some values like: Explosion damage=300, Explosion radius=200, Strength=100, in the Flags tab I ticked: Enable motion on physcannon grab and Physgun can always pick up (so I could carry the object around) then added a texture. Results: it's pickable, breakable but not exploding on impact ;(<br>
+<br>
+And another thing.. is my router acting weird, or is it steam/hammer? I keep timing out after like 30 seconds from my fkn LOCAL server.. On top of that, some UK guy joined and crowbared me all of a sudden, I was baffled.. I mean... LAAAAAAAN ffs  <img class="smilies" src="../../../images/smilies/icon_exclaim.gif" width="15" height="15" alt=":!:" title="Exclamation"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p69022">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2010-04-23 04:23:49</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">type sv_lan 1<br>
+this makes your server available only for a lan (even if you don't have one set up) preventing ppl from joining, and prevents that stupid steam ticked time out stupidity.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

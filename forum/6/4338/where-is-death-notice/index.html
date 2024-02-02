@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Where is death notice - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+
+<h1>Where is death notice</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=4338">https://forum.hl2dm.community/viewtopic.php?t=4338</a>
+-->
+
+<div class="post" id="p58677">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-08-08 22:56:13</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Does any one here know where the font file for the suicide death notice is?  In case you do not know which one, I mean this one I want to change it to the kamikaze from Q3.<br>
+<img src="http://i524.photobucket.com/albums/cc324/k33fy/Q3%20wep%20icons/crummy.png" class="postimage" alt="Image"><br>
+<br>
+<br>
+Thanks.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p58791">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-08-11 02:36:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Doesnt matter I found it and remade it, it may look familiar.<br>
+<img src="http://i524.photobucket.com/albums/cc324/k33fy/Q3%20wep%20icons/skull.png" class="postimage" alt="Image"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p58803">
+	<div class="info">
+		<p class="poster">Tranthor</p>
+		<p class="dt">2009-08-11 06:06:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">so...can we have it?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p58813">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-08-11 07:00:14</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Sure but not just now, I have more things to finish off and make whe they are done  you can download the whole pack and install, it shouldnt be long.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p58816">
+	<div class="info">
+		<p class="poster">Tranthor</p>
+		<p class="dt">2009-08-11 07:15:58</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">just to clear things up:<br>
+this won't mess up our HUD font, right?  It's a different file, correct?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p58842">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-08-11 20:02:16</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">The suicide icon definantly not its an image file (.VTF)</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p59019">
+	<div class="info">
+		<p class="poster">The Dog</p>
+		<p class="dt">2009-08-15 20:19:46</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I know how to make suicide icon as font.<br>
+Open source engine.gcf in GCFScape, hl2/scripts/hud_textures.txt, find this:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>		"d_skull"
+		{
+				"file"		"sprites/640hud1"
+				"x"			"192"
+				"y"			"224"
+				"width"		"32"
+				"height"	"16"
+		}</code></pre></div>
+And change it to:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>		"d_skull"
+		{
+				"font"		"HL2MPTypeDeath"
+				"character"	"P"
+//				"file"		"sprites/640hud1"
+//				"x"			"192"
+//				"y"			"224"
+//				"width"		"32"
+//				"height"	"16"
+		}</code></pre></div>
+Save this file as /steamapps/account name/half-life 2 deathmatch/hl2mp/scripts/hud_textures.txt and make this file "read only".<br>
+Then open hl2mp.ttf and create character "P" (you can use any free character), it will be your suicide icon.<br>
+Save your hl2mp.ttf, file must be "read only", because if it's not "read only", it will be replaced with original, from .gcf .<br>
+Hope it helps and sorry for my english.  <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p59024">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-08-15 22:38:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Awsome will give this a try.<br>
+<br>
+<br>
+EDIT:<br>
+Yes it works now the icon looks even better.<br>
+OLD<br>
+<img src="http://i524.photobucket.com/albums/cc324/k33fy/Q3%20wep%20icons/crummy.png" class="postimage" alt="Image"><br>
+NEW<br>
+<img src="http://i524.photobucket.com/albums/cc324/k33fy/Q3%20wep%20icons/skull.png" class="postimage" alt="Image"><br>
+<br>
+Or<br>
+<img src="http://i524.photobucket.com/albums/cc324/k33fy/Q3%20wep%20icons/skulls.png" class="postimage" alt="Image"><br>
+<br>
+Doesn't interfere with your crosshairs or custom HUD.<br>
+<a href="http://files.resistance-tester.com/gametools/HL2DM/Suicide%20icons.zip" class="postlink">http://files.resistance-tester.com/game ... 0icons.zip</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

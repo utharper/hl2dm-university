@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>How to change weapon respawn times? - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>How to change weapon respawn times?</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=5350">https://forum.hl2dm.community/viewtopic.php?t=5350</a>
+-->
+
+<div class="post" id="p74916">
+	<div class="info">
+		<p class="poster">dbanimal</p>
+		<p class="dt">2010-08-19 23:08:42</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hi all,<br>
+<br>
+Is there a way to change the weapon respawn times in a map (besides through server.cfg)?  I want it built into the map I'm making and I need to slow the respawn times down dramatically but am not sure how to do it.  There is no option in the weapons properties to change it.<br>
+<br>
+Thanks in advance!<br>
+<br>
+dbanimal</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p74927">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2010-08-20 04:37:37</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">you need a point_server_command with the below lines fired through a logic_auto OnMapSpawn<br>
+(note these are default values the game ships with)<br>
+<br>
+sv_cheats 1<br>
+sv_hl2mp_item_respawn_time 30 (optional - this is for ammo)<br>
+sv_hl2mp_weapon_respawn_time 20<br>
+sv_cheats 0</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p74936">
+	<div class="info">
+		<p class="poster">dbanimal</p>
+		<p class="dt">2010-08-20 17:43:12</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Alright, thanks for the info!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p75309">
+	<div class="info">
+		<p class="poster">Sacrifist</p>
+		<p class="dt">2010-08-25 05:55:32</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Just a heads up. Im pretty sure that if you alter any commands like those or sv_gravity or crap that is similar, the server admin will need to have the default commands in his/her server.cfg or the server will continue to run them on other maps in the rotation after your map is played. It's been awhile since I altered things like that so it's possible that Im talking out of my ass here, but for some reason I am thinking that this is the case. If someone can prove that this post is false, just call me a dumbass and move along lol.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

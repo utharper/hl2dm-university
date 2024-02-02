@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>annoying fps drops - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+
+<h1>annoying fps drops</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=5133">https://forum.hl2dm.community/viewtopic.php?t=5133</a>
+-->
+
+<div class="post" id="p71411">
+	<div class="info">
+		<p class="poster">the_big_cheese</p>
+		<p class="dt">2010-06-15 06:19:40</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I get pretty decent fps (80-150) most of the time. <br>
+But whenever something explodes right next to me, or I have a burning barrel in my view, I drop down to ~20.<br>
+Also happens with orbs sometimes, or in cs:s a smoke grenade will ruin my framerate for a few seconds.<br>
+Anyone know any commands or specific settings that can help this? <br>
+<br>
+Thx,<br>
+The_Biggest_Cheese</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p71412">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2010-06-15 06:32:05</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">This always been happening or is it a recent development?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p71421">
+	<div class="info">
+		<p class="poster">the_big_cheese</p>
+		<p class="dt">2010-06-15 08:05:47</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Its always happened with this computer. I just noticed it when I was playing through episode 2 recently and my screen was lagging all over the place during parts.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p71439">
+	<div class="info">
+		<p class="poster">The Argumentalizer</p>
+		<p class="dt">2010-06-15 09:57:12</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Divine Intervention. It's slowing down time so it doesn't do as much damage. Like bullets at half speed.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p71446">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2010-06-15 15:47:46</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">lower shaders</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p71451">
+	<div class="info">
+		<p class="poster">the_big_cheese</p>
+		<p class="dt">2010-06-15 19:07:13</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Already at low. Anti-Aliasing is also off.<br>
+Good thought though because when they were at high it was even worse.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p71452">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2010-06-15 20:19:00</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Wait fir Vsync should be off as well BTW.<br>
+this issue has to do with computing particles...i'm assuming this started happening after HL2 and its ep's got updated and you played through ep2?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p71453">
+	<div class="info">
+		<p class="poster">the_big_cheese</p>
+		<p class="dt">2010-06-15 20:44:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yep that's off too.<br>
+Are there any links you can give me regarding this?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p71465">
+	<div class="info">
+		<p class="poster">the_big_cheese</p>
+		<p class="dt">2010-06-15 23:49:59</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><strong class="text-strong">Update</strong> <br>
+Neolinkster was a very nice guy and helped me determine the cause.<br>
+
+<blockquote class="uncited"><div>Swap buffers <br>
+A lot of time in Swap Buffers is usually a fillrate problem. Be sure to run full screen and at a lower resolution to test. You can also use mat_viewportscale to test if you are fillrate limited; watch for performance shooting up as the value decreases. <br>
+Here are some useful bindings for changing mat_viewportscale using the "[" and "]" keys: <br>
+bind "[" "incrementvar mat_viewportscale .1 1 -.1" <br>
+bind "]" "incrementvar mat_viewportscale .1 1 .1" <br>
+High fillrate can be caused by a number of things, but it's usually expensive materials that cover large amounts of screen space. Expensive materials include: <br>
+Water, especially water that overlaps over or under other expensive materials. <br>
+Fire, smoke or steam effects. <br>
+Glass or other transparent textures, especially with refraction. <br>
+Bump, normal-mapped, or specular (reflective) materials. <br>
+Any other material with complicated shader effects. <br>
+To solve fillrate problems, reduce the number of expensive materials in the scene by simplifying the materials themselves or reducing their number by removing geometry. <br>
+Commands: <br>
+mat_bumpmap 0/1 <br>
+mat_specular 0/1</div></blockquote>
+
+The console commands did nothing for me. Right now the only way I've been able to increase my performance is by lowering my screen resolution.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p71467">
+	<div class="info">
+		<p class="poster">Ade</p>
+		<p class="dt">2010-06-16 00:44:10</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">for me, its the heat <img class="smilies" src="../../../images/smilies/icon_sad.gif" width="15" height="15" alt=":(" title="Sad"> my gfx card cant handle 35 degrees celsius in house lol im at top floor<br>
+not only drops to 40 fps, but one time it rebooted after sayin 'power saving' .. nvidia rulz</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p71513">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2010-06-16 22:17:23</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Ade wrote:</cite>for me, its the heat <img class="smilies" src="../../../images/smilies/icon_sad.gif" width="15" height="15" alt=":(" title="Sad"> my gfx card cant handle 35 degrees celsius in house lol im at top floor<br>
+not only drops to 40 fps, but one time it rebooted after sayin 'power saving' .. nvidia rulz</div></blockquote>
+
+Can you give me some of you heat? I will gladly take it off your hands.  <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p71555">
+	<div class="info">
+		<p class="poster">Monarch</p>
+		<p class="dt">2010-06-17 09:28:20</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">man, i have exactly the same.. all can help us is a new videocard  <img class="smilies" src="../../../images/smilies/icon_sad.gif" width="15" height="15" alt=":(" title="Sad">  srsly<br>
+<br>
+btw this shit made me play 640*420 on dxlevel 80 - at this resolution it's not possible to see the dust or smoke and it doesnt lug... that's what can really be useful, but on small resulotion be ready not to see anything in 20 meters xd<br>
+<br>
+i can tell 100% there is one console command <strong class="text-strong">r_drawparticles 0</strong> but it works only with sv_cheats 1.. try it on local, feel the game <br>
+i was wondering of some addon to make it open for using on the server, but it's not so perfect - u cant see smoke of the rpg rocket, or laser of grenade so..</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

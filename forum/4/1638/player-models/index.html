@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>player models - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Training Center</a></p>
+</div>
+
+<h1>player models</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=1638">https://forum.hl2dm.community/viewtopic.php?t=1638</a>
+-->
+
+<div class="post" id="p19786">
+	<div class="info">
+		<p class="poster">thatguy</p>
+		<p class="dt">2008-05-03 03:23:08</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">well just a question, I have hear how like the police model is better then the combien soilder becuase its not as loud but it has a white head. Now im not sure if just a brighter head will make that much of a diffrence but it could. Also for rebels i hear that the female model is smaller so its harder to hit. So what do find it the best player model for rebs and combine?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p19787">
+	<div class="info">
+		<p class="poster">Charles</p>
+		<p class="dt">2008-05-03 03:27:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Females appear marginally smaller than males. It's harder to see them crouched under Lostvillage's RPG shelf than it is with males. But females make that weird ass sound when they die. Males make hilarious ones. RAAAAAAAAAAAWR.<br>
+<br>
+The whiteness of the Police's head doesn't make headshots easier. It just makes him more noticeable, which can lead to making headshots easier, and thus contradicting my first point. He doesn't have glowing eyes though. Police is also the skinniest and probably used the most by euros. The two fatties (Nova Prospekt and Normal combine) have a more pleasant footstep sound to most people, plus they make a less annoying and less noticeable sound when they die. Of course, most Americans prefer playing with fatty combines. CS:S noobs and media-rebels tend to use Super Combine cause he's 133t.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p19789">
+	<div class="info">
+		<p class="poster">Anonymous</p>
+		<p class="dt">2008-05-03 03:52:18</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Well Combine and Nova do have those hundreds of annoying keys hanging off and making noise.<br>
+Grrrrr.<br>
+The policeman rules. He is creepy and makes the least noise.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p19791">
+	<div class="info">
+		<p class="poster">Jelly Fox</p>
+		<p class="dt">2008-05-03 04:56:23</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Where can I find out the correct names for the models? I'd like to bind the them<br>
+<br>
+are they as simple as:<br>
+<br>
+models/police.mdl</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p19796">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2008-05-03 06:08:39</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Under the options tab where you pick the models: each has its name listed.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p19832">
+	<div class="info">
+		<p class="poster">Cynips</p>
+		<p class="dt">2008-05-03 22:38:00</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Or you can use a little script for easy switching whenever you're up for a match. This is what I have:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>// quick model change
+alias male "cl_playermodel models/humans/Group03/Male_01.mdl; alias change_rebel female"
+alias female "cl_playermodel models/humans/Group03/Female_03.mdl; alias change_rebel male"
+alias change_rebel female
+alias police "cl_playermodel "models/police.mdl; alias change_combine dark"
+alias dark "cl_playermodel models/combine_soldier.mdl; alias change_combine bright"
+alias bright "exec supersoldier.cfg; alias change_combine police"
+alias change_combine police
+//bind j change_rebel -&gt; cycles between a dark male and female
+//bind k change_combine -&gt; cycles between the dark soldier, the bright super soldier and the police</code></pre></div>
+For some reason the supersoldier didn't work at first, so I had to make a separate config file called supersoldier.cfg:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>cl_playermodel "models/combine_super_soldier.mdl"</code></pre></div>
+
+Either you use the keys to get what you want, or you can simply type, e.g., police in the console if you want to be sure what you got without checking with your team mates (or by dying).</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p19838">
+	<div class="info">
+		<p class="poster">Jelly Fox</p>
+		<p class="dt">2008-05-03 23:25:32</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Or if you're simple like me:.......<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>// Team Selection
+
+cl_playermodel "models/humans/group03/female_06.mdl"
+bind "m" "cl_playermodel models/police.mdl; jointeam 2;" //combine
+bind "n" "cl_playermodel models/humans/Group03/female_06.mdl; jointeam 3;" //rebel
+
+//Spectate
+
+bind "p" "spectate"
+bind "[" "hidepanel specgui"
+bind "]" "showpanel specgui"</code></pre></div>
+
+This works <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p20335">
+	<div class="info">
+		<p class="poster">ninojman</p>
+		<p class="dt">2008-05-08 08:19:33</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Any else ever wonder what female_05 looks like?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p20336">
+	<div class="info">
+		<p class="poster">Anonymous</p>
+		<p class="dt">2008-05-08 08:53:04</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I always wondered what is up with Male 04.  He looks a little... ummm fruity!<br>
+I look like Male 2, so always pick that one.<br>
+The Policeman is slightly smaller and makes less equipment noise but its footstep sound like high heels, which is weird.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p20350">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2008-05-08 17:40:19</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Regarding the "easier to hit" I believe any player model has the same hitboxes, so it's the same.<br>
+I dunno  which is best, I generally use male_03 and police (ftw! ;D)<br>
+Police does have a different sound than the normal combine, but it is loud anyway. I use it cuz it's the sexiest ;P</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p20352">
+	<div class="info">
+		<p class="poster">Anonymous</p>
+		<p class="dt">2008-05-08 17:49:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">The combine models may have the same hitboxes but they are generally easier to see in the game. Rebels blend into the darker areas of Lockdown, for instance. Rebels are very hard, at least for me,to see on some maps like Aim and Swamplight.<br>
+That is an advantage and reason most players want the rebel model.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p21477">
+	<div class="info">
+		<p class="poster">yang</p>
+		<p class="dt">2008-05-18 14:58:42</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">when I'm in combine team I prefer the police model aswell, the foot step sound is not as annoying as of the other combines, hell they often  make me miss the right timing for speedskate  <img class="smilies" src="../../../images/smilies/icon_twisted.gif" width="15" height="15" alt=":twisted:" title="Twisted Evil"> <br>
+<br>
+too bad that we just can't play like Team A vs. Team B in hl2dm and everyone can choose his fav model, noooo,<br>
+we have to be team Rebels's and Team Combine ffs   <img class="smilies" src="../../../images/smilies/icon_cool.gif" width="15" height="15" alt="8)" title="Cool"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p21479">
+	<div class="info">
+		<p class="poster">Cynips</p>
+		<p class="dt">2008-05-18 15:14:16</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Well, you have to have <em class="text-italics">some</em> way of telling who's who, like making whatever models you choose blue or red depending on team.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p21481">
+	<div class="info">
+		<p class="poster">yang</p>
+		<p class="dt">2008-05-18 15:24:54</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">ahhh yeah, that s true... forgot that  <img class="smilies" src="../../../images/smilies/icon_twisted.gif" width="15" height="15" alt=":twisted:" title="Twisted Evil"> <br>
+well... at least it would make the game a bit harder nyahaha</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Training Center</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

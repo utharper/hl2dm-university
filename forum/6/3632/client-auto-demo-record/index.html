@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>client auto demo record - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+
+<h1>client auto demo record</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=3632">https://forum.hl2dm.community/viewtopic.php?t=3632</a>
+-->
+
+<div class="post" id="p49216">
+	<div class="info">
+		<p class="poster">GatesMcTaste</p>
+		<p class="dt">2009-04-07 16:21:56</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">ok, I can start a demo just fine, but there are times when I'm like "shit I wish I'd demo'd that" is there a way client side of recording a demo automatically as you join a server? I'm doubtful as it would be common knowledge by now, I'm just hoping there's a way of doing it without having to remember each time. (yes I am that lazy), is there say a way of putting record "demoname" in the autoexec but have it switch between 2 names and I manually alter the names in the file after the match so they don't become overwritten?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p49220">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-04-07 17:40:18</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Found this script on FPS banana.  All you need to do is bind ddemo to a key  <br>
+bind "key" "ddemo"<br>
+Press it to start recording stop recording and once more to start recording a new demo you can do it up to 20 times, it carries between map changes.  When you quti you will just have to rename them like you said.
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>alias ddemo "rdemo1"
+alias rdemo1 "alias ddemo sdemo1; record demo1"
+alias sdemo1 "alias ddemo rdemo2; stop"
+alias rdemo2 "alias ddemo sdemo2; record demo2"
+alias sdemo2 "alias ddemo rdemo3; stop"
+alias rdemo3 "alias ddemo sdemo3; record demo3"
+alias sdemo3 "alias ddemo rdemo4; stop"
+alias rdemo4 "alias ddemo sdemo4; record demo4"
+alias sdemo4 "alias ddemo rdemo5; stop"
+alias rdemo5 "alias ddemo sdemo5; record demo5"
+alias sdemo5 "alias ddemo rdemo6; stop"
+alias rdemo6 "alias ddemo sdemo6; record demo6"
+alias sdemo6 "alias ddemo rdemo7; stop"
+alias rdemo7 "alias ddemo sdemo7; record demo7"
+alias sdemo7 "alias ddemo rdemo8; stop"
+alias rdemo8 "alias ddemo sdemo8; record demo8"
+alias sdemo8 "alias ddemo rdemo9; stop"
+alias rdemo9 "alias ddemo sdemo9; record demo9"
+alias sdemo9 "alias ddemo rdemo10; stop"
+alias rdemo10 "alias ddemo sdemo10; record demo10"
+alias sdemo10 "alias ddemo rdemo11; stop"
+alias rdemo11 "alias ddemo sdemo11; record demo11"
+alias sdemo11 "alias ddemo rdemo12; stop"
+alias rdemo12 "alias ddemo sdemo12; record demo12"
+alias sdemo12 "alias ddemo rdemo13; stop"
+alias rdemo13 "alias ddemo sdemo13; record demo13"
+alias sdemo13 "alias ddemo rdemo14; stop"
+alias rdemo14 "alias ddemo sdemo14; record demo14"
+alias sdemo14 "alias ddemo rdemo15; stop"
+alias rdemo15 "alias ddemo sdemo15; record demo15"
+alias sdemo15 "alias ddemo rdemo16; stop"
+alias rdemo16 "alias ddemo sdemo16; record demo16"
+alias sdemo16 "alias ddemo rdemo17; stop"
+alias rdemo17 "alias ddemo sdemo17; record demo17"
+alias sdemo17 "alias ddemo rdemo18; stop"
+alias rdemo18 "alias ddemo sdemo18; record demo18"
+alias sdemo18 "alias ddemo rdemo19; stop"
+alias rdemo19 "alias ddemo sdemo19; record demo19"
+alias sdemo19 "alias ddemo rdemo20; stop"
+alias rdemo20 "alias ddemo sdemo20; record demo20
+alias sdemo20 "stop; demo_reset"
+alias demo_reset "alias ddemo rdemo1"</code></pre></div></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p49223">
+	<div class="info">
+		<p class="poster">GatesMcTaste</p>
+		<p class="dt">2009-04-07 18:01:57</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">wow thanks very much! I guess it'll be easier to remember to push a key than go into console and start it from there!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p49235">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-04-07 19:43:40</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Dont forget to rename the demos when you exit the game.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p49261">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2009-04-08 02:04:18</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>keefy wrote:</cite>Dont forget to rename the demos when you exit the game.</div></blockquote>
+
+now THAT would be what i call "easier" or "bind" <br>
+ <img class="smilies" src="../../../images/smilies/icon_mrgreen.gif" width="15" height="15" alt=":mrgreen:" title="Mr. Green"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

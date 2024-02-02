@@ -1,0 +1,837 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>(!) Tutorial - My First Ever HL2DM Map - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>(!) Tutorial - My First Ever HL2DM Map</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=1450">https://forum.hl2dm.community/viewtopic.php?t=1450</a>
+-->
+
+<div class="post" id="p16959">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-04-09 00:34:46</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><strong class="text-strong"><span style="font-size:150%;line-height:116%">Foreword</span></strong><br>
+<br>
+My First Ever HL2DM Map is going to be a KILLBOX<br>
+<br>
+  This may strike some of you as a strange choice of map to give a tut for…however, this is IMHO the best way to start mapping. Reason being it (usually) has no complex architecture, no fancy effects (again, usually). A “traditional” Killbox is just a big room with some catwalks, lifts / jump-pads, weapons and lights. Sufficient to provide one with a solid preliminary understanding of what mapping (and Mapping in Source at that) is all about.<br>
+Moreover, some of you who have already been to other well established mapping forums / sites will argue the necessity for this following tut as indeed all this information and much more has been already covered elsewhere and perhaps by more able and knowledgeable level designers than I. All true, however, I still feel a few subjects were never covered in a way that will cater for the absolute beginner. Hence a “My first ever map” tutorial, hence a few other tutorials I’m working on that will attempt to cover the more intricate facets of Source mapping in layman’s terms and have them all in one place.<br>
+There are other, great mappers on this forum that can also lend a hand and help young'uns make better DM maps as the amount of bad maps is overwhelming . so please feel free not only adding your own tutorials and articles but also critics to this tut are most welcome.<br>
+<br>
+----------------------------------------------------------------------------------------------------------------------------------------------------------------<br>
+<strong class="text-strong"><span style="font-size:150%;line-height:116%">Notes</span></strong><br>
+<br>
+•	This tut assumes you have already configured Hammer for work. If not, go here to manually configure Hammer <a href="http://developer.valvesoftware.com/wiki/Hammer_Manual_Configuration" class="postlink">http://developer.valvesoftware.com/wiki ... figuration</a><br>
+•	This tut will refer to the Mouse’ left-click as mouse 1 and to the Mouse’ right-click as mouse 2<br>
+<br>
+<br>
+---------------------------------------------------------------------------------------------------------------------------------------------------------------<br>
+<br>
+<strong class="text-strong"><span style="font-size:150%;line-height:116%">The Void</span></strong><br>
+<br>
+<br>
+Source works in a way where its “Universe” is surrounded by Void. Once you’ve had a few good hours of mapping behind you this starts making sense and as time goes by…much more than that even; The terms Void and Leaks will follow your every step in the world of Source level design. While some other engines (like the Unreal engine for example) work exactly the opposite (the Universe is “carved” out of an infinite “chunk” of “matter”) Source spoils us with the endless choir or watching out for Leaks as we constantly need to keep it all sealed off from the outside. Lovely.<br>
+<br>
+Leak: a term simply referring to a HOLE in your map. Source while calculating BSP will find the hole and the first entity it comes across and will let you know that entity name bla bla has “Leaked”. There is usually a way to find where you leak is and that is by:<br>
+<br>
+1.	Let Hammer finish compiling the map at least once.<br>
+2.	Go to Map &gt; Load Point File<br>
+3.	Now you will see a red line showing you exactly where your leak is.<br>
+<br>
+In Hammer the Void is the Black area (also in game, go into Spectate-Mode and move out of the map; you will find yourself in the blackness of the Void). <br>
+For a map to function properly in game it has to be completely SEALED off from the outside Void. All sorts of mishaps can and will inflict your map if it has a leak. Some leaks will prevent your map from compiling. Some will let you compile but crash your map in game. Some won’t even crash and people will be able to play them. The Source engine is a very strange thing. <img class="smilies" src="../../../images/smilies/icon_eek.gif" width="15" height="15" alt=":shock:" title="Shocked"> <br>
+<br>
+<br>
+<strong class="text-strong"><span style="font-size:150%;line-height:116%">Let’s get to work</span></strong><br>
+<br>
+<br>
+<br>
+Hit Ctrl+N to create a New project.<br>
+<br>
+Under Map from the (top) options bar make sure the Snap To Grid and the Show Grid options are checked. Now we’re good to go.<br>
+<br>
+Since we are about to become world class mappers we want to embrace good mapping habits from early on, we will therefore hit Shift+A (face Edit Sheet, we’ll get acquainted with this little baby later on) hit the Browse, and in the filter bar we will type  tools. Double click on the NODRAW texture (yellow with the word ‘nodraw’ written all over it…quite the no brainer).<br>
+<br>
+In Hammer, to lower and raise the size of the grid use the [ and ] keys. Set the grid size to 64.<br>
+<br>
+We will be creating a box now.<br>
+Go to the Block Creation Tool and in the Top 2D view create a 2048 x 2048 square. In the side 2D view see that your block is 64 units high.<br>
+If this is what you see in front of you (image #1) then go right ahead and hit Enter. This will create the first block. Congratulations - you are a Mapper now. Beginner – yes. But still a Mapper nonetheless and don’t let nobody tell you otherwise. They’re just jealous.<br>
+<br>
+now, to see what you're doing in 3D: look on your left at the tools bar (vertical in Hammer). you're looking for a red camera. choose it and by dragging your mouse 1 and letting go of it you will be creating a LOS (line of sight) for your 3D camera. once you've done that your project will always load up showing up the 3D view. (to change the LOS of your camera at all time simply click on the camera tool and hit delete <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"> then create your new LOS).<br>
+<br>
+<img src="http://eyeclan.net/backup/tut1/1.jpg" class="postimage" alt="Image"><br>
+<br>
+Now, in the Side 2D view we see a 64 units block…let’s clone that shall we.<br>
+Click on the Selection Tool (see image #2)<br>
+<br>
+<img src="http://eyeclan.net/backup/tut1/2.jpg" class="postimage" alt="Image"><br>
+<br>
+While holding down mouse 1, press Shift and drag our block a bit to the side and let go of the MOUSE FINGER to complete the cloning. Leaving the Shift finger first will simply be relocating the block.<br>
+Now, you will note that mousing over corners and sides of (highlighted) blocks shows you the "resize" options. <br>
+<br>
+Mousing over a side of a block will enable you (when actually pressing it) to stretch it sideways. Mousing over a corner will enable you the same only here you will be stretching the whole block. Experiment with it a bit to get an grasp of this feature...<br>
+Done?<br>
+Ok great, now, let us locate, resize and re-shape our "cloned" block to look exactly like image #3. Let me know when you’re done. Ahhh JK <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=";)" title="Wink">.<br>
+<br>
+<img src="http://eyeclan.net/backup/tut1/3.jpg" class="postimage" alt="Image"><br>
+<br>
+Ok, what we’ve just created is a floor brush and a wall brush. Now, let’s clone our wall brush to sit symmetrically on the exact opposing side to the current wall. (see image #4).<br>
+<br>
+<img src="http://eyeclan.net/backup/tut1/4.jpg" class="postimage" alt="Image"><br>
+<br>
+Now, before we move on further we need to make sure a certain option is checked in Hammer, called “Auto-Selection” and it is located at the top option bar. Look for the option appearing in image #5 and make sure it’s pressed.<br>
+<br>
+<img src="http://eyeclan.net/backup/tut1/5.jpg" class="postimage" alt="Image"><br>
+<br>
+Right, now we’re stepping it up as we’re about to clone and shift two brushes together.  Look in the Side 2D view and using the Selection Tool, the same way we’re highlighting files in a folder or on the desktop, by holding down mouse 1 and dragging it across the screen so it can mark the items we want, we will want to mark / highlight the two opposing wall brushes. (See image #6) and clone them (look at the top 2D view now…) as well.<br>
+<br>
+<img src="http://eyeclan.net/backup/tut1/6.jpg" class="postimage" alt="Image"><br>
+<br>
+Once we’ve got those two cloned we’re going to get acquainted with yet another feature of Hammer – the Transform window.<br>
+Hit Ctrl + M and you should see a little window appearing – (image #7). <br>
+<br>
+<img src="http://eyeclan.net/backup/tut1/7.jpg" class="postimage" alt="Image"><br>
+<br>
+At the ‘Z’ (bottom) bar you want to type in 90, they are the 90 degrees by which we want to rotate our two wall brushes. (see image #8)<br>
+<br>
+<img src="http://eyeclan.net/backup/tut1/8.jpg" class="postimage" alt="Image"><br>
+<br>
+Now, as you can see from the image, we have 4 wall brushes…we will want to correct the location of our newly cloned walls of course…the result should look like so – Image #9.<br>
+<br>
+<img src="http://eyeclan.net/backup/tut1/9.jpg" class="postimage" alt="Image"><br>
+<br>
+To complete the construction of our box, let’s go back to our side 2D view and simply clone and shift the floor brush to make a ceiling.<br>
+<br>
+There, we have a completely sealed off box (image #10) all nice and ready to become an overly criticized killbox which endless n00bs will swarm and far away servers will run at 100 grav. But first…we need to give it a few features, okay?<br>
+<br>
+<img src="http://eyeclan.net/backup/tut1/10.jpg" class="postimage" alt="Image"><br>
+<br>
+<br>
+Create a 128 x 2048 (in the top 2D view) brush that’s 64 units thick and is located exactly in the 256 height mark and 256 units away from its nearby wall –see image #11 (height mark in this article is calculated from the top of the said brush).<br>
+<br>
+<img src="http://eyeclan.net/backup/tut1/11.jpg" class="postimage" alt="Image"><br>
+<br>
+Clone this baby to its exact symmetrical opposing location. Image #12<br>
+<br>
+<img src="http://eyeclan.net/backup/tut1/12.jpg" class="postimage" alt="Image"><br>
+<br>
+Clone one of those brushes and bring up the Transform window again (remember how?) rotate this brush by 90 degrees and place it at the 1728 height mark, standing away from the wall by exactly 128 units. See image #13.<br>
+<br>
+<img src="http://eyeclan.net/backup/tut1/13.jpg" class="postimage" alt="Image"><br>
+<br>
+We’re not done with geometry just yet, a few more items to go …<br>
+We will now create those amazingly pointless hovering boxes no one ever uses. Two of them. Weepee!!!. Like so: create a 192 x 192 x 192 box. Place it at the 1472 height mark and 256 unit away from the wall. Looking at the side 2D view.<br>
+Now, clone it and place the cloned box at the 1344 height mark and 256 units away from the wall. Now look at the top 2D view and see to locate the boxes the way they look here. – image #14. <br>
+<br>
+<img src="http://eyeclan.net/backup/tut1/14.jpg" class="postimage" alt="Image"><br>
+<br>
+Now, we will create lifts. For this map we will create two lifts. A standard idea with killbox lifts is that they connect to more than one place so, looking at the top 2D view, notice how for example in image #15 the two catwalk brushes form a sort of cross and the lift is nicely sitting and flushing both. We want to create our first lift the same way we see it in the image. For this tut we will create the lift a 192 x 192 and 2 units high. Do the same for the opposing diagonal corner for the second lift.<br>
+<br>
+<img src="http://eyeclan.net/backup/tut1/15.jpg" class="postimage" alt="Image"><br>
+<br>
+<br>
+<strong class="text-strong"><span style="font-size:150%;line-height:116%">Entities</span></strong><br>
+<br>
+The Source engine features a LOT of entities, while we will cover at least some of the most important / relevant ones for DM in further articles / tutorials, this great part of Source mapping will be represented in this tut by only 3 types of entities: Func_door – from which we will create our lifts, Trigger_push – from which we will create our jump-pads and func_detail – which we will start off with.<br>
+Func_detail is a brush based entity which has no function or purpose other than not being calculated in vvis, ..which we will discuss elsewhere also (yeah I know, but trust me this is a story in its own right). For this tut it will suffice to say that we are turning some of our brushes into func_details for optimization reasons, just trust me on that and it will all make more sense in further tuts. In this map here we will do that to our three catwalks and floating boxes. <br>
+To turn a brush into an entity we will simply hit Ctrl+T (just a reminder: we ALWAYS press the Ctrl key first and let go of it last. Always!). since func_detail is the default entity you get when you Ctrl+T a brush this is indeed all we need to do. We are going to do the same for each of the brushes I’ve mentioned above. Simply highlight the brush and hit Ctrl+T and there you have it. See image #16 showing the entities we will be turning into func_detail.<br>
+<br>
+<img src="http://eyeclan.net/backup/tut1/16.jpg" class="postimage" alt="Image"><br>
+<br>
+<br>
+Now, we will turn our lift brushes into actual operational lifts. We will turn them into func_door. Let’s highlight one of our lifts and hit Ctrl+T, this time, scroll down in the list and choose Func_Door. Fill out the below.<br>
+<br>
+Speed – we’re going to do a fast list that acts almost like a jump-pad being so fast so we’re going to set this value to “800” (without the apostrophe) <br>
+<br>
+Lip – set this to “-1724”<br>
+<br>
+Move direction (Pitch Yaw Roll) – set this to “UP” from the drop-down menu (image #17)<br>
+<br>
+(leave the rest untouched)<br>
+<br>
+<br>
+<img src="http://eyeclan.net/backup/tut1/17.jpg" class="postimage" alt="Image"><br>
+<br>
+<br>
+Do the second lift and follow exactly the same steps as you did for the first lift only for this one set the Lip to “-1340” <br>
+<br>
+Next, we will create our Jump-Pad: hit Shift+A &gt; Browse &gt; in the Filter field type “tools” and choose the Trigger texture<br>
+Now, let’s go to the Block Creation Tool and make a 128 height 64 x 64 brush that sits dead in the center of the map and on the ground. Once your brush is done tie it to entity and this time, in the menu type trigger and it will jump to the Triggers section…choose the Trigger_Push from the list and set the values as so:<br>
+Move direction (Pitch Yaw Roll) – set this to “UP”<br>
+Speed – set this to “8000”<br>
+<br>
+(leave the rest untouched)<br>
+<br>
+We will discuss the reasoning behind and meaning of these values in later tutorials that will cover Entities in greater scale.<br>
+<br>
+<br>
+There now, we done messing around with the boring stuff? Ready to move on?<br>
+We want to set the general tone of the map and give it a theme…I wanna go with something no one has ever done before, not with killbox anyway – hmmm..i know! We’ll do a Lockdown / Prison style. Yeah baby!!<br>
+Ok, so first we want to make a nice cut in the walls…so, with your Selection Tool highlight all 4 walls (using the 3D view) and then looking in the 2D view we want to choose the Clip Tool and make a nice cut at the 128 height mark. Attention! We do not want to remove anything, just make a cut.<br>
+<br>
+<strong class="text-strong">Note: the Clip tool has a 3-click functionality: 1st click will highlight (white) only one bit and the other (highlighted red)will be removed. the 2nd click will do the same for the other bit and the 3rd click will simply cut the brush without removing anything.</strong><br>
+<br>
+Ok, for those of you who didn’t crap your map with the Clip Tool – let’s now move to the Texturing part of this tut.<br>
+<br>
+<br>
+<strong class="text-strong"><span style="font-size:150%;line-height:116%">Texturing</span></strong><br>
+<br>
+<br>
+Hit Shift+A to bring up the Face Edit Sheet, which is what we will use to apply textures to our box. Mouse 1 each of the lower faces of the wall to add selections (just like in Windows) hold down Ctrl while clicking mouse 1 more faces (Image # 18).<br>
+<br>
+<img src="http://eyeclan.net/backup/tut1/18.jpg" class="postimage" alt="Image"><br>
+<br>
+<br>
+Now let’s open the Browse menu and in the Filter field type	 Plaster. Browse until you reach texture name : plaster/plasterwall034c. Double click on the thumbnail to choose it and to implement it on the wall simply mouse 2 on the wall. Now, go ahead and mouse 2 on the other walls. (image #19)<br>
+<br>
+<img src="http://eyeclan.net/backup/tut1/19.jpg" class="postimage" alt="Image"><br>
+<br>
+When you’re done, let’s move on to the next texture. Go back to the Browse menu and browse to texture name : plaster/plasterwall034a_c17.  Choose it and implement it on all the upper parts of our box walls. (see image #20).<br>
+<br>
+<img src="http://eyeclan.net/backup/tut1/20.jpg" class="postimage" alt="Image"><br>
+<br>
+When you’re done. Open the Browse menu again and choose texture name: plaster/plasterwall003a and texture your box’s ceiling with it. Then, go back to the browse menu and in the Filter field type: floor and choose texture name : concrete/concretefloor013a_c17 and paint the floor with it.<br>
+Let’s paint the catwalks and mid-air boxes now. look at the Face Edit Sheet window. You should be seeing the last texture you’ve just used. The concrete/concretefloor013a_c17, right? Well right above it you should see a drop-down menu titled “Current Texture”, yup? Well touch it and select the plaster/plasterwall034a_c17 texture again. And then press Shift+A again to close out of the Face Edit Sheet.<br>
+Using the Selection Tool in the 3D view we want to highlight the catwalks and the two boxes. Once they are all highlighted we want to simply hit the option you see in image #21 called :Apply Current Texture.<br>
+<br>
+<img src="http://eyeclan.net/backup/tut1/21.jpg" class="postimage" alt="Image"><br>
+<br>
+They will all be covered with the texture in one click. Woah. Nice right? (Image #22)<br>
+<br>
+<img src="http://eyeclan.net/backup/tut1/22.jpg" class="postimage" alt="Image"><br>
+<br>
+Let’s texture the lifts and move on. In the 3D view highlight both our lifts and...again, Face Edit Sheet &gt; Browse &gt; in the Filter field enter the word   ‘metal’  and go to texture name : metal/metalgrate013b . double click to choose it and hit Apply in the Face Edit Sheet window. See image #23 for how it should look.<br>
+<br>
+<br>
+<img src="http://eyeclan.net/backup/tut1/23.jpg" class="postimage" alt="Image"><br>
+<br>
+<br>
+There. Done.<br>
+Look around you now, be honest. This has got to be the single most unique theme ever, right? Gotta be original in these things is what I always say.<br>
+<br>
+<br>
+<strong class="text-strong"><span style="font-size:150%;line-height:116%">Lighting</span></strong><br>
+<br>
+<br>
+Choose the Entity Creation Tool and from the drop-down menu choose ‘light’ (you can always start typing the word you’re looking for to bring it up or at least get close to it..) once you got to the ‘light’ entity simply place it somewhere on the floor or ceiling in the 3D view, doesn’t matter. We’re going to put it exactly where we want it to be using the 2D views. First, in the top 2D view place it dead in the center of the map. Then, simply do the same in the side 2D view – dead in the center. Make sure it is indeed in the very center of the map by verifying with the front 2D view. See? Easy peasy.<br>
+In the 3D view double-click (or in one of the 2D view mouse 2 on the light entity) this will bring up the Properties window for this entity. This is all what we want it to read:<br>
+<br>
+Brightness: 255 255 255 7000  - (Image #24)<br>
+<br>
+<img src="http://eyeclan.net/backup/tut1/24.jpg" class="postimage" alt="Image"><br>
+<br>
+<br>
+Leave the rest untouched. (this is VERY simple lighting, it will light up your map in a more or less evenly manner. There is a LOT more you can do with lighting but we will not go into that just yet but rather experiment with lighting in a future tut that deals with this beautiful subject.)<br>
+<br>
+<br>
+<strong class="text-strong"><span style="font-size:150%;line-height:116%">Weapons and pickups</span></strong><br>
+<br>
+<br>
+Choose the Entity Creation Tool and from the menu choose the weapon_ 357 and place it on one of the mid-air boxes like so (Image #25)<br>
+<br>
+<img src="http://eyeclan.net/backup/tut1/25.jpg" class="postimage" alt="Image"><br>
+<br>
+Now, choose from the menu weapon_ar2 and place one or two of them somewhere on the floor. Now, choose the weapon_crossbow and do the same. Do the same with weapon_frag, weapon_rpg, weapon_shotgun and weapon_slam (but only if you REALY REALY have to). Now, let’s put a few ammo packs. Those don’t have to be placed right next to their respected weapons but honestly... it doesn’t really matter for now: we will definitely have a tutorial that will deal with the subject of weapons and ammo placement which any mapper or advanced player will tell you – is an art all by itself. So just “go to town” with it for now. Just don’t over do it. Keep them few and far between. To place ammo packs go to your menu and start typing the word ‘item’ and the section that starts with this word will show up and you will see the different item_ammo types to choose from. Note that even though there is no need to place any weapon_smg, you may want to place some item_ammo_smg1_granade. Again… don’t over do it. <br>
+Let’s do the same with a few item_battery and item_healthkit here and there.<br>
+<br>
+Done? great! Now let’s move on to place some physics props.<br>
+<br>
+<strong class="text-strong"><span style="font-size:150%;line-height:116%">Physics</span></strong><br>
+<br>
+<br>
+Choose the Entity Creation Tool and from the menu choose the Prop_physics and place one somewhere on the floor. Now double click on it in the 3D view and in the Properties window go to the World model &gt; Browse and type the word ‘sawblade’ in the Filter field. Double-click on the model that shows up in there. Image #26 will simplify it in case you got lose.<br>
+<br>
+<img src="http://eyeclan.net/backup/tut1/26.jpg" class="postimage" alt="Image"><br>
+<br>
+Now, chose the Selection Tool and simply holding down Shift, drag-drop the Sawblade a few times = Clone it, just like you did with the first brush earlier. Remember? Throw a few of those across the floor and now double click on one of the sawblades to bring up its Properties window. And again, go to World model &gt; Browse and in the filter field type “oildrum”…choose the oildrum001.mdl model. And throw a couple of those here and there.<br>
+<br>
+Now, using the Entity Creation Tool we want to choose from the Menu a different kind of physics prop – the kind that explodes and respawns. We will choose the Prop_physics_respawnable and for our model we will choose the oildrum001_explosive.mdl. Now pay attention – for some reason, Source has a bug that occurs when you copy-paste prop_physics_respawnable where a barrel will explode once or twice and then won’t respawn again. To work around this bug we will need to wearily place a prop_physics_respawnable for each location we want an explosive barrel to be in. Place the entity, go into its Properties and choose the oildrum001_explosive.mdl from the model menu. (and BTW…welcome to the fascinating world of Source SDK bugs. WOOT). I usually do that by deciding where I want my explosive barrels to be..i then place my prop_physics_respawnables in these location, highlight them all and open their properties to choose their model. I hate monotony.<br>
+<br>
+<br>
+<strong class="text-strong"><span style="font-size:150%;line-height:116%">Spawn points and Final TouchUps</span></strong><br>
+<br>
+<br>
+Choose the Entity Creation Tool and from the menu choose the Info_player_deathmatch. This is how we decide where players will spawn so think what you’re doing here. You don’t really want to have people spawning right in the middle of battle and get spawnkilled like sheeps. I mean, it’s cool... But not reeeeally cool. So we want to find the reeeally cool spawn point for them ok? Next to walls. On catwalks…etc.  Think!<br>
+You’ll find some player_deathmatch you place are facing the wrong way or a wall…so to rotate a player_deathmatch bring up the Transform window by hitting Ctrl+M and applying the desired degree into the Z field.<br>
+<br>
+Once you’re done with player spawns let’s choose the Entity Creation Tool and from the menu choose the env_cubemap entity. The env_cubemap entity is a very important element and a unique one to Source mapping which we will try and cover elsewhere. For now. just place one in the middle of the map and hit Ctrl+M and in the “move” field type 64 and hit ‘OK’. And again…there is a reason behind it which we will discuss some other time.<br>
+Now, let’s let people know where the jump-pad is by placing a decal on the floor exactly where the jump pad is. Hit Ctrl+A &gt; Browse and in the Filter type ‘decals’…choose the texture called: decals/decalconcretedrain001a. Now Hit Shift+D to bring up the Decal tool and hit exactly right in the center of the base of our trigger_push. (see image #27)<br>
+<br>
+<img src="http://eyeclan.net/backup/tut1/27.jpg" class="postimage" alt="Image"><br>
+<br>
+<br>
+<strong class="text-strong"><span style="font-size:150%;line-height:116%">Compile</span></strong><br>
+<br>
+<br>
+To bring up the Compile window hit F9. Make sure to check the option saying “Don’t run the game after compiling”. (see image #28)<br>
+<br>
+<img src="http://eyeclan.net/backup/tut1/28.jpg" class="postimage" alt="Image"><br>
+<br>
+<br>
+If you went by the above written to the letter ‘T’ you should not have any compile errors at all. If you do get any error or problems try to copy-paste your compile log into your post.<br>
+<br>
+When the compile is done (about like after..erm..10 seconds) minimize Hammer and launch DM. When the game comes up, click on the “Create Server” option and choose your map from the menu (you did name your map, right?) (see image #29)<br>
+<br>
+<br>
+<img src="http://eyeclan.net/backup/tut1/29.jpg" class="postimage" alt="Image"><br>
+<br>
+<br>
+Once you’re in your map. One last thing left to do and again, it will be thoroughly discussed elsewhere. We’re going to bring up the in-game console using the ~ key on your KB and typing   buildcubemaps   and choosing it. You will see a few images rapidly going by and then it will stop. Simply hit ~ again to close out of the console widow. Hit “Create Server” again…choose a different map (doesn’t matter which) …close out of it and open your map again. (Why? We will discuss this in later tuts as well…for now it suffices to say the game craps up the graphics when you’re in a map &gt; close out of it and open it back again. So the only (true) work around it is simply launching a different map &gt; closing out of it and opening the map you were on - again. (Didn’t I mention welcome to the fascinating world of Source SDK bugs?)<br>
+<br>
+That’s it. You’re done. And this is your first creation. Don’t tell your l33t friends you’re a killbox mapping devil and everything will be just fine. Your secrete is safe with me  <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=":wink:" title="Wink"> <br>
+<br>
+Some ingame screens of “my_first_ever_hl2dm_map”.<br>
+<br>
+<img src="http://eyeclan.net/backup/tut1/30.jpg" class="postimage" alt="Image"><br>
+<img src="http://eyeclan.net/backup/tut1/31.jpg" class="postimage" alt="Image"><br>
+<img src="http://eyeclan.net/backup/tut1/32.jpg" class="postimage" alt="Image"><br>
+<img src="http://eyeclan.net/backup/tut1/33.jpg" class="postimage" alt="Image"><br>
+<img src="http://eyeclan.net/backup/tut1/34.jpg" class="postimage" alt="Image"><br>
+<img src="http://eyeclan.net/backup/tut1/35.jpg" class="postimage" alt="Image"><br>
+<br>
+<br>
+*let me know if you found this tutorial helpful. If you didn't then let me know and i will do my best to better it according to inputs*</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16970">
+	<div class="info">
+		<p class="poster">MeekMeekle</p>
+		<p class="dt">2008-04-09 01:34:35</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">this has to be the most detailed 'my first map' tutorial I have ever seen.   Good job.  I'm sure many people will find this helpful.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16978">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2008-04-09 02:32:04</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Ah n1 Valar, I'll be a guinea pig for this one, although I have done something similar (my first room etc) it was a long time ago and I likely used poor technique.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16984">
+	<div class="info">
+		<p class="poster">Jelly Fox</p>
+		<p class="dt">2008-04-09 02:49:53</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Sweet, I've never made a map but I'll give it a shot using this and let you know how it comes out  <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p17081">
+	<div class="info">
+		<p class="poster">Pig Popper</p>
+		<p class="dt">2008-04-09 22:29:58</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">nice tut Val, <br>
+<br>
+Id add the vmf for ppl to download just in case they get stuck or are to lazy to read it all, they can learn visually that way.  <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p17090">
+	<div class="info">
+		<p class="poster">[GoTg] Deacon Doom</p>
+		<p class="dt">2008-04-10 00:36:12</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Pretty Awesome Valar!!  I'm sure that took awhile and was allot of work.  Thanks.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p17093">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2008-04-10 00:41:23</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">great job man <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"> !</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p17096">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-04-10 00:56:22</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">thanks guys for your words. let me know if it actually helped you create a killbox.<br>
+for those who made it to the other side - next we will be making a 50MB, LD style map with all custom materials YOU will be creating all by yourself. so lotsa fun ahead. <img class="smilies" src="../../../images/smilies/icon_mrgreen.gif" width="15" height="15" alt=":mrgreen:" title="Mr. Green"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p17124">
+	<div class="info">
+		<p class="poster">biotau</p>
+		<p class="dt">2008-04-10 04:03:28</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>[EYE] Valar wrote:</cite>next we will be making a 50MB, LD style map with all customer materials YOU will be creating all by yoursefl. so lotsa fun ahead. <img class="smilies" src="../../../images/smilies/icon_mrgreen.gif" width="15" height="15" alt=":mrgreen:" title="Mr. Green"></div></blockquote>
+
+This should be interesting <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=";)" title="Wink"><br>
+<br>
+Very nice tutorial!. A few things I would do differently, but all mappers have their own style I guess. Hopefully this will spawn a few new mappers for dm, it's really needed.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p17127">
+	<div class="info">
+		<p class="poster">Pig Popper</p>
+		<p class="dt">2008-04-10 04:16:32</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>biotau wrote:</cite>
+...............Hopefully this will spawn a few new mappers for dm, it's really needed.</div></blockquote>
+
+encourging ppl to host em is whats needed, theres hundreds of maps out there but i still see dm_lockdown et al on two thirds of the servers out there  <img class="smilies" src="../../../images/smilies/icon_confused.gif" width="15" height="15" alt=":?" title="Confused"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p17128">
+	<div class="info">
+		<p class="poster">biotau</p>
+		<p class="dt">2008-04-10 04:37:35</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>[22g]Pig Popper wrote:</cite><blockquote><div><cite>biotau wrote:</cite>
+...............Hopefully this will spawn a few new mappers for dm, it's really needed.</div></blockquote>
+
+encourging ppl to host em is whats needed, theres hundreds of maps out there but i still see dm_lockdown et al on two thirds of the servers out there  <img class="smilies" src="../../../images/smilies/icon_confused.gif" width="15" height="15" alt=":?" title="Confused"></div></blockquote>
+
+True. What can ya do though man? If people wanna play lockdown till they're 50 it's their choice. I prefer custom maps.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p17141">
+	<div class="info">
+		<p class="poster">Anonymous</p>
+		<p class="dt">2008-04-10 05:58:18</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Very nice, Valar. Thanks for all the hard work. Hammer intimidated me. Maybe i'll try again.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p17157">
+	<div class="info">
+		<p class="poster">haymaker</p>
+		<p class="dt">2008-04-10 08:59:28</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Very nice work, Valar!<br>
+<br>
+It takes quite awhile to put something like that together.<br>
+I'm not talking about the map!<br>
+<br>
+One thing, I've found you can copy-paste explosive barrels anywhere PROVIDING you lift them at least 1 unit above the solid. The bug with these is that the barrel model was not compiled exactly level, you can see it if you look close enough. Lifting them up gets the bounding box out of the solid, and they will reappear.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p17210">
+	<div class="info">
+		<p class="poster">ninojman</p>
+		<p class="dt">2008-04-10 23:34:18</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">noob kill-box contest? whoever has makes the best First killbox map gets a online sticker?<br>
+<br>
+or better yet<br>
+<br>
+<img src="http://www.heartoftexasfundraising.com/images/cookie.jpg" class="postimage" alt="Image"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p17693">
+	<div class="info">
+		<p class="poster">provost</p>
+		<p class="dt">2008-04-14 17:43:10</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Awesome tut valar! The time you took to make it so detailed and writing up this whole article is  really appreciated.<br>
+<br>
+Damn you Nino, i'm hungry now. 'want that cookie</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p17696">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-04-14 18:03:06</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">thx lol. too many ppl avoid hammer for no reason so i really hope those who do know it can help them in. and popper's right..we need to move on from old stock maps otherwise we're choking the game's evolution. a thriving community is a renewing one and we all know how organizations and groups that revolve around the same things eventually wither and die.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18103">
+	<div class="info">
+		<p class="poster">Cynips</p>
+		<p class="dt">2008-04-17 14:40:59</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Whoa! Thanks man. I'll surely try it in the near future. I've never made any map, so hopefully I can give you feedback on the tutorial as well.<br>
+
+<blockquote><div><cite>biotau wrote:</cite>Very nice tutorial!. A few things I would do differently, but all mappers have their own style I guess.</div></blockquote>
+I'm curious, what would you have done differently, and how?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18601">
+	<div class="info">
+		<p class="poster">Piranha</p>
+		<p class="dt">2008-04-22 05:11:40</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">doh, been going around for ages, selecting every face in the face edit sheet and clicking "apply" while i just could right click it. So i have learnt a thing, and qualifies this as a good tutorial  <img class="smilies" src="../../../images/smilies/icon_lol.gif" width="15" height="15" alt=":lol:" title="Laughing"> thx</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18721">
+	<div class="info">
+		<p class="poster">Cynips</p>
+		<p class="dt">2008-04-23 13:10:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">First of all: thanks Valar, I'm now officially a Mapper <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"> My map compiled successfully in 12 secs on the first try!<br>
+<br>
+So, here's my comments on some minor things I think could be improved on in the tutorial:<br>
+I couldn't see the Map options "Snap to grid" and such until I created a new project.<br>
+<br>
+My view had different zoom level. Took me a while to figure out you could use scroll wheel to change it.<br>
+<br>
+I had to go look up how to navigate the 3D window. Initially, my view there was empty.<br>
+
+<blockquote class="uncited"><div>While holding down mouse 1, press Shift and drag our block a bit to the side and leave the MOUSE FINGER to complete the cloning. Leaving the Shift finger first will simply be relocating the block.</div></blockquote>This confused me until I realized you by "leave" mean "take away". I interpreted it as "leave the finger on the button". You might want to use the word "lift" instead.<br>
+<br>
+Do you have an easy way of finding, say, the 1728 height mark? I had to start Calculator and divide by 64 and count squares...<br>
+<br>
+Using the Clipping Tool, you're referring to what sounds like prior usage of this when you say "remember how?". I can't find it and had to go hunting for info on the net to learn that you could click the tool button repeatedly to change the way it works.<br>
+<br>
+Now, when I apply the plaster/plasterwall034c, the texture is rotated 90 degrees and I can't understand why. If I rotate it 90 degrees manually, I get two inverted parts of the texture, or both together but upside down... <img class="smilies" src="../../../images/smilies/icon_sad.gif" width="15" height="15" alt=":(" title="Sad"><br>
+<br>
+When moving the env_cubemap you're talking along the Z axis only, right? And when applying the texture to the jump pad you accidentally typed Ctrl+A when it should be Shift+A.<br>
+<br>
+Well, other than that I had no problems really. Just the right level for a beginner like me, skipping things I don't need to know about yet!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18728">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-04-23 18:28:26</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thanks, Cynips, for your input. Great questions! Here are the answers;<br>
+
+<blockquote class="uncited"><div> I couldn't see the Map options "Snap to grid" and such until I created a new project.</div></blockquote> corrected.<br>
+
+<blockquote class="uncited"><div> My view had different zoom level. Took me a while to figure out you could use scroll wheel to change it. </div></blockquote> takes a few min of getting used to the navigation in hammer. but its not too complicated so everyone should be good after a few WTFs.   <img class="smilies" src="../../../images/smilies/sketchy.gif" width="15" height="15" alt=":sketchy:" title="Unsure"> ....<img class="smilies" src="../../../images/smilies/icon_cool.gif" width="15" height="15" alt="8)" title="Cool"> <br>
+
+<blockquote class="uncited"><div> I had to go look up how to navigate the 3D window. Initially, my view there was empty.</div></blockquote>  i've now added a note on how to adjust the camera in the 3D view.<br>
+
+<blockquote class="uncited"><div>You might want to use the word "lift" instead.</div></blockquote> i've changed that to "let go" which i think should click with everyone a bit better than "leave" or "lift".<br>
+
+<blockquote class="uncited"><div> Do you have an easy way of finding, say, the 1728 height mark? I had to start Calculator and divide by 64 and count squares...</div></blockquote> you just stretch the brush and the values are always showing on the side. no need for calculator.<br>
+
+<blockquote class="uncited"><div> Using the Clipping Tool, you're referring to what sounds like prior usage of this when you say "remember how?". I can't find it and had to go hunting for info on the net to learn that you could click the tool button repeatedly to change the way it works. </div></blockquote> corrected.<br>
+
+<blockquote class="uncited"><div> Now, when I apply the plaster/plasterwall034c, the texture is rotated 90 degrees and I can't understand why. If I rotate it 90 degrees manually, I get two inverted parts of the texture, or both together but upside down... <img class="smilies" src="../../../images/smilies/icon_sad.gif" width="15" height="15" alt=":(" title="Sad"> </div></blockquote> open the Face Edit Sheet and highlight the face you’re referring to: see that both the X and Z under “Texture Shift” are set to 0 and also check the “World” option under “align”. This should straighten your texture. Let me know otherwise. <br>
+
+<blockquote class="uncited"><div> When moving the env_cubemap you're talking along the Z axis only, right? </div></blockquote> yes
+<blockquote class="uncited"><div> And when applying the texture to the jump pad you accidentally typed Ctrl+A when it should be Shift+A. </div></blockquote> no. we first decide what texture we’re going to use and then we create the actual brush that will afterwards become the trigger push. It’s not accidental. Ctrl+A to choose the “trigger” texture and then create the brush.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18821">
+	<div class="info">
+		<p class="poster">biotau</p>
+		<p class="dt">2008-04-24 04:20:22</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Cynips wrote:</cite>First of all: thanks Valar, I'm now officially a Mapper <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"> My map compiled successfully in 12 secs on the first try!<br>
+<br>
+So, here's my comments on some minor things I think could be improved on in the tutorial:<br>
+I couldn't see the Map options "Snap to grid" and such until I created a new project.<br>
+<br>
+My view had different zoom level. Took me a while to figure out you could use scroll wheel to change it.<br>
+<br>
+I had to go look up how to navigate the 3D window. Initially, my view there was empty.<br>
+
+<blockquote class="uncited"><div>While holding down mouse 1, press Shift and drag our block a bit to the side and leave the MOUSE FINGER to complete the cloning. Leaving the Shift finger first will simply be relocating the block.</div></blockquote>This confused me until I realized you by "leave" mean "take away". I interpreted it as "leave the finger on the button". You might want to use the word "lift" instead.<br>
+<br>
+Do you have an easy way of finding, say, the 1728 height mark? I had to start Calculator and divide by 64 and count squares...<br>
+<br>
+Using the Clipping Tool, you're referring to what sounds like prior usage of this when you say "remember how?". I can't find it and had to go hunting for info on the net to learn that you could click the tool button repeatedly to change the way it works.<br>
+<br>
+Now, when I apply the plaster/plasterwall034c, the texture is rotated 90 degrees and I can't understand why. If I rotate it 90 degrees manually, I get two inverted parts of the texture, or both together but upside down... <img class="smilies" src="../../../images/smilies/icon_sad.gif" width="15" height="15" alt=":(" title="Sad"><br>
+<br>
+When moving the env_cubemap you're talking along the Z axis only, right? And when applying the texture to the jump pad you accidentally typed Ctrl+A when it should be Shift+A.<br>
+<br>
+Well, other than that I had no problems really. Just the right level for a beginner like me, skipping things I don't need to know about yet!</div></blockquote>
+
+Sounds like you've caught the mapping bug! <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"> Valar did a very good job making this tutorial simple to understand, but a few things you always forget to mention. <br>
+<br>
+Think I'll make a video tutorial, showing how some of the tools work a bit better. Not that Valar didn't explain it good...but visualy seeing what to do is sometimes easier.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18833">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-04-24 06:03:11</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">bio, dude! that would be awesome if you did that! that's the whole idea...ppl coming in and adding each their own touch...great! <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=":wink:" title="Wink"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p21445">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2008-05-18 02:35:38</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Bump coz I'm gonna gives it a go.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p21447">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-05-18 02:56:50</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">wOooooooooooOOt !! ! <img class="smilies" src="../../../images/smilies/icon_mrgreen.gif" width="15" height="15" alt=":mrgreen:" title="Mr. Green"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p21484">
+	<div class="info">
+		<p class="poster">Swot</p>
+		<p class="dt">2008-05-18 16:31:19</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">hi valar,<br>
+seems to be a well done tutorial, great work <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"><br>
+<br>
+There was one step I could not follow really or I didn't understand it properly:<br>
+<br>
+- You are using the transformation window to rotate brushes?<br>
+<br>
+You are able to rotate it in your 2d views as well, just select your brush, select it a 2nd time and you'll notice a circle on every corner of your brush.<br>
+now simply drag <strong class="text-strong">any</strong> of those circles (bug: your cursor will be invisible since some update, thx to valve..) and rotate the brush, by default it will rotate<br>
+your brush in <strong class="text-strong">15 degree</strong> steps - when additionally holding down &lt;shift&gt; you will be able to choose any angle you want.<br>
+<br>
+I am using that tranformation window only for <strong class="text-strong">one</strong> purpose: If I want to move something (a model) <strong class="text-strong">less than 1 unit</strong> (cause the origins of some models were placed really bad..)</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p21492">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2008-05-18 20:35:19</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Both options appear useful to me. Transformation gives you the option of rotating an object on any axis a specific number of degrees. Is there any way of knowing how many degrees you rotated it as you drag it?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p21498">
+	<div class="info">
+		<p class="poster">Swot</p>
+		<p class="dt">2008-05-18 21:16:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">of course there is.. the only advantage using the transformation window is imo: you can do a rotation simultaneously across all 3 axes..<br>
+<br>
+<a href="http://www.abload.de/image.php?img=rotate_vhe9ci.gif" class="postlink"><img src="http://www.abload.de/thumb/rotate_vhe9ci.gif" class="postimage" alt="Image"></a><br>
+<br>
+but believe me WT, you won't need any "special" rotation stuff in hammer, you'll mainly rotate a brush(group) for 45°/90°/180°.<br>
+And when placing stuff like props/items you will rotate them "randomly" (for example you got 5 barrels: wouldn't look good if they face all the same direction!)<br>
+<br>
+€: Here another example that you can also use the "flip-feature" of VHE (this often can help you saving time since you've to press only 1 or 2 shortcuts)<br>
+<br>
+<img src="http://vosoghi.net/tmp/flip_objects.gif" class="postimage" alt="Image"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p21516">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2008-05-18 23:45:38</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Oh cool, thanks.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p21954">
+	<div class="info">
+		<p class="poster">Beef</p>
+		<p class="dt">2008-05-24 01:03:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Valar, thanks a bunch for this.  Learned a few things. I like the idea of using transform/rotate for cloned brushes.  I usually just manually rotate the brush, or use the flip horizontal/vertical. <br>
+Great! Now we should all play this killbox and PWN  each other!!!!111one.<br>
+<br>
+I was curious about what you did after buildcubemaps.  After building the cubemaps, why not just type  <br>
+map dm_mapname in console and hit enter?  That seems to produce the same result.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p21958">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-05-24 01:57:44</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Beef wrote:</cite>
+I was curious about what you did after buildcubemaps.  After building the cubemaps, why not just type  <br>
+map dm_mapname in console and hit enter?  That seems to produce the same result.</div></blockquote>
+
+not quite. cubemaps tend to mess up more often than not. dont ask me way...<br>
+this is how i do it anyway....you'll find 2,000,000 views for that in here <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=";)" title="Wink"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p22561">
+	<div class="info">
+		<p class="poster">thrash</p>
+		<p class="dt">2008-06-01 19:41:28</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Excellent tutorial, I've looked through quite a few tutorials and this is probably the best I have found for learning the basics. Best thing about it is that it is relevant purely to HL2:DM unlike most of the other tutorials I found. The one problem I had with it was that I could not make anything out when everything was textured with the 'nodraw' texture in the 3D view. It sounds silly but I couldn't even see where the walls met each other so instead I textured the walls before I started adding other stuff. In your screenshots it looked fine but it was completely different in Hammer for me.<br>
+<br>
+Here are a few screenshots of my first map:<br>
+<a href="http://i30.tinypic.com/2md2sue.jpg" class="postlink">http://i30.tinypic.com/2md2sue.jpg</a><br>
+<a href="http://i28.tinypic.com/315lhn4.jpg" class="postlink">http://i28.tinypic.com/315lhn4.jpg</a><br>
+<a href="http://i25.tinypic.com/2mwxxsw.jpg" class="postlink">http://i25.tinypic.com/2mwxxsw.jpg</a><br>
+<br>
+Once I learnt the basics taught in this tutorial I started discovering other things and I've understood a lot more pretty quickly.  <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=":wink:" title="Wink"> <br>
+While I'm here, how do I get the crazy orb thingbobs that are in the centre of dm_killbox_kbh maps?  <img class="smilies" src="../../../images/smilies/icon_confused.gif" width="15" height="15" alt=":?" title="Confused"> <br>
+Also, does anyone know of a good tutorial about putting custom decals in your maps? <br>
+Hello by the way!  <img class="smilies" src="../../../images/smilies/icon_twisted.gif" width="15" height="15" alt=":twisted:" title="Twisted Evil"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p22825">
+	<div class="info">
+		<p class="poster">Piranha</p>
+		<p class="dt">2008-06-04 04:03:30</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>thrash wrote:</cite> While I'm here, how do I get the crazy orb thingbobs that are in the centre of dm_killbox_kbh maps?  <img class="smilies" src="../../../images/smilies/icon_confused.gif" width="15" height="15" alt=":?" title="Confused"></div></blockquote> <br>
+I believe there is a example included in hammer of this thing. Select the entity tool, then somewhere u have a box which says "categories" with a dropdown menu. In this menu, select "prefabs". Then in the dropdown menu, below the first one, named "objects", select the one called " combine ball spawner". Then click in the 3d view of hammer and a ballspawner should appear. U can study it and rebuild it (select it and press ctrl+u to ungroup it), and i bet there are better ways for going at this, but i am not an experienced mapper and this is how i did it  <img class="smilies" src="../../../images/smilies/icon_redface.gif" width="15" height="15" alt=":oops:" title="Embarassed"> <br>
+Other way is to decompile the kbh map and look for yourself. <a href="http://www.geocities.com/cofrdrbob/vmex.html" class="postlink">How to decompile a map</a><br>
+
+<blockquote><div><cite>thrash wrote:</cite> Also, does anyone know of a good tutorial about putting custom decals in your maps? <br>
+Hello by the way!  <img class="smilies" src="../../../images/smilies/icon_twisted.gif" width="15" height="15" alt=":twisted:" title="Twisted Evil"></div></blockquote>
+Nope, i suggested you go and visit the sites listed in the stickied topics of this forum (like interlopers and the valve developers community) <br>
+<a href="http://www.hl2dm-university.com/forum/phpBB3/viewtopic.php?f=5&amp;t=259" class="postlink">link to topic with usefull sites</a><br>
+Hello</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p28494">
+	<div class="info">
+		<p class="poster">epic</p>
+		<p class="dt">2008-08-22 21:14:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">So, I can't apply any textures. I'm not really sure why. I open the face editing tool and try to select a face, but it doesn't work. Also, I tried to use the the Nodraw texture like you suggested at the beginning, it didn't apply that one either. &gt;&lt; <br>
+I just kept building and now I have this big, wonderful, Killbox wireframe  <img class="smilies" src="../../../images/smilies/cry.gif" width="15" height="15" alt=":cry:" title="Cry"> <br>
+<br>
+Anyone have any ideas?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p28511">
+	<div class="info">
+		<p class="poster">Jelly Fox</p>
+		<p class="dt">2008-08-23 00:25:29</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">sounds like you have the camera to wireframe instead of shaded textured polygons<br>
+<br>
+simply click on the work "camera" in your camera box (top left) and a drop down menu will appear, then select "shaded textured polygons"</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p28526">
+	<div class="info">
+		<p class="poster">epic</p>
+		<p class="dt">2008-08-23 01:51:13</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hahaha, TY Jelly.<br>
+Gotta love Newb mistakes. <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"><br>
+<br>
+Might want to throw that in the tut though, in case there are others like me.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p59497">
+	<div class="info">
+		<p class="poster">Maxtasy</p>
+		<p class="dt">2009-08-29 16:53:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>epic wrote:</cite>Hahaha, TY Jelly.<br>
+Gotta love Newb mistakes. <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"><br>
+<br>
+Might want to throw that in the tut though, in case there are others like me.</div></blockquote>
+lol, same newb mistake happened to me  <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p62734">
+	<div class="info">
+		<p class="poster">n3cr0tos1n</p>
+		<p class="dt">2009-11-20 03:11:34</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">thanks valor for the tutorial, beef sent me it a few days ago and i just tried it. unfortunately, my map crashed while placing the jump/pad.<br>
+<br>
+cool tutorial though!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p62741">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2009-11-20 05:38:54</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">cheers mate. check out my Spelling Tutorials also  <img class="smilies" src="../../../images/smilies/icon_lol.gif" width="15" height="15" alt=":lol:" title="Laughing"> <br>
+jk, glad you found it useful.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

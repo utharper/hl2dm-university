@@ -1,0 +1,362 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>western type saloon doors? - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>western type saloon doors?</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=4913">https://forum.hl2dm.community/viewtopic.php?t=4913</a>
+-->
+
+<div class="post" id="p67802">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2010-03-28 01:51:04</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I've been wondering how to make this, you know that back and forth spring doors like in old western saloons. <br>
+I know entities like phys_ballsocket, phys_hinge, phys_constraint, etc, but is it possible with any one of those alone?<br>
+Or is it possible at all?<br>
+<br>
+well, I can make them simple func_door_rotating with "touch opens", to both directions, and it works kinda like that when the player bumps into them, but it looks mechanic.<br>
+I was thinking something more realistic looking.<br>
+<br>
+Anyone knows this?<br>
+<br>
+Thanks.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67806">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2010-03-28 06:54:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Ok I tried one thing:<br>
+<br>
+I made:<br>
+- two physboxes for the doors<br>
+- a phys_hinge on the top corner of each door<br>
+- two phys_springs to constrain each (1st entity) door separately <br>
+- an info_target that will be the connecting point (2nd entity) for each spring<br>
+<br>
+The info_target is just a point to connect the springs as opposed to having one spring connecting both doors, which would make them non-stop. This way the mid point is fixed and each door moves independently and doesn't affect the other.<br>
+<br>
+This works, but... after messing around with damping and stuff, I could make the doors not be too hard to go through, but even as is, it's dificult to push them open.<br>
+One must press forward and keep pushing for a few moments until the doors open enough. Physboxes have this problem... they are buggy with player bump.<br>
+<br>
+Any better ideas?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67807">
+	<div class="info">
+		<p class="poster">Tranthor</p>
+		<p class="dt">2010-03-28 07:41:53</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I don't know, but I know some maps on the sourcemod <a href="http://www.fistful-of-frags.com/" class="postlink">Fistful of Frags</a> have doors like this.  Maybe you could register on their forums and ask someone</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67812">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2010-03-28 13:52:13</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">That's a good thought but, I had seen it before (just double cheked now) they have the doors always open and static. Just brushwork for the looks. Actually most doorways in their maps don't even have doors. At least in the stock maps that I have played in. Dunno about custom ones. <br>
+(Man I dunno how anyone can play with that gameplay...)<br>
+<br>
+But thanks anyway. <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67815">
+	<div class="info">
+		<p class="poster">{EE}chEmicalbuRn</p>
+		<p class="dt">2010-03-28 16:32:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">check out this link bro.  look for the map called "el-paso"  the entrance to the saloon has the doors you are looking for.  there is also a link to the sdk mapping files. im sure you can get what you need there.<br>
+<br>
+<a href="http://www.moddb.com/mods/fistful-of-frags" class="postlink">http://www.moddb.com/mods/fistful-of-frags</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67821">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2010-03-28 23:24:38</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">It should be possible with physics but its not really a good idea as there's a high chance the player can take damage when touching them. ie same as stubbing your toe on a prop and dying :S</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67824">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2010-03-29 00:30:59</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Very true... I know from testing that if a shoot them with ggun I may die when they come back.<br>
+<br>
+chEmicalbuRn, that map (coop_elpaso) was one of the ones I double-checked and probably the only one with these doors. But the doors are only closed in the pictures before match starts. During the match they are open and are only static geometry. <img class="smilies" src="../../../images/smilies/icon_neutral.gif" width="15" height="15" alt=":|" title="Neutral"><br>
+<br>
+Maybe I'll stick with the simple rotating doors...</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67829">
+	<div class="info">
+		<p class="poster">Tranthor</p>
+		<p class="dt">2010-03-29 04:17:38</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>{EE}chEmicalbuRn wrote:</cite>check out this link bro.  look for the map called "el-paso"  the entrance to the saloon has the doors you are looking for.  there is also a link to the sdk mapping files. im sure you can get what you need there.<br>
+<br>
+<a href="http://www.moddb.com/mods/fistful-of-frags" class="postlink">http://www.moddb.com/mods/fistful-of-frags</a></div></blockquote>
+
+I was pretty sure I remembered those doors being able to swing open when walked into, but if you checked I'll take your word for it.  Maybe they changed it since an older version</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67833">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2010-03-29 07:59:33</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yea. Unfortunately. Maybe they went across that problem that Boshed pointed out.<br>
+The picture I meant was actualy the menus background. <br>
+<br>
+These are ingame screenshots of the door that are shown closed in the picture.<br>
+<img src="http://img2.pict.com/6d/d1/7e/3248687/0/800/coopelpaso0003.jpg" class="postimage" alt="Image"><br>
+<img src="http://img2.pict.com/de/98/9c/3248688/0/800/coopelpaso0004.jpg" class="postimage" alt="Image"><br>
+<br>
+<img class="smilies" src="../../../images/smilies/icon_sad.gif" width="15" height="15" alt=":(" title="Sad"><br>
+<br>
+And theres also this one in the same map<br>
+<img src="http://img2.pict.com/7e/b5/75/3248681/0/800/coopelpaso0000.jpg" class="postimage" alt="Image"><br>
+<img src="http://img2.pict.com/8e/92/c2/3248682/0/800/coopelpaso0001.jpg" class="postimage" alt="Image"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67856">
+	<div class="info">
+		<p class="poster">Tranthor</p>
+		<p class="dt">2010-03-30 02:38:14</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Odd. <br>
+<br>
+<br>
+Just another thing they've done to ruin that game in recent patches, I guess</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67863">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2010-03-30 06:04:20</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">yea from the coments I seen in moddb it seems ppl have been enjoying it less with each update. Someone said the 1st beta was amazing. <br>
+Never played the betas, but from what I played I just hated the movement... it's what made me despise it.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67865">
+	<div class="info">
+		<p class="poster">Tranthor</p>
+		<p class="dt">2010-03-30 09:28:21</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I liked it around version 2.3, when the movement was regular source-engine type movement w/ sprint, and you could hip-fire a carbine across the map to snipe headshots.  I played 2.4 a bit, but they nerfed the carbine so in that version I mostly just ran around with dynamite and axes.  Then they added "dodging" and I was out of there</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67866">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2010-03-30 10:27:03</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">tbh I think the stamina bar doesn't combine with multiplayer gameplay either...<br>
+<br>
+yea if movement was like you say it was I'd probably play it.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67872">
+	<div class="info">
+		<p class="poster">Tranthor</p>
+		<p class="dt">2010-03-30 20:16:19</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">as to the doors, would it be possible to have them as a hinged dynamic prop, so they will push open after player walks through, and then have a short timer with a push on the door to return it to position?  Or would that just be awkward.<br>
+<br>
+It would take about 15 seconds to make doors like that in Garry's Mod, it's too bad Hammer is so difficult</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67876">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2010-03-30 22:45:10</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Not quite sure what you mean, but if you mean making a model with open/close/bounce animations, well that's a possibility. <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"><br>
+Then perhaps add a trigger around the model to trigger the animation just before the player touches it. <br>
+<br>
+Hmm, I gotta do some testing to that... I suck at animating models (as yet) but this may be just the solution to it...<br>
+<br>
+Thx man. Great suggestion!<br>
+ <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=":wink:" title="Wink"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67889">
+	<div class="info">
+		<p class="poster">Tranthor</p>
+		<p class="dt">2010-03-31 03:40:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I haven't really used Hammer enough to know if such a thing is possible.  There could potentially be a trigger brush right in front of the door, that causes it to be pushed open... somehow.  <br>
+<br>
+Are there any springs or anything you can use in hammer?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67900">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2010-03-31 14:42:02</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">yes, but that's what I already tried and mentioned in the 2nd post. It's hazardous. You always loose health for having a phys object coliding with you, and if it comes with greater speed it can even kill you. <img class="smilies" src="../../../images/smilies/icon_sad.gif" width="15" height="15" alt=":(" title="Sad"><br>
+<br>
+The best chance is perhaps making a real model to use as a prop_physics or prop_dynamic. I know there's ways of triggering animations, I just gotta find out how.<br>
+Or maybe the model can rely on physics too for sliding back and forth, but I dunno if that can cause loosing health too.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67915">
+	<div class="info">
+		<p class="poster">Tranthor</p>
+		<p class="dt">2010-03-31 22:49:40</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Skaruts wrote:</cite>yes, but that's what I already tried and mentioned in the 2nd post. It's hazardous. You always loose health for having a phys object coliding with you, and if it comes with greater speed it can even kill you. <img class="smilies" src="../../../images/smilies/icon_sad.gif" width="15" height="15" alt=":(" title="Sad"><br>
+
+</div></blockquote>
+
+Hmm now there's an idea... a map with hazardous, murderous doors</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67966">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2010-04-01 08:04:49</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><img class="smilies" src="../../../images/smilies/icon_mrgreen.gif" width="15" height="15" alt=":mrgreen:" title="Mr. Green"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67978">
+	<div class="info">
+		<p class="poster">{EE}chEmicalbuRn</p>
+		<p class="dt">2010-04-01 17:01:56</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">FoF was awesome before it went to the orange box engine.  me and like 4 EE's played it all the time.  even entered a tourny.  as soon as it went to the orange box engine the game sucked.  i cant say 100% for sure, but im almost possitive in the versions b4 OB those doors opened and closed.  i usually blasted them off with my shotty tho.  is there any way you can access the older source code?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67979">
+	<div class="info">
+		<p class="poster">{EE}chEmicalbuRn</p>
+		<p class="dt">2010-04-01 17:08:13</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">btw, when Valar was working on my castle map, he made catapults(sp?) outside the castle to launch players back in.  this obviously had moving parts centered around a fulcrum point, which could i think could also work as a door hinge, you would just need 2 of them, each swinging a different direction.  maybe he could help you.  just a thought</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67981">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2010-04-01 17:31:32</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Dunno about the source code, but I think you can't.<br>
+But you can most likely access the old maps and see what they were made of. <br>
+<br>
+You still have any?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67983">
+	<div class="info">
+		<p class="poster">{EE}chEmicalbuRn</p>
+		<p class="dt">2010-04-01 17:34:26</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">no, i have since reformatted my PC, but i think i can get them from another EE that would still have them, i also know some ppl that i used to play that game with, im sure they still have them. ill try and hook you up today.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p69292">
+	<div class="info">
+		<p class="poster">Ade</p>
+		<p class="dt">2010-04-30 03:47:54</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">hmm doesnt the wild wild west map have what ur lookin for?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p69320">
+	<div class="info">
+		<p class="poster">{EE}chEmicalbuRn</p>
+		<p class="dt">2010-04-30 18:22:02</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">not sure if you are still looking for this or not but i found a map that has the western style doors for ya.  i know they work cause i just played the map.  <br>
+<br>
+<a href="http://www.filefront.com/16314641/fof_loothill.rar" class="postlink">http://www.filefront.com/16314641/fof_loothill.rar</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p69498">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2010-05-04 05:22:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I'll take a look at it. I found recently a tutorial on it, and they make it the same way I explaned in my 1st post. I played the example map and it kinda works <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"> Not 100% but still better than what I had made. The diference is the settings within the spring. Maybe in this map is the same thing.<br>
+<br>
+Thx chem</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

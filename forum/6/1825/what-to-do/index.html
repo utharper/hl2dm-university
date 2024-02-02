@@ -1,0 +1,388 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>What to do? - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+
+<h1>What to do?</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=1825">https://forum.hl2dm.community/viewtopic.php?t=1825</a>
+-->
+
+<div class="post" id="p22392">
+	<div class="info">
+		<p class="poster">Slice @ Dice</p>
+		<p class="dt">2008-05-29 14:25:47</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hi,<br>
+<br>
+Reading about all those server config files and going to the links that where posted (very good ones)let me tested my settings .<br>
+I rent 3 servers and also i noticed that i was choking when server was full or sometimes when 10 people where on.<br>
+Now i think i messed a couple things up  in my config or maybe with the commands cl_updaterate,cl_cmdrate,etc,.....<br>
+Strange thing or better "good thing"is that nobody complaines so i think the fault is with me .I did a speedtest that i include .Someone knows what the recomended or the best settings i can adjust?<br>
+Thanx in advance .Also thx to who did or try to help me with the "advanced tech. help".Sorry i had not much time but i really appreciate it .<br>
+Also this forum what i read almost every day helped me a lot.<br>
+<br>
+Greetz<br>
+<br>
+Ps:holymoly you demo rocks (good quality and awesome skills).Onti your jumpmaps too.Awesome.I m jaleous.The rest i still have to see but i think i can expect the same .I let you know in other section.<br>
+Sorry for bad english.<br>
+<br>
+<a href="http://www.speedtest.net" class="postlink"><img src="http://www.speedtest.net/result/277301890.png" class="postimage" alt="Image"></a> <img class="smilies" src="../../../images/smilies/icon_question.gif" width="15" height="15" alt=":?:" title="Question"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p22395">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2008-05-29 17:23:34</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote class="uncited"><div>Ps:holymoly you demo rocks (good quality and awesome skills).Onti your jumpmaps too.Awesome.I m jaleous.The rest i still have to see but i think i can expect the same .I let you know in other section.<br>
+Sorry for bad english.
+</div></blockquote>
+thx! even though it doesn't have much with the thread itself xD<br>
+<br>
+About your problem, I'm not the best to ask regarding rates and stuff, so I can't help you much =/ sry.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p22399">
+	<div class="info">
+		<p class="poster">Slice @ Dice</p>
+		<p class="dt">2008-05-29 19:01:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hi,<br>
+<br>
+Np m8 .<br>
+Here is also a config of 1 of the servers.I took somme variables of different cfg files.Maybe thats the reason.Its a 66 tick server.I can post the original 1 too but i had the same problem.<br>
+<br>
+// Server name<br>
+hostname "somehost"<br>
+<br>
+// Passwords<br>
+rcon_password "?"<br>
+<br>
+// Server cvars<br>
+sv_cheats 0<br>
+sv_gravity 400<br>
+sv_lan 0<br>
+sv_logbans 1<br>
+sv_logfile 1<br>
+sv_allowdownload 1<br>
+sv_allowupload 1<br>
+sv_maxrate 66000<br>
+sv_minrate 5000<br>
+sv_mincmdrate 20 //default<br>
+sv_maxcmdrate 100<br>
+sv_maxupdaterate 100<br>
+sv_minupdaterate 20 //default<br>
+decalfrequency 5<br>
+sv_unlag 1<br>
+sv_maxunlag 1<br>
+sv_alltalk 1<br>
+<br>
+<br>
+fps_max "500"<br>
+<br>
+<br>
+sv_pausable 0<br>
+sv_voicecodec vaudio_miles<br>
+sv_voiceenable 1<br>
+sv_region 3<br>
+sv_contact "me"<br>
+sv_pure 0<br>
+sv_consistency 0<br>
+sv_downloadurl ""<br>
+<br>
+// Multiplayer cvars<br>
+mp_allowNPCs  1<br>
+mp_allowspectators 1<br>
+mp_autocrosshair 1<br>
+mp_chattime 10<br>
+mp_decals 200<br>
+mp_falldamage 0<br>
+mp_flashlight 1<br>
+mp_footsteps 1<br>
+mp_forcecamera 1<br>
+mp_forcerespawn 1<br>
+mp_friendlyfire 0<br>
+mp_teamplay 0<br>
+mp_timelimit 15<br>
+<br>
+// Other<br>
+deathmatch 1<br>
+<br>
+// Execute other scripts<br>
+exec mani_server.cfg<br>
+<br>
+<br>
+Greetz THX<br>
+<br>
+Slice @ Dice</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p22404">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2008-05-29 20:03:38</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Looks pretty solid. I don't see anything that would cause bad lag. You say it may only be you, can you post your clients rate settings also?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p22415">
+	<div class="info">
+		<p class="poster">Slice @ Dice</p>
+		<p class="dt">2008-05-29 21:01:03</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Oh yes sorry i forgot that .I hope you mean this ?<br>
+-cl_updaterate 60<br>
+-cl_cmdrate 60<br>
+_rate 100000<br>
+<br>
+Ty for the reply<br>
+<br>
+greetz</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p22421">
+	<div class="info">
+		<p class="poster">Edge</p>
+		<p class="dt">2008-05-29 23:54:53</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I noticed that you said it was choke causing the problem which is usually caused by the rate not being set high enough or a bad connection to the internet, I suppose it could also be your computers hardware causing bad lag in game maybe, once you start getting more people in a server more action is going to be going on, therefore your computers going to be pushed harder to keep up with those new events it has to render and process.<br>
+<br>
+<br>
+I'm most likely wrong about this because dm really doesn't take much of a machine to run.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p22432">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2008-05-30 00:58:47</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">net_graph 3 in console<br>
+<br>
+Lower your cl_updaterate in increments of 5 until choke is running at ~ 0 through 10.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p22434">
+	<div class="info">
+		<p class="poster">Slice @ Dice</p>
+		<p class="dt">2008-05-30 01:10:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Well I must say that i have build a new pc from scratch with latest new things s,so its heavy enough for this game.Know i noticed that it is not with all the maps.But i download my maps from adviced websites,but the strange thing is that i have in my console many errors like "<br>
+default error texture maps/dm_killbox_jump/cubemapdefault" and sometimes they end with "clamping" or something like that .Dont know what it means but i think i have to ask it on a mapper maybe.There are "except keepers and mani plugin"not any others installed but i m sure that thats not the problem because i did without and the problem stayed.1 thing i maybe forgot to say is that i'm connected with a router with 2 pc.Now i orderd a new extra fast line only for my pc so maybe that solves the problem?I let you know when so.Anyway thx for answering .<br>
+<br>
+Slice @ Dice<br>
+<br>
+<br>
+K thx WT .So having a choke of 0-10isn't that bad after all?I must say that loss is almost always 0...or isn't that important?Choke sometimes max 50 but like i said depends on the map .Also it happen sometimes on wellknown maps.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p22453">
+	<div class="info">
+		<p class="poster">Slice @ Dice</p>
+		<p class="dt">2008-05-30 15:08:32</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Here are 2 made screenshots of in game .Server was empty so choke was 0 ,but look at the difference by "in" and its less in the more detailled map .Dont know if it has anything to do with it.Before i forgot to tell ;with a full server my choke isnt going higher then 50 but that is probably to much ?So best is to keep it between 0 - 10 ,like you said WT.I give it a try this evening when server is full. maybe i can set max people to 10 to give it try if that makes any difference?Als i made screenshot during a progress like a nade exploding or a barrel but that was no problem in the net_graph thing.<br>
+Thx anyway</div>
+<dl class="attachbox">
+					<dt>
+						Attachments
+					</dt>
+											<dd>
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="dm_%5Btsf%5D_killbox_lambda0006.jpg" class="postimage" alt="dm_[tsf]_killbox_lambda0006.jpg" onclick="viewableArea(this);"></dt>
+						<dd>dm_[tsf]_killbox_lambda0006.jpg (201.73 KiB) Viewed 559 times</dd>
+		</dl>
+		
+		
+			</dd>
+									</dl>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p22454">
+	<div class="info">
+		<p class="poster">Slice @ Dice</p>
+		<p class="dt">2008-05-30 15:12:50</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">here another 1</div>
+<dl class="attachbox">
+					<dt>
+						Attachments
+					</dt>
+											<dd>
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="dm_killsphere_v70000.jpg" class="postimage" alt="dm_killsphere_v70000.jpg" onclick="viewableArea(this);"></dt>
+						<dd>dm_killsphere_v70000.jpg (113.76 KiB) Viewed 559 times</dd>
+		</dl>
+		
+		
+			</dd>
+									</dl>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p22477">
+	<div class="info">
+		<p class="poster">s0iz</p>
+		<p class="dt">2008-05-30 22:06:21</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Sup dude.<br>
+<br>
+Out means cmdrate, that's what you are ACTUALLY uploading to the server.<br>
+In means updaterate, that's what you are ACTUALLY downloading from the server.<br>
+<br>
+Please note that you NEVER can upload more than your actually framerate (see your second screenshot?), and you never be able to download more than the actual server framerate - which is not a problem for us because we don't have 100tick servers in consecuence of malprops (fps on a dedicated server by default: 64).<br>
+<br>
+K man, hope this clear out few things for you.<br>
+<br>
+Feel free to ask whatever you want related to this.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p22590">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2008-06-02 01:55:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Try in server cfg<br>
+sv_maxrate 100000<br>
+<br>
+Try in your cfg<br>
+cl_updaterate 66<br>
+cl_cmdrate 66</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p22614">
+	<div class="info">
+		<p class="poster">s0iz</p>
+		<p class="dt">2008-06-02 05:32:22</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">OMG why 1Mbit?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p22641">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2008-06-02 12:38:48</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Why not?<br>
+seems he is choking with his current 66000 so it isnt fast enough also if you look at the second pic he is recieving 28k per sec so imaging when the server is full.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p22679">
+	<div class="info">
+		<p class="poster">Slice @ Dice</p>
+		<p class="dt">2008-06-02 21:37:20</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">hi <br>
+<br>
+Really thx to the respons .I give all teh available options a shot.Now my internet is turbonet(thats how they call it here in belgium)and is specially for games .When i play crysis i dont have it (played it once -&gt;too addicted to hl2dm).But anyway i try the given advice settings and let you know.Yesterday i changed my graphic card settings ---so i enabled colorcorrection and i have to say it improved a lot even with choke .Maybe sounds this strange but its true.Not 100% but its good playable.K ty for advice i let you know what it did.I shall post a screenshot before and after.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p23113">
+	<div class="info">
+		<p class="poster">Slice @ Dice</p>
+		<p class="dt">2008-06-08 17:40:39</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hi again,<br>
+<br>
+Well i y tried these settings sv_maxrate 100000<br>
+                                      cl_updaterate 66<br>
+                                      cl_cmdrate 66<br>
+and they work fine for me only the first 30 sec  i join the server its strange and especially with the first triggerd sound but after  that no problems ,so ty you very much all.<br>
+I have 2 more questions about the servers.<br>
+1) Sometimes i run a map and i get this in my console(see picture).So i then decide to take a look to the server with HLSW<br>
+  tool and everything looks fine and sometimes people are playing,but i have to stop because its too lagging .Is this a fault <br>
+  in the map or a fault at my computer and can it be fixed?<br>
+2)I read somewhere on the forum here that its important to clean up your download map of the server every week but what exactly does it mean?Do i have to delete somme files or....?<br>
+Ty very much to helping me out with the question before and this .<br>
+Greetz</div>
+<dl class="attachbox">
+					<dt>
+						Attachments
+					</dt>
+											<dd>
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="dm_airborn_arena3_a0100021.JPG" class="postimage" alt="dm_airborn_arena3_a0100021.JPG" onclick="viewableArea(this);"></dt>
+						<dd>dm_airborn_arena3_a0100021.JPG (137.83 KiB) Viewed 366 times</dd>
+		</dl>
+		
+		
+			</dd>
+									</dl>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p23118">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2008-06-08 20:46:29</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Maybe you aremissing 1 of the texture or decals for the map I had that problem a while back was gettign about 15-20 fps on a killbox  <img class="smilies" src="../../../images/smilies/icon_eek.gif" width="15" height="15" alt=":shock:" title="Shocked">  opend console to find red writing constantly scrolling turns out i was missing a decal of TSGK<br>
+Does it only happen on that map?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p23208">
+	<div class="info">
+		<p class="poster">Slice @ Dice</p>
+		<p class="dt">2008-06-09 22:30:08</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">No it happen on more maps but i test them before i upload them to my server.Sometimes the map works fine and suddenly happen this.I had it with the dm_killbox_green map too;works everyday good but also yesterday this appeard in my console.Like you said it is scrolling like hell.<br>
+<br>
+Greetz</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

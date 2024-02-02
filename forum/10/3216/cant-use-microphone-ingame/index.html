@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Can't use microphone ingame... (?!?!) - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+
+<h1>Can't use microphone ingame... (?!?!)</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=3216">https://forum.hl2dm.community/viewtopic.php?t=3216</a>
+-->
+
+<div class="post" id="p42530">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2009-01-30 11:30:55</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I didn't really nkow where to put this, so I brought it to the cafeteria...<br>
+<br>
+The problem is I can't seem to get my mic functioning in the game. It works everywhere else, including steam mic test, but in the game... caput. No sound or whatsoever. I did some tweeking in my cfg files to some commands I know, like voice_enable 1, but it stays the same. I even took my cfgs out and let the game create a default one and no change.<br>
+The only thing I didn't try was reinstalling the game...<br>
+<br>
+The mic is attached to my Sennheiser headset. If anyone knows what can be happening here, I'd apreciate some clues. The commands that control the mic would maybe be useful too.<br>
+<br>
+Thx</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p42540">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-01-30 12:27:58</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Source in known for dodgy sounds outputs.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p42545">
+	<div class="info">
+		<p class="poster">The Argumentalizer</p>
+		<p class="dt">2009-01-30 14:42:19</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Have you tried holding down whatever key it assigned to?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p42572">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2009-01-30 21:37:11</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yes. and I also tried keeping steam mic test on while playing and while trying to hear myself in the options mic test, and leaving the "automatically transmit voice whenever I speak" check box checked while playing... even tho I dunno if it works ingame. I can hear myself in game if I leave the steam test on. But no voice is recorded on the demos I recorded to see if any voice comes out.<br>
+<br>
+Tryed also turning on the mic before starting the game and after starting the game...</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p42574">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2009-01-30 22:03:07</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Have you tried windows sound recorder to make sure it is working?<br>
+all programs, accesories, entertainment, sound recorder<br>
+in XP</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p42577">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2009-01-30 22:17:44</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Good observation. I found I had the wrong device set. It's not woking but I had one improvement. The game mic test now receives my voice. But in game I can send my voice.<br>
+Now, I tried to record a demo with myself "talking", unless it doesn't work in demos, something else is still wrong here.<br>
+<br>
+I also tried voice_forcemicrecord "1" this time.<br>
+<br>
+I'll try to reset the cfg to see if it's anything there preventing it from working and I'll give you the feedback on it.<br>
+<br>
+thx</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p42578">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2009-01-30 22:38:49</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">hmm, this is weird enough...<br>
+<br>
+I've reset the cfg by taking all my cfg files out from their folder and I couldn't still get the mic to function.<br>
+<br>
+Here's what I tried next: I typed voyce and started turning on whatever was of. <br>
+I've input voice_showincoming 1, nothing happened, but when I went to the options mic test I saw a list of events mic related.<br>
+<br>
+Then I found voice_loopback, set it to 1 and it would send my voice back. I tried recording a demo, and mic still doesn't work but my voice is sent back in the demo too.<br>
+Maybe I can't hear my voice at all in recorded demos. So I'll try to talk to some1. I have been testing in demos since the beggining. But I know that my voice wouldn't come out cuz I tried it on a server too.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p42593">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2009-01-31 00:14:21</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">ok you can quti racking your brain now. I just made a demo and it did not play my voice back in the demo, although you could see the icon light up that voice was transmitting. Now I know my mic works as I use it ingame all the time, so by default when making a demo it must not include your voice, maybe it can be enabled but IDK.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p42603">
+	<div class="info">
+		<p class="poster">[KBH]Tazzer</p>
+		<p class="dt">2009-01-31 00:33:57</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">yeah it no recordy voicey ingame,<br>
+what sound program are you using? soundmax? or what?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

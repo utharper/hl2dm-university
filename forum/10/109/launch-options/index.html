@@ -1,0 +1,238 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Launch options - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+
+<h1>Launch options</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=109">https://forum.hl2dm.community/viewtopic.php?t=109</a>
+-->
+
+<div class="post" id="p398">
+	<div class="info">
+		<p class="poster">ninojman</p>
+		<p class="dt">2007-04-11 22:21:51</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">This is from the dod.s forums <a href="http://www.trypants.com" class="postlink">http://www.trypants.com</a> <br>
+<br>
+But these settings are the same for hl2dm and i have used them for a long time and it helps for sure<br>
+<br>
+this is my laptop launch options <br>
+<br>
+-heapsize 512000 -novid -console  <br>
+<br>
+thats for a 1 gb ram / no vavle start-up video / go straight to console <br>
+so if you have the ip you wanna goto (normally copied) you just have to press ctl+v enter to join the server good for match play<br>
+<br>
+connect SErverIP:27015; password password<br>
+<br>
+thats for a server with a ip of serverIP:27015 and pw of password  ; right after the port 27015 in this case <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+**As with all my Tweaks and Tip, I HIGHLY recommend you backup your Day of Defeat : Source folder or at least your cfg folder and ALL its contents (Not just the .cfg files). I am not responsible for anything you mess up even if you do exactly as I say, Some peoples systems just don't like being tweaked.**<br>
+<br>
+Now since I have already show you what you can do in windows and in a FPS config to improve your game. I decided to tell you about the little section I skipped over, This will be the Day of Defeat : Source Launch Options. Getting to this area is very simple and from there you can improve your FPS , Game Performance , Debug and much more. Now lets get started by getting you to this area.<br>
+Step 1.) Open Up Steam<br>
+Step 2.) Right click on "Day of Defeat : Source" and click "Properties"<br>
+Step 3.) In the "General" tab click "Set Launch Options"<br>
+------------------------------------<br>
+<br>
+**At the very bottom of this tweaks article, I will explain what every command does so look there to see what exactly they all do.**<br>
+<br>
+Now if its the first time you been here, You will have an empty box, If not you may have stuff in there already doesn't matter. In the text area is of course where we are going to put all the commands. Lets start with improving the games load up time. I for one hate seeing and having to ESC out of the valve intro movie every time, So to get rid of that just add :<br>
+-novid<br>
+------------------------------------<br>
+<br>
+If you use my FPS config, You know every time you load up the game you have to exec it twice or three times, To make this a little bit easier just add:<br>
+-console<br>
+**Also make sure you separate each one with a space it should look like this : -novid -console**<br>
+<br>
+------------------------------------<br>
+<br>
+Now lets worry about your mouse.<br>
+<br>
+*Note : Adding these commands below will change the "feel" of your game so do it at your own risk of having to readjust* <br>
+People hate the game loading every mouse setting built into windows and making it take effect when you play the game. To fix this you can add these 3 commands :<br>
+-noforcemaccel<br>
+-noforcemspd<br>
+-noforcemparms<br>
+------------------------------------<br>
+<br>
+Lets move onto a little more complicated commands. This would be your heapsize, This is determined by how much RAM you have for your system. Now I can't just give a number for everyone since everyone doesn't have the same amount of RAM. I can though give you a way to find out your amount and plus give the most common ones :<br>
+<br>
+Most Common :<br>
+<br>
+Amount of RAM - Heapsize Number<br>
+<br>
+4gb - 2097152<br>
+3gb - 1572864<br>
+2gb - 1048576<br>
+1gb - 524288<br>
+512mb - 262144<br>
+256mb - 131072<br>
+128mb - 65536<br>
+<br>
+Formula to find out heapsize :<br>
+<br>
+Amount of RAM in MB x 1024 / 2 (so for 2gb of RAM it would be : 2048 * 1024 = 2097152 / 2 = 1048576)<br>
+<br>
+Just adding that number to the launch options will not work.. It needs to be in conjunction with the -heapsize command. So all together with the -heapsize and your heapsize it would look like this if you have 2gb of ram.<br>
+-heapsize 1048576<br>
+------------------------------------<br>
+<br>
+The last big thing is setting your Direct-X Level. But be WARNED that you do NOT want to have this set to be changed in BOTH your launch options and in a Config file. It has to be set in ONLY ONE NOT BOTH. Now the 80 or 81 dxlevel may not work for every and can cause instability or the game to not run at all. So I will provide all 4 LEGAL dxlevels.<br>
+<br>
+80 (For those that 81 doesn't work for try this)<br>
+81 (Best for an increase in FPS)<br>
+90 (Default if 80 or 81 doesn't work this is the one you have to use)<br>
+95 (BEST for movie making , Makes the graphics even better)<br>
+<br>
+To use/set your Direct-X Level you will need to put the following *Remember where ## is that is the level number you want to use*<br>
+-dxlevel ##<br>
+------------------------------------<br>
+<br>
+Those above are the only commands I FULLY recommend adding. Below are some optional commands that you can add if you want.<br>
+-refresh ##<br>
+Match this to your monitors MAX refresh rate at the resolution you play your game at.<br>
+-high or -low<br>
+Set this to have your game run on either HIGH or LOW cpu priority, This can boost FPS on some systems. It can also cause random steam disconnect/crashes on others. Try high first then low if it doesn't work.. If none of them work or cause errors remove it. DO NOT USE BOTH AT ONCE!<br>
+<br>
+------------------------------------<br>
+<br>
+Alright there are more but I will stop there. Look at the very bottom of this article for a complete list or more you can add.<br>
+<br>
+Now before I give that list let me tell you some important and helpful commands you can do. First is debugging your game, If you ever crash a lot you can try adding either of these or all of them :<br>
+-nosound<br>
+Stops the game from using your soundcard. If your game stops crashing it has something to do with your sound. Either bad drivers / Dx sound issues / or even vent or some other sound program running at the same time. *Can also improve FPS at the cost of sound*<br>
+-windowed or -sw<br>
+Runs the game in window mode or software mode. If your game stops crashing its probably a Direct-X problem or bad videocard drivers or something along those lines.<br>
+-autoconfig<br>
+This is where a the cfg folder backup comes in. This stops and rewrites your video settings and config settings to default. If you game stops crashing while this is in the launch options its either a bad video setting ingame or something in your config. *After you take this out if it didn't help and restore you ENTIRE cfg folder over the new one made*<br>
+<br>
+------------------------------------<br>
+<br>
+For my last helpful top you can add a "+" sign and use that to exec config files or change a individual cvar on startup. It would look like this for a config :<br>
++exec FPS.cfg<br>
+or it would look like this for a cvar :<br>
++r_drawdetailprops 1<br>
+------------------------------------<br>
+<br>
+That is all I have for you guys today hope I helped out in someform. Below is the complete list of "-" commands you can use in the Launch Options and what they do.<br>
+<br>
+-autoconfig<br>
+(Restores ALL settings to default and ignores every config file)<br>
+<br>
+-dev<br>
+(Developer Mode, Runs standard test when opening)<br>
+<br>
+-condebug<br>
+(Logs your console output into a console.log text file)<br>
+<br>
+-console<br>
+(Opens the game directly to your console)<br>
+<br>
+-toconsole<br>
+(Opens the game directly to your console *Used for server when a +map isn't specified*)<br>
+<br>
+-dxlevel<br>
+(Sets your games Direct-X Level 80 , 81 , 90 , 95)<br>
+<br>
+-32bit<br>
+(Forces the game to run in 32bit mode if you are using a 64bit system)<br>
+<br>
+-fullscreen<br>
+(Starts the game in Fullscreen)<br>
+<br>
+-windowed<br>
+(Starts the game in a Window)<br>
+<br>
+-sw<br>
+(Starts the game in a window with Software Mode)<br>
+<br>
+-w<br>
+(Sets the width of game in a window or fullscreen)<br>
+<br>
+-h<br>
+(Sets the height of game in a window or fullscreen)<br>
+<br>
+-refresh<br>
+(Sets a particular refresh rate for the game to use)<br>
+<br>
+-heapsize<br>
+(Tells how much memory the game will use)<br>
+<br>
+-nocrashdialog<br>
+(Stops the error window from popping up after a crash)<br>
+<br>
+-novid or -novideo<br>
+(Stops intro from loading)<br>
+<br>
+-nosound<br>
+(Stops the game from using your soundcard)<br>
+<br>
+-nosync<br>
+(Tells the game to not use VSync)<br>
+<br>
+-low<br>
+(Sets the game to use LOW cpu priority)<br>
+<br>
+-high<br>
+(Sets the game to use HIGH cpu priority)<br>
+<br>
+-noforcemparms<br>
+(Stops windows mouse parameters from loading)<br>
+<br>
+-noforcemspd<br>
+(Stops windows mouse speed from loading)<br>
+<br>
+-noforceaccel<br>
+(Stops windows mouse acceleration from loading)<br>
+<br>
+Written by:<br>
+Ben "Klown" Ross<br>
+<br>
+if u have a question with a command plz ask</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p401">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2007-04-11 23:16:01</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Cool man thanks, we will look at integrating some of it into our courses.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p403">
+	<div class="info">
+		<p class="poster">st00pidity</p>
+		<p class="dt">2007-04-11 23:55:17</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">can i do this for my Tournament.com launch options as well?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

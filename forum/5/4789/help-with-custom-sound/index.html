@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Help with Custom Sound - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>Help with Custom Sound</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=4789">https://forum.hl2dm.community/viewtopic.php?t=4789</a>
+-->
+
+<div class="post" id="p65979">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2010-02-02 03:19:29</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">So Im trying to add a custom sound to my map.  Ive tried MP3 and .wav files.  I made sure the sound parameters were correct:  mono, 128 bit, 44000 htz or w/e its supposed to be.  Put the sound file in the sound folder.  Pointed the amibient_generic entity to the sound in the sound folder.  Fucking thing wont play.<br>
+<br>
+Any ideas??</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p65984">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2010-02-02 05:02:55</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">i know 8 bit and 16 bit. not 128. check one of the audios from the game to make sure ure setting are correct.<br>
+now ...on the ambient_generic flags you got start silent checked? you may need to force play it using a trigger or someit.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p65986">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2010-02-02 05:56:05</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">No I unchecked start silent.  Want this to play as background/environmental sound.   Ill check the triggers for on start or something like that.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p65988">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2010-02-02 06:08:17</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">try flagging it to start silent and then trigger the sound after 1-2 secs after map starts. trigger can even be a logic_auto &gt; OnMapSpawn &gt; sound-name &gt; Play Sound (after a delay of xx.xx sec)</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67276">
+	<div class="info">
+		<p class="poster">[BK]AC1</p>
+		<p class="dt">2010-03-11 00:35:45</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">hi <br>
+maybe about the sound radius.. <br>
+too small ?  check the "play everywhere" flag aswell for testing<br>
+or wrong sound directory?<br>
+<br>
+u can also try to use an soundscript.. lil more difficult then the ambientgeneric-trigger way..<br>
+but comming very handy for different sounds in different areas of your map then.<br>
+<br>
+here a info link for this one..<br>
+<a href="http://developer.valvesoftware.com/wiki/Soundscape" class="postlink">http://developer.valvesoftware.com/wiki/Soundscape</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67359">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2010-03-13 20:32:19</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Paradox wrote:</cite>No I unchecked start silent.  Want this to play as background/environmental sound.   Ill check the triggers for on start or something like that.</div></blockquote>
+
+By a background sound I presume you mean it needs to loop? In that case it will need <a href="http://developer.valvesoftware.com/wiki/Looping_a_Sound" class="postlink">loop points adding to the wav</a><br>
+<br>
+As mentioned by AC1 though soundscapes are really the way to go for environment sounds.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68246">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2010-04-08 00:51:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Isn't the max bit rate for HL2 11000 or something? At least to play sounds with HLDJ there's a very low limit to it. I dunno about sounds in this way.<br>
+But I know I used some custom sounds in a map, I'll go check it out to see if I remember any issues I might have had.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68292">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2010-04-08 04:58:33</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I gave up on the sound.  I couldnt get it to work.  I looked at the soundscapes info and couldnt figure it out.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68447">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2010-04-11 02:30:31</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">send me your vmf and sound name (or if custom sound - the file itself) and ill have a look. hit me on Steam.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

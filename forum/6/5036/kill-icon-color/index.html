@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kill Icon Color - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+
+<h1>Kill Icon Color</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=5036">https://forum.hl2dm.community/viewtopic.php?t=5036</a>
+-->
+
+<div class="post" id="p69725">
+	<div class="info">
+		<p class="poster">Dark Soul</p>
+		<p class="dt">2010-05-10 08:42:02</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">hai thar!!<br>
+<br>
+i just want to know if there is a way to change the kill icons color, i tried everything (almost) but i can't find the result yet. just want to make them white, i'm tired of the orange-ish color they actually have.<br>
+<br>
+cheers <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p69726">
+	<div class="info">
+		<p class="poster">Tranthor</p>
+		<p class="dt">2010-05-10 08:51:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yeah, I definitely did that when I made a hud but I forget how<br>
+<br>
+something you need to alter the values of in your clientscheme.res file</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p69742">
+	<div class="info">
+		<p class="poster">Dark Soul</p>
+		<p class="dt">2010-05-11 04:37:42</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Tranthor wrote:</cite>Yeah, I definitely did that when I made a hud but I forget how<br>
+<br>
+something you need to alter the values of in your clientscheme.res file</div></blockquote>
+
+wow...haha please try to remember how you did it!!!<br>
+<br>
+as i said, i tried everything, changed some values in the clientscheme and hudlayout files but nothing....maybe i can't find the right code <img class="smilies" src="../../../images/smilies/icon_sad.gif" width="15" height="15" alt=":(" title="Sad"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p69752">
+	<div class="info">
+		<p class="poster">Tranthor</p>
+		<p class="dt">2010-05-11 07:26:16</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">It will be one of the values in clientscheme that is four 3-digit numbers, for example red is "192 28 0 140"<br>
+<br>
+The last one is opacity, I forget which the others are out of red, green, and blue but I <em class="text-italics">think</em> it's in that order.  Red, Green, Blue, Opacity/saturation.<br>
+<br>
+<br>
+I'm pretty sure you want one of the values under<br>
+<span style="color:#004000">///////////////////// BASE SETTINGS ////////////////////////<br>
+	//<br>
+	// default settings for all panels<br>
+	// controls use these to determine their settings</span><br>
+<br>
+in this area:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>	BaseSettings
+	{
+		"FgColor"			"0 220 255 100"
+		"BgColor"			"0 0 0 76"
+
+		"Panel.FgColor"			"0 220 255 100"
+		"Panel.BgColor"			"0 0 0 76"
+		
+		"BrightFg"		"0 220 255 255"
+
+		"DamagedBg"			"180 0 0 200"
+		"DamagedFg"			"180 0 0 230"
+		"BrightDamagedFg"		"255 0 0 255"
+
+		// weapon selection colors
+		"SelectionNumberFg"		"0 220 255 255"
+		"SelectionTextFg"		"0 220 255 255"
+		"SelectionEmptyBoxBg" 	"0 0 0 80"
+		"SelectionBoxBg" 		"0 0 0 80"
+		"SelectionSelectedBoxBg" "0 0 0 80"
+		
+		"ZoomReticleColor"	"0 220 255 255"
+
+		// HL1-style HUD colors
+		"Yellowish"			"0 220 255 255"
+		"Normal"			"0 255 255 255"
+		"Caution"			"0 255 255 240"</code></pre></div>
+
+Don't remember what you need to change.  Fiddle around.<br>
+Or ask Neolinkster</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

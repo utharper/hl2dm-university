@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Changing x-hair color - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Training Center</a></p>
+</div>
+
+<h1>Changing x-hair color</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=293">https://forum.hl2dm.community/viewtopic.php?t=293</a>
+-->
+
+<div class="post" id="p1544">
+	<div class="info">
+		<p class="poster">Trickster</p>
+		<p class="dt">2007-07-28 03:51:44</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Tired of orange? Me too...<br>
+<br>
+Kick things off by getting <a href="http://nemesis.thewavelength.net/index.php?p=26" class="postlink">GCFscape</a>   -----clicky<br>
+<br>
+It's not some hacking program bs, its just a tool to open the seemingly useless files in your steamapps folder.<br>
+<br>
+In those files contains pretty much every thing to the games in your account. To open a file, you 1st have to turn steam off and click open one and.....it's open. But to get your xhair to that tickle me pink color you've been dying to have, you need to find it. It's located in<span style="color:red"> Half-Life 2 Deathmatch--&gt;Hl2mp--&gt;Resource</span>...and the file name is,<span style="color:blue"> ClientScheme.res</span> Find it and extract it to your <span style="color:red">hl2mp/resource</span> From there you can close GCFscape because that's all you needed it for.<br>
+<br>
+Now you have to open the clientscheme.res, select to open it in a notepad document. From there you'll see a mess of numbers and arrangements that won't make much sense. Simply look for the <div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>// HL1-style HUD colors
+		"Yellowish"			"192 28 0 140"
+		"Normal"			"255 28 0 140"
+		"Caution"			"192 28 0 140"</code></pre></div> <br>
+<br>
+On the right side you see a set of numbers, there are 4 columns that make out the amount of color, the 1st reads the amount of red, then the amount of green and then the amount of blue The last column is the amount is displayed (opacity)<br>
+<br>
+So if you wanted a bright red xhair, the set would look like...
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>// HL1-style HUD colors
+		"Yellowish"			"255 0 0 255"
+		"Normal"			"255 0 0 255"
+		"Caution"			"255 0 0 255"</code></pre></div> <br>
+Larger numbers = more of that color,  btw from this the color Black is possible (Proven wrong :O) but doesnt show weapon pick ups.<br>
+<br>
+The numbers there give off a redish/orange xhair and weapon pick up color. expiriment and see what comes off best. And keep this in mind <span style="color:green">When your done, rightclick and save it as a "read-only"</span> otherwise steam would erase and overwrite everything.<br>
+<br>
+EDIT: Fixz0r3s</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1547">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2007-07-28 09:40:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">this info could go to the official curriculum IMO.<br>
+Nice thread btw <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1548">
+	<div class="info">
+		<p class="poster">Ko-Tao</p>
+		<p class="dt">2007-07-28 12:05:34</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Black is 0 0 0 255<br>
+<br>
+Would probably work well on a very bright map textured all in light colors.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1550">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2007-07-28 17:24:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">the 3 first numbers are the values for red, green, and blue.<br>
+If you write 0 0 0 255, you are giving the crosshair, and part of the hud, no color, and instead of black, it is invisible. =/</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1554">
+	<div class="info">
+		<p class="poster">Scar</p>
+		<p class="dt">2007-07-28 22:10:39</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I use a white crosshair, 225 225 225 225</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1555">
+	<div class="info">
+		<p class="poster">Ko-Tao</p>
+		<p class="dt">2007-07-29 00:30:17</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Leet black xhair:<br>
+<br>
+<a href="http://i85.photobucket.com/albums/k80/Ko-Tao/HL2DM/BlackXhair2.jpg" class="postlink">http://i85.photobucket.com/albums/k80/K ... Xhair2.jpg</a><br>
+<br>
+The weapon pickup icons are indeed invisible with that setting, but that should also be changeable somewhere in the clientscheme, as those icons also show red when youre full.<br>
+<br>
+Btw, setting that white xhair to 255 255 255 255 with additive 0 will make it even brighter and will prevent it from getting washed out in high light areas.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1556">
+	<div class="info">
+		<p class="poster">Scar</p>
+		<p class="dt">2007-07-29 01:31:35</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I just turn up the darkness for bright maps.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1559">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2007-07-29 08:21:48</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">lol wtf. I did test the crosshair before posting, I can swear it was invisible.<br>
+No idea how you did it.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1561">
+	<div class="info">
+		<p class="poster">Jelly Fox</p>
+		<p class="dt">2007-07-29 18:53:30</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Cheers for this Trickster  <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1562">
+	<div class="info">
+		<p class="poster">snuffymckiller</p>
+		<p class="dt">2007-07-29 22:33:25</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">using "0 0 0 225" worked for me<br>
+<br>
+<a href="http://i128.photobucket.com/albums/p164/snuffymckiller/dm_killbox_kbh_20000.jpg" class="postlink">http://i128.photobucket.com/albums/p164 ... _20000.jpg</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1563">
+	<div class="info">
+		<p class="poster">Trickster</p>
+		<p class="dt">2007-07-30 00:26:13</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>0nti wrote:</cite>lol wtf. I did test the crosshair before posting, I can swear it was invisible.<br>
+No idea how you did it.</div></blockquote>
+
+Yea I think it won't work without additive set to 0, ctrl+f and look for additive, the one under "Crosshair" should do the trick. Me personally, blue is the best, because it looks as dark as black, and you can see weapons you pick up.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1565">
+	<div class="info">
+		<p class="poster">Ko-Tao</p>
+		<p class="dt">2007-07-30 04:03:44</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thats likely the reason the weapon pickup icons dont display when black- theyre all additive. Which can probably be changed, but its pointless since a black xhair is pretty much useless on anything but a mega bright white map.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p1566">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2007-07-30 05:35:25</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote class="uncited"><div> pretty much useless on anything but a mega bright white map. </div></blockquote>
+True, true.<br>
+It looks nice tho =P.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Training Center</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

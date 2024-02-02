@@ -1,0 +1,377 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Gap in between hit boxes in hl2dm? Watch this. - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+
+<h1>Gap in between hit boxes in hl2dm? Watch this.</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=4985">https://forum.hl2dm.community/viewtopic.php?t=4985</a>
+-->
+
+<div class="post" id="p68890">
+	<div class="info">
+		<p class="poster">Deathwish</p>
+		<p class="dt">2010-04-20 17:38:35</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">There must be an extremely tiny gap in between the hitboxes in hl2dm, this shouldn't be possible like in css.<br>
+<br>
+<object width="320" height="265"><param name="movie" value="http://www.youtube.com/v/DTuYKVvUk00&amp;hl=en&amp;fs=1&amp;rel=0&amp;color1=0x234900&amp;color2=0x4e9e00"><param name="allowFullScreen" value="true"><param name="allowscriptaccess" value="always"><embed src="https://www.youtube.com/v/DTuYKVvUk00&amp;hl=en&amp;fs=1&amp;rel=0&amp;color1=0x234900&amp;color2=0x4e9e00" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="320" height="265"></embed></object><br><a href="https://www.youtube.com/watch?v=DTuYKVvUk00" target="_blank" rel="noreferrer">Link</a><br>
+<br>
+The reason why this is strange is because when I fired the shotgun shot, the player in front's hitbox was completely blocking the player behind who was perfectly aligned behind the player in front, so how come the shot dropped both players? See it wouldn't have been that uncommon if the player behind was a teensie bit to the left for example as then it would be showing some of its hitbox, but this wasn't the case.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68903">
+	<div class="info">
+		<p class="poster">MondaySunshine</p>
+		<p class="dt">2010-04-20 22:33:25</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Part of the shotgun spread killed dood in front. Hitbox disappeared instantly. Rest of the pellets continued onward to second dood. Mystery solved. Now give me candy.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68905">
+	<div class="info">
+		<p class="poster">provost</p>
+		<p class="dt">2010-04-20 22:42:04</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>MondaySunshine wrote:</cite>Part of the shotgun spread killed dood in front. Hitbox disappeared instantly. Rest of the pellets continued onward to second dood. Mystery solved. Now give me candy.</div></blockquote>
+
+1. Login to internet<br>
+2. Visit UPS.com<br>
+3. Send candy to MondaySunshine!!<br>
+<br>
+But yeah, I always tought shotgun spread was acting like this:<br>
+<br>
+----<br>
+----<br>
+---<br>
+-----<br>
+<br>
+^ bullets spread<br>
+<br>
+<br>
+some bullets are SLIGHTLY behind and some slightly more to the front in the spread, so I believe sunshine is right and when happened is the first ''wave'' of pellets killed the 1st dood then the rest killed the other dood. Doesn't happen often i'll admit.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68906">
+	<div class="info">
+		<p class="poster">Deathwish</p>
+		<p class="dt">2010-04-20 22:43:05</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">But as I already stated and if you look carefully, the player in front is fully blocking the player behind him, I've slowmo'd it down to the slowest speed and the player in front covers him the whole time when the shotgun shot is fired, completely, thats why it doesnt make sense, the other pellets couldn't have gone and hit the player behind because he was FULLY aligned with the player in front and my shotgun in a straight line when the shotgun shot was fired. I have heard about leaks in the hitboxes before and this looks to be the case.
+<blockquote><div><cite>MondaySunshine wrote:</cite>Part of the shotgun spread killed dood in front. Hitbox disappeared instantly. Rest of the pellets continued onward to second dood. Mystery solved. Now give me candy.</div></blockquote>Did you read this below the video? 
+<blockquote class="uncited"><div>See it wouldn't have been that uncommon if the player behind was a teensie bit to the left for example as then it would be showing some of its hitbox, but this wasn't the case.
+</div></blockquote>
+<blockquote><div><cite>provost wrote:</cite>But yeah, I always tought shotgun spread was acting like this:<br>
+<br>
+----<br>
+----<br>
+---<br>
+-----<br>
+<br>
+^ bullets spread<br>
+<br>
+<br>
+some bullets are SLIGHTLY behind and some slightly more to the front in the spread, so I believe sunshine is right and when happened is the first ''wave'' of pellets killed the 1st dood then the rest killed the other dood. Doesn't happen often i'll admit.</div></blockquote>
+That's not true because I have tested that theory out before and It doesn't work.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68908">
+	<div class="info">
+		<p class="poster">Ko-Tao</p>
+		<p class="dt">2010-04-20 22:47:46</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Latency. One of the two players actual hitboxes was off center enough serverside that both players ended up within the shotguns cone.<br>
+<br>
+The "pellets continued through the first player" explanation isnt possible, btw. Hitscan in hl2dm doesnt work that way.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68916">
+	<div class="info">
+		<p class="poster">voz</p>
+		<p class="dt">2010-04-21 01:23:43</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Maybe ping difference , from the clip it does seem as the player in the front is covering the one behind him ,unless it could also be the physics engine being fooled by the momentum in your shotgun when you flick it upwards.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68918">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2010-04-21 01:29:12</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Ko-Tao wrote:</cite>Latency. One of the two players actual hitboxes was off center enough serverside that both players ended up within the shotguns cone.<br>
+<br>
+The explanation in the previous post isnt possible, btw. Hitscan in hl2dm doesnt work that way.</div></blockquote>
+
+This.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68925">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2010-04-21 03:36:16</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yea Ive had a double kill from a shotty once or twice in my DM career.  Rare but it does happen.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68935">
+	<div class="info">
+		<p class="poster">Deathwish</p>
+		<p class="dt">2010-04-21 06:54:59</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">lol so have I, but this one is very unique as both players are aligned and with my shotgun, not just both hitboxes showing.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68936">
+	<div class="info">
+		<p class="poster">The Argumentalizer</p>
+		<p class="dt">2010-04-21 07:13:01</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Internet FPS, what you see is not always the truth.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68940">
+	<div class="info">
+		<p class="poster">Pernicious</p>
+		<p class="dt">2010-04-21 07:35:21</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Paradox wrote:</cite>Yea Ive had a double kill from a shotty once or twice in my DM career.  Rare but it does happen.</div></blockquote>
+
+About 2 weeks ago, i got 6 over the span of 4 days. They were just the usual though, 2 ppl standing close to eachother so the buckshot would hit em both.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68944">
+	<div class="info">
+		<p class="poster">voz</p>
+		<p class="dt">2010-04-21 09:32:34</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yea this one Deathwish posted was a bit different as he stated that one player was in front of the other , but yea ko tao's explanation answers it and also its hl2dm.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68947">
+	<div class="info">
+		<p class="poster">Deathwish</p>
+		<p class="dt">2010-04-21 12:07:03</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Pernicious wrote:</cite><blockquote><div><cite>Paradox wrote:</cite>Yea Ive had a double kill from a shotty once or twice in my DM career.  Rare but it does happen.</div></blockquote>
+
+About 2 weeks ago, i got 6 over the span of 4 days. They were just the usual though, 2 ppl standing close to eachother so the buckshot would hit em both.</div></blockquote>
+Yeah but theres a HUGE difference in getting it in a scrim compared to a pub lmao, all you do is pub, you never played any scrims, that was a 2v2 and I dropped both players so it was decent, learn something, it wouldn't have been as special even if it were a 3v3 or 4v4, it's easy as to get it in a pub ffa lmao.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68948">
+	<div class="info">
+		<p class="poster">Pernicious</p>
+		<p class="dt">2010-04-21 12:45:43</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Err, dont get all ego bloated fool.<br>
+It was something funny that hapened, it wasnt bragging, and i thought it odd that paradox has only done it a couple of times.<br>
+<br>
+Understand?<br>
+<br>
+The funny part is i only played like 30-60 minutes each of the days. It was a luck thing, not a "omg that was so fucking leet" thing.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68949">
+	<div class="info">
+		<p class="poster">Deathwish</p>
+		<p class="dt">2010-04-21 13:17:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Oh my bayd, I jumped to conclusions lol, guess its because we don't have a really good past, my bad.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68953">
+	<div class="info">
+		<p class="poster">MondaySunshine</p>
+		<p class="dt">2010-04-21 17:32:22</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Deathwish wrote:</cite>Oh my bayd, I jumped to conclusions lol, guess its because we don't have a really good past, my bad.</div></blockquote>
+
+Hug it out. No homo, though.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68956">
+	<div class="info">
+		<p class="poster">Pernicious</p>
+		<p class="dt">2010-04-21 18:47:10</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><img class="smilies" src="../../../images/smilies/nervous.gif" width="17" height="17" alt=":nerves:" title="Nervous"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68962">
+	<div class="info">
+		<p class="poster">dbanimal</p>
+		<p class="dt">2010-04-21 21:13:14</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Deathwish wrote:</cite>Oh my bayd, I jumped to conclusions lol, </div></blockquote>
+
+You seem to do that alot, you might want to change that about yourself before you end up pissing off everybody here.  It's only making you look that much worse!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68970">
+	<div class="info">
+		<p class="poster">herbalizer</p>
+		<p class="dt">2010-04-22 04:09:14</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Full Metal Jacket perk, bullets pass thru bodies and walls!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68976">
+	<div class="info">
+		<p class="poster">Deathwish</p>
+		<p class="dt">2010-04-22 06:57:13</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>dbanimal wrote:</cite><blockquote><div><cite>Deathwish wrote:</cite>Oh my bayd, I jumped to conclusions lol, </div></blockquote>
+
+You seem to do that alot, you might want to change that about yourself before you end up pissing off everybody here.  It's only making you look that much worse!</div></blockquote>
+No I don't do it a lot, it's actually because me and Pern never ever got along and always gave each other shit on these forums, your doing it right now in fact, lol, jumping to conclusions.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p69009">
+	<div class="info">
+		<p class="poster">Ghost Dog_TSGK</p>
+		<p class="dt">2010-04-22 22:55:57</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Deathwish wrote:</cite>No I don't do it a lot</div></blockquote>
+
+<blockquote><div><cite>Deathwish wrote:</cite>Proof that Poor_Billy rate hacked during the CAL finals!<br>
+And that his whole team (ewR) lied about it in his defence!<br>
+Read for yourself!<br>
+-----&gt;Here&lt;-----(most important thread with proof magically got completely moved away instead of just being locked)<br>
+---&gt;And Here&lt;--- (still working)<br>
+<br>
+Pages have not been lost and are still saved</div></blockquote></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p69029">
+	<div class="info">
+		<p class="poster">Deathwish</p>
+		<p class="dt">2010-04-23 07:59:26</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I didn't jump to conclusions there, want me to start pulling screenies of the thread of your team admitting it accidentally again and what not, lol. No hard feelings.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p69050">
+	<div class="info">
+		<p class="poster">Uncle Rico</p>
+		<p class="dt">2010-04-23 22:34:00</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Deathwish wrote:</cite>I didn't jump to conclusions there, want me to start pulling screenies of the thread of your team admitting it accidentally again and what not, lol. No hard feelings.</div></blockquote>
+No one admitted shit because that config was never used in CAL you illiterate, giant headed dwarf.  It was all explained to you and you chose to believe what you wanted because you can't accept the fact that PB and Grain would rape your face completely off. <br>
+Holy has PB's pov demos for the community video.  I'm sure he would have posted something by now if there was anything funky with those demos.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p69051">
+	<div class="info">
+		<p class="poster">ninojman</p>
+		<p class="dt">2010-04-23 22:39:14</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Deathwish wrote:</cite>Oh my bayd, I jumped to conclusions lol, guess its because we don't have a really good past, my bad.</div></blockquote>
+<blockquote><div><cite>Deathwish wrote:</cite>I didn't jump to conclusions there, want me to start pulling screenies of the thread of your team admitting it accidentally again and what not, lol. No hard feelings.</div></blockquote>
+
+<blockquote><div><cite>Deathwish wrote:</cite>Oh my bayd, I jumped to conclusions lol,</div></blockquote>
+<blockquote><div><cite>Deathwish wrote:</cite>I didn't jump to conclusions</div></blockquote>
+
+lol</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p69053">
+	<div class="info">
+		<p class="poster">provost</p>
+		<p class="dt">2010-04-23 22:41:56</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">hahahah I love nino's humor, it's DEFme's spiritual replacement</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p69059">
+	<div class="info">
+		<p class="poster">Deathwish</p>
+		<p class="dt">2010-04-24 03:59:32</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>ninojman wrote:</cite><blockquote><div><cite>Deathwish wrote:</cite>Oh my bayd, I jumped to conclusions lol, guess its because we don't have a really good past, my bad.</div></blockquote>
+<blockquote><div><cite>Deathwish wrote:</cite>I didn't jump to conclusions there, want me to start pulling screenies of the thread of your team admitting it accidentally again and what not, lol. No hard feelings.</div></blockquote>
+
+<blockquote><div><cite>Deathwish wrote:</cite>Oh my bayd, I jumped to conclusions lol,</div></blockquote>
+<blockquote><div><cite>Deathwish wrote:</cite>I didn't jump to conclusions</div></blockquote>
+
+lol</div></blockquote>
+lul, your team still rate hacked in CAL. Stop gaying up my thread.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p69210">
+	<div class="info">
+		<p class="poster">Fearsome*</p>
+		<p class="dt">2010-04-28 07:40:56</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">The shots fired are unlikely to come before or after anything. The game calculates bullets as trace lines which all will take place in the same frame. Back in HL1 there were demonstrations that bugs in the game would cause odd issues. They could take an AWP and fire it at a line of players and sometimes not all the player would get hit. Meaning somehow a single traceline had not calculated a hit on a player. It would not surprise me if these still exist, it would surprise me if anyone at valve went through extra work to write code for a shotgun that fired pellets at different speeds. Trace lines are instant they have no velocity or infinite velocity depending on how you want to think of it.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

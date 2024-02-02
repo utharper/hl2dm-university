@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>How to setup an obj to be replaced by a 2nd when... - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>How to setup an obj to be replaced by a 2nd when...</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=4717">https://forum.hl2dm.community/viewtopic.php?t=4717</a>
+-->
+
+<div class="post" id="p64476">
+	<div class="info">
+		<p class="poster">javierdl</p>
+		<p class="dt">2009-12-28 20:11:49</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">the player uses the action key (e). For example, a burger. When the player hits e, the burger is replaced by an eaten counterpart.<br>
+<br>
+So far I know how to and have successfully created an object and imported it into HL2DM, so you don't have to explain that, only the additional parts to add the second mesh and set it up to work with the e key.<br>
+<br>
+Thanks in advance guys,<br>
+<br>
+JDL<br>
+<br>
+<img src="https://photos-h.ak.fbcdn.net/photos-ak-sf2p/v43/39/101539264719/app_2_101539264719_1610.gif" class="postimage" alt="Image"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p64562">
+	<div class="info">
+		<p class="poster">javierdl</p>
+		<p class="dt">2009-12-30 18:55:47</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">This is what <a href="http://forums.steampowered.com/forums/showpost.php?p=12781259&amp;postcount=2" class="postlink">Xanoratt</a> advised:<br>
+<br>
+"Make your first burger a prop_dynamic. Put a block of tools/invisible over it and make the block into a func_button. Then make the second model a prop_dynamic and put it in the same spot (you may want to keep it seperate in order to work with it first). Make a logic_auto and set its OnMapSpawn output to perform TurnOff on the second burger. Set the func_button's OnPress output to perform TurnOff on the first burger, and TurnOn on the second burger.<br>
+Tools/invisible" is a solid invisible material. I recommended it because you need a solid object for the button, but don't want to have to see it. You do all of this stuff in Hammer. If you don't understand it then read up on <a href="http://developer.valvesoftware.com/wiki/Output#Outputs" class="postlink">Input &amp; Outputs</a>."<br>
+<br>
+<img src="https://photos-h.ak.fbcdn.net/photos-ak-sf2p/v43/39/101539264719/app_2_101539264719_1610.gif" class="postimage" alt="Image"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p64563">
+	<div class="info">
+		<p class="poster">{EE}chEmicalbuRn</p>
+		<p class="dt">2009-12-30 19:23:22</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><object width="320" height="265"><param name="movie" value="http://www.youtube.com/v/DMSaJ1KkqQI&amp;hl=en&amp;fs=1&amp;rel=0&amp;color1=0x234900&amp;color2=0x4e9e00"><param name="allowFullScreen" value="true"><param name="allowscriptaccess" value="always"><embed src="https://www.youtube.com/v/DMSaJ1KkqQI&amp;hl=en&amp;fs=1&amp;rel=0&amp;color1=0x234900&amp;color2=0x4e9e00" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="320" height="265"></embed></object><br><a href="https://www.youtube.com/watch?v=DMSaJ1KkqQI" target="_blank" rel="noreferrer">Link</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

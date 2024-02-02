@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Model changes and logic_branch's. Input form console? - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>Model changes and logic_branch's. Input form console?</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=4266">https://forum.hl2dm.community/viewtopic.php?t=4266</a>
+-->
+
+<div class="post" id="p57124">
+	<div class="info">
+		<p class="poster">chickenmobile</p>
+		<p class="dt">2009-07-15 07:17:22</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I've been trying to make a map that involves scripting of changing characters to different player models. I have done this BUT there is the problem that people may want to play in team-deathmatch and mixed characters may be difficult to distinguish between teams (especially if they are far away). <br>
+It is easy to create a filter that changes player models depending whether they are rebel or combine (filter_acticvator_team) but what I want to know is how can I check whether a command in the console is true or false (1 or 0) so then I can disable the model changing trigger.<br>
+<br>
+Using a Logic_branch im trying to test whether the command "mp_teamplay" is set to 0 or 1 BUT I have definitely no idea how to do this. Do I need scripting in a text file separate from the map file? Do I need another entity that gets input and output values? How can I do it? <img class="smilies" src="../../../images/smilies/icon_confused.gif" width="15" height="15" alt=":?" title="Confused"></div>
+<dl class="attachbox">
+					<dt>
+						Attachments
+					</dt>
+											<dd>
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="people.jpg" class="postimage" alt="My models, the player model will change when players will spawn. But what about team deathmatch?" onclick="viewableArea(this);"></dt>
+			<dd><em>My models, the player model will change when players will spawn. But what about team deathmatch?</em></dd>			<dd>people.jpg (130.1 KiB) Viewed 344 times</dd>
+		</dl>
+		
+		
+			</dd>
+									</dl>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p57128">
+	<div class="info">
+		<p class="poster">Pernicious</p>
+		<p class="dt">2009-07-15 09:11:48</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I say, using the filter and the logic case/'s, dont bother.<br>
+If both case are being triggered correctly its all good, only that ppl are limited to wat playermodel they get by wether they are combine are rebels(combine = male, rebel = female), but i think thats a good thing, that way u can chose wether ur female or male.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p69260">
+	<div class="info">
+		<p class="poster">chickenmobile</p>
+		<p class="dt">2010-04-29 07:38:37</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I figured it out and just needed a bit of logic, I made it a reverse filter so then teams cannot activate the trigger and vice versa with the other trigger.<br>
+<br>
+This model changer thing is cool however whenever there is needed a mp_restart 1 it crashes the game. I'm going to make another version.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p69267">
+	<div class="info">
+		<p class="poster">Pernicious</p>
+		<p class="dt">2010-04-29 10:43:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Win.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p69295">
+	<div class="info">
+		<p class="poster">chickenmobile</p>
+		<p class="dt">2010-04-30 05:04:19</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">nah-uh, your a fail.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p69297">
+	<div class="info">
+		<p class="poster">Pernicious</p>
+		<p class="dt">2010-04-30 05:29:02</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Calling me a fail is a fail of epic proportions.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

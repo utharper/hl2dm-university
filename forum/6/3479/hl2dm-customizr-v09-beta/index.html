@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HL2DM CustomizR v0.9 beta - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+
+<h1>HL2DM CustomizR v0.9 beta</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=3479">https://forum.hl2dm.community/viewtopic.php?t=3479</a>
+-->
+
+<div class="post" id="p47423">
+	<div class="info">
+		<p class="poster">Stukad</p>
+		<p class="dt">2009-03-21 23:33:50</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">hello ladies, I want to release this beta version of my app to the HL2DM community, please try it out and report any bugs you may find AND report if everything works fine aswell.<br>
+<br>
+about the app: HUD customizing made easy! you want a fancy HUD but don't know a thing about that subject? now you can customize your HUD just like you want with this application, just click on "teh buttons"! amüsiert<br>
+<br>
+remember: beta status and optimized for Windows Vista and Se7en, but should run fine on XP aswell and backup your current stuff!<br>
+<br>
+if you want to add fonts, just download them from e.g. <a href="https://www.dafont.com" class="postlink">http://www.dafont.com</a> and install them to your windows, the app scans all installed fonts.<br>
+<br>
+screenshot:<br>
+<a href="http://img2.abload.de/img/screenshot5pp4.png" class="postlink"><img src="http://www.abload.de/thumb/screenshot5pp4.png" class="postimage" alt="Image"></a><br>
+<br>
+<a href="http://web124.ws1.optimate-server.de/HL2DM%20CustomizR.zip" class="postlink"><strong class="text-strong">download</strong></a><br>
+<br>
+More info Can be found <a href="http://clans-united.net/index.php?site=forum_topic&amp;topic=4303&amp;type=ASC&amp;page=1" class="postlink"><strong class="text-strong">here</strong></a><br>
+<br>
+Ps. Im not the maker of this, just a messenger.<br>
+Contact yang for more information.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p47431">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-03-22 00:49:06</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Good stuff, I have a problem though, the outline on the dot crosshair doesn't work very well.<br>
+I suggwest to make the Target id smaller 24 is huge.<br>
+Those feckers deleted my account and now cannot register because its not sending the confirmation emails out.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p47435">
+	<div class="info">
+		<p class="poster">Jelly Fox</p>
+		<p class="dt">2009-03-22 01:40:40</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Nice, after using the Quakelive config generator I plan to make something similar for DM to this. <br>
+<br>
+I have a good config just now so I'm not going "test" your app, but from an GUI point of view you really need screen shots of what you're changing. examples of the scoreboard, crosshair, fonts and what HUD flash is??? etc etc...<br>
+
+<blockquote><div><cite>keefy wrote:</cite>
+Those feckers deleted my account and now cannot register because its not sending the confirmation emails out.</div></blockquote>
+
+incorrect, they got hacked and lost everyone's account (they never backed up).</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p47441">
+	<div class="info">
+		<p class="poster">yang</p>
+		<p class="dt">2009-03-22 02:57:03</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hello!<br>
+<br>
+@keefy: can you tell me more about the TargetID?<br>
+<br>
+@Jelly Fox: I expected all to be self-explanatory, the XHair color changes the Crosshair color, XHair style comes with examples, the small scoreboard is probably misnamed as it changes the scoreboard to a dynamic one, which grows the more players join the server.<br>
+the fonts aswell come with examples as you can see in the lower left corner of the screenshot.<br>
+"HUD Flash" is the flashing animation when switching weapons, couldnt think of a good name <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"><br>
+and with "HUD Color" are the HUD numbers meant.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p47448">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-03-22 08:25:18</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">When you hover over a player you see their name "Target ID"<br>
+Find it in the clientschem.res,  ctrl+F "target" <br>
+24 is default I use 11 and on my resolutionlooks just right ?I think.
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>		"TargetID"
+		{
+			"1"
+			{
+				"name"		"Trebuchet MS"
+				"tall"		"24"  //this one 
+				"weight"	"900"
+				"range"		"0x0000 0x007F"	//	Basic Latin
+				"antialias" "1"
+				"additive"	"0"
+			}</code></pre></div>
+<img src="http://i524.photobucket.com/albums/cc324/k33fy/dm_overwatch0002.jpg" class="postimage" alt="Image"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p52359">
+	<div class="info">
+		<p class="poster">yang</p>
+		<p class="dt">2009-05-09 19:47:30</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hello guys, a new version of HL2DM CustomizR is finally out!<br>
+<br>
+Changes made from v0.9 to v0.95:<br>
+<br>
+- buttons changed to dropdown's, less crowed layout &amp; less code<br>
+- small scoreboard gets installed by default<br>
+- added backup option to save a previous HUD setup <br>
+- option to install outlined frag icons <br>
+- new crosshair added: square<br>
+- new crosshair added: custom<br>
+<br>
+The app still remains in beta status though!<br>
+<br>
+More information and download link are <a href="http://www.teampwnstars.com/index.php?site=forum_topic&amp;topic=9&amp;type=ASC&amp;page=1" class="postlink">HERE</a>.<br>
+<br>
+<a href="http://www.abload.de/image.php?img=previewgcq4.jpg" class="postlink"><img src="http://www.abload.de/thumb/previewgcq4.jpg" class="postimage" alt="Image"></a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p54904">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2009-06-12 19:11:22</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">hey the U has a looooot of useful stuff spread around the forums.<br>
+How about getting all this together in a same place or at least sticking the useful threads like this one?<br>
+Good job btw.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

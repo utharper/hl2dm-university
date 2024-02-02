@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Updating FPS_enhancer - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+
+<h1>Updating FPS_enhancer</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=4596">https://forum.hl2dm.community/viewtopic.php?t=4596</a>
+-->
+
+<div class="post" id="p62523">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2009-11-11 16:50:38</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Choco contacted me asking for an updated version of the config I did back on '07.<br>
+I tried changing it the most I could, used cvarlist on hl2dm's console to have a complete list of all the commands available, yet many of the ones I was able to use in other source games are either cheat protected, or non-existent on hl2dm because it is an older engine.<br>
+Nontheless, I managed to make some minor changes. Don't expect much over the older one, but even if it's a single more frame I think that would be good ;P<br>
+I'll leave it here with the changelog I saved while doing it, if anybody has any idea on how to make it better, mention it, otherwise if time goes by and nothing needs to be changed WT can host it on hl2dm university.<br>
+<br>
+Note I also added this at the beginning of the config:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>// ---------------------------------------------------------------------------------------------------------------
+// Setting -nojoy -noipx and -noaafonts in the launch options may improve FPS
+// </code></pre></div>
+
+Just some known launch options, first one disables joystick support, second one the use of the IPX protocol (mainly needed for lan, not internet), and the third one disables font antialiasing.<br>
+<br>
+<strong class="text-strong">Config --&gt;  <a href="http://www.filefront.com/14905363/FPS_enhancer.cfg" class="postlink">http://www.filefront.com/14905363/FPS_enhancer.cfg</a></strong><br>
+<br>
+Changelog
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>Fixed  r_shadowrendertotexture being set to 1 instead of 0, enabling shadows.
+
+Added blink_duration "0"
+Added cl_showpluginmessages "0"
+Added cl_showtextmsg "0"
+Added dsp_water "0"
+Added mat_dxlevel "80"
+Added mat_use_compressed_hdr_textures "1"
+Added mod_forcetouchdata "1"
+Added r_decalstaticprops "0"
+Added r_updaterefracttexture "0"
+Added vprof_cachemiss_off
+Added sv_forcepreload "1"
+
+Changed r_worldlights from "2" to "1"
+Changed r_eyeglintlodpixels from "0" to "99999"
+Changed r_decal_cullsize value from "50" to "99999"
+Changed violence_ ablood, hblood, hgibs and agibs to "0".
+Changed r_maxmodeldecal from "3" to "0"
+
+--------------------------------------------------------------
+*Removed the following commands for being wrongly used (i.e they take no numerical values, it is just a plain command to check if a determined thing is enabled or disabled):
+--------------------------------------------------------------
+
+vprof_cachemiss_on "0"
+vprof_cachemiss "0"
+vprof_cachemiss_on "0"
+r_3dnow "1" 
+r_mmx "1" 
+r_sse "1"
+r_sse2 "1"
+
+Erased mat_filterlightmaps "1" from the graphic settings section for being repeated.</code></pre></div>
+
+Try not to focus only on the config, if you really need more fps try finding ways of optimizing your pc (shutting down processes, disabling services, defragmenting, etc etc etc.)<br>
+<br>
+oh btw, if someone could do a benchmark to compare both configs using a same demo on hl2dm that would be good ;P</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p62529">
+	<div class="info">
+		<p class="poster">Jelly Fox</p>
+		<p class="dt">2009-11-11 19:39:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Nice work 0nti, I'll give it a shot  <img class="smilies" src="../../../images/smilies/thumb.gif" width="25" height="18" alt=":thumbsup:" title="Thumbs Up"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p62587">
+	<div class="info">
+		<p class="poster">Jelly Fox</p>
+		<p class="dt">2009-11-14 00:41:07</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hmmm not so cool, it makes my game crash  <img class="smilies" src="../../../images/smilies/sketchy.gif" width="15" height="15" alt=":sketchy:" title="Unsure"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p62588">
+	<div class="info">
+		<p class="poster">lead</p>
+		<p class="dt">2009-11-14 03:00:54</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><img class="smilies" src="../../../images/smilies/rofl.gif" width="39" height="15" alt=":rofl:" title="ROFL"> <blockquote><div><cite>Jelly Fox wrote:</cite>Hmmm not so cool, it makes my game crash  <img class="smilies" src="../../../images/smilies/sketchy.gif" width="15" height="15" alt=":sketchy:" title="Unsure"></div></blockquote></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p62591">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2009-11-14 04:55:53</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">@jelly:<br>
+<br>
+D:<br>
+<br>
+I'll see what is causing that...<br>
+<br>
+Edit: Weird, it's working fine for me =o<br>
+Try testing the different things I added to the config and see which one is causing it (if you have the time and will of course, but they aren't too many anyway ;P)</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p62592">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2009-11-14 06:15:27</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Lemme know when its finalized and I'll upload it.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

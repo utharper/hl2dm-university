@@ -1,0 +1,498 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Interp &amp; You (aka how seagull sets his rates atm) - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+
+<h1>Interp &amp; You (aka how seagull sets his rates atm)</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=1905">https://forum.hl2dm.community/viewtopic.php?t=1905</a>
+-->
+
+<div class="post" id="p23449">
+	<div class="info">
+		<p class="poster">Seagull</p>
+		<p class="dt">2008-06-13 06:29:23</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Most players I see just set their cmdrate/updaterate to 66 and just let it sit there, upping the rate if they get choke, but some still get bad hitreg. I think that it's due to an incorrectly set interp.<br>
+<br>
+I've been testing this method of setting my rates for a while, and it seems to be doing fine (90%+ hitreg at socal and other random pubs for the most part), and I think it's mostly because the interp (the prediction amount between updates from the server) is set correctly<br>
+<br>
+Generally, here's what I do<br>
+<br>
+cl_cmdrate = 66 (or the server's tickrate)<br>
+rate = 30000 (or however high the server's rate cap is; I generally keep it at 30,000 because I'm used to it, and I get little choke as it is)<br>
+cl_interp_ratio = 1 (2 gives you unnecessary interp, imo; still need to test which is better, 2 or 1)<br>
+<br>
+cl_updaterate = where it becomes interesting !<br>
+<br>
+Most set updaterate to 66, to get the most packets out of the server. However, interp is designated by interp_ratio/updaterate. So if you're running interp_ratio 1 with 66 updaterate, then your interp is set <em class="text-italics">assuming</em> that you're getting 66/s from the server.<br>
+<br>
+There's no server in the world (that I've seen, anyway) that can solidly handle 66 tick. They drop below 66/s in times of heated combat. From my experience before trying out this method, that was where the most shots seemed to not reg. <br>
+<br>
+As such, watch your net_graph. On the In: row, all the way to the right shows you how many packets/s you're getting from the server. On the img below, it's the 102.4/s value.<br>
+<br>
+<img src="http://www.jason35.com/Netcode%20Explained1_files/image001.jpg" class="postimage" alt="Image"><br>
+<br>
+Jump into a server and watch that value. AFAIK, you're loading (and the server too, I think) is loading a lot of stuff, so this can be a general representation of how it will be in a big battle. (If it doesn't drop at all, get into a big battle and just watch it while fighting and see how low it drops) Generally, most servers I've tested it so far have dropped to 50~/s. (Mostly on pubs, fyi)<br>
+<br>
+So you put your updaterate to match that lowest value, and your interp will automatically change to match it.<br>
+<br>
+If people could post their results, that'd be nice. I've tested it and it seems to be work. Shots that would otherwise not reg seem to reg. It probably won't help against a high-ping opponent or anything, but test it out and see what happens.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p23450">
+	<div class="info">
+		<p class="poster">Ghost Dog_TSGK</p>
+		<p class="dt">2008-06-13 08:16:53</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">This is nice, I'll try and see what I get.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p23454">
+	<div class="info">
+		<p class="poster">Plasmodesmata_TSGK</p>
+		<p class="dt">2008-06-13 09:32:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Very interesting.<br>
+<br>
+I'll keep an eye on this.  I normally don't mess around with rates, my last rate change was actually for the sake of grav jumping, but I shall mess with them now.  Maybe I can get some insight as to why Ghost (in Michigan) gets a better ping than me to Chicago (my current home) servers when I'm probably within five miles of the damn servers <img class="smilies" src="../../../images/smilies/icon_lol.gif" width="15" height="15" alt=":lol:" title="Laughing"> !</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p23463">
+	<div class="info">
+		<p class="poster">Cynips</p>
+		<p class="dt">2008-06-13 12:46:08</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Well, as far as I understand, higher interp gives you better prediction/interpolation/extrapolation (whatever) at the cost of a slightly longer delay. Basically, a longer time period is used for the prediction which should then give better results, especially if your ping is irregular. But since it will increase your latency slightly I guess it depends on the circumstances what value will produce the best result overall.<br>
+<br>
+I currently use cl_interp_ratio 1 with mostly excellent hit reg.<br>
+<br>
+I'll keep an eye on how many updates the servers I'm playing on are actually sending me in the more demanding situations and get back with the results.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p23500">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2008-06-14 02:27:49</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I tested this and it appears to have solved many of my hit reg issues. Apparently my update rate needs to be fine tuned from server to server or else I get horrible reg.<br>
+<br>
+I still have other problems, but this is helping me.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p23502">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2008-06-14 04:28:11</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I'm inside the group of people that sets it to 66 24/7<br>
+I'll try this ... thx <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p23510">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2008-06-14 14:08:03</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Seagull wrote:</cite>There's no server in the world (that I've seen, anyway) that can solidly handle 66 tick.</div></blockquote>
+Check out 69.90.189.72:27015 puFFs HanGout, played a 2v2 tonight on bio and lost arena, in: never dropped below 66 for me. A rarity I know but that server rocks, check it out. Testing there may help to confirm your theory. It's a Fatpipe server in Los Angeles.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p23511">
+	<div class="info">
+		<p class="poster">Pernicious</p>
+		<p class="dt">2008-06-14 15:35:35</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">There is possibility to inprove, but other ppls packet loss, and other ppls screwed up settings are still going to cause bad hit reg for you at times.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p23526">
+	<div class="info">
+		<p class="poster">Seagull</p>
+		<p class="dt">2008-06-14 21:37:06</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>L2k wrote:</cite><blockquote><div><cite>Seagull wrote:</cite>There's no server in the world (that I've seen, anyway) that can solidly handle 66 tick.</div></blockquote>
+Check out 69.90.189.72:27015 puFFs HanGout, played a 2v2 tonight on bio and lost arena, in: never dropped below 66 for me. A rarity I know but that server rocks, check it out. Testing there may help to confirm your theory. It's a Fatpipe server in Los Angeles.</div></blockquote>
+
+<br>
+It's different for everyone - I could get puff's server to drop to 62-63 just by nading myself around the server. In 2v2s etc it won't drop much (if at all, like in your case), but at least in pubs I can get my hitreg to be a lot better</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p23527">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2008-06-14 21:44:54</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I guess that would suggest that its not the server that can't handle 66 tick, but rather the clients connection to it.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p23918">
+	<div class="info">
+		<p class="poster">Jelly Fox</p>
+		<p class="dt">2008-06-20 15:41:20</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">hitreg does seem to have improved.<br>
+<br>
+my in sits around 66 on some and 50 on others.<br>
+<br>
+but I'm getting choke in between 0 - 15 when there's a small amount of action.<br>
+<br>
+How do I reduce my choke?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p23930">
+	<div class="info">
+		<p class="poster">SND</p>
+		<p class="dt">2008-06-20 18:30:56</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Jelly Fox wrote:</cite>hitreg does seem to have improved.<br>
+<br>
+my in sits around 66 on some and 50 on others.<br>
+<br>
+but I'm getting choke in between 0 - 15 when there's a small amount of action.<br>
+<br>
+How do I reduce my choke?</div></blockquote>
+Increase your rate</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p48474">
+	<div class="info">
+		<p class="poster">Deathwish</p>
+		<p class="dt">2009-04-01 04:46:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Default rates are cl_cmdrate 30/ cl_updaterate 20, you should ALWAYS set your updaterate 67% of your cmdrate for the smoothest possible gameplay and hit reg. Since in hl2dm the servers tic rate is always 66, theres no point putting your cmdrate at 100 and updaterate at 67 because then you'll still be getting 67/67 from the server since it's capped at 66 tic anyway. So the best you could use should be cmdrate 66/ updaterate 44, which is what I use. Recently I've found the best mix between smoothness and best hit reg is cmdrate 60/ updaterate 40. I keep my rate at 20000, as setting it higher gives you little to no lag compensation and often the case is with really high rates that people with much lower rates or people that lag kill you a lot more than if you had your rates a bit lower.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p48493">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2009-04-01 05:36:29</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Deathwish wrote:</cite> you should ALWAYS set your updaterate 67% of your cmdrate for the smoothest possible gameplay and hit reg. </div></blockquote>
+
+Interesting.<br>
+<br>
+Where did you pick up this info from?<br>
+<br>
+Not saying it's not true, just wondering since I have never read anything like that before. Also interested in the statement about not getting lag compensation with a rate above 20000. Is there any definitive proof or publicized tests this is true?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p48498">
+	<div class="info">
+		<p class="poster">Deathwish</p>
+		<p class="dt">2009-04-01 06:02:55</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Research from a lot of different sources on the web, and from personal testing. For example use the shotgun with a rate of 30000, then use it with a rate of 20000, that and a few other secret tweaks and little tricks and you can do 100/150 from 100 meters away.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p48505">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2009-04-01 06:18:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">would be nice to also have high pingers post their findings and come up with a set up for those playing above 120  <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p48522">
+	<div class="info">
+		<p class="poster">Deathwish</p>
+		<p class="dt">2009-04-01 08:20:55</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">With high ping, 230 is the minimum ping I get when I play on servers located outside of Australia for example in the US, the minimum I get is 230. However the maximum ping I play with is 300 and I don't play with any more than that. My rates when playing with high ping is cmdrate 33, updaterate 22 and rate 20000.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p48534">
+	<div class="info">
+		<p class="poster">Cynips</p>
+		<p class="dt">2009-04-01 11:13:06</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Deathwish wrote:</cite>... because then you'll still be getting 67/67 from the server since it's capped at 66 tic anyway.</div></blockquote>
+Interesting, how can you get 67 if it's capped at 66?<br>
+<br>
+That's a lot of unsubstantiated statements to post at once. Do I smell April 1 here...?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p48538">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-04-01 13:19:53</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Cynips wrote:</cite><blockquote><div><cite>Deathwish wrote:</cite>... because then you'll still be getting 67/67 from the server since it's capped at 66 tic anyway.</div></blockquote>
+Interesting, how can you get 67 if it's capped at 66?<br>
+<br>
+That's a lot of unsubstantiated statements to post at once. Do I smell April 1 here...?</div></blockquote>
+Something to do with rounding up I believe computers in general have trouble with the number 6</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p48539">
+	<div class="info">
+		<p class="poster">SND</p>
+		<p class="dt">2009-04-01 14:05:02</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">yea its to get the most you can get out of a sever though a server is 66tick it still can give a bit more you see it sometimes in netgraph when the update is 66.7 by placing at 67 your telling your game to take as much updates at it possibly can.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p48541">
+	<div class="info">
+		<p class="poster">Cynips</p>
+		<p class="dt">2009-04-01 15:01:05</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>SND wrote:</cite>yea its to get the most you can get out of a sever though a server is 66tick it still can give a bit more you see it sometimes in netgraph when the update is 66.7 by placing at 67 your telling your game to take as much updates at it possibly can.</div></blockquote>If you're getting 66.7 the server technically isn't capped at 66 since it's actually giving you more. Still makes sense to set your rate slightly above the server rate (or even up to 101) if you want to be sure your client is never what limits you.<br>
+
+<blockquote><div><cite>Deathwish wrote:</cite>Research from a lot of different sources on the web, and from personal testing. For example use the shotgun with a rate of 30000, then use it with a rate of 20000, that and a few other secret tweaks and little tricks and you can do 100/150 from 100 meters away.</div></blockquote>Yet another reason to enforce rates server side, avoiding at least some (in my opinion) unfair tricks, unless they're clearly spelled out and available to all.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p48593">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2009-04-02 04:01:08</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">im capping 30000 on my servers. out of a thought this is giving ppl more headroom. am i wrong per recent finding lol ?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p48602">
+	<div class="info">
+		<p class="poster">Deathwish</p>
+		<p class="dt">2009-04-02 05:16:40</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Cynips wrote:</cite>Yet another reason to enforce rates server side, avoiding at least some (in my opinion) unfair tricks, unless they're clearly spelled out and available to all.</div></blockquote>
+
+But capping rates would cause problems for a lot of people as most people's connections are different both in stability and how well the packets get sent and received, that would be just like forcidly removing lag compensation server side.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p48607">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-04-02 05:49:07</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Deathwish wrote:</cite>Research from a lot of different sources on the web, and from personal testing. For example use the shotgun with a rate of 30000, then use it with a rate of 20000, that and a few other secret tweaks and little tricks and you can do 100/150 from 100 meters away.</div></blockquote>
+Its called DMpro.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p48635">
+	<div class="info">
+		<p class="poster">Cynips</p>
+		<p class="dt">2009-04-02 11:04:17</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Deathwish wrote:</cite><blockquote><div><cite>Cynips wrote:</cite>Yet another reason to enforce rates server side, avoiding at least some (in my opinion) unfair tricks, unless they're clearly spelled out and available to all.</div></blockquote>
+
+But capping rates would cause problems for a lot of people as most people's connections are different both in stability and how well the packets get sent and received, that would be just like forcidly removing lag compensation server side.</div></blockquote>
+
+I'm not saying we should remove lag compensation, just talking about fixing rates in order to level the playing field.<br>
+<br>
+Extremely few people play at connections that can't handle what they themselves need to send to the server even at 100 tick and cl_cmdrate 100. I mean, we're talking about something like max 11KB/sec here. In the opposite direction, flow is potentially much greater, but at the same time so are the download speeds for most connections. Say you're playing at a 512Kbit/s connection - that translates to about 64KB/sec which means you should well be able to handle a rate of 50000. Or 100000 for a 1Mbit connection. For a 66 tick server this should be enough unless you want to run killbox type maps for 20 ppl. In such a case you'll need to send information about almost every player to everyone all the time.<br>
+<br>
+I personally have no problem assuming that everyone that plays at my server is able to handle these speeds - if not, tough luck, go somewhere else. No serious gamer plays at anything less.<br>
+<br>
+So in the end it's more about ensuring that the server has enough bandwidth for all the data it needs to send out. All I can say is, go find another server if you're getting massive choke and can't stand it. Fortunately, this game isn't so sensitive to choke.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p48701">
+	<div class="info">
+		<p class="poster">Deathwish</p>
+		<p class="dt">2009-04-03 03:06:16</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Cynips wrote:</cite>I'm not saying we should remove lag compensation, just talking about fixing rates in order to level the playing field.<br>
+<br>
+Extremely few people play at connections that can't handle what they themselves need to send to the server even at 100 tick and cl_cmdrate 100. I mean, we're talking about something like max 11KB/sec here. In the opposite direction, flow is potentially much greater, but at the same time so are the download speeds for most connections. Say you're playing at a 512Kbit/s connection - that translates to about 64KB/sec which means you should well be able to handle a rate of 50000. Or 100000 for a 1Mbit connection. For a 66 tick server this should be enough unless you want to run killbox type maps for 20 ppl. In such a case you'll need to send information about almost every player to everyone all the time.<br>
+<br>
+I personally have no problem assuming that everyone that plays at my server is able to handle these speeds - if not, tough luck, go somewhere else. No serious gamer plays at anything less.<br>
+<br>
+So in the end it's more about ensuring that the server has enough bandwidth for all the data it needs to send out. All I can say is, go find another server if you're getting massive choke and can't stand it. Fortunately, this game isn't so sensitive to choke.</div></blockquote>
+
+Well let's put it this way, up until a month ago my ADSL connection couldn't handle a cmdrate of 100 and updaterate of 100 with more than 1 other person. I also couldn't set my rate higher than 20000 with even 1 other person as I would get about 1 or 2 loss, no matter what. If you were to cap rates than you could never play with high ping either.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p48706">
+	<div class="info">
+		<p class="poster">SND</p>
+		<p class="dt">2009-04-03 03:44:01</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Deathwish wrote:</cite>If you were to cap rates than you could never play with high ping either.</div></blockquote>
+Thats very true ever since we cap rate at a higher rate players in cu can play longer distances with out too much of a disadvantage. Usually in the past playing on a russian server or them they on a central server the home team allways had the advantage over the high ping players but ever since the change we had less issues from players on lag and where they play.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p48751">
+	<div class="info">
+		<p class="poster">Cynips</p>
+		<p class="dt">2009-04-03 10:55:59</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Deathwish wrote:</cite>Well let's put it this way, up until a month ago my ADSL connection couldn't handle a cmdrate of 100 and updaterate of 100 with more than 1 other person. I also couldn't set my rate higher than 20000 with even 1 other person as I would get about 1 or 2 loss, no matter what. If you were to cap rates than you could never play with high ping either.</div></blockquote>
+I fail to see what loss has to do with how many other people there are on the server. Unless your computer couldn't handle all that was going on with more than one other player, effectively resulting in a frame rate lower than your cmdrate and, hence, the loss.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p48760">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-04-03 17:48:54</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">LOSS is either your connection is saturated or the server connection is saturated so updates get LOST.<br>
+As we know the more people on server the faster you need to download. Say your max download speed is 30KB or 30000 but the server forces your RATE to 50000 you will suffer loss instead of choke.<br>
+even if you max downlaod is 30KB you do not set it to 30000 because again your connection is being saturated and not allowign for any updates to be sent to the server.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p48761">
+	<div class="info">
+		<p class="poster">Cynips</p>
+		<p class="dt">2009-04-03 17:55:57</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">No, LOSS stems from packets from the client that never reach the server. CHOKE is the opposite, packets from the server that don't reach the client.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p48762">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-04-03 17:59:28</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">MAybe, but for ADSL if download is saturated then the upload suffers and vice versa.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p48780">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2009-04-03 20:46:16</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">yeah LOSS is packets that are sent but never received due to problems in route usually or hardware on the clients end, anything else is going to result in choke.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p49108">
+	<div class="info">
+		<p class="poster">Cynips</p>
+		<p class="dt">2009-04-06 10:43:59</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>keefy wrote:</cite>MAybe, but for ADSL if download is saturated then the upload suffers and vice versa.</div></blockquote>
+Ah, ok. What (download) speeds would you say are the lowest pretty much anyone play on these days?<br>
+
+<blockquote><div><cite>L2k wrote:</cite>yeah LOSS is packets that are sent but never received due to problems in route usually or hardware on the clients end, anything else is going to result in choke.</div></blockquote>
+Technically, LOSS could also be packets that are supposed to leave your machine (say you're on a 100 tick server and running cl_cmdrate 100) but never even get sent (because your fps is lower than 100 in this case).<br>
+<br>
+Both LOSS and CHOKE can be due to problems on either end (or in-between), though some causes are of course more common than others.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p49157">
+	<div class="info">
+		<p class="poster">Neolinkster</p>
+		<p class="dt">2009-04-07 02:03:05</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Cynips wrote:</cite>Ah, ok. What (download) speeds would you say are the lowest pretty much anyone play on these days?</div></blockquote>
+
+well i can run only 20000 and i have the worst connection in dm so that answers that question. But i choke incessantly if the player count reaches over 6 on killboxes and general maps like 60-80</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55731">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2009-06-24 02:56:37</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I have never reached a personal conclusion about this, but I've made a few tweeks around and one time I remember noticing that I had 30-40 choke (had extremely bad hitreg), so I tried lowering my updaterate and it was 10-20, lower again and it went 0 (with a very slight oscilation up to 5). This was enough to improve my gameplay on that server that day.<br>
+I think I was 50/30 at the end, I think I lowered both rates based on the 67% <br>
+<br>
+My rate is set on 65536 based on an article I read somewhere...<br>
+<br>
+I need to test interp tweeks, since my ping is unstable, and I'll try lowering rate aswell.<br>
+<br>
+I have hitreg problems too many times...</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55792">
+	<div class="info">
+		<p class="poster">DIE_bastards</p>
+		<p class="dt">2009-06-24 21:42:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I set all time 67/67/64000 (could even set 120000, but just no point). If the server allows them and if it is powerful enough (yes, there are plenty of servers, which handle 66 rate with full slotload!!), I never have choke or tickdrop while my line is 1024/512 ADSL from a poor ISP.<br>
+cl_interp_ratio 1 kinda seemed better at ping 70-100.<br>
+set server's sv_maxrate so:<br>
+server's out bandwidth /divided into/ slots number
+<blockquote><div><cite>Skaruts wrote:</cite>I have hitreg problems too many times...</div></blockquote>
+IMHO this is why:<br>
+<a href="https://www.youtube.com/watch?v=BC5thy-VxR4" class="postlink">http://www.youtube.com/watch?v=BC5thy-VxR4</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

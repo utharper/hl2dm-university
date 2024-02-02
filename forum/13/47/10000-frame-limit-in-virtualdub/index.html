@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>10000 frame limit in VirtualDub - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Film Discussion</a></p>
+</div>
+
+<h1>10000 frame limit in VirtualDub</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=47">https://forum.hl2dm.community/viewtopic.php?t=47</a>
+-->
+
+<div class="post" id="p125">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2007-03-10 22:19:42</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I am working on converting the FIOS demos. I had trouble because I could only import 10000 frames of footage into VirtualDub.<br>
+<br>
+I posted on the vdub forums and the maker of the program informed me that HL2 might be exporting frames that are not in sequence after 10000 frames. <br>
+<br>
+This proved to be the case. With host framerate 30 it exports frames starting at 300000. When it reaches 309999 and flips over, it doesnt go to 310000 like you would expect it to. Instead it adds another position and goes to 3010000. This causes vdub to think the sequence is over, so it ends the import there.<br>
+<br>
+I was planning on removing the extra postion from the later frames, but then I realized that no matter how long your movies are, the first 10000 frames are always consistent, so it is more efficient to add the extra position to the first 10000 frames.<br>
+<br>
+If anyone knows of a good tool to batch rename, please let me know. <br>
+<br>
+Thanks!<br>
+WT</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p126">
+	<div class="info">
+		<p class="poster">icbat</p>
+		<p class="dt">2007-03-11 04:54:08</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">snapfiles.com or download.com should have something like that.  Just be sure to backup first =)</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p127">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2007-03-11 07:14:19</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Got a good one, will post it later, thx.<br>
+<br>
+WT</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p148">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2007-03-14 08:28:37</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Here it is:<br>
+<br>
+<a href="http://cerebralsynergy.com/download.php?view.55" class="postlink">http://cerebralsynergy.com/download.php?view.55</a><br>
+<br>
+Batch File Renamer 2.51<br>
+<br>
+A simple little app. Just grab the first 10000 frames, move em to a folder, then<br>
+fire up this little program and use the "Catalog Files". Set the starting number to 3000000. This will renumber the first 10000 TGA files back into sequence.<br>
+<br>
+I converted a FIOS match as a test. It was good quality, but 600 MB in size for 15 minutes of footage. At that size I would like it to resemble the Cyn movie in terms of video clarity, or maintain the current quality and drop the size to 400 MB maximum. <br>
+<br>
+So I am off to learn more about xvid settings....advice appreciated!<br>
+<br>
+WT</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p159">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2007-03-16 21:35:03</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Ok, so I looked at all the other xvid encoded movies out there. All of them get the slight distortion around the crosshairs and the text. Now I know why the Cyn vid looks so clean, they removed the crosshairs altogether, swtiched off chat and replaced the HUD with one added during the edit.<br>
+<br>
+The best compromise I can come up with is to leave the original HUD, but make sure chat is switched off and use a single dot for crosshairs (or the smallest crosshairs possible). When watching the video most of the attention will naturally be drawn to the crosshairs, so you want as little distortion there as possible.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p162">
+	<div class="info">
+		<p class="poster">icbat</p>
+		<p class="dt">2007-03-16 22:42:25</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Incredible observations and innovations, mate.  I can't wait to see the finished product; under your hands, they'll be marvelous.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p164">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2007-03-17 02:48:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Heh, we'll see how they finally turn out. I am still learning as I go. So far I am not very happy with the results, but I may just be too picky.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p166">
+	<div class="info">
+		<p class="poster">icbat</p>
+		<p class="dt">2007-03-17 21:17:44</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">No such thing as too picky as long as you can still get the work finished.  They'll be fantastic, mate.  I've got faith.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p320">
+	<div class="info">
+		<p class="poster">Corrosive</p>
+		<p class="dt">2007-04-04 09:35:59</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>[GoTg] Walking Target wrote:</cite>Heh, we'll see how they finally turn out. I am still learning as I go. So far I am not very happy with the results, but I may just be too picky.</div></blockquote>
+
+I've found If you go from a resolution such as 1280x1024 (what I use) and keep the same crosshair (assuming you have a single dot modified from the original file) as you change video size to 640x480 (what xvid has best compression/quality at) the dot is friggin huge.  <br>
+<br>
+To compensate, remove (to safe folder)  your halflife2.ttf file and let the game generate a default 5 dot crosshair, then edit the 4 dots out leaving the center dot.   This creates the correct size for 640x480 xhair single dot and not some enormous balloon for a dot.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p327">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2007-04-04 19:58:11</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I am exporting at 640 x 480. I wanted to export at a higher resolution, but for 15 minutes of footage it takes forever and chews up too much space. Exporting at 640 x 480 does not yield the best results possible, but it isn't bad.<br>
+<br>
+I should be posting the first FIOS export soon for feedback. I have been testing settings, I just havent done the final render.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p337">
+	<div class="info">
+		<p class="poster">[KBH] Chapeau Noir</p>
+		<p class="dt">2007-04-05 01:21:10</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I have two of the matches 720x480 widescreen on dvd (3+gb each).. I will never go through that again for a frag vid I'm not even in (4+hrs a/v sync) <br>
+especially when I know full well someone like WT is working on a downloadable version for the community<br>
+<br>
+chose to use a bleached out version of my clanmate hydro's mag whorin' xhair.. <br>
+<br>
+<img src="http://i19.photobucket.com/albums/b158/BB1954/2007-04-04_192136.jpg" class="postimage" alt="Image"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Film Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

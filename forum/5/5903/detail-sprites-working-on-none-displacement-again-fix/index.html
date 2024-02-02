@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>detail sprites working on none displacement again (fix) - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>detail sprites working on none displacement again (fix)</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=5903">https://forum.hl2dm.community/viewtopic.php?t=5903</a>
+-->
+
+<div class="post" id="p82896">
+	<div class="info">
+		<p class="poster">gtamike_TSGK</p>
+		<p class="dt">2011-09-07 18:14:00</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><strong class="text-strong">detail sprites working on none displacement again (fix)</strong><br>
+<br>
+I got some more good news, I found a fix to get detail sprites <br>
+working on none displacement brushes again like before the ob update. <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"><br>
+<br>
+Just add "$translucent" 1 in the .vmt<br>
+<a href="http://forums.steampowered.com/forums/showthread.php?t=1999157" class="postlink">http://forums.steampowered.com/forums/s ... ?t=1999157</a><br>
+<br>
+E.G. for red_grass.vmt to work on none displacements<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>"WorldVertexTransition"
+{
+"$basetexture" "nature/dirtfloor011a"
+"$basetexture2" "nature/dirtfloor006a"
+"%tooltexture" "nature/dirtfloor011a"
+"$basetexturetransform" "center .5 .5 scale 1 1 rotate 0 translate 0 0"
+"$basetexturetransform2" "center .5 .5 scale 4 4 rotate 0 translate 0 0"
+"%detailtype" "redgrass"
+"$translucent" 1 //grass sprites will work on none displacements if this is set to 1 and work on displacements to.
+"%keywords" "wasteland"
+}</code></pre></div>
+
+<img src="http://gtamike.tsgk.com/sprite_fix.png" class="postimage" alt="Image"><br>
+<br>
+gtamike_TSGK<br>
+<a href="http://www.gtamikes-maps.piczo.com" class="postlink">http://www.gtamikes-maps.piczo.com</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

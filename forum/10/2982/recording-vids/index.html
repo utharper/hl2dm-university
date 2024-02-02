@@ -1,0 +1,427 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>recording vids - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+
+<h1>recording vids</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=2982">https://forum.hl2dm.community/viewtopic.php?t=2982</a>
+-->
+
+<div class="post" id="p39096">
+	<div class="info">
+		<p class="poster">{EE}chEmicalbuRn</p>
+		<p class="dt">2008-12-25 21:18:49</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">is there a way to remote start a recording from source tv?  for example if i was about to play a match that i wanted to record from the source POV is there a way to do that without having another account in spec recording it?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39097">
+	<div class="info">
+		<p class="poster">BlackRaven</p>
+		<p class="dt">2008-12-25 21:41:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">you need the command tv_record. it works like the client side record command which we use to record in eye demos. the sourcetv demo will be stored on the hard drive of the server. the servers automatically stops recording upon changing the level.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39102">
+	<div class="info">
+		<p class="poster">{EE}chEmicalbuRn</p>
+		<p class="dt">2008-12-25 22:12:22</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>BlackRaven wrote:</cite>you need the command tv_record. it works like the client side record command which we use to record in eye demos. the sourcetv demo will be stored on the hard drive of the server. the servers automatically stops recording upon changing the level.</div></blockquote>
+
+<br>
+so i would just type tv_record in console?  do i have to log onto rcon first?  so would it be rcon tv_record ?  does anything need to be set up on the server side?  i obviously have source tv set up but is there any commands that need to go into the cfg file to "prep it" so its listening for this command to be run?<br>
+<br>
+ty for your response btw</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39104">
+	<div class="info">
+		<p class="poster">BlackRaven</p>
+		<p class="dt">2008-12-25 22:33:20</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">its a server side command so you need rcon access to the server. the command works like this<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>rcon tv_record &lt;filename&gt;</code></pre></div>
+
+as long as the sourcetv is running theres nothing you gotta do to record a sourcetv demo other than use this command.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39129">
+	<div class="info">
+		<p class="poster">{EE}chEmicalbuRn</p>
+		<p class="dt">2008-12-26 02:49:46</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">thanks bro</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39130">
+	<div class="info">
+		<p class="poster">BlackRaven</p>
+		<p class="dt">2008-12-26 02:52:02</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">i didnt know we were related  <img class="smilies" src="../../../images/smilies/icon_eek.gif" width="15" height="15" alt=":shock:" title="Shocked"> <br>
+<br>
+just taking the piss... youre welcome man  <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39131">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2008-12-26 04:14:22</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I use the program HLSW to remotely administer my server works like a charm esp for stuff like this.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39136">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-12-26 05:05:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">while we're at it...anyone knows what would be the easiest way to have 4 vids (SCTV recording all 4 players at the same time) sync so i can edit them all together?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39160">
+	<div class="info">
+		<p class="poster">{EE}chEmicalbuRn</p>
+		<p class="dt">2008-12-26 19:25:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">source does record all 4 players.   while watching the demo you can switch to any player's POV.  thats why i really wanted to be able to record from there remotely.   Is that what you were asking Valar?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39162">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-12-26 19:32:50</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>{EE}chEmicalBurn wrote:</cite>source does record all 4 players.   while watching the demo you can switch to any player's POV.  thats why i really wanted to be able to record from there remotely.   Is that what you were asking Valar?</div></blockquote>
+
+yea man. now i want to render it out and edit in Vegas. it would be cool to have all 4 vids sync thought. then you can compose bits of battle from the available diff view points...</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39275">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2008-12-28 06:42:08</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I'd rather use personal demos for that.... source tv is not accuarate because it doesn't have lag compensation... Plus some animations look bugged, like the gravity gun rays...</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39295">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-12-28 17:20:21</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">...but since that's what i have...lol<br>
+help is appreciated  <img class="smilies" src="../../../images/smilies/icon_lol.gif" width="15" height="15" alt=":lol:" title="Laughing"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39308">
+	<div class="info">
+		<p class="poster">seanpyl</p>
+		<p class="dt">2008-12-28 21:42:02</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>[EYE] Valar wrote:</cite><blockquote><div><cite>{EE}chEmicalBurn wrote:</cite>source does record all 4 players.   while watching the demo you can switch to any player's POV.  thats why i really wanted to be able to record from there remotely.   Is that what you were asking Valar?</div></blockquote>
+
+yea man. now i want to render it out and edit in Vegas. it would be cool to have all 4 vids sync thought. then you can compose bits of battle from the available diff view points...</div></blockquote>
+
+Everyone at the begining of the match record a demo, you collect them all, export them using the in game functions and use premier to sync sort and edit in any way you see fit. The only problem I ran into was when changing camera views using the in game tools to a free floating camera. Your grav gun or any little animations that are going on with your character are still in front of you on screen no matter where you are in relation. Also I exported all of my demo's at 60FPS so when I wanted slow motion I would have twice the frames per second. Although most people don't have hundreds of gigs free to work with.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39335">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-12-29 06:48:06</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>seanpyl wrote:</cite>Everyone at the begining of the match record a demo, you collect them all, ..........</div></blockquote>
+i have a Source TV demo.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39352">
+	<div class="info">
+		<p class="poster">seanpyl</p>
+		<p class="dt">2008-12-29 14:45:34</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Cool</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39357">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-12-29 16:28:47</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">should i repeat my question/ this not a help thread / or you're trying to be clever?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39361">
+	<div class="info">
+		<p class="poster">CellarDweller</p>
+		<p class="dt">2008-12-29 16:41:54</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>seanpyl wrote:</cite>The only problem I ran into was when changing camera views using the in game tools to a free floating camera. Your grav gun or any little animations that are going on with your character are still in front of you on screen no matter where you are in relation. </div></blockquote>
+use r_drawviewmodel 0 and cl_drawhud 0 to cleanup the screen</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39383">
+	<div class="info">
+		<p class="poster">{EE}chEmicalbuRn</p>
+		<p class="dt">2008-12-29 20:08:26</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>[EYE] Valar wrote:</cite>should i repeat my question/ this not a help thread / or you're trying to be clever?</div></blockquote>
+
+<br>
+i dont think he(or I) are not totally sure what you asking valar.  with the source demo you have a sync view of the match from all players POV.  isnt taht what you are looking for?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39394">
+	<div class="info">
+		<p class="poster">seanpyl</p>
+		<p class="dt">2008-12-29 21:33:55</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>[EYE] Valar wrote:</cite>should i repeat my question/ this not a help thread / or you're trying to be clever?</div></blockquote>
+
+Yes you should repeat your question and then when you are un satisfied with the answers you can turn around and google the shit and figure out on your own.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39415">
+	<div class="info">
+		<p class="poster">{EE}chEmicalbuRn</p>
+		<p class="dt">2008-12-29 22:26:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>seanpyl wrote:</cite><blockquote><div><cite>[EYE] Valar wrote:</cite>should i repeat my question/ this not a help thread / or you're trying to be clever?</div></blockquote>
+
+Yes you should repeat your question and then when you are un satisfied with the answers you can turn around and google the shit and figure out on your own.</div></blockquote>
+
+or he could ask the question on this forum where ppl who are around the game all the time and make frag vids would have good advice to give</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39429">
+	<div class="info">
+		<p class="poster">seanpyl</p>
+		<p class="dt">2008-12-29 23:24:13</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>{EE}chEmicalBurn wrote:</cite><blockquote><div><cite>seanpyl wrote:</cite><blockquote><div><cite>[EYE] Valar wrote:</cite>should i repeat my question/ this not a help thread / or you're trying to be clever?</div></blockquote>
+
+Yes you should repeat your question and then when you are un satisfied with the answers you can turn around and google the shit and figure out on your own.</div></blockquote>
+
+or he could ask the question on this forum where ppl who are around the game all the time and make frag vids would have good advice to give</div></blockquote>
+
+If only that were true. Conceited, egotistical, elitest pricks about sums up the lot of you.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39433">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-12-29 23:54:27</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>seanpyl wrote:</cite>If only that were true. Conceited, egotistical, elitest pricks about sums up the lot of you.</div></blockquote>
+
+Oh, and i thought we had an attitude problem here. I'm so terribly sorry this forum doesn't please you my lord. All the best. You deserve so much more.<br>
+<br>
+@ chem, ooppss sorry i thought my question was clear. my bad. Ok, i have a demo made by a Source TV. it has all 4 channels. i just don't know how to work it all to 4 AVI's that can be synced inside Vegas / Premier / Whathaveyou. just never done that before.<br>
+<br>
+Thanks man,<br>
+val &lt;---n00b vid maker  <img class="smilies" src="../../../images/smilies/icon_redface.gif" width="15" height="15" alt=":oops:" title="Embarassed"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39438">
+	<div class="info">
+		<p class="poster">seanpyl</p>
+		<p class="dt">2008-12-30 00:04:31</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">The forum pleases me just fine. Its users however...</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39457">
+	<div class="info">
+		<p class="poster">{EE}chEmicalbuRn</p>
+		<p class="dt">2008-12-30 02:21:00</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>[EYE] Valar wrote:</cite><blockquote><div><cite>seanpyl wrote:</cite>If only that were true. Conceited, egotistical, elitest pricks about sums up the lot of you.</div></blockquote>
+
+Oh, and i thought we had an attitude problem here. I'm so terribly sorry this forum doesn't please you my lord. All the best. You deserve so much more.<br>
+<br>
+@ chem, ooppss sorry i thought my question was clear. my bad. Ok, i have a demo made by a Source TV. it has all 4 channels. i just don't know how to work it all to 4 AVI's that can be synced inside Vegas / Premier / Whathaveyou. just never done that before.<br>
+<br>
+Thanks man,<br>
+val &lt;---n00b vid maker  <img class="smilies" src="../../../images/smilies/icon_redface.gif" width="15" height="15" alt=":oops:" title="Embarassed"></div></blockquote>
+
+<br>
+ahhhh, i see what you are saying now.  im sure that can be done because in order to be able to see all POV's the coding from all the players I/O streams have to be in that file.  you would need a program that can strip those.  i would talk to odog. he is going to school for vid editing, he may be able to help you and/or point you in the right direction</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39459">
+	<div class="info">
+		<p class="poster">CellarDweller</p>
+		<p class="dt">2008-12-30 02:42:56</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">i maybe be misunderstanding still.  from the source demo, just use the spacebar to change the pov and the mouse1 to change players.  record your movie from whichever player(s) tick that interests you.<br>
+<br>
+from your movie editing perspective... it will just be your creative choice.  you could do a screen in screen or split screen or show the frag in real time from one perspective and slo-mo from the others perspective.<br>
+<br>
+ <img class="smilies" src="../../../images/smilies/icon_question.gif" width="15" height="15" alt=":?:" title="Question"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39461">
+	<div class="info">
+		<p class="poster">o-dog</p>
+		<p class="dt">2008-12-30 03:07:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I am still not 100% clear on what you are trying to do, but it seems like you are trying to do a split screen view of all four players at the same time.<br>
+<br>
+if that's the case, the only way I can think of to do it is to export the footage from all four players separately and then put all four bits of footage into the same frame using a picture-in-picture effect.<br>
+<br>
+here's how to do picture-in-picture in Vegas:<br>
+<a href="http://www.custcenter.com/cgi-bin/sonypictures.cfg/php/enduser/std_adp.php?p_faqid=1433&amp;p_created=1150494094&amp;p_sid=utO_CCmj&amp;p_accessibility=0&amp;p_redirect=&amp;p_lva=&amp;p_sp=cF9zcmNoPTEmcF9zb3J0X2J5PSZwX2dyaWRzb3J0PSZwX3Jvd19jbnQ9MjcsMjcmcF9wcm9kcz0wJnBfY2F0cz0wJnBfcHY9JnBfY3Y9JnBfcGFnZT0xJnBfc2VhcmNoX3RleHQ9cGljdHVyZSBpbiBwaWN0dXJl&amp;p_li=&amp;p_topview=1" class="postlink">http://www.custcenter.com/cgi-bin/sonyp ... _topview=1</a><br>
+<br>
+how to show four clips at the same time in Vegas:<br>
+<a href="http://www.custcenter.com/cgi-bin/sonypictures.cfg/php/enduser/popup_adp.php?p_sid=utO_CCmj&amp;p_lva=&amp;p_li=&amp;p_faqid=1126&amp;p_created=1095696002&amp;p_sp=cF9zcmNoPTEmcF9zb3J0X2J5PSZwX2dyaWRzb3J0PSZwX3Jvd19jbnQ9MjcsMjcmcF9wcm9kcz0wJnBfY2F0cz0wJnBfcHY9JnBfY3Y9JnBfcGFnZT0xJnBfc2VhcmNoX3RleHQ9cGljdHVyZSBpbiBwaWN0dXJl" class="postlink">http://www.custcenter.com/cgi-bin/sonyp ... BwaWN0dXJl</a><br>
+<br>
+hope that helps.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39466">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-12-30 03:24:26</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">no, what i want to do is have all 4 vids in Vegas playing together in sync.<br>
+then, i can choose which player i want to feature. not be restricted to on-the-fly decisions while rendering the dem to virtuadub.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39551">
+	<div class="info">
+		<p class="poster">Edge</p>
+		<p class="dt">2008-12-30 19:23:48</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">So you're trying to watch all four videos in vegas at the same time so you can sync them? Still a little unclear.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39585">
+	<div class="info">
+		<p class="poster">CellarDweller</p>
+		<p class="dt">2008-12-30 23:05:40</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>[EYE] Valar wrote:</cite>no, what i want to do is have all 4 vids in Vegas playing together in sync.<br>
+then, i can choose which player i want to feature. not be restricted to on-the-fly decisions while rendering the dem to virtuadub.</div></blockquote>
+
+i don't think that can be done val.  if im understanding you, you essentially want the sourcetv dem as an avi?  a vid that you can just hit a button and change players?  or do you mean like a free camera birdseye view of all playing... then zoom in to the interesting battles?<br>
+<br>
+otherwise, i think what o-dog suggested is the only way.  record out each player and go with with a four-way split... then zoom to one of the four splits and back out as the action dictates.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39603">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-12-31 00:31:33</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Edge wrote:</cite>So you're trying to watch all four videos in vegas at the same time so you can sync them? Still a little unclear.</div></blockquote>
+
+no.<br>
+i want to convert the dem from the sourceTV to four (4) vids (have AVI or whatever).<br>
+then open these 4 vids in Vegas.<br>
+Vegas has channels so i can see all 4 vids in it and edit them the way i like.<br>
+<br>
+if this is still not clear i'm going to jump off a window.  <img class="smilies" src="../../../images/smilies/icon_lol.gif" width="15" height="15" alt=":lol:" title="Laughing"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39614">
+	<div class="info">
+		<p class="poster">o-dog</p>
+		<p class="dt">2008-12-31 02:17:33</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">export the four vids from each perspective separately, the way you would export videos normally, and put one vid on each channel then.  if you want to see all four videos at once, man I don't know what to tell you, the best thing I can suggest is to adjust the opacity on each video until you can see them all, then move opacity back up to 100% after you've edited them the way you want.<br>
+<br>
+you can have up to four video channels in Vegas Studio and Vegas Platinum, in Vegas Pro you can have as many video channels as you want.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39616">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-12-31 02:36:16</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">ok man. thought that there'll be some reference point i can make / use. but that'll do fine. thanks a lot!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

@@ -1,0 +1,501 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Need Help Diagnosing New Map Crash - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>Need Help Diagnosing New Map Crash</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=2731">https://forum.hl2dm.community/viewtopic.php?t=2731</a>
+-->
+
+<div class="post" id="p34658">
+	<div class="info">
+		<p class="poster">Tw1tch</p>
+		<p class="dt">2008-11-13 07:41:46</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I'm making a new HL2dm map and am having an issue on the current compile. I saved up to 10 previous versions, but every one of them crash after they are compiled at random times. Ironically, the last saved version didn't crash this morning when a friend and I playtested it, although a recompile of that same version resulted in a crashing map.<br>
+<br>
+Checking the map for errors only results in unused keyvalues for various entities, no player start, and bad I/O connections for a suitcharger. Which are well known and non-crashing/affecting errors. <br>
+<br>
+There is a "1 degenerate face" message in the compile text I don't understand. Otherwise, it's a very basic map, which is partly why I'm baffled as to why its crashing. <br>
+<br>
+In-game screenshots:<br>
+<a href="http://screenshot.xfire.com/screenshot/natural/0eaa219f5c3e583f6ae4e04d4dd1b1c707842e25.png" class="postlink">http://screenshot.xfire.com/screenshot/ ... 842e25.png</a><br>
+<a href="http://screenshot.xfire.com/screenshot/natural/8060b14482c86e6481dedaca1c6533ca262cc619.png" class="postlink">http://screenshot.xfire.com/screenshot/ ... 2cc619.png</a><br>
+<br>
+<br>
+Here is the .vmf file if anyone wants to look:<br>
+<a href="http://files.filefront.com/save55vmf/;12341901;/fileinfo.html" class="postlink">http://files.filefront.com/save55vmf/;1 ... einfo.html</a><br>
+Here is the .bsp file if you want to give it a play through and hope it doesn't crash:<br>
+<a href="http://files.filefront.com/Is+Crashing+001bsp/;12336511;/fileinfo.html" class="postlink">http://files.filefront.com/Is+Crashing+ ... einfo.html</a><br>
+<br>
+<br>
+And here is the compile text:<br>
+<br>
+<br>
+Thanks for any help and feedback.<br>
+<br>
+<br>
+<br>
+Valve Software - vbsp.exe (Dec 11 2006)<br>
+2 threads<br>
+fixing up env_cubemap materials on brush sides...<br>
+ProcessBlock_Thread: 0...1...2...3...4...5...6...7...8...9...10 (0)<br>
+ProcessBlock_Thread: 0...1...2...3...4...5...6...7...8...9...10 (0)<br>
+Processing areas...done (0)<br>
+Building Faces...done (0)<br>
+Chop Details...done (0)<br>
+Find Visible Detail Sides...<br>
+Merged 314 detail faces...done (0)<br>
+Merging details...done (0)<br>
+FixTjuncs...<br>
+PruneNodes...<br>
+WriteBSP...<br>
+done (0)<br>
+Creating default cubemaps for env_cubemap using skybox materials:<br>
+skybox/sky_day01_05*.vmt<br>
+Run buildcubemaps in the engine to get the correct cube maps.<br>
+<br>
+No such variable "$hdrbasetexture" for material "skybox/sky_day01_05rt"<br>
+Can't load skybox file skybox/sky_day01_05 to build the default cubemap!<br>
+Finding displacement neighbors...<br>
+Finding lightmap sample positions...<br>
+Displacement Alpha : 0...1...2...3...4...5...6...7...8...9...10<br>
+Building Physics collision data...<br>
+done (0) (210871 bytes)<br>
+Placing detail props : 0...1...2...3...4...5...6...7...8...9...10<br>
+Water found with no water_lod_control entity, creating a default one.<br>
+Compacting texture/material tables...<br>
+Reduced 1921 texinfos to 746<br>
+Reduced 238 texdatas to 158 (12069 bytes to 8110)<br>
+2 seconds elapsed<br>
+<br>
+Valve Software - vvis.exe (Nov  8 2007)<br>
+2 threads<br>
+ 268 portalclusters<br>
+ 837 numportals<br>
+BasePortalVis:       0...1...2...3...4...5...6...7...8...9...10 (0)<br>
+PortalFlow:          0...1...2...3...4...5...6...7...8...9...10 (22)<br>
+Optimized: 63 visible clusters (0.00%)<br>
+Total clusters visible: 56489<br>
+Average clusters visible: 210<br>
+Building PAS...<br>
+Average clusters audible: 256<br>
+visdatasize:20019  compressed from 21440<br>
+22 seconds elapsed<br>
+<br>
+<br>
+Valve Software - vrad.exe SSE (Nov  8 2007)<br>
+----- Radiosity Simulator ----<br>
+2 threads<br>
+[Reading texlights from 'lights.rad']<br>
+[45 texlights parsed from 'lights.rad']<br>
+<br>
+Loading<br>
+1905 faces<br>
+1 degenerate faces<br>
+219111 square feet [31552036.00 square inches]<br>
+0 displacements<br>
+0 square feet [0.00 square inches]<br>
+1904 patches before subdivision<br>
+28776 patches after subdivision<br>
+28 direct lights<br>
+BuildFacelights:     0...1...2...3...4...5...6...7...8...9...10 (56)<br>
+BuildVisLeafs:       0...1...2...3...4...5...6...7...8...9...10 (19)<br>
+transfers 8176666, max 918<br>
+transfer lists:  62.4 megs<br>
+GatherLight:         0...1...2...3...4...5...6...7...8...9...10 (0)<br>
+	Bounce #1 added RGB(220594, 252475, 247844)<br>
+GatherLight:         0...1...2...3...4...5...6...7...8...9...10 (1)<br>
+	Bounce #2 added RGB(43695, 49423, 45971)<br>
+GatherLight:         0...1...2...3...4...5...6...7...8...9...10 (0)<br>
+	Bounce #3 added RGB(10447, 11641, 10324)<br>
+GatherLight:         0...1...2...3...4...5...6...7...8...9...10 (1)<br>
+	Bounce #4 added RGB(2641, 2883, 2433)<br>
+GatherLight:         0...1...2...3...4...5...6...7...8...9...10 (0)<br>
+	Bounce #5 added RGB(697, 739, 590)<br>
+GatherLight:         0...1...2...3...4...5...6...7...8...9...10 (1)<br>
+	Bounce #6 added RGB(189, 193, 145)<br>
+GatherLight:         0...1...2...3...4...5...6...7...8...9...10 (0)<br>
+	Bounce #7 added RGB(53, 51, 36)<br>
+GatherLight:         0...1...2...3...4...5...6...7...8...9...10 (1)<br>
+	Bounce #8 added RGB(15, 14, 9)<br>
+GatherLight:         0...1...2...3...4...5...6...7...8...9...10 (0)<br>
+	Bounce #9 added RGB(5, 4, 2)<br>
+GatherLight:         0...1...2...3...4...5...6...7...8...9...10 (1)<br>
+	Bounce #10 added RGB(1, 1, 1)<br>
+GatherLight:         0...1...2...3...4...5...6...7...8...9...10 (0)<br>
+	Bounce #11 added RGB(0, 0, 0)<br>
+Build Patch/Sample Hash Table(s).....Done&lt;0.0177 sec&gt;<br>
+FinalLightFace:      0...1...2...3...4...5...6...7...8...9...10 (1)<br>
+FinalLightFace Done<br>
+0 of 0 (0% of) surface lights went in leaf ambient cubes.<br>
+ComputePerLeafAmbientLighting: 0...1...2...3...4...5...6...7...8...9...10<br>
+Ready to Finish<br>
+<br>
+Object names       Objects/Maxobjs  Memory / Maxmem  Fullness <br>
+------------       ---------------  ---------------  -------- <br>
+models                  25/1024         1200/49152    ( 2.4%) <br>
+brushes                644/8192         7728/98304    ( 7.9%) <br>
+brushsides            4834/65536       38672/524288   ( 7.4%) <br>
+planes                2698/65536       53960/1310720  ( 4.1%) <br>
+vertexes              3110/65536       37320/786432   ( 4.7%) <br>
+nodes                  714/65536       22848/2097152  ( 1.1%) <br>
+texinfos               746/12288       53712/884736   ( 6.1%) <br>
+texdata                158/2048         5056/65536    ( 7.7%) <br>
+dispinfos                0/0               0/0        ( 0.0%) <br>
+disp_verts               0/0               0/0        ( 0.0%) <br>
+disp_tris                0/0               0/0        ( 0.0%) <br>
+disp_lmsamples           0/0               0/0        ( 0.0%) <br>
+faces                 1905/65536      106680/3670016  ( 2.9%) <br>
+hdr faces                0/65536           0/3670016  ( 0.0%) <br>
+origfaces             1428/65536       79968/3670016  ( 2.2%) <br>
+leaves                 740/65536       23680/2097152  ( 1.1%) <br>
+leaffaces             2307/65536        4614/131072   ( 3.5%) <br>
+leafbrushes           1131/65536        2262/131072   ( 1.7%) <br>
+areas                    3/256            24/2048     ( 1.2%) <br>
+surfedges            14442/512000      57768/2048000  ( 2.8%) <br>
+edges                 8328/256000      33312/1024000  ( 3.3%) <br>
+LDR worldlights         28/8192         2464/720896   ( 0.3%) <br>
+HDR worldlights          0/8192            0/720896   ( 0.0%) <br>
+waterstrips            212/32768        2120/327680   ( 0.6%) <br>
+waterverts               0/65536           0/786432   ( 0.0%) <br>
+waterindices          3306/65536        6612/131072   ( 5.0%) <br>
+cubemapsamples          64/1024         1024/16384    ( 6.3%) <br>
+overlays                 0/512             0/180224   ( 0.0%) <br>
+LDR lightdata         [variable]     1870872/0        ( 0.0%) <br>
+HDR lightdata         [variable]           0/0        ( 0.0%) <br>
+visdata               [variable]       20019/16777216 ( 0.1%) <br>
+entdata               [variable]       59560/393216   (15.1%) <br>
+LDR leaf ambient       740/65536       17760/1572864  ( 1.1%) <br>
+HDR leaf ambient         0/65536           0/1572864  ( 0.0%) <br>
+occluders                0/0               0/0        ( 0.0%) <br>
+occluder polygons        0/0               0/0        ( 0.0%) <br>
+occluder vert ind        0/0               0/0        ( 0.0%) <br>
+detail props          [variable]           1/12       ( 8.3%) <br>
+static props          [variable]           1/1666     ( 0.1%) <br>
+pakfile               [variable]      716484/0        ( 0.0%) <br>
+<br>
+Level flags = 0<br>
+<br>
+Win32 Specific Data:<br>
+physics               [variable]      210871/4194304  ( 5.0%) <br>
+==== Total Win32 BSP file data space used: 3436592 bytes ====<br>
+<br>
+Total triangle count: 5058<br>
+<br>
+1 minute, 21 seconds elapsed<br>
+<br>
+** Executing...<br>
+** Command: Copy File<br>
+** Parameters: "C:\Program</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p34659">
+	<div class="info">
+		<p class="poster">badinfluence</p>
+		<p class="dt">2008-11-13 08:10:47</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">See, tw1tch, this is your first post. Therefore, you get no help. Sorry man. It's just how things go. Maybe if you copy and paste this into another thread, you'll get some help.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p34660">
+	<div class="info">
+		<p class="poster">Tw1tch</p>
+		<p class="dt">2008-11-13 08:32:25</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>badinfluence wrote:</cite>See, tw1tch, this is your first post. Therefore, you get no help. Sorry man. It's just how things go. Maybe if you copy and paste this into another thread, you'll get some help.</div></blockquote>
+
+Technically it's my second post. My first account, which I only ever made one post on, didn't make it through a site update as I no longer was able to log in. Although that first post consisted entirely of a single link:<br>
+<a href="https://www.youtube.com/watch?v=SlCRfTmBSGs" class="postlink">http://www.youtube.com/watch?v=SlCRfTmBSGs</a><br>
+And I already made a thread elsewhere lol:<br>
+<a href="http://forums.steampowered.com/forums/showthread.php?t=748904" class="postlink">http://forums.steampowered.com/forums/s ... p?t=748904</a><br>
+<br>
+Seriously though, any help is greatly appreciated. <br>
+<br>
+<br>
+Please note also, the map is in a pre-alpha stage, there is still much to do. I'm going to be removing a set of teleports and changing some destinations, tweaking weapon layouts, making a few sections not so boring, adjusting the lighting, etc.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p34665">
+	<div class="info">
+		<p class="poster">Fearsome*</p>
+		<p class="dt">2008-11-13 09:21:39</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Try using the cordon tool to isolate the area with the problem. A degenerate face is usually a face with no area which could be from applying a transparent texture to it or from careless vertex manipulation.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p34684">
+	<div class="info">
+		<p class="poster">Pig Popper</p>
+		<p class="dt">2008-11-13 15:41:53</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">have you hosted this online to play it and it crashes? <br>
+coz in general all maps crash mt computer when i play them locally, esp if i start using teh ggun  <img class="smilies" src="../../../images/smilies/icon_eek.gif" width="15" height="15" alt=":shock:" title="Shocked"> god knows why just steam i guess.<br>
+<br>
+I ran a compile, fixed all errors and had 2 bashes at playing locally, 1 crashed and 1 lasted for ages <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile">. <br>
+<br>
+If you want i can host it on my server and test if it crashes the server but it will have to be tomorrow as i'm working tonight.<br>
+<br>
+PS func_detail the rest of those irregular brushes, i dont think they are the cause but ive found having overly complex brush work that is not f_d'd can cause crashes..</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p34686">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-11-13 16:05:58</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">* degenerate faces doesn't cause crashes.<br>
+* use cordon and see if the map still crash when compiling smaller areas at a time<br>
+* look for overly complex brushwork. Hammer doesn't like it but won't complain cuz its "cool".<br>
+* look for terribly long / large brushes of any sort. sometimes choping those to smaller bits goes a lot way.<br>
+* ...- are you working with Snap To Grid?<br>
+* ...- do you have a lot of sprites, brushbased entities like dustmostes.etc...<br>
+<br>
+ill look at the vmf when i get home if u still need help<br>
+<br>
+val</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p34713">
+	<div class="info">
+		<p class="poster">Tw1tch</p>
+		<p class="dt">2008-11-13 20:25:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thanks for the feedback so far. <br>
+<br>
+I have only hosted this on a listen server so far, running XP. I made some of the smaller brushes func_detail, but I haven't got around to optimizing yet. I also haven't applied any nodraw yet. I'll do some more optimizing. <br>
+<br>
+I gave the cordon tool one shot, both half of the maps crashed. It was rather late so I had to sleep. I'll go back today and do some more cutting still and keep testing. I tried to keep the map brushwork very simple, so its mainly just squares and triangles. It's all set to snap to grid. There are a total of 8 env_sprites. I removed a set of teleports on the newer save which had the total at 12 env_sprites. Otherwise there a few func_door, trigger_teleport, and a trigger_hurt. <br>
+<br>
+I do have a number of exceptionally long brushes, spanning the bottom and sides. I'll break those up and try to switch out some env_sprites for simple lights. I also found an erronous shaped brush I copied over from my other map dm_thumper. I'm rebuilding that.<br>
+<br>
+I'll post back with an update.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p34721">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-11-13 21:46:30</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">give link to current vmf as is</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p34722">
+	<div class="info">
+		<p class="poster">Tw1tch</p>
+		<p class="dt">2008-11-13 21:51:55</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I'll upload it now, you can hit me up on Xfire: tw1tch01 or on Steam friends: Tw1tch.<br>
+<br>
+For Steam you may have to search friends of friends because there are alot of Tw1tch's.<br>
+<br>
+<br>
+<br>
+Also, its not visible from the screens, but the middle teleport is underwater, which teleports you to a fully underwater section where you can get an RPG and 200 suit. I'm hoping the water doesn't conflict with the teleports and env_sprites. I'll have to make a deletion and compile.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p34723">
+	<div class="info">
+		<p class="poster">Tw1tch</p>
+		<p class="dt">2008-11-13 21:58:11</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">New .vmf link:<br>
+<a href="http://files.filefront.com/save55vmf/;12341901;/fileinfo.html" class="postlink">http://files.filefront.com/save55vmf/;1 ... einfo.html</a><br>
+<br>
+<br>
+<br>
+EDIT: I did a compile with removing every teleport, the ball generator, and the outside water section. Crashed after a few minutes of play.<br>
+<br>
+Also did a compile where I removed every entity except one info_player_start. Crashed after 30 seconds. Oddly enough there was only brushes and one info_player_start in the map.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p34732">
+	<div class="info">
+		<p class="poster">Tw1tch</p>
+		<p class="dt">2008-11-13 23:23:36</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I did a couple more tests. One compile with every entity removed, and another with everything removed except the outside box. Both crashed rather quickly.<br>
+<br>
+I'm leaning towards there something being corrupt with the .vmf itself or the map not liking windows environment.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p34734">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-11-13 23:47:50</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><a href="http://www.eyeclan.net/backup/save55a.rar" class="postlink">http://www.eyeclan.net/backup/save55a.rar</a><br>
+<br>
+compile full. run cubemaps. there.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p34742">
+	<div class="info">
+		<p class="poster">Tw1tch</p>
+		<p class="dt">2008-11-14 00:38:28</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>[EYE] Valar wrote:</cite><a href="http://www.eyeclan.net/backup/save55a.rar" class="postlink">http://www.eyeclan.net/backup/save55a.rar</a><br>
+<br>
+compile full. run cubemaps. there.</div></blockquote>
+
+Sorry I'm confused. It's a fixed version? You found an error?<br>
+<br>
+Tyvm for checking it out too.<br>
+<br>
+EDIT: I compiled, ran cubemaps on save55a. Crashed pretty quick.<br>
+<br>
+Maybe somethings wrong with my Hammer.<br>
+<br>
+I had another buddy do a compile and he said he played for over 5 minutes without a crash. <br>
+<br>
+/confused</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p34756">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-11-14 02:28:17</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">yep. this vmf is good now. i'm not crashing at all. <br>
+i would... Varify local files of both SDK and DM<br>
+then....Defrag SDK and DM<br>
+then....defrag your pc<br>
+see now if the map crashes. if it does - reinstall DM and Hammer<br>
+ <br>
+this cannot be anything but a local issue.<br>
+<br>
+val</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p34758">
+	<div class="info">
+		<p class="poster">Tw1tch</p>
+		<p class="dt">2008-11-14 02:34:02</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thank you very much Valar!<br>
+<br>
+I'll give it a shot and see how it goes.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p34774">
+	<div class="info">
+		<p class="poster">Tw1tch</p>
+		<p class="dt">2008-11-14 04:34:37</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I defragged my hdd, defragged the game cache, and verified the integrity of the game cache for source sdk. Did a fresh compile, built the cubemaps, and played it for 20 minutes without a crash!<br>
+<br>
+Thanks everyone for helping me narrow down the issue. Its greatly appreciated. <br>
+<br>
+&lt;3</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p34864">
+	<div class="info">
+		<p class="poster">Fearsome*</p>
+		<p class="dt">2008-11-15 04:50:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Stupid question but you do know that the simple act of jumping and changing weapons causes crashes on listen servers dont you? This has nothing to do with the map but if you have never used a listen server you may think it is the map.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p34866">
+	<div class="info">
+		<p class="poster">Ghost Dog_TSGK</p>
+		<p class="dt">2008-11-15 04:57:57</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Fearsome* wrote:</cite>Stupid question but you do know that the simple act of jumping and changing weapons causes crashes on listen servers dont you? This has nothing to do with the map but if you have never used a listen server you may think it is the map.</div></blockquote>
+
+That damn bug gets me every time, and my srcds doesn't work right so when we LAN over here it's always a listen server.<br>
+<br>
+Try it on a dedicated server twitch see if it doesn't happen.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p34875">
+	<div class="info">
+		<p class="poster">Tw1tch</p>
+		<p class="dt">2008-11-15 08:03:43</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Fearsome* wrote:</cite>Stupid question but you do know that the simple act of jumping and changing weapons causes crashes on listen servers dont you? This has nothing to do with the map but if you have never used a listen server you may think it is the map.</div></blockquote>
+
+Thanks for the heads up.  <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile">  Never heard of that until now. I haven't played listen servers much.<br>
+<br>
+But I think that probably explains it, because I was noticing the crashing was happening at places all over the map. Come to think of it, it would usually crash as I would turn and jump and probably changing weapons.<br>
+<br>
+<br>
+
+<blockquote><div><cite>Ghost Dog_TSGK wrote:</cite><blockquote><div><cite>Fearsome* wrote:</cite>Stupid question but you do know that the simple act of jumping and changing weapons causes crashes on listen servers dont you? This has nothing to do with the map but if you have never used a listen server you may think it is the map.</div></blockquote>
+
+That damn bug gets me every time, and my srcds doesn't work right so when we LAN over here it's always a listen server.<br>
+<br>
+Try it on a dedicated server twitch see if it doesn't happen.</div></blockquote>
+
+Haven't had a chance to get it up on a dedicated server yet. Although I have had about 5 other people do compiles without any problems occuring.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p34912">
+	<div class="info">
+		<p class="poster">Tw1tch</p>
+		<p class="dt">2008-11-15 20:40:30</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Fearsome* wrote:</cite>Stupid question but you do know that the simple act of jumping and changing weapons causes crashes on listen servers dont you? This has nothing to do with the map but if you have never used a listen server you may think it is the map.</div></blockquote>
+
+<br>
+Well, I did some testing. Everytime I would jump and change weapons I would crash. Glad to know its not the map either. Thanks again for the heads up.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

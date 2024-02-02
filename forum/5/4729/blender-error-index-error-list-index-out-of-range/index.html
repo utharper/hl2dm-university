@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Blender Error: Index error: list index out of range - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>Blender Error: Index error: list index out of range</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=4729">https://forum.hl2dm.community/viewtopic.php?t=4729</a>
+-->
+
+<div class="post" id="p64686">
+	<div class="info">
+		<p class="poster">javierdl</p>
+		<p class="dt">2010-01-03 16:46:11</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><img src="http://a5zi3w.bay.livefilestore.com/y1pXjh1FQeaibiMNDrkN2pCEevJV0K-AX8K29ih9cIfENGIy7ixExvnR7PgsaTY3bN9ZT5mcMmwuRLJnaXZEOf4WUVWaDMYLP96/indexerror.png" class="postimage" alt="Image"><br>
+<br>
+I'm getting this error when trying to export to SMD (Source) a rather simple mesh with its material/texture. Nothing I have not been doing, it has worked just fine for other similar meshes.<br>
+<br>
+I would really appreciate it if someone could enlighten me here,<br>
+<br>
+JDL</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p64689">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2010-01-03 20:28:25</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Why are you using Python?  Why not use the compiler that comes with Hammer, it works well enough.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p64692">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2010-01-03 21:25:05</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Paradox wrote:</cite>Why are you using Python?  Why not use the compiler that comes with Hammer, it works well enough.</div></blockquote>
+
+Because he's making <em class="text-italics">models</em> with <em class="text-italics">blender</em> not maps with hammer (blender is written in python). You should probably mention this in future javierdl, to save confusion <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=";)" title="Wink"><br>
+<br>
+Every time I've had that error it's been material related, double check all your faces have a material assigned (they all <em class="text-italics">must</em> have one as this is where the SMD gets the triangle texture names from).<br>
+<br>
+I've also seen this in with a corrupted .blend that had more than 16 materials assigned.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

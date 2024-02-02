@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HDR problems - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>HDR problems</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=2415">https://forum.hl2dm.community/viewtopic.php?t=2415</a>
+-->
+
+<div class="post" id="p29787">
+	<div class="info">
+		<p class="poster">OD_Knuckles</p>
+		<p class="dt">2008-09-10 19:23:34</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hello, I'm new.<br>
+I am mapping for Half Life 2: Deathmatch, and when I put HDR brightness in my light_enviroment, and run the map with HDR enabled, the ground and brushes look really dark, and the weapons and some props are SUPER BRIGHT.<br>
+I've tried running the map in HL2: Ep One to see if it was a bug of HL2DM, but the bug persisted.<br>
+<br>
+I've read a bit of tonemap_controller and some stuff like that, but, I don't quite understand how to use them and what it does.<br>
+(I've read everything in the SDK community wikia but I'm stuck, they dont fully explain how to implement this in HL2DM, they speak more about DoD and CS)<br>
+<br>
+Well, thanks in advance.<br>
+<br>
+(24 reads and not even one reply, great... -__- )</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p30413">
+	<div class="info">
+		<p class="poster">Beef</p>
+		<p class="dt">2008-09-18 09:23:56</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I think it has to do with the cubemaps.  When compiling HDR, you have to buildcubemaps twice.<br>
+Link to information on cubemaps and HDR: <br>
+<a href="http://developer.valvesoftware.com/wiki/Cubemaps#Cubemaps_and_HDR" class="postlink">http://developer.valvesoftware.com/wiki ... ps_and_HDR</a><br>
+<br>
+I haven't tried HDR yet, so hopefully that link ^ will be enough help.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p30480">
+	<div class="info">
+		<p class="poster">OD_Knuckles</p>
+		<p class="dt">2008-09-19 07:40:50</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Beef wrote:</cite>I think it has to do with the cubemaps.  When compiling HDR, you have to buildcubemaps twice.<br>
+Link to information on cubemaps and HDR: <br>
+<a href="http://developer.valvesoftware.com/wiki/Cubemaps#Cubemaps_and_HDR" class="postlink">http://developer.valvesoftware.com/wiki ... ps_and_HDR</a><br>
+<br>
+I haven't tried HDR yet, so hopefully that link ^ will be enough help.</div></blockquote>
+yeah, you must place a cubemap everywhere the light may change, and then build them, its not that big deal in the end and looks fantastic (you must place cubemaps in your 3D skybox too)<br>
+DONT compile a map with HDR if you have not placed any cubemaps, it's dumb and looks horrible (aim_excersises it's a proof of this)</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p30694">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-09-24 13:28:01</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">no need to implement any special values into the light_enviroment. leave it as is. put Cubemaps at center of areas and in transition points between area and compile the map with HDR enabled.<br>
+
+<blockquote class="uncited"><div>
+when you bring up the Hammer Compiler (<strong class="text-strong">press F9</strong>) check the box that says <strong class="text-strong">HDR</strong> and run the compiler.<br>
+When it finished, launch the game and load your new map<br>
+open console and type <strong class="text-strong">buildcubemaps</strong><br>
+when this finishes type <strong class="text-strong">sv_cheats 1</strong><br>
+type <strong class="text-strong">mat_hdr_enable 0</strong><br>
+type <strong class="text-strong">buildcubemaps</strong> (yes, again!)<br>
+load a different map.<br>
+load your new map again now. you're done<br>
+<br>
+another correction about Cubemaps height. that should be 64 units in DM.</div></blockquote></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p30739">
+	<div class="info">
+		<p class="poster">OD_Knuckles</p>
+		<p class="dt">2008-09-25 09:43:59</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>[EYE] Valar wrote:</cite>no need to implement any special values into the light_enviroment. leave it as is. put Cubemaps at center of areas and in transition points between area and compile the map with HDR enabled.<br>
+
+<blockquote class="uncited"><div>
+when you bring up the Hammer Compiler (<strong class="text-strong">press F9</strong>) check the box that says <strong class="text-strong">HDR</strong> and run the compiler.<br>
+When it finished, launch the game and load your new map<br>
+open console and type <strong class="text-strong">buildcubemaps</strong><br>
+when this finishes type <strong class="text-strong">sv_cheats 1</strong><br>
+type <strong class="text-strong">mat_hdr_enable 0</strong><br>
+type <strong class="text-strong">buildcubemaps</strong> (yes, again!)<br>
+load a different map.<br>
+load your new map again now. you're done<br>
+<br>
+another correction about Cubemaps height. that should be 64 units in DM.</div></blockquote></div></blockquote>
+I've seen the more cubemaps you put the better the effect works, but you gotta put them efficiently, you can easily see the map's cubemaps using your crossbow and watching the reflection in the lens while walking from one area to another.<br>
+I think I should put cubemaps every time the light changes, or once in a while in open places.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p30748">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-09-25 15:55:59</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>OD_Knuckles wrote:</cite>I think I should put cubemaps every time the light changes, or once in a while in open places.</div></blockquote>
+that is absolutely correct.<br>
+note that vertical cubemaps (working on windows / walls for example) don't have the 64 height naturally...however always keep them away from any brush face by at least 16 units.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

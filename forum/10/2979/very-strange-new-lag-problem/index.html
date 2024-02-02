@@ -1,0 +1,276 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Very Strange New Lag Problem - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+
+<h1>Very Strange New Lag Problem</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=2979">https://forum.hl2dm.community/viewtopic.php?t=2979</a>
+-->
+
+<div class="post" id="p39009">
+	<div class="info">
+		<p class="poster">PandorasAssassin</p>
+		<p class="dt">2008-12-25 01:12:49</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Well, if you read in my other post I had to delete my Config file to get rid of some stupid script that unbinded everything and messed with my settings. Anyhow, shortly after this I'am getting a very strange lag. Nothing i've ever had before. I'am not sure if its directly related to this. Its best described as a laggy matrix. <br>
+<br>
+I move threw the map fine, it looks like everyone else has 500 ping but they don't. This is almost an advantage, but it aggravates me. Everything is really slow mo and choppy along with the sounds. And my ping is normal. Can anyone think of what could be contributing to this and how I can restore this back to normal. =/</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39010">
+	<div class="info">
+		<p class="poster">phantom</p>
+		<p class="dt">2008-12-25 01:26:07</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">lol someone made you exec lab lolololololol</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39013">
+	<div class="info">
+		<p class="poster">PandorasAssassin</p>
+		<p class="dt">2008-12-25 02:00:28</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>phantom wrote:</cite>lol someone made you exec lab lolololololol</div></blockquote>
+
+I'm glad that your amused. So whats that mean and how do i fix it? <img class="smilies" src="../../../images/smilies/icon_neutral.gif" width="15" height="15" alt=":|" title="Neutral"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39014">
+	<div class="info">
+		<p class="poster">phantom</p>
+		<p class="dt">2008-12-25 02:10:10</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">donno i never did it i guess reintall steam i donno</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39015">
+	<div class="info">
+		<p class="poster">PandorasAssassin</p>
+		<p class="dt">2008-12-25 02:12:33</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>phantom wrote:</cite>donno i never did it i guess reintall steam i donno</div></blockquote>
+
+I Googled exec lab and someone said to type exec config.cfg in console?<br>
+<br>
+Make sense?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39019">
+	<div class="info">
+		<p class="poster">BlackRaven</p>
+		<p class="dt">2008-12-25 02:23:31</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">delete your cfg and then click on [url=steam://runsafe/320]THIS[/url] link. this will reset your game to factory default settings.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39020">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2008-12-25 02:38:12</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>phantom wrote:</cite>donno i never did it i guess reintall steam i donno</div></blockquote>
+If you don't know do not suggest to reinstall steam.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39021">
+	<div class="info">
+		<p class="poster">Ko-Tao</p>
+		<p class="dt">2008-12-25 02:53:00</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Probably a rates issue. Stock rates are rather low, and not strong for servers with complex maps or more than 1-2 players, so youll likely need to up them a decent bit.<br>
+<br>
+Should be (stock):<br>
+rate 10000<br>
+cl_cmdrate 30<br>
+cl_updaterate<br>
+<br>
+Try switching to:<br>
+rate 30000<br>
+cl_cmdrate 66<br>
+cl_updaterate 66<br>
+<br>
+There are other netcode-related factors that can optimise performance even further; a browse of the valve wiki should reveal anything else you might need to know.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39022">
+	<div class="info">
+		<p class="poster">PandorasAssassin</p>
+		<p class="dt">2008-12-25 02:58:51</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Ko-Tao wrote:</cite>Probably a rates issue. Stock rates are rather low, and not strong for servers with complex maps or more than 1-2 players, so youll likely need to up them a decent bit.<br>
+<br>
+Should be (stock):<br>
+rate 10000<br>
+cl_cmdrate 30<br>
+cl_updaterate<br>
+<br>
+Try switching to:<br>
+rate 30000<br>
+cl_cmdrate 66<br>
+cl_updaterate 66<br>
+<br>
+There are other netcode-related factors that can optimise performance even further; a browse of the valve wiki should reveal anything else you might need to know.</div></blockquote>
+
+<br>
+Alright i'am going to try resetting to those values. So you think that the script could have re set them, would it help if i posted what i had put in my cfg?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39023">
+	<div class="info">
+		<p class="poster">BlackRaven</p>
+		<p class="dt">2008-12-25 03:05:53</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Ko-Tao wrote:</cite>
+rate 30000</div></blockquote>
+blackraven recommends 100k.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39061">
+	<div class="info">
+		<p class="poster">PandorasAssassin</p>
+		<p class="dt">2008-12-25 05:51:14</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I changed my rates as mentioned above, and i think it worked but now every map I try to enter says missing map....-_-''<br>
+<br>
+Delete all saved maps and start over? <br>
+<br>
+Does it ever end!? <img class="smilies" src="../../../images/smilies/icon_exclaim.gif" width="15" height="15" alt=":!:" title="Exclamation">  <img class="smilies" src="../../../images/smilies/icon_exclaim.gif" width="15" height="15" alt=":!:" title="Exclamation"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39075">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2008-12-25 13:30:04</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">If you would have followed my advise ( delete game and redownload it) you would likely not be having these headaches. Let it download overnight if your connection is slow, it will finish sooner or later and your just like new. You can back up your maps if you like then re copy then to your maps directory. ALso check your steam rate in your steam settings and make sure it is set properly based on your connection.<br>
+<br>
+Blackraven, I agree 100k would be nice provided any server owners had there servers configured to allow a maxrate that high. Sadly 99% do not allow more than default or 66k at best and therefore 100k is useless.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39087">
+	<div class="info">
+		<p class="poster">BlackRaven</p>
+		<p class="dt">2008-12-25 18:57:29</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>L2k wrote:</cite>
+Blackraven, I agree 100k would be nice provided any server owners had there servers configured to allow a maxrate that high. Sadly 99% do not allow more than default or 66k at best and therefore 100k is useless.</div></blockquote>
+allowing 100k is pretty common in europe.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39091">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2008-12-25 20:22:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Its not uselss having your rate set to 100k at all.<br>
+The main reason why US servers are 30000 is CAL.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39099">
+	<div class="info">
+		<p class="poster">BlackRaven</p>
+		<p class="dt">2008-12-25 21:43:32</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">yeah i use 100k and i never have any choke unlike when using only 30k.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39100">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2008-12-25 21:44:38</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>keefy wrote:</cite>Its not uselss having your rate set to 100k at all.<br>
+The main reason why US servers are 30000 is CAL.</div></blockquote>
+
+I agree here again, and wish it were different here, unfortunately its not.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39107">
+	<div class="info">
+		<p class="poster">PandorasAssassin</p>
+		<p class="dt">2008-12-25 22:34:11</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I'll take you advice I'll re download it tonight. I keep crashing alot mostly when grenades go off near by.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39174">
+	<div class="info">
+		<p class="poster">GatesMcTaste</p>
+		<p class="dt">2008-12-26 21:47:05</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">idk if this is what caused it but did you get your script from fpsbanana? coz <a href="http://www.fpsbanana.com/scripting/4105" class="postlink">this</a> one contains <blockquote class="uncited"><div>"targetname noob";exec lab;</div></blockquote> i'm not sure if that's what did it but if it was be a little more careful with scripts.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39182">
+	<div class="info">
+		<p class="poster">Blasphemy</p>
+		<p class="dt">2008-12-26 22:10:19</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">exec lab in console for free hax, trust me it works. <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=":wink:" title="Wink">  <img class="smilies" src="../../../images/smilies/icon_twisted.gif" width="15" height="15" alt=":twisted:" title="Twisted Evil"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39311">
+	<div class="info">
+		<p class="poster">seanpyl</p>
+		<p class="dt">2008-12-28 21:52:21</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">For the future make backups of all of your steam games using the "Backup game files..." option when you right click on any installed steam game. Then when something cataclysmicaly retarded like this happens you simply delete all the local game files of the game in question and then restore your backup. No nickels and dimes like the phone companies.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

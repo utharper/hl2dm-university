@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Fast DL failing on my end - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+
+<h1>Fast DL failing on my end</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=3448">https://forum.hl2dm.community/viewtopic.php?t=3448</a>
+-->
+
+<div class="post" id="p46989">
+	<div class="info">
+		<p class="poster">haymaker</p>
+		<p class="dt">2009-03-15 21:33:06</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I've just confirmed that any time I try to DL a map from an sv_downloadurl address in-game, the process fails with the "missing maps" error. I thought it may have just been the server, but I've tried any number of times now at various places, they all fail. Strangely the progress bar shows all the files going through, .ain and all, but then it bails. I have cl_allowdownload 1...i don't get what I'm missing?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p47000">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2009-03-15 23:16:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">What kind of OS is the web server you are hosting the maps on?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p47009">
+	<div class="info">
+		<p class="poster">haymaker</p>
+		<p class="dt">2009-03-16 01:40:01</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">well it's end-user-error I've found, I had IE's LAN connection proxies set to 0.0.0.0. port 80,as a temp fix for a trojan hijacking Ive been fighting. Setting that to Automatic allows the map download to finish properly. Possibly server OS has to do with it, I know mine is Linux, can't say about the others.<br>
+<br>
+Kinda lame that Steam is so closely integrated with IE, with so much malware designed for that browser</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p47023">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2009-03-16 08:58:54</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I have a fast DL.  It and all the game servers (about 6 servers currently) it is redirecting for are linux.  So I doubt it is a linux problem.<br>
+<br>
+Were the maps DLing before or is this a new install?<br>
+<br>
+If this is a new install, the directory structure on the fast DL has to match the directory structure on the game server EXACTLY or you will get that error.  You also must have the sound and materials folders as well as whatever has to be in those from any or all of the maps or you can get that error.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p47056">
+	<div class="info">
+		<p class="poster">haymaker</p>
+		<p class="dt">2009-03-16 20:14:56</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">thx Paradox, I determined that it was a PEBCAK issue, it was odd that every single server out  there was crapping out<br>
+<br>
+<br>
+<br>
+<span style="font-size:50%;line-height:116%"><br>
+...umm problem exists between chair and keyboard...</span></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

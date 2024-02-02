@@ -1,0 +1,226 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SOOOOO STRANGE WTF!! - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+
+<h1>SOOOOO STRANGE WTF!!</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=1809">https://forum.hl2dm.community/viewtopic.php?t=1809</a>
+-->
+
+<div class="post" id="p22128">
+	<div class="info">
+		<p class="poster">fyckfaco</p>
+		<p class="dt">2008-05-26 06:02:11</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I really am very confused...<br>
+<br>
+I have 2 servers that are crashing at the exact same time. Doesnt seem to matter what plugins are installed, this even happens when they are pure installs. the only thing the have in comman are the server.cfg and autoexec.cfg. This made me wonder if something could be wrong with hlstatx or my settings?<br>
+84.200.249.39:24015<br>
+217.163.30.227:27015<br>
+Both have different hosts, and both have been reinstalled a number of times. Any ideas guys?<br>
+<br>
+Server.cfg<br>
+<br>
+// server name<br>
+hostname "o_O -2- ||KILL CAMPERS|| -2- LOW GRAV KILLBOX O_o"<br>
+<br>
+// rcon passsword<br>
+rcon_password ""<br>
+<br>
+// Server password<br>
+sv_password ""<br>
+<br>
+// Advanced RCON<br>
+sv_rcon_banpenalty 10<br>
+sv_rcon_maxfailures 5<br>
+sv_rcon_minfailures 5<br>
+sv_rcon_minfailuretime 15<br>
+<br>
+// server cvars<br>
+<br>
+mp_teamplay "0"<br>
+mp_timelimit 20<br>
+mp_friendlyfire "0"<br>
+mp_footsteps "1"<br>
+mp_autoteambalance 0<br>
+mp_autokick 1<br>
+mp_flashlight "1"<br>
+mp_tkpunish 0<br>
+mp_forcecamera 0<br>
+sv_alltalk 0<br>
+sv_pausable 0<br>
+sv_cheats 0<br>
+sv_consistency 1<br>
+sv_allowupload "1"<br>
+sv_allowdownload "1"<br>
+sv_maxspeed 320<br>
+mp_limitteams 4<br>
+sv_voiceenable 1<br>
+mp_allowspectators 1<br>
+mp_chattime "10"<br>
+sv_gravity 200<br>
+sv_allow_wait_command 0<br>
+<br>
+// bandwidth rates/settings<br>
+sv_minrate 8000<br>
+sv_maxrate 30000<br>
+sv_mincmdrate 20<br>
+sv_maxcmdrate 66<br>
+sv_maxupdaterate 66<br>
+sv_minupdaterate 20<br>
+sv_client_predict 1<br>
+sv_client_interpolate 1<br>
+sv_client_interp 0.01<br>
+sv_client_cmdrate_difference 30<br>
+sv_client_min_interp_ratio 1<br>
+sv_client_max_interp_ratio 2<br>
+decalfrequency 10<br>
+fps_max "500"<br>
+sv_downloadurl ""<br>
+<br>
+//weapon restrict<br>
+<br>
+sv_cheats 1<br>
+<br>
+ent_remove_all weapon_rpg<br>
+ent_remove_all item_rpg_round<br>
+<br>
+sv_cheats "0"<br>
+<br>
+// server logging<br>
+log on<br>
+sv_logbans 1<br>
+sv_logecho 1<br>
+sv_logfile 1<br>
+sv_log_onefile 0<br>
+<br>
+// operation<br>
+sv_lan 0<br>
+sv_region 3<br>
+<br>
+// execute ban files<br>
+exec banned_user.cfg<br>
+exec banned_ip.cfg<br>
+<br>
+autoexec.cfg<br>
+<br>
+log 1<br>
+ logaddress_delall<br>
+ logaddress_add logs10.hlstatsx.com:30587<br>
+ logaddress_add 213.186.39.85:30033<br>
+<br>
+Cheers for help in advanced. This is really bugging me -.-</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p22147">
+	<div class="info">
+		<p class="poster">Anonymous</p>
+		<p class="dt">2008-05-26 12:31:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Is the map rotation the same or do they use the same fast d/l, could it be a bad map? thats usually what brings mine down...  <img class="smilies" src="../../../images/smilies/icon_mad.gif" width="15" height="15" alt=":x" title="Mad"> <br>
+<br>
+POMP</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p22149">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2008-05-26 12:58:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I dont see anything wrong with your cfg (except 200 gravity...J/k) I would have to agree it could be a map or possibly yes something with hlsx stats. Did you mean by pure install that you did not have hlsx stats running? and If so what map is running when it crashes. HLSW has some nice logging features which might help you figure it out, if you want to try that.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p22150">
+	<div class="info">
+		<p class="poster">fyckfaco</p>
+		<p class="dt">2008-05-26 14:53:47</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Looks like the stats O_o</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p22163">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2008-05-26 20:40:13</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">The only thing I see at a quick glance at your config (will have to look at it closer later) is you have sv_cheats 0 then sv_cheats 1 then sv_cheats "0" in the config.  Not sure if that could be it but that's the first thing that jumps out.<br>
+<br>
+<br>
+Which plugins are you running?  Include the versions of each.<br>
+<br>
+Are you using a fast download server?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p22176">
+	<div class="info">
+		<p class="poster">Strange</p>
+		<p class="dt">2008-05-26 23:36:31</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p22235">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2008-05-27 18:30:12</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Woa thats cool I never thought of doing this to remove a weapon before, it totally works ano need for a plugin either. <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"> <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"> <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"><br>
+<strong class="text-strong">sv_cheats 1<br>
+<br>
+ent_remove_all weapon_rpg<br>
+ent_remove_all item_rpg_round<br>
+<br>
+sv_cheats "0"</strong><br>
+I supose it works for all other weaponsa s well.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p22339">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2008-05-28 23:39:08</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote class="uncited"><div>Woa thats cool I never thought of doing this to remove a weapon before, it totally works ano need for a plugin either. <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"> <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"> <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"><br>
+sv_cheats 1<br>
+<br>
+ent_remove_all weapon_rpg<br>
+ent_remove_all item_rpg_round<br>
+<br>
+sv_cheats "0"<br>
+I supose it works for all other weaponsa s well.</div></blockquote>
+yeah that's the easy way to remove any weapon.<br>
+But doing that will just limit you and the players in that server, and therefore later leading you to a disadvantage when you play in a place where the weapon removed from your server is allowed, whether this is the rpg, gg, or anything else =(</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

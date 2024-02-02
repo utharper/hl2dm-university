@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>sv_pure and all those model/texure packs - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+
+<h1>sv_pure and all those model/texure packs</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=2999">https://forum.hl2dm.community/viewtopic.php?t=2999</a>
+-->
+
+<div class="post" id="p39575">
+	<div class="info">
+		<p class="poster">The Resident</p>
+		<p class="dt">2008-12-30 21:35:56</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Okay, so I just recently found out that a lot of people were unable to connect to my servers because I was inadvertently disallowing the "high res" content packs because of these whitelist rules:<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>	materials\models\props_foliage\...   allow_from_disk+check_crc
+	models\props_foliage\...             allow_from_disk+check_crc</code></pre></div>
+
+I thought that would work because if it fails, the server would allow them in, just force the client to load the stock content instead.  I probably need to set sv_pure_kick_clients to 0 for that to happen?  If not, how do I get that behavior?<br>
+<br>
+---<br>
+<br>
+That said, who runs a server that allows "high res" model packs but still has sv_pure, and how did you setup the whitelist?  I assume that just removing the "+check_crc" would do the trick, but wouldn't that open up a lot of cheats?<br>
+<br>
+Thanks!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39594">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2008-12-30 23:47:40</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">We run an sv_pure 1 but we don't allow custom models from players so I can't help you there.  We have found that client based custom models tend to mess with the server more than they are worth.<br>
+<br>
+There is a clan called Older Than DOS on the west coast of the U.S.  Their leader named Cuz is a server guru but he doesn't frequent this site.  He has some instructions on is website on how to do various things.  They do use custom models on their server but I think its server side.  I don't have the link to their website but I am sure you can find them.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

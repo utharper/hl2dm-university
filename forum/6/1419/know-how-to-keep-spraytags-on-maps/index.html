@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>know how to keep spraytags on maps? - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+
+<h1>know how to keep spraytags on maps?</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=1419">https://forum.hl2dm.community/viewtopic.php?t=1419</a>
+-->
+
+<div class="post" id="p16266">
+	<div class="info">
+		<p class="poster">pike</p>
+		<p class="dt">2008-04-04 17:06:02</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">i was wondering if anyone knew what i need to do on my server to keep the spray tags on the maps. any helpful ideas would be super!?!?!?   thx..sorry i didnt make it clear..let me try..lol...i want members of clans to be able to come to premade maps on the server and spray there clan or w/e tags and for them to stay for good....any better..lol...thx for lookin <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=";)" title="Wink"> if its possible?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16268">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2008-04-04 17:27:16</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I'm confused.  Are you making a map that you want to put decals on?  Or do you want the sprays to stay on until map change?  Or do you want to store other player's sprays so you can get one later?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16280">
+	<div class="info">
+		<p class="poster">Anonymous</p>
+		<p class="dt">2008-04-04 19:11:14</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">ORRRR... is it that sometimes you can see your sprays and sometimes you can't? Or the quirky some people can see someones sprays but others can't... what is UP with that :roll: <br>
+<br>
+POMP</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16288">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2008-04-04 20:05:34</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">What is sv_pure set to on your server?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16403">
+	<div class="info">
+		<p class="poster">Anonymous</p>
+		<p class="dt">2008-04-05 05:39:23</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I have it set at 0 because my sounds keep going away if I make it higher AND we loose our KEEPER sound the clan may actually riot to get it back <img class="smilies" src="../../../images/smilies/icon_eek.gif" width="15" height="15" alt=":shock:" title="Shocked"> <br>
+<br>
+POMP <img class="smilies" src="../../../images/smilies/icon_mrgreen.gif" width="15" height="15" alt=":mrgreen:" title="Mr. Green"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16530">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2008-04-06 06:01:59</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">As far as i know these are the settings that allow sprays.<br>
+sv_upload 1<br>
+sv_pure 0<br>
+<br>
+anything else?<br>
+You need to add them to your <strong class="text-strong">server.cfg</strong> fie</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p24199">
+	<div class="info">
+		<p class="poster">provost</p>
+		<p class="dt">2008-06-24 21:51:07</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">He prolly saw LDR3 and he's wondering if those are people sprays that stayed there ?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p24200">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-06-24 22:16:19</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>pike wrote:</cite>.i want members of clans to be able to come to premade maps on the server and spray there clan or w/e tags and for them to stay for good....</div></blockquote>
+
+if i understand you correctly ..<br>
+you want only certain people to be able to spray their tag on a map once and for this spray to be "written" into the map so it shows up everytime that map loads on your server. is this what you mean?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p27979">
+	<div class="info">
+		<p class="poster">[1979] Babbage</p>
+		<p class="dt">2008-08-15 21:23:00</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Your question is sort of a loaded one.<br>
+<br>
+To my knowledge, there's no way of making player sprays that happen in the game -permanent-... There is no Mattie eventscripts trigger for when players spray, afaik.<br>
+<br>
+However.<br>
+<br>
+You CAN add decals (player sprays included) to your maps. Here's what you do.<br>
+<br>
+1) Come up with a decal (make a .tga, convert it to .vtf+.vmt, upload it, force your players to download it.)<br>
+2) As the server admin, run around and find places to spray it. Lets say your decal is called "foo". In the developer console, type ma_decal "foo", and it will appear on the wall you're looking at under the crosshairs. In the console, the X, Y, and Z coordinates will be dumped.<br>
+3) Cut and paste the X, Y, and Z coordinates of the decal into the cfg/mapadverts.txt file in Mani Admin.<br>
+4) Reload the map.<br>
+<br>
+From there, you'll notice that the decal will appear at the same location whenever the map loads. <br>
+<br>
+We do this extensively on our server.. We even charge people who want to have permanent tags up on the walls. Check us out sometime.<br>
+<br>
+Name: Brand New For 1979<br>
+Server: m80.dyndns.org:27015</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p27980">
+	<div class="info">
+		<p class="poster">Edge</p>
+		<p class="dt">2008-08-15 22:29:08</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Talk about bringing a dead topic alive <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

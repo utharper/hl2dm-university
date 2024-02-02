@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Sv_maxrate - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+
+<h1>Sv_maxrate</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=3279">https://forum.hl2dm.community/viewtopic.php?t=3279</a>
+-->
+
+<div class="post" id="p43675">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-02-11 02:20:45</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I have just ran a couple of tests that seems to suggest the maxrate for the OB engine is 30000 even when set to <strong class="text-strong">sv_maxrate 0</strong> <br>
+typing the commands in console I get this.
+<blockquote class="uncited"><div>] sv_maxrate<br>
+"sv_maxrate" = "0" max. 30000.000000<br>
+ min. 0.000000 replicated<br>
+ - Max bandwidth rate allowed on server, 0 == unlimited<br>
+] rate<br>
+"rate" = "30000" ( def. "10000" )<br>
+** NOTE: The real value is 100000.000 but the server has temporarily restricted it to 30000.000 **<br>
+ user<br>
+ - Max bytes/sec the host can receive data<br>
+] condump</div></blockquote>
+
+Has anyone else discovered this?<br>
+Have I missed soemthing out?<br>
+Has Valve fucked up big time?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p43707">
+	<div class="info">
+		<p class="poster">Merlyn</p>
+		<p class="dt">2009-02-11 08:09:43</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">What the hell does all that gibberish mean..?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p43712">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-02-11 08:58:16</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">if the max is 30000 it means we cannot get rid of choke when there are lots of players on therserver.<br>
+Read the netcode guide in the ENGINEERING section of this forum.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p43722">
+	<div class="info">
+		<p class="poster">SND</p>
+		<p class="dt">2009-02-11 13:54:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">im surprise they would limited this command I heard that valve has lock commands that the client should not change in OB such as interpolate_1. But rate is a varible net setting it makes little sense limiting it being that internet conections today are more than capable of sending allot more and that its one of the easyiest way of getting a stable connection out of a server.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p43736">
+	<div class="info">
+		<p class="poster">Ko-Tao</p>
+		<p class="dt">2009-02-11 20:20:45</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Its a known issue, rate is apparently locked to 30k in the ob engine. There was a big hubbub about it on spuf some time back (tf2 forum).<br>
+<br>
+As to why, who knows.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p43746">
+	<div class="info">
+		<p class="poster">ziggo0</p>
+		<p class="dt">2009-02-11 23:38:59</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">sv_maxrate is server side...hence the sv_, should be maximum rate per client, I've never been in a situation where I needed over 15 ~ 20 TOPS kb/s from the server to maintain chokeless situation in a 32 player server.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p43747">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-02-12 00:00:22</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>ziggo0 wrote:</cite>sv_maxrate is server side...hence the sv_, should be maximum rate per client, I've never been in a situation where I needed over 15 ~ 20 TOPS kb/s from the server to maintain chokeless situation in a 32 player server.</div></blockquote>
+It depends on the maps as well, if all the action is in one area then the updates are larger in size due to more players in the same small area, e.g killboxes require higher rate than dm_carverns or amplitude or even lockdown.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p43754">
+	<div class="info">
+		<p class="poster">ziggo0</p>
+		<p class="dt">2009-02-12 01:50:45</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Even in Garrysmod I don't break 20k...that is kind've odd they would limit that, guess I'm lucky I've never experienced it as a problem <img class="smilies" src="../../../images/smilies/icon_neutral.gif" width="15" height="15" alt=":|" title="Neutral"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p44132">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2009-02-18 05:50:38</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">max rate in OBE uncapped with todays update <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"><br>
+<a href="http://store.steampowered.com/news/2252/" class="postlink">http://store.steampowered.com/news/2252/</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p44156">
+	<div class="info">
+		<p class="poster">Cynips</p>
+		<p class="dt">2009-02-18 13:13:05</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">wadda ya know. there we have it. sv_maxrate 30000 isn't always enough</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p44165">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2009-02-18 16:45:36</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">this was fixed in a recent update.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p44166">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-02-18 16:52:50</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yes but it brok all orange box mods, if the servers updated you cannot connect to them.<br>
+So if i play TF2 now my steam id will change?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

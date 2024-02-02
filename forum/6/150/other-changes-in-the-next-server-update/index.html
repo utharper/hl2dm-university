@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Other changes in the next server update - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+
+<h1>Other changes in the next server update</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=150">https://forum.hl2dm.community/viewtopic.php?t=150</a>
+-->
+
+<div class="post" id="p595">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2007-05-15 04:26:19</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">The next version of the server will allow server operators to turn off the wait command on clients.  It will be considered a cheat if the server operator deems it so.  There are also some fixes to the min/max rate settings.<br>
+
+<blockquote class="uncited"><div>- Added sv_pure 2.  When set, then pure_server_whitelist.txt is ignored and all content files must come from Steam<br>
+- Changed ent_fire to only be useable from the host client on a listen server<br>
+<br>
+- Changed soundscape_flush to only be useable from the dedicated server console or the listen server host<br>
+- Added sv_allow_wait_command. If set to 0, then clients can't use "wait"<br>
+- Added sv_allow_color_correction. If set to 0, then clients can't use mat_colorcorrection<br>
+- Fixed player count bugs in serverbrowser<br>
+- Added "findflags" console command, which can list all cvars with a specified flag<br>
+- Fixed a bug with sv_minrate and sv_maxrate not applying properly on the client<br>
+- Cheat protected the following commands:<br>
+  r_TransitionSensitivity, mat_bloomamount_rate, mat_debug_process_halfscreen, mat_debug_autoexposure, mat_force_bloom, mat_debug_bloom, mem_force_flush, mod_forcedata, mod_test_not_available, mod_test_mesh_not_available, mod_test_verts_not_available, mod_load_mesh_async, mod_load_anims_async, mod_load_vcollide_async, mod_trace_load, mod_lock_mdls_on_load, mat_leafvis, mat_debug,  mat_surfaceid, mat_surfacemat, flush, r_entity, r_ambientfraction, lightcache_maxmiss, r_avglight, mat_debugalttab, mat_showlightmappage, mat_bumpbasis, showbudget, showbudget_texture, showbudget_texture_global, mat_hdroverbrightrange, mat_debugdepth, r_modellodscale, m_pitch
+</div></blockquote></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p596">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2007-05-15 06:54:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Oh man. That's quite an update.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p597">
+	<div class="info">
+		<p class="poster">[KBH] Chapeau Noir</p>
+		<p class="dt">2007-05-15 09:24:49</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">i'd have thought semicolon instead of wait.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p602">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2007-05-15 17:33:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">The response I got from valve is they use compound alias statements internally to game code, so the semicolon had to stay as well as the alias command.  The wait was the only thing they I guess they don't use so they'll let server operators restrict it.<br>
+<br>
+It's a good step IMO.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p603">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2007-05-15 19:40:19</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I agree. Many lame scripts will be ruined by restricting the wait command. CAL configs will need to change if it is gonna be used though.<br>
+<br>
+Nice that they make it an option too, instead of just killing it completely.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p604">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2007-05-15 19:50:50</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">The thing I have in mind about this is some people may have some sort of physical handicap that this actually lets them play the game.  I doubt Valve would shut it off completely.  But ya never know <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p609">
+	<div class="info">
+		<p class="poster">ninojman</p>
+		<p class="dt">2007-05-15 22:06:11</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">very nice, now ppl will have to come up with a new excuse as to why they lost</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p617">
+	<div class="info">
+		<p class="poster">Ko-Tao</p>
+		<p class="dt">2007-05-16 10:00:26</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">This is looking to be one fine update. Lets hope nothing critical gets randomly broken in the process.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p621">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2007-05-16 18:22:13</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">It works just as advertised.  But so far, linux server doesn't start at all <img class="smilies" src="../../../images/smilies/icon_sad.gif" width="15" height="15" alt=":(" title="Sad"><br>
+<br>
+Thank goodness for betas.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

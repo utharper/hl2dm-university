@@ -1,0 +1,305 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>dm_groupfour - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>dm_groupfour</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=1370">https://forum.hl2dm.community/viewtopic.php?t=1370</a>
+-->
+
+<div class="post" id="p15530">
+	<div class="info">
+		<p class="poster">DEFme</p>
+		<p class="dt">2008-03-31 20:18:45</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><a href="http://www.hl2dm-university.com/forum/phpBB3/viewtopic.php?f=10&amp;t=1365" class="postlink">http://www.hl2dm-university.com/forum/p ... =10&amp;t=1365</a><br>
+hi mappers. please fix this map, it always lagged fps-wise <img class="smilies" src="../../../images/smilies/icon_sad.gif" width="15" height="15" alt=":(" title="Sad"> i liked it when it was released but avoided it because it was a frames per second mess. it has a rly cool layout. its even named after an awesome Massive Attack song.<br>
+Massive Attack - Group Four: <a href="https://youtube.com/watch?v=HA1_F86bpOg" class="postlink">http://youtube.com/watch?v=HA1_F86bpOg</a><br>
+please fix? please. <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"> anyone have the map readme or authors name handy? i'll email him, maybe he'll fix or just release the source for map or something, if thats how it works.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p15535">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-03-31 20:39:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">hmm... not much you can do with this type of maps. any map that let's you see other areas around it will have low FPS. That’s how the Source engine works. Look at lost_village for example: all areas have great FPS apart from the tank area when facing inward to the map...you see FPS drop. that is because when you face this way the engine draws other sections of the map even though those extend beyond your player's view: the engine still render them. Now look at groupfour. most internal areas you will have a large space filled with props and geometry and have metal grates separating between floors...forcing the engine to renders those rooms for you. not to mention look inward on the map from the water side - you are literally rendering more or less the complete map at that time.<br>
+<br>
+Might be a good idea to have ppl (given the fact machines are of higher level these days) download and give it a go locally. See how much FPS you're getting (type net_graph 1 / 2 / 3 in your console to see FPS , etc.)<br>
+My take it that you would still get low FPS but not necessarily lag.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p15539">
+	<div class="info">
+		<p class="poster">DEFme</p>
+		<p class="dt">2008-03-31 20:54:19</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">yeah <img class="smilies" src="../../../images/smilies/icon_sad.gif" width="15" height="15" alt=":(" title="Sad"> thanks for your input! <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"><br>
+ill still go ahead, run locally, and grab you some scrns. <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p15540">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-03-31 20:56:19</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">BTW...<br>
+<a href="http://www.fpsbanana.com/maps/search?s" class="postlink">http://www.fpsbanana.com/maps/search?s</a>[maps.author]=coldwontrise<br>
+<br>
+<span style="color:#0000FF">Watch it as the above URL is a bit messed up. you may need to copy paste it and not simply click.</span><br>
+<br>
+this is the author's page.<br>
+check what he's saying about his dm_groupfour on the map page:<br>
+<br>
+<em class="text-italics"><br>
+" New map that I've been working on. After I finished the principle geometry, my frame rates were crawling at the speed of stop. Thus, I ended up doing research on Hint brushes, and the like, an area of map making I've never ventured. However, not too much of an improvement on the frame rate, spare some inside areas.<br>
+Lots of new aestetic experiments I tried out, such as contrasting colored lighting (Red+green, Blue+orange, Green+orange, Yellow+blue), spotlight sprites, etc. Again the only downfall it seems is the framerate, which spikes quite a bit in the outside areas. I have yet to put in weapons, physics objects galore, and spawn points.<br>
+<br>
+Also, I tried to model the feel of the map based on the feel of a Massive Attack song, titled Group Four. Kinda dark sounding, seems to fit."</em></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p15541">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2008-03-31 20:57:25</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Isnt that why there is a nodraw function?  My knowledge of mapping is absolute bare minimum.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p15542">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-03-31 20:59:05</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>keefy wrote:</cite>Isnt that why there is a nodraw function?  My knowledge of mapping is absolute bare minimum.</div></blockquote>
+no. has nothing to do with NODRAW.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p15663">
+	<div class="info">
+		<p class="poster">haymaker</p>
+		<p class="dt">2008-04-01 10:28:31</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">yeah Ive been stand-and stare at this one a few times. great architecture. I'm guessing by that quote that the author never explored open areaportals; shut a couple of windows here and there and fill doors with areaportals, the inside would skyrocket. The major drag outside is the water and the amount of detail out there.<br>
+<br>
+I remember one game somehow I propjumped out to one of the buoys. Lonely but a nice view</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p15665">
+	<div class="info">
+		<p class="poster">MeekMeekle</p>
+		<p class="dt">2008-04-01 11:03:19</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">i'll take a look at this sometime this week.   Really though from what Valar said the only way to probably "fix" the map to have better fps is to close off areas of the map.    it may also be "fixable" by changing the design or dumbing down the looks.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p15690">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-04-01 19:33:42</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">i don't see anything anyone can do with it. areaportals / occluders will ruin whatever flow the map has between the inside and outside areas. i would leave this map be  <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"> and kudos the author for one of the better looking oldskool maps DM has seen.<br>
+BTW...and that's only me...as much as i take pleasure from walking through amazingly large, detailed DM maps i think this is an obsolete trend and maybe about time to move on. as an author of such a monster (hihi) i think, today, that its so much more fun to play smaller and faster maps with better flow and FPS.  this is DM after all...not CO-OP. <br>
+again, that's me and with the utmost RESPEKT for the large eye candies of this great game.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p15697">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2008-04-01 20:02:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I really like dm_groupfour.  Its a great map and it plays well with 8+ players.  I hope you are wrong Valar and that the trend is not obsolete.  I enjoy larger maps that can accommodate 8-16 players.  Maps that are too small get stupid with too many people in them and ruin the game play.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p15699">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2008-04-01 20:08:44</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Map looks good but seems sparse on weapons with 10+ players. FPS wern't too bad for me either.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p15731">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-04-01 23:14:58</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Paradox wrote:</cite>I hope you are wrong Valar and that the trend is not obsolete.</div></blockquote>
+let me specify what i meant by that:<br>
+<br>
+a very large map with tons of details, low FPS and uber bad connectivity is, in my eyes, an obsolete trend.<br>
+not large maps in whole.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p15792">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2008-04-02 04:59:32</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>[EYE] Valar wrote:</cite><blockquote><div><cite>Paradox wrote:</cite>I hope you are wrong Valar and that the trend is not obsolete.</div></blockquote>
+let me specify what i meant by that:<br>
+<br>
+a very large map with tons of details, low FPS and uber bad connectivity is, in my eyes, an obsolete trend.<br>
+not large maps in whole.</div></blockquote>
+
+<br>
+ok yea,  bad connectivity and low FPS FTW.<br>
+<br>
+Good sized maps with good flow and decent detail WIN!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p15815">
+	<div class="info">
+		<p class="poster">badinfluence</p>
+		<p class="dt">2008-04-02 06:36:20</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Paradox wrote:</cite><blockquote><div><cite>[EYE] Valar wrote:</cite><blockquote><div><cite>Paradox wrote:</cite>I hope you are wrong Valar and that the trend is not obsolete.</div></blockquote>
+let me specify what i meant by that:<br>
+<br>
+a very large map with tons of details, low FPS and uber bad connectivity is, in my eyes, an obsolete trend.<br>
+not large maps in whole.</div></blockquote>
+
+<br>
+ok yea,  bad connectivity and low FPS FTW.<br>
+<br>
+Good sized maps with good flow and decent detail WIN!</div></blockquote>
+
+<br>
+ftl*</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p15819">
+	<div class="info">
+		<p class="poster">MeekMeekle</p>
+		<p class="dt">2008-04-02 06:57:59</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">alright.. so as an example if the map is split into 2 separate sections so it's indoor / outdoor .. and there are no places on any areas of the map where you can see outside from the inside (except for the connecting hall etc)  and vice versa fps would probably double. <br>
+<br>
+as you can see these windows really do a number on the fps.. because you can see into the buildings from way back from the docks. etc.<br>
+<br>
+see screens.</div>
+<dl class="attachbox">
+					<dt>
+						Attachments
+					</dt>
+											<dd>
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="dm_groupfour0005.jpg" class="postimage" alt="dm_groupfour0005.jpg" onclick="viewableArea(this);"></dt>
+						<dd>dm_groupfour0005.jpg (234.42 KiB) Viewed 367 times</dd>
+		</dl>
+		
+		
+			</dd>
+											<dd>
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="dm_groupfour0001.jpg" class="postimage" alt="dm_groupfour0001.jpg" onclick="viewableArea(this);"></dt>
+						<dd>dm_groupfour0001.jpg (121.67 KiB) Viewed 367 times</dd>
+		</dl>
+		
+		
+			</dd>
+									</dl>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p15825">
+	<div class="info">
+		<p class="poster">poconut</p>
+		<p class="dt">2008-04-02 07:42:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Off topic, but I semi-fondly remember getting my ass handed to me on this map by dr tj eckleburg. Up until that game I thought I was the best at this game and got really pissed when I couldn't kill him no matter how hard I tried, and it inspired me to seek help and get better. Ah, foolish days of my youth.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p15848">
+	<div class="info">
+		<p class="poster">DEFme</p>
+		<p class="dt">2008-04-02 09:07:33</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">spliting this map into two sections? or just dumbing it down and cutting out the outside area a bunch? i'd be up for play testing those possibilities!<br>
+<img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"> <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p15854">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2008-04-02 09:20:13</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Ohhhh this one, with the boats and you can go in the water. Good times.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16551">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2008-04-06 16:38:29</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">never tried this map...if anyone is gonna do a remake, I'd be glad to beta test it <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=";)" title="Wink"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16562">
+	<div class="info">
+		<p class="poster">Epoch</p>
+		<p class="dt">2008-04-06 19:41:42</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I always liked the fact that you could use the water outside for stealth.  I remember people playing this map way more back in the day.  Decent map thats for sure, very fun with 8+ people like Para said.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

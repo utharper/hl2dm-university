@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Help Needed ! Permanent Ban Info Required - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+
+<h1>Help Needed ! Permanent Ban Info Required</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=4222">https://forum.hl2dm.community/viewtopic.php?t=4222</a>
+-->
+
+<div class="post" id="p56430">
+	<div class="info">
+		<p class="poster">GMUK</p>
+		<p class="dt">2009-07-02 14:24:21</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hi Guys <br>
+<br>
+We are trying to find out how to add a permanent ban to our gaming servers.<br>
+<br>
+When a player is permanently banned they become unbanned once the servers reset every 24 hours.<br>
+<br>
+Does anyone know the command to keep permanent bans in place ?<br>
+<br>
+Many thanks in advance for your help.<br>
+<br>
+Cheers !</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p56438">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2009-07-02 17:57:21</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">There are several ways to do this.  If you are banning via mani, you have to add a 0 for permanent ban
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>ma_ban 0 STEAM_ID</code></pre></div>
+
+If you are doing it via the console:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>banid 0 STEAM_ID
+kickid STEAM_ID
+writeid
+</code></pre></div>
+
+If you don't do writeid then it doesn't get written to the banned_user.cfg file and will reset if the server ever restarts.<br>
+<br>
+At our clan we have a separate ban file for those that we as a group decide on.  Then in our server.cfg we execute that file.  The reason being is we have notes in our banned file that we see why someone was banned.  If you do a writeid, it removes all notes.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p56440">
+	<div class="info">
+		<p class="poster">GMUK</p>
+		<p class="dt">2009-07-02 18:39:04</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Keeper Thanks so much for your reply.<br>
+Thats a great help !<br>
+<br>
+Cheers (-:</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p56441">
+	<div class="info">
+		<p class="poster">GMUK</p>
+		<p class="dt">2009-07-02 18:48:54</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Keeper <br>
+<br>
+I have just noticed that the ban id are written to the cfg file "banned user "<br>
+<br>
+There is a list on there of steam id's and each has the "0" before the steam id.<br>
+<br>
+Is there a command to set in the cfg files each time the server starts to execute the banned list ?<br>
+<br>
+Many Thanks for your help.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p56442">
+	<div class="info">
+		<p class="poster">{EE}chEmicalbuRn</p>
+		<p class="dt">2009-07-02 19:22:29</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">i believe mani executes the baned list file automatically.  it also may start automatcally in the non-mani cfg.  i forget because i dont have a hl2dm server any more.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p56448">
+	<div class="info">
+		<p class="poster">s0iz</p>
+		<p class="dt">2009-07-02 20:32:01</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">May I start a religion worshiping Keeper's knowledge?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p56459">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-07-02 21:44:53</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>GMUK wrote:</cite>Keeper <br>
+<br>
+I have just noticed that the ban id are written to the cfg file "banned user "<br>
+<br>
+There is a list on there of steam id's and each has the "0" before the steam id.<br>
+<br>
+Is there a command to set in the cfg files each time the server starts to execute the banned list ?<br>
+<br>
+Many Thanks for your help.</div></blockquote>
+Try these<br>
+// execute ban files<br>
+exec banned_user.cfg<br>
+exec banned_ip.cfg</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p56461">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2009-07-02 22:07:36</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">The commands that Keefy posted need to be in your server.cfg file.  The server will execute them every time the map changes.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

@@ -1,0 +1,1062 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CAL rates. - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">League Talk</a></p>
+</div>
+
+<h1>CAL rates.</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=1150">https://forum.hl2dm.community/viewtopic.php?t=1150</a>
+-->
+
+<div class="post" id="p11033">
+	<div class="info">
+		<p class="poster">Pernicious</p>
+		<p class="dt">2008-03-04 15:32:58</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Cal rates are shit...<br>
+<br>
+I have seen a few cal matches recently, and wat i have noticed is that their configs allow for gay rate changing which seems to account for gay hit reg in matches. I also downloaded their configs, and imo, they are farked. Take note, cause i am not bias, i never have an prolly never will play in a cal match, i would also like someone to test my rates on their server <img class="smilies" src="../../../images/smilies/icon_razz.gif" width="15" height="15" alt=":P" title="Razz"><br>
+If everybody is sending the same amount of packets to the server then the lag compensation will all be calculated the same and hit reg would be fine, or atleast everything will be stable. As it is i think  its possible ppl are both intentionally and unintentionally causing shit hit registration.<br>
+<br>
+If its 33 tick, enforce something like the following.<br>
+sv_mincmdrate 		"33"<br>
+sv_maxcmdrate 		"33"<br>
+sv_minupdaterate 		"33"<br>
+sv_maxupdaterate 		"33"<br>
+sv_minrate 		"20000"<br>
+sv_maxrate 		"20000"<br>
+sv_unlag 			"1"<br>
+sv_maxunlag 		"1"<br>
+sv_client_cmdrate_difference 	"0"<br>
+sv_client_interpolate 		"1"<br>
+sv_client_max_interp_ratio 	"2"<br>
+sv_client_min_interp_ratio 	"2"<br>
+sv_client_predict 		"1"<br>
+<br>
+Or u could go 30/20 if it causes choke, but its pure crap to let ppl use rates higher then the servers tick rate, wat good on gods gay earth could that do?<br>
+Cal league configs allow anywhere up to 100, that aint right, its way off.<br>
+Seriously, if hit reg is off, in a competition.....GAY! <br>
+<br>
+I have tested rates on lan (not quite the same i know) and i find that enforcing the same rates on everyone works best, and settings ur rates to 100, on lan, on anyhting = fucked, it should not be allowed, 66 MAX!<br>
+<br>
+The IDEAL situation would be a 66 tick server where u could enforce 66/66, but obviously thats never going to hapen, so i think something like the following would do much better, though not perfect, LANS PWN!<br>
+sv_mincmdrate 	                     "30"<br>
+sv_maxcmdrate 		"66"<br>
+sv_minupdaterate 		"20"<br>
+sv_maxupdaterate 		"66"<br>
+sv_minrate 		"20000"<br>
+sv_maxrate 		"30000"<br>
+sv_unlag 			"1"<br>
+sv_maxunlag 		"1"<br>
+sv_client_cmdrate_difference 	"0"<br>
+sv_client_interpolate 		"1"<br>
+sv_client_max_interp_ratio 	"2"<br>
+sv_client_min_interp_ratio 	"2"<br>
+sv_client_predict 		"1"<br>
+<br>
+Now i think that having updaterate at 66 specifically could still cause problems, but hopefully moreso for the person stupid enough to run higher rates then his connection can handle =\ Same goes for cmdrate but generally that can be higher with most connections.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p11036">
+	<div class="info">
+		<p class="poster">Kingpin</p>
+		<p class="dt">2008-03-04 16:54:05</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Man, pern, your rates are pretty funny sometimes, the other night, playing you in powerhouse was easy to notice either your connection or something else weird happening. I dont think I can count high enough to describe how many times you got hit with an object and went flying...probs your semi-dodgy net speed.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p11037">
+	<div class="info">
+		<p class="poster">Jelly Fox</p>
+		<p class="dt">2008-03-04 17:47:02</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Do Cal have a regulation as to what tick rate the server must be?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p11039">
+	<div class="info">
+		<p class="poster">st00pidity</p>
+		<p class="dt">2008-03-04 18:00:28</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Jelly Fox wrote:</cite>Do Cal have a regulation as to what tick rate the server must be?</div></blockquote>
+
+when u run the cal config its changes the rates, so yes.<br>
+<br>
+i havent had a problem with them, infact we run the district with the cal config 24/7 (our server.cfg however is not running sv_pure 2 until the calconfig is loaded so people can still spray), but to make sure your server runs 100% awesome: fatpipeserver.com</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p11042">
+	<div class="info">
+		<p class="poster">Cynips</p>
+		<p class="dt">2008-03-04 18:11:45</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Interesting if these settings could have a real impact on hit reg. Will test a little and see what ppl playing says. I thought the main reason for bad hit reg was irregular ping since the server calculates what the player does based on the assumption that his ping is the same now as it was the last instant.<br>
+<br>
+I'm running a tick 66 server which has always felt smooth for movement, but at times hit reg has seemed off. I think my current settings are copied from the CAL server config:<br>
+<br>
+sv_mincmdrate 30<br>
+sv_maxcmdrate 66<br>
+sv_minupdaterate 20<br>
+sv_maxupdaterate 66<br>
+sv_minrate 5000<br>
+sv_maxrate 25000<br>
+sv_unlag 1<br>
+sv_maxunlag 1<br>
+sv_client_cmdrate_difference 40<br>
+sv_client_interpolate -1<br>
+sv_client_max_interp_ratio 2<br>
+sv_client_min_interp_ratio 1<br>
+sv_client_predict -1<br>
+<br>
+Can anyone explain to me what those negative values do?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p11052">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2008-03-04 19:57:04</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Negative on those values means allow player to set it.<br>
+<br>
+Almost no server I know of runs at 33 tick, especially those used for CAL. The vast majority are 66 tick. <br>
+<br>
+CAL rates don't allow you to rate hack so I don't see what the problem is letting people set their own within that range. Locking people at set rates would just make it good for some players and horrible for others which is hardly fair.<br>
+<br>
+Gonna have to elaborate on the whys of this one Pern coz I don't understand how that would make it better.  <img class="smilies" src="../../../images/smilies/icon_eek.gif" width="15" height="15" alt=":shock:" title="Shocked">  <img class="smilies" src="../../../images/smilies/icon_question.gif" width="15" height="15" alt=":?:" title="Question"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p11144">
+	<div class="info">
+		<p class="poster">Pernicious</p>
+		<p class="dt">2008-03-05 11:43:02</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Cal configs allow for over 66, = stupidity, thats prolly the main thing, though, i would rather see everyones rates set to default, no advantage, no disadvantage....<br>
+I know wat ppl say about rates and i ve heard and read that tecnical bullshit, but that bullshit fails miserably, how ur computer sends data to the server is wat effects hit reg the most, hence why ppl with packet loss (alot of it) warp an shit, and even though u may not be jittery on ur screen ur packet loss or choke may not register on net graph, from my experience, higher then tickrate = fucked up hitbox's.<br>
+<br>
+And kingpin, my rates are default, its gay wireless ffs, though, i dont recall being hit very often and surviving, i remember like 2 times in one game, then again it may not look like im getting hit on my screen cause of the time difference and all. Ive had ppl shoot stuff, it goes past me on my screen and they are like, wtf etc, an im like, no, not on my screen ^_^, but on the flipside, i often die from stuff that is missing me on my screen and b4 they shoot the physics on my screen ie i die, then the objects gets shot at me ...its weird.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p11145">
+	<div class="info">
+		<p class="poster">Kingpin</p>
+		<p class="dt">2008-03-05 11:47:49</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yeah, thats weird because usually I don't notice it if it happens a couple of times, but it happened a load more lol. As you said though I expected that it would have been your net or something else to do with the connection. I kinda laughed at some stages, cuz it looked like the objects went through you.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p11147">
+	<div class="info">
+		<p class="poster">nade maeggs</p>
+		<p class="dt">2008-03-05 11:54:07</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">welcome to hl2dm  <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p11162">
+	<div class="info">
+		<p class="poster">Fearsome*</p>
+		<p class="dt">2008-03-05 20:38:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I don't honestly know what to say, we have tried all sorts of things. But it is the interenet and its HL2DM things just do not work as they should. If you have wireless internet you have different problems don't know if they are good or bad for you but I find most people that are really hard to hit end up having wireless sooner or later that info comes out. Unfortunately we cant out law wireless routers for cal nor can we mandate everyone at a single rate and be fair. <br>
+<br>
+Maybe something in zblock will help us out. <br>
+<br>
+If someone can design a server with certain settings and I can send in various players and they all say its better we would be glad to reconfigure the cal config.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p11177">
+	<div class="info">
+		<p class="poster">hidden</p>
+		<p class="dt">2008-03-05 23:46:17</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Fearsome* wrote:</cite> <br>
+MayBe something in zblock will help us out. 
+</div></blockquote>
+
+Fear use ur awesome CAL GM admin power and talk to someone to get the authhost updated to support DM.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p11203">
+	<div class="info">
+		<p class="poster">Seagull</p>
+		<p class="dt">2008-03-06 02:53:13</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Fearsome* wrote:</cite>If someone can design a server with certain settings and I can send in various players and they all say its better we would be glad to reconfigure the cal config.</div></blockquote>
+
+just for fun, im forcing 66/66/20k on vdus central to see what happens</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p11214">
+	<div class="info">
+		<p class="poster">Jelly Fox</p>
+		<p class="dt">2008-03-06 04:47:44</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>st00pidity wrote:</cite><blockquote><div><cite>Jelly Fox wrote:</cite>Do Cal have a regulation as to what tick rate the server must be?</div></blockquote>
+
+when u run the cal config its changes the rates, so yes.</div></blockquote>
+
+so what's that 66 tick?<br>
+<br>
+also sorry if this is slightly off topic but I'm rate confused... <br>
+<br>
+I use:<br>
+<br>
+Rate 25000<br>
+CMD  30<br>
+Update Rate  66<br>
+<br>
+good or bad? could I improve them?  <img class="smilies" src="../../../images/smilies/icon_confused.gif" width="15" height="15" alt=":?" title="Confused"> <br>
+<br>
+also, what do you recommend for 100 tick? I know this game wasn't meant to be played at that tick rate but some people on CU seem to prefer it, therefore I have to life with it  :roll:</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p11220">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-03-06 06:04:31</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">25000 would refer to the server you're paying on. diff servers use diff rates.<br>
+the 30 i would change to a 33. most servers run at 66 tick rate and the arguably ideal config would be <br>
+cmdrate 33 <br>
+updaterate 66<br>
+<br>
+the interp ratio i would leave alone and not touch.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p11236">
+	<div class="info">
+		<p class="poster">Cynips</p>
+		<p class="dt">2008-03-06 14:58:49</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>[EYE] Valar wrote:</cite>25000 would refer to the server you're paying on. diff servers use diff rates.<br>
+the 30 i would change to a 33. most servers run at 66 tick rate and the arguably ideal config would be <br>
+cmdrate 33 <br>
+updaterate 66<br>
+<br>
+the interp ratio i would leave alone and not touch.</div></blockquote>
+
+not<br>
+<br>
+cmdrate 66<br>
+updaterate 33<br>
+<br>
+perhaps?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p11335">
+	<div class="info">
+		<p class="poster">Pernicious</p>
+		<p class="dt">2008-03-07 13:21:21</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yea its really odd that u would set ur updaterate higher then ur cmdrate =\<br>
+If your connection is really good try 66/66, why not <img class="smilies" src="../../../images/smilies/icon_razz.gif" width="15" height="15" alt=":P" title="Razz"><br>
+<br>
+And WT, in Australia all the servers are 33 tick, eccept the ozsource server which hasnt been up for quite a while now.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p11353">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2008-03-07 19:24:56</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Pernicious wrote:</cite>And WT, in Australia all the servers are 33 tick, eccept the ozsource server which hasnt been up for quite a while now.</div></blockquote>
+
+-_-</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p11374">
+	<div class="info">
+		<p class="poster">Ghost Dog_TSGK</p>
+		<p class="dt">2008-03-07 23:15:19</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Walking Target wrote:</cite><blockquote><div><cite>Pernicious wrote:</cite>And WT, in Australia all the servers are 33 tick, eccept the ozsource server which hasnt been up for quite a while now.</div></blockquote>
+
+-_-</div></blockquote>
+
+<br>
+lolz</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p11465">
+	<div class="info">
+		<p class="poster">Pernicious</p>
+		<p class="dt">2008-03-08 14:53:37</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">So, has anyone tried this on their server yet?, if so, did u use all the settings not just teh rates etc..<br>
+I forgot to mention this but interp ratio seems to work best on 2 which is why i have it forced to that in the settings above, for the clients own sake.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p11824">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2008-03-11 05:10:50</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">as far as I know setting your rates to 100/100 does absolutely nothing on a 66 tick server. If you do that and look at netgraph you will see you are only getting 66/66 or less depending on the server. Only on a 100 tick server would it make a difference and as we all know 100 tick and HL2DM dont work right, so anyone running a 100 tick is asking for trouble.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p11838">
+	<div class="info">
+		<p class="poster">CellarDweller</p>
+		<p class="dt">2008-03-11 06:37:01</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I think it just depends on the max rate settings on the server.  A 66 tick server will be limited to a high of 66 cl_updaterate (but some 66 tick servers set their max sv_updaterate to 60).  But if the max sv_cmdrate server setting is 100, even on a 66 tick server you can get 100 cl_cmdrate.  The client can never out max the server specified settings.<br>
+<br>
+So I'm wondering now, if a 100 tick server set sv_updaterate and sv_cmdrate to max 66, would the 100 tick bugs go away?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p11855">
+	<div class="info">
+		<p class="poster">Pernicious</p>
+		<p class="dt">2008-03-11 11:07:19</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Good question, but if its only going to be 66, why bother setting it to that.<br>
+One interesting thing actually, i remember having a short conversation with janek about hit registration and netcode, he said that in theory, the netcode should be good, but it fails, especially wen u crank up player movement speed like in hl2dm pro.<br>
+I think, wat should hapen, is the player sends packets to the server, and then the servers smooths them out if necesary..then sends players co-ordinates to the rest of players on server, though, im no programmer so maybe that could cause problems <img class="smilies" src="../../../images/smilies/icon_razz.gif" width="15" height="15" alt=":P" title="Razz"> I cant even pretend to know why they do things the way they do, but one thing is for sure, they dropped the ball on this one, even older games have better hit rego then hl2..</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p11856">
+	<div class="info">
+		<p class="poster">Cynips</p>
+		<p class="dt">2008-03-11 11:56:18</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Part reason why HL2DM has bad hit reg is because it is decided server side. In good ol' Quake it was decided client side. This meant, if you shot something straight on it was a hit, which you then told the server "hey server, I hit". This, however, made it really easy to cheat, just tell the server that you hit, basically. So, modern games have everyone tell the server what they do, and then the server checks if you got a hit. Sometimes, what you saw was not the reality, but a prediction of reality based among other things on the assumption that other player's latency is constant (over a short time interval). So a classic is when you think you made it around the corner into safety, the server comes along telling you no, you died before that. Even though your client predicted that you made it and let you escape, the server is always right and sooner or later reality catches up with you.<br>
+<br>
+That, and HL2DM has all those physics things going on, which means there is more net traffic compared to your average game.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p11857">
+	<div class="info">
+		<p class="poster">Anonymous</p>
+		<p class="dt">2008-03-11 12:46:30</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Cynips wrote:</cite>Part reason why HL2DM has bad hit reg is because it is decided server side. In good ol' Quake it was decided client side. This meant, if you shot something straight on it was a hit, which you then told the server "hey server, I hit". This, however, made it really easy to cheat, just tell the server that you hit, basically. So, modern games have everyone tell the server what they do, and then the server checks if you got a hit. Sometimes, what you saw was not the reality, but a prediction of reality based among other things on the assumption that other player's latency is constant (over a short time interval). So a classic is when you think you made it around the corner into safety, the server comes along telling you no, you died before that. Even though your client predicted that you made it and let you escape, the server is always right and sooner or later reality catches up with you.<br>
+<br>
+That, and HL2DM has all those physics things going on, which means there is more net traffic compared to your average game.</div></blockquote>
+
+<br>
+That is when you realize that even low ping causes lag and what you see is not necessarily what you get. Everything seems to run smooth, you think you are under cover, then realize you play the servers packets. The server is like "No you don't".<br>
+Seems there would have to be some breakthrough in general netcode to fix HL2DM.<br>
+<br>
+Still would like to know why sounds trigger crashes.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p11859">
+	<div class="info">
+		<p class="poster">Pernicious</p>
+		<p class="dt">2008-03-11 13:14:43</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yes, wat im saying though, as the server side shit isnt doing its job correctly, ie, if i have major packet loss and or high ping, hitbox's will be off, i will warp, etc etc, But if the server WAS actually handling things right that wouldnt hapen, especially the warping part, though, i guess to do it properly, the person with lag really gest the shit end of the stick as i have noticed in games that are made well for low ping online gaming.<br>
+I think the problem is a combination of or just seperatly ....hitbox's and player positioning ie how the server passes on player co-ordinates......<br>
+I have noticed that in TF2, the hit reg is much better, but if u lag enough still, u will get some bad hit reg, and sometimes its bad, but not as often as in hl2dm. Obviously they have inproved it, but not perfected it, and u still see the ocasional player warping around in tf2, but it takes more lag to warp u in that game, which i think is a clue as to how they inproved on it.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p11882">
+	<div class="info">
+		<p class="poster">Fearsome*</p>
+		<p class="dt">2008-03-11 18:28:33</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Cynips you are not entirely correct. Some early games did do client side stuff like that, I do not think quake was one of them but I could be wrong. Then things moved to all server side. You tell the server what you do in he forum of key pressed commands and the server feeds back to you what happened. Now days and since 1108 in HL1 the lines of who does what have been heavily blurred. The big difference has been the addition of lag compensation. The server receives a message of your shot and angles and then calculates where the player was at the time you took the shot. Client side prediction has also gone way up in use. I can move around quite a bit without getting a packet to the server. When the server finally receives my packets it moves me around like a speed hack. I think the combination of all these things just has not been worked out well in valves case and may even be to complicated to work out well. In the end cheating is possible and works well in all games so maybe we should just go back to all clientside.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p11889">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2008-03-11 18:48:44</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>CellarDweller wrote:</cite>I think it just depends on the max rate settings on the server.  A 66 tick server will be limited to a high of 66 cl_updaterate (but some 66 tick servers set their max sv_updaterate to 60).  But if the max sv_cmdrate server setting is 100, even on a 66 tick server you can get 100 cl_cmdrate.  The client can never out max the server specified settings.<br>
+<br>
+So I'm wondering now, if a 100 tick server set sv_updaterate and sv_cmdrate to max 66, would the 100 tick bugs go away?</div></blockquote>
+
+<br>
+I have to disagree with this. I have my 66 tick server set to allow a max update rate of 100 as well as a max cmdrate of 100, when I set my client to 100/100 netgraph still shows 67/67. I also don't believe you can correct the problems with 100 tick by settings. I used to have a 100 tick at one time and I tried everything I could think of, nothing would prevent the lifts in aim arena from killing you.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p11891">
+	<div class="info">
+		<p class="poster">CellarDweller</p>
+		<p class="dt">2008-03-11 18:57:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Well, you're probably correct l2k.  I don't know how to interpret netgraph so I rarely use it.  I just know that my default config is 100/100.  when I join a new server I open console and type cl_cmdrate and the 100 still shows, but when I type in cl_updaterate its shows 66 or 60.  thats usually how I figure out if a server is 66 or 100 tick... at least I THOUGHT so!  DOH!!!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p12056">
+	<div class="info">
+		<p class="poster">Pernicious</p>
+		<p class="dt">2008-03-12 11:54:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Well, i know that ur maximum rates are determined by ur servers tickrate....<br>
+I wonder, if shot locations were cleint side, but player co-ordinates were server side, would that be all good, and then make it so that the players werent entities, and the way hits are determined is purely by wether or not hit co-ordinates co incide with the player co-ordinates on the server. There would probably be problems but hey <img class="smilies" src="../../../images/smilies/icon_razz.gif" width="15" height="15" alt=":P" title="Razz"> How would u get the player to be shooting at another player if there is a time difference, <img class="smilies" src="../../../images/smilies/icon_razz.gif" width="15" height="15" alt=":P" title="Razz">:P:P:P:P<br>
+Maybe the only way to have uber hit registration is to crack down really hard on cheating, which would be kool, id put up with alot of hassles for that.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16320">
+	<div class="info">
+		<p class="poster">.::TTK::.TW3@K3R</p>
+		<p class="dt">2008-04-04 22:10:57</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Someone wanted to know about sv_interp_ratio or something like what the -1 meant.  It means that the client can change there interp ratio but if set to 1 they can't.<br>
+<br>
+Ticrate and fps ultimately controls your cmdrate/updaterates.  Sure you can set them client side or force them server side.  But lets say everyone was forced to 100 on both and client side they had it all set too 100..<br>
+<br>
+pull down console and type net_graph 3.  Look at the area that shows in/out the IN is updates coming from the server and OUT is client updates being sent to the server.  All the way too the right you will see two numbers fluctuating anywhere from 0-101.something never will go higher than 101.something O.k there might be a slim chance it will go to 102..<br>
+<br>
+Anyway those numbers at the right are how many updates you truley are recieving that second and the amount of updates you are truly sending that second.  <br>
+<br>
+The number all the way to the right on the IN line should be close to these numbers below..<br>
+100 ticserver - 101.something is what you should get from the server if not then the server isn't running good or you are choking.<br>
+66 ticserver - 67.something is what you should get from the server if not then the server isn't running good or you are choking.<br>
+33 ticserver - 34.something is what you should get from the server if not then the server is running on dialup lol hahahahhahaha...<br>
+***note that default setting for sv_maxupdaterate is 60.. so some of you running 66tic servers will only get 66 on the right<br>
+unless you change it to sv_maxupdaterate 66 for 66 tic or 100 for 100tic..<br>
+<br>
+The number all the way to the right on the OUT line should be this<br>
+FPS controlls this along with ticrate.  <br>
+100 ticserver - you should get 101.something as long as your fps is not going below 100fps if it drops so will your updates you send.<br>
+66 ticserver - you should get 67.something as long as your fps is not going below 67fps if it drops so will your updates you send.<br>
+33 ticserver - you should get 33.something as long as your fps is not going below 33fps if it drops so will your updates you send.<br>
+<br>
+Pinging over 90 can cause less updates as well sometimes.<br>
+<br>
+You can't send or recieve more than the ticrate of the server.  You can't send anymore updates then frames rendered.  Hence why FPS is more important then most people think.<br>
+<br>
+Rate setting is merely a cap of the amount of bytes per second you allow the server to send you.  Why this can't be higher than 30000, 25000, 20000 is beyond me.  I know in CS:S my clan I was in ran a 100tick server always complaining cause people had choke etc.. Was always told to lower cl_updaterate to 66 or something But I told them that was stupid why have a 100tic server if you can't run it at cl_updaterate.  So I looked into it.. And pulled the 20000 rate cap off the server forced everyone to a really high rate(rate 70000) now nobody in the server complains about choke anymore.  this isn't a problem in 66tic servers.<br>
+<br>
+<br>
+Bottom line to make it easier.  I would put these settings in the server<br>
+sv_maxupdaterate 100<br>
+sv_minupdaterate 33<br>
+sv_maxcmdrate 100<br>
+sv_mincmdrate 30<br>
+sv_maxrate 70000<br>
+sv_minrate 20000<br>
+**The ticrate will automatically force 66 updates for a 66tic server so the settings won't hurt nothing...<br>
+<br>
+Clientside<br>
+Rate 100000<br>
+cl_updaterate 100<br>
+cl_cmdrate 100<br>
+**The ticrate and FPS again will controll what you really send and recieve and rate setting is almost always forced in the server.<br>
+<br>
+<br>
+**Oh and aslong as you have a 256k up and down connection.. you won't lag or not get updates that is plenty of bandwith.<br>
+<br>
+Heck goto a bit calulator and convert 40000bytes into kbits and see for your self.. It would be rare if anything you played in hl2 would go over 40000bytes..</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16388">
+	<div class="info">
+		<p class="poster">Pernicious</p>
+		<p class="dt">2008-04-05 04:32:12</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">100 will root you.<br>
+In hl2dm, 66 is the highest u can use without it going all whack, and thats only if u are playing on a good server. Though this is all alot less noticable if there are no physics present. But hit reg will be off for sure.<br>
+Your server side enforced rates are screwed.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16446">
+	<div class="info">
+		<p class="poster">.::TTK::.TW3@K3R</p>
+		<p class="dt">2008-04-05 15:31:45</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">as long as your server can hit 300fps or more you can run a ticrate of 100 no problem(of course commons since tells you that you need high bandwidth as well duh).  How to tell what you server is running type stats in console or rcon stats..  Everyone in CS:S said that it runs buggy.  But I run a CS:S server for Rat clan and they hit awesome how I set it up.  They didn't at first cause they of clients having choke but I fixed that.   O.K let me explain in more detail.  In hl1 average size of update was 200 or less.  So lets say you are receiving 100 updates 100*200 = 20000 byte  which means you were never receiving more than 20000 bytes per second. So in HL1 setting rate 20000 was fine you would probably never choke if you had good Internet connection.  Now how big are the updates in HL2 will you can tell if you want. Look at the net_graph below<br>
+<img src="http://www.ratclan.org/explained/NetGraph_files/image001.jpg" class="postimage" alt="Image"><br>
+<br>
+Section 3 shows the exact size of the update at that time.  So it moves all the time.  You take the highest number you've seen multiply it by the ticrate of the server and that is what you should set your rate setting at or about 10000 more in my book.   I can say that I have seen that go up to 700 and higher in CS:S but haven't watched it in hl2 very close but I will.   Lets say the server is sending 100 updates/s(100tic) if you do the math 100*700 = 70000.. So that is 70000bytes the server is going to try to send you.  If you have your rate set to rate 20000 then the server is going to stop sending you updates cause it would have reached the 20000 byte cap you set.  Causing choke.  Now that would be for a 100tic server lets do a 66 ticserver 66*700 = 46200 you would still choke if you set it to rate 20000 but alot less then a 100tic server.   Bottom line the only bug for a 100tic server is that people set there rate setting too low and servers force the sv_maxrate to low.  Which when you force a low rate setting you make the clients have to lower cl_updaterate to get rid of there choke.  Which makes hit reg go down.<br>
+
+<blockquote class="uncited"><div>100 will root you.</div></blockquote>
+
+I don't understand what your saying here.  You mean set your settings to 100 cause it won't make a difference.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16449">
+	<div class="info">
+		<p class="poster">Pernicious</p>
+		<p class="dt">2008-04-05 16:00:40</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Bandwidth is irrlevant, i tested 100 on LAN, it screws the physics and hitreg. MAYBE it works in css, not in hl2..... I even used updatetool, ran ded server steamless, it was dreamy at 66/66 though, with the settings i posted.<br>
+Actually, now that i think about it, i remember testing rates in css as well, moreso then hl2dm as the ppl living here dont play dm &gt;.&lt;, but it gave the same result, 100 = gay, maybe css players just arent very astute -.-.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16450">
+	<div class="info">
+		<p class="poster">Pernicious</p>
+		<p class="dt">2008-04-05 16:04:27</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">One thing i forgot to add, that net graph is not accurate by any means, choke or packet loss wont necasarily register on it all the time. As i discovered since i got my wireless, i can be warping all over, pausing, etc...and nothing will register on it at all....and my wireless gets some major packet loss, like, MAJOR!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16454">
+	<div class="info">
+		<p class="poster">.::TTK::.TW3@K3R</p>
+		<p class="dt">2008-04-05 19:10:06</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">yea net_graph isn't accurate on loss at all it is estimation.  But choke is not bad pretty accurate..<br>
+<br>
+bandwidth as per say like 5mb down and up doesn't make a difference per say or lan..<br>
+<br>
+But if you set your rate low it will cap you to low you have to understand this.  If you still have the rate capped at 30000 then even on a lan you will have problems..<br>
+<br>
+Here not all this is right but the graph shows what bandwidth you cap your self if you don't set the rate and sv_maxrate setting right.<br>
+<br>
+<a href="http://www.ratclan.org/explained/rate.html" class="postlink">http://www.ratclan.org/explained/rate.html</a><br>
+<br>
+  So yea bandwidth does make a tad difference but if you never change the rate setting nor the sv_maxrate setting higher then you will have problems.. Same goes if the client never changes his rate higher...<br>
+<br>
+ON our ratclan server I had to force people so that they woudl stop complaining.<br>
+<br>
+forced them to rate 70000<br>
+cl_updaterate 100<br>
+cl_cmdrate 100<br>
+on a 100 tic server <br>
+<br>
+and they don't choke they may lag but due to loss not choke.  Also the hit registry is perfect.<br>
+<br>
+anyway uping your bandwidth won't due crap.. cause you are using your rate setting to cap you bandwidth anyway.<br>
+<br>
+I am not saying I know everything but at least test this completely before assuming it is wrong.  Cuase I have tested it and I am about to test it in hl2dm as soon as I talk our clan into uping it to 100tic<br>
+<br>
+make sure there server is setup right and client is setup right on all players and hit reg should be good and choke should be none.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16520">
+	<div class="info">
+		<p class="poster">Pernicious</p>
+		<p class="dt">2008-04-06 04:28:23</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I dont see how that setup WOULDNT lag someone on a normal like broadband connection, wen i had a 17mbit/256k connection, 66/66 would give me choke, enough to screw it, such high rates have never worked online for me, and that was on a 66 tick server btw, i just dont see how that can work.<br>
+Like i said above, ive read this shit b4, alot of different guides that all say teh same shit, followed them, epic FAIL! <br>
+Seriously, theres no way in hell that everyone joining that server is going to have a smooth game, that u can be sure of.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16524">
+	<div class="info">
+		<p class="poster">Pernicious</p>
+		<p class="dt">2008-04-06 05:10:13</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Another thought, maybe u can record a demo of yourself playing on that server with those rates, upload to filefront or ftp, submit link, im curious to see wether that actually works or not, demo will be a good indicator.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16527">
+	<div class="info">
+		<p class="poster">Cynips</p>
+		<p class="dt">2008-04-06 05:42:18</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Any of you guys got any ideas on how and why to use specific values of cl_interp_ratio? What would be the advantage/disadvantage of using 2 instead of 1?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16552">
+	<div class="info">
+		<p class="poster">.::TTK::.TW3@K3R</p>
+		<p class="dt">2008-04-06 16:46:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">cynips I will post a link later or tommorow for that command.<br>
+<br>
+ONe of the reasons you choke in a 66tic server is that you can't set your rate higher than a certain number.<br>
+<br>
+When you go into a server that you get choke pull down console and type rate and hit enter.<br>
+<br>
+If you set your rate higher then what the server is blocking.  You will get something like this:  Your rate is set at 50000 but the server is forcing you to 20000.  IF the server forces you to a low rate there is no way for it to work.  SO to fix choke you have to lower cl_updaterate if the server forces you low.   I doubt you read a rate guide saying what I say.   Most of the rate guides took what they knew in cs 1.6 and copied it over.  But I will show you a demo it will have to be CS:S because I don't have access to a 100tic server for hl2dm..</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16555">
+	<div class="info">
+		<p class="poster">.::TTK::.TW3@K3R</p>
+		<p class="dt">2008-04-06 17:59:47</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">O.K I am uploading the videos now.  I am hosting them so should be pretty fast downloads.  Also I found a 100tic server that doesn't force rates in hl2dm: 91.121.7.146:27015  check it out.  Only problem is I have high ping so shots won't hit but you should try setting rate to 100000 and you shouldn't get any choke in that server.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16556">
+	<div class="info">
+		<p class="poster">.::TTK::.TW3@K3R</p>
+		<p class="dt">2008-04-06 18:23:19</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I took two videos of CS:S 100 tic server.  The first one shows no choke at all then you can see me put rate 20000 and then got choke.  The second video shows a 100 tic server that forces you to 30000 and I show you how to tell and you can see the message in red on my console.  And you can see I get choke.  Choke doesn't have anything to do with your connection Choke means that the server wants to send you updates but because of some rule(rate) set on your end it has to hold them updates back.  I couldn't make those videos in my server cause in and empty server you will run perfect with no choke or loss.  WEll maybe loss if you get loss that has something to do with your connection but it is wrong usually.<br>
+<br>
+<br>
+Sorry I should have done a demo would have been smaller.  But I figured some people might not have cS:S<br>
+<br>
+<a href="http://www.jason35.com/rateproof.avi" class="postlink">http://www.jason35.com/rateproof.avi</a><br>
+<br>
+<br>
+This video isn't important since it only shows what happens when server forces you(which is just like if you typed it in your self) but you got time check it out.<br>
+<br>
+<a href="http://www.jason35.com/server_forcing_you.avi" class="postlink">http://www.jason35.com/server_forcing_you.avi</a><br>
+<br>
+Just remember although you might beable to pull down console and type rate 100000 it won't show you that your are forced lower unless you type rate with nothing after it and hit enter.  But it won't show you that it is forced lower unless you change your setting higher than what it forces you to.  For example if your rate is set to 30000 and the server forces you to 30000 then when you type rate and hit enter it won't say anything.  But type rate 100000 and then type rate and hit enter then it will show you that it is forced.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16662">
+	<div class="info">
+		<p class="poster">Pernicious</p>
+		<p class="dt">2008-04-07 11:57:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Nah, the rate was high at the time we were testing that, the only thing i can think of is that i was using telstra cable...uber shit.<br>
+Getting the demos, but its a slow process -.-</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16664">
+	<div class="info">
+		<p class="poster">Pernicious</p>
+		<p class="dt">2008-04-07 11:59:55</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Actually, i was hoping u would make a demo in hl2dm or your mod thingo, cause they are different to css...<br>
+Mainly i wanted to check out hitreg rather then readings, hitreg is the main purpose of this thread after all.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16665">
+	<div class="info">
+		<p class="poster">Pernicious</p>
+		<p class="dt">2008-04-07 12:07:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Holy shit 300m, just realised, i cant download that ^_^.<br>
+Lets just do demo next time eh XD<br>
+But yea, demo of u in hl2dm/mod = win.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16670">
+	<div class="info">
+		<p class="poster">Cynips</p>
+		<p class="dt">2008-04-07 13:40:28</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>.::TTK::.TW3@K3R wrote:</cite><img src="http://www.ratclan.org/explained/NetGraph_files/image001.jpg" class="postimage" alt="Image"><br>
+<br>
+Section 3 shows the exact size of the update at that time.  So it moves all the time.  You take the highest number you've seen multiply it by the ticrate of the server and that is what you should set your rate setting at or about 10000 more in my book.   I can say that I have seen that go up to 700 and higher in CS:S but haven't watched it in hl2 very close but I will.</div></blockquote>
+I picked a 20 player server running overwatch yesterday night, thinking it would show high numbers. And for sure, I saw it hitting 1600+ on occasion. When you have close to 10 players in view and lots of props and grenades flying it surely bogged down the max rates allowed by the server. I tested a regular killbox server too, 10 ppl showed 1000+ occasionally.<br>
+So, on a 66 tick this means anything from 70,000 - 110,000 rate is needed with that many players. If you, like me, run an ordinary European match server you'll never see more than 6 ppl actually playing at the same time and I'm guessing you'd be fine with 50,000 then. I'm currently testing to force it to 50 and allow 100 and wait to see what ppl say.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16677">
+	<div class="info">
+		<p class="poster">Pernicious</p>
+		<p class="dt">2008-04-07 14:23:08</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yea but unless u force clients to use a minimum of x rate, the clients can still choke themselfs...so to speak ^_^...causing gay hit reg an the like.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16678">
+	<div class="info">
+		<p class="poster">Cynips</p>
+		<p class="dt">2008-04-07 14:26:10</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yeah, which is why I wrote that "I'm currently testing to force it to 50[000]...".</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16686">
+	<div class="info">
+		<p class="poster">.::TTK::.TW3@K3R</p>
+		<p class="dt">2008-04-07 16:29:22</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yea I force 70000 on CS:S server no choke for anyone but I go ahead and force them to cl_updaterate 100 and cl_cmdrate 100 also.  Then everyone is running good rates and all have good hit reg.. Although the person with poor fps still suffers but he/she would still suffer even if you lowered any settings.  <br>
+<br>
+Oh and here is that cl_interp_ratio someone wanted<br>
+<br>
+cl_interp_ratio 1.0 cl_updaterate 30 interpolation = 0.033<br>
+cl_interp_ratio 1.0 cl_updaterate 35 interpolation = 0.029<br>
+cl_interp_ratio 1.0 cl_updaterate 40 interpolation = 0.025<br>
+cl_interp_ratio 1.0 cl_updaterate 50 interpolation = 0.020<br>
+cl_interp_ratio 1.0 cl_updaterate 60 interpolation = 0.017<br>
+cl_interp_ratio 1.0 cl_updaterate 66 interpolation = 0.015<br>
+cl_interp_ratio 1.0 cl_updaterate 75 interpolation = 0.013<br>
+cl_interp_ratio 1.0 cl_updaterate 80 interpolation = 0.013<br>
+cl_interp_ratio 1.0 cl_updaterate 100 interpolation = 0.010<br>
+<br>
+<br>
+cl_interp_ratio 1.5 cl_updaterate 30 interpolation = 0.050<br>
+cl_interp_ratio 1.5 cl_updaterate 35 interpolation = 0.043<br>
+cl_interp_ratio 1.5 cl_updaterate 40 interpolation = 0.038<br>
+cl_interp_ratio 1.5 cl_updaterate 50 interpolation = 0.030<br>
+cl_interp_ratio 1.5 cl_updaterate 60 interpolation = 0.025<br>
+cl_interp_ratio 1.5 cl_updaterate 66 interpolation = 0.023<br>
+cl_interp_ratio 1.5 cl_updaterate 75 interpolation = 0.020<br>
+cl_interp_ratio 1.5 cl_updaterate 80 interpolation = 0.019<br>
+cl_interp_ratio 1.5 cl_updaterate 100 interpolation = 0.015<br>
+<br>
+<br>
+cl_interp_ratio 2.0 cl_updaterate 30 interpolation = 0.067<br>
+cl_interp_ratio 2.0 cl_updaterate 35 interpolation = 0.057<br>
+cl_interp_ratio 2.0 cl_updaterate 40 interpolation = 0.050<br>
+cl_interp_ratio 2.0 cl_updaterate 50 interpolation = 0.040<br>
+cl_interp_ratio 2.0 cl_updaterate 60 interpolation = 0.033<br>
+cl_interp_ratio 2.0 cl_updaterate 66 interpolation = 0.030<br>
+cl_interp_ratio 2.0 cl_updaterate 75 interpolation = 0.027<br>
+cl_interp_ratio 2.0 cl_updaterate 80 interpolation = 0.025<br>
+cl_interp_ratio 2.0 cl_updaterate 100 interpolation = 0.020<br>
+<br>
+keep doing the math.. you can go higher.  I haven't tested this setting cause it seems to be alot different then old HL.  and setting it to cl_interp_ratio 1 seems to be fine for me and probably 50% or more force this to that setting anyway.  I think cal forces this setting as well.  I think if it is anywhere close to being alittle like old HL that this should be adjustable cause it should have something to do with a persons lag.  But also if you receive loss go ahead and try to set this setting higher should help.<br>
+<br>
+Interpolation means to go back in time that many seconds to calculate a guess on whats happening in the game if you don't recieve an update.<br>
+Extrapolation is about the same accept it just guesses without useing updates to calculate.  If you don't interpolate then you extrapolate.<br>
+<br>
+If you take cl_interp_ratio 1.0 cl_updaterate 100 interpolation = 0.010 - with updaterate set at 100/s then you recieve an update every .01 seconds.  so with interpolation = .01 seconds you would be going back to the very last update.  In old HL we liked higher interps maybe because we thought if it had more updates to calculate with it would be better.<br>
+<br>
+WOW just had a theory in my head...  I will post it later after I research it.  See if anyone will help me test it..</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16770">
+	<div class="info">
+		<p class="poster">ninojman</p>
+		<p class="dt">2008-04-07 23:38:42</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">css 100 tick servers work great, but in hl2dm, dods 100 tic is a no no for many reasons.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16779">
+	<div class="info">
+		<p class="poster">.::TTK::.TW3@K3R</p>
+		<p class="dt">2008-04-08 00:23:51</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Explain the reasons.  I thought CS:S DOD:S all ran off of the HL2 game.  I will have to look when I get home.  Cause if they do then they should send updates and receiving updates just the same.  Tics are snapshots of what is going on in the server what game you play shouldn't make a difference.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16781">
+	<div class="info">
+		<p class="poster">ninojman</p>
+		<p class="dt">2008-04-08 00:51:00</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">lifts and doors don't work the same in dods and hl2dm, in dods 100 tic will lag like crazy.  Cal-dods made using 100tic illegal.  I stay away from 100 tic unless it's a css server.  cal-hl2dm hasn't made 100 tic illegal for league play but it has some issues.  Althou it's less the the dods issues.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16782">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2008-04-08 01:07:59</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Something about the way the physics engine functions at 100 tick is off in HL2DM. From what I have been told, HL2DM was designed to run at 33 or 66 and 100 tick was added on as an aftethought, untested etc. The bugs that are present as a result tend to be engine synching errors of some kind. To name a few:<br>
+<br>
+Doors not working<br>
+Props bouncing off opponent<br>
+Nade cook timings being off<br>
+Aux being used up faster</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16791">
+	<div class="info">
+		<p class="poster">.::TTK::.TW3@K3R</p>
+		<p class="dt">2008-04-08 01:44:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Pernicious wrote:</cite>Holy shit 300m, just realised, i cant download that ^_^.<br>
+Lets just do demo next time eh XD<br>
+But yea, demo of u in hl2dm/mod = win.</div></blockquote>
+
+<br>
+<br>
+Yep there was some 100 tics that wasn't forced so if see them full I will post demos.  Since there alot smaller.. Sorry thought I was making it easier lol but wasn't lol.. plus fraps only let me record 30 seconds can you believe that big for 30seconds of video at 30fps even..</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16793">
+	<div class="info">
+		<p class="poster">Anonymous</p>
+		<p class="dt">2008-04-08 01:56:22</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I am genuinely confused! <img class="smilies" src="../../../images/smilies/icon_sad.gif" width="15" height="15" alt=":(" title="Sad"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16828">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2008-04-08 04:08:59</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>65 Impala SS wrote:</cite>I am genuinely confused! <img class="smilies" src="../../../images/smilies/icon_sad.gif" width="15" height="15" alt=":(" title="Sad"></div></blockquote>
+
+<br>
+SOooooo glad im not the only one.... <img class="smilies" src="../../../images/smilies/icon_confused.gif" width="15" height="15" alt=":?" title="Confused"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16940">
+	<div class="info">
+		<p class="poster">.::TTK::.TW3@K3R</p>
+		<p class="dt">2008-04-08 23:37:30</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yo tell me the map to play so I can make a demo.  If I can actually get a vote on the server.  If not it will be any map that is playing.  How many people should be playing etc...</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p16989">
+	<div class="info">
+		<p class="poster">ether</p>
+		<p class="dt">2008-04-09 03:02:27</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">My take away from this is to jack up my rate setting as high as possible.  I have it set currently at 30000, with a Fios connection.  I always thought 30000 was the max.  But if I'm understanding this, there is no reason for me not to set it to 100000.   I currently get a lot of choke and all kinds of hit reg weirdness.  I have binds for various cmd/update settings that I use to try to tune my connection to the server, but I never tried jacking up the rate.  I'm still not clear on how interp_ratio should be set.  On what basis would you change it from 1 to 1.5 to 2?  Thanks for taking the time to post all that info TW3@K3R.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p17000">
+	<div class="info">
+		<p class="poster">.::TTK::.TW3@K3R</p>
+		<p class="dt">2008-04-09 03:46:38</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">By Saturday I should be done testing some theories on interp ratio.. I understand interp but they don't let you set that anymore.  There formula does work for the most part but I got to test this formula in different scenarios and get back with you. <br>
+<br>
+Do remember tho you can set your rate to 100000 remember server do force this sometimes to 30000 or less so you will still have to lower cl_updaterate in those servers to clear up the choke.  However you don't have to mess with cl_cmdrate since that has nothing to do with choke..</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p17033">
+	<div class="info">
+		<p class="poster">Pernicious</p>
+		<p class="dt">2008-04-09 13:26:36</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I seriously dont get why all css players tell me to use interp 1, it has never worked, not even in css ......Another thing u have to consider is that movement is faster in hl2dm, and we all know how hl2dm pro proved that the faster the movement the worse the hit reg is is dm.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p17043">
+	<div class="info">
+		<p class="poster">.::TTK::.TW3@K3R</p>
+		<p class="dt">2008-04-09 16:30:37</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Doesn't Cal force cl_interp_ratio 1 which = 1/cl_updaterate or ticrate(still need to test this)<br>
+<br>
+<br>
+Basically the formula is this cl_interp_ratio divided by cl_updaterate or ticrate which ever is lower = cl_interp  I will know if this is 100% correct by saturday.  I know the formula is correct.  just don't know if ticrate plays a part.<br>
+<br>
+Old Skool HL players that used to play with cl_updaterate 100 and ex_interp .05 if you want to use those settings you would have to set cl_interp_ratio to 5  that would change your cl_interp to .05<br>
+<br>
+Find a server to play on that doesn't force cl_interp_ratio and play with it.  type cl_interp_ratio 5 or whatever then type cl_interp and hit enter to see what it sets it at.<br>
+<br>
+But remember the interp you remember in hl1 is different in hl2.   Like if you set ex_interp .01 in hl1 people would start skipping and it would look laggy cause you would be hardly interpolating.   Now the typical default setting for hl2 is cl_interp .01 and you don't skip at all it is smooth.<br>
+<br>
+I quick definition of interp = the amount of time in seconds in the past to interpolate(which means to calculate a educated guess on what is going on in case you don't receive and update).   Most everyone thought this had something to do with aiming in the past<br>
+<br>
+So if cl_interp is set to .01 and  you are recieving 100 updates a second then you are receiving an update ever .01 seconds.  So if an update doesn't come then you interp the update by going back .01 seconds in the past to make a good caluclation on what that update should have been.  Its valves way to make online play smooth and not laggy.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p17049">
+	<div class="info">
+		<p class="poster">ether</p>
+		<p class="dt">2008-04-09 17:42:03</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">If you set cl_interpolate 0, does it make cl_interp_ratio and cl_interp irrelevant?  I thought I read a couple years ago on a CS forum that it still had some impact, but I may be wrong.  <br>
+<br>
+Does it make sense to set cl_interpolate to 0?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p17051">
+	<div class="info">
+		<p class="poster">.::TTK::.TW3@K3R</p>
+		<p class="dt">2008-04-09 18:12:22</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">back in the day cl_interpolate 0 would do exactly what cl_interp_ratio 1 does now.  But valve updated it so you can't even set your cl_interpolate by yourself.  You have to adjust cl_interp_ratio and it sets cl_interpolate.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p17171">
+	<div class="info">
+		<p class="poster">Pernicious</p>
+		<p class="dt">2008-04-10 12:33:01</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Ive fiddled with those formulas, interp ratio of 1 = gay.<br>
+2 seems to work really well on lan with tickrate of 66 and rates forced to the same.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p17181">
+	<div class="info">
+		<p class="poster">.::TTK::.TW3@K3R</p>
+		<p class="dt">2008-04-10 16:18:00</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">has anyone used higher?  just curious.. there isn't really any servers that allow to change it to anything but 1 or 2</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p17193">
+	<div class="info">
+		<p class="poster">ether</p>
+		<p class="dt">2008-04-10 19:19:19</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I thought cl_interpolate was an on/off switch for interpolation and it's cl_interp that cl_interp_ratio affects?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p17196">
+	<div class="info">
+		<p class="poster">.::TTK::.TW3@K3R</p>
+		<p class="dt">2008-04-10 20:19:40</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">damn I am sorry you are right it is on and off.   but most servers use default which won't allow you to turn it off.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p17203">
+	<div class="info">
+		<p class="poster">ether</p>
+		<p class="dt">2008-04-10 22:12:02</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">ok, good to know.  If you did turn it off, does cl_interp continue to do anything?   I remember reading something a long time ago on a CSS forum about a sort of rate hack where you set cl_interpolate to 0, and then used cl_interp to essentially let you go back in time.  The way it was described was you could camp and focus on a doorway.  When someone ran by, you could shoot after they had already passed and hit them.  That's why I was wondering if you do turn off interpolation, does it matter what your cl_interp settings are.  May be a moot point if most servers don't allow you to turn it off.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p17225">
+	<div class="info">
+		<p class="poster">.::TTK::.TW3@K3R</p>
+		<p class="dt">2008-04-11 00:48:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">No what cl_interpolate does is turn on and off interp.  SO setting it to 0 turns it off that means every thing you see should be realtime.  So if you see someone in a door way they would probably not be there for real cause you would be behind cause of lag(ping). Well maybe not the server has lag compensation too.  I haven't really tested it going by theory.  But supposidly if you don't interpolate(interp) then you extrapolate which is a compensation but it doesn't calculate a guess it just guesses.  So it is better to interpolate then extrapolate.  I don't know if they took extrapolate out in hl2 or not since I haven't seen a setting.<br>
+<br>
+Anyway in theory turning off cl_interpolate will not let you hit someone after they left.  That can happen even with interp on.  Cause of lag.  Most high pingers get that to happen alot.  Anyway I don't have any solid proof that could say that is true or not.  But in my mind it isn't possible.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p17688">
+	<div class="info">
+		<p class="poster">.::TTK::.TW3@K3R</p>
+		<p class="dt">2008-04-14 16:29:59</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I took at look into interp and interp ratio.  I found no real way to prove any setting to be better.  Based on opinion and what felt good when playing.  That cl_interp_ratio 1 or 2 felt good and 0 was the worse.  When we had our hl2dm server open so you could set interp even higher that from cl_interp_ratio 3 to 10 I felt hardly any difference.  Since I don't have anything that lets me know if it is working better or worse other than what I feel my shots are on or off.  My conclusion is that it would be up to the player to determine if one setting is better for him or another.  But I also know that 90% of the servers out there won't let you set it to anything but 1 or 2.  So that is really your only choices.  So the effects of interp isn't as important as your rate setting and getting rid of choke and loss.  I also was too lazy to make demos.  I will post my rate guide although probably doesn't look as pretty as the others but if you follow what I say you can test it and not need a demo from me.  I will try to list servers that stay kind of full and have no cap on rate so you can do your own tests.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p17800">
+	<div class="info">
+		<p class="poster">Pernicious</p>
+		<p class="dt">2008-04-15 11:49:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Wen i tested it, interp ratio of 1 gave me shit hit reg, in css and in hl2dm.<br>
+To test hit reg in a half decent kind of way, get someone to stand mid range distance from u, and get them to strafe left and right over n over and sprint in between, keep ur crosshair still in the middle, as they move into it, shoot, simply count how many register damage, aim at head height also.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">League Talk</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

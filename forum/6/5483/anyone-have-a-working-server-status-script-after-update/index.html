@@ -1,0 +1,246 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Anyone have a working server status script after update? - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+
+<h1>Anyone have a working server status script after update?</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=5483">https://forum.hl2dm.community/viewtopic.php?t=5483</a>
+-->
+
+<div class="post" id="p77144">
+	<div class="info">
+		<p class="poster">nbtc971</p>
+		<p class="dt">2010-10-06 00:34:54</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Does anyone have a fully working server status script after the most recent update to HL2DM? I have managed to get mine partly working, as in it pulls in the server information such as map name, server name, number players, etc. But the getPlayers function isn't working any longer. I can't seem to get it working.<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>define('INFO_RESPONSE_HL1',0x6D); 
+define('CHALLENGE_RESPONSE',0x41); 
+include('inc_hexdump.php');
+include_once('inc_system-functions.php');
+
+class CServerInfo
+{
+	var $raw;
+	function getInfo($address,$port)
+	{
+		$ret = array();
+		$s = fsockopen("udp://".$address,$port,$errno,$errstring,1);
+		//if (!$s) echo "$errstring ($errno)&lt;br /&gt;\n";
+
+		stream_set_timeout($s,1);
+		if(!fwrite($s,"\xFF\xFF\xFF\xFFTSource Engine Query\x00",39))
+		{
+			echo "Error Writing Data. $errstring ($errno)";
+		}
+
+		$packet = fread($s,1024);
+	
+		$parr = explode("\x00",substr($packet,6));
+		$ret['hostname'] = $parr[0];
+		$ret['map'] = $parr[1];
+		$ret['gamename'] = $parr[2];
+		$ret['gamedesc'] = $parr[3];
+		$packet = substr($packet,6+strlen($ret['hostname'])+1+strlen($ret['map'])+1+strlen($ret['gamename'])+1+strlen($ret['gamedesc'])+1+2);
+		$ret['numplayers'] = ord($packet[0]);
+		$ret['maxplayers'] = ord($packet[1]);
+		$ret['botcount'] = ord($packet[2]);
+		$ret['dedicated'] = ord($packet[3]);
+		$ret['os'] = $packet[4];
+		$ret['password'] = ord($packet[5]);
+		$ret['secure'] = $packet[6];
+		$_SESSION['getInfo.' . $address . '.' . $port] = $ret;
+		return $ret;
+	}
+			
+	function getPlayers($address,$port)
+	{
+		set_magic_quotes_runtime(0);
+		$ret = array();
+		$s = fsockopen("udp://".$address,$port,$errno,$errstring,1);
+		
+		stream_set_timeout($s,1); // 1 second timeout on read/write operations
+		fwrite($s,"\xFF\xFF\xFF\xFF\x57"); //Get challenge #	
+		$packet = fread($s,1024);
+		$chalId = $this-&gt;getChallenge($packet);
+		echo $chalId;
+		fwrite($s,"\xFF\xFF\xFF\xFF\x55".$chalId);
+		$packet = fread($s,2048);	
+		if(empty($packet))
+		{
+			return $this-&gt;getPlayersProxy($address, $port);
+		}
+		$packet = substr($packet,5);
+		$nump = ord($packet[0]);
+		$packet = substr($packet,1);
+		$this-&gt;raw = $packet;		
+				
+		for ($i=0;$i&lt;$nump;$i++)
+		{
+			$temp = array();
+	
+			$temp['index'] = $this-&gt;_getbyte();
+			$temp['name'] = $this-&gt;_getnullstr();
+			$temp['kills'] = $this-&gt;_getlong();
+			$temp['time'] = SecondsToString((int)$this-&gt;_getfloat(),true);
+	
+			if(!empty($temp['name']))
+				array_push($ret,$temp);
+		}	
+	
+		array_qsort($ret, 'kills', SORT_DESC);
+		return $ret;
+	}
+	function getChallenge($packet)
+	{
+		if(isset($packet[4]) &amp;&amp; ord($packet[4]) == CHALLENGE_RESPONSE)
+		{
+			return substr($packet,5);
+		}
+		return "\xFF\xFF\xFF\xFF";
+		/*
+		socket_set_timeout($this-&gt;sock, 2);
+		fwrite($this-&gt;sock, "\xFF\xFF\xFF\xFF\x57");
+		$challenge = fread($this-&gt;sock, 4096);
+		$challenge = substr($challenge, 5, 4);
+		return $challenge;
+		*/
+	}
+	/* 
+		Proxy functions are used when there is a problem with blocked ports,
+		or firewalls like with some webhosts.
+	*/
+	function getInfoProxy($address,$port)
+	{
+		if(!(isset($address) &amp;&amp; isset($port)))
+			return false;
+			
+		$ret = array();
+		$info = @file_get_contents(SERVER_QUERY . "?ip=" . $address . "&amp;port=" .$port."&amp;type=info");
+		if(strstr($info, "Page not found"))
+			return false;
+		if($info)
+		{
+			$inf = explode("\t", $info);
+			$ret['hostname'] = $inf[0];
+			$ret['numplayers'] = $inf[1];
+			$ret['maxplayers'] = $inf[2];
+			$ret['map'] = $inf[3];
+			$_SESSION['getInfo.' . $address . '.' . $port] = $ret;
+			return $ret;
+		}
+		else
+			return false;				
+	}
+	function getPlayersProxy($address,$port)
+	{
+		if(!(isset($address) &amp;&amp; isset($port)))
+			return false;
+		$ret = array();
+		$players = @file_get_contents(SERVER_QUERY . "?ip=" . $address . "&amp;port=" .$port."&amp;type=players");
+		if(strstr($players, "Page not found"))
+			return false;
+		if($players)
+		{
+			$plr = explode("\n", $players);
+			foreach($plr AS $player)
+			{
+				$items = explode("\t", $player);
+				if(!isset($items[1])) {
+					continue;
+				}
+				$row = array();
+				$row['index'] = $items[0];
+				$row['name'] = $items[1];
+				$row['kills'] = $items[2];
+				$row['time'] = $items[3];
+				array_push($ret, $row);
+			}
+			return $ret;
+		}
+		else 
+			return false;
+	}
+	function _getnullstr() 
+	{
+		if (empty($this-&gt;raw)) 
+			return '';
+		$end = strpos($this-&gt;raw, "\0");
+		$str = substr($this-&gt;raw, 0, $end);
+		$this-&gt;raw = substr($this-&gt;raw, $end+1);
+		return $str;
+	}
+	function _getchar() 
+	{
+		return sprintf("%c", $this-&gt;_getbyte());
+	}
+	function _getbyte() 
+	{
+		$byte = substr($this-&gt;raw, 0, 1);
+		$this-&gt;raw = substr($this-&gt;raw, 1);
+		return ord($byte);
+	}
+	function _getshort() 
+	{
+		$lo = $this-&gt;_getbyte();
+		$hi = $this-&gt;_getbyte();
+		$short = ($hi &lt;&lt; 8) | $lo;
+		return $short;
+	}
+	function _getlong() 
+	{
+		$lo = $this-&gt;_getshort();
+		$hi = $this-&gt;_getshort();
+		$long = ($hi &lt;&lt; 16) | $lo;
+		return $long;
+	}
+	function _getfloat() 
+	{
+		$f = @unpack("f1float", $this-&gt;raw);
+		$this-&gt;raw = substr($this-&gt;raw, 4);
+		return $f['float'];
+	}
+}</code></pre></div>
+
+Any help is appreciated.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p77150">
+	<div class="info">
+		<p class="poster">nbtc971</p>
+		<p class="dt">2010-10-06 02:13:43</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Never mind, I figured it out.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p77241">
+	<div class="info">
+		<p class="poster">Ade</p>
+		<p class="dt">2010-10-09 13:48:16</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">idk if it's related, but i can't get players either <img class="smilies" src="../../../images/smilies/icon_razz.gif" width="15" height="15" alt=":P" title="Razz"> with the status command i mean. is there another console command now?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

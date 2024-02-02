@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>sup all - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+
+<h1>sup all</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=2030">https://forum.hl2dm.community/viewtopic.php?t=2030</a>
+-->
+
+<div class="post" id="p24963">
+	<div class="info">
+		<p class="poster">Blasphemy</p>
+		<p class="dt">2008-07-04 19:58:53</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">well i am trying to help cse set up their server but i am running into some trouble with  mani, i don't know why they want it they said they don't use rcon what ever that means so if anyone call help me set up the server that would help me out thanks.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p24964">
+	<div class="info">
+		<p class="poster">Cynips</p>
+		<p class="dt">2008-07-04 20:24:54</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">it probably just means they're too lazy to learn rcon</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p24971">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2008-07-04 21:28:02</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">rcon is used to control the server from changing maps to changing gravity. and addign password to server<br>
+some common commands<br>
+<br>
+<br>
+<br>
+rcon sv_password "" <br>
+rcon mp_timelimit<br>
+rcon mp_teamplay<br>
+<br>
+Mani has its own rcon llist.txt fiel in which you can add any commands you want to use like the ones above<br>
+here is mine in its entirity.
+<blockquote class="uncited"><div>// rconlist.txt<br>
+//<br>
+// Place all your rcon commands that you want to<br>
+// execute on the server in here<br>
+//<br>
+// This file can use aliases.<br>
+//<br>
+// Aliases are what is shown in the menu system<br>
+// a nice way of presenting the commands.<br>
+// Aliases must be enclosed in quotes<br>
+//<br>
+// E.G. "Low Gravity"<br>
+//<br>
+// Do not put another quote inside like :-<br>
+//<br>
+// "Low "Gravity""<br>
+//<br>
+// The command after the alias is the real command<br>
+// executed.<br>
+//<br>
+// You do not have to use aliases but it makes the<br>
+// menu's easier to use if you do.<br>
+//<br>
+// Your old config files pre V1.0.8 will still work<br>
+// if you don't change them.<br>
+//<br>
+// Add you rcon commands here<br>
+// e.g exec server.cfg<br>
+<br>
+"CAL 1v1" exec cal1v1.cfg<br>
+"CAL team" exec calteam.cfg<br>
+"Clansunited" exec cu.cfg<br>
+"Pure on/ change map" sv_pure 2<br>
+"Pure off/change map" sv_pure 0<br>
+"cheats on" sv_cheats 1<br>
+"cheats OFF" sv_cheats 0<br>
+"Infinate sprint" sv_infinite_aux_power 1<br>
+"Infinate time" mp_timelimit 0<br>
+"Time limit 20" mp_timelimit 20<br>
+"Password ON = doh" sv_password doh<br>
+"Password OFF" sv_password ""</div></blockquote>
+
+<br>
+Is the server windows or linux?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p24989">
+	<div class="info">
+		<p class="poster">Cynips</p>
+		<p class="dt">2008-07-05 00:12:55</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Actually to make a server non-password protected you have to type it like this:<br>
+<br>
+rcon sv_password " "<br>
+<br>
+with a space in there, or it won't work, at least not for normal rcon. Can it really be different via Mani?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p24990">
+	<div class="info">
+		<p class="poster">svN</p>
+		<p class="dt">2008-07-05 00:16:06</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Cynips wrote:</cite>Actually to make a server non-password protected you have to type it like this:<br>
+<br>
+rcon sv_password " "<br>
+<br>
+with a space in there, or it won't work, so I admit there are one or two pitfalls...</div></blockquote>
+
+it's his file for mani...</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p24991">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2008-07-05 00:21:30</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Blasphemy Squad wrote:</cite>well i am trying to help cse set up their server but i am running into some trouble with  mani, i don't know why they want it they said they don't use rcon what ever that means so if anyone call help me set up the server that would help me out thanks.</div></blockquote>
+
+What exactly is the problem?  What version of Mani are you trying to install?   <br>
+Is it Linux or Windows?  Who is their server provider?<br>
+<br>
+Add me to friends and Ill see if I can help.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p25070">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2008-07-06 08:45:11</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">You dont need the space hence why its not there in the rcon file.<br>
+The rconlist file are the exact same commands as RCON<br>
+ the password for my server is not doh</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

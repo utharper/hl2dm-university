@@ -1,0 +1,298 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Sefl-iluminated materials (problem with) - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>Sefl-iluminated materials (problem with)</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=2962">https://forum.hl2dm.community/viewtopic.php?t=2962</a>
+-->
+
+<div class="post" id="p38697">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2008-12-22 08:11:43</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">While working in one of my maps I added a material to some faces just to make the contrast from dark to white, to be able to distinguish well the edges from certain brushes. Next time I played the map it wasn't fullbright anymore and the texture I applied was giving the map a good lighting. The material is dev/dev_interiorlight02b.<br>
+<br>
+But its too dark on some places because of the problem I came up with:<br>
+Some faces were lit, and some weren't. I didn't have a light_environment so I added it. Still the same...<br>
+<br>
+<a href="https://3.bp.blogspot.com/_-o2Rz3Mpjvg/SU8eGbzofhI/AAAAAAAAAr8/UCgdVD1l_QE/s1600-h/jumpbox0000.jpg" class="postlink">A pic</a><br>
+<br>
+What I have in the map are trigger_teleports, brushes, a door, teleport_destinations, func_details and a light_environment. That's all.<br>
+<br>
+I think maybe there's something missing here. Or maybe there's some option anywhere I must mess with.<br>
+<br>
+Any suggestions?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p38699">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2008-12-22 10:31:04</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Your map is no longer fullbright because vrad has detected a light source.<br>
+<br>
+Any texture in lights.rad will emit texture lighting - dev_interiorlight02b being one of them. This is independent of a textures selfillum setting, so not all selfillum textures cast light and vice versa.  <a href="http://developer.valvesoftware.com/wiki/Glowing_Textures" class="postlink">Some more info here</a>.<br>
+<br>
+Texture lighting also behaves a bit strangely when used on anything other than a world brush (ie func detail), you will see bright patches of lighting instead of a smooth lighting effect. Fun fact: changing lightmap scale on a texture light face seems to change the lights brightness.<br>
+<br>
+<strong class="text-strong">In short</strong>: Add light entities because even though a texture can emit light, the face itself won't actually be lit unless there is light falling on it <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p38745">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2008-12-22 23:09:10</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">hmm, moving every brush with that texture to world helped. But there's still a few faces not casting light...</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p38746">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-12-22 23:40:48</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p38767">
+	<div class="info">
+		<p class="poster">Sacrifist</p>
+		<p class="dt">2008-12-23 05:36:02</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">In short: Add light entities</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p38795">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-12-23 12:49:08</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><img class="smilies" src="../../../images/smilies/icon_mrgreen.gif" width="15" height="15" alt=":mrgreen:" title="Mr. Green"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p38797">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2008-12-23 14:33:54</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">yea, and maybe that will allow me to turn all the brushes to entities again.<br>
+I was hoping to be able to solve this without adding simple lights all around the map, but there's no other way. But adding all the lights isn't too painstaking, so...<br>
+<br>
+And Valar said it all. <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=";)" title="Wink"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p38804">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-12-23 18:32:42</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">my friend - fact: there are no levels without light entities. period.<br>
+Lighting is a fascinating and complex realm that takes a a good while to master and then..there is the source engine on its faults and problems you HAVE tO LEARN. there's no avoiding this.<br>
+Tons of information, very useful articles and tutorials are out there for you to learn pretty much everything there is to know about Source and mapping in Hammer. if you need any help just shout.<br>
+<br>
+enjoy creating. enjoy the <strong class="text-strong">road</strong>.<br>
+<br>
+val</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p38842">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2008-12-23 23:47:29</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">ok, just to make it clear. I never said I didn't want to add lights to my level. Just didn't want to add a light in front of every single selfillum texture cuz I have tons of them all around. I changed their disposition already a bit, but still I have many.<br>
+Thx anyway.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p38859">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-12-24 02:01:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">you don't have to place a light in front of every singe face and moreover you don't want to. you want to think through the lighting design so it "pours" over areas that touch all your faces in a way that is both artful and supporting viability.<br>
+a single spot light can go a long way.<br>
+also tweaking with the ambiance in your light_environment can many times do a lot.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p38865">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2008-12-24 03:19:49</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Do you think that, with a spotlight, I can iluminate a row of faces without illuminating the other ones around? <br>
+So that the only light that reaches the adjacent faces is the light from the selfillum/light texture?<br>
+<br>
+(The map is suffering major changes and I may want to give away the disign you see in the picture of my first post. But just in case I want to keep it, I need to know.)</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p38867">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-12-24 03:40:51</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">no.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p38928">
+	<div class="info">
+		<p class="poster">[MB]Brunt</p>
+		<p class="dt">2008-12-24 18:49:02</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">val is rite.lighting is somthing that your gona have to learn.but once you do your maps are gona look so much better.id love to see another tutoral from valar on basic lighting concepts.<br>
+try this link the advanced lighting one is a good.<br>
+<a href="http://www.interlopers.net/tutorials/General_Half-Life_2/Lighting" class="postlink">http://www.interlopers.net/tutorials/Ge ... 2/Lighting</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p38977">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2008-12-24 21:29:10</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Sacrifist wrote:</cite>In short: Add light entities</div></blockquote>
+Yeah I should have made that a bit clearer in my wall of text, sorry. <img class="smilies" src="../../../images/smilies/icon_redface.gif" width="15" height="15" alt=":oops:" title="Embarassed"> <br>
+<br>
+I tend to like to explaining the whys not just the hows if it's something I know anything about. Just tell me if you need brevity <img class="smilies" src="../../../images/smilies/icon_razz.gif" width="15" height="15" alt=":P" title="Razz"><br>
+
+<blockquote><div><cite>[EYE] Valar wrote:</cite>no.</div></blockquote>
+Well, technically yes but the amount of work involved for something so simple <em class="text-italics">really</em> isn't worth it when light entities can suffice.  <img class="smilies" src="../../../images/smilies/ninja.gif" width="15" height="15" alt=":ninja:" title="Ninja"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p38996">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-12-24 22:58:49</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">bottom line is this and my fellow learned mapperoonies will hopefully agree - <br>
+Source (and in particular ep1 [and in particular hl2dm]) engine is a flawed piece of programming. that's a fact and everyone can see that through the numerous game bugs.<br>
+what it means is you have to trial and error everything you do. and i mean everything. brushwork through lighting through entities through hinting through amount of characters in your vmf. anything can either work or it won't. depends on nothing. its just case by case. don't ask the programmer cuz they never spent a second Q&amp;Aing their code. Essentially there's a basic list of world rules or ...universe related laws in source engine for each class and then there are the real-life situations. both many times contradict.<br>
+<br>
+In your case - a sefl-iluminated material can work on some faces and them on others fail. regardless of its a func_detail or worldbrush. its random because its a flaw in the code.<br>
+<br>
+experiment experiment experiment. compile often. don't get stuck on a fixed idea of design to a point you arrive at a brick wall and have nowhere to go to. always there is something else you can do and if not - change your design (which is what happens for the most part anyway so get used to it).<br>
+<br>
+I think mapping in Hammer resembles you being the boss of a group of dysfunctional workers, each in a different area. and everyday someone else is not showing up for work.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39081">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2008-12-25 17:38:01</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>[EYE] Valar wrote:</cite>I think mapping in Hammer resembles you being the boss of a group of dysfunctional workers, each in a different area. and everyday someone else is not showing up for work.</div></blockquote> <img class="smilies" src="../../../images/smilies/icon_lol.gif" width="15" height="15" alt=":lol:" title="Laughing">  <img class="smilies" src="../../../images/smilies/icon_lol.gif" width="15" height="15" alt=":lol:" title="Laughing">  <img class="smilies" src="../../../images/smilies/icon_lol.gif" width="15" height="15" alt=":lol:" title="Laughing">  <img class="smilies" src="../../../images/smilies/icon_lol.gif" width="15" height="15" alt=":lol:" title="Laughing"> <br>
+<br>
+Very well stated. Actually my map as suffered major changes, and has grown even more detailed and I've been experimenting with lights to see what it would be like ingame. <br>
+Now I think I'll get on with architecture, and when I'm done with it I'll go for lightings and such.<br>
+<br>
+<a href="https://hostimages.blogspot.com/" class="postlink">Here is my map as it is so far, and how it was before.</a><br>
+<br>
+The pictures are a little darker, and btw, while mapping, should I check lights in the default game brightness?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39093">
+	<div class="info">
+		<p class="poster">Sacrifist</p>
+		<p class="dt">2008-12-25 20:57:29</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Skaruts wrote:</cite><blockquote><div><cite>[EYE] Valar wrote:</cite>I think mapping in Hammer resembles you being the boss of a group of dysfunctional workers, each in a different area. and everyday someone else is not showing up for work.</div></blockquote> <img class="smilies" src="../../../images/smilies/icon_lol.gif" width="15" height="15" alt=":lol:" title="Laughing">  <img class="smilies" src="../../../images/smilies/icon_lol.gif" width="15" height="15" alt=":lol:" title="Laughing">  <img class="smilies" src="../../../images/smilies/icon_lol.gif" width="15" height="15" alt=":lol:" title="Laughing">  <img class="smilies" src="../../../images/smilies/icon_lol.gif" width="15" height="15" alt=":lol:" title="Laughing"> <br>
+<br>
+Very well stated. Actually my map as suffered major changes, and has grown even more detailed and I've been experimenting with lights to see what it would be like ingame. <br>
+Now I think I'll get on with architecture, and when I'm done with it I'll go for lightings and such.<br>
+<br>
+<a href="https://hostimages.blogspot.com/" class="postlink">Here is my map as it is so far, and how it was before.</a><br>
+<br>
+The pictures are a little darker, and btw, while mapping, should I check lights in the default game brightness?</div></blockquote>
+Those pics look alot better then the pics in the first post. To be honest with you, the first pics with the illuminated textures dont look good at all. You need to seperate them and put them on an angled brush or something. I personally dont care much for illuminated textures, but done right, they can look really really good.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39095">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2008-12-25 21:12:20</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">yea, I agree. Those textures were just for easy recognition of the edges, as it is a jump map, and I had some ideas on how to use them better, but then I realized it also got tiredsome to see so much lights everywhere.<br>
+<br>
+Anyway, the map evolved into some other ideas I had in the meanwhile and its construction is following a totaly diferent path.<br>
+<br>
+Lets see what will come out from this...</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39253">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2008-12-27 17:33:49</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Skaruts wrote:</cite>Anyway, the map evolved into some other ideas I had in the meanwhile and its construction is following a totaly diferent path.</div></blockquote>
+This is one of the things I love about level design. I always have an idea of how I want something to look in my head but as soon as I set to work on it all sorts of things inspire me to try different variations and it usually ends up completely different (and much better) than I expected.<br>
+<br>
+It's like the map takes on a life of its own <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39261">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-12-27 22:06:25</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>boshed wrote:</cite>It's like the map takes on a life of its own <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div></blockquote>
+
+"<em class="text-italics">And that, is the double truth, Bru!</em>"</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

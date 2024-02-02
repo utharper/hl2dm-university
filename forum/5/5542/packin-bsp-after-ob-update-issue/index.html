@@ -1,0 +1,528 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>packin .bsp after OB update issue - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>packin .bsp after OB update issue</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=5542">https://forum.hl2dm.community/viewtopic.php?t=5542</a>
+-->
+
+<div class="post" id="p77996">
+	<div class="info">
+		<p class="poster">[BK]AC1</p>
+		<p class="dt">2010-11-17 21:38:11</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">hi there guys..<br>
+<br>
+just finished a new map .. called dm_bk_multiDev_arena_rc2<br>
+but get in trouble with packin custom content into the .BSP these days  <img class="smilies" src="../../../images/smilies/icon_confused.gif" width="15" height="15" alt=":?" title="Confused"> <br>
+<br>
+no matter if i use Man-map-analyzer or Packrat<br>
+everybody else will see black/pink checkered areas instead of textures/decals<br>
+<br>
+the strange thing is..  if i open the .BSP with GCF-scape<br>
+and take a look at the files within..<br>
+every custom content is already inside the .BSP<br>
+<br>
+so why the hell those black/pink terror appears??<br>
+<br>
+my question is..<br>
+what do u guys use to pack ur stuff into the .BSP??<br>
+and did somebody else have probs like this since the update to OB engine??<br>
+<br>
+the first version of this map was compiled before the update,<br>
+and has the same files within.. but no black/pink at all<br>
+so what the hack valve has changed.. <br>
+that the new version of this map, compiled after the update won´t work??<br>
+<br>
+here some pics of how it should look like..<br>
+i guess u can imagine the black/pink terror with 90% custom textures  <img class="smilies" src="../../../images/smilies/sketchy.gif" width="15" height="15" alt=":sketchy:" title="Unsure"> <br>
+<br>
+please help me.. i´m totally gettin mad on this s**t<br>
+cause the map is ready.. and i just want to play  <img class="smilies" src="../../../images/smilies/cry.gif" width="15" height="15" alt=":cry:" title="Cry"></div>
+<dl class="attachbox">
+					<dt>
+						Attachments
+					</dt>
+											<dd>
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="multidev_arena2rc2.jpg" class="postimage" alt="multidev_arena2rc2.jpg" onclick="viewableArea(this);"></dt>
+						<dd>multidev_arena2rc2.jpg (107.58 KiB) Viewed 1101 times</dd>
+		</dl>
+		
+		
+			</dd>
+									</dl>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p78001">
+	<div class="info">
+		<p class="poster">haymaker</p>
+		<p class="dt">2010-11-18 00:27:45</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">shot in the dark but is there any chance of conflict in the directory structure anywhere? ie textures for this map should be under .../materials/thismap</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p78011">
+	<div class="info">
+		<p class="poster">[BK]AC1</p>
+		<p class="dt">2010-11-18 21:17:12</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">hey there haymaker..<br>
+<br>
+umm... my directory structure looks different <br>
+its not materials/mapname like u point it..<br>
+<br>
+in my materials/.. are way more folders.. see pics<br>
+(was working fine all the time this way)<br>
+<br>
+only thing i can imagine, is about the packing programms itself..<br>
+both (packrat n man-map-analyzer) <br>
+auto-changes the path´s of the .vmt´s to capitalize letters<br>
+but the original .vmt´s are lower case <br>
+<br>
+on the other hand, this was workin just fine before the update, <br>
+cause the 1rst compiled/packed version of this map,<br>
+had capitalized letter path´s on .vmt´s.. when using Man_map-analyzer to pack<br>
+<br>
+but,.. and this is confusing....<br>
+on using packrat in the past, <br>
+i needed to re-write every single .vmt path <br>
+back to lower case..to avoid black/pink chaos<br>
+<br>
+strange isn´t it??<br>
+<br>
+so the only solution i could find till now on a CSS forum somewhere was..<br>
+<br>
+copy all custom content to a new location (can´t remember the path right now^^)<br>
+then re-write all the path´s of my custom .vmt´s, to fit the new location of files (about600path´s)<br>
+then re-texturing the whole map (about10.000clicks)<br>
++ compile and pack twice..<br>
+<br>
+but i guess this is f++kin too much work..  <br>
+won´t do that  <img class="smilies" src="../../../images/smilies/icon_confused.gif" width="15" height="15" alt=":?" title="Confused"> <br>
+<br>
+pic 1 structure in materials/ folder<br>
+pic 2 structure of the .bsp in GCF-scape (all custom content is already packed inside the .bsp)<br>
+<br>
+so i´m open for any solution guys don´t hold back ur thoughts about this prob, please</div>
+<dl class="attachbox">
+					<dt>
+						Attachments
+					</dt>
+											<dd>
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="structure_example.jpg" class="postimage" alt="structure_example.jpg" onclick="viewableArea(this);"></dt>
+						<dd>structure_example.jpg (89.48 KiB) Viewed 1050 times</dd>
+		</dl>
+		
+		
+			</dd>
+											<dd>
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="bsp_structure.jpg" class="postimage" alt="bsp_structure.jpg" onclick="viewableArea(this);"></dt>
+						<dd>bsp_structure.jpg (134.52 KiB) Viewed 1050 times</dd>
+		</dl>
+		
+		
+			</dd>
+									</dl>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p78012">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2010-11-18 22:06:43</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">it is a difference in dir management since the new update indeed. only not from hl2mp down but BEFORE. i'm not sure how exactly as the client dir differs from the server dir (where it's a lot more obvious).<br>
+we will find this one out very soon and update eachother. worry u naught.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p78041">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2010-11-20 04:23:51</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Is it me or the file path and the BSP path are the same?<br>
+I'm a bit sleepy...<br>
+<br>
+I was wondering when I first read the 1st post, if it wouldn't be incompatibilities from the textures to the engine. Like, for exemple, before the update, if you tried to use a TF2 material in hl2dm it wouldn't work. I never knew the exact reason why, but my solution was to export the texture with vtfedit, import the resulting tga again and replace the vtf. That would work for all (or at least most) of them.<br>
+<br>
+I never knew how it was the other way around, that is if you tried to use a hl2dm material in an OB game. But if, by any chance, you're still converting textures to vtf just like you've ever done before, I wonder if there isnt anything else that should be done to them.<br>
+<br>
+But this is just a thought. I didn't analize the paths theory in whole. I'm too sleepy for that.  <img class="smilies" src="../../../images/smilies/icon_confused.gif" width="15" height="15" alt=":?" title="Confused"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p78055">
+	<div class="info">
+		<p class="poster">chickenmobile</p>
+		<p class="dt">2010-11-20 14:05:17</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Damn it! You whitened out your account name.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p78056">
+	<div class="info">
+		<p class="poster">[BK]AC1</p>
+		<p class="dt">2010-11-20 15:45:25</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">hey there..<br>
+<br>
+another thing.. tsf sadist pointed out.. <br>
+
+<blockquote class="uncited"><div>
+the simple answer is pakrat and man are not updated to cope with the new OB engine and the way it organises its files.  I would suggest visiting pakrat and man websites to see if they have updated their software to support OB.  If not maybe there is another software programe that packs bsps using OB? </div></blockquote>
+
+true..<br>
+also had something like this in mind..<br>
+already visited the sites to have a look for updates..<br>
+.. no success at all<br>
+<br>
+@sakruts the idea isn´t bad, but also a lot of work.. hope i can avoid this<br>
+<br>
+@ chickenmobile.. <img class="smilies" src="../../../images/smilies/icon_razz.gif" width="15" height="15" alt=":P" title="Razz">   eagle eyes ur end, but won´t lead to open doors.. for hackin my account that easy <img class="smilies" src="../../../images/smilies/spy.gif" width="21" height="22" alt=":spy:" title="Spy">  <img class="smilies" src="../../../images/smilies/icon_lol.gif" width="15" height="15" alt=":lol:" title="Laughing"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p78060">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2010-11-20 17:18:46</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Pakrat and others are not compatible with the new engine; I thought that goes without saying.<br>
+Prior to the OB port HL2DM couldn't use TF2, L4D1,2 and EP2 materials since these games are siting on newer engine versions and are using higher VTF versions along the fact these games make use of shader types and shader functionalities which are not available for EP1 engine, where HL2DM used to sit before the port. Now it does.<br>
+<br>
+Here's one i've got today from a reply to my post on Interlopers'. Try it out (i will too in a few days hopefully). It's called PackBSP and is fully supported. Pakrat's developer seems to have abandoned his app a while back.<br>
+<br>
+<a href="http://technofovea.com/blog/projects/packbsp" class="postlink">http://technofovea.com/blog/projects/packbsp</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p78062">
+	<div class="info">
+		<p class="poster">haymaker</p>
+		<p class="dt">2010-11-20 19:24:16</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I wouldn't be so quick to write Pakrat off, I've sent out two bsp's since the update and have heard no comments about missing anything...the textures had vmt's with both model and standard lighting, as well as one blend texture, all working fine. Can you post one of your missing texture vmt's, BK? Maybe you have an extra keyword line or something you can edit out, idk.<br>
+<br>
+( Having said that, feedback on other tools is always a good thing )</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p78067">
+	<div class="info">
+		<p class="poster">[BK]AC1</p>
+		<p class="dt">2010-11-21 00:29:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">ok guys,<br>
+<br>
+here the latest news..<br>
+<br>
+after some first failed trys.. <br>
+along with different error messages by using packbsp... <br>
+idk exactly why..<br>
+(but seems to be important that all updates of games are finished,<br>
+and sdk content is refreshed aswell)<br>
+<br>
+the map was compiled twice.<br>
+and i finally was able to successfully pack the bsp with my custom stuff.<br>
+<br>
+but at the moment its too early for HOOORAY screamings, <br>
+gettin rid of my clothes and jump around naked to celebrate that possible success..lol<br>
+cause first i need to find someone, who dl the map and test it the other end.<br>
+normally my man cyrus will do that, but he is busy right now..<br>
+rl is just more important than my map..<br>
+<br>
+but i´ll keep u updated if it will work, <br>
+and then upload the map in a new thread soon.<br>
+<br>
+have to say thx for sharing ur thoughts so far..<br>
+bet without ur guys view from distance on this prob<br>
+i wouldn´t be able to fix that on my own anyways<br>
+<br>
+@ val, <br>
+man.. if this tool u find will work..<br>
+u maybe saved my life under mapping aspects twice  <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"> <br>
+and should get decoration for ur support somehow.<br>
+big up</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p78071">
+	<div class="info">
+		<p class="poster">chickenmobile</p>
+		<p class="dt">2010-11-21 01:31:36</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>haymaker wrote:</cite>I wouldn't be so quick to write Pakrat off, I've sent out two bsp's since the update and have heard no comments about missing anything...the textures had vmt's with both model and standard lighting, as well as one blend texture, all working fine.</div></blockquote>I've used pakrat since I started mapping. Though I would try packbsp to see if it is any easier or less buggy when it comes to textures and models not appearing in the map.<br>
+<br>
+Sometimes I've had a problem where the materials didn't appear because Deathmatch needed a restart or a cache verification. Try giving the .bsp to at least 2 people to try it out before releasing it.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p78077">
+	<div class="info">
+		<p class="poster">[BK]AC1</p>
+		<p class="dt">2010-11-21 15:33:20</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><img class="smilies" src="../../../images/smilies/cry.gif" width="15" height="15" alt=":cry:" title="Cry"> FAILED....  <br>
+<br>
+[B§] beast just tested for me..<br>
+still all pink/black<br>
+<br>
+edit:<br>
+after that i changed my materials structure <br>
+from: materials/ac1_mats/ac1_dev<br>
+to:    materials/ac1_mats  <br>
+<br>
+re-edited all vmt´s<br>
+retextured the whole map..<br>
+then compiled + packed<br>
+<br>
+on that pic u will see.. <br>
+the older textures.. already used in some of my other maps work. <br>
+(as example the red n orange stripes)<br>
+but the new ones.. never used in any of my maps before, won´t...<br>
+even if all custom content is now in the same folder..<br>
+<br>
+so what the hell.. shit drives me up the wall  <img class="smilies" src="../../../images/smilies/shoot.gif" width="51" height="18" alt=":shoot:" title="Shoot">  <img class="smilies" src="../../../images/smilies/barf.gif" width="64" height="32" alt=":barf:" title="Sick"></div>
+<dl class="attachbox">
+					<dt>
+						Attachments
+					</dt>
+											<dd>
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="multidev_arena_Fail.jpg" class="postimage" alt="multidev_arena_Fail.jpg" onclick="viewableArea(this);"></dt>
+						<dd>multidev_arena_Fail.jpg (136.67 KiB) Viewed 897 times</dd>
+		</dl>
+		
+		
+			</dd>
+									</dl>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p78088">
+	<div class="info">
+		<p class="poster">chickenmobile</p>
+		<p class="dt">2010-11-22 00:06:12</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>[BK]AC1 wrote:</cite>edit:<br>
+after that i changed my materials structure <br>
+from: materials/ac1_mats/ac1_dev<br>
+to: materials/ac1_mats 
+</div></blockquote>Are you changing the textures on the walls to the path of the new files <span style="text-decoration:underline">in the hammer editor</span> and then recompiling it + add the files to the .bsp again?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p78090">
+	<div class="info">
+		<p class="poster">[BK]AC1</p>
+		<p class="dt">2010-11-22 12:59:31</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">hey..<br>
+
+<blockquote class="uncited"><div>
+Are you changing the textures on the walls to the path of the new files in the hammer editor and then recompiling it + add the files to the .bsp again?</div></blockquote>
+
+1rst all files.. vmt´s/vtf´s was copied to new location<br>
+2nd changed the paths of the copied vmt´s to fit the new loaction<br>
+3rd replaced/re-textured with/to the copies in hammer<br>
+then recompiled + packed<br>
+<br>
+the textures which are working (a.e. orange-stripe)<br>
+and the still missing textures are in the same folder now<br>
+<br>
+the only thing i know by now is ... <br>
+it wasn´t the folders/structure inside my materials which causes the trouble<br>
+<br>
+.. so annoying<br>
+<br>
+maybe i should just rename the map from multiDEV_arena.. to multiPINK_arena.. (sarcastic laugh)<br>
+on the other hand retexturing the whole thing with/to standard-textures.. will kill the concept (multiSTANDARD_arena)  <img class="smilies" src="../../../images/smilies/icon_confused.gif" width="15" height="15" alt=":?" title="Confused"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p78091">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2010-11-22 16:21:44</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Is there much (or any) diference between the vmt's, vtf's or original image files, from the orange stripe and the floor?<br>
+<br>
+Cuz if the orange stripe is working, then it most likely isn't the path structure, just as you say. Try to compare the three from one another and see if you find <span style="text-decoration:underline">anything</span> diferent in the floor files.<br>
+<br>
+<br>
+And btw, you could call it multitrouble_arena.  <img class="smilies" src="../../../images/smilies/icon_mrgreen.gif" width="15" height="15" alt=":mrgreen:" title="Mr. Green"> <br>
+jk</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p78093">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2010-11-22 16:37:51</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>[BK]AC1 wrote:</cite>hey..<br>
+
+<blockquote class="uncited"><div>
+Are you changing the textures on the walls to the path of the new files in the hammer editor and then recompiling it + add the files to the .bsp again?</div></blockquote>
+
+1rst all files.. vmt´s/vtf´s was copied to new location<br>
+2nd changed the paths of the copied vmt´s to fit the new loaction<br>
+3rd replaced/re-textured with/to the copies in hammer<br>
+then recompiled + packed<br>
+<br>
+the textures which are working (a.e. orange-stripe)<br>
+and the still missing textures are in the same folder now<br>
+<br>
+the only thing i know by now is ... <br>
+it wasn´t the folders/structure inside my materials which causes the trouble<br>
+<br>
+.. so annoying<br>
+<br>
+maybe i should just rename the map from multiDEV_arena.. to multiPINK_arena.. (sarcastic laugh)<br>
+on the other hand retexturing the whole thing with/to standard-textures.. will kill the concept (multiSTANDARD_arena)  <img class="smilies" src="../../../images/smilies/icon_confused.gif" width="15" height="15" alt=":?" title="Confused"></div></blockquote>
+
+on a related note - never use mixed case in the map name. ever. change the map name to be all lower case characters.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p78114">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2010-11-23 20:09:27</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Confirmed: packbsp.exe is sexual chocolate. works PERFECT!<br>
+If anyone is having any issues with it pm me.<br>
+<br>
+P.S.<br>
+[BK]AC1 - your issues are not packing related but other. talk to me.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p78127">
+	<div class="info">
+		<p class="poster">chickenmobile</p>
+		<p class="dt">2010-11-24 01:56:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>[EYE] Valar wrote:</cite>Confirmed: packbsp.exe is sexual chocolate. works PERFECT!<br>
+If anyone is having any issues with it pm me.<br>
+<br>
+P.S.<br>
+[BK]AC1 - your issues are not packing related but other. talk to me.</div></blockquote>Win.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p78133">
+	<div class="info">
+		<p class="poster">[BK]AC1</p>
+		<p class="dt">2010-11-24 21:25:13</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"><br>
+<br>
+still don´t know what it was exactly..<br>
+but after so many failed trys.. <br>
+i decided to re-edit those textures from scratch..<br>
+(strange thing is.. on rc1 all textures was ok)<br>
+replaced inside hammer, recompiled, repacked.. <br>
+and guess what.... WORKIN NOW  <img class="smilies" src="../../../images/smilies/icon_mrgreen.gif" width="15" height="15" alt=":mrgreen:" title="Mr. Green"> <br>
+<br>
+and yes packbsp is perfect.. <br>
+thx for finding it val<br>
+u saved a (stupid)mappers life twice <img class="smilies" src="../../../images/smilies/icon_cool.gif" width="15" height="15" alt="8)" title="Cool"> <br>
+<br>
+will post the map soon..  <br>
+(after a test on our servers was passed, within the next days)<br>
+<br>
+thx to everybody who shared thoughts about that prob<br>
+on multitrouble_arena.. ( <img class="smilies" src="../../../images/smilies/icon_lol.gif" width="15" height="15" alt=":lol:" title="Laughing"> @ skaruts)<br>
+<br>
+credits-decal for the help here at the U, <br>
+has found it´s way to the map <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=":wink:" title="Wink"> <br>
+<br>
+regards n thx</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p78138">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2010-11-25 08:27:08</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">call your firstborn val</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p78148">
+	<div class="info">
+		<p class="poster">[BK]AC1</p>
+		<p class="dt">2010-11-26 16:22:48</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">rofl..  ok deal.. <br>
+<br>
+(if i will ever have kids)</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p78195">
+	<div class="info">
+		<p class="poster">gtamike_TSGK</p>
+		<p class="dt">2010-11-30 13:08:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">pakrat still works fine for me after update, the .vmt files must of had errors in.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

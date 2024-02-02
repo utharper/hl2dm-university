@@ -1,0 +1,633 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HL2DM Buglist - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+
+<h1>HL2DM Buglist</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=5349">https://forum.hl2dm.community/viewtopic.php?t=5349</a>
+-->
+
+<div class="post" id="p74901">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2010-08-19 10:26:04</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Buglist<br>
+<br>
+
+<ul>
+<li>Weapons / items aren't able to stay named after respawn<br>
+<br>
+Weapons items aren't able to teleport<br>
+<br>
+There is a bug when a player is walking on the seam between a floor and wall they jitter<br>
+<br>
+An xbow shot hitting Weapons/Item - should pass through them<br>
+<br>
+<em class="text-italics">Func_door</em> collision issue - player can pass through brush<br>
+<br>
+<em class="text-italics">Func_button</em> lock/unlock bug - many time a mapper setting a fucn_button to lock isn't working ingame.<br>
+<br>
+<em class="text-italics">Trigger_dissolve</em> - endless sound loop<br>
+<br>
+<em class="text-italics">Point_template</em> able to operate independently without the need for a weapon_&lt;weapontype&gt; present (will enable mappers to spawn weapons on demand rather than rely on weapon spawns if they so wish)<br>
+<br>
+<em class="text-italics">Game_player_equip</em> entity is bugged where it will work the first few times a player triggers it then it breaks (see dm_biohazard)<br>
+<br>
+<em class="text-italics">Info_item_smg_grenade</em> explodes above item/weapon/player spawn points<br>
+<br>
+<em class="text-italics">Info_item_crossbow_ammo</em> is "rolling away" after first respawn<br>
+<br>
+All Items/weapons/props having trouble spawning when placed on a surface other than world geometry brush<br>
+<br>
+Map built on the middle of the grid in hammer causes weird issues - usually multiple spawns of the same weapons.<br>
+<br>
+<em class="text-italics">Weapon_RPG</em> going into stasis bug<br>
+<br>
+<em class="text-italics">Weapon_RPG</em> endless sound loop bug<br>
+<br>
+In the OB port players can no longer use props to jump off of<br>
+<br>
+<em class="text-italics">Prop_physic_respawnable</em> exploding on spawn after having exploded in mid air<br>
+<br>
+<em class="text-italics">Ambient_generic</em> not playing after <em class="text-italics">restartgame</em> bug<br>
+<br>
+func_areaportal bugging out after <em class="text-italics">restartgame</em> bug<br>
+<br>
+Too many vertex format changes in frame, whole world not rendered - console error is present since the port (Client gets this error filling console and game runs like a slideshow when they move, not when standing still using mouse look)<br>
+<br>
+Crouch/sprint delay - It is a bug with sprinting after you leave a crouch. Stop crouching / press sprint and it makes the sprint noise but dosn't increase your speed. <br>
+<br>
+Shotgun reload bug is still present (was also in the ep1 version) - If you reload the shotgun, switch to another weapon and then switch back to shotgun the reload animation glitches</li>
+</ul></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p74909">
+	<div class="info">
+		<p class="poster">{Rx}Crowbar Ninja DJ Z3R0</p>
+		<p class="dt">2010-08-19 18:53:11</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I think with the recent update for enabling bunnyhop the default should be set to 1 and servers that dont wish to have bunnyhop enabled can turn it off. <br>
+<br>
+Basically cvar sv_enablebunnyhopping, defaulted to 1.<br>
+<br>
+Either way is fine with me as long as bunnyhopping remains intact.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p74913">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2010-08-19 21:35:27</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>{Rx}Crowbar Ninja DJ Z3R0 wrote:</cite>I think with the recent update for enabling bunnyhop the default should be set to 1 and servers that dont wish to have bunnyhop enabled can turn it off. <br>
+<br>
+Basically cvar sv_enablebunnyhopping, defaulted to 1.<br>
+<br>
+Either way is fine with me as long as bunnyhopping remains intact.</div></blockquote>
+
+<br>
+Youre assuming that it is something that is even toggleable.   IMO you give people the option to turn it off and you will find most pubs (particularly pubs belonging to newer players) will have it turned off and will not give players on that server the opportunity to be exposed to it and to even have the desire to learn.  If we want to see it continue in the game then new players need to see it in action and be given the opportunity to inquire and learn it.  Having it as a toggleable option may not be something this community would like to see given the potential consequences.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p74920">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2010-08-20 01:22:38</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">true. OR...it could turn out something that comes across as an achievement. something you WANT to "get".<br>
+in either case. it's better with than without the whole lot.<br>
+anyway, let's keep on topic here. we can discuss the whethertos and whyfors on the DM UPDATE thread.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p74923">
+	<div class="info">
+		<p class="poster">{Rx}Crowbar Ninja DJ Z3R0</p>
+		<p class="dt">2010-08-20 03:09:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">For the record, Para, the newest css update has a toggle on bunnyhopping. Granted its not the same movement as in dm but it allows for the possibility. <br>
+<br>
+I DO like the idea of having bunnyhopping as an achievement though. Might be a really good way to get people more into the game. Achievements in general will help that.<br>
+<br>
+As for bugs, it would be nice to not die when tripping over a radiator. Though I'll admit it adds a certain flavor to the game.<br>
+<br>
+One bug I DONT like is the shotty 'jam' when reloading. <br>
+<br>
+Thats all I can think of at the moment.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p74925">
+	<div class="info">
+		<p class="poster">Mr. Nervous</p>
+		<p class="dt">2010-08-20 03:23:49</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Third rocket sometimes going straight<br>
+your weapons being fully loaded if you switch off them for a bit</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p74926">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2010-08-20 04:31:48</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">list updated with shotty and prop physics bugs.<br>
+rest were on the list.<br>
+@ Mr. Nervous- i didn't understand <blockquote class="uncited"><div>your weapons being fully loaded if you switch off them for a bit
+</div></blockquote></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p74928">
+	<div class="info">
+		<p class="poster">{Rx}Crowbar Ninja DJ Z3R0</p>
+		<p class="dt">2010-08-20 04:59:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>[EYE] Valar wrote:</cite>list updated with shotty and prop physics bugs.<br>
+rest were on the list.<br>
+@ Mr. Nervous- i didn't understand <blockquote class="uncited"><div>your weapons being fully loaded if you switch off them for a bit
+</div></blockquote></div></blockquote>
+What he means is that if you shoot 5 out of 6 mag rounds then switch off to the shotty for a few minutes the mag is fully reloaded again. This goes for every weapon. its different for each weapon and I remember reading about it somewhere here. Personally I dont think thats an issue since the aim of this game is not realism.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p74933">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2010-08-20 11:12:50</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yeah, where's the problem in that?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p74940">
+	<div class="info">
+		<p class="poster">Mr. Nervous</p>
+		<p class="dt">2010-08-20 18:59:22</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Errr? Weapons just randomly reload by themselves, so lets say you just unloaded your shotty, switch off for 5 seconds and switch back, you have a fully loaded shotty to finish them off with? unfair.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p74942">
+	<div class="info">
+		<p class="poster">Da1</p>
+		<p class="dt">2010-08-20 19:03:32</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thats a stupid idea. People switch weps when the run out of ammo so they dont have to reload, use that wep for a bit, then switch back to the other more powerful wep they were using. IMO its a great thing valve did for DM.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p74951">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2010-08-20 23:51:35</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Da1 wrote:</cite>Thats a stupid idea. People switch weps when the run out of ammo so they dont have to reload, use that wep for a bit, then switch back to the other more powerful wep they were using. IMO its a great thing valve did for DM.</div></blockquote>
+
++1<br>
+c'mon are you being serious ?? auto reload is not fair but Zero Gravity manipulation "gun" (Ggun) and Hilariously overpowered Plasma balls (Orbs) are? <br>
+heheh. pffft sandwich!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p74952">
+	<div class="info">
+		<p class="poster">{Rx}Crowbar Ninja DJ Z3R0</p>
+		<p class="dt">2010-08-21 00:11:55</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Mr. Nervous wrote:</cite>Errr? Weapons just randomly reload by themselves, so lets say you just unloaded your shotty, switch off for 5 seconds and switch back, you have a fully loaded shotty to finish them off with? unfair.</div></blockquote>
+Overruled. Stop being silly.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p74953">
+	<div class="info">
+		<p class="poster">zeik</p>
+		<p class="dt">2010-08-21 01:07:39</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">No keep the autoreload shiz.<br>
+<br>
+*takes 5 seconds exactly to autoreload*<br>
+*Notice that autoreload has no effect on the SMG and the AR*</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p74954">
+	<div class="info">
+		<p class="poster">zeik</p>
+		<p class="dt">2010-08-21 01:09:31</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Mr. Nervous wrote:</cite>Errr? Weapons just randomly reload by themselves, so lets say you just unloaded your shotty, switch off for 5 seconds and switch back, you have a fully loaded shotty to finish them off with? unfair.</div></blockquote>
+no no no no no. It takes more time to autoreload it than manually reload it, i think its fair.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p74959">
+	<div class="info">
+		<p class="poster">Viperbird</p>
+		<p class="dt">2010-08-21 02:45:54</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Fix issue with ar2 firing orbs, as in, if a orb is fired and then right after another weapon is pulled out (fastorb) then when you switch back to ar2 it pops like its going to fire another orb but doesn't...<br>
+<br>
+Fix high ping issue with mag where if you fire then move mouse quickly it jumps your crosshair back to where you fired...<br>
+<br>
+Fix issues with slams, such as having difficulty laying trip mines when trigger bombs come out, invisible laser issues, overall glitchyness of the weapon...<br>
+<br>
+Also there is sometimes an issue where when a item is picked up with ggun, it won't be added to inventory for a while or not at all...<br>
+<br>
+Fix glitch with mid air xbow shots when player is next to a wall cause them to launch across the map without taking damage from the crossbow bolt... (Mostly noticed in low grav killboxes) <br>
+<br>
+Reduce combine model size/hitbox, or increase rebel size/ hitbox... Also make rebel footsteps louder, or use a different quieter sound for combine... As most everyone knows, combine are much louder and easier to hit that rebel models, giving whichever players using combine a disadvantage in team scrims/matches...<br>
+<br>
+Fix shotgun damage issue.. The "pound both buttons" glitch... Seriously, I know everyone loves the shotty so much, but considering it can one hit players even with armor, its just lame...</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p74967">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2010-08-21 04:40:17</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">That's a good list viper<br>
+<br>
+it would be great if you could make short demos of the following (as they will probably be asked to be able to reproduce)<br>
+
+<ul>
+<li>Fix high ping issue with mag where if you fire then move mouse quickly it jumps your crosshair back to where you fired...<br>
+<br>
+Fix issues with slams, such as having difficulty laying trip mines when trigger bombs come out, invisible laser issues, overall glitchyness of the weapon...<br>
+<br>
+Fix glitch with mid air xbow shots when player is next to a wall cause them to launch across the map without taking damage from the crossbow bolt... (Mostly noticed in low grav killboxes)</li> 
+</ul></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p74968">
+	<div class="info">
+		<p class="poster">Mr. Nervous</p>
+		<p class="dt">2010-08-21 04:56:05</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I could try to make demos of those, although i have no idea how to make the laserless mine. general glitchyness, sure.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p74972">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2010-08-21 05:57:06</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">ok whoever makes those demos. make them short as possible. to the point and use ONLY stock maps.<br>
+cheers.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p74995">
+	<div class="info">
+		<p class="poster">{Rx}Crowbar Ninja DJ Z3R0</p>
+		<p class="dt">2010-08-21 09:44:34</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Viperbird wrote:</cite>
+Fix issues with slams, such as having difficulty laying trip mines when trigger bombs come out, invisible laser issues, overall glitchyness of the weapon...
+</div></blockquote>
+I believe the proper term is slams michaeljacksoning in your hands.<br>
+<br>
+I'd like to add that if you place a slam on a prop then move the prop away the slam will stay floating in mid air.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p75011">
+	<div class="info">
+		<p class="poster">chickenmobile</p>
+		<p class="dt">2010-08-21 16:03:20</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Some glitches in this game make it what it is, like auto reloading weapons and how if you fire a cbow at a mine when your standing on it, it seems to slide very slowly across the floor.<br>
+<br>
+--But one thing I want fixed is sometimes if your walking around or moving you get some kind of glitchy slowness (like your half stuck in the ground or something) and the only to get out of it is to jump. This is very annoying with low grav play.<br>
+<br>
+--Spawn points where if there isn't enough in the map you can actually spawn inside other players or when you do spawn players suicide.<br>
+<br>
+--Have some kind of option to disable or create players semi-solid, so an afk player cant block a doorway and in teamplay you wont bump into each other all the time etc. (like in L4D where you can sort of walk in each other but you move slightly to the side).<br>
+<br>
+--Ive also noticed that sometimes if you create a trigger_gravity and you die inside it, then you can stay on that gravity for the whole match.<br>
+<br>
+--Func_conveyor's: MAKE A FLAG TO MOVE OBJECTS AS WELL AS PEOPLE!!! (if that already exists I've never found out how...)</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p75020">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2010-08-21 23:09:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">cl_forcemodel or make models better balance no glowing eyes or sticks that buzz or big boots that jingle.<br>
+readyup that actually works controlled by sv_readyup 1 for example.<br>
+sv_spawn_protection  (but it means less plugins)<br>
+map voting tools<br>
+clan tag support (I assume it will use OB friedns name_)<br>
+Built in hitsound exempt form sv_pure 2 so we can change it.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p75077">
+	<div class="info">
+		<p class="poster">Dark Soul</p>
+		<p class="dt">2010-08-22 05:45:06</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">new models! lol...tired of the existing ones.<br>
+<br>
+mmmm idk...maybe add the thirdperson mode and fix the smoothing/drive cam bugs when playing demos<br>
+<br>
+also the floating muzzleflash of weapons</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p75116">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2010-08-22 20:42:32</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Been away for a few days, so havent been able to respond<br>
+
+<blockquote><div><cite>{Rx}Crowbar Ninja DJ Z3R0 wrote:</cite>For the record, Para, the newest css update has a toggle on bunnyhopping. Granted its not the same movement as in dm but it allows for the possibility. 
+</div></blockquote>
+
+Repectfully, I dont think anyone here gives a rats ass about what CSS or any other game has.  This is HL2DM and Bhop is part of what makes HL2DM what it is.   Just because its toggleable in CSS doesnt mean we have to make it toggled in HL2DM.   There is a reason why people continue to play HL2DM.  Remove bhop or allow it to be removed by enough noob server owners and we all might as well switch to CSS or COD because no one will want to learn it anymore.   <br>
+<br>
+However making it some kind of achievement might not be so bad an idea, at least that might put an end to the "OMG its a hax" syndrome.  Honestly though Im not sure how that would work because its not exactly a weapon or an upgrade you can just turn on with kills, ranks, points.  Unless you completely change the game code to make the game not recoginze the keys and key strokes that make bhop possible, but that again might be a means to eliminate it altogether.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p76032">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2010-09-09 10:39:07</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Getting ready to emailing this list to Valve<br>
+we still need demos recreating the bugs mention above (not all, just those that are harder to understand to anyone not playing the game)<br>
+takers?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p76043">
+	<div class="info">
+		<p class="poster">{Rx}Crowbar Ninja DJ Z3R0</p>
+		<p class="dt">2010-09-09 17:39:00</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I could do a few of the slam glitches any map preference for this?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p76048">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2010-09-09 19:51:22</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">yes. only using stock maps.<br>
+the bugs in question were mentioned earlier in the thread. read back.<br>
+thx!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p76104">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2010-09-10 22:00:42</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Bug fix and remove the annoying objects in the stock maps.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p76140">
+	<div class="info">
+		<p class="poster">{Rx}Crowbar Ninja DJ Z3R0</p>
+		<p class="dt">2010-09-11 17:43:33</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">SLAMS demo!<br>
+<br>
+<a href="http://www.megaupload.com/?d=KMJUS73M" class="postlink">http://www.megaupload.com/?d=KMJUS73M</a><br>
+<br>
+not sure if I covered all of them but the michaeljacksoning showed up more times than intended. Fucking slams.. covered clipping issues, slams on props, and some form of invisible laser as well as the slam shuffle.<br>
+<br>
+Not sure if this was mentioned or is in the initial list but when some props in game appear clientside but are not really there, they can be pushed(Barely) but not grabbed, welded to the floor would be a good description.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p76149">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2010-09-12 04:49:13</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Great! thanks.<br>
+need more ! <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p76417">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2010-09-17 01:57:56</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Make it so cl_autowepswitch actually works as intended with ammo and not just weapons.<br>
+<br>
+Fix the RPG last rocket bug.<br>
+<a href="https://www.youtube.com/watch?v=6u4xMdEypZo" class="postlink">http://www.youtube.com/watch?v=6u4xMdEypZo</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p76437">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2010-09-17 10:30:23</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>keefy wrote:</cite>Make it so cl_autowepswitch actually works as intended with ammo and not just weapons.</div></blockquote>
+i don't understand. autowepswitch is meant for weapons.<br>
+besides, how do you auto switch ammo?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p76447">
+	<div class="info">
+		<p class="poster">{Rx}Crowbar Ninja DJ Z3R0</p>
+		<p class="dt">2010-09-17 20:34:16</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>[EYE] Valar wrote:</cite><blockquote><div><cite>keefy wrote:</cite>Make it so cl_autowepswitch actually works as intended with ammo and not just weapons.</div></blockquote>
+i don't understand. autowepswitch is meant for weapons.<br>
+besides, how do you auto switch ammo?</div></blockquote>
+I think he means if you're running around with a weapon without ammo, say a mag, and you pick up rounds for it you autiomatically switch to that weapon?  I dunno I dont think that happens to me</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p76472">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2010-09-18 11:33:58</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>{Rx}Crowbar Ninja DJ Z3R0 wrote:</cite><blockquote><div><cite>[EYE] Valar wrote:</cite><blockquote><div><cite>keefy wrote:</cite>Make it so cl_autowepswitch actually works as intended with ammo and not just weapons.</div></blockquote>
+i don't understand. autowepswitch is meant for weapons.<br>
+besides, how do you auto switch ammo?</div></blockquote>
+I think he means if you're running around with a weapon without ammo, say a mag, and you pick up rounds for it you autiomatically switch to that weapon?  I dunno I dont think that happens to me</div></blockquote>
+
+That is what i mean pretty much.<br>
+<br>
+1. Fire magnum until empty<br>
+2. switch to SMG<br>
+3. pickup magnum ammo or magnum gun<br>
+Works with other weapons also e.g crossbow and RPG<br>
+<br>
+<a href="http://rapidshare.com/files/419742533/wepswitch_0.dem.html" class="postlink">http://rapidshare.com/files/419742533/w ... 0.dem.html</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p77096">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2010-10-05 02:00:54</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">BUG <br>
+<br>
+Grenades and physics such as barrels cannot be caught if an enemy is in your crosshair, might be the case  if a team mate too.  it makes grav nading especiallyhard, sometimes I find myself simpy throwing the nade because of this bug.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p77099">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2010-10-05 02:22:03</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>keefy wrote:</cite>BUG <br>
+<br>
+Grenades and physics such as barrels cannot be caught if an enemy is in your crosshair, might be the case  if a team mate too.  it makes grav nading especiallyhard, sometimes I find myself simpy throwing the nade because of this bug.</div></blockquote>
+
+1) this from now (post OB)?<br>
+and <br>
+2) cl_autowepswitch still a working cvar in OB or gone now?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p77101">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2010-10-05 02:37:35</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">1. I notice it alot more in this engine now.<br>
+<br>
+2. cl_autowepswitch still exists and works the same in OB as it did in previous engine there is no change in its behaviour, its just an anoying bug I woudl like fixed thats all.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p78073">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2010-11-21 05:53:10</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>[EYE] Valar wrote:</cite>Buglist
+<ul><li>An xbow shot hitting Weapons/Item - should pass through them<br>
+<em class="text-italics">Info_item_crossbow_ammo</em> is "rolling away" after first respawn<br>
+<em class="text-italics">Weapon_RPG</em> endless sound loop bug</li></ul></div></blockquote>
+Valar, these three were already present in the old engine.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p78085">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2010-11-21 22:38:59</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">this thread was supposed to create a solid bug list to be sent to Valve BEFORE the OB port. not after. thread is obsolete.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p78087">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2010-11-21 23:22:14</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">ahh... ok. <br>
+When I read "shotgun bug still present" I misunderstood the point then.<br>
+<br>
+But I don't recognize most of these bugs as old ones tho...</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p78308">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2010-12-07 22:17:19</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><img src="http://i524.photobucket.com/albums/cc324/k33fy/b32be57c.jpg" class="postimage" alt="Image"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p78313">
+	<div class="info">
+		<p class="poster">Ghost Dog_TSGK</p>
+		<p class="dt">2010-12-07 22:39:23</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">rofl</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

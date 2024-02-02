@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>What file tells Model Viewer what texture file to use? - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>What file tells Model Viewer what texture file to use?</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=4704">https://forum.hl2dm.community/viewtopic.php?t=4704</a>
+-->
+
+<div class="post" id="p64262">
+	<div class="info">
+		<p class="poster">javierdl</p>
+		<p class="dt">2009-12-23 23:30:32</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Ok, I can see that the QC tells the compiler <strong class="text-strong">WHERE</strong> the texture will be found with the $cdmaterials command. But it doesn't tell it <strong class="text-strong">WHICH</strong> file it is.<br>
+I am just trying to understand how these 2 events (compiling the model and compiling the texture) relate to one another, <strong class="text-strong">HOW</strong> their liaison is created and <strong class="text-strong">WHEN</strong>.<br>
+So that I can tell when not to change the name of my texture file (if I see it fit).<br>
+<br>
+Btw, does it matter whether we compile the texture first and the model after, or the other way around?<br>
+<br>
+Thanks guys,<br>
+<br>
+Happy Holidays!<br>
+<br>
+JDL</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p64276">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2009-12-24 03:28:29</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">It's in the .smd, take a look at it with a text editor.<br>
+<br>
+Each triangle on your UV map has a material assigned to it in the smd (different triangles can have different materials) which is the vmt filename without the .vmt extension. This is then written to the .mdl along with the path to the textures when compiling.<br>
+<br>
+In short : can't easily change your texture filename and location after your compile the .smd into a .mdl - textures themselves (vmt and vtf) can be edited at any time.<br>
+<br>
+Not sure what you mean by compiling a texture?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p64280">
+	<div class="info">
+		<p class="poster">javierdl</p>
+		<p class="dt">2009-12-24 04:48:56</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Well, no wonder!<br>
+Now it all makes sense. Thank you ever so kindly for that explanation Boshed <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"><br>
+<br>
+As for your last question, I'm probably misusing the term, but that's the term Studio Compiler uses for its button for converting/exporting a TGA into a VTF (the button says "Compile"). It probably should just say "export".<br>
+<br>
+Wait a second... going back to your explanation. If the path to the VTF is written into the MDL file, then why is it that they are 2 separate processes? I mean to say, when I use GUIStuidioMDL I am only compiling the model files (correct?), and the only reference to the texture there is, is in the QC file. But it only serves to point to its location, nothing else.<br>
+I hope you can correct me on this.<br>
+<br>
+JDL</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p64364">
+	<div class="info">
+		<p class="poster">javierdl</p>
+		<p class="dt">2009-12-26 06:11:49</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Now I get it, see this post at <a href="http://forums.steampowered.com/forums/showpost.php?p=12730306&amp;postcount=6" class="postlink">steampowered.com forums</a><br>
+<br>
+JDL</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p64417">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2009-12-27 16:57:35</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">That's right <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"><br>
+<br>
+Blender's SMD exporter assigns the material name to the triangles in the SMD automatically (it won't let you export an smd without having a material assigned) - which is very handy imo, just name your blender material the same as your vmt filename and you're good to go.<br>
+<br>
+It's very good for working with multiple textures on one model as you can make the materials different colours in Blender and easily see that they are assigned in the right places.<br>
+
+<blockquote><div><cite>javierdl wrote:</cite>
+As for your last question, I'm probably misusing the term, but that's the term Studio Compiler uses for its button for converting/exporting a TGA into a VTF (the button says "Compile"). It probably should just say "export".
+</div></blockquote>
+
+Makes sense now, I don't use GUIStuidioMDL so have never seen that before.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

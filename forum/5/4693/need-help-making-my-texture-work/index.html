@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Need help making my texture work - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>Need help making my texture work</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=4693">https://forum.hl2dm.community/viewtopic.php?t=4693</a>
+-->
+
+<div class="post" id="p64160">
+	<div class="info">
+		<p class="poster">javierdl</p>
+		<p class="dt">2009-12-21 22:18:27</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Happy Holidays to all! <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"><br>
+<br>
+I wonder if someone would bother checking my files up and help me find where the problem is?<br>
+<br>
+Here are the files:<br>
+<br>
+<strong class="text-strong"><a href="http://snipurl.com/custom_props" class="postlink">custom_props</a></strong> Textures - Put'em in the Materials folder.<br>
+This image shows an explanation of what you'll find in the custom props.zip file<br>
+<img src="http://public.bay.livefilestore.com/y1pv7sOS_F1srly_v0OiNeE3xYDtfY9X9ceWFVMfbwhp_lqSWbT8LFHM1jg7_pmqv5t_8oA34OZ7R5U1Y6PQnM24A/textures.PNG" class="postimage" alt="Image"><br>
+<br>
+<strong class="text-strong"><a href="http://snipurl.com/modelsrc" class="postlink">modelsrc files</a></strong> All source files - Put'em in the models/modelsrc folder<br>
+<br>
+So, if you can make it work, then I'll know the problem is not with the files I'm using. Any insight on what could I be doing wrong would be super.<br>
+<br>
+Thanks in advance guys <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"><br>
+<br>
+JDL</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p64210">
+	<div class="info">
+		<p class="poster">Pig Popper</p>
+		<p class="dt">2009-12-22 15:04:28</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">your download seem to be a dud.<br>
+<br>
+Why not make a small map (a dev room) put the model and a info_player_start in there, pakrat it then upload the bsp?<br>
+<br>
+you'd get more input that way.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p64215">
+	<div class="info">
+		<p class="poster">javierdl</p>
+		<p class="dt">2009-12-22 19:15:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thanks for letting me know about the "dud" PP <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"><br>
+I just fixed it.<br>
+<br>
+The reason why I'm not creating a BSP with it is because everytime I attempt to open the SDK Tool it keeps saying:<br>
+"This game is currently unavailable. Please try again at another time." <img class="smilies" src="../../../images/smilies/icon_sad.gif" width="15" height="15" alt=":(" title="Sad"><br>
+It happened since last night.<br>
+I am able to open HL2DM and join a game, but I can't open the SDK Tool.<br>
+I am not too worried about this now, I'll find the solution eventually. <br>
+<br>
+For now I want to get this "missing material issue" resolved as soon as possible. But I could use a helping hand.<br>
+<br>
+I don't know if this has anything to do with it but I've noticed that the VMT file made by StudioCompiler has the 2 types of slashes in the same path address:<br>
+<br>
+"LightmappedGeneric"<br>
+{<br>
+	"$baseTexture" "models<strong class="text-strong"><span style="font-size:150%;line-height:116%">\</span></strong>custom_models<strong class="text-strong"><span style="font-size:150%;line-height:116%">/</span></strong>drpeppercan"<br>
+}<br>
+<br>
+I have changed the second one to be like the first, but my model still doesn't show the material in ModelViewer <img class="smilies" src="../../../images/smilies/icon_sad.gif" width="15" height="15" alt=":(" title="Sad"><br>
+I just thought we couldn't have both slashes in the same path... anyway.<br>
+<br>
+JDL</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p64224">
+	<div class="info">
+		<p class="poster">javierdl</p>
+		<p class="dt">2009-12-22 21:28:49</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Ok I figured if I make this more accessible maybe people will help <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=";)" title="Wink"><br>
+<br>
+This is what I'm getting presently:<br>
+The model loads, but without its texture <img class="smilies" src="../../../images/smilies/icon_sad.gif" width="15" height="15" alt=":(" title="Sad"><br>
+<img src="http://snipurl.com/mdlvwrmissngtxtr" class="postimage" alt="Image"><br>
+<br>
+Now, this is where GUIStudioMDL places all the files it creates from the modelsrc folder (which is available to you <a href="http://snipurl.com/modelsrc" class="postlink">here</a>). Ignore the "burger" files please.<br>
+<img src="http://snipurl.com/modelfileslocations" class="postimage" alt="Image"><br>
+<br>
+And finally, this is where the textures are located:<br>
+<img src="http://snipurl.com/textureslocations" class="postimage" alt="Image"><br>
+<br>
+I don't suppose there is any point in going through the steps I take to make/export/compile the model as we can see it just fine in Model Viewer. Clearly the only thing missing is the texture. As for how I do it, I make sure its dimensions are by the power of 2 (1024x1024), TGA format. I have used both VTFEdit and Studio Compiler to create it. I have created the VMT from other scripts and have let both previously mentioned applications create the VMT for me. <br>
+This is what my VMT presently looks like:<br>
+<br>
+"LightmappedGeneric"<br>
+{<br>
+	"$baseTexture" "models/custom_models/drpeppercan"<br>
+}<br>
+<br>
+I don't know what else to mention for now. Should you have any questions please don't hesitate to ask.<br>
+<br>
+Thanks guys,<br>
+<br>
+JDL</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p64235">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2009-12-23 02:48:21</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Stupid question, but Im not sure if thats what you did...  Are the VMT and VMF files in BOTH the materials and the materialsrc folders in the HL2MP folder?   Ive made that mistake before...</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p64240">
+	<div class="info">
+		<p class="poster">javierdl</p>
+		<p class="dt">2009-12-23 08:26:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Actually, not stupid at all Paradox ; ) We might be up to something here!<br>
+It just so happens that: <br>
+1. I don't have a <strong class="text-strong">materialsrc</strong> folder (I'm just putting the TGA file along with the rest of the model source files, the SMDs, in the modelsrc folder).<br>
+2. I don't have a VMF file either. Only the VMT &amp; VTF. The latter one I create it by dragging the TGA into Source Compiler, then I move the resulting VTF to the materials/models/custom_props folder where I already have the VMT I created earlier by hand (most of the time).<br>
+<br>
+I guess it would make more sense to have a materialsrc folder too eh? <br>
+<br>
+Anything you have spotted already?<br>
+<br>
+JDL<br>
+<br>
+<img src="http://icons.iconarchive.com/icons/iconka/xmas-2009/48/wreath-icon.png" class="postimage" alt="Image"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p64246">
+	<div class="info">
+		<p class="poster">javierdl</p>
+		<p class="dt">2009-12-23 10:02:12</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I found the solution to this prop, thanks to <a href="http://forums.steampowered.com/forums/showpost.php?p=12685711&amp;postcount=2" class="postlink">JesterSpawn</a> from the SteamPowered forums:<br>
+As I replied to him:<br>
+"Both changing to VLG (as opposed to LMG) and correcting my QC file helped already (the folder was called "custom_models", but in the QC file I had entered "custom_props")."<br>
+<br>
+Btw, while creating my test room with Hammer I realized what the VMF file is ; ) So now I have one. I just don't see what this file has to do with my texture...<br>
+<br>
+JDL</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p64250">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2009-12-23 16:56:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">lol that might have been a mistype on my part....should have been VMT and VTF I think...<br>
+<br>
+<br>
+Anyway glad you got it working</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

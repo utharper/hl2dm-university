@@ -1,0 +1,486 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>glowing objects - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>glowing objects</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=4104">https://forum.hl2dm.community/viewtopic.php?t=4104</a>
+-->
+
+<div class="post" id="p54418">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2009-06-09 00:40:18</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I would like to make a glowing object, or sphere.   I made the sphere, put a light in it but can't make it look right.  Its either something with the texture I used or I didn't classify it correctly when I made it an entity or both.<br>
+<br>
+An suggestions on how to do this?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p54435">
+	<div class="info">
+		<p class="poster">haymaker</p>
+		<p class="dt">2009-06-09 03:24:17</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">the sphere is brushwork?<br>
+<br>
+make it func_brush and check out the rendermode options, glow is one of them. Combined with a few hard-falloff spotlights ( pointing towards it from the outside ) you might get closer.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p54443">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2009-06-09 04:03:29</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>haymaker wrote:</cite>the sphere is brushwork?<br>
+<br>
+make it func_brush and check out the rendermode options, glow is one of them. Combined with a few hard-falloff spotlights ( pointing towards it from the outside ) you might get closer.</div></blockquote>
+
+<br>
+Tried this with a light inside of it.  Didnt work.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p54447">
+	<div class="info">
+		<p class="poster">[MB]Brunt</p>
+		<p class="dt">2009-06-09 04:47:54</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">this is a func illusonar with a glass textur and a light and envy light glow in side<br>
+<br>
+<a href="http://img193.imageshack.us/my.php?image=betailluminare080034.jpg" class="postlink"><img src="http://img193.imageshack.us/img193/3531/betailluminare080034.jpg" class="postimage" alt="Image"></a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p54448">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2009-06-09 05:13:46</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">ooooo thats cool<br>
+<br>
+"envy" light???</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p54451">
+	<div class="info">
+		<p class="poster">haymaker</p>
+		<p class="dt">2009-06-09 05:43:46</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">env_lightglow he means.<br>
+<br>
+my suggetion was to lioght from the outside as well</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p54452">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2009-06-09 06:12:22</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Ok well thats exactly the kind of effect I want except with a different color.  I made it a funct illusionary, glass texture and env_lightglow of the color I wanted and its not quite right.  The globe itself still looks white cant get it to go the color I want yet which is red.  Prob have to tweek some more I guess</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p54454">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2009-06-09 06:31:07</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">keep messing with the env_lightglow settings till you hit it just right.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p54459">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2009-06-09 08:28:27</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Are there any input or output commands I should be aware of?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p54469">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2009-06-09 17:06:40</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">not for what you're trying to do. unless of course you want your glowy balls to do something else. timed. triggered...?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p54470">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2009-06-09 17:18:04</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Don't forget you won't get an accurate representation of how your glass looks until you build cubemaps.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p54473">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2009-06-09 17:58:20</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">No triggers Val, I just want them to look siimilar to those.<br>
+<br>
+The globes glow close up but the ae white.  Further away the look light red but very dull.  I know I have to mess with the min and max effect distance some.<br>
+<br>
+If I get up close, there is red light (at least in one version of the settings I had) but didn't look like it came from the globe, it was just there.<br>
+<br>
+Boshed, how different? Do you mean not even close or will it at least look similar to what I am looking for without the cubemaps?<br>
+<br>
+Appeciate the help guys, I am still a hammer newb.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p54474">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2009-06-09 18:41:08</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Paradox wrote:</cite>
+The globes glow close up but the ae white.  Further away the look light red but very dull.  I know I have to mess with the min and max effect distance some.</div></blockquote>
+That's partly due to the way env_lightglow works. I suggest trying an env_sprite, set it's render mode to world space glow then play around with scale, color, etc.<br>
+<br>
+(Glow = stays the same no matter your distance from it / World space glow = actually has a position in the "world" and doesn't stay the same size).<br>
+<br>
+It should look very similar if you tweak the opacity and such, the best way really is just to play around with both of them and see which one works for you. <br>
+<br>
+Make yourself a 1024x1024 box map with a light to test it and slap a few variations of env_lightglow / env_sprite settings in there then you can compare them quickly and easily and work on the effect you want <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"><br>
+
+<blockquote><div><cite>Paradox wrote:</cite>
+Boshed, how different? Do you mean not even close or will it at least look similar to what I am looking for without the cubemaps?
+</div></blockquote>
+
+Works like this:<br>
+<br>
+Until you build cubemaps anything that has specularity (reflectiveness) will reflect the default cubemap (default skybox).<br>
+<br>
+The default cubemap is a white sky so on highly reflective surfaces (like some glass textures) it will look very bright until you replace the cubemaps with ones built from your actual level geometry and lighting.<br>
+<br>
+You may find that you get the perfect effect you are after only to find that when you build (darker) cubemaps it looks all wrong again. Just a heads up.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p54496">
+	<div class="info">
+		<p class="poster">[MB]Brunt</p>
+		<p class="dt">2009-06-09 21:24:19</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">env_sprite is actuly what i used my bad.i made them balls a while back forgot.i think the sprite is called blue glow.and i swiched to a defrent textur for the globe but the glass still could work.look this over if ya like.<br>
+<br>
+<a href="http://files.filefront.com/glowballvmf/;13877978;/fileinfo.html" class="postlink">http://files.filefront.com/glowballvmf/ ... einfo.html</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p54545">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2009-06-10 06:00:00</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Well I cant get it to work.<br>
+<br>
+Set everything up exactly the same as yours<br>
+<br>
+made a sphere as a primitive, block<br>
+used the same texture<br>
+set it to func_illusionary<br>
+<br>
+put a red light, set to world glow<br>
+<br>
+made a env_sprite with the same settings<br>
+<br>
+It doesnt glow, doesnt make the same effect, nothing.  I get close to it and there is a red light there.<br>
+<br>
+I set one globe back to world to see how it was set up and when I  put it back as func_illusionary it didnt look like the one that I left alone, it basically did what mine are doing.<br>
+<br>
+Something is missing.<br>
+ <br>
+What is in your blueglow2.vmt?  Thats one thing I dont have, could that be the problem?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p54547">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2009-06-10 06:52:17</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">for one your sprite might be not set to Start On - check the flags.<br>
+or...brunt might be using a custom sprite which you don't have maybe?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p54548">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2009-06-10 07:05:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">checked start on and still nothing<br>
+<br>
+So IDK</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p54549">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2009-06-10 07:25:17</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Could be your env_sprite's glowproxysize setting, needs to be larger then the radius of your sphere.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p54550">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2009-06-10 07:58:42</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Nope not that either, I set it larger than the globe size and still nada.  Also made a small one room map and put a cube map in it and still nothing.<br>
+<br>
+Its not a custom sprite either, cause I saw the one he is using.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p54557">
+	<div class="info">
+		<p class="poster">Sacrifist</p>
+		<p class="dt">2009-06-10 09:39:33</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Easiest way is to decomp a map that has something similar and just look at how it was done. Then just play with the settings until you have what you are looking for. You may also need to add a .spr to the end of your spritename.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p54597">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2009-06-10 21:22:29</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">He posted a VMF file with a small map with 2 of them in it.  Thank you for that Brunt, I appreciate it. <br>
+<br>
+I played around with one of them, made my settings the same.  I had .spr at the end of mine.   He has .vmt at the end of his sprite name.  I tried .vmt as well.<br>
+<br>
+I still can't create the effect.  Something else is missing and I can't for the life of me figure out wtf it is.  <br>
+<br>
+Wish there was a good manual for this shit instead of ramdom websites and forums across the whole world wide web.  Very frustrating.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p54640">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2009-06-11 01:18:23</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">as said many times in the past - Welcome to Source my dear. information is so scattered around so many places it feels more like a state secret rather than a real SDK (source development kit).<br>
+and know the funny part? you go through all this crap, through the Nothing support you get from Valve, through endless PMs on Steam and a slew of forums and finally finish your map, proud and inspired you post your map accompanied with screenshots and elaborate map specifics, an hours (or days) worth of Photoshop work just to pimp the map's promo image and get back from the community what?<br>
+CRAP IN YOUR FACE AND ON YOUR HARD WORK. little kids roam these places. nothing but kids who are no diff from those who compete over who's got a bigger Shlong in the school bathroom. sticking to old outdated maps since before mud and praising them as if nothing can match their level while on other occasions the SAME people WILL critique the SAME OLD MAPS as SHIT.<br>
+after over 3 years MAPPING and after close to TWO HUNDRED RELEASED-PLAYED MAPS i can safely say to you - you best know your reason for taking on Hammer. and it best be for YOURSELF because appreciation and incentives are too few and far between. You, however, get front seat tickets to a spot from which you can see EXACTLY why this game is out the window. exactly why all you read and hear is scrutiny and whining and ranting in here. This fine website instead of being home to gamers joining together to prolong, learn, teach and support the game is home for immature angry kids who grope at each other's necks, talk down on newcommers, run down all others who are different from them in skill, thought or style, throw nonesense in all directions and take sides on each and every subject.<br>
+<br>
+and sorry for hijacking your thread. i'll get back to you on the sprites later. <img class="smilies" src="../../../images/smilies/icon_sad.gif" width="15" height="15" alt=":(" title="Sad"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p54645">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2009-06-11 01:50:38</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Cheer up V, some of us still &lt;3 you and your maps.<br>
+<br>
+Righty let's see if we can get this working for you. Best way to deal with any hammery problem I find is work through it step by step.<br>
+<br>
+Head back to your box test map and try this:<br>
+<br>
+1) Add nothing but one env_sprite, one light and one info_player_deathmatch all with default settings.<br>
+<br>
+2) Compile and run the map, see if your sprite is working ok.<br>
+<br>
+3) Add your sphere, make it into a func_brush with solidity = never solid and shadows = off and set your sprites glowproxysize.<br>
+<br>
+4) Compile and run the map see if the sprite is still visible through the sphere.<br>
+<br>
+5) Texture your sphere and tweak colours, opacity etc to suit.<br>
+<br>
+If you get stuck with stuff not working at any point we have then found the point of failure and can look more at that, just shout.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p54649">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2009-06-11 01:55:42</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>boshed wrote:</cite>
+1) Add nothing but one env_sprite, one light and one info_player_deathmatch all with default settings.
+</div></blockquote>
+
+gj. tho one thing m8y:  env_sprite comes default turned OFF. in Flags you need to check it ON para.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p54654">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2009-06-11 02:10:03</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Ya I did turn the damn thing on, but it still didnt work &gt;&lt;</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p54686">
+	<div class="info">
+		<p class="poster">[MB]Brunt</p>
+		<p class="dt">2009-06-11 05:41:19</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">allso in the sprite props check the spritename and hit brows to pull up all the sprite you got and look for 1 that has the look you want. allso its ".vmt" at the end.if i think of anything eles  ill post</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p54705">
+	<div class="info">
+		<p class="poster">Sacrifist</p>
+		<p class="dt">2009-06-11 08:29:57</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>[EYE] Valar wrote:</cite>as said many times in the past - Welcome to Source my dear. information is so scattered around so many places it feels more like a state secret rather than a real SDK (source development kit).<br>
+and know the funny part? you go through all this crap, through the Nothing support you get from Valve, through endless PMs on Steam and a slew of forums and finally finish your map, proud and inspired you post your map accompanied with screenshots and elaborate map specifics, an hours (or days) worth of Photoshop work just to pimp the map's promo image and get back from the community what?<br>
+CRAP IN YOUR FACE AND ON YOUR HARD WORK. little kids roam these places. nothing but kids who are no diff from those who compete over who's got a bigger Shlong in the school bathroom. sticking to old outdated maps since before mud and praising them as if nothing can match their level while on other occasions the SAME people WILL critique the SAME OLD MAPS as SHIT.<br>
+after over 3 years MAPPING and after close to TWO HUNDRED RELEASED-PLAYED MAPS i can safely say to you - you best know your reason for taking on Hammer. and it best be for YOURSELF because appreciation and incentives are too few and far between. You, however, get front seat tickets to a spot from which you can see EXACTLY why this game is out the window. exactly why all you read and hear is scrutiny and whining and ranting in here. This fine website instead of being home to gamers joining together to prolong, learn, teach and support the game is home for immature angry kids who grope at each other's necks, talk down on newcommers, run down all others who are different from them in skill, thought or style, throw nonesense in all directions and take sides on each and every subject.<br>
+<br>
+and sorry for hijacking your thread. i'll get back to you on the sprites later. <img class="smilies" src="../../../images/smilies/icon_sad.gif" width="15" height="15" alt=":(" title="Sad"></div></blockquote>
+Woah there tiger lol. As I certainly agree with you, you should always consider your mapping a self gratifying feat more then anything. You will never please everyone and as long as you have pleased yourself, that should be all that matters.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p54714">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2009-06-11 09:41:02</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>[EYE] Valar wrote:</cite> ...you best know your reason for taking on Hammer. and it best be for YOURSELF(</div></blockquote>
+
+oh i do indeed know why i'm in Hammer and why i've done so much DM. and that's why it's much more than just a rant.<br>
+it's all good man. and yet all true <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=";)" title="Wink"><br>
+thx <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=":wink:" title="Wink"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p54889">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2009-06-12 10:48:06</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">OK I figured it out.....finally!<br>
+<br>
+The problem was not the sprite per se(although for some reason I wasnt seeing my sprites).<br>
+<br>
+The main problem was the texture of the sphere.  Brunt didnt use a glass texture, but instead he used an animated texture from the models section.<br>
+I figured this out by seperating the 3 things (light, sphere and sprite) in Brunts map and then compiled and ran the map.  That was where I saw the sphere was making the main effect, not the sprite.<br>
+<br>
+Anyway I got it to work and tweeked it to pretty much what I want.<br>
+<br>
+Thanks all!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p54896">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2009-06-12 16:59:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">i'm glad you kept on and didn't give up on it. gj111111111</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p54901">
+	<div class="info">
+		<p class="poster">[MB]Brunt</p>
+		<p class="dt">2009-06-12 18:36:35</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">yea what val sed.im glad you kept at it.hammer is alot of trial and eror.but i hind it fun</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p54903">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2009-06-12 18:58:25</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yea it was pissing me off.  I was like I have the his damn example right in front of me why the fuck cant I duplicate it!!!  Knew it had to be something stupid like that.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p54906">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2009-06-12 19:27:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Paradox wrote:</cite>Knew it had to be something stupid like that.</div></blockquote>
+
+It's amazing how many times the complicated stuff works first time and the simple stuff doesn't <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p54926">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2009-06-12 21:14:12</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">/me howls like a wolf</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

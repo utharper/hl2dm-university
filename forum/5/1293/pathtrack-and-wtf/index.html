@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>path_track and wtf? - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>path_track and wtf?</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=1293">https://forum.hl2dm.community/viewtopic.php?t=1293</a>
+-->
+
+<div class="post" id="p13913">
+	<div class="info">
+		<p class="poster">st00pidity</p>
+		<p class="dt">2008-03-22 01:45:02</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">so, i wanted to put in something i havent seen before (since some of my original ideas have apparently started to appear in other maps). I thought of takign a cscanner, and attaching a camera too it and letting it go around the camera at its own free will... but theres apparently 0% npc support for the cscanner in dm, couldn't even get it to stay alive, the map would open and the thing would gib immediatly.<br>
+<br>
+<br>
+backup plan was attaching a dynamic model of it to a func_train.. something blah blah right, put my path_track things in there, got it going around the map with a camera attached to it, but it looks mad retarded... i know how to fix it.. shit i've done the fixing, i adjusted the angles on the path_tracks so it'd look like it was moving more realisticly, and not just faceing the direction it moves, i even selected the correct orientation and everything... im pretty stumped as to why its not working.<br>
+<br>
+does anyone have any expierence with these? i've read over and over on the source sdk wiki... and im not seeing what i did wrong.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p13933">
+	<div class="info">
+		<p class="poster">st00pidity</p>
+		<p class="dt">2008-03-22 03:40:31</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">idk how... but i fixed it... so thank you me</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p13934">
+	<div class="info">
+		<p class="poster">st00pidity</p>
+		<p class="dt">2008-03-22 03:42:54</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">what i think happend is, i had my func_tracktrain's orientation at "near path_tracks" or "1" which seemed logical, and since i had read that any other seemed jerky, and i randomly switched it to "2" or "linear blend" which now works, but is indeed a little jerky.. thats fine tho.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p14568">
+	<div class="info">
+		<p class="poster">reaper47</p>
+		<p class="dt">2008-03-26 16:41:26</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Just a quick word of warning: func_tracktrains, as well as pretty everything that moves, tend to stutter and break in Tick 100 servers.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p14569">
+	<div class="info">
+		<p class="poster">st00pidity</p>
+		<p class="dt">2008-03-26 16:56:08</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">.......orly?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p14570">
+	<div class="info">
+		<p class="poster">st00pidity</p>
+		<p class="dt">2008-03-26 17:00:05</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Grape wrote:</cite>glad you got it working.<br>
+<br>
+do you know how to get other NPCs to work in DM? I've only seen instructions on how to add them through console after the map's already spawned, but not how to set up the ai relationships in hammer... though I must admit I haven't put too much time into figuring it out for myself. specifically I want to spawn headcrabs that hate either all players or a specific player..  <img class="smilies" src="../../../images/smilies/icon_question.gif" width="15" height="15" alt=":?:" title="Question"></div></blockquote>
+
+i havent every really bothered, as all of my maps have been pretty traditional deathmatch.. but i did add gman to one an early version of deathfan, that i wanted to stand behind a window and adjust his tie occasionally... i got him to work but the animation was really glitchy.<br>
+<br>
+infact i've never even bothered playing role playing, do they have npcs in it? i always assumed they did, but with such poor support i wonder how efficiently.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p14579">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-03-26 18:06:07</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>reaper47 wrote:</cite>Just a quick word of warning: func_tracktrains, as well as pretty everything that moves, tend to stutter and break in Tick 100 servers.</div></blockquote>
+
+not only. it also does that on 66 TR.<br>
+<br>
+about NPCs....there is a way to do it and i can show u how. however...some NPCs have been removed from DM code altogether and will indeed crash the server OnMapSpawn.<br>
+there is also a way to make NPCs (or any other point based and brush based entity) immune.<br>
+<br>
+hit me up on steam and ill show u how.<br>
+in any case...this is one of the prefabs-tuts i will add to the SDK section very soon.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

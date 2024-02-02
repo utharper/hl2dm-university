@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>is it possible to limit the amount of ammo in a weapon? - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>is it possible to limit the amount of ammo in a weapon?</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=4053">https://forum.hl2dm.community/viewtopic.php?t=4053</a>
+-->
+
+<div class="post" id="p53791">
+	<div class="info">
+		<p class="poster">kingloser</p>
+		<p class="dt">2009-05-30 15:30:42</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I was wondering if it was possible to limit the ammount of ammo in a weapon u pick up. I ask because i am making a map that i want to have a player pick up a crossbow ans 357 put i only want them to be able to fire one round with each. Ive looked and searched and cant find nething. Is this possible?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p53797">
+	<div class="info">
+		<p class="poster">{EE}chEmicalbuRn</p>
+		<p class="dt">2009-05-30 18:17:46</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">im not sure you can change that without altering the code of the game itself.  i know on the server side you can limit what weapons are available, but the ammo that comes with a weapon is coded into the game's structure.  im sure it would be not too hard to look thru the hard code of the game and find that, but that would only work for your client.  forcing it on others is prolly in the "hack" rhelm.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p53813">
+	<div class="info">
+		<p class="poster">Sacrifist</p>
+		<p class="dt">2009-05-31 06:47:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">You certainly can, but it isnt map related. You have to decrypt the weapon ctx files in the script folder. The thing about this is that it's a full server change. Which means, whatever you alter in your weapons/clips files will be adjusted for every map. Im sure someone around here has the decrypted ctx files. I cant seem to find my set atm.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p53875">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-06-01 17:18:18</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">There is a tool for decompiling and compiling had it on my rapid share account for ages.<br>
+<a href="http://rapidshare.com/files/128868899/hl2dm_ctx_decompile.zip" class="postlink">http://rapidshare.com/files/128868899/h ... ompile.zip</a><br>
+<br>
+<br>
+extract anywhere and add all the .ctx files for all weapons then click "decompile.bat"  it is setup for HL2DM only but you can easily change it by editing the bat files accordingly. The key for HL2DM is <strong class="text-strong">x9Ke0BY7</strong> I think it is case sensitive.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

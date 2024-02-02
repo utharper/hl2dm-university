@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>x264 - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Film Discussion</a></p>
+</div>
+
+<h1>x264</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=92">https://forum.hl2dm.community/viewtopic.php?t=92</a>
+-->
+
+<div class="post" id="p321">
+	<div class="info">
+		<p class="poster">Corrosive</p>
+		<p class="dt">2007-04-04 09:43:05</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">x264:  Has anybody done any testing with this codec?<br>
+<br>
+There's plenty of guides out there and thanks to seagull this one is quite helpfull:<br>
+<br>
+<a href="http://teek.info/guides/video/x264encode.html" class="postlink">http://teek.info/guides/video/x264encode.html</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p331">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2007-04-04 20:17:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I haven't tried encoding with it. I read about it and the site I was on recommended not using it until it is more widely distributed, or at least to encode with it as an option. Maybe encoding with it and distributing a compatible version of the codec with the vid would be good?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p339">
+	<div class="info">
+		<p class="poster">Corrosive</p>
+		<p class="dt">2007-04-05 07:25:56</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yeah you need ffdshow to view the final product which is just a decoder, once installed you use windows media player or whatever to watch, But I gotta say, I can get better than xvid quality at 800x600 and have 3mb for 6 seconds of footage,  It's a very complex encoder and will take time to perfect, but I think this is the thing to use over xvid.    I'll post some video comparison samples when i have time.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p342">
+	<div class="info">
+		<p class="poster">GaTmAn</p>
+		<p class="dt">2007-04-05 13:43:58</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">N1.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p734">
+	<div class="info">
+		<p class="poster">Corrosive</p>
+		<p class="dt">2007-05-26 04:20:31</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">So basically I can get  near ingame quality and maintain 30mb per 1minute @ 800x600<br>
+<br>
+Here's the site that I followed:   <a href="http://toxik.no-ip.info/x264/guide.html" class="postlink">http://toxik.no-ip.info/x264/guide.html</a><br>
+<br>
+Be warned, this is for those who are familiar with video encoding, it has several complex steps and requires lots of testing to reach the results that suit you.<br>
+<br>
+<br>
+When you get to the point where you've figured out how it works and can successfully encode an .avi into .mp4,  dont use the quality settings in that guide, they're not for the source engine.<br>
+<br>
+Use all default, with encoding at constant quantizers single pass, quantizer at 27.<br>
+Start there then mess with deblocking, b-frames and interlacing to fine tune.<br>
+<br>
+EDIT*<br>
+<br>
+Forgot to mention that I edit with premier pro 1.5, to use x264 you need export movie -&gt; download debugmode frameserve: <a href="http://www.debugmode.com/frameserver/" class="postlink">http://www.debugmode.com/frameserver/</a>   and use that, what it does is creates a small .avi file and acts as a middle man between premier pro and for example virtual dub (which x264 hates so dont use vdub with it.)  it acts like a server for your frames that third party programs can encode off of, maintain lossless quality from premier pro and preserve all your editing.  You'll also need to export your audio manually for muxing, /overwhelming. lol.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p736">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2007-05-26 05:59:49</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Woah, good info man. Yeah heh little overwhelming, but then so are a lot of things when you first see em.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Film Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

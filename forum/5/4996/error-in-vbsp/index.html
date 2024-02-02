@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Error in VBSP ?!? - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>Error in VBSP ?!?</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=4996">https://forum.hl2dm.community/viewtopic.php?t=4996</a>
+-->
+
+<div class="post" id="p69035">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2010-04-23 14:52:38</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">The map is Jelly Fox's tr_ptrain but it's extended to 20 lvls and has more details. Does this by any chance means I exceeded brush count in this map?? This error is happening in func_details, at least from all the tries I made. There's rly lots of them.<br>
+Can anyone help me with this one?<br>
+<br>
+
+<blockquote class="uncited"><div>-------------- Start Compile BSP ----------------<br>
+VBSP Started, Please Wait!<br>
+<br>
+VBSP:  c:\programas\steam\steamapps\...\sourcesdk\bin\ep1\bin\vbsp.exe  -game  "c:\programas\steam\steamapps\...\half-life 2 deathmatch\hl2mp" "C:\Programas\Steam\steamapps\...\sourcesdk_content\hl2mp\mapsrc\tr_ptrain_extended\tr_ptrain_extendend_23-04-10_2"<br>
+<br>
+Valve Software - vbsp.exe (Dec 11 2006)<br>
+2 threads<br>
+materialPath: c:\programas\steam\steamapps\...\half-life 2 deathmatch\hl2mp\materials<br>
+Loading C:\Programas\Steam\steamapps\...\sourcesdk_content\hl2mp\mapsrc\tr_ptrain_extended\tr_ptrain_extendend_23-04-10_2.vmf<br>
+<span style="color:#BF0000">Brush 373812: MAX_MAP_BRUSHSIDES<br>
+Side 5<br>
+Texture: STONE/STONEWALL006A</span><br>
+<br>
+<br>
+Compile Complete for this module.<br>
+VBSP Completed: sexta-feira, 23 de Abril de 2010,  11:43:50 <br>
+Abnormal Exit in VBSP ParseLog caught!<br>
+<span style="color:#BF0000">Catch: in vbsp_finish!</span></div></blockquote></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p69047">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2010-04-23 21:32:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Not the number of brushes, thats the number of brush *sides* so simplifying some stuff or converting it to models might do the trick.<br>
+<br>
+A quick googling shows MAX_MAP_BRUSHSIDES is 65536, I don't think I've ever been close to that in even my most complicated vmfs so get the cordon tool out and make sure there's not another error thats causing vbsp to flip out.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p69057">
+	<div class="info">
+		<p class="poster">Sacrifist</p>
+		<p class="dt">2010-04-24 01:31:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">You have a breakable wall that has a lot going on? If so, Id make some adjustments there. I've had it happen to me when I created a really complex brush since I didnt have a model available.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p69058">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2010-04-24 02:39:33</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">No nothing breakable in this map. It hasn't very complicated shapes but rather lots of them. Simple archways and wooden suports repeated 20 times.<br>
+Whenever I turn func_details off and compile it goes ok.<br>
+<br>
+As a possible solution I think I'll take out the beggining useless levels of ptrain that hardly even need sprinting to go through. This may help.<br>
+Converting these to models might not work. Maybe only the doors...<br>
+<br>
+These screenshots were taken from a previous compile when the map only had 2 levels yet.<br>
+Now imagine this repeated 20 times...<br>
+<a href="http://img63.imageshack.us/i/trptrainextendend230410.jpg/" class="postlink"><img src="http://img63.imageshack.us/img63/6672/trptrainextendend230410.th.jpg" class="postimage" alt="Image"></a><br>
+<a href="http://img18.imageshack.us/i/trptrainextendend230410.jpg/" class="postlink"><img src="http://img18.imageshack.us/img18/6672/trptrainextendend230410.th.jpg" class="postimage" alt="Image"></a><br>
+<a href="http://img227.imageshack.us/i/trptrainextendend230410.jpg/" class="postlink"><img src="http://img227.imageshack.us/img227/6672/trptrainextendend230410.th.jpg" class="postimage" alt="Image"></a><br>
+<br>
+The  the wooden supports and the archs are func_details (otherwise I'd have portal problems anyway), the outer brushes of doorways are func_brushes, etc.<br>
+<br>
+I'll use cordon bounds to test this with less levels...</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p69067">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2010-04-24 13:43:44</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Ok, I reduced the number of levels in the map and it's ok. I found a work around to what I wanted to do. <br>
+<br>
+Thanks guys.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

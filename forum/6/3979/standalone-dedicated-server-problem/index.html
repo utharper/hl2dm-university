@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Standalone dedicated server problem - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+
+<h1>Standalone dedicated server problem</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=3979">https://forum.hl2dm.community/viewtopic.php?t=3979</a>
+-->
+
+<div class="post" id="p52856">
+	<div class="info">
+		<p class="poster">dbanimal</p>
+		<p class="dt">2009-05-17 07:19:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Good evening,<br>
+<br>
+I have been running a SRCDS for the last few years and now today I restarted my server and it gets stuck at:<br>
+<br>
+Network:  IP 192.168...   mode MP, dedicated Yes, ports 27015 SV / 27005 CL<br>
+<br>
+That's as far as it gets and never actually starts completely.<br>
+I've been told before that I need to add -ip &lt;outside IP address&gt; to my command line but I've been running it this way for the last few years with no problems, plus, it complains about a missing UDP port when I put that line in with my outside IP address.  I'm running through a router and everything is setup properly.  My server has been running great for the last couple years and now this has happened.  Any suggestions?  Also, server files are all up to date.<br>
+<br>
+Thanks in advance,<br>
+<br>
+dbanimal</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p52870">
+	<div class="info">
+		<p class="poster">The Resident</p>
+		<p class="dt">2009-05-17 19:13:46</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Have you recently updated or installed any new firewall or anti-malware tools?  Maybe something like that is locally intercepting the socket and not giving you the opportunity to allow/deny?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p52875">
+	<div class="info">
+		<p class="poster">dbanimal</p>
+		<p class="dt">2009-05-17 19:58:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I believe there was a Windows update a few days ago (for XP Pro) but that's all I can think of.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p52891">
+	<div class="info">
+		<p class="poster">The Resident</p>
+		<p class="dt">2009-05-18 01:47:22</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Make sure your server start line has a -map parameter, and if it does, make sure the map file is actually there and not corrupt.  You could also try changing it to a known-good map, just to be sure.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p52903">
+	<div class="info">
+		<p class="poster">dbanimal</p>
+		<p class="dt">2009-05-18 06:24:27</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">K, I'll try it, thanks!<br>
+<br>
+Edit:  LMFAO!!  That was the ticket, I changed my startup map and had it spelled out wrong in my startup command - changed it and my server fires right up!!  Talk about major brain fart!!  Thanks for your help buddy!!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Custom textures - trouble - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+
+<h1>Custom textures - trouble</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=2355">https://forum.hl2dm.community/viewtopic.php?t=2355</a>
+-->
+
+<div class="post" id="p28802">
+	<div class="info">
+		<p class="poster">echelon</p>
+		<p class="dt">2008-08-27 00:39:37</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">hi.<br>
+<br>
+How do you make custom textures work on an online server? I've tried including it into the bsp, tried several progs, and done it the way it is described, and the bsp file even gets larger, so i know the textures are saved into the bsp, but somehow ppl cant download them automaticly.<br>
+<br>
+The textures do work fine on my local machine, and IF you have the files manually installed, it will display perfect even when you're on the server, but i need it to be able to download automatic for anybody joining the server.<br>
+<br>
+What am i doing wrong? Is there a better way?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p28925">
+	<div class="info">
+		<p class="poster">Swot</p>
+		<p class="dt">2008-08-28 02:37:36</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">If you include custom texes into a bsp the client needs this "new" bsp.<br>
+<br>
+if you just want do add some textures additionaly (something like advertising or clanbanner?) you could write a resource file..<br>
+it's a simple text file (written in notebook for example). The name depends on the map. for dm_overwatch.bsp for example: dm_overwatch.res (place it in the map folder as well)<br>
+<br>
+the content of this file should be something like this:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>"resources"
+{
+"materials/project/texture01.vmt" "file"
+"materials/project/texture01.vtf" "file"
+}
+</code></pre></div>
+
+now if a client connects to your server (and does not have cl_downloadfilter activated!) the game will automatically download all the files you have listed into the resource file.<br>
+<br>
+Hopefully this is what you're looking for.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

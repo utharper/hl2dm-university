@@ -1,0 +1,215 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HAMMER help: removing weapons and more - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>HAMMER help: removing weapons and more</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=4025">https://forum.hl2dm.community/viewtopic.php?t=4025</a>
+-->
+
+<div class="post" id="p53381">
+	<div class="info">
+		<p class="poster">Tranthor</p>
+		<p class="dt">2009-05-25 04:01:49</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hi,<br>
+I've been working on my first map (sorry, it's a killbox  <img class="smilies" src="../../../images/smilies/icon_neutral.gif" width="15" height="15" alt=":|" title="Neutral"> ).  I ran my Alpha version and it works great, but i need some questions answered before i release a beta.<br>
+<br>
+I'm making a melee only killbox, and I need to know how to remove weapons from players or prevent people from spawning with certain weapons.<br>
+<br>
+I also would like to know:<br>
+-Once you have used the clip tool on a brush, is it possible to (later) combine the two blocks into one?<br>
+-where might one find those big ugly octagons from dm_killbox_final?<br>
+<br>
+Thanks,<br>
+Tranthor</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p53388">
+	<div class="info">
+		<p class="poster">Beef</p>
+		<p class="dt">2009-05-25 07:36:55</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Strip / Equip is buggy. But I'm speaking from my experience with it. Perhaps some of the other mappers have had better luck with it. Sometimes it can cause you to crash, or people will randomly spawn with nothing, or spawn with default weapons. <br>
+But you can try it. <br>
+This is how I've done it: (<a href="http://fail.maps.googlepages.com/strip_equip.vmf" class="postlink"><strong class="text-strong">click me </strong></a>) use a <a href="http://www.editlife.net/entity.php?name=trigger_multiple" class="postlink"><strong class="text-strong">trigger_multiple</strong></a> that encompasses the map (so every spawn / player is touching it, always). Then you need a <a href="http://www.editlife.net/entity.php?name=player_weaponstrip" class="postlink"><strong class="text-strong">player_weaponstrip</strong></a>. and a <a href="http://www.editlife.net/entity.php?name=game_player_equip" class="postlink"><strong class="text-strong">game_player_equip</strong></a>. For the equip, you might have to turn off "smart edit" to enter the values. <br>
+So if it's a melee map, you'll add weapon_crowbar and weapon_stunstick, each with a value of 1. If you want gravgun, you'll want to add it at this point, too. <br>
+<br>
+The big ugly octagons are cylinder brushes tied to (ctrl + T) <a href="http://developer.valvesoftware.com/wiki/Func_physbox" class="postlink"><strong class="text-strong">func_physbox</strong></a>.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p53389">
+	<div class="info">
+		<p class="poster">Tranthor</p>
+		<p class="dt">2009-05-25 07:47:39</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thank you very much beef, I'll give that a try.<br>
+<br>
+If I am running a quite small map (in terms of file size) on a max-8-players server, is it less likely to cause crashes?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p53409">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2009-05-25 15:16:12</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Played a few maps that strip your weapons, some crash constantly on me and some don't crash at all. I stay well away from stripping weapons tbh.<br>
+
+<blockquote><div><cite>Tranthor wrote:</cite>
+-Once you have used the clip tool on a brush, is it possible to (later) combine the two blocks into one?
+</div></blockquote>
+
+Nope, you have to remake the brush.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p53440">
+	<div class="info">
+		<p class="poster">Sadist</p>
+		<p class="dt">2009-05-26 00:08:03</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote class="uncited"><div>So if it's a melee map, you'll add weapon_crowbar and weapon_stunstick, each with a value of 1. If you want gravgun, you'll want to add it at this point, too.</div></blockquote>
+
+I would advise having only stick or crowbar, double melee from the <strong class="text-strong">game_player_equip</strong> can cause crashes.  Try using 2 <strong class="text-strong">game_player_equip</strong>, one for each melee weapon, and trigger each using the same <strong class="text-strong">trigger_multiple</strong></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p53452">
+	<div class="info">
+		<p class="poster">Tranthor</p>
+		<p class="dt">2009-05-26 02:17:03</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hypothetically, could one remove the weapons server-side, instead of in the map?<br>
+Say, for example, I make 2 config files.  One of them is called, oh how about Fixweapons.cfg, and the other is called admin.cfg<br>
+<br>
+Fixweapons.cfg could contain<br>
+<span style="font-size:90%;line-height:116%"></span><div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>ent_remove_all weapon_357
+ent_remove_all weapon_shotgun
+ent_remove_all weapon_smg1
+ent_remove_all weapon_ar2
+ent_remove_all weapon_rpg
+ent_remove_all weapon_crossbow
+ent_remove_all weapon_frag
+ent_remove_all item_ammo_pistol
+ent_remove_all item_ammo_357
+ent_remove_all item_box_buckshot
+ent_remove_all item_ammo_smg1
+ent_remove_all item_ammo_smg1_grenade
+ent_remove_all item_ammo_ar2
+ent_remove_all item_ammo_ar2_large
+ent_remove_all item_ammo_ar2_altfire
+ent_remove_all item_rpg_round
+ent_remove_all item_ammo_crossbow</code></pre></div>[/size]<br>
+<br>
+and admin.cfg would contain, along with any binds I need,
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>alias "fix" "sv_cheats 1;wait;exec fixweapons.cfg;wait;sv_cheats 0"
+fix</code></pre></div>
+
+<strong class="text-strong"><br>
+Would this work, or would I have to make a bind for the alias "fix" and use it everytime someone spawned?</strong><br>
+<br>
+Keep in mind, the only point of this map is for me, I don't care about other servers running it <em class="text-italics">(good attitude to have, huh?)</em> so if players get to keep their smg and nades without my config files, it wouldn't make a difference to me.  However, I suspect that ent_remove_all wouldn't apply to newly spawned players, am I right?<br>
+<em class="text-italics"><strong class="text-strong"><br>
+-Tranthor, the Gigantic Space Hippo</strong></em></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p53456">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2009-05-26 03:49:14</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Sadist wrote:</cite>
+I would advise having only stick or crowbar, double melee from the <strong class="text-strong">game_player_equip</strong> can cause crashes.  Try using 2 <strong class="text-strong">game_player_equip</strong>, one for each melee weapon, and trigger each using the same <strong class="text-strong">trigger_multiple</strong></div></blockquote>
+
+Sticking zone is one of the maps that's never crashed on me.  <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=":wink:" title="Wink"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p53545">
+	<div class="info">
+		<p class="poster">Tranthor</p>
+		<p class="dt">2009-05-27 03:02:55</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I have just noticed, in Beef's link to <a href="http://www.editlife.net/entity.php?name=game_player_equip" class="postlink">game_player_equip</a><br>
+
+<blockquote class="uncited"><div>I've modified the HL2 and CSS FGDs to allow you to choose whether to give each weapon</div></blockquote>
+
+and sure enough, it does have smartedit for that!  If this works properly, it ought to be much easier</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p53610">
+	<div class="info">
+		<p class="poster">Tranthor</p>
+		<p class="dt">2009-05-28 02:09:29</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">update:  looks good so far, but I have another question<br>
+<br>
+Is it possible to re-size physics props?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p53632">
+	<div class="info">
+		<p class="poster">Beef</p>
+		<p class="dt">2009-05-28 06:03:14</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote class="uncited"><div>I would advise having only stick or crowbar, double melee from the <strong class="text-strong">game_player_equip</strong> can cause crashes.  Try using 2 <strong class="text-strong">game_player_equip</strong>, one for each melee weapon, and trigger each using the same <strong class="text-strong">trigger_multiple</strong></div></blockquote>Cool, I'll have to try that sometime!<br>
+<br>
+Tranthor, I found this link: <a href="http://www.interlopers.net/forum/viewtopic.php?f=14&amp;t=17760" class="postlink">http://www.interlopers.net/forum/viewto ... 14&amp;t=17760</a><br>
+<br>
+I'm sure there are other resources out there too. I haven't explored modeling so I'm not much help.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p53638">
+	<div class="info">
+		<p class="poster">Tranthor</p>
+		<p class="dt">2009-05-28 07:00:18</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">does it require a trigger_multiple to make the game_player_equip work?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p54022">
+	<div class="info">
+		<p class="poster">Tranthor</p>
+		<p class="dt">2009-06-04 05:16:10</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Ok, so, I still don't entirely get this.  when you say that the trigger_multiple needs to touch every spawn, do you mean like make a giant box around the outside of the map or something?  and how do I make sure that my trigger_multiple is triggering the player_weaponstrip and game_player_equip?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

@@ -1,0 +1,520 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Enabling hit sound? - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">General Plugin Talk</a></p>
+</div>
+
+<h1>Enabling hit sound?</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=1226">https://forum.hl2dm.community/viewtopic.php?t=1226</a>
+-->
+
+<div class="post" id="p12693">
+	<div class="info">
+		<p class="poster">Epoch</p>
+		<p class="dt">2008-03-16 00:02:07</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Is there a way to enable the hit sound through the console or must this be done through a plugin?  I REALLY enjoy playing with the hit sound, because I am always fooled by the blood when I get a hit that doesn't register.  I don't know shit about plugins, but it seems that people really don't want to see them on servers.  I've also heard that keepers plugins are well optimized, so my question is will a well optimized plugin still negatively effect the performance of my server?  I've played on servers with mani (which apparently is terrible) and not had lag probs, so would someone mind enlightening me?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p12696">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2008-03-16 00:18:29</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Most plugins hack into the memory of the game.  Mani, beetles, sourcemod, ...<br>
+<br>
+Mine just hacks one variable and I put very little in the routine that calculates ever game tick.<br>
+<br>
+I have several in the works for the orange box.  One is the headshot/sounds type plugin.  One is a pure admin plugin.  One will be a match mode/gametype plugin.<br>
+<br>
+I'm going to put the hitsound in the pure as well as the sounds one.<br>
+<br>
+But no, you cannot do that without a plugin.  I've sent a bunch of code changes to VALVe in the hopes that headshots and hitsounds could make it to the orange box.  I know it's being taken into consideration, but no guarantees <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p12698">
+	<div class="info">
+		<p class="poster">Jelly Fox</p>
+		<p class="dt">2008-03-16 00:30:22</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">HL2DM with hit sounds and a accurate hit reg = <a href="http://www.hl2dmpro.com/" class="postlink">http://www.hl2dmpro.com/</a>  <img class="smilies" src="../../../images/smilies/icon_mrgreen.gif" width="15" height="15" alt=":mrgreen:" title="Mr. Green"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p12709">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-03-16 03:21:35</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Keeper wrote:</cite> I've sent a bunch of code changes to VALVe in the hopes that headshots and hitsounds could make it to the orange box. </div></blockquote>
+
+at least for the initiative - well done!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p12744">
+	<div class="info">
+		<p class="poster">nade maeggs</p>
+		<p class="dt">2008-03-16 06:50:40</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">i love you keeper  <img class="smilies" src="../../../images/smilies/icon_mrgreen.gif" width="15" height="15" alt=":mrgreen:" title="Mr. Green"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p12792">
+	<div class="info">
+		<p class="poster">Anonymous</p>
+		<p class="dt">2008-03-16 18:02:18</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I LUUUUUUUUUV the keeper sounds, good work <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=";)" title="Wink"><br>
+<br>
+POMP</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p12793">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2008-03-16 18:06:01</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Well, until the orange box, anybody interested in just a hitsounds plugin?  The footprint would be very small and it would be enabled for hitscan weapons or all weapons.  One CVAR, no hacks.<br>
+<br>
+<br>
+If there is interest, I'll try to get something up tomorrow.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p12800">
+	<div class="info">
+		<p class="poster">Epoch</p>
+		<p class="dt">2008-03-16 19:19:42</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I am very interested!  One tiny little plugin won't hurt my server, and I REALLY like hit sounds so I would much appreciate it if you could post that for me Keeper.  Its like a giant breath of fresh air knowing when i've done dmg or not, no more guessing!  Thanks for the info and your help Keeper. <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p12821">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2008-03-16 20:32:18</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Keeper wrote:</cite>Well, until the orange box, anybody interested in just a hitsounds plugin?  The footprint would be very small and it would be enabled for hitscan weapons or all weapons.  One CVAR, no hacks.<br>
+<br>
+<br>
+If there is interest, I'll try to get something up tomorrow.</div></blockquote>
+
+Yes please sir, no hack hitscan only is what many competitive players would like I think.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p12825">
+	<div class="info">
+		<p class="poster">Epoch</p>
+		<p class="dt">2008-03-16 20:46:34</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">i was gonna say the hit sound would be nice for all weps, but then I thought about it for a sec and it wouldn't work for competative play. (no plugins in CAL anyway right?)  if you bounced a nade around a corner with the hit sound on all weps if that nade did dmg you would know some one was around that corner.  Except it would be nice to hear if your xbow did dmg on a bounce shot or something like that.  but then i guess that would give you the same advantage as the nade so nvm lol.<br>
+<br>
+It seems kinda ridiculous to me that hit sounds haven't been implemented in competative play yet.  I mean with all the hit reg issues people gripe about, hit sounds seem like the obvious solution.  I dub this a "Heres your sign" moment for the competative community.  I'm sure some one can enlighten me as to why such an obvious quick fix hasn't been put into use.<br>
+<br>
+I can't trust the blood anymore, no matter what it LIES!  LIES i tell you!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p12827">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2008-03-16 21:10:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yeah, I have had this discussion with a few people now. Definitely hitscan only, anything else changes the game. Splash weapons mean you can spam and listen to locate your opponent. Xbow also changes things, such as spammed bank shots in lockdown and biohazard.<br>
+<br>
+I do get frustrated sometimes when a displacement or stairs reduce splash damage on explosives, but it is nothing compared to the frustration caused by hit reg issues on hitscan.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p12830">
+	<div class="info">
+		<p class="poster">Epoch</p>
+		<p class="dt">2008-03-16 21:33:29</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">So i mean hit sounds solve the hit reg problem...at least they improve it, but they aren't used in competition?  I'm very curious about this, if anyone has any insight or knows the actuall reason please enlighten me.  I'm guessing its because of people aversion to plugins, but if keeper has such a non invasive plugin that only effects gameplay for the better, whats the sense in not using it?  I can't see how a plugin with such a small foot print could effect gameplay to such an extent that the gain provided by the hits sounds is out-weighed by performance loss.  <br>
+
+<blockquote><div><cite>Grape wrote:</cite>unless you can test for line-of-sight in the plugin.  if you could test for line-of-sight, you could have hit sounds for all weps <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"> </div></blockquote> I would worry about these added calculations making the plugin more invasive and effecting more that it would already.  I want something that does as little as possible for the highest gain, which right now seems like just implementing hit scan sounds.  Besides when someone is hit with the xbow if they're bhoping usually the momentum of the bolt effects the players trajectory.  So if they are in your line of sight, you'll see them stop, bounce into the air a little, or accelerate, letting you know you got a hit.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p12839">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2008-03-16 22:28:43</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Epoch wrote:</cite>So i mean hit sounds solve the hit reg problem...at least they improve it, but they aren't used in competition?  I'm very curious about this, if anyone has any insight or knows the actuall reason please enlighten me.  I'm guessing its because of people aversion to plugins, but if keeper has such a non invasive plugin that only effects gameplay for the better, whats the sense in not using it?  I can't see how a plugin with such a small foot print could effect gameplay to such an extent that the gain provided by the hits sounds is out-weighed by performance loss.  
+</div></blockquote>
+
+A hitscan only version has not yet been released for them to evaluate.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p12842">
+	<div class="info">
+		<p class="poster">Epoch</p>
+		<p class="dt">2008-03-16 22:35:29</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">ahha I knew it would be something extremely mundane and obvious like that lol.  Well it is a good idea no?  Hit sound sshould become a standard for all servers.  If you make it keeper, they will come.  lame reference but, waynes world anyone?  Also known as the bible of cool.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p12853">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2008-03-16 23:46:10</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I will test it tonight / tomorrow...have something posted about it soon.<br>
+<br>
+I'll even release the source if that will help it get into competitive play....<br>
+<br>
+Keep</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p12858">
+	<div class="info">
+		<p class="poster">Epoch</p>
+		<p class="dt">2008-03-17 00:02:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Word thanks Keeper you rock!  You work fast man, can't imagine the code for a plugin could be too too long but wow.  Bravo, standing ovation, encore!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p12876">
+	<div class="info">
+		<p class="poster">Epoch</p>
+		<p class="dt">2008-03-17 01:32:58</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Uh oh watch out  <img class="smilies" src="../../../images/smilies/icon_eek.gif" width="15" height="15" alt=":shock:" title="Shocked"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p12992">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2008-03-17 17:27:17</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Ok, need some input here.<br>
+<br>
+I use a button sound in my plugin for the hitsound. Is this what we want still?  This plugin will force no downloads, so custom sounds would be out of the question.  This is to make the plugin function with the sv_pure 2 setting.<br>
+<br>
+If you guys give me a list, I can make the sound available by a convar.  Or I can just hardcode in one sound.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p13002">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2008-03-17 19:12:19</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I like the original sound you chose, I would stick with it. Is it possible to have a slightly "deeper" stock sound for a headshot? I think allowing people to choose a different sound will just be confusing across different servers. Stick to your guns, pick what you think is best and make that the "official" hitsound of the plugin would be my suggestion.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p13021">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2008-03-17 20:47:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">It's done, but it won't work.  Not 100% anyway.  It might be better than nothing tho.<br>
+<br>
+In the game events, when a person gets hurt, the engine returns 3 variables.  Attacker, Victim, and Health of the victim remaining.<br>
+<br>
+From the attacker, I can access the gun being used.  but if you hit somebody with a combine ball or a smg1 grenade it will still buzz because you're holding a hitscan weapon.  Or if you lob a grenade somewhere and then switch to the mag before it goes off, you'll get a buzz because again, you are holding a hitscan weapon when the damage is done.<br>
+<br>
+For the most part tho, it will be accurate.  The question is, will it be accurate enough to use?  All they have to do is add one line of code when they fire off the player_hurt event and I can get it 100% accurate.  This is frustrating on my part.  So many things are like this.  I can grab the info I need out of memory, but that won't be a pure plugin.  I can also monitor health on each player hurt, but that might suck some power out of the server when it gets full.  A 1v1 tho wouldn't harm it at all.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p13025">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2008-03-17 21:07:37</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Arg. <img class="smilies" src="../../../images/smilies/icon_sad.gif" width="15" height="15" alt=":(" title="Sad"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p13028">
+	<div class="info">
+		<p class="poster">Fearsome*</p>
+		<p class="dt">2008-03-17 21:24:48</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">We don't run plugins period in CAL. We do this for several reasons. 1 How do we know that you have not modified a plugin? How do we know that is the only 1 your are running and that it is indeed the one we have approved. The only time we may consider it is if it will solve cheating issues. The second is it allows anyone with to run a server with the CAL config and have it be legal. This is a simplicity issue which is a main reason we do not use a pro mod. What you get from valve will work. If we do plugins then we have to force everyone to install them and add another layer of problem getting people to have CAL legal servers. As it is people just don't seem to get even the basic source TV rules and have them implemented right. If we were getting ready to go that way then we would have to consider going with a mod like pro mod and getting real fixes by working with the dev team. In addition I believe that the risk of not knowing if you hit is a tactical part of the game. When we start introducing the ability to know if you were hit, and if it was a head shot some of the alot of the risks involved with deciding to chase a person disappear. <br>
+<br>
+Practice on servers with hit sounds to get a feel for where to aim. And you will start to know more if you hit or not. But during CAL matches we stick with a standard valve server.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p13031">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2008-03-17 21:43:48</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I don't blame you for this reasoning.  I don't 100% agree with your statement:
+<blockquote class="uncited"><div>I believe that the risk of not knowing if you hit is a tactical part of the game</div></blockquote>
+
+What most argue is that it shows blood splatter, when there is in fact no hit.  The hitsound was put in my plugin to allow an audio cue to ensure you acutally hit the person.  If there were no blood splatter on hits then I think there would be no need for hitsounds.<br>
+<br>
+In any event, I can see your points on server consistency.  Sometimes I wish I could work for VALVe to add some of these things the communities want without adding complexity to the game.  I'll just have to learn to live with that frustration <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p13042">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2008-03-17 22:34:54</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">A clan mate made a modified hitsound which i find much more audible than the standard one, been using it for a few months now.<br>
+Extract to <strong class="text-strong">sounds</strong> folder<br>
+<a href="http://keefy.net/downloads/hl2/hit_sound.zip" class="postlink">http://keefy.net/downloads/hl2/hit_sound.zip</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p13043">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2008-03-17 22:38:01</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote class="uncited"><div>1 How do we know that you have not modified a plugin? How do we know that is the only 1 your are running and that it is indeed the one we have approved.</div></blockquote>
+
+How do you tell if a server is plugin free? Is there some variable that disables all plugins, or something that reports it?<br>
+<br>
+I agree it changes play, I think it improves things. I am tired of watching mag round after mag round hit the rag doll on my screen, splattering blood all over the floor or wall, only to be told by my opponent that one or none of my shots landed. At least with hitsounds I would have some feedback telling me not to chase my opponent because they are not hurt at all, whereas I am at half health.<br>
+<br>
+Having said that, I also understand the importance for consistency.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p13045">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2008-03-17 22:42:54</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>keefy wrote:</cite>A clan mate made a modified hitsound which i find much more audible than the standard one, been using it for a few months now.<br>
+Extract to <strong class="text-strong">sounds</strong> folder<br>
+<a href="http://keefy.net/downloads/hl2/hit_sound.zip" class="postlink">http://keefy.net/downloads/hl2/hit_sound.zip</a></div></blockquote>
+
+The problem with this is it wont work on sv_pure 2 servers. The advantage of Keepers sound is that it is already part of the game content and doesnt need to be downloaded. If that's not what you meant, then disregard this.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p13050">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2008-03-17 23:15:06</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Walking Target wrote:</cite>How do you tell if a server is plugin free? Is there some variable that disables all plugins, or something that reports it?</div></blockquote>
+
+If you have access to the console, then plugin_print works.  Other than that, I can make any of my plugins invisible to the user.  I could do stuff that would give the host server advantage ( 1/2 hit damage, increased weapon damage, better spam weapon accuracy ).  None of it would be detectable in the startup of the server or any of the variables.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p13149">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2008-03-18 06:46:38</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Keeper wrote:</cite>If you have access to the console, then plugin_print works.  Other than that, I can make any of my plugins invisible to the user.  I could do stuff that would give the host server advantage ( 1/2 hit damage, increased weapon damage, better spam weapon accuracy ).  None of it would be detectable in the startup of the server or any of the variables.</div></blockquote>
+
+Might want to keep that particular set of codes under your hat.  0_o</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p13184">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2008-03-18 15:14:48</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">lol @ Paradox.  Not gonna do it ... don't worry <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"><br>
+<br>
+@Grape.  I don't have a problem releasing my source code.  But it won't work with MMS.  It is a stand alone plugin that you have to compile with Visual Studio Express 2005 C++ at least.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p13192">
+	<div class="info">
+		<p class="poster">Pernicious</p>
+		<p class="dt">2008-03-18 16:46:46</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Would it be possible to create a plugin that kicks ppl who have packet loss, or over a certain amount etc.. I have nothing against them, i am one, just curious <img class="smilies" src="../../../images/smilies/icon_razz.gif" width="15" height="15" alt=":P" title="Razz"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p13194">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2008-03-18 17:05:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">cool keep <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p13210">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2008-03-18 18:52:47</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Grape wrote:</cite>ps) is there an api on how you can interact with source through c++?</div></blockquote>
+
+Have you downloaded the Source SDK yet?  In there you can create a mod.  I would do the "Source Code Only" option.  In there there is an example plugin that you can follow to get started.<br>
+<br>
+Here is my meaningless hitsounds plugin <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>
+<dl class="attachbox">
+					<dt>
+						Attachments
+					</dt>
+											<dd>
+			
+		
+		
+				<dl class="file">
+			<dt><span class="imageset icon_topic_attach"></span> <a class="postlink" href="hit_sounds.zip">hit_sounds.zip</a></dt>
+			<dd><em>Contains files necessary to compile hitsounds plugin.</em></dd>			<dd>(10.3 KiB) Downloaded 58 times</dd>
+		</dl>
+		
+			</dd>
+									</dl>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p13279">
+	<div class="info">
+		<p class="poster">ninojman</p>
+		<p class="dt">2008-03-18 20:32:56</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">so is it possible to "fix" the blood so it's only when you get damage?  That would be nice aswell,  i know i've seen a extra blood plug-in of sorts on this one pub, althou it lagged like crazy but i think it had about 30 other plug-ins going aswell.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p13433">
+	<div class="info">
+		<p class="poster">Epoch</p>
+		<p class="dt">2008-03-19 05:11:55</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hmmm this is quite the pickle isn't it. At least it will be nice in pubs.  Those few little quarks are a little worry some, but meh it will work well enough for a pub anyway.  Nothing wrong with a little extra information when your pubing lol.  thanks keeper.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p13597">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2008-03-20 16:01:45</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Well,for pubs, I can do a safe "hack" version that gets that extra little bit of info.  Then it would be 100%.<br>
+<br>
+The hack technique I use hasn't caused a server to crash since I released it over a year ago.  And that's with updates from VALVe too.  So it's pretty stable.  I use a real time search to find a variable rather than hardcoding it's position in the program.  If it doesn't find the variable, then the plugin continues without that functionality <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p13615">
+	<div class="info">
+		<p class="poster">snuffymckiller</p>
+		<p class="dt">2008-03-20 18:31:54</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Keep if you need to test it you're welcome to use training grounds.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p13902">
+	<div class="info">
+		<p class="poster">Epoch</p>
+		<p class="dt">2008-03-22 01:17:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Haven't been getting onto the U as much as I would like.  Awesome Keeper thanks alot for going to all that trouble to make a hit sound plugin.  I would love to put that on my server and do some extensive play testing on it for yah.  I'm an uber noob though so if some one could please explain the procedure of loading a plugin onto a game server that would be MUCH appreciated.  For pubs it doesn't bother me at all to get a little more info for a trade off of having the plugin runn 100% of the time.  Reliable hit sound is SO worth a little extra "spoiler" information.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p14797">
+	<div class="info">
+		<p class="poster">snipeIT</p>
+		<p class="dt">2008-03-27 19:29:32</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Keeper wrote:</cite><blockquote><div><cite>Grape wrote:</cite>ps) is there an api on how you can interact with source through c++?</div></blockquote>
+
+Have you downloaded the Source SDK yet?  In there you can create a mod.  I would do the "Source Code Only" option.  In there there is an example plugin that you can follow to get started.<br>
+<br>
+Here is my meaningless hitsounds plugin <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div></blockquote>
+
+Hahahah, Iam doing a robosumo project, the "NQC" code is sooo damn similar to C++, thats why they call it Not quite C.<br>
+<br>
+Anyways, to make it CAL legit, why not give CAL officials your source code, and then tell them to compile it. That why the only argument they may have is "Opps i dont know shit when it comes to computer programming".<br>
+<br>
+Or option 2 : Screw CAL start up a better league here.<br>
+<br>
+<br>
+My opinion is very subjective.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p14800">
+	<div class="info">
+		<p class="poster">Epoch</p>
+		<p class="dt">2008-03-27 19:41:47</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">The reason Fearsome gave for not running any plugin, even ones that would benefit the game, is that it would be one more recuirement you would need to load onto your serevr to have a CAL rdy server.  I guess people ahve enough trouble just loading the CAL config and source TV settings onto their server, and the CAL officials feel it would better not to further complicate the process.  But imo when the gain out weighs the hassel of setting it up its worth it.  Meh, I see where their coming from though.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">General Plugin Talk</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

@@ -1,0 +1,260 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Close hl2.exe after hl2dm crash and rejoin script (useful) - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+
+<h1>Close hl2.exe after hl2dm crash and rejoin script (useful)</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=3259">https://forum.hl2dm.community/viewtopic.php?t=3259</a>
+-->
+
+<div class="post" id="p43401">
+	<div class="info">
+		<p class="poster">gtamike_TSGK</p>
+		<p class="dt">2009-02-07 13:23:26</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><span style="text-decoration:underline"><strong class="text-strong">Close hl2.exe after hl2dm crash and rejoin (Safe, useful and fast)</strong></span><br>
+<br>
+Hi all, sometimes when hl2dm crashs the hl2.exe in task mangers says its using 50% cpu and you fill a big system slow down. <br>
+<br>
+I've made a fix to save time and get you back ingame fasty without going in task manger.  <br>
+<br>
+This is a small .bat file script that <strong class="text-strong">kills hl2.exe</strong> and <strong class="text-strong">kills GameOverlayUI.exe</strong> then <strong class="text-strong">starts up hl2dm again</strong>, just by double clicking the .bat file (place the .bat file on desktop)<br>
+<br>
+Copy this code in notepad select "save as" then "save as type" choose "All file" and save the flie name as "kill_hl2_then_run.bat" <br>
+<br>
+Save on desktop to open and find easily<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>tskill hl2
+tskill GameOverlayUI
+START C:\Progra~1\Steam\Steam.exe -applaunch 320
+</code></pre></div>
+
+Added in Attachment if you don't want to make it. <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=":wink:" title="Wink"> <br>
+<br>
+Has been tested, hope you find this useful as I do</div>
+<dl class="attachbox">
+					<dt>
+						Attachments
+					</dt>
+											<dd>
+			
+		
+		
+				<dl class="file">
+			<dt><span class="imageset icon_topic_attach"></span> <a class="postlink" href="kill_hl2_then_run.zip">kill_hl2_then_run.zip</a></dt>
+			<dd><em>kill_hl2_then_run.bat</em></dd>			<dd>(219 Bytes) Downloaded 30 times</dd>
+		</dl>
+		
+			</dd>
+									</dl>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p43417">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2009-02-07 19:42:49</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thanks for sharing man.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p43419">
+	<div class="info">
+		<p class="poster">gtamike_TSGK</p>
+		<p class="dt">2009-02-07 19:56:55</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Walking Target wrote:</cite>Thanks for sharing man.</div></blockquote>
+No problem</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p43431">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-02-07 23:39:19</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I already have a script to end hl2.exe+ gameoverlay, did not think to add the start command to it Doh,<br>
+Thanks.<br>
+<br>
+P.S <br>
+You need the quotations when saving the file otherwise it will be a text file.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p43433">
+	<div class="info">
+		<p class="poster">G</p>
+		<p class="dt">2009-02-07 23:50:10</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">sweet</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p43437">
+	<div class="info">
+		<p class="poster">Beef</p>
+		<p class="dt">2009-02-08 02:51:35</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Dude. Thanks.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p43442">
+	<div class="info">
+		<p class="poster">lead</p>
+		<p class="dt">2009-02-08 04:14:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">n1 m8 <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p43447">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2009-02-08 07:17:59</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">would there be a way to add a line to this to make it start the game and join a server?<br>
+<br>
+There just happens to be this server I play in all the time and I find myself constantly crashing and then restarting and rejoining. Would be nice to just hit one button and be back in the game.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p43448">
+	<div class="info">
+		<p class="poster">[KBH]Tazzer</p>
+		<p class="dt">2009-02-08 07:31:00</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">thanks again (saw it on my udder fo'rum) <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=":wink:" title="Wink"> !</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p43449">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-02-08 07:35:56</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>L2k wrote:</cite>would there be a way to add a line to this to make it start the game and join a server?<br>
+<br>
+There just happens to be this server I play in all the time and I find myself constantly crashing and then restarting and rejoining. Would be nice to just hit one button and be back in the game.</div></blockquote>
+Try adding<br>
++connect Ipaddress:port<br>
+START C:\Progra~1\Steam\Steam.exe -applaunch 320 +connect Ipaddress:port<br>
+<br>
+Its just like creating a shortcut on your desktop.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p43451">
+	<div class="info">
+		<p class="poster">[KBH]Tazzer</p>
+		<p class="dt">2009-02-08 07:38:21</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>keefy wrote:</cite><blockquote><div><cite>L2k wrote:</cite>would there be a way to add a line to this to make it start the game and join a server?<br>
+<br>
+There just happens to be this server I play in all the time and I find myself constantly crashing and then restarting and rejoining. Would be nice to just hit one button and be back in the game.</div></blockquote>
+Try adding<br>
++connect Ipaddress:port<br>
+START C:\Progra~1\Steam\Steam.exe -applaunch 320 +connect Ipaddress:port</div></blockquote>
+
+<br>
+shit if this works smoothly enough you guys have just made the game "better" a double click<br>
+away from being back to the game sweet!!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p43465">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2009-02-08 10:34:33</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>keefy wrote:</cite><blockquote><div><cite>L2k wrote:</cite>would there be a way to add a line to this to make it start the game and join a server?<br>
+<br>
+There just happens to be this server I play in all the time and I find myself constantly crashing and then restarting and rejoining. Would be nice to just hit one button and be back in the game.</div></blockquote>
+Try adding<br>
++connect Ipaddress:port<br>
+START C:\Progra~1\Steam\Steam.exe -applaunch 320 +connect Ipaddress:port<br>
+<br>
+Its just like creating a shortcut on your desktop.</div></blockquote>
+This works awesome TYTYTYTY! <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p43529">
+	<div class="info">
+		<p class="poster">{EE}chEmicalbuRn</p>
+		<p class="dt">2009-02-09 04:22:37</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">what would be the shiznittlydingdang is if you could have in that batch file to return to the last server played. aka, the one that just crashed.  like a wild card</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p43530">
+	<div class="info">
+		<p class="poster">CellarDweller</p>
+		<p class="dt">2009-02-09 04:30:12</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">is this something new?  i've never had this problem... until the past 2 weeks.  now it's like every figgin time.   <img class="smilies" src="../../../images/smilies/icon_mad.gif" width="15" height="15" alt=":x" title="Mad"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p43761">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-02-12 03:27:38</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">The new steam beta should fix the hl2.exe from hanging when quti game.<br>
+<br>
+<br>
+EDIT<br>
+Steam beta is crap ATM, you have to update HL2DM everytime you play.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p62108">
+	<div class="info">
+		<p class="poster">The Argumentalizer</p>
+		<p class="dt">2009-10-28 22:13:54</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Do you use Zone Alarm?<br>
+<br>
+I have noticed i have had to re-add Game Overlay to program control in Zone.<br>
+And that a recent update has some servers playing very stuttery.<br>
+<br>
+Hope you fix it but i think it is Steam/DM and an update has janked your setup/firewall...</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

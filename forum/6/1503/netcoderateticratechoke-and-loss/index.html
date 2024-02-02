@@ -1,0 +1,1816 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>(!) Netcode(rate,ticrate,choke, and loss) - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+
+<h1>(!) Netcode(rate,ticrate,choke, and loss)</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=1503">https://forum.hl2dm.community/viewtopic.php?t=1503</a>
+-->
+
+<div class="post" id="p17807">
+	<div class="info">
+		<p class="poster">.::TTK::.TW3@K3R</p>
+		<p class="dt">2008-04-15 16:39:38</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Here is a new guide explaining some things that I found to be in correct with some other guides.  I don't doubt that someone will post a link to another one.  I would be surprised if the whole guide goes over everything I talk about in here.  I show recommendations for server admins and clients.  Most net guides only go over clients sides stuff.<br>
+<br>
+<a href="http://www.jason35.com/Netcode.htm" class="postlink">http://www.jason35.com/Netcode.htm</a><br>
+<br>
+I did not post demos nor am I since all of this, if followed correctly can be tested in servers that don't force your rates.  You will be able to see the results on the screen.  How you feel playing like this or what your used to will play a part.  Even tho this guide is right some people that are used to choking or having low rates won't feel comfortable playing at these.  This doesn't mean I am wrong just you don't feel right playing with them.<br>
+<br>
+Last, remember if you go into an empty server no matter what you have your rate set at you probably won't choke.  But go into a server with 16 people and alot of action depending on what you set your rate to you will choke.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p17829">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2008-04-15 20:20:03</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thanks, I'll have a read.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p17880">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2008-04-16 04:36:06</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Some real good info in here esp for the person who has no clue about netcode and settings. I find your thoughts on rate quite interesting and I will definitely be talking to a few server admins who run pubs that ofter have a lot of players. I myself have a 15 mb download so setting rate at 100,000 makes sense. It will be interesting to see if I lose the occasional choke on the few highly populated servers I visit after they raise max rate. <br>
+<br>
+Although very few hl2dm servers run at 100 tick and for good reason (certain maps won't work right at 100 tick) I understand why you showed the examples of ideal settings, but think they are for the most part going to be limited to 66/66/66,000.<br>
+<br>
+If you were to do anymore work on this project I would suggest getting into interp and how that can effect things as well as cleaning up the grammar.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p17884">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2008-04-16 05:20:49</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I tested this on Khaos server (thanks paradox) and can confirm that setting rate higher did in fact eliminate choke. <br>
+When I joined the server it was full 16 players and I was running 66/66/30000 client side and I was getting 10-20 choke consistanly.<br>
+Paradox raised the servers sv_maxrate to 100000 and I set my client to 66/66/66000 and choke went away instantly and never returned.<br>
+<br>
+Cal needs to take another look at the reasoning behind setting sv_maxrate 30000 and consider changing that. The idea behind limiting rate below what todays bandwith capabilities can support is beyond me.<br>
+<br>
+At this point I cant confirm that hit registration was actually better, but it wasn't worse and having no choke is a plus!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p17916">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2008-04-16 08:50:05</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I might try running the pub with that maxrate for a few days and see what it does.  I will also try those rates.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p17940">
+	<div class="info">
+		<p class="poster">.::TTK::.TW3@K3R</p>
+		<p class="dt">2008-04-16 16:24:35</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thanks Guys for testing it out and confirming my findings.  About 4 months ago I posted something on this in steam forums and pretty much was told I was and idiot lol.  I really want to do something on interp.  I just can't find any really good info and a solid way to test it.  If anyone has some links to information explaining interp post it..  The best explanation of interp is on the wiki<br>
+<br>
+<a href="http://developer.valvesoftware.com/wiki/Source_Multiplayer_Networking" class="postlink">http://developer.valvesoftware.com/wiki ... Networking</a><br>
+<br>
+How accurate it is I am not sure.  It basically it is saying that cl_interp_ratio 2 is the best settings.  Which sets your cl_interp  cl_interp to cl_interp_ratio/updaterate or ticrate.  So whichever setting is lower tickrate or updaterate it figures the interp for you.  Simpler way to view this is how many updates in the past do you want to use to calculate what is actually happening now.  cl_interp_ratio is how many updates in the past.   If you go to many I don't think it would be accurate anymore.  So in theory I am thinking cl_interp_ratio 2 would be the way to go maybe even 3 not higher than 3 though.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p17941">
+	<div class="info">
+		<p class="poster">.::TTK::.TW3@K3R</p>
+		<p class="dt">2008-04-16 16:27:14</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Oh yea has anyone been in a server yet where it is 66 tic or above and you look at the net_graph and it shows you sending 66-68 updates but your only receiving 60-62 updates.  That is a perfect example of admins not adding sv_maxupdaterate 66 or 100 to there server.cfg.  Default if setting isn't there is 60..</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18121">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2008-04-17 19:19:20</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>.::TTK::.TW3@K3R wrote:</cite>Oh yea has anyone been in a server yet where it is 66 tic or above and you look at the net_graph and it shows you sending 66-68 updates but your only receiving 60-62 updates.  That is a perfect example of admins not adding sv_maxupdaterate 66 or 100 to there server.cfg.  Default if setting isn't there is 60..</div></blockquote>
+I always wondered why, I thoguth they were doing it deliberate for soem sterange reason now i know they are not.<br>
+I have upped the sv_maxrate on my server now and also my rate bt 90% servers still limit to 30000 or 25000, I have also lowered my graphics settigns to help increse fps on the less FPS friendly maps.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18129">
+	<div class="info">
+		<p class="poster">SND</p>
+		<p class="dt">2008-04-17 20:08:57</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I been asking for a guide on how properly set up a server and this seems to answer some of the questions. who was there person that was going too make a server admin guide for hl2dmu.<br>
+its really important for server admins to know this stuff if they knew it it would increase the overall quality of the servers we have in hl2dm which i have been on more than one occasion find servers that are not setup right.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18132">
+	<div class="info">
+		<p class="poster">.::TTK::.TW3@K3R</p>
+		<p class="dt">2008-04-17 20:30:57</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I could try to put one together it will take longer.  It will take alot more time cause I would have to go into detail on mani mod. The difference between ticrate and fps on a server which even confuses me some lol..  The more I think about it yea will take alot more time.  But I will see if I can find time if the other person doing one isn't doing it.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18135">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2008-04-17 20:43:54</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">It wouldn't need too much more than just posting a really well set up a cfg for a 66 tic server.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18136">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2008-04-17 20:48:37</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Ya our servers could use some good settings that allowed good communication yet disallowed any of the low rate "tweaks" that some bastids use <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18139">
+	<div class="info">
+		<p class="poster">.::TTK::.TW3@K3R</p>
+		<p class="dt">2008-04-17 20:56:32</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I guess I could come up something like that pretty quick.  But the thing is in my conclusion those settings for the server are settings to use in any ticserver.   What you do is set the settings the highest possible settings cause the ticrate is ultimately going to force them lower.  Ticrate is the main controller for updaterate and cmdrate you can't go higher then the ticrate but you can go lower.  So by setting sv_maxcmdrate 100 and sv_maxupdaterate 100 works for 100tic, 66tic, and 33tic.. Cause the server will never let the client get more updates or send more updates then what the server ticrate is.  The only way you can see this force is by using net_graph.<br>
+<br>
+Wrote this while keeper posted.  But I think I got the idea kind of.  What is good settings that lets everyone receive the most and the best but not let the other rate hackers lower theres to the point there hard to hit.  I gotcha I can write something up I hope today on that.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18140">
+	<div class="info">
+		<p class="poster">.::TTK::.TW3@K3R</p>
+		<p class="dt">2008-04-17 20:58:53</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I am also going to write this assuming that the use of dial up to play online games is really just retarded.  I will write up something that assumes that your average player has a 128kbit connection or higher.  Really the average player should have 256kbit but I don't want to discriminate lol..</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18141">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2008-04-17 21:07:11</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">sounds good, as far as the server cfg it should really be geared to 66 tick since there might only be 2 100 tick servers out there and they have problems. 100 tick in hl2dm is a no go.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18145">
+	<div class="info">
+		<p class="poster">Neolinkster</p>
+		<p class="dt">2008-04-17 22:07:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>.::TTK::.TW3@K3R wrote:</cite>I am also going to write this assuming that the use of dial up to play online games is really just retarded.  I will write up something that assumes that your average player has a 128kbit connection or higher.  Really the average player should have 256kbit but I don't want to discriminate lol..</div></blockquote>
+
+ :evil:  I wish I had that connection again</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18155">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2008-04-17 23:17:02</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I set the rates and whatnot on my pub to match the CAL settings when I set it up so that any particular 'feel' that the config emparts to the player would be consistent between the servers for my CAL team.  I stll want t try setting the max rate to 100000 for a bit.  I will post when I get to it so those that want to can check it out.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18185">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2008-04-18 03:51:38</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">OK everyone, I have set my public server's maxrate to 100000.  I will leave it that way for a week or so and see what we can find out.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18186">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2008-04-18 03:52:54</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">sweet</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18207">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2008-04-18 07:25:00</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I set ours to 100000 also.  All my choke is gone.  The game is smooth again.  When I put the value in the server.cfg tho it didn't work.  I had to stick it in the valve.rc file.<br>
+<br>
+Going to continue to monitor this.<br>
+<br>
+Thanks!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18216">
+	<div class="info">
+		<p class="poster">snuffymckiller</p>
+		<p class="dt">2008-04-18 08:26:36</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Keep, I did this in TG yesterday did you also reset it?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18236">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2008-04-18 15:38:37</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Ya, I saw it in the server.cfg file.  But gameservers must do some kind of protection on the startup command line because it was still 30000.  Putting it in the valve.rc file seems to override the startup parameters.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18246">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2008-04-18 20:06:47</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Keeper wrote:</cite>Ya, I saw it in the server.cfg file.  But gameservers must do some kind of protection on the startup command line because it was still 30000.  Putting it in the valve.rc file seems to override the startup parameters.</div></blockquote>
+That could be if your with gameservers.com, they have some funky things like that. I have nuclear fallout and I just added it to my server cfg and it took fine.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18284">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2008-04-19 03:17:47</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hmmmm I think an undesired side effect might be physics not doing the appropriate damage and killing people when it should.  Have seen a few radiators and sawblades bounce off.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18293">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2008-04-19 03:36:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">That happens at 100 tick, but shouldnt happen with raised limit afaik. You are still running at 66 tick right?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18304">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2008-04-19 04:53:35</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I also asked nino to raise the rate at wrw and apparently he did since I checked my rate there earlier and it was 66000. We played a round on some map cannon I think it was and all we did was prop kill and there was nothing weird. I also played KBH at 66000 and it was fine as well. So far I'm impressed with the higher rates!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18313">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2008-04-19 07:23:59</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yeah it feels good at that rate.  I've been playing around 50000 just cause I keep bumping it up to see what gets rid of the choke.  <br>
+<br>
+But does it affect players who don't change their rates?  Will somebody playing at 25000 with the max rate on the server changed still feel the same?  Or will it get choppier for them?  I think WT saw something there.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18322">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2008-04-19 10:22:50</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Walking Target wrote:</cite>That happens at 100 tick, but shouldnt happen with raised limit afaik. You are still running at 66 tick right?</div></blockquote>
+
+yes still 66 tick<br>
+<br>
+100 tic DM FTL</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18325">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2008-04-19 11:35:42</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Keeper wrote:</cite>Yeah it feels good at that rate.  I've been playing around 50000 just cause I keep bumping it up to see what gets rid of the choke.  <br>
+<br>
+But does it affect players who don't change their rates?  Will somebody playing at 25000 with the max rate on the server changed still feel the same?  Or will it get choppier for them?  I think WT saw something there.</div></blockquote>
+
+Hits registered for a change, but it felt choppy and slow. I checked my netgraph and was running at around 40 choke instead of the usual 0. Why does increasing the max cause client choke?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18326">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2008-04-19 15:23:50</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I was always getting choke on that server.  I think it's a gameservers problem.  When I increased my rate, it was just fine.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18330">
+	<div class="info">
+		<p class="poster">.::TTK::.TW3@K3R</p>
+		<p class="dt">2008-04-19 17:07:31</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">First off,  I think some things you are seeing is Coincidence.  Because changing a sv_maxrate setting in server couldn't change anything that would effect the server.  Another thing is if you did change that and the client did to you would actually relieve the server.  Choke means the server is holding on to your updates and waiting for you to be able to receive them.  Then it lets it go.  So choke can actually hurt the server by making it work harder.  my suggestion is to put sv_minrate 50000 or 70000 in so that clients joining won't choke.   I have that in my server guide just is taking me along time to get it all typed up.  If nobody on your server chokes then more than likely the server should be running smooth.   Now forcing every client to a high rate may create loss for them if they have a slow internet connection.  But if loss happens the updates are gone and the server isn't haveing to do any more work then it did.  <br>
+<br>
+Slow internet connections if experiencing loss.  Can lower there cl_updaterate to get rid of loss.  Which is the optimal way if they lowered there rate to get rid of loss it would just turn into choke.  Since you want to get rid of both then lowering updaterate is the way to go.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18331">
+	<div class="info">
+		<p class="poster">Cynips</p>
+		<p class="dt">2008-04-19 18:01:51</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Do you think it's possible that forcing a high updaterate might cause the server to work so hard sending out updates that it impacts server fps? I'm not talking about rate now, but e.g. 66 max updaterate compared to 33 max?<br>
+<br>
+I'm hearing some complaints on my server and I'm wondering about the possibilities that they actually are related to my test settings. I'm inclined to think that most cases are just coincidences or players' minds playing tricks on them.<br>
+I HAVE seen less than perfect hit reg though, but I can't say it's worse than before...</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18334">
+	<div class="info">
+		<p class="poster">Neolinkster</p>
+		<p class="dt">2008-04-19 19:49:32</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>.::TTK::.TW3@K3R wrote:</cite> my suggestion is to put sv_minrate 50000 or 70000 in so that clients joining won't choke. </div></blockquote>
+
+yeah and watch me ping out afterwards</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18344">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2008-04-19 21:11:38</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>.::TTK::.TW3@K3R wrote:</cite>First off,  I think some things you are seeing is Coincidence.  Because changing a sv_maxrate setting in server couldn't change anything that would effect the server.  Another thing is if you did change that and the client did to you would actually relieve the server.  Choke means the server is holding on to your updates and waiting for you to be able to receive them.  Then it lets it go.  So choke can actually hurt the server by making it work harder.  my suggestion is to put sv_minrate 50000 or 70000 in so that clients joining won't choke.   I have that in my server guide just is taking me along time to get it all typed up.  If nobody on your server chokes then more than likely the server should be running smooth.   Now forcing every client to a high rate may create loss for them if they have a slow internet connection.  But if loss happens the updates are gone and the server isn't haveing to do any more work then it did.  <br>
+<br>
+Slow internet connections if experiencing loss.  Can lower there cl_updaterate to get rid of loss.  Which is the optimal way if they lowered there rate to get rid of loss it would just turn into choke.  Since you want to get rid of both then lowering updaterate is the way to go.</div></blockquote>
+
+I'm not so sure that would cause loss but it would cause choke if the clients net wasn't up to par. The client really needs to use your conversion chart and really test their net speed to make sure its consistent before deciding on what rate to run on their machine. MY thought is that dsl varies at times and it could be aceptable at one moment but not another. Cable being more consistent you would be less likely to see the higher rate cause trouble. <br>
+Loss usually occurs when packets don't arrive due to bad routers across the net, and I'm not 100% positive if loss could be created due to client settings but I don't think so.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18379">
+	<div class="info">
+		<p class="poster">Cynips</p>
+		<p class="dt">2008-04-20 03:23:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I heard someone say that moderns online shooters can cope with considerable choke (like 40) but is sensitive to loss.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18381">
+	<div class="info">
+		<p class="poster">SND</p>
+		<p class="dt">2008-04-20 03:58:34</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I checked my servers and the sv_maxrate 0 that means it unlimited im not sure thats a good thing.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18419">
+	<div class="info">
+		<p class="poster">SND</p>
+		<p class="dt">2008-04-20 17:09:34</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Would there be any problems if the maxrate is set too high by the client and the server allowed it would this have any bad effect on the server and players. Right now there no limit on the rate u can choose on the server and as i said im not sure if that a bad thing but could a player abuse this to their advantage.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18425">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2008-04-20 19:37:44</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Is rate directly affected by the number of players in the server,  what i mean is more players means higher rate?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18427">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2008-04-20 20:09:06</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">rate is the *rate* your client exchanges info with the server. Player count shouldn't have any bearing on what rate you use. You true consistent net speed should be the deciding factor on what rate you use. If you use a rate higher than your connection can handle, you will saturate your connection and start to see choke.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18438">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2008-04-20 23:06:40</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">To clarify ... if you have a game server hosted by somebody else and have a 16 person server, then you may encounter choke because <em class="text-italics">their</em> pipe might not be big enough if all of the players are pushing the max rate you set.<br>
+<br>
+The same can be said if you set your rate too high for your connection.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18440">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2008-04-20 23:47:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Right, so sv_maxrate is throttling the server end and rate is throttling the client end.<br>
+<br>
+Depending on the size of the pipe at each end you may be setting each too high or too low.<br>
+Too much flow from the server and too low rate on your end means choke coz you cant accept everything thats being sent?<br>
+<br>
+This shit is so confusing to me lol. I need a massive analogy.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18446">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2008-04-21 01:02:48</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Keeper wrote:</cite>To clarify ... if you have a game server hosted by somebody else and have a 16 person server, then you may encounter choke because <em class="text-italics">their</em> pipe might not be big enough if all of the players are pushing the max rate you set.<br>
+<br>
+The same can be said if you set your rate too high for your connection.</div></blockquote>
+
+Yes thats a good point, thx keeper. <br>
+To add if you have a server hosted by such a company and its choking with 16 players you should find another host as your not really getting what you should be, unless its free of course.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18447">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2008-04-21 01:03:20</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Walking Target wrote:</cite>Right, so sv_maxrate is throttling the server end and rate is throttling the client end.<br>
+<br>
+Depending on the size of the pipe at each end you may be setting each too high or too low.<br>
+Too much flow from the server and too low rate on your end means choke coz you cant accept everything thats being sent?<br>
+<br>
+This shit is so confusing to me lol. I need a massive analogy.</div></blockquote>
+ exactly</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18449">
+	<div class="info">
+		<p class="poster">SND</p>
+		<p class="dt">2008-04-21 01:29:30</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Walking Target wrote:</cite>Right, so sv_maxrate is throttling the server end and rate is throttling the client end.<br>
+<br>
+Depending on the size of the pipe at each end you may be setting each too high or too low.<br>
+Too much flow from the server and too low rate on your end means choke coz you cant accept everything thats being sent?<br>
+<br>
+This shit is so confusing to me lol. I need a massive analogy.</div></blockquote>
+
+ok so let me get this straight having a server with out a max rate for the client where players are demanding so much from the server that it reaches a point where all players on the server choke. So it would be in my interest to set a max rate of let say 66000 which would be enuff to get ride of choke at clients end but also prevent players demanding a crazy amount.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18468">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2008-04-21 05:18:55</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">if its a 66 tic server they cant get more than 66000 anyway, so yeah you could set it at that. The thing is that if your host cant handle 10 or 16 players ( or w/e your server max players is) pulling a rate of 66000 down it may choke so you need to keep an eye on what its doing when its full. If you see no choke leave it at that, if you do see choke you may want to lower the servers max rate. Also you need to get a general consensus from the players on your server, as IDK how good your connection is and if you personally can handle a rate of 66000 on your client.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18470">
+	<div class="info">
+		<p class="poster">Cynips</p>
+		<p class="dt">2008-04-21 06:00:32</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">sv_maxrate only sets the maximum rate the server allows. It doesn't stop the amount of data needed to be sent from maybe being more, therefor ending up in choke. What you need to do is restrict the clients' cL_updaterate, or how often they are demanding updates from the server. If you see choke in spite of high (unlimited?) rate, you should lower sv_maxupdaterate.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18471">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2008-04-21 06:51:11</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">So cynips your saying people with higher bandwith should be penalized?<br>
+By limiting updaterate thats what would happen.<br>
+ I think any decent server host should be able to support 66/66/66000 and if not then they shouldn't be used, at least not for competitive purposes.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18495">
+	<div class="info">
+		<p class="poster">Cynips</p>
+		<p class="dt">2008-04-21 13:22:43</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Basically, that's what I'm saying. But at the same time you're right. The traffic for 6-8 ppl playing a clan war shouldn't be a problem for any decent server provider. It's just that <em class="text-italics">if</em> you see choke and you know it's not caused by any other part of the route to your computer, this is what you should do.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18499">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2008-04-21 14:00:36</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">how good does the game work @ rate 66000?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18501">
+	<div class="info">
+		<p class="poster">Cynips</p>
+		<p class="dt">2008-04-21 14:19:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>0nti wrote:</cite>how good does the game work @ rate 66000?</div></blockquote>
+Difficult question to answer since rate only set a maximum rate. It doesn't necessarily mean you'll ever be taking advantage of it. I'm sure that in a 1on1 match without spectators you're not going to get near that amount of traffic.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18506">
+	<div class="info">
+		<p class="poster">.::TTK::.TW3@K3R</p>
+		<p class="dt">2008-04-21 16:41:22</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">WOW alot of posts for a day in a half.   Let me add this We have a 16 man CS:S server that stays full all evening usually.  I have set my rate at 100000 the server is set to sv_maxrate 100000 sv_minrate 70000  (everyone in the server is forced to this also).  I have been in there with a full server and we play gungame mod which is little more intense and alot more shooting.  I have never choked once even on a full server.  So with this I can assume that HL2 and source games will probably never have to send 100000bytes and can probably assume never hit 70000.   So the talk about setting sv_maxrate and sv_minrate effecting anything.  It shouldn't, cause it is just saying that the client can't set there rate to higher than sv_maxrate and can't set it lower than sv_minrate.  sv_maxrate and sv_minrates doesn't control what the server is going to send.  The server is going to send every update it needs too per the ticrate you choose.  If you server can't handle it there is no setting that will help. You will have to lower the ticrate.  Most game server rentals will be able to more than handle it.  So if I set rate to 100000000000000000000000 it isnt' going to tell the server it has to send me this much it means I can handle this if you needed to send me more.  <br>
+<br>
+Just remember "rate" is just a rule.. for the server to follow.  Like a speed limit.  The server can go slower but if you try to go faster then the server will stop you at your speed limit you set(rate).   You guys are reading into this rate setting to much..<br>
+<br>
+<br>
+Someone commented that having a sv_maxrate high might cause the server fps to go down.  Which isn't good.  Actually the more players in the server playing will cause higher fps usage probably.  Even if you set your sv_rate setting lower the server still has to produce all the updates per the ticrate so you have 16 players on a 66tic server.  The server has to produce 1056 updates a second regardless what you set the rate at cause that is the tic of the server.  If you want to control how many updates the server has to produce you could force everyones sv_maxupdate lower.  But rate is never going to control what the server has to produce or how big the update is that the server produced.<br>
+<br>
+Also if you want to check your fps of your server to see if it is working to hard.  use rcon stats or in hlsw just type stats in console tab this also gives you cpu usage but don't know how accurate it is.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18524">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2008-04-21 20:38:33</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">So for 2 players 30000 is plenty fast enough but for 10 or more players it need to be higher due to more updates being recieved from server?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18525">
+	<div class="info">
+		<p class="poster">.::TTK::.TW3@K3R</p>
+		<p class="dt">2008-04-21 20:47:40</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">If your looking at the server side there are more updates being sent with 10 people in there then with 2.  So you fps of the server may go down.  If you are looking at the client side of it.  The more people doesn't mean more updates.  It means larger updates.  Like 2 people in a server the largest updates may be 250bytes.  But with 10 people playing it could hit 500bytes or 750bytes for each update.  You times that by the tic of the server. Example: 66 (server ticrate) times 250 bytes = 16500bytes so with a rate setting of 20000 everything will be fine.  but lest take 66 (server ticrate) times 500bytes = 33000 bytes so if you had a rate setting of 20000 that wouldn't be high enough if each updates was 500bytes in size.  So the more people and more action means each of the updates the server sends you can get bigger so more bytes come to you in total.  100, 66, 33 are the only amounts of updates the client is going to get sent no more.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18535">
+	<div class="info">
+		<p class="poster">SND</p>
+		<p class="dt">2008-04-21 21:42:14</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">This is great feels just just like when your create a server it nice and smooth with high rate and i have not noticed any hit reg problems which is great. why on earth do we use 30000 i remember to often joining a server for a scrim and a choke of 10 or 15 and have to waste time trying to find the right net setting to get it down and even so u try everything and u still have choke if more servers allowed high rates i would not have this much of a problem in getting rid of choke.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18536">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2008-04-21 21:50:54</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">It is starting to make sense now thanks.<br>
+I just need to find a full server to test my own rate out, i havnt found 1 that doesnt limit to 30000 or less yet.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18540">
+	<div class="info">
+		<p class="poster">.::TTK::.TW3@K3R</p>
+		<p class="dt">2008-04-21 22:03:26</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>SND wrote:</cite>This is great feels just just like when your create a server it nice and smooth with high rate and i have not noticed any hit reg problems which is great. why on earth do we use 30000 i remember to often joining a server for a scrim and a choke of 10 or 15 and have to waste time trying to find the right net setting to get it down and even so u try everything and u still have choke if more servers allowed high rates i would not have this much of a problem in getting rid of choke.</div></blockquote>
+
+<br>
+So True, So True.  I can tell you where we got 30000.   It was a CS 1.6 thing... most netcodes came from cs or old hl1.  I can bet you I read them all.  Most people believed that 20000 was perfect for cable and someone said anything higher than that was a lan setting.  I couldn't understand them and the netgraph in old hl didn't tell you as much as the hl2dm one does.  Heck I was so crazy screwed up with hl1 old netcode I set my rate to 524288 cause I had a 4mbit connection.  Because I thought you could get as many updates as you wanted.  I figured each update was 250bytes so I divided it into 524288 and came up with a cl_updaterate 2097 and played like that, goes to show you how much I thought I knew (although there is no clear way to know or check old hl and cs may have had the ability to send more than 100 updates.  Of course later I realized and learned alot more and change all that lol.. But the one thing I knew is I didn't believe they were completely right ever.  Just didn't have any good ways to test things.  In old HL and CS not alot of people knew this but cl_cmdrate needed to be 2 or 5 more than FPS to get good net settings. Thank God HL2dm and source games made it so much easier to test.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18559">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2008-04-21 23:49:40</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>keefy wrote:</cite>It is starting to make sense now thanks.<br>
+I just need to find a full server to test my own rate out, i havnt found 1 that doesnt limit to 30000 or less yet.</div></blockquote>
+My server has a max rate of 100000 right now.  We had close to a full server much of last night.  The only person that complained had a ping of 160 and was in Norway.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18646">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2008-04-22 18:35:55</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">So, on the server rate = 10000<br>
+<br>
+Can't change it.<br>
+<br>
+What does this effect?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18647">
+	<div class="info">
+		<p class="poster">.::TTK::.TW3@K3R</p>
+		<p class="dt">2008-04-22 18:43:44</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">No rate setting has no effect with the server just leave it.<br>
+<br>
+sv_maxrate = server setting to control the rate of the client<br>
+sv_minrate = server setting to control the rate of the client<br>
+<br>
+rate = is only a client setting what it is set at on the server side won't effect anything.<br>
+<br>
+Now if you are talking about your sv_maxrate being set at 10000 then yea change it to 100000.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18648">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2008-04-22 18:56:37</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Ok, so what's the thought on 66000 versus 100000?<br>
+<br>
+Is it tickrate?  If so, why bother at &gt; 66000?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18650">
+	<div class="info">
+		<p class="poster">.::TTK::.TW3@K3R</p>
+		<p class="dt">2008-04-22 19:00:59</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Nothing really just a bigger threshold setting higher means less of a risk that a client will choke.  No sense in trying to set at just enough to not choke.  In the some off chance that you need to go higher sometime.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18667">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2008-04-22 21:18:29</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">based on his initial findings, I interpreted it to mean that with a 66 tick server full of players lets say 16+ a setting of more than 30000 could actually be utilized ( if the clients bandwith can support it), however it could never exceed that of the tickrate times a certain factor. So my thinking is why not set it at maximum for those times it can be utilized, even if it doesn't hit more than 40000. <br>
+The main thing I see is, the end result of seeing no choke on servers that raised the rate to 100k, where as before I did see choke.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18711">
+	<div class="info">
+		<p class="poster">SND</p>
+		<p class="dt">2008-04-23 07:16:42</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">i brought up a discussion on CU have a look at it.<br>
+<a href="http://www.clans-united.net/index.php?site=forum_topic&amp;topic=1492&amp;type=ASC&amp;page=1" class="postlink">http://www.clans-united.net/index.php?s ... ASC&amp;page=1</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18716">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2008-04-23 08:21:00</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Another wierd side effect is none of the clients seem to crash anymore.  Countless scoreboard crashes at the end of a round are gone.<br>
+<br>
+Plus the 5 guys hanging in mid air crashes seem to have gone away also.  Been running 2 days now.  I need to double check the logs to make sure no group timed out at the same time.  <br>
+<br>
+Anybody else who has tried to improve the rates of their servers seen a reduction in the crashes by the clients?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18718">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2008-04-23 08:37:08</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">hmmmmm possible.   I believe you are correct Keeper, the crashes / timeouts seem to be less.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18732">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2008-04-23 19:38:07</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Keeper wrote:</cite>Another wierd side effect is none of the clients seem to crash anymore.  Countless scoreboard crashes at the end of a round are gone.<br>
+<br>
+Plus the 5 guys hanging in mid air crashes seem to have gone away also.  Been running 2 days now.  I need to double check the logs to make sure no group timed out at the same time.  <br>
+<br>
+Anybody else who has tried to improve the rates of their servers seen a reduction in the crashes by the clients?</div></blockquote>
+
+I was on KBH the other day with WT and everyone on the server crashed but me sorry to say. Could it be due to me being the only one running 66/66/66000? Dunno yet, as you said everyone just froze where they were and then eventually timed out. I would say its possible that this could have greatly reduced it, but not completely eliminated it. If you want to look at logs I'd estimate that occurred Monday night at about 10-12 ish PST.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18747">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2008-04-23 22:07:28</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Well I changed it on Friday, so as long as it was the killbox server then my guess might be wrong.  If it was the other one, I didn't change that until yesterday I think.<br>
+<br>
+But the two crashes are probably independent of each other anyway.  So I'll just keep a look out.  <br>
+<br>
+I've always believed the scoreboard crash is due to people leaving the server shortly before the board is shown and the client tries to show their info when they are no longer there.  Maybe with the updated rates that won't happen as frequently.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18754">
+	<div class="info">
+		<p class="poster">.::TTK::.TW3@K3R</p>
+		<p class="dt">2008-04-23 23:02:35</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Keeper or whoever, I was reading the other thread in the united clans forum.  I noitced that there is a person that says they get choke because of there fps.  This is impossible to get choke from fps or cmdrate.  What you send won't get choked.  Only what you receive from the server can.  Choke is only measured by what the server wants to send and what is denied by the client.  FPS can't cause choke.<br>
+<br>
+Your settings that you posted are perfect if you are going to lax some for people the only one you need to is cl_updaterate.  Cause lowering updaterate will only hurt that persons hit registry.  but lowering cmdrate hurts all the players hit registry.  The lowering of cmdrate was conisdered rate hacking in old hl.. They would have updaterate 100 and cmdrate 20 or so.  That way they got very good info coming in on players positions.  But there player position wasn't getting updated as much causing other players have a hard time hitting that person.<br>
+If you are going to change your settings I think this is what they should be..<br>
+<br>
+sv_minrate 40000<br>
+sv_maxrate 100000<br>
+sv_mincmdrate 66<br>
+sv_maxcmdrate 66<br>
+sv_maxupdaterate 66<br>
+sv_minupdaterate 30<br>
+<br>
+This allows a person with a slow internet connection to get rid of choke by lowering the updaterate since his connection is slow raising rate won't help..<br>
+<br>
+the rest of your settings I think are perfect.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18800">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2008-04-24 02:32:20</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote class="uncited"><div>sv_minrate 40000</div></blockquote>
+This would ruin me ... I can't get higher than ..........30000 I believe (yeah slow connection ftl !)<br>
+and ...locking players rates...I think that would cause more trouble than solving them?<br>
+Some players might have problems at cl_cmdrate 66 or updaterate 66....and may be forced to use lower .... what if the server doesn't allow this? D:</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18826">
+	<div class="info">
+		<p class="poster">Pig Popper</p>
+		<p class="dt">2008-04-24 04:46:45</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">i got a question, forgive me for not reading all the posts but it started hurting my head, but does anyone know the default rate players start with? someone pursuaded me to change my rate to combat lag in a new server, and now its all wrong in my usual servers.. sorry if this is off topic.<br>
+<br>
+Pp</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18831">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2008-04-24 06:01:04</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">it should say in the console if you write each command without a value, but iirc:<br>
+cl_cmdrate 30<br>
+cl_updaterate 20<br>
+rate 25000 (not sure?)</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18846">
+	<div class="info">
+		<p class="poster">Seagull</p>
+		<p class="dt">2008-04-24 07:52:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">"What you send won't get choked. Only what you receive from the server can. Choke is only measured by what the server wants to send and what is denied by the client. FPS can't cause choke."<br>
+<br>
+what you're sending is capped by your fps - if cmdrate is higher than this (say 66 and your fps is 25), can it cause choke in firefights?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18865">
+	<div class="info">
+		<p class="poster">steambob</p>
+		<p class="dt">2008-04-24 11:52:56</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">In fact, one can separate technically two types of choke:<br>
+- measured based on FLOW_OUTGOING, the choke that server makes; this choke is shown e.g. in "net_graph 3" and is discussed in this thread;<br>
+- measured based on FLOW_INCOMING, "client side" - one needs a plugin to see this. <br>
+<br>
+The latter is present when cl_cmdrate is low (for example, standard <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile">). <br>
+I think it goes away completely only when one puts cl_cmdrate close to tick rate.<br>
+It seems that for players themselves, the "client side" choke is not as critical as "server side" choke, but it is still technically "a choke".<br>
+For other players low cl_cmdrate makes more problems. An observer can see those people lagging if they have low cl_cmdrate, especially when the observer has high cl_updaterate.<br>
+<br>
+I think one also needs to separate "set values" of rates and "real values". <br>
+Real values can be limited by such factors as low fps (for cmdrate).<br>
+<br>
+<br>
+As for the standard value of "rate" - this depends which type of connection one chooses in Steam.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18870">
+	<div class="info">
+		<p class="poster">Pig Popper</p>
+		<p class="dt">2008-04-24 14:34:25</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>0nti wrote:</cite>it should say in the console if you write each command without a value, but iirc:<br>
+cl_cmdrate 30<br>
+cl_updaterate 20<br>
+rate 25000 (not sure?)</div></blockquote>
+
+thnx<br>
+
+<blockquote><div><cite>Seagull wrote:</cite>"What you send won't get choked. Only what you receive from the server can. Choke is only measured by what the server wants to send and what is denied by the client. FPS can't cause choke."<br>
+<br>
+what you're sending is capped by your fps - if cmdrate is higher than this (say 66 and your fps is 25), can it cause choke in firefights?</div></blockquote>
+
+usually my fps and choke are fine, i was on a notoriously laggy map yesterday and was just curios about these different rates.  <br>
+
+<blockquote><div><cite>steambob wrote:</cite>In fact, one can separate technically two types of choke:<br>
+- measured based on FLOW_OUTGOING, the choke that server makes; this choke is shown e.g. in "net_graph 3" and is discussed in this thread;<br>
+- measured based on FLOW_INCOMING, "client side" - one needs a plugin to see this. <br>
+<br>
+The latter is present when cl_cmdrate is low (for example, standard <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile">). <br>
+I think it goes away completely only when one puts cl_cmdrate close to tick rate.<br>
+It seems that for players themselves, the "client side" choke is not as critical as "server side" choke, but it is still technically "a choke".<br>
+For other players low cl_cmdrate makes more problems. An observer can see those people lagging if they have low cl_cmdrate, especially when the observer has high cl_updaterate.<br>
+<br>
+I think one also needs to separate "set values" of rates and "real values". <br>
+Real values can be limited by such factors as low fps (for cmdrate).<br>
+<br>
+<br>
+As for the standard value of "rate" - this depends which type of connection one chooses in Steam.</div></blockquote>
+
+too much information  <img class="smilies" src="../../../images/smilies/icon_eek.gif" width="15" height="15" alt=":shock:" title="Shocked">  my head hurts.<br>
+<br>
+<br>
+Tnx for your help peeps, i forgot about the net_graph thingy, im gonna experiment in game and see if i can restore it back to normal now <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18872">
+	<div class="info">
+		<p class="poster">Cynips</p>
+		<p class="dt">2008-04-24 14:57:06</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>steambob wrote:</cite>For other players low cl_cmdrate makes more problems. An observer can see those people lagging if they have low cl_cmdrate, especially when the observer has high cl_updaterate.<br>
+<br>
+Real values can be limited by such factors as low fps (for cmdrate).</div></blockquote>
+So you can appear laggy to other players if you have low fps (especially if they have high cl_updaterate)?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18879">
+	<div class="info">
+		<p class="poster">steambob</p>
+		<p class="dt">2008-04-24 16:00:05</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yes, as far as I understand this.<br>
+In particular, the players with higher cl_updaterate normally have lower cl_interp and then low-cmdrate players (who have low real cmdrate limited by fps, for example) appear more laggy.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18881">
+	<div class="info">
+		<p class="poster">.::TTK::.TW3@K3R</p>
+		<p class="dt">2008-04-24 16:39:54</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">You got it mixed up some bob..  cl_cmdrate and fps goes together.  But this will not cause you to choke to the server.  You don't hold back updates like the server does.  Cause the server isn't requesting you send it 66 updates on a 66 ticserver.  You could tell the server that you are only going to send 30 updates by setting cl_cmdrate 30..  This doesn't cause anykind of choke.  You are right about one thing low cl_cmdrate can cause a client to appear laggy.  That is why you force the client to have a cl_cmdrate of 100 or 66 in a 66 tic server.   If you do that then his fps is the end factor of how many updates he sends.  Yes he could be getting 30fps so he would send 30 updates he would appear to be laggy.  But remember if he has to use fps as the factor of cmdrate then at least the other players will appear to be laggy to him also.  because he will only be rendering 30frames a second and it will look choppy to him to.  So cause he can't get high fps he will suffer like everyone else that is trying to kill him.  So it is fair, you can't control how good someones computer is.<br>
+<br>
+Valve wrote somewhere that said that you can't send more updates then frames rendered.  So doesn't matter what your cl_cmdrate is you won't even create an update tell you renedered the frame.  So how can you choke.  You will find that most people that can't get fps of higher than 30 usually will quti playing cause it is so hard to play like that.  Having high cl_updaterate of 100 won't make those people appear laggy.  You could lower it and they still would appear laggy.  Well actually the lower you set the better chance of everyone appearing laggy.  Also pay attention to ping higher pings is sometimes the cause of laggy looking players.<br>
+<br>
+<br>
+I think that bob might be thinking of old hl1 or cs 1.6..  Back then you could choke to the server.  You actually had 2 rate settings rate and cl_rate..  If you set cl_rate really low like 2500 then you would hold back a bunch of updates.  It didn't care what your fps was only what cl_cmdrate was.  It did care.. If you set cl_cmdrate lower than fps it would choke.  As long as it was higher than fps everything was fine.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18885">
+	<div class="info">
+		<p class="poster">steambob</p>
+		<p class="dt">2008-04-24 17:23:27</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">.::TTK::.TW3@K3R:<br>
+<br>
+Well I do not know if you can really call it a choke in a "standart" sense, it is not a server choke what I mean.<br>
+I am just sharing some observations I've made with a small plugin that measures "client side choke".<br>
+It does this by calling GetAvgChoke( FLOW_INCOMING ); and is therefore technically should be called a "choke". <br>
+It goes to 0 only if client has sufficiently high real cmdrate (also measured).<br>
+I do not really know how important this is, it seems it does not affect the game as much as "standart" (FLOW_OUTGOING) choke, but the numbers are still there  <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"><br>
+<br>
+I do agree that a client with low fps suffers in the same or worse way.<br>
+<br>
+If an observer increases his cl_updaterate, he normally decreases cl_interp too (game does this automatically). This means the observer side interpolates over shorter time and the players who are in general laggy due to small real cmdrate show "who they really are", and can appear more laggy to the observer.<br>
+<br>
+I think a higher ping of a client just lowers the real cmdrate - and the observer sees high-ping players in a similar fashion as low-fps ones. <br>
+The high-ping clients are however in a better situation than the low fps ones, since they can still get high fps and relatively smooth game with interpolation.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18900">
+	<div class="info">
+		<p class="poster">.::TTK::.TW3@K3R</p>
+		<p class="dt">2008-04-24 18:36:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">with the way interp works that sounds like that would be true.  I guess maybe if the ticrate was 66 tic and your fps dropped below something might say that you are choking.  GetAvgChoke( FLOW_INCOMING ) to me if being ran on the clients machine that would be what you are recieving.  IF it is ran on the server side.  My guess is that it takes the servers ticrate and then monitors how many updates a second the client is sending if it is less then the ticrate it is calling it choke.  Sounds like it is just meaning that the client should be sending 66 updates in a 66 tic server but is only sending 33...  for whatever reason.<br>
+<br>
+Put some links to the plugin or info on it so I can read up on it.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18904">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-04-24 18:57:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Keeper wrote:</cite>Another wierd side effect is none of the clients seem to crash anymore.  Countless scoreboard crashes at the end of a round are gone.<br>
+<br>
+Plus the 5 guys hanging in mid air crashes seem to have gone away also.  Been running 2 days now.  I need to double check the logs to make sure no group timed out at the same time.  <br>
+<br>
+Anybody else who has tried to improve the rates of their servers seen a reduction in the crashes by the clients?</div></blockquote>
+
+i didn't change any of my rates. all is the same as it ever was -i hardly ever crash anymore. i crashed once in the last week and a half where i would crash at least 5 times in a span of 3 hours a few weeks ago.<br>
+<br>
+and guys....with all due respect to the info above  -  FPS is a client side only thing and has no relation whatsoever to the internet as a rule. FPS is determined by the client's hardware only. yes, you can see FPS dropping when there's a connection issue either on your end or server side but those would be momentarily only and not something you can set in advance using your rate settings. (e.g. i can show 299 FPS on a map and have 400 ping and lag like an old hag).</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18905">
+	<div class="info">
+		<p class="poster">steambob</p>
+		<p class="dt">2008-04-24 19:01:58</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">.::TTK::.TW3@K3R:<br>
+<br>
+Yes, it might very well be that this "client" choke seen on server is just something artificial.<br>
+<br>
+The plugin mentioned is a plugin based on Sourcemod. <br>
+I've just modifed the following one<a href="http://forums.alliedmods.net/showthread.php?t=57220" class="postlink">http://forums.alliedmods.net/showthread.php?t=57220</a> to add more values to look at. <br>
+Just look on the attached source file, lines 89 to 102 - you'll see what is monitored there. <br>
+Sourcepawn's "GetClientAvgChoke" is actually a call to "GetAvgChoke".</div>
+<dl class="attachbox">
+					<dt>
+						Attachments
+					</dt>
+											<dd>
+			
+		
+		
+				<dl class="file">
+			<dt><span class="imageset icon_topic_attach"></span> <a class="postlink" href="ratechecker.zip">ratechecker.zip</a></dt>
+						<dd>(2.43 KiB) Downloaded 27 times</dd>
+		</dl>
+		
+			</dd>
+									</dl>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18924">
+	<div class="info">
+		<p class="poster">.::TTK::.TW3@K3R</p>
+		<p class="dt">2008-04-24 20:14:01</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">From what I get reading the source is this plugin tries to give you the information that should show up on the clients net_graph.  It basically gets the clients real settings.  Example instead of retrieving the updaterate it is calculating what the server is sending the client.  Same goes with cmdrate, ping, choke, and loss.  I couldn't figure out how it determined the choke from the client to the server.  But it only gets the rate, interp, cmdrate, updaterate from the client so it uses those to figure it out somehow. I think some of the formulas are wrong for reasons of different ticrates.  Because the plugin multiply most everything by 100.  But I don't know what flow_outgoing or flow incoming is tho.  Is it how many updates being sent out or is it how many bytes being sent out.  This could be something very helpful to admins to run a smooth server.  Also could help me prove my point on why clients choke.  <br>
+<br>
+But knowing some of the plugins that pRED* made for metamod and some others in old HL. I would venture to say that the formulas are right lol..  Just didn't make sense to me.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18963">
+	<div class="info">
+		<p class="poster">steambob</p>
+		<p class="dt">2008-04-25 00:49:12</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yes, it should show both rates set by client and real rates shown on net_graph.<br>
+As for "client side choke" it is just GetClientAvgChoke(i, NetFlow_Incoming) what does it.<br>
+NetFlow_Outgoing and NetFlow_Incoming are flags to define which part (up or down) of traffic to look at.<br>
+<br>
+You are probably right that one should multiply by tickrate and not by 100. However I think it does not matter whether one sees 30 percent lower choke or loss values. It is supposed to be an indicator, to look if the values are zero or large.<br>
+<br>
+Yes, and that part with multiplication by 100 is not from pRED* <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile">, he has made a raw plugin doing the same job as "ma_rates". <br>
+That plugin was then modified by others. <br>
+pRED* is a part of Sourcemod development team and is busy with more serious things <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"><br>
+<br>
+<br>
+I think this type of thing can be relatively easy ported as a standalone plugin which does not require Sourcemod. <br>
+However I am not sure if there are enough admins interested in having this. <br>
+But in general, as a diagnostic tool it is nice to have.<br>
+May be Keeper could integrate something like this in his Admin Plugin?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p18967">
+	<div class="info">
+		<p class="poster">.::TTK::.TW3@K3R</p>
+		<p class="dt">2008-04-25 01:00:32</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Gotcha... Well hopefully I will have a server this summer running I like plugins if there are good ones.. That was what I loved about amxmodx the nice plugins to help admins out..<br>
+<br>
+I am so surprised that I could look thru the code and kind of make since of it.. I don't know how to write any code at all.  But if I can make since of it.  Then it was probably written really good. LOL hahahah...<br>
+<br>
+I will differently use that source mod and this plugin.  When I get my server.<br>
+<br>
+Thanks for posting it and the info something I will be looking into in the future.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p19358">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2008-04-29 02:10:56</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">This is a wierd one but when I up my rates in the mod HL2CTF it goes choppy and feels 10x worse than default rates i can have rate @ 70000 and default rates and its great but as soon as i up the cmdrate and updatrate it goes horrible and yet in DM its perfect. I posted about it on the forums but aparently 70000 <blockquote class="uncited"><div>70000 is an insane number for your rate. It really shouldnt ever be higher then 30000</div></blockquote>  I know he is wrong you know he is wrong.  I even posted a link to your guide on the league site but the post got deleted.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p19359">
+	<div class="info">
+		<p class="poster">Seagull</p>
+		<p class="dt">2008-04-29 02:25:11</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">The mod has problems, don't bother upping your rates</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p19413">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2008-04-29 17:53:25</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Glad someone else noticed, its like talkign to a brick wall on the ctf forum mind you the mod is dead.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p19415">
+	<div class="info">
+		<p class="poster">.::TTK::.TW3@K3R</p>
+		<p class="dt">2008-04-29 18:12:20</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">you think there hard to talk to try CS:S peeps that is the biggest brick wall lol.. I still can't get them to understand.. I started back in November.. I posted once here and poof everyone got it.. LOL..</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p19416">
+	<div class="info">
+		<p class="poster">Seagull</p>
+		<p class="dt">2008-04-29 18:18:43</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>keefy wrote:</cite>Glad someone else noticed, its like talkign to a brick wall on the ctf forum mind you the mod is dead.</div></blockquote>
+
+It's still somewhat active (I played there for a while on dsmbrd) but it had some potential too, oh well.<br>
+<br>
+I'm trying out upping the rate cap - I just set it to minimum 20k-100k max. When I force it to 66k some people feel "jitters" which are prolly related to their connection, so I just left the minimum @ 20k.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p19532">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2008-04-30 08:41:01</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote class="uncited"><div>I'm trying out upping the rate cap - I just set it to minimum 20k-100k max. When I force it to 66k some people feel "jitters" which are prolly related to their connection, so I just left the minimum @ 20k.</div></blockquote>
+let us know the results seagull ;D</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p22979">
+	<div class="info">
+		<p class="poster">Van Occupanther</p>
+		<p class="dt">2008-06-06 05:03:17</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">oh my lord! this thread should be the gold standard for rate tweaking, bump for sticky!<br>
+<br>
+your guide is amazing, well done TW3@K3R, that is some elegant simplicity!  if you're still looking for info on cl_interp_ratios, check <a href="http://whisper.ausgamers.com/wiki/index.php/Tickrate" class="postlink"><span style="color:#0000BF">this out, (3/4 down the page</span></a>) its not much, it might actually be reinforcing what you already know...<br>
+<br>
+If anyone is interested, I made a client side script that allows you to easily change your Rate, Update Rate and Interp Ratio...<a href="http://www.hl2dm-university.com/forum/phpBB3/viewtopic.php?f=10&amp;t=1038&amp;p=9482#p9482" class="postlink"><span style="color:#0000BF">more info here</span></a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p23322">
+	<div class="info">
+		<p class="poster">C®ünçĥ</p>
+		<p class="dt">2008-06-11 17:26:39</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thanks for the info guys! This answers a lot of my questions on why lots of weird shit happens in game. I will try to mess with my settings but really don't know what I'm doing lol. The console is kinda foreign to me.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p23392">
+	<div class="info">
+		<p class="poster">Pernicious</p>
+		<p class="dt">2008-06-12 12:35:48</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Here's how it is though.....<br>
+The ideal situation is that everyone playing on your server has a good computer AND internet connection, thats never going to hapen, which is why lag cannot be illiminated, unless u rule your server with an iron fist an kick out anyone who has even an inkling of a tickle of lag.<br>
+<br>
+I beleive the following is a good compromise but u know, nobody listens to me anyways.<br>
+<br>
+sv_mincmdrate 			 "33"<br>
+sv_maxcmdrate 			"66"<br>
+sv_minupdaterate 		"33"<br>
+sv_maxupdaterate 	       "66"<br>
+sv_minrate 			   "20000"<br>
+sv_maxrate 			  "60000" //?<br>
+sv_unlag 			    "1"<br>
+sv_maxunlag 			  "1"<br>
+sv_client_cmdrate_difference "0"<br>
+sv_client_interpolate 		 "1"<br>
+sv_client_max_interp_ratio    "2"<br>
+sv_client_min_interp_ratio     "2"<br>
+sv_client_predict 		  "1"<br>
+<br>
+And to hell with anyone whose connection cant handle 33 etc.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p23395">
+	<div class="info">
+		<p class="poster">Cynips</p>
+		<p class="dt">2008-06-12 14:23:44</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I think you're allowing way too low a rate there - sv_minrate 20000 - and I don't see why you won't allow more than 60000 if your server connection can handle it. 20000 basically means that you care about players whose connections are limited by their 160kbit/sec download capacity. If I were conservative I would still believe 256kbit/sec to be the lowest anyone out there plays on = 32000 and even that seems low to me. If you believe no one plays on anything worse than a 512kbit connection you could theoretically force them to a rate of 62 500, so I would recommend sv_minrate 50000. Since sv_maxrate depends on the server's connection, it's up to you. But most server rentals are probably good enough for you to allow sv_maxrate of 150000 (or more). Since rate is number of bytes/sec = 8bits/sec you can do the math yourself. Just consider that ISP's do like hard drive manufacturers: 256kbit = 256 000 bits NOT 256*1024=262 144 bits.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p23411">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2008-06-12 19:57:37</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I agree with cynips completely, and I still cant believe the majority of servers and cal is set to 30000. DO the math people, sv_maxrate should be over 100000.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p23417">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2008-06-12 20:16:08</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">...and why would you lock interp ratio to 2? Some people can only get correct hit registration by setting it to 1. They locked down cl_interp to make things "more fair". Locking that ratio will ruin the players who cant reg at 2, and give an edge to those who can.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p23531">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2008-06-14 22:20:50</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>L2k wrote:</cite>I agree with cynips completely, and I still cant believe the majority of servers and cal is set to 30000. DO the math people, sv_maxrate should be over 100000.</div></blockquote>
+
+I use 100000 on my server  and it sems good when its full. Aso s-uk clan has a pro server where we play LTS last team standing (start all weapons) so the server has at least 12 players spammign the crap out of RPG, SMG nades, u name it and i set my rate at 70000 and have no choke at all, yes setting it the higher the better.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p23557">
+	<div class="info">
+		<p class="poster">Pernicious</p>
+		<p class="dt">2008-06-15 07:38:01</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">The 60000 has a question mark on it for a reason.<br>
+All the non rate settings are optional and are my personal preference.<br>
+I have found that interp ratio of 1 really screws the hit reg for me, and thats on LAN, so theres definitly something odd/not right there. But again personal preference, probably should have stated that but u know me, i spend about 1 minute per post XD</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p25226">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2008-07-08 20:22:46</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">The website apears to be down <img class="smilies" src="../../../images/smilies/icon_sad.gif" width="15" height="15" alt=":(" title="Sad"> I often give this link to players asking about rates etc.<br>
+<a href="http://www.jason35.com/Netcode.htm" class="postlink">http://www.jason35.com/Netcode.htm</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p25228">
+	<div class="info">
+		<p class="poster">lead</p>
+		<p class="dt">2008-07-08 21:00:16</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">dead link keefy boy</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p25270">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2008-07-09 02:39:38</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">How much of this could be do to the quality of your internet provider or that particular connection that day.  I have heard people say that Chicago is a bitch to get into without issues.  I connect from NY to Chicago all the time an most if not all the time I have 0 loss.  I have Verizon DSL (not FIOS  <img class="smilies" src="../../../images/smilies/icon_sad.gif" width="15" height="15" alt=":(" title="Sad"> ) which has been rated as one of the better companies out there.   I can ping 80 or less to most west coast servers usually when I see West coast players having higher ping to Chicago.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p25276">
+	<div class="info">
+		<p class="poster">mLIQUID</p>
+		<p class="dt">2008-07-09 03:14:46</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I'd like to take a look but this link is dead... if anyone can find a replacement I'd appreciate it.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p25283">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2008-07-09 04:41:02</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Paradox wrote:</cite>How much of this could be do to the quality of your internet provider or that particular connection that day.  I have heard people say that Chicago is a bitch to get into without issues.  I connect from NY to Chicago all the time an most if not all the time I have 0 loss.  I have Verizon DSL (not FIOS  <img class="smilies" src="../../../images/smilies/icon_sad.gif" width="15" height="15" alt=":(" title="Sad"> ) which has been rated as one of the better companies out there.   I can ping 80 or less to most west coast servers usually when I see West coast players having higher ping to Chicago.</div></blockquote>
+For some reason I cant explain, east coast players get routing which goes straight to Dallas, then goes to Los Angeles or San Jose skipping a trip to Chicago on the way. West coast players go to Dallas then Chicago rather than straight to Chicago, so we west coast players get way more hops and the potential for loss packets when playing on Chicago servers or anything further east than Chicago such as NY or Vermont ect.<br>
+Dallas is the main data center in the USA and all global crossing goes through it, its also the most centrally located data center based on proximity to the east and west coast and should be considered the most fair place to host a CAL server in the USA.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p25532">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2008-07-13 00:26:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Look what I found in google cache <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"><br>
+<a href="http://216.239.59.104/search?q=cache:73ShKZKY-IwJ:www.jason35.com/Netcode.htm+jason35.com/Netcode.htm&amp;hl=en&amp;ct=clnk&amp;cd=1&amp;gl=uk&amp;client=firefox-a" class="postlink">http://216.239.59.104/search?q=cache:73 ... =firefox-a</a>
+<blockquote class="uncited"><div>Netcode Explained<br>
+<br>
+By TW3@K3R<br>
+<br>
+ <br>
+<br>
+                Oh no you say, another netcode explained.  Yes it is but it seems each one is different and not all agree with the right settings.  I am doing this to show where the other guides are wrong, to prove why the settings should be a certain way, and to let you the player learn and figure this out for yourself.    I am also going to provide information to the server administrators.  In the end they have the final say in how we can set our settings.  Between the client and the server administrators we can produce almost perfect hit registration that the internet will allow. There are several more settings that some think to be very important I will not be covering these settings.  I find it hard to test those other settings and be able to come to a exact conclusion.  I have read many guides even old HL guides, which is where a lot of the new hl2 guides got there information.  All of the information I have used is common knowledge.  The information that isn’t common knowledge I tested thoroughly with having access to a server and opening all settings so nothing is forced.  I also filled up the server with a lot of action.  Because many of the things I discuss you won’t see in a empty server. <br>
+<br>
+ <br>
+<br>
+FPS - Frames per Second.<br>
+<br>
+fps_max - Sets an upper limit on the frames per second the server or client runs at.<br>
+<br>
+sv_maxrate - The Maximum amount of data in Bytes per Second the Client can request from the Server.<br>
+<br>
+sv_minrate - The Minimum amount of data in Bytes per Second the Client can request from the Server.<br>
+<br>
+sv_maxupdaterate - The Maximum amount of Updates per Second the Client can request from the Server.<br>
+<br>
+sv_maxupdaterate - The Minimum amount of Updates per Second the Client can request from the Server.<br>
+<br>
+sv_maxcmdrate - The Maximum amount of Updates per Second the Client can send from the Server.<br>
+<br>
+sv_mincmdrate - The Minimum amount of Updates per Second the Client can send from the Server.<br>
+<br>
+rate - The Maximum amount of Bytes Per Second the Client will request from the server.<br>
+<br>
+cl_updaterate - The Maximum amount of Updates Per Second the Client will request from the server.<br>
+<br>
+cl_cmdrate - The Maximum amount of Updates Per Second the Client will Send to the server.<br>
+<br>
+updates – Packets of information about what is going on in the game such as: player position, explosions, everything that happens in the game.  You receive updates from the server then you send updates back with what is going on, on your side.<br>
+<br>
+Ticrate – This determines the most updates the server will be able to send and receive.  100tic = 100updates, 66tic = 66 updates.<br>
+<br>
+ <br>
+<br>
+TICRATE<br>
+<br>
+ <br>
+<br>
+                Let’s start with ticrate and work are way down.  This is something that server administrators and players should really understand.  The ticrate determines the most updates the server will be able to send and receive.   The highest ticrate a server can be is 100, the lowest is 33, and the most common is 66.  So if a server administrator and a player were really thinking they would use these settings below:<br>
+<br>
+ <br>
+<br>
+Client settings<br>
+	<br>
+<br>
+Server administrators max settings<br>
+<br>
+cl_updaterate 100<br>
+	<br>
+<br>
+sv_maxupdaterate 100<br>
+<br>
+cl_cmdrate 100<br>
+	<br>
+<br>
+sv_maxcmdrate 100<br>
+<br>
+ <br>
+<br>
+                If the ticrate is ultimately going to determine what the server and client send and receive for updates.  There isn’t any reason not to set those settings to the highest setting you can have.   With those settings above if the ticrate of the server is 66 tic.  You would receive and send only 66 updates (because the ticrate of the server is 66 even though your settings are 100).  So why make it tough on figuring them out or changing them according to ticrate.  Waste of time if you ask me.  One setting for all makes it easier. I didn’t put in the sv_minupdaterate or sv_mincmdrate.  That is because it would be up to the server administrator for setting this.  I feel it is preference.  I would set the min values to 100 also but again my opinion (explained later in my conclusion). <br>
+<br>
+ <br>
+<br>
+CL_UPDATERATE<br>
+<br>
+ <br>
+<br>
+       I won’t spend too much time on updaterate since I pretty much explained it above with ticrate.  Updaterate is determined on the client’s machine by sv_maxupdaterate, sv_minupdaterate, ticrate and cl_updaterate.  Updaterate is the amount of updates you want the server to send you per second.  The server will send whatever you want as long as there isn’t a rule telling it not to for example.  If I set cl_updaterate 100 then the server will send me 100 updates a second unless ticrate is less then 100 or sv_maxupdaterate is set lower than 100 by server administrators(note if you don’t have sv_maxupdaterate in your server config then default is 60).   Other than those settings only choke and loss will play a factor in how many updates you get from a server.   This is explained later on. <br>
+<br>
+ <br>
+<br>
+CL_CMDRATE AND FPS<br>
+<br>
+ <br>
+<br>
+Let me explain, probably the two most overlooked things that cause poor hit registration.  Besides seeing the actual true position of the player you are aiming at.  What do you think needs to register correctly to actually hit that person? What needs to register, is your shot, you know when you actually press the mouse button to shoot.  The amount of updates you send the server is very important.  Since it tells the server that you shot your gun and where you shot at.  These settings below control what you send the server.<br>
+<br>
+ <br>
+<br>
+Client side settings<br>
+	<br>
+<br>
+Server side settings<br>
+<br>
+Cl_cmdrate<br>
+	<br>
+<br>
+Sv_mincmdrate<br>
+<br>
+Ticrate<br>
+	<br>
+<br>
+Sv_maxcmdrate<br>
+<br>
+FPS<br>
+	<br>
+<br>
+ <br>
+<br>
+ <br>
+<br>
+                Earlier I said to set cl_cmdrate to 100 since you will never be able to send more updates then the highest ticrate a server can be which is 100.  There is one thing that will lower the amount of updates you send to the server no matter how high the ticrate nor how high your cl_cmdrate.  That is your FPS.  You can’t send more updates to the server then what frames you actually render on your end.   So if you are in a 100 ticrate server and you have cl_cmdrate 100, but your fps is only staying around 50 then you only send 50 updates a second or whatever you fps during that second of play.   Seeing how fps is the end factor on what updates you send the server on your shots fired and where you were aimed.  I decided on another table to explain this.<br>
+<br>
+ <br>
+<br>
+ <br>
+	<br>
+<br>
+Good hit registration<br>
+	<br>
+<br>
+Bad hit registration<br>
+<br>
+100 ticrate server<br>
+	<br>
+<br>
+100fps steady or higher<br>
+	<br>
+<br>
+Fluctuating fps under 100fps<br>
+<br>
+66 ticrate server<br>
+	<br>
+<br>
+66fps steady or higher<br>
+	<br>
+<br>
+Fluctuating fps under 66fps<br>
+<br>
+33 ticrate server<br>
+	<br>
+<br>
+33fps steady or higher<br>
+	<br>
+<br>
+Fluctuating fps under 33fps<br>
+<br>
+ <br>
+<br>
+                Good hit registration and Bad hit registration may not be seen by some people, but having fluctuating fps under the ticrate of the server can cause it even if you don’t see it.  If anything else the person with higher steady fps than the ticrate will have an advantage over the low fps player.  So all those people that say you can play HL with low fps true you can cause lag compensation will compensate for the updates you don’t receive and make it feel like really smooth play.  But you’re going to have more times where you miss then a person pegging at a higher fps.<br>
+<br>
+ <br>
+<br>
+RATE – The reason for choke and loss<br>
+<br>
+ <br>
+<br>
+  Rate the biggest problem with server administrators and players.  This setting is probably the main thing every single netcode guide has got wrong.  Why is this? Most of the netcode guides came from old CS 1.6 players.  Who already knew what settings worked in old CS but didn’t realize they would ever need to set these settings higher.  Even Cal has this setting wrong but won’t change it because I am not a GOD to the cal community.  Rate is the amount of bytes per second you want the server to send you.  Example you are suppose to get 100 updates per second from the server each update is around 400 bytes.   That is 40000 bytes per second but you have your rate set to 30000 that means after you receive 75 updates you won’t receive 25 updates that second.  So your rate setting can cause you not to receive updates which you will know because those updates will show up as choke. <br>
+<br>
+                Rate is merely a cap saying don’t send more than 30000 bytes/second (I used 30000 as an example).  Tell me this if you were downloading mp3’s would you want to say don’t send me more than 30000 bytes/second which = 234kbits per second.  I guess you would if you had dsl because it is about that fast.  We spend so much money on fast download speeds yet in half life because someone said put this setting in. This is the optimal setting you should use and we believe it.  I say don’t believe them or me follow what they say and see if it works.  Tests settings they said don’t use and see what happens.  Here is a breakdown of common internet speeds that I converted into bytes.<br>
+<br>
+ <br>
+<br>
+Internet speeds<br>
+	<br>
+<br>
+Converted to bytes/what your rate could be set at<br>
+<br>
+Dsl 256kbits download<br>
+	<br>
+<br>
+32768<br>
+<br>
+1mb<br>
+	<br>
+<br>
+131072<br>
+<br>
+2mb<br>
+	<br>
+<br>
+262144<br>
+<br>
+3mb<br>
+	<br>
+<br>
+393216<br>
+<br>
+6mb<br>
+	<br>
+<br>
+786432<br>
+<br>
+ <br>
+<br>
+Obviously you don’t want to set your rate at 786432 lol.  But I put that on there to show you how much your rate could be and you would still be able to handle the traffic.  Because how many times have you heard 25000 is lan setting or 30000 is lan setting.  That is funny I guess my 6mbit download speed is as fast a lan, lol, not.  A lan setting could be as low as 10mbits for old lans and 1 GB for newer lans.  So a rate setting of 1310720 would be a lan setting.<br>
+<br>
+ <br>
+<br>
+CHOKE AND LOSS<br>
+<br>
+ <br>
+<br>
+                Choke and Loss can happen if this setting isn’t set correctly.  Loss happens when your internet can’t handle the amount of bytes being sent that second or problems with hops between you and the server.  I am not going to explain hops.  But to control you loss and keep it to a minimum make sure your rate setting isn’t set higher than your download speed.  It’s hard for me to test this since I have a 6mb connection.<br>
+<br>
+                Choke happens when a rule set by you or the server administrator tells the server to stop sending updates.  So the server then holds on too them tell it can send them.  I know who would say stop sending updates.  You don’t actually say that to the server.  What happens is we set our rate settings to low sometimes or the server forces us to a low rate setting.  Here is an example I already used:  You are suppose to get 100 updates per second from the server each update is around 400 bytes.   That is 40000 bytes per second but you have your rate set to 30000 that means after you receive 75 updates you won’t receive 25 updates that second.  So your choke will be 25.  So to avoid this in the example I just wrote you would have had to set your rate to 40000 and you wouldn’t have choked at all.<br>
+<br>
+                Well that is easy enough so I set my rate setting higher and my choke will be gone.  Yes it is that easy, but it isn’t so easy to make server administrators all across HL2 understand that there sv_maxrate setting is a big problem.  In that same scenario you could set your rate to 40000 and get rid of choke but if the server set sv_maxrate 30000(which I bet 60-80% do) then you will still choke cause the server will force you to a rate of 30000.  So the only way to get rate to work correctly we need the server administrator to change there settings as well so we don’t choke.  Choke is like the one thing we can control and together it is possible to rid most of these servers of choke.  Below are some rates for clients and some recommendations for server administrators.<br>
+<br>
+ <br>
+<br>
+Internet speed<br>
+	<br>
+<br>
+Rate setting<br>
+<br>
+256kbit dsl<br>
+	<br>
+<br>
+32768<br>
+<br>
+1mbit download speed or higher<br>
+	<br>
+<br>
+100000 or higher if you choke<br>
+<br>
+ <br>
+<br>
+ <br>
+<br>
+Recommended server settings<br>
+<br>
+sv_maxrate 100000<br>
+<br>
+sv_minrate 20000<br>
+<br>
+ <br>
+<br>
+ <br>
+<br>
+I would be very surprised if anyone ever choked at rate 100000 that is why I picked that setting.  If servers set that maxrate then we could get rid of our own choke and we couldn’t blame the servers anymore.<br>
+<br>
+ <br>
+<br>
+NET_GRAPH<br>
+<br>
+ <br>
+<br>
+                Now that you got somewhat of an understanding of that stuff.  Here is a way to monitor everything I have explained above with a tool so much of us don’t use.  It is called net graph.  It will tell you what your fps, ping, loss, choke, how many updates you are actually receiving and sending, and how big each update is.  You can enable this graph by pulling down console and typing net_graph 3.  there is other types of net_graph but this one has the important information we are looking for.   You can also position it along the right, center, or left on the bottom of the screen.  Just type net_graphpos 1(right), 2(center), 3(left).  I use 1 it seems more out of my way.<br>
+<br>
+ <br>
+<br>
+ <br>
+<br>
+ <br>
+<br>
+1 = fps – what a that particular second your fps is.<br>
+<br>
+2 = ping – not really true ping but close<br>
+<br>
+3 = how big the packet size of the update you just received and sent.  In being what you received, out being what you sent.<br>
+<br>
+4 = How fast the information is going. Not real important.<br>
+<br>
+5 = The top number is how many updates per second you are actually receiving (cl_updaterate or ticrate).  The bottom number is how many updates you are actually sending (cl_cmdrate, ticrate, or fps).<br>
+<br>
+6 = number of packets that you sent that got lost or dropped.<br>
+<br>
+7 = number of updates you didn’t receive from the server.<br>
+<br>
+ <br>
+<br>
+                So now you can use this tool to figure out what is happening on your end and see where you need to make adjustments.  With this picture you can see no loss and no choke that is great.   Looking at section 5 tells us that we are playing in a 100 tic server since we are receiving 102.4/s.  But the problem is that we are only sending 78.6/s.  We should be sending around 100 updates to the server as well.  Well the problem is that we are not getting 100fps look at area 1 we are only getting 79fps which is right about what our updates we are sending is.  So according to this graph we would get pretty decent hit registry but to achieve the best hit registry we would need fps to go up and stay at 100fps.  So we are sending and receiving the most updates the server will allow.<br>
+<br>
+                Let’s take this same graph and imagine we are in a 66 tic server.  With fps at 79 which is above 66 both the numbers in area 5 would read around 66 steady all the time unless fps dropped under 66 or we started to choke/loss.  I hope you get the idea on how we can use this and understand how to tell what tic the server you are in is.  Plus understand how fps dropping can cause poor hit registry<br>
+<br>
+               <br>
+<br>
+INFORMAION FOR TESTING THESE SETTINGS<br>
+<br>
+ <br>
+<br>
+                Here are some key things you should know before going out and testing these you’re self.  One server’s most of the time force settings lower than what you might want to set them at.  To see what your setting is for any of the client commands simply pull down console and type the command with nothing after it and hit enter.  If your setting is under the forced setting then you will see what your setting is set at.  If your setting is higher than what the server is forcing you will see something in red saying your setting is this but the server temporarily is setting it to something.  You will see this a lot with rate setting so when you set rate 100000 go into the server and type rate and hit enter you will see almost 80% of all servers will force it to 30000.              <br>
+<br>
+                Second you will see this in a lot of 66tic servers and above.  The administrator doesn’t put a sv_maxupdaterate in the server.cfg thinking that it will open it up and can be however high you want it.  It in fact defaults to 60.  So in a 66 tic server or above if you see in area 5 the top number stuck at 60 this is something that is the problem the server administrator did. By not putting  sv_maxupdaterate 66 or 100 in the server.cfg.  Well maybe valves fault for not making default higher.<br>
+<br>
+ <br>
+<br>
+CONCLUSION<br>
+<br>
+ <br>
+<br>
+So with all the information I gave on how to adjust your settings, what the settings mean and how they all work together.  I hope you come to the same conclusion as I did on what settings to have.  Below is what I set my settings at and what servers administrators should set them.  So that we can all have really good hit registration as well as little to no choke.<br>
+<br>
+ <br>
+<br>
+Clients settings<br>
+	<br>
+<br>
+Server Settings<br>
+<br>
+rate 70000-100000<br>
+	<br>
+<br>
+sv_maxrate 100000<br>
+<br>
+cl_updaterate 100<br>
+	<br>
+<br>
+sv_maxupdaterate 100<br>
+<br>
+ <br>
+	<br>
+<br>
+sv_minupdaterate 30-100<br>
+<br>
+cl_cmdrate 100<br>
+	<br>
+<br>
+sv_maxcmdrate 100<br>
+<br>
+ <br>
+	<br>
+<br>
+sv_mincmdrate 30-100<br>
+<br>
+ <br>
+<br>
+If the client and the server are setup like this the only thing that will affect persons hit registration will be there FPS and Loss.  This is something the server administrator can’t help with.  FPS is basically revolves around you having a good video card and good cpu.  Loss is usually caused by slow download speeds if you have a dsl 256kbit line try finding an ISP that offers 1mbit or higher.   You could also lower your rate setting to fix loss in the end you might end up choking.  If you have a slow download speed and you lower your rate down tell the loss is gone.  You could then lower cl_updaterate until your choke is gone.   This is only if you have slow ISP and can’t do what I explained in this article.   <br>
+<br>
+ 
+</div></blockquote></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p26635">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2008-07-29 08:01:00</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thought it was gone forever. <img class="smilies" src="../../../images/smilies/cry.gif" width="15" height="15" alt=":cry:" title="Cry"> <br>
+<br>
+Woo! Nice one Keefy. <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p30319">
+	<div class="info">
+		<p class="poster">.::TTK::.TW3@K3R</p>
+		<p class="dt">2008-09-17 00:38:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Sorry guys I have had a bad summer financially and lost my website for about a month it is back up and if anyone wants to copy the page and add it to anyone's domain feel free so it don't get lost forever.  <br>
+<br>
+Also I didn't add that server side bandwidth will cause problems with choke.  I didn't really notice it in HL2 the problem with bandwidth cause most are 12-16slots.  But when I posted this in a TF2 forum they tried it on there server of like 24slots that is full none stop although it got rid of most the choke there was still choke but less.  So for TF2 you would need some serious bandwidth or for larger amounts of people on it.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p51656">
+	<div class="info">
+		<p class="poster">robi386</p>
+		<p class="dt">2009-05-02 03:23:49</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hi everybody.<br>
+<br>
+I made <a href="https://www.youtube.com/watch?v=FckicNoBSL8&amp;fmt=22" class="postlink">this video</a>, where, as you can see, I get choke unless I up rate to 80k or so. <br>
+While that particular server is a very "busy" DM server or just simply it has more choke, it's a general rule that I can seldom be happy with less than 50k rate or so, if I want to get rid of choke.<br>
+But that's nothing new to anyone who has been following this topic, I guess... <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=";)" title="Wink"><br>
+<br>
+Now, I downloaded <a href="http://www.netlimiter.com/" class="postlink">NetLimiter 2 Monitor</a>, which is a nice program where you can see how much bandwidth each process is using, in this case hl2.exe. When I went to that same awp_lego DM server with a 100k CS:S settting (no choke) the maximum incoming bandwidth usage for hl2.exe (in NetLimiter) was around 30k (max just over 31k I think). Rarely it went over 27-28k, tho.<br>
+(Outgoing bandwidth was around 5-10k max, I think...)<br>
+<br>
+But what's interesting is that if I limited the rate to 30k in CS:S the maximum used rate in NetLimiter would actually be around 17-18k (and I'd get plenty of choke, of course).<br>
+Confirmed on a couple of other servers as well. <br>
+Why do you think this is so?<br>
+Is NetLimiter displaying wrong values? Does the CS:S rate setting actually limit lower than the written value?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p51890">
+	<div class="info">
+		<p class="poster">.::TTK::.TW3@K3R</p>
+		<p class="dt">2009-05-04 16:58:16</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Try adding steam.exe to the total k on bandwith as well see what happens maybe it itsn't all being used by hl.exe only.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p51891">
+	<div class="info">
+		<p class="poster">robi386</p>
+		<p class="dt">2009-05-04 17:34:12</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>.::TTK::.TW3@K3R wrote:</cite>Try adding steam.exe to the total k on bandwith as well see what happens maybe it itsn't all being used by hl.exe only.</div></blockquote>
+Steam.exe was around 0 almost all the time during play.<br>
+But yeah, I guess it's possible the rate setting could include steam.exe's bandwidth as well... even tho it wouldn't make that much sense to me.<br>
+<br>
+For anyone else who wants to try, that program is free. You only need to have CS:S in windowed non-fullscreen mode, so that you can see both programs at once.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p51924">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-05-05 00:26:32</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Or be rich and have 2 or more screens.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67008">
+	<div class="info">
+		<p class="poster">.::TTK::.TW3@K3R</p>
+		<p class="dt">2010-03-02 01:38:57</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">It's been really long time.. But I am playing TF2 now and decided to take a stab at Interp/lerp since now they fixed it so you can actually change you interp by cl_interp instead of that ratio shit and most server don't force your interp anymore at least in TF2.   Mostly just theories right now..  But read this post, my real nick name is $uCkY-p|aYeR and i posted some stuff about interp.   I know you guys are always willing to test and try things so thought I would come back and post this.  You guys probably will give me the most feed back...<br>
+<br>
+Sorry if the post is long.   I don't explain interp really well cause I haven't got that far I understand and know what it is.  There is just a few things that don't fit right with it so I am testing and trying different theories...<br>
+<br>
+<a href="http://www.exodussociety.com/showthread.php?t=797" class="postlink">http://www.exodussociety.com/showthread.php?t=797</a><br>
+<br>
+Thanks</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67249">
+	<div class="info">
+		<p class="poster">DIE_bastards</p>
+		<p class="dt">2010-03-10 14:39:51</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><a href="https://www.youtube.com/watch?v=LX2Q8HNp2wQ" class="postlink">http://www.youtube.com/watch?v=LX2Q8HNp2wQ</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67251">
+	<div class="info">
+		<p class="poster">.::TTK::.TW3@K3R</p>
+		<p class="dt">2010-03-10 17:06:10</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Do what they did in the video and adjust your interp and watch the hitboxes move away from the model.. The hitboxes are just showing how much in time your interpolating.  It isn't showing where the server really says your hitboxes are.. If a client could know that info we wouldn't need interpolation.<br>
+<br>
+Anyone want to test this out it works in TF2.. use cl_interp 1 not .1 and then fire pills or something see if there delayed.   Then put it cl_interp 0 and shoot the pills.  In TF2 any weapons that shoot out projectiles like RPG's and stuff gets delayed by interp value.  Weapons like sniper and shotgun work fine in any interp.<br>
+<br>
+which I figured out that you want really low interp for projectiles and high for regular guns.. But you could probably use low for all.. But if your Lerp on net graph starts turning colors then you need to raise your interp tell it doesn't anymore.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

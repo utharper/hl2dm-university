@@ -1,0 +1,234 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>looking for a real time input monitoring program. - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+
+<h1>looking for a real time input monitoring program.</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=4147">https://forum.hl2dm.community/viewtopic.php?t=4147</a>
+-->
+
+<div class="post" id="p55088">
+	<div class="info">
+		<p class="poster">Zman42</p>
+		<p class="dt">2009-06-16 02:21:57</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Like the title says, im looking for something that can output a USB microphones input in real time-read no lag-. any ideas? tried audacity but its got too much lag. I don't need to record anything, just hear what the mic is receiving.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55093">
+	<div class="info">
+		<p class="poster">The Argumentalizer</p>
+		<p class="dt">2009-06-16 03:19:57</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Use a splitter?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55100">
+	<div class="info">
+		<p class="poster">Zman42</p>
+		<p class="dt">2009-06-16 05:29:02</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>The Argumentalizer wrote:</cite>Use a splitter?</div></blockquote>
+er what? i would need to find a usb to 1/4 inch adaptor that includes a preamp.... not gonna happen</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55108">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2009-06-16 06:51:06</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">maybe you should give a little more detail as to what you are actually trying to do.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55113">
+	<div class="info">
+		<p class="poster">Zman42</p>
+		<p class="dt">2009-06-16 07:23:51</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>L2k wrote:</cite>maybe you should give a little more detail as to what you are actually trying to do.</div></blockquote>
+run a usb microphone into  a laptop and run the laptops output into the cd in on my amp = poor mans PA system<br>
+xD</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55135">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-06-16 11:33:35</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I think what you need is ASIO drivers, does your sound card support ASIO?  If it's an X-FI it does.<br>
+<a href="https://en.wikipedia.org/wiki/Audio_Stream_Input/Output" class="postlink">http://en.wikipedia.org/wiki/Audio_Stream_Input/Output</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55153">
+	<div class="info">
+		<p class="poster">Edge</p>
+		<p class="dt">2009-06-16 16:42:19</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Or just change it so you hear your mic when you speak and set your output to what you hear, run the laptops output jack to your amps?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55181">
+	<div class="info">
+		<p class="poster">BuckyKatt</p>
+		<p class="dt">2009-06-16 22:46:32</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Latency is a fact of life when dealing with digital audio.  It is unlikely that the laptop has the routing in it that would allow you to simply route the digital usb audio straight to the DAC (digital to analog converter) that supplies the audio out.  Instead the digital usb data has to head into software (whether it be an ASIO driver or something more powerful like Audacity, Sonar, or Live) and then get told to turn around and go to the audio out.  All that adds time (typically measured in milliseconds).  Human hearing can perceive anything longer than about 5ms though it really only becomes an annoyance at 20-30ms.  I find trying to track a guitar part with anything over about 20ms to be an exercise in frustration requiring multiple takes.  The "audio card" that I use, a t.c. electronics studiokonnekt 48, has built in routing to provide near-zero latency monitoring.<br>
+<br>
+All that said Z... I agree that ASIO drivers are your bet (over WMD).  If your USB Microphone manufacturer doesn't have ASIO drivers you might try <a href="http://www.asio4all.com/" class="postlink">ASIO4ALL</a>.  I suspect you will still notice at least a little delay between when you speak and when you hear what you said but it should be better than trying to run it into Audacity and then back out.  You may also check out <a href="http://software.muzychenko.net/eng/vac.html" class="postlink">Virtual Audio Cables</a>.  It can be handy for simply routing audio from one device to another without the overhead of a DAW.<br>
+<br>
+Hope that helps.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55200">
+	<div class="info">
+		<p class="poster">Zman42</p>
+		<p class="dt">2009-06-17 05:44:12</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thanks guys, especially bucky. =]</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55246">
+	<div class="info">
+		<p class="poster">s0iz</p>
+		<p class="dt">2009-06-17 19:40:55</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Spah creepin'round here.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55247">
+	<div class="info">
+		<p class="poster">Zman42</p>
+		<p class="dt">2009-06-17 19:43:16</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">kay... so installing the asio4all driver didnt appear to help me at all. I still can't figure out a way to hear what im saying over the speakers. audacity still has the lag.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55249">
+	<div class="info">
+		<p class="poster">BuckyKatt</p>
+		<p class="dt">2009-06-17 20:29:53</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">How bad a lag?  Just trying to figure out if it is something that can be reduced or not.<br>
+<br>
+Have you given any thought to a Shure SM57 and a cheap preamp or mixer?  The SM57 is a work horse that can be so useful.  It will mic just about anything and still sound reasonably good.  Guitar, drums (save maybe the kick), male vocals (not so much on the female vocals), and just about any wind or string instrument.<br>
+<br>
+A SM57 and a Behringer UB802 will set you back about $130 and would be latency free, provide more flexibility, and give you a very versatile mic in the process.  Just a thought.  I certainly understand if spending money isn't an option.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55257">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-06-17 21:47:16</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Did you setup asio for all and set the device to ASIO in the audio settings?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55258">
+	<div class="info">
+		<p class="poster">Zman42</p>
+		<p class="dt">2009-06-17 21:55:26</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>keefy wrote:</cite>Did you setup asio for all and set the device to ASIO in the audio settings?</div></blockquote>
+annnnd how do i do that, i cant find any sort of executable after installing asio4all...</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55264">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-06-17 23:22:53</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Did a bit of googling and found out Audacity doesnt support ASIO.<br>
+<br>
+Wavosaur does but only on the output so not sure if it will help, ASIO4all should appear in the   options -&gt; audio configuartion<br>
+<a href="http://www.wavosaur.com/" class="postlink">http://www.wavosaur.com/</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55265">
+	<div class="info">
+		<p class="poster">BuckyKatt</p>
+		<p class="dt">2009-06-17 23:36:33</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">You may also check out <a href="http://www.reaper.fm/" class="postlink">Reaper</a>.  It is a very nice DAW.  Technically it costs $60 but since the version you download is the complete version with no trial time limit and no crippling you can basically use it indefinitely without paying.  It supports ASIO (and pretty much every other standard you can think of in the DAW world).  It was written by Justin Frankel, the guy who brought you the original Winamp.<br>
+<br>
+It is overkill in terms of what you are trying to do but the price is right.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55267">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-06-18 00:01:06</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Nice prog, the 64bit version doesnt detect the  creative ASIO drivers I had to use 32bit</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55272">
+	<div class="info">
+		<p class="poster">Zman42</p>
+		<p class="dt">2009-06-18 00:29:12</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thanks guys, I'll be trying both wavosaur and reaper, and if not then my plan is to just get a mic and preamp and run that through my amp's speakers.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p55283">
+	<div class="info">
+		<p class="poster">Zman42</p>
+		<p class="dt">2009-06-18 02:57:47</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">aw yeah reaper plus asio4all = win. many many thanks, this place is better than like any other ask.com type website out there. xD</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

@@ -1,0 +1,282 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>vbsp.exe crashes on compiling - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>vbsp.exe crashes on compiling</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=4775">https://forum.hl2dm.community/viewtopic.php?t=4775</a>
+-->
+
+<div class="post" id="p65634">
+	<div class="info">
+		<p class="poster">pokl</p>
+		<p class="dt">2010-01-23 19:45:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">hello, i have a problem with compiling. everytime i press "run map", the window opens up and all, when i start it, vbsp.exe crashes (Windows shows me the typical "program doesnt work anymore" window).
+<blockquote><div><cite>Windows wrote:</cite>
+Problemsignatur:<br>
+  Problemereignisname:	APPCRASH<br>
+  Anwendungsname:	vbsp.exe<br>
+  Anwendungsversion:	0.0.0.0<br>
+  Anwendungszeitstempel:	457e10cd<br>
+  Fehlermodulname:	vbsp.exe<br>
+  Fehlermodulversion:	0.0.0.0<br>
+  Fehlermodulzeitstempel:	457e10cd<br>
+  Ausnahmecode:	c0000005<br>
+  Ausnahmeoffset:	00064ce8<br>
+  Betriebsystemversion:	6.1.7600.2.0.0.768.3<br>
+  Gebietsschema-ID:	3079<br>
+  Zusatzinformation 1:	0a9e<br>
+  Zusatzinformation 2:	0a9e372d3b4ad19135b953a78882e789<br>
+  Zusatzinformation 3:	0a9e<br>
+  Zusatzinformation 4:	0a9e372d3b4ad19135b953a78882e789
+</div></blockquote>
+Sorry, its german.<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>** Executing...
+** Command: "c:\program files (x86)\steam\steamapps\ikku\sourcesdk\bin\ep1\bin\vbsp.exe"
+** Parameters: -game "c:\program files (x86)\steam\steamapps\ikku\half-life 2 deathmatch\hl2mp" "C:\Program Files (x86)\Steam\steamapps\ikku\sourcesdk_content\cstrike\mapsrc\doublebox_orbl"
+
+Valve Software - vbsp.exe (Dec 11 2006)
+2 threads
+materialPath: c:\program files (x86)\steam\steamapps\ikku\half-life 2 deathmatch\hl2mp\materials
+Loading C:\Program Files (x86)\Steam\steamapps\ikku\sourcesdk_content\cstrike\mapsrc\doublebox_orbl.vmf
+fixing up env_cubemap materials on brush sides...
+ProcessBlock_Thread: 0...1...2...3.
+** Executing...
+** Command: "c:\program files (x86)\steam\steamapps\ikku\sourcesdk\bin\ep1\bin\vvis.exe"
+** Parameters: -game "c:\program files (x86)\steam\steamapps\ikku\half-life 2 deathmatch\hl2mp" "C:\Program Files (x86)\Steam\steamapps\ikku\sourcesdk_content\cstrike\mapsrc\doublebox_orbl"
+
+Valve Software - vvis.exe (Nov  8 2007)
+2 threads
+reading c:\program files (x86)\steam\steamapps\ikku\sourcesdk_content\cstrike\mapsrc\doublebox_orbl.bsp
+Error opening c:\program files (x86)\steam\steamapps\ikku\sourcesdk_content\cstrike\mapsrc\doublebox_orbl.bsp
+
+** Executing...
+** Command: "c:\program files (x86)\steam\steamapps\ikku\sourcesdk\bin\ep1\bin\vrad.exe"
+** Parameters:  -game "c:\program files (x86)\steam\steamapps\ikku\half-life 2 deathmatch\hl2mp" "C:\Program Files (x86)\Steam\steamapps\ikku\sourcesdk_content\cstrike\mapsrc\doublebox_orbl"
+
+Valve Software - vrad.exe SSE (Nov  8 2007)
+----- Radiosity Simulator ----
+2 threads
+[Reading texlights from 'lights.rad']
+[45 texlights parsed from 'lights.rad']
+
+Loading c:\program files (x86)\steam\steamapps\ikku\sourcesdk_content\cstrike\mapsrc\doublebox_orbl.bsp
+Error opening c:\program files (x86)\steam\steamapps\ikku\sourcesdk_content\cstrike\mapsrc\doublebox_orbl.bsp
+
+** Executing...
+** Command: Copy File
+** Parameters: "C:\Program Files (x86)\Steam\steamapps\ikku\sourcesdk_content\cstrike\mapsrc\doublebox_orbl.bsp" "c:\program files (x86)\steam\steamapps\ikku\half-life 2 deathmatch\hl2mp\maps\doublebox_orbl.bsp"
+
+The command failed. Windows reported the error:
+  "Das System kann die angegebene Datei nicht finden."</code></pre></div>
+
+the problem is just vbsp, the other programs only dont work because they cant find the bsp because of the error.<br>
+<br>
+I compile with Hammer (Worldcraft) from the Source SDK.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p65638">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2010-01-23 21:15:50</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Is this with every map or just this map? (compile a simple box to test if needed)</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p65641">
+	<div class="info">
+		<p class="poster">cyboy bunny</p>
+		<p class="dt">2010-01-23 22:25:42</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">mayby its something to do with the different paths in youre config. i see counterstrike and hl2dm in youre log ???</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p65642">
+	<div class="info">
+		<p class="poster">pokl</p>
+		<p class="dt">2010-01-23 22:52:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">hello,<br>
+<br>
+no, my config is correct, i checked it.<br>
+<br>
+i compiled a box, it worked. but the doublebox wont compile.<br>
+<br>
+i dont know what it could be on the map :S could it have something to do with that i started it in the cstrike config and continued in the hl2dm config?<br>
+<br>
+EDIT: I copied the whole map and inserted it into a new file.<br>
+<br>
+compiled it without RAD or VIS, no problems
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>
+** Executing...
+** Command: "c:\program files (x86)\steam\steamapps\ikku\sourcesdk\bin\ep1\bin\vbsp.exe"
+** Parameters: -game "c:\program files (x86)\steam\steamapps\ikku\half-life 2\hl2" "C:\Program Files (x86)\Steam\steamapps\ikku\sourcesdk_content\hl2\mapsrc\orbl"
+
+Valve Software - vbsp.exe (Dec 11 2006)
+2 threads
+materialPath: c:\program files (x86)\steam\steamapps\ikku\half-life 2\hl2\materials
+Loading C:\Program Files (x86)\Steam\steamapps\ikku\sourcesdk_content\hl2\mapsrc\orbl.vmf
+fixing up env_cubemap materials on brush sides...
+ProcessBlock_Thread: 0...1...2...3...4...5...6...7...8...9...10 (1)
+ProcessBlock_Thread: 0...1...2...3...4...5...6...7...8...9...10 (1)
+Processing areas...done (0)
+Building Faces...done (0)
+FixTjuncs...
+PruneNodes...
+WriteBSP...
+done (0)
+writing C:\Program Files (x86)\Steam\steamapps\ikku\sourcesdk_content\hl2\mapsrc\orbl.prt...done (0)
+Creating default cubemaps for env_cubemap using skybox materials:
+skybox/sky_day01_01*.vmt
+Run buildcubemaps in the engine to get the correct cube maps.
+
+No such variable "$hdrbasetexture" for material "skybox/sky_day01_01rt"
+Can't load skybox file skybox/sky_day01_01 to build the default cubemap!
+Finding displacement neighbors...
+Finding lightmap sample positions...
+Displacement Alpha : 0...1...2...3...4...5...6...7...8...9...10
+Building Physics collision data...
+done (2) (83436 bytes)
+Placing detail props : 0...1...2...3...4...5...6...7...8...9...10
+Compacting texture/material tables...
+Reduced 92 texinfos to 75
+Reduced 4 texdatas to 4 (82 bytes to 82)
+Writing C:\Program Files (x86)\Steam\steamapps\ikku\sourcesdk_content\hl2\mapsrc\orbl.bsp
+4 seconds elapsed
+
+** Executing...
+** Command: Copy File
+** Parameters: "C:\Program Files (x86)\Steam\steamapps\ikku\sourcesdk_content\hl2\mapsrc\orbl.bsp" "c:\program files (x86)\steam\steamapps\ikku\half-life 2\hl2\maps\orbl.bsp"
+</code></pre></div>
+
+I compiled again, this time BSP and VIS, and it crashed hammer (no log).<br>
+<br>
+any ideas?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p65674">
+	<div class="info">
+		<p class="poster">pokl</p>
+		<p class="dt">2010-01-24 11:16:27</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Ok, the compiling works now, the problem was a spawn point. i removed it and its working now <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"><br>
+<br>
+thx, mfg, pokl</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p65680">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2010-01-24 20:07:33</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">What was the problem with the spawn point?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p65919">
+	<div class="info">
+		<p class="poster">pokl</p>
+		<p class="dt">2010-01-31 12:40:43</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I used Single Player spawn points and created 2 of them, which caused vbsp to fail^^</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68248">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2010-04-08 00:54:07</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Single player spawns should't give any issues on compiling for hl2dm tho. At least I never had any. And I often put 1 in so that I get rid of the "no player start" in the problems dialog.<br>
+<br>
+It's only bad when running the map ingame without any aditional mp spawns... I'm kinda confused. But well, if it works, that's nice to know. <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68259">
+	<div class="info">
+		<p class="poster">Pseudonym</p>
+		<p class="dt">2010-04-08 02:25:12</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I have tried using vbsp before, and every time i try to compile it takes ages. then crashes/closes its self.<br>
+<br>
+Even maps which have no errors, and should only take less than a minute on normal compile (which are test maps) take ages or crash vbsp.<br>
+Wierd!<br>
+<br>
+I see why people use it for 'ease' and to free up the pc for other stuff. but i have had nothing but trouble with it.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68330">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2010-04-08 22:49:16</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Pseudonym wrote:</cite>I have tried using vbsp before, and every time i try to compile it takes ages. then crashes/closes its self.</div></blockquote>
+
+How are you compiling a map <em class="text-italics">without</em> using vbsp? That's the thingy that does .vmf -&gt; .bsp</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68394">
+	<div class="info">
+		<p class="poster">Pseudonym</p>
+		<p class="dt">2010-04-10 03:25:08</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>boshed wrote:</cite>How are you compiling a map <em class="text-italics">without</em> using vbsp?</div></blockquote>
+
+Erm,   F9</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68422">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2010-04-10 14:07:14</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Pseudonym wrote:</cite><blockquote><div><cite>boshed wrote:</cite>How are you compiling a map <em class="text-italics">without</em> using vbsp?</div></blockquote>
+
+Erm,   F9</div></blockquote>
+
+Which runs vbsp, vvis and vrad? ;D<br>
+<br>
+Tangent: anybody using VBCT find that there is weird lighting issues which go away when using standard hammer compile? I'd really like to use VBCT more :S</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

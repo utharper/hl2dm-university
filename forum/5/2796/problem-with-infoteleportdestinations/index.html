@@ -1,0 +1,366 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>problem with info_teleport_destinations - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>problem with info_teleport_destinations</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=2796">https://forum.hl2dm.community/viewtopic.php?t=2796</a>
+-->
+
+<div class="post" id="p35770">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2008-11-24 05:57:39</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">While making my jumpmaps I made some <strong class="text-strong">trigger_teleports</strong> and <strong class="text-strong">info_teleport_destination</strong>s and it always worked fine. But I thought that if the map would be in a server there would be more persons playing it and it would need more teleport destinations to avoid getting stuck on each other. But while I have three destinations in one part of the map, I noticed that I'm always teleported to the same destination: the one I specified in the <strong class="text-strong">trigger_teleport</strong>'s remote destination (obviously).<br>
+<br>
+To get the situation where I found this problem, imagine a jumpmap, with 3 <strong class="text-strong">info_target_destination</strong>s (<em class="text-italics">dest1, dest2, dest3</em>) at the start of the stage, and a <strong class="text-strong">trigger_teleport</strong> directly below a sequence of platforms to bhop. <br>
+If I get teleported to <em class="text-italics">dest1</em> and stay there, occupying it's space, the other person(s) will NOT get teleported to <em class="text-italics">dest2</em>, since I specified dest1 as the <em class="text-italics">remote destination</em>.<br>
+<br>
+The question is: Using one <strong class="text-strong">trigger_teleport</strong> only, is there a way around this?<br>
+<br>
+I thought about maybe specifying <em class="text-italics">dest&amp;i</em> in the <em class="text-italics">remote destination</em>, but I'm not sure... <br>
+Btw, I never tried <strong class="text-strong">point_teleport</strong> nor <strong class="text-strong">info_target</strong>.<br>
+<br>
+(can't try anything while I'm writing this due to being at work)</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p35803">
+	<div class="info">
+		<p class="poster">Sacrifist</p>
+		<p class="dt">2008-11-24 10:36:20</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I havent looked at teleport logics in quite awhile, but you might be able to put 3 triggers (one infront of the next) and disable the first one for a short time after its used and so on. That way if 3 players ran through them they would each use a different trigger. This isnt going with what you want as it's using more then one trigger, but why should that matter if they are all a unit or 2 apart.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p35804">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2008-11-24 11:09:35</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><img class="smilies" src="../../../images/smilies/icon_idea.gif" width="15" height="15" alt=":idea:" title="Idea"><br>
+Well, in fact, that may be a solution. I said I wanted just one teleport only cuz I was thinking that putting more than one horizontally aranged in the length of the bhop sequence would possibilitate the usage of the same destination anyway. I tried it once and it's not so useful.   <br>
+<br>
+I'm not sure this was what you meant, but I may put them <strong class="text-strong">under</strong> each other, so I get the teleports all the same width and lenght. Like three layers of triggers. <br>
+Hmmm. I dont exactly know how to control their activation/ deactivation and all that, but I'll look into it.<br>
+<br>
+All the tut's in the web are basic teleports contruction only  <img class="smilies" src="../../../images/smilies/sketchy.gif" width="15" height="15" alt=":sketchy:" title="Unsure"> <br>
+<br>
+Any more ideas/solutions would be very welcome.<br>
+Thx a lot</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p35820">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2008-11-24 17:11:39</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">You can make a teleport cycle between destinations, but it requires a bit of entity work. In this example I'm using 3 teleport destinations and sending the player to each on in turn.<br>
+<br>
+Entities needed:<br>
+<br>
+1 x <strong class="text-strong">trigger_teleport</strong> (your teleport)<br>
+3 x <strong class="text-strong">info_teleport_destination</strong> (your teleport destinations)<br>
+3 x <strong class="text-strong">ai_changetarget</strong> (these make the teleport change its destination)<br>
+1 x <strong class="text-strong">math_counter</strong> (to cycle each destination in order)<br>
+1 x <strong class="text-strong">logic_case</strong> (to see which teleport destination to use)<br>
+<br>
+Setup like so:<br>
+<br>
+<strong class="text-strong">trigger_teleport</strong>
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>name: teleport_001
+remote destination: teleport_destination_001
+outputs: 
+
+	My output named: OnEndTouch
+	Targets entities named: teleport_counter
+	Via this input: Add
+	With a parameter override of: 1</code></pre></div>
+
+<strong class="text-strong">info_teleport_destination #1</strong>
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>name: teleport_destination_001</code></pre></div>
+
+<strong class="text-strong">info_teleport_destination #2</strong>
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>name: teleport_destination_002</code></pre></div>
+
+<strong class="text-strong">info_teleport_destination #3</strong>
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>name: teleport_destination_003</code></pre></div>
+
+<strong class="text-strong">ai_changetarget #1</strong>
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>name: teleport_target_001
+target entity: teleport_001
+new target: teleport_destination_001</code></pre></div>
+
+<strong class="text-strong">ai_changetarget #2</strong>
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>name: teleport_target_001
+target entity: teleport_001
+new target: teleport_destination_002</code></pre></div>
+
+<strong class="text-strong">ai_changetarget #3</strong>
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>name: teleport_target_001
+target entity: teleport_001
+new target: teleport_destination_003</code></pre></div>
+
+<strong class="text-strong">math_counter</strong>
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>name: teleport_counter
+initial_value: 1
+minimum legal value: 1
+maximum legal value: 4 (notice this is *one more* than your number of destinations)
+outputs:
+
+	My output named: OnHitMax
+	Targets entities named: teleport_counter
+	Via this input: SetValue
+	With a parameter override of: 1
+
+	My output named: OutValue
+	Targets entities named: teleport_case
+	Via this input: InValue
+	With a parameter override of: &lt;none&gt;	</code></pre></div>	<br>
+<br>
+<strong class="text-strong">logic_case</strong>
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>name: teleport_case
+Case 01: 1
+Case 02: 2
+Case 03: 3
+outputs:
+
+	My output named: OnCase01
+	Targets entities named: teleport_target_001
+	Via this input: Activate
+
+	My output named: OnCase02
+	Targets entities named: teleport_target_002
+	Via this input: Activate
+
+	My output named: OnCase03
+	Targets entities named: teleport_target_003
+	Via this input: Activate</code></pre></div>
+
+<br>
+This works because:<br>
+<br>
+1) every time you stop touching the trigger_teleport (onEndTouch) the math_counter has 1 added to to it.<br>
+2) the number on the math_counter is sent to the logic_case, which then fires the ai_changetarget.<br>
+3) the ai_changetarget fires and changes the target of the tigger_teleport.<br>
+4) when the math_counter hits 4 it resets itself back to 1 again, so the sequence of teleport destinations is 1-&gt;2-&gt;3-&gt;1-&gt;2-&gt;3 and so on.<br>
+<br>
+Pic:<br>
+<br>
+<img src="http://boshed.hl2dm.org.uk/etc/multi_teleport.jpg" class="postimage" alt="Image"><br>
+<br>
+<a href="http://boshed.hl2dm.org.uk/etc/multi_teleport_001.zip" class="postlink"><span style="font-size:150%;line-height:116%"><span style="color:#FF0000"><strong class="text-strong">&gt;&gt; Example VMF to download here &lt;&lt;</strong></span></span></a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p35842">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2008-11-24 21:22:16</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>boshed wrote:</cite>You can make a teleport cycle between destinations, but it requires a bit of entity work. In this example I'm using 3 teleport destinations and sending the player to each on in turn.<br>
+<br>
+Entities needed:<br>
+<br>
+1 x <strong class="text-strong">trigger_teleport</strong> (your teleport)<br>
+3 x <strong class="text-strong">info_teleport_destination</strong> (your teleport destinations)<br>
+3 x <strong class="text-strong">ai_changetarget</strong> (these make the teleport change its destination)<br>
+1 x <strong class="text-strong">math_counter</strong> (to cycle each destination in order)<br>
+1 x <strong class="text-strong">logic_case</strong> (to see which teleport destination to use)<br>
+<br>
+Setup like so:<br>
+<br>
+<strong class="text-strong">trigger_teleport</strong>
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>name: teleport_001
+remote destination: teleport_destination_001
+outputs: 
+
+	My output named: OnEndTouch
+	Targets entities named: teleport_counter
+	Via this input: Add
+	With a parameter override of: 1</code></pre></div>
+
+<strong class="text-strong">info_teleport_destination #1</strong>
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>name: teleport_destination_001</code></pre></div>
+
+<strong class="text-strong">info_teleport_destination #2</strong>
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>name: teleport_destination_002</code></pre></div>
+
+<strong class="text-strong">info_teleport_destination #3</strong>
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>name: teleport_destination_003</code></pre></div>
+
+<strong class="text-strong">ai_changetarget #1</strong>
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>name: teleport_target_001
+target entity: teleport_001
+new target: teleport_destination_001</code></pre></div>
+
+<strong class="text-strong">ai_changetarget #2</strong>
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>name: teleport_target_001
+target entity: teleport_001
+new target: teleport_destination_002</code></pre></div>
+
+<strong class="text-strong">ai_changetarget #3</strong>
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>name: teleport_target_001
+target entity: teleport_001
+new target: teleport_destination_003</code></pre></div>
+
+<strong class="text-strong">math_counter</strong>
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>name: teleport_counter
+initial_value: 1
+minimum legal value: 1
+maximum legal value: 4 (notice this is *one more* than your number of destinations)
+outputs:
+
+	My output named: OnHitMax
+	Targets entities named: teleport_counter
+	Via this input: SetValue
+	With a parameter override of: 1
+
+	My output named: OutValue
+	Targets entities named: teleport_case
+	Via this input: InValue
+	With a parameter override of: &lt;none&gt;	</code></pre></div>	<br>
+<br>
+<strong class="text-strong">logic_case</strong>
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>name: teleport_case
+Case 01: 1
+Case 02: 2
+Case 03: 3
+outputs:
+
+	My output named: OnCase01
+	Targets entities named: teleport_target_001
+	Via this input: Activate
+
+	My output named: OnCase02
+	Targets entities named: teleport_target_002
+	Via this input: Activate
+
+	My output named: OnCase03
+	Targets entities named: teleport_target_003
+	Via this input: Activate</code></pre></div>
+
+<br>
+This works because:<br>
+<br>
+1) every time you stop touching the trigger_teleport (onEndTouch) the math_counter has 1 added to to it.<br>
+2) the number on the math_counter is sent to the logic_case, which then fires the ai_changetarget.<br>
+3) the ai_changetarget fires and changes the target of the tigger_teleport.<br>
+4) when the math_counter hits 4 it resets itself back to 1 again, so the sequence of teleport destinations is 1-&gt;2-&gt;3-&gt;1-&gt;2-&gt;3 and so on.<br>
+<br>
+Pic:<br>
+<br>
+<img src="http://boshed.hl2dm.org.uk/etc/multi_teleport.jpg" class="postimage" alt="Image"><br>
+<br>
+<a href="http://boshed.hl2dm.org.uk/etc/multi_teleport_001.zip" class="postlink"><span style="font-size:150%;line-height:116%"><span style="color:#FF0000"><strong class="text-strong">&gt;&gt; Example VMF to download here &lt;&lt;</strong></span></span></a></div></blockquote>
+
+do lunch sometime? what's your favorite color? do you like kids?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p35845">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2008-11-24 22:54:42</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">why do you quote a whole post of this size just to add a sentence in the end?? Never understood that.<br>
+<br>
+Anyway....<br>
+Really good. Didn't expect a such complete answer. Thank you so very much.<br>
+And now I know a few more entities I had never seen:<br>
+ai_changetarget<br>
+math_counter <br>
+logic_case<br>
+<br>
+<br>
+EDIT: you use the trigger output of OnEndTouched. I've always used OnTrigger or OnStartTouch. Is there a big diference between them?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p35862">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2008-11-25 01:06:08</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Skaruts wrote:</cite>
+EDIT: you use the trigger output of OnEndTouched. I've always used OnTrigger or OnStartTouch. Is there a big diference between them?</div></blockquote>
+
+Depends if you want something to happen when you start touching it or finish touching it <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"><br>
+<br>
+In this case I'm using OnEndTouch to change the teleport destination <em class="text-italics">after</em> the player teleports away (being teleported will of course make you stop touching the trigger). <br>
+<br>
+I'm not sure of how well it would work if you change the destination as soon as the player touches the trigger, the teleport might fire before the OnStartTouch event (server latency etc) so I chose to do it after they leave the trigger.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p35866">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2008-11-25 01:49:05</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">My gosh you were not kidding when you said "I do geeky stuff with computers" <img class="smilies" src="../../../images/smilies/icon_confused.gif" width="15" height="15" alt=":?" title="Confused">  <img class="smilies" src="../../../images/smilies/icon_lol.gif" width="15" height="15" alt=":lol:" title="Laughing"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p35878">
+	<div class="info">
+		<p class="poster">Jelly Fox</p>
+		<p class="dt">2008-11-25 04:00:35</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Nice post Boshed  <img class="smilies" src="../../../images/smilies/icon_surprised.gif" width="15" height="15" alt=":o" title="Surprised"> <br>
+
+<blockquote><div><cite>Skaruts wrote:</cite>why do you quote a whole post of this size just to add a sentence in the end?? Never understood that.<br>
+<br>
+Anyway....<br>
+Really good. Didn't expect a such complete answer. Thank you so very much.<br>
+And now I know a few more entities I had never seen:<br>
+ai_changetarget<br>
+math_counter <br>
+logic_case<br>
+<br>
+<br>
+EDIT: you use the trigger output of OnEndTouched. I've always used OnTrigger or OnStartTouch. Is there a big diference between them?</div></blockquote>
+
+He's Val, He's better than you, therefore he can do whatever he wants.  <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=":wink:" title="Wink"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p35899">
+	<div class="info">
+		<p class="poster">Sacrifist</p>
+		<p class="dt">2008-11-25 08:24:05</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yeah, my way is the redneck way. His is the proper way lol. Both will work, but I suggest going with the proper logics that boshed showed you.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

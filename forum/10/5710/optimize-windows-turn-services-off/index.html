@@ -1,0 +1,337 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Optimize Windows, turn services off - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+
+<h1>Optimize Windows, turn services off</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=5710">https://forum.hl2dm.community/viewtopic.php?t=5710</a>
+-->
+
+<div class="post" id="p80055">
+	<div class="info">
+		<p class="poster">The Argumentalizer</p>
+		<p class="dt">2011-04-16 05:00:24</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I have been interested in a fast system for years and have uncovered many tricks to secure up and speed up Windows.<br>
+I am posting a services log to show folks what can be disabled.<br>
+<br>
+WARNING! - This is a single PC not part of a network. If you have a network, all bets are off.<br>
+Also, Some components in Windows will not work if their service is set to manual. Remote Procedure Call (a Huge deal) HAS to be set to automatic.<br>
+Also, be aware, i do not use search or restore. Worms can use restore to survive. It hasn't ever really worked and is a trememndous resource hog.<br>
+So, i disable Restore in the System.<br>
+<br>
+This is for XP. I am not as familiar with 7 or Vista, but i am sure many of the same services run.<br>
+And know this: Microsoft has their OSs set to install with an incredible array of useless resource abusing services, so you can do everything.<br>
+If you are a gamer with a single machine and want it as responsive as possible, the first step is:<br>
+<br>
+Disable Indexing and Search<br>
+Disable System restore<br>
+Disable all graphic nonsense except maybe Themes, Smooth edges of fonts (ClearType anti-aliasing) and Show contents while dragging.<br>
+Disable dozens of Networking services you don't need, that will run in memory.<br>
+Here is the list. If you are unsure about a service, set it to MANUAL, meaning the service will start only if needed. Automatic means the service is running.<br>
+The ones disabled shouldn't cause you any trouble<br>
+<br>
+Name	Description	Status  	                                  Startup Type	Log On As<br>
+.NET Runtime Optimization Service............................]Manual	        Local System<br>
+Alerter.................................................................]Disabled	Local Service<br>
+Apple Mobile Device................................................]Disabled	Local System<br>
+Application Layer Gateway Service............................]Manual	Local Service<br>
+Application Management..........................................]Manual	Local System<br>
+ASP.NET State Service............................................]Manual	Network Service<br>
+Automatic Updates..................................................]Automatic	Local System<br>
+Background Intelligent Transfer Service.......................]Automatic	Local System<br>
+Bonjour Service.......................................................]Disabled	Local System<br>
+ClipBook.................................................................]Disabled	Local System<br>
+COM+ Event System.................................................]Manual	Local System<br>
+COM+ System Application..........................................]Manual  	Local System<br>
+Computer Browser....................................................]Disabled	Local System<br>
+Cryptographic Services..............................................]Automatic	Local System<br>
+DCOM Server Process Launcher...................................]Automatic	Local System<br>
+DHCP Client.............................................................]Automatic	Local System<br>
+Diskeeper................................................................]Automatic	Local System<br>
+Distributed Link Tracking Client....................................]Disabled	Local System<br>
+Distributed Transaction Coordinator..............................]Disabled	Network Service<br>
+DNS Client...............................................................]Disabled	Network Service<br>
+Error Reporting Service..............................................]Disabled	Local System<br>
+Event Log...............................................................]Automatic	Local System<br>
+Extensible Authentication Protocol Service....................]Manual	Local System<br>
+Fast User Switching Compatibility................................]Manual	Local System<br>
+Google Update Service..............................................]Disabled	Local System<br>
+Health Key and Certificate Management........................]Disabled	Local System<br>
+Help and Support......................................................]Manual	Local System<br>
+HID Input Service.....................................................]Disabled	Local System<br>
+HTTP SSL................................................................]Manual	Local System<br>
+IMAPI CD-Burning COM Service....................................]Manual	Local System<br>
+Indexing Service.......................................................]Disabled	Local System<br>
+iPod Service.............................................................]Manual	Local System<br>
+IPSEC Services.........................................................]Automatic	Local System<br>
+Java Quick Starter.....................................................]Disabled	Local System<br>
+Logical Disk Manager..................................................]Manual	Local System<br>
+Logical Disk Manager Administrative Services..................]Manual	Local System<br>
+lxbu_device..............................................................]Manual	Local System<br>
+Machine Debug Manager.............................................]Disabled	Local System<br>
+Messenger...............................................................]Disabled	Local System<br>
+MS Software Shadow Copy Provider..............................]Manual	Local System<br>
+Net Logon................................................................]Disabled	Local System<br>
+Net.Tcp Port Sharing Service.......................................]Disabled	Local Service<br>
+NetMeeting Remote Desktop Sharing..............................]Disabled	Local System<br>
+Network Access Protection Agent..................................]Disabled	Local System<br>
+Network Connections..................................................]Manual	Local System<br>
+Network DDE.............................................................]Disabled	Local System<br>
+Network DDE DSDM....................................................]Disabled	Local System<br>
+Network Location Awareness (NLA)...............................]Disabled	Local System<br>
+Network Provisioning Service........................................]Disabled	Local System<br>
+NT LM Security Support Provider...................................]Manual	Local System<br>
+NVIDIA Display Driver Service.......................................]Manual	Local System<br>
+Office Source Engine..................................................]Manual	Local System<br>
+Performance Logs and Alerts........................................]Manual	Network Service<br>
+Plug and Play............................................................]Automatic	Local System<br>
+PnkBstrA..................................................................]Disabled	Local System<br>
+PnkBstrB..................................................................]Disabled	Local System<br>
+Portable Media Serial Number Service............................]Disabled	Local System<br>
+Print Spooler............................................................]Automatic	Local System<br>
+Protected Storage.....................................................]Automatic	Local System<br>
+QoS RSVP................................................................]Disabled	Local System<br>
+Remote Access Auto Connection Manager......................]Disabled	Local System<br>
+Remote Access Connection Manager.............................]Disabled	Local System<br>
+Remote Desktop Help Session Manager..........................]Disabled	Local System<br>
+Remote Procedure Call (RPC).......................................]Automatic	Network Service<br>
+Remote Procedure Call (RPC) Locator............................]Manual	Network Service<br>
+Removable Storage....................................................]Manual	Local System<br>
+Routing and Remote Access.........................................]Disabled	Local System<br>
+Secondary Logon.......................................................]Disabled	Local System<br>
+Security Accounts Manager.........................................]Automatic	Local System<br>
+Security Center.........................................................]Automatic	Local System<br>
+Server.....................................................................]Disabled	Local System<br>
+Shell Hardware Detection............................................]Automatic	Local System<br>
+Smart Card...............................................................]Disabled	Local Service<br>
+SNMP Service............................................................]Disabled	Local System<br>
+SNMP Trap Service.....................................................]Disabled	Local Service<br>
+SSDP Discovery Service...............................................]Disabled	Local Service<br>
+System Event Notification............................................]Automatic	Local System<br>
+System Restore Service...............................................]Disabled	Local System<br>
+Task Scheduler..........................................................]Automatic	Local System<br>
+TCP/IP NetBIOS Helper................................................]Disabled	Local Service<br>
+Telephony.................................................................]Disabled	Local System<br>
+Terminal Services.......................................................]Disabled	Local System<br>
+Themes....................................................................]Automatic	Local System<br>
+TrueVector Internet Monitor.........................................]Automatic	Local System<br>
+Uninterruptible Power Supply........................................]Disabled	Local Service<br>
+Universal Plug and Play Device Host...............................]Disabled	Local Service<br>
+Volume Shadow Copy..................................................]Manual	Local System<br>
+WebClient.................................................................]Manual	Local Service<br>
+Windows Audio..........................................................]Automatic	Local System<br>
+Windows CardSpace...................................................]Disabled	Local System<br>
+Windows Driver Foundation - User-mode Driver Framework ]Manual	Local System<br>
+Windows Firewall/Internet Connection Sharing (ICS).........]Automatic	Local System<br>
+Windows Image Acquisition (WIA).................................]Automatic	Local System<br>
+Windows Installer.......................................................]Manual	Local System<br>
+Windows Management Instrumentation...........................]Automatic	Local System<br>
+Windows Media Player Network Sharing Service................]Disabled	Network Service<br>
+Windows Presentation Foundation Font Cache 3.0.0.0.......]Disabled	Local Service<br>
+Windows Presentation Foundation Font Cache 4.0.0.0.......]Manual	Local Service<br>
+Windows Remote Management (WS-Management)............]Disabled	Network Service<br>
+Windows Time...........................................................]Disabled	Local System<br>
+Wired AutoConfig.......................................................]Disabled	Local System<br>
+Wireless Zero Configuration..........................................]Disabled	Local System<br>
+WMI Performance Adapter............................................]Disabled	Local System<br>
+Workstation	..............................................................]Disabled	Local System<br>
+<br>
+If you want to find out more about a service, google it.<br>
+If you have a wireless connection, don't turn off...wireless zero config.<br>
+Don't turn off firewall unless you use another that doesn't require Windows firewall.<br>
+<br>
+Leave these on Automatic:<br>
+<br>
+Background Intelligent Transfer Service.<br>
+Cryptographic Services<br>
+Event Log<br>
+IPSEC Services<br>
+Plug and Play<br>
+Print Spooler<br>
+Protected Storage.<br>
+Remote Procedure Call (RPC)<br>
+Security Accounts Manager<br>
+Security Center<br>
+Shell Hardware Detection<br>
+System Event Notification<br>
+Task Scheduler<br>
+Themes<br>
+Windows Audio<br>
+Windows Firewall/Internet Connection Sharing (ICS)<br>
+Windows Image Acquisition<br>
+Windows Management Instrumentation<br>
+<br>
+You can find services in Administrative tools - services.<br>
+double click and change dropdown to Auto, Manual, or Disable. close the box.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p80070">
+	<div class="info">
+		<p class="poster">lead</p>
+		<p class="dt">2011-04-16 18:59:42</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">wow thats great!<br>
+<br>
+i have used a modded w7 on one of my lappys for ages. its ultra fast so i checked what was removed in it and here it is:<br>
+<br>
+ Hyper V Common Drivers, Hyper V Guest Integration Drivers, Anytime<br>
+ Upgrade Results, Backup, BLB Client, Business Scanning Feature,<br>
+ Clips In The Library, Client Wired Network Drivers, Common Modem<br>
+ Drivers, Printer Drivers, Tuner Drivers, Win Ocr, Gadget Platform,<br>
+ Group Policy Client Extensions, IIS Web Server Add On, IIS Web<br>
+ Server Add On 2, Indexing Service, IE Troubleshooters, Links,<br>
+ LocalPack AU/CA/GB/ZA/US, Mobile PC Client Sensors, Optical Media<br>
+ Disc, PeerDist Client, Printing XPS Services, RasCMAK, RecDisc SDP,<br>
+ Sample Content Ringtones, Secure Startup, ShareMedia Control Panel,<br>
+ Shell HomeGroup, Shell Inbox Games, Sidebar Killbits SDP, Snipping<br>
+ Tool, Sticky Notes, Terminal Services Command Line Tools, Terminal<br>
+ Services Misc Redirection, Terminal Services Publishing WMI Provider,<br>
+ Terminal Services Remote Applications Client, Terminal Services USB<br>
+ Redirector, Terminal Services WMI Provider, Windows Media Player<br>
+ Troubleshooters, WMP Network Sharing Service, XPS Foundation Client,<br>
+ Networking MPSSVC Rules Ultimate Edition.<br>
+<br>
+<br>
+<br>
+ These items were: Printer Drivers, Modem Drivers and Camera Drivers.<br>
+<br>
+ Other miscellaneous items were removed like the contents of the<br>
+ Recovery folder and certain folders from the Web folder.<br>
+<br>
+<br>
+ REMOVED - [Accessories]<br>
+ Accessibility, Inbox Games, Premium Inbox Games, Mobility<br>
+ Center, Speech Support, Windows Sidebar and Gadgets.<br>
+<br>
+ REMOVED - [Drivers]<br>
+ Diva Server, Modems, Scanners, TV Tuners.<br>
+<br>
+ REMOVED - [Languages]<br>
+ Chinese, Japanese, Korean.<br>
+<br>
+ Media Center, Music and Video samples, Sample Pictures,<br>
+ Screensavers, SideShow, Sound Recorder, Windows Media<br>
+ Codecs, Windows Media Player.<br>
+<br>
+ Connect to a Network Projector, Internet Information<br>
+ Services (IIS), Remote Desktop and Assistance, Remote<br>
+ Desktop Client, Simple Network Management Protocol<br>
+ (SNMP), Simple TCPIP services, Telnet Client, Telnet<br>
+ Server, TFTP Client, Windows Collaboration, Windows<br>
+ Mail.<br>
+<br>
+ Diagnostics, Error Reporting, Offline Files, Remote Registry,<br>
+ Routing and Remote Access, TPM Base Services, Windows Search.<br>
+<br>
+ BitLocker Drive Encryption, Crash Dump Support, Digital<br>
+ Rights Management (DRM), Help, IMAPIv2 Burning Support,<br>
+ Manual Install (Setup.exe), Microsoft Message Queue (MSMQ),<br>
+ Natural Language, Parental Controls, Performance Counters,<br>
+ Reliability and Performance Monitor, Remote Differential<br>
+ Compression, Security Center, Software Quality Management<br>
+ (SQM), Sync Center, System Restore, Tablet PC, Windows<br>
+ Defender, Windows Easy Transfer, Windows SAT (Performance<br>
+ Index).<br>
+<br>
+currently trying m1 version of windows 8 so see how that goes <img class="smilies" src="../../../images/smilies/icon_confused.gif" width="15" height="15" alt=":?" title="Confused"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p80074">
+	<div class="info">
+		<p class="poster">The Argumentalizer</p>
+		<p class="dt">2011-04-16 21:12:40</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Really looks like a tremendous leap in enable whatever services running all over the place, from XP to 7. That is a shit load of stuff turned off.<br>
+And the best part, with  a geek setup, you'll never miss it.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p80122">
+	<div class="info">
+		<p class="poster">dbanimal</p>
+		<p class="dt">2011-04-19 21:10:21</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Nice list!!  My PC's are all hooked up within a network but I would still like to give all this a try!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p80125">
+	<div class="info">
+		<p class="poster">The Argumentalizer</p>
+		<p class="dt">2011-04-20 00:02:04</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">The list is for a single PC. Many of those services are needed for a network.<br>
+<br>
+Don't do it. Or at least make a list of what you disabled.<br>
+You won't know which one is the culprit.<br>
+<br>
+Don't blame me if it fucks you up.<br>
+This is for a single gaming Geek setup, with printing and Internet.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p80133">
+	<div class="info">
+		<p class="poster">Pernicious</p>
+		<p class="dt">2011-04-20 13:06:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>The Argumentalizer wrote:</cite>Really looks like a tremendous leap in enable whatever services running all over the place, from XP to 7. That is a shit load of stuff turned off.</div></blockquote>
+
+Leap in enable blah blah SAYWAH?<br>
+You can turn services off in xp as well u know, allways have been able to.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p80145">
+	<div class="info">
+		<p class="poster">The Argumentalizer</p>
+		<p class="dt">2011-04-21 05:48:32</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">"Leap in enable blah blah SAYWAH?<br>
+You can turn services off in xp as well u know, allways have been able to."<br>
+<br>
+What it means, in a non-aboriginal language not involving dirigidoos and thumb drums, is i was commenting on how many services the newer OS has, compared to XP. And the thread is about turning off services in XP.<br>
+<br>
+May a Roo piss on your Vegamite!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p80148">
+	<div class="info">
+		<p class="poster">Pernicious</p>
+		<p class="dt">2011-04-21 06:36:59</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">ahh yes, i did not read your post, as it was really boring.<br>
+My bad.<br>
+And may a fat guy die of a heart attack on a road outside ur house and crash into ur bedroom while ur sleeping and squish your head sending ur brains flying all over the walls.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

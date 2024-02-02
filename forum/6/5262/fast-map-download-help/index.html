@@ -1,0 +1,252 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Fast map download help - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+
+<h1>Fast map download help</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=5262">https://forum.hl2dm.community/viewtopic.php?t=5262</a>
+-->
+
+<div class="post" id="p73528">
+	<div class="info">
+		<p class="poster">dbanimal</p>
+		<p class="dt">2010-07-27 00:31:21</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Does anyone have a step by step tutorial on how to set this up?<br>
+<br>
+Compressing maps to .bz2 files<br>
+Location where these maps go<br>
+Download URL for individual map downloads - location where cvar should be (assuming server.cfg)<br>
+<br>
+I downloaded the map compression tool already, just need to know what to do and where to put things.<br>
+<br>
+Thanks in advance,<br>
+<br>
+dbanimal</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p73541">
+	<div class="info">
+		<p class="poster">Da1</p>
+		<p class="dt">2010-07-27 03:19:13</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Zip your maps using bzip. - To do this drag the map for example dm_lockdown.bsp onto the bzip2.exe and it will turn it into dm_lockdown.bsp.bz2<br>
+<br>
+Upload the maps to your website or ftp you are using. Mine is <a href="http://www.left4-dead.com/hl2mp/maps/" class="postlink">http://www.left4-dead.com/hl2mp/maps/</a><br>
+<br>
+In your server.cfg - sv_downloadurl <a href="http://www.left4-dead.com/hl2mp/" class="postlink">http://www.left4-dead.com/hl2mp/</a> (change link to your site where your maps are uploaded)<br>
+<br>
+Test it out, let me know if it works.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p73542">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2010-07-27 03:24:51</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">to clarify<br>
+your offsite server should have a folder name <em class="text-italics">hl2mp</em>. inside it have a folder name <em class="text-italics">maps</em>. and inside the <em class="text-italics">maps </em>folder place all your bz2 files.<br>
+goes without saying you will always need to have both the bsp of the map on the actual game server and the bz2 of that map on your offsite.<br>
+another tip regarding FTP uploads. use <a href="https://www.ohloh.net/p/filezilla/download?filename=FileZilla_3.3.3_win32-setup.exe" class="postlink">Filezilla</a> and <strong class="text-strong">always</strong> use Transfer Type : <strong class="text-strong">Binary</strong>.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p73566">
+	<div class="info">
+		<p class="poster">dbanimal</p>
+		<p class="dt">2010-07-27 06:28:21</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thanks a million to both of you, it's very much appreciated.  One more question, in my mapcycle.txt do I put dm_lockdown or dm_lockdown.bz2 or dm_lockdown.bsp.bz2?<br>
+<br>
+Thanks again!! <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p73570">
+	<div class="info">
+		<p class="poster">Da1</p>
+		<p class="dt">2010-07-27 06:48:43</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Just dm_lockdown</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p73585">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2010-07-27 11:35:56</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">in your server.cfg file you need to have a line that says:<br>
+<br>
+sv_downloadurl "<a href="http://www" class="postlink">http://www</a>.(your fast DL site name).com/hl2mp"</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p73588">
+	<div class="info">
+		<p class="poster">Da1</p>
+		<p class="dt">2010-07-27 13:02:19</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Da1 wrote:</cite>In your server.cfg - sv_downloadurl <a href="http://www.left4-dead.com/hl2mp/" class="postlink">http://www.left4-dead.com/hl2mp/</a> (change link to your site where your maps are uploaded)</div></blockquote>
+
+<br>
+Thanks para  <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=":wink:" title="Wink"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p73589">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2010-07-27 13:43:14</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><img class="smilies" src="../../../images/smilies/icon_lol.gif" width="15" height="15" alt=":lol:" title="Laughing"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p73593">
+	<div class="info">
+		<p class="poster">Ade</p>
+		<p class="dt">2010-07-27 17:34:40</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">missing map issues:<br>
+-if fast dl url is not empty but there is no fast dl version (server might be down for eg)<br>
+-older versions with same name (might give "map differs from server's")<br>
+-name too big (30 chars or so)<br>
+-above net_maxfilesize (default 16, not 64)<br>
+-capitalization<br>
+<br>
+sry if only the first is on topic lol but doesn't hurt</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p73604">
+	<div class="info">
+		<p class="poster">dbanimal</p>
+		<p class="dt">2010-07-27 20:22:18</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thanks again to all!!  Any and all information is very helpful.<br>
+<br>
+dbanimal</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p73645">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2010-07-28 04:00:33</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I know it can be a pain bz2-zipping a full directory of 20 or more maps so I fond a way to use 7zip and a batch file. <br>
+<br>
+Install 7zip then copy <strong class="text-strong">7z.exe</strong> to C:\Windows\System32<br>
+paste this into text editor and save as <strong class="text-strong">"batch-bz2.bat"</strong> use the quotes<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>for %%A in (*.bsp) do 7z a -tbzip2 -mx=9 -mmt=on %%A.bz2 %%A</code></pre></div>
+<strong class="text-strong">-mmt=on</strong> is multicore/thread support<br>
+Place the file where the maps you want bzipping then double click, itdoesnt matter if there are file types other than .bsp in the directory it will only compress the .bsp files.<br>
+<br>
+There are probably other tools outthere but I already had 7zip installed and didnt want to install yet another program.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p73647">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2010-07-28 04:12:02</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">there is no other compression on this planet at this point in time that matches or betters 7z.<br>
+and you're batch files looks sweet.  <img class="smilies" src="../../../images/smilies/icon_cool.gif" width="15" height="15" alt="8)" title="Cool"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p73660">
+	<div class="info">
+		<p class="poster">dbanimal</p>
+		<p class="dt">2010-07-28 05:46:54</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I have a problem.<br>
+<br>
+Everyone who joins keeps getting a message saying "missing map".<br>
+<br>
+I'm trying out dropbox.com - which gives me 2GB free storage for people to download from.  Do you think this site may be causing my problems?<br>
+<br>
+In my server.cfg I have   sv_downloadurl "<a href="https://dl.dropbox.com/u/mynumber/hl2mp/maps" class="postlink">http://dl.dropbox.com/u/mynumber/hl2mp/maps</a>".<br>
+<br>
+When downloading a map it appears that it's going to work because it shows maps/dm_lockdown.bsp.bz2 but then immediately goes to "Missing map".  I'm puzzled.<br>
+<br>
+Any advice?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p73664">
+	<div class="info">
+		<p class="poster">dbanimal</p>
+		<p class="dt">2010-07-28 07:39:17</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Well a special thanks to neolinkster who contacted me, I was close with the setup but had to eliminate the /maps on the url link and that took care of it.  It seems to be working great, we'll see how it goes!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p73744">
+	<div class="info">
+		<p class="poster">Ade</p>
+		<p class="dt">2010-07-29 22:54:54</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">In your server.cfg - sv_downloadurl <a href="http://www.left4-dead.com/hl2mp/" class="postlink">http://www.left4-dead.com/hl2mp/</a> (change link to your site where your maps are uploaded)<br>
+helps if u proof read the help we give you <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p73794">
+	<div class="info">
+		<p class="poster">dbanimal</p>
+		<p class="dt">2010-07-31 03:09:04</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yes I admit I got the 2 mixed up.  So sue me!! <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p73797">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2010-07-31 03:47:26</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">"we" are very upset. how could you!!!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

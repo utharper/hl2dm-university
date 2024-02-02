@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Help with server into page - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+
+<h1>Help with server into page</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=1073">https://forum.hl2dm.community/viewtopic.php?t=1073</a>
+-->
+
+<div class="post" id="p9986">
+	<div class="info">
+		<p class="poster">SND</p>
+		<p class="dt">2008-02-23 22:25:06</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hi I want to change my clans server intro page where i want to have our banner with our server rules and other stuff to welcome people coming to our server. Can anyone give me any instructions on how to do it.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p9997">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2008-02-23 23:11:11</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">On the server, look in the hl2mp folder for a file called motd.txt (message of the day).<br>
+<br>
+You can edit this like it's an html page, but it can be a tricky devil at times, not always giving you what you expect. Trial and error is my best advice.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p9998">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2008-02-23 23:13:11</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I havent seen what you have now.  If its just the yellow text that just comes from editing the motd text and you want something more fancy or colorful then you need to make a html file with whatever you want then upload that to your web page and then link your motd to it.  <br>
+<br>
+The size of the html should be no bigger than 800x600 width and height unless you want to make people scroll through it.<br>
+<br>
+Here is an example of the link code I have on mine.  <br>
+I had to substitute some of the codes with real words so that it would show up on here.  I have indicated where it should be changed.<br>
+<br>
+&lt;DOCTYPE&gt;<br>
+&lt;html&gt;<br>
+&lt;head&gt;<br>
+&lt;title&gt;HL2MP MOTD&lt;/title&gt;<br>
+<br>
+&lt;style&gt;<br>
+    	}<br>
+body	{<br>
+	background:#000000;  <span style="color:blue">this is motd background color. It should match your html background color (unless you dont want it to)</span>	<br>
+                     margin-left:175px;  <span style="color:blue">adjusts margins to center image</span>	<br>
+                     margin-top:35px;<br>
+	}<br>
+&lt;/style&gt;<br>
+&lt;/head&gt;<br>
+&lt;body&gt; <span style="color:darkred">(should be body scroll="no" inside the &lt;&gt;)</span> <span style="color:blue">if you dont want to have people scoll the image then it should be no.</span><br>
+&lt;pre1&gt; <span style="color:darkred">(should be "pre")</span><br>
+&lt;image <span style="color:darkred">(should be "img")</span><br>
+source<span style="color:darkred"> (use "src")</span>="<a href="http://yourwebpage/folder/yourimage.jpg" class="postlink">http://yourwebpage/folder/yourimage.jpg</a> <span style="color:darkred">(close quotes and &gt;)</span><br>
+&lt;/pre1&gt; <span style="color:darkred">(use "pre")</span><br>
+&lt;/body&gt;<br>
+&lt;/html&gt;</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p10008">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2008-02-23 23:50:07</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Wow its unbelievably tricky to tell someone how to do html code on a forums that uses html code.  LOL!<br>
+<br>
+<br>
+If this isnt clear, let me know Ill send you a text file of what I have.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p10011">
+	<div class="info">
+		<p class="poster">Epoch</p>
+		<p class="dt">2008-02-24 00:02:48</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Lol wow been a while since I've seen html code, brings back great memories of computer class freshman year.  *gets that far away look in his eyes*</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

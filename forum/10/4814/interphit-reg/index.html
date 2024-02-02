@@ -1,0 +1,373 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Interp/hit reg. - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+
+<h1>Interp/hit reg.</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=4814">https://forum.hl2dm.community/viewtopic.php?t=4814</a>
+-->
+
+<div class="post" id="p66397">
+	<div class="info">
+		<p class="poster">Pernicious</p>
+		<p class="dt">2010-02-12 02:05:13</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">So i was wandering wat all u mofo's are using for ur interp settings these days.<br>
+Hit reg in hl2dm is preeeeety retarded and i havent tested much yet(recently) but i went in and tested default + the 1/updarate formula. Both fail pretty hard. Might try some more settings etc<br>
+<br>
+Pretty much i ocasionally join a random pub so i have my rates as follow (for servers that use default tick etc)<br>
+rate 40000<br>
+cl_cmdrate 33<br>
+cl_updaterate 33<br>
+cl_interp?<br>
+<br>
+So yea just wandering if anybody knows anything that helps, it has been a looooooooong time since i fucked wit this shit.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p66399">
+	<div class="info">
+		<p class="poster">Tranthor</p>
+		<p class="dt">2010-02-12 02:09:28</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">weird, I've never had any problems with hit reg</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p66401">
+	<div class="info">
+		<p class="poster">Pernicious</p>
+		<p class="dt">2010-02-12 02:13:21</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">It varies from server to server and even player to player, espesh the ones using retarded rates (admitedly) like 100/100 etc<br>
+But yea, would be nice if it was consistantly decent is all, im not gunna have a big whinge but just wondering. Maybe its just worse on server with 33 tickrate i dunno *shrugs*</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p66408">
+	<div class="info">
+		<p class="poster">Tranthor</p>
+		<p class="dt">2010-02-12 03:21:14</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Might be, I've mostly been on 66tick servers</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p66409">
+	<div class="info">
+		<p class="poster">Ghost Dog_TSGK</p>
+		<p class="dt">2010-02-12 03:39:27</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">It is best to have binds for changing interp on the fly, but in theory the lower the better if it's playable.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p66411">
+	<div class="info">
+		<p class="poster">phantom</p>
+		<p class="dt">2010-02-12 05:35:01</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">rate 30000<br>
+cl_cmdrate 66<br>
+cl_updaterate 66<br>
+cl_interp_ratio 1<br>
+cl_interp .01</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p66413">
+	<div class="info">
+		<p class="poster">Ko-Tao</p>
+		<p class="dt">2010-02-12 05:54:30</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">For hitscan, assuming you have clientside lag compensation enabled and run an interp ratio of 1, match interp to [ping/1000]. Melee is hitscan, btw.<br>
+<br>
+For all other weapons, or if lag compensation is disabled, use the lowest value that doesnt cause jitter (and lead your shots). A minimum of 0.02 is recommended if you get choppiness (such as may occur while recording a demo during play or watching live srctv).<br>
+<br>
+Also, the source engine bottom limit is 0.015 (to a few more decimal places iirc), so settings below this level have no effect.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p66415">
+	<div class="info">
+		<p class="poster">Deathwish</p>
+		<p class="dt">2010-02-12 06:26:08</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Pernicious, If my good self read correctly, you use a rate of 40000 even though you have a wireless internet connection? That is quite a mistake good sire, no wonder your good self suffers from lag.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p66416">
+	<div class="info">
+		<p class="poster">Pernicious</p>
+		<p class="dt">2010-02-12 06:29:49</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Ko-Tao wrote:</cite>match interp to [ping/1000].</div></blockquote>
+
+Yawah?<br>
+That is interesting but also odd considering ur ping is allways changing even if only slightly, plus varying from server to server. Do u actually use this?......Really?<br>
+Also i read that cl_interp 0 = auto configuration, not sure if just means it determines wat it should be then sets it or constantly changes to suit the environment/woh eva.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p66418">
+	<div class="info">
+		<p class="poster">Pernicious</p>
+		<p class="dt">2010-02-12 06:31:07</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Deathwish wrote:</cite>pern you use a rate of 40000 even though you have wireless? thats fully retarded no wonder you lag so bad.</div></blockquote>
+
+No i just got ADSL (not adsl2+ unfortunatly) this week, hence me actually playing hl2dm.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p66426">
+	<div class="info">
+		<p class="poster">Deathwish</p>
+		<p class="dt">2010-02-12 14:03:07</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I've got ADSL as well, cant get adsl2 in my area here in brissy, it sucks. What connection did you get, I have a 1.5mb/256 connection.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p66430">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2010-02-12 16:40:47</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Holy shit they are actually getting along for once!   <img class="smilies" src="../../../images/smilies/icon_razz.gif" width="15" height="15" alt=":P" title="Razz"><br>
+<br>
+Who put the happy drugs in their cheerios?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p66436">
+	<div class="info">
+		<p class="poster">Ko-Tao</p>
+		<p class="dt">2010-02-12 21:42:42</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I dont use the dynamic interp setup atm because i only pub sporadically (just run 0.02 for everything) but i would use it again if i got back into league play. And ya you do have to switch the hitscan interps for each server; of course youll never keep it perfectly locked to ping, but assuming a stable connection youll be within +/- 5 ping for your stay on the server, which will improve reg compared to just running the same interp no matter what.<br>
+<br>
+Not that "improved" means much in a game where the netcode is terrible to begin with and the server just swallows anything the client feeds it, ie, its not going to help against someone whos jittering or teleporting all over due to purposefully fucked rates / router, junk wireless or the like, and it also wont do anything on those servers that are such trash they cant even reg close range shots on nonmoving players half the time etc.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p66437">
+	<div class="info">
+		<p class="poster">Pernicious</p>
+		<p class="dt">2010-02-12 21:57:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Ko-Tao wrote:</cite>servers that are such trash they cant even reg close range shots on nonmoving players half the time etc.</div></blockquote>
+
+I have had quite a lot of that lool, i dont get it though, if the hitboxes arent moving, how can a hit not register. Its redonkulous.<br>
+<br>
+Internet connection:<br>
+I has 1500/256, with 50g download per month. I swear using wireless was like living in the dark ages, playing on foreign servers on ADSL is even still way better then the wireless.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p66439">
+	<div class="info">
+		<p class="poster">Pernicious</p>
+		<p class="dt">2010-02-12 22:34:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hmmm actually, it occurs to me that, if u set ur interp_ratio then setting the interp value itself will occomplish nothing as interp_ratio calculates and sets it auto ie interp_ratio/updaterate.(or maybe thats only if u set cl_interp 0 *shrugs*)<br>
+<br>
+In any case i am using the following now for the hell of it.<br>
+//RATE<br>
+rate 40000<br>
+cl_cmdrate "33"<br>
+cl_updaterate "33"<br>
+cl_interpolate "1"<br>
+cl_interp_ratio "1"<br>
+cl_interp "0"<br>
+cl_smooth "1"<br>
+cl_smoothtime "0.01"</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p66471">
+	<div class="info">
+		<p class="poster">Deathwish</p>
+		<p class="dt">2010-02-13 10:59:57</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">you with TPG?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p66475">
+	<div class="info">
+		<p class="poster">s0iz</p>
+		<p class="dt">2010-02-13 20:31:00</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Tranthor wrote:</cite>weird, I've never had any problems with hit reg</div></blockquote>
+
+<img src="http://images.fanpop.com/images/image_uploads/House---No-Lies-house-md-561420_1680_1050.jpg" class="postimage" alt="Image"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p66477">
+	<div class="info">
+		<p class="poster">Pernicious</p>
+		<p class="dt">2010-02-13 21:35:18</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I am with telstra, they are the only ones who could hook it up, even though they told us we couldnt get ADSL at all, the story, is an odd one.<br>
+<br>
+Also, wats a Soiz.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p66478">
+	<div class="info">
+		<p class="poster">Tranthor</p>
+		<p class="dt">2010-02-13 21:53:58</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">No, really soiz, this is the only game that never makes me go "MOFO I HIT YOU IN THE HEAD WITH A MAG AND YOU DIDN'T DIE"</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p66479">
+	<div class="info">
+		<p class="poster">Nutri-Grain</p>
+		<p class="dt">2010-02-13 22:54:20</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p66481">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2010-02-14 00:00:17</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I gave up caring about rates and stuff a while back I just stick to the same  100k rate 66 update and 66 cmdrate easy, if its shit, its shit.<br>
+
+<blockquote><div><cite>Tranthor wrote:</cite>No, really soiz, this is the only game that never makes me go "MOFO I HIT YOU IN THE HEAD WITH A MAG AND YOU DIDN'T DIE"</div></blockquote>
+The only game where this statement is true is the game of real life.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p66482">
+	<div class="info">
+		<p class="poster">s0iz</p>
+		<p class="dt">2010-02-14 00:05:31</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">The only FPS game I had ever played with the minimal hitreg issues was CoD4, but still, it has some. Internet will always have hitreg issues.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p66486">
+	<div class="info">
+		<p class="poster">provost</p>
+		<p class="dt">2010-02-14 03:57:27</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>s0iz wrote:</cite>The only FPS game I had ever played with the minimal hitreg issues was CoD4, but still, it has some. Internet will always have hitreg issues.</div></blockquote>
+
+Warsow 0.5</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p66487">
+	<div class="info">
+		<p class="poster">phantom</p>
+		<p class="dt">2010-02-14 04:02:57</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><a href="http://img51.imageshack.us/img51/135/dmlockdownr50002.jpg" class="postlink">http://img51.imageshack.us/img51/135/dm ... r50002.jpg</a><br>
+<br>
+no hit reg issues with this guy, hes just a big micheal jackson fan</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p66490">
+	<div class="info">
+		<p class="poster">Tranthor</p>
+		<p class="dt">2010-02-15 00:50:57</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">maybe you toolsheds just should host your own servers</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p66504">
+	<div class="info">
+		<p class="poster">s0iz</p>
+		<p class="dt">2010-02-15 04:17:16</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>phantom wrote:</cite><a href="http://img51.imageshack.us/img51/135/dmlockdownr50002.jpg" class="postlink">http://img51.imageshack.us/img51/135/dm ... r50002.jpg</a><br>
+<br>
+no hit reg issues with this guy, hes just a big micheal jackson fan</div></blockquote>
+
+18 fps server ftl</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p66507">
+	<div class="info">
+		<p class="poster">phantom</p>
+		<p class="dt">2010-02-15 06:11:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>s0iz wrote:</cite><blockquote><div><cite>phantom wrote:</cite><a href="http://img51.imageshack.us/img51/135/dmlockdownr50002.jpg" class="postlink">http://img51.imageshack.us/img51/135/dm ... r50002.jpg</a><br>
+<br>
+no hit reg issues with this guy, hes just a big micheal jackson fan</div></blockquote>
+
+18 fps server ftl</div></blockquote>
+
+was during a source tv</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p66525">
+	<div class="info">
+		<p class="poster">ether</p>
+		<p class="dt">2010-02-15 19:24:12</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hit reg for me varies from tolerable to ridiculous.   Some days things are just completely crisp.  Other days it's just complete BS.   I've had battles where I nail someone with an exploding barrel, then empty the shotgun and SMG into their head at point blank range.  why... won't.... you.... die.... !!   it's times like that when I'm glad I don't have a mic because I sound like that boom-headshot dude going ballistic.  The two biggest issues I have are the hit reg and a lag effect where your opponent always seems to see you a little before you see him.  Before someone jumps in about some people have faster reflexes, I've been on both sides of it (working for me and against me, and against the same players). <br>
+<br>
+Sometimes clearing out the blob files seems to help. Tweaking cl_interp_ratio seems to help a bit sometimes, but I've never had it completely solve a problem.  There are a lot of conflicting opinions on this topic, so probably the best bet is to experiment.  There are some technical documents on the Valve developer site that discuss net code, lag compensation, etc. if you are interested in digging into it.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

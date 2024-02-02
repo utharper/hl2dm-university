@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Tweakers netcode guide. - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+
+<h1>Tweakers netcode guide.</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=2085">https://forum.hl2dm.community/viewtopic.php?t=2085</a>
+-->
+
+<div class="post" id="p25700">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2008-07-15 17:04:47</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I managed to pull the guide off of google cache and thought it be best to post it here so it will not get lost again.<br>
+Only downside is the board/forum doesnt allow more than 3 attaychments so had to use image host so they may disapear.<br>
+<br>
+<br>
+<span style="font-size:150%;line-height:116%"><span style="text-decoration:underline">Netcode Explained</span></span><br>
+By TW3@K3R<br>
+<br>
+                 Oh no you say, another netcode explained.  Yes it is but it seems each one is different and not all agree with the right settings.  I am doing this to show where the other guides are wrong, to prove why the settings should be a certain way, and to let you the player learn and figure this out for yourself.    I am also going to provide information to the server administrators.  In the end they have the final say in how we can set our settings.  Between the client and the server administrators we can produce almost perfect hit registration that the internet will allow. There are several more settings that some think to be very important I will not be covering these settings.  I find it hard to test those other settings and be able to come to a exact conclusion.  I have read many guides even old HL guides, which is where a lot of the new hl2 guides got there information.  All of the information I have used is common knowledge.  The information that isn’t common knowledge I tested thoroughly with having access to a server and opening all settings so nothing is forced.  I also filled up the server with a lot of action.  Because many of the things I discuss you won’t see in a empty server. <br>
+ <br>
+<strong class="text-strong">FPS -</strong> Frames per Second.<br>
+<br>
+<strong class="text-strong">fps_max -</strong> Sets an upper limit on the frames per second the server or client runs at.<br>
+<br>
+<strong class="text-strong">sv_maxrate -</strong> The Maximum amount of data in Bytes per Second the Client can request from the Server.<br>
+<br>
+<strong class="text-strong">sv_minrate -</strong> The Minimum amount of data in Bytes per Second the Client can request from the Server.<br>
+<strong class="text-strong"><br>
+sv_maxupdaterate -</strong> The Maximum amount of Updates per Second the Client can request from the Server.<br>
+<br>
+<strong class="text-strong">sv_maxupdaterate -</strong> The Minimum amount of Updates per Second the Client can request from the Server.<br>
+<strong class="text-strong"><br>
+sv_maxcmdrate -</strong> The Maximum amount of Updates per Second the Client can send from the Server.<br>
+<br>
+<strong class="text-strong">sv_mincmdrate -</strong> The Minimum amount of Updates per Second the Client can send from the Server.<br>
+<br>
+<strong class="text-strong">rate -</strong> The Maximum amount of Bytes Per Second the Client will request from the server.<br>
+<br>
+<strong class="text-strong">cl_updaterate -</strong> The Maximum amount of Updates Per Second the Client will request from the server.<br>
+<br>
+<strong class="text-strong">cl_cmdrate -</strong> The Maximum amount of Updates Per Second the Client will Send to the server.<br>
+<br>
+<strong class="text-strong">updates –</strong> Packets of information about what is going on in the game such as: player position, explosions, everything that happens in the game.  You receive updates from the server then you send updates back with what is going on, on your side.<br>
+<br>
+<strong class="text-strong">Ticrate –</strong> This determines the most updates the server will be able to send and receive.  100tic = 100updates, 66tic = 66 updates.<br>
+ <br>
+<br>
+                                                                                     <span style="font-size:150%;line-height:116%"><span style="text-decoration:underline">TICRATE</span></span><br>
+<br>
+                Lets start with ticrate and work are way down.  This is something that server administrators and players should really understand.  The ticrate determines the most updates the server will be able to send and receive.   The highest ticrate a server can be is 100, the lowest is 33, and the most common is 66.  So if a server administrator and a player were really thinking they would use these settings below:
+<div class="inline-attachment">
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="clset.JPG" class="postimage" alt="clset.JPG" onclick="viewableArea(this);"></dt>
+						<dd>clset.JPG (8.92 KiB) Viewed 924 times</dd>
+		</dl>
+		
+		
+			</div>
+               If the ticrate is ultimately going to determine what the server and client send and receive for updates.  There isn’t any reason not to set those settings to the highest setting you can have.   With those settings above if the ticrate of the server is 66 tic.  You would receive and send only 66 updates (because the ticrate of the server is 66 even though your settings are 100).  So why make it tough on figuring them out or changing them according to ticrate.  Waste of time if you ask me.  One setting for all makes it easier. I didn’t put in the sv_minupdaterate or sv_mincmdrate.  That is because it would be up to the server administrator for setting this.  I feel it is preference.  I would set the min values to 100 also but again my opinion (explained later in my conclusion). <br>
+<br>
+ <br>
+<br>
+<span style="font-size:150%;line-height:116%"><span style="text-decoration:underline">CL_UPDATERATE</span></span><br>
+ <br>
+       I won’t spend too much time on updaterate since I pretty much explained it above with ticrate.  Updaterate is determined on the clients machine by sv_maxupdaterate, sv_minupdaterate, ticrate and cl_updaterate.  Updaterate is the amount of updates you want the server to send you per second.  The server will send whatever you want as long as there isn’t a rule telling it not to for example.  If I set cl_updaterate 100 then the server will send me 100 updates a second unless ticrate is less then 100 or sv_maxupdaterate is set lower than 100 by server administrators(note if you don’t have sv_maxupdaterate in your server config then default is 60).   Other than those settings only choke and loss will play a factor in how many updates you get from a server.   This is explained later on. <br>
+<br>
+ <br>
+<span style="font-size:150%;line-height:116%"><span style="text-decoration:underline">CL_CMDRATE AND FPS</span></span><br>
+<br>
+ Let me explain, probably the two most overlooked things that cause poor hit registration.  Besides seeing the actual true position of the player you are aiming at.  What do you think needs to register correctly to actually hit that person? What needs to register, is your shot, you know when you actually press the mouse button to shoot.  The amount of updates you send the server is very important.  Since it tells the server that you shot your gun and where you shot at.  These settings below control what you send the server.
+ <div class="inline-attachment">
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="set2.JPG" class="postimage" alt="set2.JPG" onclick="viewableArea(this);"></dt>
+						<dd>set2.JPG (8.07 KiB) Viewed 930 times</dd>
+		</dl>
+		
+		
+			</div>
+           Earlier I said to set cl_cmdrate to 100 since you will never be able to send more updates then the highest ticrate a server can be which is 100.  There is one thing that will lower the amount of updates you send to the server no matter how high the ticrate nor how high your cl_cmdrate.  That is your FPS.  You can’t send more updates to the server then what frames you actually render on your end.   So if you are in a 100 ticrate server and you have cl_cmdrate 100, but your fps is only staying around 50 then you only send 50 updates a second or whatever you fps during that second of play.   Seeing how fps is the end factor on what updates you send the server on your shots fired and where you were aimed.  I decided on another table to explain this.
+<div class="inline-attachment">
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="earlier.JPG" class="postimage" alt="earlier.JPG" onclick="viewableArea(this);"></dt>
+						<dd>earlier.JPG (15.74 KiB) Viewed 926 times</dd>
+		</dl>
+		
+		
+			</div>
+               Good hit registration and Bad hit registration may not be seen by some people, but having fluctuating fps under the ticrate of the server can cause it even if you don’t see it.  If anything else the person with higher steady fps than the ticrate will have an advantage over the low fps player.  So all those people that say you can play HL with low fps true you can cause lag compensation will compensate for the updates you don’t receive and make it feel like really smooth play.  But you’re going to have more times where you miss then a person pegging at a higher fps.<br>
+<br>
+ <br>
+<span style="font-size:150%;line-height:116%"><span style="text-decoration:underline"><br>
+RATE – The reason for choke and loss</span></span><br>
+<br>
+  Rate the biggest problem with server administrators and players.  This setting is probably the main thing every single netcode guide has got wrong.  Why is this? Most of the netcode guides came from old CS 1.6 players.  Who already knew what settings worked in old CS but didn’t realize they would ever need to set these settings higher.  Even Cal has this setting wrong but won’t change it because I am not a GOD to the cal community.  Rate is the amount of bytes per second you want the server to send you.  Example you are suppose to get 100 updates per second from the server each update is around 400 bytes.   That is 40000 bytes per second but you have your rate set to 30000 that means after you receive 75 updates you won’t receive 25 updates that second.  So your rate setting can cause you not to receive updates which you will know because those updates will show up as choke. <br>
+<br>
+                Rate is merely a cap saying don’t send more than 30000 bytes/second (I used 30000 as an example).  Tell me this if you were downloading mp3’s would you want to say don’t send me more than 30000 bytes/second which = 234kbits per second.  I guess you would if you had dsl because it is about that fast.  We spend so much money on fast download speeds yet in half life because someone said put this setting in. This is the optimal setting you should use and we believe it.  I say don’t believe them or me follow what they say and see if it works.  Tests settings they said don’t use and see what happens.  Here is a breakdown of common internet speeds that I converted into bytes.<br>
+<br>
+ <img src="http://img294.imageshack.us/img294/3248/speedsbw9.jpg" class="postimage" alt="Image"><br>
+ <br>
+Obviously you don’t want to set your rate at 786432 lol.  But I put that on there to show you how much your rate could be and you would still be able to handle the traffic.  Because how many times have you heard 25000 is lan setting or 30000 is lan setting.  That is funny I guess my 6mbit download speed is as fast a lan, lol, not.  A lan setting could be as low as 10mbits for old lans and 1 GB for newer lans.  So a rate setting of 1310720 would be a lan setting.<br>
+<br>
+ <br>
+<br>
+<span style="font-size:150%;line-height:116%"><span style="text-decoration:underline">CHOKE AND LOSS</span></span><br>
+ <br>
+       Choke and Loss can happen if this setting isn’t set correctly.  Loss happens when your internet can’t handle the amount of bytes being sent that second or problems with hops between you and the server.  I am not going to explain hops.  But to control you loss and keep it to a minimum make sure your rate setting isn’t set higher than your download speed.  It’s hard for me to test this since I have a 6mb connection.<br>
+                <br>
+Choke happens when a rule set by you or the server administrator tells the server to stop sending updates.  So the server then holds on too them tell it can send them.  I know who would say stop sending updates.  You don’t actually say that to the server.  What happens is we set our rate settings to low sometimes or the server forces us to a low rate setting.  Here is an example I already used:  You are suppose to get 100 updates per second from the server each update is around 400 bytes.   That is 40000 bytes per second but you have your rate set to 30000 that means after you receive 75 updates you won’t receive 25 updates that second.  So your choke will be 25.  So to avoid this in the example I just wrote you would have had to set your rate to 40000 and you wouldn’t have choked at all.<br>
+<br>
+     Well that is easy enough so I set my rate setting higher and my choke will be gone.  Yes it is that easy, but it isn’t so easy to make server administrators all across HL2 understand that there sv_maxrate setting is a big problem.  In that same scenario you could set your rate to 40000 and get rid of choke but if the server set sv_maxrate 30000(which I bet 60-80% do) then you will still choke cause the server will force you to a rate of 30000.  So the only way to get rate to work correctly we need the server administrator to change there settings as well so we don’t choke.  Choke is like the one thing we can control and together it is possible to rid most of these servers of choke.  Below are some rates for clients and some recommendations for server administrators.<br>
+<img src="http://img293.imageshack.us/img293/2830/ispeedxe0.jpg" class="postimage" alt="Image"><br>
+I would be very surprised if anyone ever choked at rate 100000 that is why I picked that setting.  If servers set that maxrate then we could get rid of our own choke and we couldn’t blame the servers anymore.<br>
+<br>
+ <br>
+<span style="font-size:150%;line-height:116%"><span style="text-decoration:underline"><br>
+NET_GRAPH</span></span><br>
+<br>
+ Now that you got somewhat of an understanding of that stuff.  Here is a way to monitor everything I have explained above with a tool so much of us don’t use.  It is called net graph.  It will tell you what your fps, ping, loss, choke, how many updates you are actually receiving and sending, and how big each update is.  You can enable this graph by pulling down console and typing net_graph 3.  there is other types of net_graph but this one has the important information we are looking for.   You can also position it along the right, center, or left on the bottom of the screen.  Just type net_graphpos 1(right), 2(center), 3(left).  I use 1 it seems more out of my way.<br>
+<img src="http://img150.imageshack.us/img150/7645/netgraph3wk5.jpg" class="postimage" alt="Image"><br>
+<br>
+ 1 = fps – what a that particular second your fps is.<br>
+<br>
+2 = ping – not really true ping but close<br>
+<br>
+3 = how big the packet size of the update you just received and sent.  In being what you received, out being what you sent.<br>
+<br>
+4 = How fast the information is going. Not real important.<br>
+<br>
+5 = The top number is how many updates per second you are actually receiving (cl_updaterate or ticrate).  The bottom number is how many updates you are actually sending (cl_cmdrate, ticrate, or fps).<br>
+<br>
+6 = number of packets that you sent that got lost or dropped.<br>
+<br>
+7 = number of updates you didn’t receive from the server.<br>
+<br>
+ <br>
+<br>
+                So now you can use this tool to figure out what is happening on your end and see where you need to make adjustments.  With this picture you can see no loss and no choke that is great.   Looking at section 5 tells us that we are playing in a 100 tic server since we are receiving 102.4/s.  But the problem is that we are only sending 78.6/s.  We should be sending around 100 updates to the server as well.  Well the problem is that we are not getting 100fps look at area 1 we are only getting 79fps which is right about what our updates we are sending is.  So according to this graph we would get pretty decent hit registry but to achieve the best hit registry we would need fps to go up and stay at 100fps.  So we are sending and receiving the most updates the server will allow.<br>
+<br>
+                Lets take this same graph and imagine we are in a 66 tic server.  With fps at 79 which is above 66 both the numbers in area 5 would read around 66 steady all the time unless fps dropped under 66 or we started to choke/loss.  I hope you get the idea on how we can use this and understand how to tell what tic the server you are in is.  Plus understand how fps dropping can cause poor hit registry<br>
+<br>
+               <br>
+<br>
+<span style="font-size:150%;line-height:116%"><span style="text-decoration:underline">INFORMATION FOR TESTING THESE SETTINGS</span></span><br>
+<br>
+                 Here are some key things you should know before going out and testing these your self.  One server’s most of the time force settings lower than what you might want to set them at.  To see what your setting is for any of the client commands simply pull down console and type the command with nothing after it and hit enter.  If your setting is under the forced setting then you will see what your setting is set at.  If your setting is higher than what the server is forcing you will see something in red saying your setting is this but the server temporarily is setting it to something.  You will see this a lot with rate setting so when you set rate 100000 go into the server and type rate and hit enter you will see almost 80% of all servers will force it to 30000.              <br>
+<br>
+                Second you will see this in a lot of 66tic servers and above.  The administrator doesn’t put a sv_maxupdaterate in the server.cfg thinking that it will open it up and can be however high you want it.  It in fact defaults to 60.  So in a 66 tic server or above if you see in area 5 the top number stuck at 60 this is something that is the problem the server administrator did. By not putting  sv_maxupdaterate 66 or 100 in the server.cfg.  Well maybe valves fault for not making default higher.<br>
+<br>
+ <br>
+<span style="font-size:150%;line-height:116%"><span style="text-decoration:underline">CONCLUSION</span></span><br>
+<br>
+ So with all the information I gave on how to adjust your settings, what the settings mean and how they all work together.  I hope you come to the same conclusion as I did on what settings to have.  Below is what I set my settings at and what servers administrators should set them.  So that we can all have really good hit registration as well as little to no choke.<br>
+ <img src="http://img393.imageshack.us/img393/8049/concsd6.jpg" class="postimage" alt="Image"><br>
+If the client and the server are setup like this the only thing that will affect persons hit registration will be there FPS and Loss.  This is something the server administrator can’t help with.  FPS is basically revolves around you having a good video card and good cpu.  Loss is usually caused by slow download speeds if you have a dsl 256kbit line try finding an ISP that offers 1mbit or higher.   You could also lower your rate setting to fix loss in the end you might end up choking.  If you have a slow download speed and you lower your rate down tell the loss is gone.  You could then lower cl_updaterate until your choke is gone.   This is only if you have slow ISP and can’t do what I explained in this article.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

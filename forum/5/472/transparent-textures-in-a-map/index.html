@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Transparent Textures in a map - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>Transparent Textures in a map</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=472">https://forum.hl2dm.community/viewtopic.php?t=472</a>
+-->
+
+<div class="post" id="p3006">
+	<div class="info">
+		<p class="poster">snipeIT</p>
+		<p class="dt">2007-10-24 02:34:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Anyone know how I can do this ?<br>
+<br>
+If someone could post a link to a tutorial or give me one, that would be highly appreciated !  <img class="smilies" src="../../../images/smilies/icon_lol.gif" width="15" height="15" alt=":lol:" title="Laughing">  <br>
+<br>
+Thanks,</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3007">
+	<div class="info">
+		<p class="poster">Pig Popper</p>
+		<p class="dt">2007-10-24 02:51:20</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">do you mean a spray or you building something? <br>
+<br>
+<br>
+Check this <a href="http://www.22g.co.uk/phpbb3/viewtopic.php?f=5&amp;t=458" class="postlink"><span style="color:blue">Transparent Spray Tutorial </span></a> by our man Hooligan or if your building something, you could use the invisible texture in Hammer and create a brush using that</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3012">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2007-10-24 13:36:42</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Sry if I'm wrong, since I'm kinda Ignorant with mapping, but doesn't he mean the "no draw" texture? Like the ones on overwatch, at the top of the buildings.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3013">
+	<div class="info">
+		<p class="poster">Pig Popper</p>
+		<p class="dt">2007-10-24 15:52:01</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>0nti wrote:</cite>Sry if I'm wrong, since I'm kinda Ignorant with mapping, but doesn't he mean the "no draw" texture? Like the ones on overwatch, at the top of the buildings.</div></blockquote>
+
+could be, it depends what he's trying to do with it, <br>
+<br>
+tbh he did give us much infomation to go on  :roll: <br>
+<br>
+what you trying to do snipeIT  <img class="smilies" src="../../../images/smilies/icon_lol.gif" width="15" height="15" alt=":lol:" title="Laughing"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3014">
+	<div class="info">
+		<p class="poster">Swot</p>
+		<p class="dt">2007-10-24 18:18:40</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">If you want to build a texture with opacity you have to:<br>
+<br>
+- add an alpha channel to your image to define which areas of your texture are invisible or fully visible<br>
+- add to your vmt: "$translucent" 1 or "$alphatest" 1. (Notice: $translucent 1 needs more performance to be rendered because of semi-visible areas)<br>
+<br>
+hope I could help <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p3015">
+	<div class="info">
+		<p class="poster">Fearsome*</p>
+		<p class="dt">2007-10-24 19:42:08</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">You can make something a func_wall or various entities can do this then play around with the render mode properties I think Render FX = normal,  render mode = additive, Fx amount = 64  should give you a starting point.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

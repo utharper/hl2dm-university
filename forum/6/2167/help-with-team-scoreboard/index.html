@@ -1,0 +1,192 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Help with Team Scoreboard - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+
+<h1>Help with Team Scoreboard</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=2167">https://forum.hl2dm.community/viewtopic.php?t=2167</a>
+-->
+
+<div class="post" id="p26767">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2008-07-31 01:09:57</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Ok, what are the issues here?  I can fix them in a plugin if I know what to look for.<br>
+<br>
+If a person dies with the world, it comes off their score, but the team score doesn't change.  Is that a bug?<br>
+A person disconnects is that supposed to change the score?<br>
+<br>
+What should a team score look like?  If it is just a sum of the kills ever made, that will be easy.<br>
+<br>
+And what if FF is off?  Should a team score go down because you capped your partner?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p26790">
+	<div class="info">
+		<p class="poster">Pernicious</p>
+		<p class="dt">2008-07-31 12:03:26</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I think considering the random crashing.....that would be a bad idea =\<br>
+Yes for the second thing.<br>
+Whats this all bout anywyas, specifically.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p26796">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2008-07-31 15:45:34</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I've been asked to do a plugin for one league.  It has the impulse cheat kicker and score resume.<br>
+<br>
+But I've heard complaints about how the teamplay scoreboard is buggy.  Since I don't play matches, I have no idea what the issues are.  If I understood what the team portion of the scoreboard was supposed to keep track of ( i.e. kills only ) then I can add that into the plugin so the final screenshot will be accurate of the total team kills for that match ... no going back through the log and counting the frags.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p26806">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2008-07-31 19:12:33</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Asit stands now:<br>
+leagues i have played in count up the kills only for each player on the team so yes if FF=on killing a team mate should deduct 1 point from team score.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p26807">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2008-07-31 19:25:36</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Ok, I think I'll add a cvar that will allow you to turn off / on the team killing penalty based on the league rules.<br>
+<br>
+What about suicides?  I noticed those don't come off the team score either.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p26815">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2008-07-31 20:19:36</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">The main thing I have noticed is that the scoreboard does not always do the math right when displaying the total team score at the top, sometimes its off by 1 point.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p26854">
+	<div class="info">
+		<p class="poster">Fearsome*</p>
+		<p class="dt">2008-08-01 06:43:53</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">If you take fall damage or are killed by an orb from your own team or have a physics suicide it does not count against your team. When FF 1 is on team kills do not count against your team.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p26870">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2008-08-01 12:28:35</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Teamkills should always deduct 1 point from scoreboard otherwise there is no point in playing FF=on<br>
+Suicides no matter how they are made should deduct 1 point otherwise  you are plus one everytime you jihad instead of breaking even.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p26884">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2008-08-01 18:43:43</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">As I understand it now, these are the problems:<br>
+
+<ol style="list-style-type:decimal"><li>If a person suicides with a weapon, prop, or other entity it removes one from the team score.</li>
+<li>If a person suicides by falling ( worldspawn death ) then it does not remove one from the team score.</li>
+<li>If a person kills a teammate, then the player's score goes down and their team scores go up by one.</li></ol>
+
+And these would be the solution:
+<ol style="list-style-type:decimal"><li>If a person suicides then their score and the team score should go down by one.</li>
+<li>If a person suicides then their score and the team score should go down by one.</li>
+<li>If a person kills a teammate, then give the choice whether the team score should go down by one or remain unchanged.  But definitely don't go +1.</li></ol></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p27046">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2008-08-05 06:48:49</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">wow nice keeper.<br>
+Hope you end up pulling this plugin together <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p27070">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2008-08-05 15:55:38</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Actually done and tested.  I plan on posting it today <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"> <img class="smilies" src="../../../images/smilies/thumb.gif" width="25" height="18" alt=":thumbsup:" title="Thumbs Up"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p27077">
+	<div class="info">
+		<p class="poster">Blasphemy</p>
+		<p class="dt">2008-08-05 19:57:23</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">just add the scores ups yourself not too hard.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p27368">
+	<div class="info">
+		<p class="poster">Cynips</p>
+		<p class="dt">2008-08-09 21:02:31</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Blasphemy Squad wrote:</cite>just add the scores ups yourself not too hard.</div></blockquote>
+Yes it can be, if a player drops (for whatever reason) and doesn't come back (e.g. Internet connection went bad). If there's no screenshot or demo available you have to go to server logs then...</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p27391">
+	<div class="info">
+		<p class="poster">Blasphemy</p>
+		<p class="dt">2008-08-10 00:16:44</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">or just make sure you beat the other team by 50 kills so everyone knows who the clear cut winner is hehe. <img class="smilies" src="../../../images/smilies/icon_cool.gif" width="15" height="15" alt="8)" title="Cool"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

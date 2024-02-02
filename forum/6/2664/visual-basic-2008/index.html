@@ -1,0 +1,224 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Visual Basic 2008 - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+
+<h1>Visual Basic 2008</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=2664">https://forum.hl2dm.community/viewtopic.php?t=2664</a>
+-->
+
+<div class="post" id="p33900">
+	<div class="info">
+		<p class="poster">Rachkir</p>
+		<p class="dt">2008-11-04 20:00:33</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">um, I know this isnt a very good place for this subject, but I know a lot of you are smart with computer languages.  It did say software development under description....<br>
+<br>
+FOR THE RECORD, MSDN FORUMS ARE A PEICE OF SHIT AND SO IS MSDN LIBRARY AND SO IS THIS SOFTWARE LANGUAGE AND SO IS USING INPUT BOXES FOR DATA<br>
+<br>
+heres my code, well, not what I want, this is simple test code trying to get shit to work right.<br>
+<br>
+' double variables to store values entered in input boxes<br>
+        Dim dblHours, dblPayRate, dblState, dblFed, dblFICA As Double<br>
+        dblHours = InputBox("Please Enter Hours Worked")<br>
+        dblPayRate = InputBox("Please Enter Rate of Pay")<br>
+        dblState = InputBox("Enter Percent of State Income Tax to Withhold")<br>
+        dblFed = InputBox("Enter Percent of Federal Income Tax to Withhold")<br>
+        dblFICA = InputBox("Enter Percent of FICA Income Tax to Withhold")<br>
+<br>
+        <br>
+        Dim dblGrossPay, dblNetPay, dblPercentState, dblPercentFed, _<br>
+        dblPercentFICA As Double<br>
+        Dim strPercentState, strPercentFed, strPercentFICA As String<br>
+<br>
+        ' data conversions to change value stored from input box into a percentage<br>
+        strPercentState = dblState.ToString("p")<br>
+        strPercentFed = dblFed.ToString("P")<br>
+        strPercentFICA = dblFICA.ToString("p")<br>
+<br>
+        ' Main Computation<br>
+        dblGrossPay = CDbl(dblHours * dblPayRate)<br>
+        dblPercentState = CDbl(dblGrossPay * strPercentState)<br>
+        dblPercentFed = CDbl(dblGrossPay * strPercentFed)<br>
+        dblPercentFICA = CDbl(dblGrossPay * strPercentFICA)<br>
+        dblNetPay = CDbl(dblGrossPay - dblPercentFed _<br>
+                        - dblPercentState - dblPercentFICA)<br>
+<br>
+I keep getting errors stating the string cannot convert to data type double, mind you this says it regardless of the data type variable used to store the math.  it stops on the 2nd line of math : dblPercentState = CDbl(dblGrossPay * strPercentState)<br>
+<br>
+I havent found a way to convert the value stored from the InputBox to a percentage unless I use the .ToString method.  which is annoying becuase it only works sending a value to a string.  And I really dont want to use double data types for my InputBox variables because then I cannot test for empty string input.<br>
+<br>
+Of course this is lacking the code to display the data on the design form.  Its going to on in a list box because my assignment tells me to.  I shouldve picked the easier one....but then you dont learn anything.  I need to do this for 4 employees and figure out how to show 4 employees data in one list box.  Not to hard considering Ive done showed information in list boxes, making it look like excel spreadsheets.  Pain in da butt.<br>
+Ive tried many ways, and my book is a peice of shit and my teacher does not respond.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p33905">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2008-11-04 20:19:29</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">You are trying to multiply a double to a string then convert it to a double:<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>dblPercentState = CDbl(dblGrossPay * strPercentState)
+dblPercentFed = CDbl(dblGrossPay * strPercentFed)
+dblPercentFICA = CDbl(dblGrossPay * strPercentFICA)</code></pre></div>
+
+Should be:<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>dblPercentState = dblGrossPay * CDbl(strPercentState)
+dblPercentFed = dblGrossPay * CDbl(strPercentFed)
+dblPercentFICA = dblGrossPay * CDbl(strPercentFICA)</code></pre></div>
+
+I don't have VB fired up ( I rarely use it ), but can't something like this work too?
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>dblPercentState = dblGrossPay * strPercentState.ToDouble()
+dblPercentFed = dblGrossPay * strPercentFed.ToDouble()
+dblPercentFICA = dblGrossPay * strPercentFICA.ToDouble()</code></pre></div></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p33907">
+	<div class="info">
+		<p class="poster">Rachkir</p>
+		<p class="dt">2008-11-04 20:29:31</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Negative.  <br>
+<br>
+Your first example gives me the same run time error <br>
+The 2nd example will not work because there is no  .ToDouble method at least for the string data type<br>
+<br>
+You did however give me some ideas though, there are usually a few ways to work around something in the language.  Many thanks for the prompt reply Keeper.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p33915">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2008-11-04 21:17:20</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Ok<br>
+<br>
+I just looked at your code.<br>
+<br>
+Why are you converting from dbl to string ( as a percentage ) only to want it back to a double?<br>
+<br>
+Why not just divide the response by 100?<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>dblPercentState = dblGrossPay * dblState / 100
+</code></pre></div></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p33920">
+	<div class="info">
+		<p class="poster">Rachkir</p>
+		<p class="dt">2008-11-04 21:37:02</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">oh damn.  Yeah, I never thought of that.  Geez, I always miss the obvious.  I just seen in my text that you can have values automatically converted to a percentage, so I was trying to use that method, but apparently it's just not going to work here because Ive exhausted many different ways of writing that code.  <br>
+<br>
+I feel confident that will work, well, because it will.  Gosh I feel silly now.  Ty keeper. You just saved my ass, this is due today by midnight.  And now I can use my exception handling and validating input code.  Horray for Keeper.  <br>
+<br>
+The main reason I was using a string variable for my input box was so I could test for an empty string, if the user did not input anything.  But I'm starting to wonder if you can use the = string.empty method for any data type variable...never tried it on anything but a string variable.  This way I can avoid run-time errors when theres no data input.  To use the .ToString method, the value must go into a string, and this was also the only way I knew of to automatically convert a value to percentage form,  example :  strNumber = dblWassup.tostring("p")  the ("P") being the attribute to convert to percentage.<br>
+<br>
+In the first post of my code, I used doubles for the variable for the inputbox, because my text had the example of stringvariable = doublevariable.tostring("P")  but in reality I want to use string variables for inputbox....now I can.  because I will use math to get the percentage. duh.<br>
+<br>
+  The assignments in this class do not require Exception Handling, but everyone assignment I do I try to incorparate as much as I can because I know in the real world of programing, this are just not this simple.  <br>
+<br>
+Outta curiosity, what languages do you typically work with?  And is there any place you recommend for beginner developers to post when issues like this arise?  As I stated before, MSDN forums = fail.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p33922">
+	<div class="info">
+		<p class="poster">Rachkir</p>
+		<p class="dt">2008-11-04 21:50:13</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">damn I'm happy.   <img class="smilies" src="../../../images/smilies/icon_lol.gif" width="15" height="15" alt=":lol:" title="Laughing"><br>
+<br>
+knew this was a good idea posting it here.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p34466">
+	<div class="info">
+		<p class="poster">Edge</p>
+		<p class="dt">2008-11-11 00:48:33</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Just for future reference in vb any numbers that you need hell ne thing you need converted from a string is pretty easy.<br>
+<br>
+Example:<br>
+<br>
+dim dblnum as double<br>
+dim dblstr as string = "1.00"<br>
+<br>
+dblnum = double.parse(dblstr)<br>
+<br>
+dim intnum as integer<br>
+dim intstr as string = "1"<br>
+<br>
+intnum = integer.parse(intstr)<br>
+<br>
+dim ipadd as system.net.ipaddress<br>
+dim ipstr as string = "127.0.0.1"<br>
+ipadd = system.net.ipaddress.parse(ipstr)<br>
+<br>
+so on and so forth.<br>
+<br>
+I work with VB.Net often and I do a bit with other languages too.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p34522">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2008-11-11 23:01:52</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I will eventually learn all this...just wait for me about 5 years hahahaha  <img class="smilies" src="../../../images/smilies/icon_lol.gif" width="15" height="15" alt=":lol:" title="Laughing"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p34535">
+	<div class="info">
+		<p class="poster">badinfluence</p>
+		<p class="dt">2008-11-12 02:25:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">It's ok onti. I don't have a clue what they are talking about.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p34549">
+	<div class="info">
+		<p class="poster">Edge</p>
+		<p class="dt">2008-11-12 05:18:45</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>badinfluence wrote:</cite>It's ok onti. I don't have a clue what they are talking about.</div></blockquote>
+
+I'll comment it out next time <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

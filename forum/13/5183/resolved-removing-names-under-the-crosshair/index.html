@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>[Resolved] Removing names under the crosshair - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Film Discussion</a></p>
+</div>
+
+<h1>[Resolved] Removing names under the crosshair</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=5183">https://forum.hl2dm.community/viewtopic.php?t=5183</a>
+-->
+
+<div class="post" id="p72189">
+	<div class="info">
+		<p class="poster">tarkan-t29</p>
+		<p class="dt">2010-07-01 17:37:13</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hi !<br>
+<br>
+I'm making a HL2DM movie, and I don't find the command to use to remove the name of players under the crosshair... I've tryed all but nothin'.<br>
+I don't want to remove the HUD, I just want to remove the players name when aiming on 'em...<br>
+<br>
+Thanks for help <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"> !</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p72196">
+	<div class="info">
+		<p class="poster">Ghost Dog_TSGK</p>
+		<p class="dt">2010-07-01 22:27:12</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">You know I can't remember it for the life of me, any decent movie config for CSS will have that and will work for hl2dm.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p72201">
+	<div class="info">
+		<p class="poster">tarkan-t29</p>
+		<p class="dt">2010-07-01 23:45:05</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Euh, Okay, I'll google all that and if I found a somthin' I'll post it <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"><br>
+<br>
+EDIT : I give up u_u ... The only command that I've found is <strong class="text-strong">hud_showtargetid</strong> I've tried 0,1.-1,2 and 3 but nothing...<br>
+More ideas ?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p72202">
+	<div class="info">
+		<p class="poster">The Dog</p>
+		<p class="dt">2010-07-02 00:02:31</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Extract resource/hl2dm_<em class="text-italics">&lt;your_steam_language&gt;</em>.txt from half-life 2 deathmatch.gcf, put it in  /Steam/SteamApps/<em class="text-italics">&lt;your_account&gt;</em>/half-life 2 deathmatch/hl2mp/resource/, then open it with notepad and change this:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>"Playerid_sameteam"		"Friend: %s1 Health: %s2"
+"Playerid_diffteam"		"Enemy: %s1"</code></pre></div>
+To:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>"Playerid_sameteam"		""
+"Playerid_diffteam"		""</code></pre></div>
+Good luck!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p72207">
+	<div class="info">
+		<p class="poster">tarkan-t29</p>
+		<p class="dt">2010-07-02 00:55:22</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">YAYAYAYAY ! It Worked <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"> !<br>
+Thanks man <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"> ! I'll not forget you (The dog and Ghost Dog) in credits ;D !</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p84530">
+	<div class="info">
+		<p class="poster">Ade</p>
+		<p class="dt">2014-10-31 01:35:46</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">thanks!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Film Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CenterID - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Training Center</a></p>
+</div>
+
+<h1>CenterID</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=3001">https://forum.hl2dm.community/viewtopic.php?t=3001</a>
+-->
+
+<div class="post" id="p39596">
+	<div class="info">
+		<p class="poster">Uu_</p>
+		<p class="dt">2008-12-31 00:01:16</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I really want to get rid of that centerID, because my crosshair doesn't even have to be on a player before it shows up. I find it frustrating and annoying to have on, because I don't use crosshair and I therefore end up relying on the centerID. It destroys my longdistance aim.<br>
+<br>
+How can I remove it completely?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39605">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2008-12-31 00:39:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Not sure if theres a command but I know this works.<br>
+What you need is a file called <strong class="text-strong">hl2mp_english.txt</strong>  <br>
+<a href="http://rapidshare.com/files/178269122/hl2mp_english.txt" class="postlink">http://rapidshare.com/files/178269122/hl2mp_english.txt</a><br>
+<br>
+Search for the following items in the test file.<br>
+"Playerid_sameteam"		"Friend: %s1 Health: %s2"<br>
+"Playerid_diffteam"		"Enemy: %s1"<br>
+"Playerid_noteam"		"%s1 Health:%s2"<br>
+"Team"				"Team %s1"<br>
+<br>
+Now add 2 slashes // to the begining so the game knows to ignore those entries e.g<br>
+<br>
+You may still want to know who is on your team so I  didn't comment it out.<br>
+"Playerid_sameteam"		"Friend: %s1 Health: %s2"<br>
+//"Playerid_diffteam"		"Enemy: %s1"<br>
+//"Playerid_noteam"		"%s1 Health:%s2"<br>
+"Team"				"Team %s1"<br>
+<br>
+The file goes in C:\Program Files\Steam\steamapps\username\half-life 2 deathmatch\hl2mp\<strong class="text-strong">resource</strong></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p39666">
+	<div class="info">
+		<p class="poster">Uu_</p>
+		<p class="dt">2008-12-31 17:01:16</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thank you so much! It has really helped.  <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p40181">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2009-01-06 18:56:45</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">shit, If I had known this before I could have used it on the frag vid I'm working on...<br>
+Thanks a lot anyway, it will surely come handy on any future one hahaha.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p40518">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-01-10 05:28:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">just found out there is a cvar for this.<br>
+<strong class="text-strong"><br>
+hud_centerid 0 </strong>LOLOLOLOLOL</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p40565">
+	<div class="info">
+		<p class="poster">0nti</p>
+		<p class="dt">2009-01-10 23:20:57</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">no, that command just moves the thing to the bottom left corner, doesn't make it dissapear ;o</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p40571">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-01-11 01:18:22</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>0nti wrote:</cite>no, that command just moves the thing to the bottom left corner, doesn't make it dissapear ;o</div></blockquote>
+OH i didnt notice <img class="smilies" src="../../../images/smilies/icon_question.gif" width="15" height="15" alt=":?:" title="Question"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Training Center</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

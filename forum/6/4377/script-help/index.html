@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>script help - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+
+<h1>script help</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=4377">https://forum.hl2dm.community/viewtopic.php?t=4377</a>
+-->
+
+<div class="post" id="p59311">
+	<div class="info">
+		<p class="poster">Tranthor</p>
+		<p class="dt">2009-08-24 05:42:57</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hi there,<br>
+<br>
+I am trying to make a script that will repeat over and over as long as I hold down the bound key.  It's not for this game, it's for a sourcemod, but i figured this was the best knowledge-base around.<br>
+<br>
+I want to set an alias, call it "action1"<br>
+that alias performs 4 or 5 things, like so "+something; +differentthing; -something; -differentthing; +anotherthing; +somemorecrap; -anotherthing; -somemorecrap"<br>
+or something along those lines.  They are all + or - actions for example +attack, +duck, etc.<br>
+<br>
+if I bind a key to "action1", what do I need to put where to make those actions repeat as soon as the last one happens?  Is this even possible?<br>
+<br>
+Thanks,<br>
+Tranthor the space hippo</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p59321">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-08-24 16:32:45</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I think you need to put all the pluses in one alias adn all the minuses in another e.g<br>
+<br>
+alias "+duckjump" "+jump; wait; +duck; +attack"<br>
+alias "-duckjump" "-jump; -duck; -attack"<br>
+<br>
+You wont continually jump (+jump doesnt work like that)  but you do stay ducked and keep firing until you let go of the binded key.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p59328">
+	<div class="info">
+		<p class="poster">Tranthor</p>
+		<p class="dt">2009-08-24 23:27:10</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">it's not actually with duck and jump<br>
+<br>
+also, I want it to stop doing THE FIRST action before the THIRD action stops, etc.  like the example shows, i want to to repeat through doing and undoing the actions in that order.<br>
+<br>
+don[t think it's possible</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

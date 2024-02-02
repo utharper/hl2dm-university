@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>helicopter looks weired in hdr.. why? - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>helicopter looks weired in hdr.. why?</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=4737">https://forum.hl2dm.community/viewtopic.php?t=4737</a>
+-->
+
+<div class="post" id="p64787">
+	<div class="info">
+		<p class="poster">[BK]AC1</p>
+		<p class="dt">2010-01-06 15:38:17</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">hi there..<br>
+<br>
+just rendered a map of mine in hdr the 1rst time.. <br>
+all lookin ok so far.. just the helicopter looks weired.. <br>
+its ok in ldr.. but it doesn´t seem to like the hdr..<br>
+<br>
+need to know why, and if there is a way to fix this??</div>
+<dl class="attachbox">
+					<dt>
+						Attachments
+					</dt>
+											<dd>
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="heli01.jpg" class="postimage" alt="heli01.jpg" onclick="viewableArea(this);"></dt>
+						<dd>heli01.jpg (67.79 KiB) Viewed 212 times</dd>
+		</dl>
+		
+		
+			</dd>
+									</dl>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p64788">
+	<div class="info">
+		<p class="poster">The Dog</p>
+		<p class="dt">2010-01-06 17:28:11</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Maybe you forgot to build cubemaps?<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>buildcubemaps;
+change to LDR
+buildcubemaps
+change to HDR
+changelevel something_another
+changelevel your_map
+</code></pre></div>
+
+Good luck! <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p64791">
+	<div class="info">
+		<p class="poster">[BK]AC1</p>
+		<p class="dt">2010-01-06 19:44:30</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">hi..<br>
+<br>
+no the cubemaps was build..<br>
+<br>
+step 1: mat_hdr_enabled 1  / then buildcubemaps once<br>
+step 2: mat_hdr_enabled 0  / then buildcubemaps twice<br>
+between step 1n2 and after step2 cubemaps was reloaded<br>
+<br>
+any other ideas??</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p64796">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2010-01-06 20:40:25</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Double check your cubemaps by switching to crossbow and looking at the reflection in the scope. If its the default white sky and not your world geometry something has gone wrong<br>
+<br>
+If that's ok then check the material for that model doesnt have any HDR/LDR specific stuff that needs editing.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p64797">
+	<div class="info">
+		<p class="poster">[BK]AC1</p>
+		<p class="dt">2010-01-06 21:05:12</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote class="uncited"><div>Double check your cubemaps by switching to crossbow and looking at the reflection in the scope. <br>
+If its the default white sky and not your world geometry something has gone wrong</div></blockquote>
+
+umm i can´t do this .. my crossbow skin is customized, the reflektion is gone..lol<br>
+<br>
+but i´ll take a look at the model/material.. <br>
+<br>
+thx</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p64798">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2010-01-06 21:17:53</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">turn on sv_pure so you get the default one? <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

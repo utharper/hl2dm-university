@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Making a bullseye with different point values - need help - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>Making a bullseye with different point values - need help</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=4006">https://forum.hl2dm.community/viewtopic.php?t=4006</a>
+-->
+
+<div class="post" id="p53186">
+	<div class="info">
+		<p class="poster">kingloser</p>
+		<p class="dt">2009-05-22 11:05:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">As the subject states, i am trying to make a bullseye with each ring registering a different point value. I am new to mapping and was wondering if there was an easy way to do this or not. Right now i made cylinders and then cut them to fit inside each other to form rings. i made them func_buttons and made a math_counter. i am not at all familiar with the math_counter but figured that is what i needed to use. I would like to make each ring send an output to the math counter to add a certain number of points to itself. then i would like to make it possible for the math counter to send an output based on the number of points that it is showing. Is this even remotely possible? or am i wasting my time?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p53240">
+	<div class="info">
+		<p class="poster">cyboy bunny</p>
+		<p class="dt">2009-05-23 03:28:06</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">how is the set up and what will you be triggering??.<br>
+is there a start and a end time for the players to shoot on the target. must the trigger system do his work after the time off shooting at the targets has stopt or during the shooting?.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p53252">
+	<div class="info">
+		<p class="poster">kingloser</p>
+		<p class="dt">2009-05-23 09:40:23</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">it doesnt matter if i have to make a set time to fire at the bullseye or if i leave it open. id prefer it to do after all shots have been fired. i was kinda hoping that the math_counter would add up the hits, then after all done have it show the total. If they have to press a button to show total that would be fine by me. im having problems making the math_counter work. are there any tutorials on how its supposed to work/ or how to set it up?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p53255">
+	<div class="info">
+		<p class="poster">cyboy bunny</p>
+		<p class="dt">2009-05-23 13:56:58</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><a href="http://www.interlopers.net/tutorials/" class="postlink">http://www.interlopers.net/tutorials/</a><br>
+<a href="http://www.halfwit-2.com/?page=tutorials&amp;category=1" class="postlink">http://www.halfwit-2.com/?page=tutorials&amp;category=1</a><br>
+<br>
+here are 2 sites who got a few tutorials involving math_counters.<br>
+<br>
+you need more then only a math_counter. the problem with only a math_counter is that he only fires a output when you hit the max value you give it.  or he just sending the input value away that can be used by a logic_case or a logic_compare/logic_relay.<br>
+<br>
+the math_counter must also be reset to o again when a new player go to shoot at the target. so thats why its important how  the set up is.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

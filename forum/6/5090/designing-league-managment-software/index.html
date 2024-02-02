@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Designing League Managment Software - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+
+<h1>Designing League Managment Software</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=5090">https://forum.hl2dm.community/viewtopic.php?t=5090</a>
+-->
+
+<div class="post" id="p70750">
+	<div class="info">
+		<p class="poster">BuckyKatt</p>
+		<p class="dt">2010-06-03 10:16:31</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">As everyone knows by now I (along with Holy) am working on creating a comprehensive league management website (think CAL) and would like input from those who have more experience using such things.  I used CAL as a regular player for several seasons and while it was functional it never was that impressive to me.  I have no experience with what all the admins could do and what happened on the backed but can guess at most/some of the things that go into it.<br>
+<br>
+Regular front end user experience:<br>
+<br>
+View available leagues<br>
+View league details (including individuals/teams in league, current standings, upcoming matches, etc)<br>
+View team details (including players, record, upcoming matches, etc)<br>
+View player details (including teams they are members of, record, upcoming matches, etc)<br>
+View match details<br>
+Create account for playing in leagues<br>
+Create team for playing in team based leagues<br>
+Join a league as a player (for 1v1 leagues)<br>
+Join a team as a player  (for team based leagues)<br>
+Enter matchcomm message<br>
+Post the results of a match (team or individual, w/ screen shots and demos)<br>
+Private message between players<br>
+Team captains should be able to administer team (remove players, edit team details, etc)<br>
+<br>
+League admin front end experience:<br>
+<br>
+Create a new league for a game (open and invite) (what data went into a league creation? League Name, Description, Rules... what else)<br>
+Add/Remove individuals/teams to/from a league<br>
+Add/Remove individuals to/from a team<br>
+Delete a team or individual<br>
+Ban/Suspend an individual<br>
+Schedule matches (was this automated in CAL, as in "schedule week 2" and it randomly/algorithmically generated matches or did someone have manually enter all matches)<br>
+Reschedule matches or manually replace one individual/team from a match<br>
+Pretty much anything a regular front end user could do but for all teams and individuals<br>
+<br>
+I know that I am likely forgetting things that will become more apparent as I work on the site.<br>
+<br>
+What features did CAL have for regular users that I am currently forgetting?<br>
+What features did CAL have for admin users that I do not know about?<br>
+What features would you have like to have seen in CAL (regular user or admin user) that were not there?<br>
+<br>
+Also, a walk through on the process of creating a league (what data went into it and such) as well as the process of setting up the matches (and what data went into that) would be helpful.<br>
+<br>
+Any help, thoughts, or insight anyone (and especially those with experience in managing leagues) can give me are much appreciated.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p70762">
+	<div class="info">
+		<p class="poster">Fearsome*</p>
+		<p class="dt">2010-06-03 22:29:58</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">CAL did have automated scheduling. <br>
+<br>
+The admin would just press an autoschedule button and everyone would be scheduled. You should extend this and make it more automated. <br>
+At the start of the season the admin creates the season schedule. Each week and day of the week for matches 1 to x with a default time. They also create a due date for matches to be played. 1 hour after the due date the website should automatically autoschedule the next week. <br>
+<br>
+Everyone in the community bitches non stop about things not being fair so to make it as unbias as possible make the website automatically pick everything heck even make it pick the maps for the week if you want. Some leagues do this. <br>
+<br>
+Another big thing that CAL was missing was emails. Make the league website automatically email every person involved in a match about the match as a reminder. Everytime a match comm post is made make it email the scheduler and manager and captain for both teams involved. The problem with match comm in CAL was that people would have to check it. Also it would be a pretty good idea if instead of logging into the site you could actually email match comm back to make the post. The easier you make it for players to respond to match comm the less trouble you will have. <br>
+<br>
+One bad thing about CAL was that they always viewed things as players who give a shit will do what it takes to get the season done but in most smaller games like HL2DM you cannot count on that people are not so dedicated. Hardly anyone did their make up matches. Match comms would be left empty till the deadline for a match. Then of course disputes would take place. <br>
+<br>
+<br>
+There is probably 10 pages worth of stuff I any any admin could post. And it will take us to weeks just to post it lol let alone building the site in 2 weeks.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p70777">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2010-06-04 03:17:30</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">One thing I did find annoying in CAL was I could never just see a list of teams for whatever division in the admin section, I had to look them up individually with the search function.  Would be nice to be able to look at the entire list of 2v2 teams then pick one to look at matches, players, etc  With the annoying ways people spell the names of their teams, it was a pain at times.<br>
+<br>
+Could also do this for weekly matches so if and admin needed to check a particular match, they wouldnt have to search the teams first.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

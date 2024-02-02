@@ -1,0 +1,2411 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My ClientScheme.res File for the League-Mod:2007. - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+
+<h1>My ClientScheme.res File for the League-Mod:2007.</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=5713">https://forum.hl2dm.community/viewtopic.php?t=5713</a>
+-->
+
+<div class="post" id="p80078">
+	<div class="info">
+		<p class="poster">srslyNOTnewguy</p>
+		<p class="dt">2011-04-16 23:27:46</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Given how CellarDweller had issues getting his crosshair-outline into the Mod, all you have to do is edit the Mod's "stock" clientscheme file. <br>
+All I did was change the "normal" HuD color to make it Poor_Billy cyan and add a { "outline" "1" } to the crosshair portion, similar to what Neolinkster taught me years ago. <br>
+Attached is my actual clientscheme file, as well as my halflife2.ttf file which is the ONLY one you port from Nerf'd DM to get your custom crosshair. <br>
+-&gt; EDIT: Never-fucking-mind; php forums won't allow it. I shall upload it and link it in another post for people who give a damn.<br>
+So now you all have my HuD and Xhair, its nothing special. [Insert lame-newguy-cock joke here]<br>
+The whole thing looks like this:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>///////////////////////////////////////////////////////////
+// Tracker scheme resource file
+//
+// sections:
+//		Colors			- all the colors used by the scheme
+//		BaseSettings	- contains settings for app to use to draw controls
+//		Fonts			- list of all the fonts used by app
+//		Borders			- description of all the borders
+//
+///////////////////////////////////////////////////////////
+Scheme
+{
+	//////////////////////// COLORS ///////////////////////////
+	//////////////////////// COLORS ///////////////////////////
+	Colors
+	{
+		// base colors
+		"Orange"			"255 176 0 255"
+		"OrangeDim"			"255 176 0 120"
+		"LightOrange"		"188 112 0 128"
+		
+		"Red"				"192 28 0 140"
+		"Black"				"0 0 0 196"
+		"TransparentBlack"	"0 0 0 196"
+		"TransparentLightBlack"	"0 0 0 90"
+
+		"Blank"				"0 0 0 0"
+		"ForTesting"		"255 0 0 32"
+		"ForTesting_Magenta"	"255 0 255 255"
+		"ForTesting_MagentaDim"	"255 0 255 120"
+	}
+	
+	///////////////////// BASE SETTINGS ////////////////////////
+	//
+	// default settings for all panels
+	// controls use these to determine their settings
+	BaseSettings
+	{
+		"FgColor"			"255 220 0 100"
+		"BgColor"			"0 0 0 76"
+
+		"Panel.FgColor"			"255 220 0 100"
+		"Panel.BgColor"			"0 0 0 76"
+		
+		"BrightFg"		"255 220 0 255"
+
+		"DamagedBg"			"180 0 0 200"
+		"DamagedFg"			"180 0 0 230"
+		"BrightDamagedFg"		"255 0 0 255"
+
+		// weapon selection colors
+		"SelectionNumberFg"		"255 220 0 255"
+		"SelectionTextFg"		"255 220 0 255"
+		"SelectionEmptyBoxBg" 	"0 0 0 80"
+		"SelectionBoxBg" 		"0 0 0 80"
+		"SelectionSelectedBoxBg" "0 0 0 80"
+		
+		"ZoomReticleColor"	"255 220 0 255"
+
+		// HL1-style HUD colors
+		"Yellowish"			"255 160 0 255"
+		"Normal"			"75 250 250 255"
+		"Caution"			"255 48 0 255"
+
+		// Top-left corner of the "Half-Life 2" on the main screen
+		"Main.Title1.X"		"76"
+		"Main.Title1.Y"		"184"
+		"Main.Title1.Color"	"255 255 255 255"
+        "Main.Title1.Y_hidef"	"184"
+		
+		// Top-left corner of the "DEATHMATCH" on the main screen
+		"Main.Title2.X"		"315"
+		"Main.Title2.Y"		"222"
+		"Main.Title2.Color"	"255 255 255 180"
+
+		// Top-left corner of the menu on the main screen
+		"Main.Menu.X"		"76"
+		"Main.Menu.Y"		"240"
+
+		// Blank space to leave beneath the menu on the main screen
+		"Main.BottomBorder"	"32"
+
+
+///HERE
+				// vgui_controls color specifications
+		Border.Bright					"LightOrange"		// the lit side of a control
+		Border.Dark						"LightOrange"		// the dark/unlit side of a control
+		Border.Selection				"Blank"				// the additional border color for displaying the default/selected button
+
+		Button.TextColor				"Orange"
+		Button.BgColor					"Blank"
+		Button.ArmedTextColor			"Orange"
+		Button.ArmedBgColor				"Red"
+		Button.DepressedTextColor		"Orange"
+		Button.DepressedBgColor			"Red"
+
+		CheckButton.TextColor			"Orange"
+		CheckButton.SelectedTextColor	"Orange"
+		CheckButton.BgColor				"TransparentBlack"
+		CheckButton.Border1  			"Border.Dark" 		// the left checkbutton border
+		CheckButton.Border2  			"Border.Bright"		// the right checkbutton border
+		CheckButton.Check				"Orange"				// color of the check itself
+
+		ComboBoxButton.ArrowColor		"Orange"
+		ComboBoxButton.ArmedArrowColor	"Orange"
+		ComboBoxButton.BgColor			"TransparentBlack"
+		ComboBoxButton.DisabledBgColor	"Blank"
+
+		Frame.BgColor					"TransparentBlack"
+		Frame.OutOfFocusBgColor			"TransparentBlack"
+		Frame.FocusTransitionEffectTime	"0.0"	// time it takes for a window to fade in/out on focus/out of focus
+		Frame.TransitionEffectTime		"0.0"	// time it takes for a window to fade in/out on open/close
+		Frame.AutoSnapRange				"0"
+		FrameGrip.Color1				"Blank"
+		FrameGrip.Color2				"Blank"
+		FrameTitleButton.FgColor		"Blank"
+		FrameTitleButton.BgColor		"Blank"
+		FrameTitleButton.DisabledFgColor	"Blank"
+		FrameTitleButton.DisabledBgColor	"Blank"
+		FrameSystemButton.FgColor		"Blank"
+		FrameSystemButton.BgColor		"Blank"
+		FrameSystemButton.Icon			""
+		FrameSystemButton.DisabledIcon	""
+		FrameTitleBar.TextColor			"Orange"
+		FrameTitleBar.BgColor			"Blank"
+		FrameTitleBar.DisabledTextColor	"Orange"
+		FrameTitleBar.DisabledBgColor	"Blank"
+
+		GraphPanel.FgColor				"Orange"
+		GraphPanel.BgColor				"TransparentBlack"
+
+		Label.TextDullColor				"Orange"
+		Label.TextColor					"Orange"
+		Label.TextBrightColor			"Orange"
+		Label.SelectedTextColor			"Orange"
+		Label.BgColor					"Blank"
+		Label.DisabledFgColor1			"Blank"
+		Label.DisabledFgColor2			"LightOrange"
+
+		ListPanel.TextColor					"Orange"
+		ListPanel.BgColor					"TransparentBlack"
+		ListPanel.SelectedTextColor			"Black"
+		ListPanel.SelectedBgColor			"Red"
+		ListPanel.SelectedOutOfFocusBgColor	"Red"
+		ListPanel.EmptyListInfoTextColor	"Orange"
+
+		Menu.TextColor					"Orange"
+		Menu.BgColor					"TransparentBlack"
+		Menu.ArmedTextColor				"Orange"
+		Menu.ArmedBgColor				"Red"
+		Menu.TextInset					"6"
+
+		Chat.TypingText					"Orange"
+
+		Panel.FgColor					"OrangeDim"
+		Panel.BgColor					"blank"
+
+		ProgressBar.FgColor				"Orange"
+		ProgressBar.BgColor				"TransparentBlack"
+
+		PropertySheet.TextColor			"Orange"
+		PropertySheet.SelectedTextColor	"Orange"
+		PropertySheet.TransitionEffectTime	"0.25"	// time to change from one tab to another
+
+		RadioButton.TextColor			"Orange"
+		RadioButton.SelectedTextColor	"Orange"
+
+		RichText.TextColor				"Orange"
+		RichText.BgColor				"Blank"
+		RichText.SelectedTextColor		"Orange"
+		RichText.SelectedBgColor		"Blank"
+
+				ScrollBarButton.FgColor				"Orange"
+		ScrollBarButton.BgColor				"Blank"
+		ScrollBarButton.ArmedFgColor		"Orange"
+		ScrollBarButton.ArmedBgColor		"Blank"
+		ScrollBarButton.DepressedFgColor	"Orange"
+		ScrollBarButton.DepressedBgColor	"Blank"
+
+		ScrollBarSlider.FgColor				"Blank"		// nob color
+		ScrollBarSlider.BgColor				"Blank"		// slider background color
+
+		SectionedListPanel.HeaderTextColor	"Orange"
+		SectionedListPanel.HeaderBgColor	"Blank"
+		SectionedListPanel.DividerColor		"Black"
+		SectionedListPanel.TextColor		"Orange"
+		SectionedListPanel.BrightTextColor	"Orange"
+		SectionedListPanel.BgColor			"TransparentLightBlack"
+		SectionedListPanel.SelectedTextColor			"Black"
+		SectionedListPanel.SelectedBgColor				"Red"
+		SectionedListPanel.OutOfFocusSelectedTextColor	"Black"
+		SectionedListPanel.OutOfFocusSelectedBgColor	"255 255 255 32"
+
+		Slider.NobColor				"108 108 108 255"
+		Slider.TextColor			"127 140 127 255"
+		Slider.TrackColor			"31 31 31 255"
+		Slider.DisabledTextColor1	"117 117 117 255"
+		Slider.DisabledTextColor2	"30 30 30 255"
+
+		TextEntry.TextColor			"Orange"
+		TextEntry.BgColor			"TransparentBlack"
+		TextEntry.CursorColor		"Orange"
+		TextEntry.DisabledTextColor	"Orange"
+		TextEntry.DisabledBgColor	"Blank"
+		TextEntry.SelectedTextColor	"Black"
+		TextEntry.SelectedBgColor	"Red"
+		TextEntry.OutOfFocusSelectedBgColor	"Red"
+		TextEntry.FocusEdgeColor	"TransparentBlack"
+
+		ToggleButton.SelectedTextColor	"Orange"
+
+		Tooltip.TextColor			"TransparentBlack"
+		Tooltip.BgColor				"Red"
+
+		TreeView.BgColor			"TransparentBlack"
+
+		WizardSubPanel.BgColor		"Blank"
+
+		// scheme-specific colors
+		"FgColor"		"Orange"
+		"BgColor"		"TransparentBlack"
+
+		"ViewportBG"		"Blank"
+		"team0"			"204 204 204 255" // Spectators
+		"team1"			"255 64 64 255" // CT's
+		"team2"			"153 204 255 255" // T's
+
+		"MapDescriptionText"	"Orange" // the text used in the map description window
+		"CT_Blue"			"153 204 255 255"
+		"T_Red"				"255 64 64 255"
+		"Hostage_Yellow"	"Panel.FgColor"
+		"HudIcon_Green"		"0 160 0 255"
+		"HudIcon_Red"		"160 0 0 255"
+
+		// CHudMenu
+		"ItemColor"		"255 167 42 200"	// default 255 167 42 255
+		"MenuColor"		"233 208 173 255"
+		"MenuBoxBg"		"0 0 0 100"
+
+		// weapon selection colors
+		"SelectionNumberFg"		"255 220 0 200"
+		"SelectionTextFg"		"255 220 0 200"
+		"SelectionEmptyBoxBg" 	"0 0 0 80"
+		"SelectionBoxBg" 		"0 0 0 80"
+		"SelectionSelectedBoxBg" "0 0 0 190"
+
+		// Hint message colors
+		"HintMessageFg"			"255 255 255 255"
+		"HintMessageBg" 		"0 0 0 60"
+
+		"ProgressBarFg"			"255 30 13 255"
+
+		// Top-left corner of the "Counter-Strike" on the main screen
+		"Main.Title1.X"		"32"
+		"Main.Title1.Y"		"180"
+		"Main.Title1.Color"	"255 255 255 255"
+
+		// Top-left corner of the "SOURCE" on the main screen
+		"Main.Title2.X"		"380"	
+		"Main.Title2.Y"		"205"
+		"Main.Title2.Color"	"255 255 255 80"
+
+		// Top-left corner of the "BETA" on the main screen
+		"Main.Title3.X"		"460"
+		"Main.Title3.Y"		"-10"
+		"Main.Title3.Color"	"255 255 0 255"
+        "Main.Title2.Y_hidef"		"242"
+
+		// Top-left corner of the menu on the main screen
+		"Main.Menu.X"		"32"
+		"Main.Menu.Y"		"248"
+        "Main.Menu.X_hidef"		"76"
+
+		// Blank space to leave beneath the menu on the main screen
+		"Main.BottomBorder"	"32"
+	}
+
+	//////////////////////// BITMAP FONT FILES /////////////////////////////
+	//
+	// Bitmap Fonts are ****VERY*** expensive static memory resources so they are purposely sparse
+	BitmapFontFiles
+	{
+		// UI buttons, custom font, (256x64)
+		"Buttons"		"materials/vgui/fonts/buttons_32.vbf"
+	}
+
+	
+	//////////////////////// FONTS /////////////////////////////
+	//
+	// describes all the fonts
+	Fonts
+	{
+		// fonts are used in order that they are listed
+		// fonts are used in order that they are listed
+		"DebugFixed"
+		{
+			"1"
+			{
+				"name"		"Courier New"
+				"tall"		"14"
+				"weight"	"400"
+				"antialias" "1"
+			}
+		}
+		// fonts are used in order that they are listed
+		"DebugFixedSmall"
+		{
+			"1"
+			{
+				"name"		"Courier New"
+				"tall"		"14"
+				"weight"	"400"
+				"antialias" "1"
+			}
+		}
+		// fonts listed later in the order will only be used if they fulfill a range not already filled
+		// if a font fails to load then the subsequent fonts will replace
+		Default
+		{
+			"1"	[$X360]
+			{
+				"name"		"Verdana"
+				"tall"		"12"
+				"weight"	"700"
+				"antialias" "1"
+			}
+			"1"	[$WIN32]
+			{
+				"name"		"Verdana"
+				"tall"		"9"
+				"weight"	"700"
+				"antialias" "1"
+				"yres"	"1 599"
+			}
+			"2"
+			{
+				"name"		"Verdana"
+				"tall"		"12"
+				"weight"	"700"
+				"antialias" "1"
+				"yres"	"600 767"
+			}
+			"3"
+			{
+				"name"		"Verdana"
+				"tall"		"14"
+				"weight"	"900"
+				"antialias" "1"
+				"yres"	"768 1023"
+			}
+			"4"
+			{
+				"name"		"Verdana"
+				"tall"		"20"
+				"weight"	"900"
+				"antialias" "1"
+				"yres"	"1024 1199"
+			}
+			"5"
+			{
+				"name"		"Verdana"
+				"tall"		"24"
+				"weight"	"900"
+				"antialias" "1"
+				"yres"	"1200 10000"
+				"additive"	"1"
+			}
+		}
+		"DefaultSmall"
+		{
+			"1"
+			{
+				"name"		"Verdana"
+				"tall"		"12"
+				"weight"	"0"
+				"range"		"0x0000 0x017F"
+				"yres"	"480 599"
+			}
+			"2"
+			{
+				"name"		"Verdana"
+				"tall"		"13"
+				"weight"	"0"
+				"range"		"0x0000 0x017F"
+				"yres"	"600 767"
+			}
+			"3"
+			{
+				"name"		"Verdana"
+				"tall"		"14"
+				"weight"	"0"
+				"range"		"0x0000 0x017F"
+				"yres"	"768 1023"
+				"antialias"	"1"
+			}
+			"4"
+			{
+				"name"		"Verdana"
+				"tall"		"20"
+				"weight"	"0"
+				"range"		"0x0000 0x017F"
+				"yres"	"1024 1199"
+				"antialias"	"1"
+			}
+			"5"
+			{
+				"name"		"Verdana"
+				"tall"		"24"
+				"weight"	"0"
+				"range"		"0x0000 0x017F"
+				"yres"	"1200 6000"
+				"antialias"	"1"
+			}
+			"6"
+			{
+				"name"		"Arial"
+				"tall"		"12"
+				"range" 		"0x0000 0x00FF"
+				"weight"		"0"
+			}
+		}
+		"DefaultVerySmall"
+		{
+			"1"
+			{
+				"name"		"Verdana"
+				"tall"		"12"
+				"weight"	"0"
+				"range"		"0x0000 0x017F" //	Basic Latin, Latin-1 Supplement, Latin Extended-A
+				"yres"	"480 599"
+			}
+			"2"
+			{
+				"name"		"Verdana"
+				"tall"		"13"
+				"weight"	"0"
+				"range"		"0x0000 0x017F" //	Basic Latin, Latin-1 Supplement, Latin Extended-A
+				"yres"	"600 767"
+			}
+			"3"
+			{
+				"name"		"Verdana"
+				"tall"		"14"
+				"weight"	"0"
+				"range"		"0x0000 0x017F" //	Basic Latin, Latin-1 Supplement, Latin Extended-A
+				"yres"	"768 1023"
+				"antialias"	"1"
+			}
+			"4"
+			{
+				"name"		"Verdana"
+				"tall"		"20"
+				"weight"	"0"
+				"range"		"0x0000 0x017F" //	Basic Latin, Latin-1 Supplement, Latin Extended-A
+				"yres"	"1024 1199"
+				"antialias"	"1"
+			}
+			"5"
+			{
+				"name"		"Verdana"
+				"tall"		"24"
+				"weight"	"0"
+				"range"		"0x0000 0x017F" //	Basic Latin, Latin-1 Supplement, Latin Extended-A
+				"yres"	"1200 6000"
+				"antialias"	"1"
+			}
+			"6"
+			{
+				"name"		"Verdana"
+				"tall"		"12"
+				"range" 		"0x0000 0x00FF"
+				"weight"		"0"
+			}
+			"7"
+			{
+				"name"		"Arial"
+				"tall"		"11"
+				"range" 		"0x0000 0x00FF"
+				"weight"		"0"
+			}
+		}
+		"MenuTitle"
+		{
+			"1"
+			{
+				"name"		"Verdana Bold"
+				"tall"		"18"
+				"weight"	"500"
+			}
+		}
+		WeaponIcons
+		{
+			"1"
+			{
+				"name"		"HalfLife2"
+				"tall"		"64"
+				"tall_hidef"	"58"
+				"weight"	"0"
+				"antialias" "1"
+				"additive"	"1"
+				"custom"	"1"
+			}
+		}
+		WeaponIconsSelected
+		{
+			"1"
+			{
+				"name"		"HalfLife2"
+				"tall"		"64"
+				"tall_hidef"	"58"
+				"weight"	"0"
+				"antialias" "1"
+				"blur"		"5"
+				"scanlines"	"2"
+				"additive"	"1"
+				"custom"	"1"
+			}
+		}
+		WeaponIconsSmall
+		{
+			"1"
+			{
+				"name"		"HalfLife2"
+				"tall"		"32"
+				"weight"	"0"
+				"antialias" "1"
+				"additive"	"1"
+				"custom"	"1"
+			}
+		}
+		Crosshairs
+		{
+			"1"
+			{
+				"name"		"HalfLife2"
+				"tall"		"40"
+				"weight"	"0"
+				"antialias" "0"
+				"additive"	"0"
+				"custom"	"1"
+				"yres"		"1 10000" 
+				"outline"	"1"
+			}
+		}
+		QuickInfo
+		{
+			"1"	[$X360]
+			{
+				"name"		"HL2cross"
+				"tall"		"57"
+				"weight"	"0"
+				"antialias" 	"1"
+				"additive"	"1"
+				"custom"	"1"
+			}
+			"1"	[$WIN32]
+			{
+				"name"		"HL2cross"
+				"tall"		"28"
+				"weight"	"0"
+				"antialias" "1"
+				"additive"	"1"
+				"custom"	"1"
+			}
+		}
+		HudNumbers
+		{
+			"1"
+			{
+				"name"		"HalfLife2"
+				"tall"		"32"	[$WIN32]
+				"tall"		"38"	[$X360]
+				"weight"	"0"
+				"antialias" "1"
+				"additive"	"1"
+				"custom"	"1"
+			}
+		}
+		SquadIcon	[$X360]
+		{
+			"1"
+			{
+				"name"		"HalfLife2"
+				"tall"		"50"
+				"weight"	"0"
+				"antialias" "1"
+				"additive"	"1"
+				"custom"	"1"
+			}
+		}
+		HudNumbersGlow
+		{
+			"1"
+			{
+				"name"		"HalfLife2"
+				"tall"		"32"	[$WIN32]
+				"tall"		"38"	[$X360]
+				"weight"	"0"
+				"blur"		"4"
+				"scanlines" "2"
+				"antialias" "1"
+				"additive"	"1"
+				"custom"	"1"
+			}
+		}
+		HudNumbersSmall
+		{
+			"1"
+			{
+				"name"		"HalfLife2"
+				"tall"		"16"	[$WIN32]
+				"tall"		"22"	[$X360]
+				"weight"	"1000"
+				"additive"	"1"
+				"antialias" "1"
+				"custom"	"1"
+			}
+		}
+		HudSelectionNumbers
+		{
+			"1"
+			{
+				"name"		"Verdana"
+				"tall"		"11"
+				"weight"	"700"
+				"antialias" "1"
+				"additive"	"1"
+			}
+		}
+		HudHintTextLarge
+		{
+			"1"	[$X360]
+			{
+				"bitmap"	"1"
+				"name"		"Buttons"
+				"scalex"	"1.0"
+				"scaley"	"1.0"
+			}
+			"1"	[$WIN32]
+			{
+				"name"		"Verdana"
+				"tall"		"14"
+				"weight"	"1000"
+				"antialias" "1"
+				"additive"	"1"
+			}
+		}
+		HudHintTextSmall
+		{
+			"1"	[$WIN32]
+			{
+				"name"		"Verdana"
+				"tall"		"11"
+				"weight"	"0"
+				"antialias" "1"
+				"additive"	"1"
+			}
+			"1"	[$X360]
+			{
+				"name"		"Verdana"
+				"tall"		"12"
+				"weight"	"700"
+				"antialias" "1"
+				"additive"	"1"
+			}
+		}
+		HudSelectionText
+		{
+			"1"
+			{
+				"name"		"Verdana"
+				"tall"		"8"
+				"weight"	"700"
+				"antialias" "1"
+				"yres"	"1 599"
+			}
+			"2"
+			{
+				"name"		"Verdana"
+				"tall"		"10"
+				"weight"	"700"
+				"antialias" "1"
+				"yres"	"600 767"
+			}
+			"3"
+			{
+				"name"		"Verdana"
+				"tall"		"12"
+				"weight"	"900"
+				"antialias" "1"
+				"yres"	"768 1023"
+			}
+			"4"
+			{
+				"name"		"Verdana"
+				"tall"		"16"
+				"weight"	"900"
+				"antialias" "1"
+				"yres"	"1024 1199"
+			}
+			"5"
+			{
+				"name"		"Verdana"
+				"tall"		"17"
+				"weight"	"1000"
+				"antialias" "1"
+				"yres"	"1200 10000"
+			}
+		}
+		GameUIButtons
+		{
+			"1"	[$X360]
+			{
+				"bitmap"	"1"
+				"name"		"Buttons"
+				"scalex"	"0.63"
+				"scaley"	"0.63"
+				"scalex_hidef"	"1.0"
+				"scaley_hidef"	"1.0"
+			}
+		}
+		BudgetLabel
+		{
+			"1"
+			{
+				"name"		"Courier New"
+				"tall"		"14"
+				"weight"	"400"
+				"outline"	"1"
+			}
+		}
+		DebugOverlay
+		{
+			"1"	[$WIN32]
+			{
+				"name"		"Courier New"
+				"tall"		"14"
+				"weight"	"400"
+				"outline"	"1"
+			}
+			"1"	[$X360]
+			{
+				"name"		"Tahoma"
+				"tall"		"18"
+				"weight"	"200"
+				"outline"	"1"
+			}
+		}
+		"CloseCaption_Normal"
+		{
+			"1"
+			{
+				"name"		"Tahoma"
+				"tall"		"26"
+				"weight"	"500"
+			}
+		}
+		"CloseCaption_Italic"
+		{
+			"1"
+			{
+				"name"		"Tahoma"
+				"tall"		"26"
+				"weight"	"500"
+				"italic"	"1"
+			}
+		}
+		"CloseCaption_Bold"
+		{
+			"1"
+			{
+				"name"		"Tahoma"
+				"tall"		"26"
+				"weight"	"900"
+			}
+		}
+		"CloseCaption_BoldItalic"
+		{
+			"1"
+			{
+				"name"		"Tahoma"
+				"tall"		"26"
+				"weight"	"900"
+				"italic"	"1"
+			}
+		}
+		"CloseCaption_Small"
+		{
+			"1"
+			{
+				"name"		"Tahoma"
+				"tall"		"16"
+				"tall_hidef"	"24"
+				"weight"	"900"
+				"range"		"0x0000 0x017F" //	Basic Latin, Latin-1 Supplement, Latin Extended-A
+			}
+		}
+		// this is the symbol font
+		"Marlett"
+		{
+			"1"
+			{
+				"name"		"Marlett"
+				"tall"		"14"
+				"weight"	"0"
+				"symbol"	"1"
+			}
+		}
+		"Trebuchet24"
+		{
+			"1"
+			{
+				"name"		"Trebuchet MS"
+				"tall"		"24"
+				"weight"	"900"
+				"range"		"0x0000 0x007F"	//	Basic Latin
+				"antialias" "1"
+				"additive"	"1"
+			}
+		}
+		"Trebuchet18"
+		{
+			"1"
+			{
+				"name"		"Trebuchet MS"
+				"tall"		"18"
+				"weight"	"900"
+			}
+		}
+		ClientTitleFont
+		{
+			"1"
+			{
+				"name"  "HL2MP"
+				"tall"  "46"
+                "tall_hidef"	"46"
+				"weight" "0"
+				"additive" "0"
+				"antialias" "1"
+			}
+		}
+		CreditsLogo
+		{
+			"1"
+			{
+				"name"		"HalfLife2"
+				"tall"		"128"
+				"weight"	"0"
+				"antialias" "1"
+				"additive"	"1"
+				"custom"	"1"
+			}
+		}
+		CreditsText
+		{
+			"1"
+			{
+				"name"		"Trebuchet MS"
+				"tall"		"20"
+				"weight"	"900"
+				"antialias" "1"
+				"additive"	"1"
+			}
+		}
+		CreditsOutroLogos
+		{
+			"1"
+			{
+				"name"		"HalfLife2"
+				"tall"		"48"
+				"weight"	"0"
+				"antialias" "1"
+				"additive"	"1"
+				"custom"	"1"
+			}
+		}
+		CreditsOutroText
+		{
+			"1"
+			{
+				"name"		"Verdana"
+				"tall"		"9"
+				"weight"	"900"
+				"antialias" "1"
+			}
+		}
+		CenterPrintText
+		{
+			// note that this scales with the screen resolution
+			"1"
+			{
+				"name"		"Trebuchet MS"
+				"tall"		"18"
+				"weight"	"900"
+				"antialias" "1"
+				"additive"	"1"
+			}
+		}
+		"ChatFont"
+		{
+			"1"
+			{
+				"name"		"Verdana"
+				"tall"		"12"
+				"weight"	"700"
+				"yres"	"480 599"
+				"dropshadow"	"1"
+			}
+			"2"
+			{
+				"name"		"Verdana"
+				"tall"		"13"
+				"weight"	"700"
+				"yres"	"600 767"
+				"dropshadow"	"1"
+			}
+			"3"
+			{
+				"name"		"Verdana"
+				"tall"		"14"
+				"weight"	"700"
+				"yres"	"768 1023"
+				"dropshadow"	"1"
+			}
+			"4"
+			{
+				"name"		"Verdana"
+				"tall"		"20"
+				"weight"	"700"
+				"yres"	"1024 1199"
+				"dropshadow"	"1"
+			}
+			"5"
+			{
+				"name"		"Verdana"
+				"tall"		"24"
+				"weight"	"700"
+				"yres"	"1200 10000"
+				"dropshadow"	"1"
+			}
+		}
+		"TargetID"
+		{
+			"1"
+			{
+				"name"		"Trebuchet MS"
+				"tall"		"24"
+				"weight"	"900"
+				"range"		"0x0000 0x007F"	//	Basic Latin
+				"antialias" "1"
+				"additive"	"0"
+			}
+		}
+		"HL2MPTypeDeath"
+		{
+		   "1"
+		   {
+				"name"  "HL2MP" // csd.ttf
+				"tall"  "32"
+				"weight" "0"
+				"additive" "1"
+				"antialias" "1"
+		   }
+		}	
+		//Tony; argh. the only reason this is here is for the goddamned skull icon.
+		"CSTypeDeath"
+		{
+		   "1"
+		   {
+				"name"  "csd" // csd.ttf
+				"tall"  "32"
+				"weight" "0"
+				"additive" "1"
+				"antialias" "1"
+		   }
+		}	
+		// Used by scoreboard and spectator UI for names which don't map in the normal fashion
+		"DefaultVerySmallFallBack"
+		{
+			"1"
+			{
+				"name"		"Verdana"
+				"tall"		"10"
+				"weight"	"0"
+				"range"		"0x0000 0x017F" //	Basic Latin, Latin-1 Supplement, Latin Extended-A
+				"yres"		"480 599"
+				"antialias"	"1"
+			}
+			"2"
+			{
+				"name"		"Verdana"
+				"tall"		"12"
+				"weight"	"0"
+				"range"		"0x0000 0x017F" //	Basic Latin, Latin-1 Supplement, Latin Extended-A
+				"yres"		"600 1199"
+				"antialias"	"1"
+			}
+			"3"
+			{
+				"name"		"Verdana"
+				"tall"		"15"
+				"weight"	"0"
+				"range"		"0x0000 0x017F" //	Basic Latin, Latin-1 Supplement, Latin Extended-A
+				"yres"		"1200 6000"
+				"antialias"	"1"
+			}
+		}
+	}
+
+		//////////////////// BORDERS //////////////////////////////
+	//
+	// describes all the border types
+	Borders
+	{
+		BaseBorder
+		{
+			"inset" "0 0 1 1"
+			Left
+			{
+				"1"
+				{
+					"color" "Border.Dark"
+					"offset" "0 1"
+				}
+			}
+
+			Right
+			{
+				"1"
+				{
+					"color" "Border.Bright"
+					"offset" "1 0"
+				}
+			}
+
+			Top
+			{
+				"1"
+				{
+					"color" "Border.Dark"
+					"offset" "0 0"
+				}
+			}
+
+			Bottom
+			{
+				"1"
+				{
+					"color" "Border.Bright"
+					"offset" "0 0"
+				}
+			}
+		}
+		
+		TitleButtonBorder
+		{
+			"inset" "0 0 1 1"
+			Left
+			{
+				"1"
+				{
+					"color" "Border.Bright"
+					"offset" "0 1"
+				}
+			}
+
+			Right
+			{
+				"1"
+				{
+					"color" "Border.Dark"
+					"offset" "1 0"
+				}
+			}
+
+			Top
+			{
+				"1"
+				{
+					"color" "Border.Bright"
+					"offset" "0 0"
+				}
+			}
+
+			Bottom
+			{
+				"1"
+				{
+					"color" "Border.Dark"
+					"offset" "0 0"
+				}
+			}
+		}
+
+		TitleButtonDisabledBorder
+		{
+			"inset" "0 0 1 1"
+			Left
+			{
+				"1"
+				{
+					"color" "BgColor"
+					"offset" "0 1"
+				}
+			}
+
+			Right
+			{
+				"1"
+				{
+					"color" "BgColor"
+					"offset" "1 0"
+				}
+			}
+			Top
+			{
+				"1"
+				{
+					"color" "BgColor"
+					"offset" "0 0"
+				}
+			}
+
+			Bottom
+			{
+				"1"
+				{
+					"color" "BgColor"
+					"offset" "0 0"
+				}
+			}
+		}
+
+		TitleButtonDepressedBorder
+		{
+			"inset" "1 1 1 1"
+			Left
+			{
+				"1"
+				{
+					"color" "Border.Dark"
+					"offset" "0 1"
+				}
+			}
+
+			Right
+			{
+				"1"
+				{
+					"color" "Border.Bright"
+					"offset" "1 0"
+				}
+			}
+
+			Top
+			{
+				"1"
+				{
+					"color" "Border.Dark"
+					"offset" "0 0"
+				}
+			}
+
+			Bottom
+			{
+				"1"
+				{
+					"color" "Border.Bright"
+					"offset" "0 0"
+				}
+			}
+		}
+
+		ScrollBarButtonBorder
+		{
+			"inset" "1 0 0 0"
+			Left
+			{
+				"1"
+				{
+					"color" "Border.Bright"
+					"offset" "0 1"
+				}
+			}
+
+			Right
+			{
+				"1"
+				{
+					"color" "Border.Dark"
+					"offset" "1 0"
+				}
+			}
+
+			Top
+			{
+				"1"
+				{
+					"color" "Border.Bright"
+					"offset" "0 0"
+				}
+			}
+
+			Bottom
+			{
+				"1"
+				{
+					"color" "Border.Dark"
+					"offset" "0 0"
+				}
+			}
+		}
+
+		ScrollBarButtonDepressedBorder
+		{
+			"inset" "2 2 0 0"
+			Left
+			{
+				"1"
+				{
+					"color" "Border.Dark"
+					"offset" "0 1"
+				}
+			}
+
+			Right
+			{
+				"1"
+				{
+					"color" "Border.Bright"
+					"offset" "1 0"
+				}
+			}
+
+			Top
+			{
+				"1"
+				{
+					"color" "Border.Dark"
+					"offset" "0 0"
+				}
+			}
+
+			Bottom
+			{
+				"1"
+				{
+					"color" "Border.Bright"
+					"offset" "0 0"
+				}
+			}
+		}
+		
+		ButtonBorder
+		{
+			"inset" "0 0 0 0"
+			Left
+			{
+				"1"
+				{
+					"color" "Border.Bright"
+					"offset" "0 1"
+				}
+			}
+
+			Right
+			{
+				"1"
+				{
+					"color" "Border.Dark"
+					"offset" "0 0"
+				}
+			}
+
+			Top
+			{
+				"1"
+				{
+					"color" "Border.Bright"
+					"offset" "1 1"
+				}
+			}
+
+			Bottom
+			{
+				"1"
+				{
+					"color" "Border.Dark"
+					"offset" "0 0"
+				}
+			}
+		}
+
+		FrameBorder
+		{
+			"inset" "0 0 1 1"
+			Left
+			{
+				"1"
+				{
+					"color" "ControlBG"
+					"offset" "0 1"
+				}
+			}
+
+			Right
+			{
+				"1"
+				{
+					"color" "ControlBG"
+					"offset" "0 0"
+				}
+			}
+
+			Top
+			{
+				"1"
+				{
+					"color" "ControlBG"
+					"offset" "0 1"
+				}
+			}
+
+			Bottom
+			{
+				"1"
+				{
+					"color" "ControlBG"
+					"offset" "0 0"
+				}
+			}
+		}
+
+		TabBorder
+		{
+			"inset" "0 0 1 1"
+			Left
+			{
+				"1"
+				{
+					"color" "Border.Bright"
+					"offset" "0 1"
+				}
+			}
+
+			Right
+			{
+				"1"
+				{
+					"color" "Border.Dark"
+					"offset" "1 0"
+				}
+			}
+
+			Top
+			{
+				"1"
+				{
+					"color" "Border.Bright"
+					"offset" "0 0"
+				}
+			}
+
+			Bottom
+			{
+				"1"
+				{
+					"color" "Border.Bright"
+					"offset" "0 0"
+				}
+			}
+		}
+
+		TabActiveBorder
+		{
+			"inset" "0 0 1 0"
+			Left
+			{
+				"1"
+				{
+					"color" "Border.Bright"
+					"offset" "0 0"
+				}
+			}
+
+			Right
+			{
+				"1"
+				{
+					"color" "Border.Dark"
+					"offset" "1 0"
+				}
+			}
+
+			Top
+			{
+				"1"
+				{
+					"color" "Border.Bright"
+					"offset" "0 0"
+				}
+			}
+
+			Bottom
+			{
+				"1"
+				{
+					"color" "ControlBG"
+					"offset" "6 2"
+				}
+			}
+		}
+
+
+		ToolTipBorder
+		{
+			"inset" "0 0 1 0"
+			Left
+			{
+				"1"
+				{
+					"color" "Border.Dark"
+					"offset" "0 0"
+				}
+			}
+
+			Right
+			{
+				"1"
+				{
+					"color" "Border.Dark"
+					"offset" "1 0"
+				}
+			}
+
+			Top
+			{
+				"1"
+				{
+					"color" "Border.Dark"
+					"offset" "0 0"
+				}
+			}
+
+			Bottom
+			{
+				"1"
+				{
+					"color" "Border.Dark"
+					"offset" "0 0"
+				}
+			}
+		}
+
+		// this is the border used for default buttons (the button that gets pressed when you hit enter)
+		ButtonKeyFocusBorder
+		{
+			"inset" "0 0 0 0"
+			Left
+			{
+				"1"
+				{
+					"color" "Border.Bright"
+					"offset" "0 1"
+				}
+			}
+
+			Right
+			{
+				"1"
+				{
+					"color" "Border.Dark"
+					"offset" "0 0"
+				}
+			}
+
+			Top
+			{
+				"1"
+				{
+					"color" "Border.Bright"
+					"offset" "1 1"
+				}
+			}
+
+			Bottom
+			{
+				"1"
+				{
+					"color" "Border.Dark"
+					"offset" "0 0"
+				}
+			}
+		}
+
+		ButtonDepressedBorder
+		{
+			"inset" "0 0 0 0"
+			Left
+			{
+				"1"
+				{
+					"color" "Border.Bright"
+					"offset" "0 1"
+				}
+			}
+
+			Right
+			{
+				"1"
+				{
+					"color" "Border.Dark"
+					"offset" "0 0"
+				}
+			}
+
+			Top
+			{
+				"1"
+				{
+					"color" "Border.Bright"
+					"offset" "1 1"
+				}
+			}
+
+			Bottom
+			{
+				"1"
+				{
+					"color" "Border.Dark"
+					"offset" "0 0"
+				}
+			}
+		}
+
+		ComboBoxBorder
+		{
+			"inset" "0 0 1 1"
+			Left
+			{
+				"1"
+				{
+					"color" "Border.Dark"
+					"offset" "0 1"
+				}
+			}
+
+			Right
+			{
+				"1"
+				{
+					"color" "Border.Bright"
+					"offset" "1 0"
+				}
+			}
+
+			Top
+			{
+				"1"
+				{
+					"color" "Border.Dark"
+					"offset" "0 0"
+				}
+			}
+
+			Bottom
+			{
+				"1"
+				{
+					"color" "Border.Bright"
+					"offset" "0 0"
+				}
+			}
+		}
+
+		MenuBorder
+		{
+			"inset" "1 1 1 1"
+			Left
+			{
+				"1"
+				{
+					"color" "Border.Bright"
+					"offset" "0 1"
+				}
+			}
+
+			Right
+			{
+				"1"
+				{
+					"color" "Border.Dark"
+					"offset" "1 0"
+				}
+			}
+
+			Top
+			{
+				"1"
+				{
+					"color" "Border.Bright"
+					"offset" "0 0"
+				}
+			}
+
+			Bottom
+			{
+				"1"
+				{
+					"color" "Border.Dark"
+					"offset" "0 0"
+				}
+			}
+		}
+		BrowserBorder
+		{
+			"inset" "0 0 0 0"
+			Left
+			{
+				"1"
+				{
+					"color" "Border.Dark"
+					"offset" "0 0"
+				}
+			}
+
+			Right
+			{
+				"1"
+				{
+					"color" "Border.Bright"
+					"offset" "0 0"
+				}
+			}
+
+			Top
+			{
+				"1"
+				{
+					"color" "Border.Dark"
+					"offset" "0 0"
+				}
+			}
+
+			Bottom
+			{
+				"1"
+				{
+					"color" "Border.Bright"
+					"offset" "0 0"
+				}
+			}
+		}
+	}
+
+	
+	//////////////////////// CUSTOM FONT FILES /////////////////////////////
+	//
+	// specifies all the custom (non-system) font files that need to be loaded to service the above described fonts
+	CustomFontFiles
+	{
+		"1"		"resource/HALFLIFE2.ttf"
+		"1"		"resource/HL2MP.ttf"
+		"2"		"resource/HL2crosshairs.ttf"
+		"3"		"resource/csd.ttf"
+	}
+
+}</code></pre></div></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p80080">
+	<div class="info">
+		<p class="poster">srslyNOTnewguy</p>
+		<p class="dt">2011-04-16 23:37:42</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><a href="https://docs.google.com/leaf?id=0B3VdirAFg_BVMjBlNTgwOGMtY2RhMC00NGY5LThjYTMtMzA0ZDIxZmU4MWY1&amp;hl=en" class="postlink"><span style="font-size:200%;line-height:116%">This text here</span></a> will give you my clientscheme, my halflife2.ttf, and a HuDanimations.txt which eliminates the excessive and blinding pain-blood-effect. <br>
+<br>
+For some reason, that .txt file was NOT CAL-legal. <br>
+I didn't use it till this mod, so yah. <br>
+<br>
+Here it is in another long-ass post for those who can tell me what is "illegal" about it: 
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>// sample animation script
+//
+//
+// commands:
+//	Animate &lt;panel name&gt; &lt;variable&gt; &lt;target value&gt; &lt;interpolator&gt; &lt;start time&gt; &lt;duration&gt;
+//		variables:
+//			FgColor
+//			BgColor
+//			Position
+//			Size
+//			Blur		(hud panels only)
+//			TextColor	(hud panels only)
+//			Ammo2Color	(hud panels only)
+//			Alpha		(hud weapon selection only)
+//			SelectionAlpha  (hud weapon selection only)
+//			TextScan	(hud weapon selection only)
+//
+//		interpolator:
+//			Linear
+//			Accel - starts moving slow, ends fast
+//			Deaccel - starts moving fast, ends slow
+//
+//	RunEvent &lt;event name&gt; &lt;start time&gt;
+//		starts another even running at the specified time
+//
+//	StopEvent &lt;event name&gt; &lt;start time&gt;
+//		stops another event that is current running at the specified time
+//
+//	StopAnimation &lt;panel name&gt; &lt;variable&gt; &lt;start time&gt;
+//		stops all animations refering to the specified variable in the specified panel
+//
+//	StopPanelAnimations &lt;panel name&gt; &lt;start time&gt;
+//		stops all active animations operating on the specified panel
+//
+//
+// Useful game console commands:
+//	cl_Animationinfo &lt;hudelement name&gt; or &lt;panelname&gt; 
+//		displays all the animatable variables for the hud element
+//
+
+
+event LevelInit
+{
+}
+
+event FadeOutTeamLine
+{
+	// make the display visible
+	Animate TeamDisplay Alpha 		"0"		Linear 0.0 0.25
+}
+
+event FadeInTeamLine
+{
+	// make the display visible
+	Animate TeamDisplay Alpha 		"255"		Linear 0.0 0.5
+}
+
+event OpenWeaponSelectionMenu
+{
+	StopEvent CloseWeaponSelectionMenu	0.0
+	StopEvent WeaponPickup				0.0
+	StopEvent FadeOutWeaponSelectionMenu	0.0
+
+	// make the display visible
+	Animate HudWeaponSelection Alpha 		"128"		Linear 0.0 0.1
+	Animate HudWeaponSelection SelectionAlpha 	"255"		Linear 0.0 0.1
+	Animate HudWeaponSelection FgColor		"FgColor"	Linear 0.0 0.1
+	Animate HudWeaponSelection TextColor		"BrightFg"	Linear 0.0 0.1
+	Animate HudWeaponSelection TextScan		"1" 		Linear 0.0 0.1
+}
+
+event CloseWeaponSelectionMenu
+{
+	// hide the whole thing near immediately
+	Animate HudWeaponSelection FgColor		"0 0 0 0"	Linear 0.0 0.1
+	Animate HudWeaponSelection TextColor		"0 0 0 0"	Linear 0.0 0.1
+	Animate HudWeaponSelection Alpha		"0" 		Linear 0.0 0.1
+	Animate HudWeaponSelection SelectionAlpha 	"0" 		Linear 0.0 0.1
+}
+
+event FadeOutWeaponSelectionMenu
+{
+	// slowly hide the whole thing
+	Animate HudWeaponSelection FgColor		"0 0 0 0"	Linear 0.0 1.5
+	Animate HudWeaponSelection TextColor		"0 0 0 0"	Linear 0.0 1.5
+	Animate HudWeaponSelection Alpha		"0" 		Linear 0.0 1.5
+	Animate HudWeaponSelection SelectionAlpha 	"0" 		Linear 0.0 1.5
+}
+
+event SuitAuxPowerMax
+{
+	// hide the suit power
+	Animate HudSuitPower BgColor		"0 0 0 0"		Linear 0.0 0.4
+	Animate HudSuitPower AuxPowerColor	"0 0 0 0"		Linear 0.0 0.4
+}
+
+event SuitAuxPowerNotMax
+{
+	// show suit power
+	Animate HudSuitPower BgColor		"BgColor"		Linear 0.0 0.4
+	Animate HudSuitPower AuxPowerColor	"255 225 255 255"		Linear 0.0 0.4
+}
+
+event SuitAuxPowerDecreasedBelow25
+{
+	// make color red
+	Animate HudSuitPower AuxPowerColor	"255 0 0 255"		Linear 0.0 0.4
+}
+
+event SuitAuxPowerIncreasedAbove25
+{
+	// make colr bright
+	Animate HudSuitPower AuxPowerColor	"255 220 0 220"		Linear 0.0 0.4
+}
+
+event SuitAuxPowerNoItemsActive
+{
+	// resize the aux power to be the smallest size
+	Animate HudSuitPower Size			"102 26"			Linear 0.0 0.4
+	Animate HudSuitPower Position		"16 400"			Linear 0.0 0.4
+//	Animate HudSuitPower text_xpos		"8"					Linear 0.0 0.4
+//	Animate HudSuitPower text_ypos		"15"				Linear 0.0 0.4
+}
+
+event SuitAuxPowerOneItemActive
+{
+	// resize the aux power to fit one item
+	Animate HudSuitPower Size			"102 36"			Linear 0.0 0.4
+	Animate HudSuitPower Position		"16 390"			Linear 0.0 0.4
+}
+
+event SuitAuxPowerTwoItemsActive
+{
+	// resize the aux power to fit two items
+	Animate HudSuitPower Size			"102 46"			Linear 0.0 0.4
+	Animate HudSuitPower Position		"16 380"			Linear 0.0 0.4
+}
+
+event SuitAuxPowerThreeItemsActive
+{
+	// resize the aux power to fit three items
+	Animate HudSuitPower Size			"102 56"			Linear 0.0 0.4
+	Animate HudSuitPower Position		"16 370"			Linear 0.0 0.4
+}
+
+event SuitFlashlightOn
+{
+	Animate HudFlashlight TextColor		"255 220 0 255"	Linear 0.0 0.1
+	Animate HudFlashlight TextColor		"255 220 0 160"	Deaccel 0.1 0.75
+	Animate HudFlashlight BgColor		"BgColor"	Linear 0.0 0.75
+}
+
+event SuitFlashlightOff
+{
+	StopEvent SuitFlashlightOn	0.0
+	Animate HudFlashlight TextColor		"0 0 0 0"	Linear 0.0 0.4
+	Animate HudFlashlight BgColor		"0 0 0 0"	Linear 0.0 0.4
+}
+
+event HudTakeDamageFront
+{
+}
+
+event HudTakeDamageLeft
+{
+	Animate HudDamageIndicator DmgColorLeft		"255 88 0 200"	Linear 0.0 0.0
+	Animate HudDamageIndicator DmgColorLeft		"255 0 0 200"	Linear 0.0 0.3
+	Animate HudDamageIndicator DmgColorLeft		"255 0 0 0"	Deaccel 0.3 0.5
+}
+
+event HudTakeDamageRight
+{
+	Animate HudDamageIndicator DmgColorRight		"255 88 0 200"	Linear 0.0 0.0
+	Animate HudDamageIndicator DmgColorRight		"255 0 0 200"	Linear 0.0 0.3
+	Animate HudDamageIndicator DmgColorRight		"255 0 0 0"	Deaccel 0.3 0.5
+}
+
+event HudTakeDamageBehind
+{
+	RunEvent HudTakeDamageLeft	0.0
+	RunEvent HudTakeDamageRight	0.0
+}
+
+event HudTakeDamageHighLeft
+{
+	Animate HudDamageIndicator DmgHighColorLeft	"255 88 0 255"	Linear 0.0 0.0
+	Animate HudDamageIndicator DmgHighColorLeft	"255 0 0 200"	Linear 0.0 0.4
+	Animate HudDamageIndicator DmgHighColorLeft	"255 0 0 0"	Deaccel 0.4 2.4
+}
+
+event HudTakeDamageHighRight
+{
+	Animate HudDamageIndicator DmgHighColorRight	"255 88 0 255"	Linear 0.0 0.0
+	Animate HudDamageIndicator DmgHighColorRight	"255 0 0 200"	Linear 0.0 0.4
+	Animate HudDamageIndicator DmgHighColorRight	"255 0 0 0"	Deaccel	0.4 2.4
+}
+
+event HudTakeDamageHigh
+{
+	Animate HudDamageIndicator DmgFullscreenColor	"255 88 0 255"	Linear 0.0 0.0
+	Animate HudDamageIndicator DmgFullscreenColor	"255 0 0 0"	Linear 0.0 0.4
+	Animate HudDamageIndicator DmgFullscreenColor	"255 0 0 0"	Deaccel 0.4 2.4
+}
+
+event HudTakeDamageDrown
+{
+	RunEvent HudTakeDamageBehind 0.0
+}
+
+event HudTakeDamagePoison
+{
+	Animate HudDamageIndicator DmgFullscreenColor	"255 236 128 0"		Linear 0.0 0.0
+	Animate HudDamageIndicator DmgFullscreenColor	"255 236 128 0"		Deaccel 0.4 0.8
+}
+
+event HudTakeDamageBurn
+{
+	Animate HudDamageIndicator DmgFullscreenColor	"255 0 0 0"	Linear 0.0 0.0
+	Animate HudDamageIndicator DmgFullscreenColor	"255 0 0 0"	Deaccel 0.2 0.4
+}
+
+event HudTakeDamageRadiation
+{
+	Animate HudDamageIndicator DmgFullscreenColor	"255 255 255 0"		Deaccel 0.0 0.1
+	Animate HudDamageIndicator DmgFullscreenColor	"255 255 255 0"		Deaccel 0.1 0.4
+	RunEvent HudTakeDamageBehind 0.0
+}
+
+event HudPlayerDeath
+{
+	StopEvent	HealthLoop  0.0
+	StopEvent	HealthPulse 0.0
+
+	Animate HudDamageIndicator DmgFullscreenColor	"0 0 0 0"		Deaccel 0.1 0.2
+	Animate HudDamageIndicator DmgFullscreenColor	"0 0 0 0"		Deaccel 0.3 4.0
+}
+
+event HealthIncreasedAbove20
+{
+	StopEvent	HealthLoop  0.0
+	StopEvent	HealthPulse 0.0
+	StopEvent	HealthLow   0.0
+
+	Animate	HudHealth	BgColor	"BgColor"	Linear	0.0	0.0
+	
+	Animate	HudHealth	TextColor "FgColor" Linear 0.0 0.04
+	Animate	HudHealth	FgColor   "FgColor" Linear 0.0 0.03
+	
+	Animate	HudHealth		Blur		"3"			Linear	0.0		0.1
+	Animate	HudHealth		Blur		"0"			Deaccel	0.1		2.0
+}
+
+event HealthIncreasedBelow20
+{
+	Animate HudHealth	FgColor		"BrightFg"	Linear	0.0		0.25
+	Animate HudHealth	FgColor		"FgColor"		Linear	0.3		0.75
+	
+	Animate HudHealth		Blur		"3"			Linear	0.0		0.1
+	Animate HudHealth		Blur		"0"			Deaccel	0.1		2.0
+}
+
+event SuitPowerIncreasedAbove20
+{
+	StopEvent	SuitLoop 0.0
+	StopEvent	SuitPulse 0.0
+	StopEvent	SuitPowerZero	0.0
+
+	Animate	HudSuit 	Alpha		"255"			Linear 0.0 0.0
+
+	Animate	HudSuit		BgColor		"BgColor"	Linear	0.0	0.0
+	
+	Animate	HudSuit 	TextColor	"FgColor"	Linear 0.0 0.05
+	Animate	HudSuit		FgColor		"FgColor"	Linear 0.0 0.05
+	
+	Animate	HudSuit		Blur		"3"			Linear	0.0		0.1
+	Animate	HudSuit		Blur		"0"			Deaccel	0.1		2.0
+}
+
+
+event SuitPowerIncreasedBelow20
+{
+	StopEvent		SuitPowerZero	0.0
+	Animate	HudSuit 	Alpha		"255"			Linear 0.0 0.0
+
+	Animate HudSuit		FgColor		"BrightFg"	Linear	0.0		0.25
+	Animate HudSuit		FgColor		"FgColor"	Linear	0.3		0.75
+	
+	Animate HudSuit		Blur		"3"			Linear	0.0		0.1
+	Animate HudSuit		Blur		"0"			Deaccel	0.1		2.0
+}
+
+event SuitPowerZero
+{
+	StopEvent	SuitLoop 0.0
+	StopEvent	SuitPulse 0.0
+	StopEvent	SuitArmorLow 0.0
+	StopEvent	SuitDamageTaken 0.0
+
+	Animate	HudSuit Alpha		"0"			Linear 0.0 0.4
+}
+
+event TestMovement
+{
+	Animate HudHealth	Position	"256 120"	Linear	0.0		2.0
+	Animate HudHealth	Size		"128 24"	Linear	0.0		1.5
+}
+
+event HealthDamageTaken
+{
+	Animate HudHealth	FgColor		"BrightFg"	Linear	0.0		0.25
+	Animate HudHealth	FgColor		"FgColor"		Linear	0.3		0.75
+	
+	Animate HudHealth		Blur		"3"			Linear	0.0		0.1
+	Animate HudHealth		Blur		"0"			Deaccel	0.1		2.0
+	
+	Animate HudHealth TextColor		"BrightFg"	Linear	0.0		0.1
+	Animate HudHealth	TextColor		"FgColor"		Deaccel	0.1		1.2
+}
+
+event SuitDamageTaken
+{
+	Animate HudSuit		FgColor	"BrightFg"	Linear	0.0		0.25
+	Animate HudSuit		FgColor	"FgColor"		Linear	0.3		0.75
+	
+	Animate HudSuit		Blur		"3"			Linear	0.0		0.1
+	Animate HudSuit		Blur		"0"			Deaccel	0.1		2.0
+	
+	Animate HudSuit		TextColor	"BrightFg"	Linear	0.0		0.1
+	Animate HudSuit		TextColor	"FgColor"		Deaccel	0.1		1.2
+}
+
+// health has been damaged to below 20%
+event HealthLow
+{
+	StopEvent HealthDamageTaken	0.0
+	StopEvent HealthPulse	0.0
+	StopEvent HealthLoop	0.0	
+	
+	Animate HudHealth	BgColor		"DamagedBg"		Linear	0.0		0.1
+	Animate HudHealth	BgColor		"BgColor"		Deaccel	0.1		1.75
+	
+	Animate HudHealth	FgColor		"BrightFg"	Linear	0.0		0.2
+	Animate HudHealth	FgColor		"DamagedFg"		Linear	0.2		1.2
+	
+	Animate HudHealth TextColor		"BrightFg"	Linear	0.0		0.1
+	Animate HudHealth	TextColor		"DamagedFg"		Linear	0.1		1.2
+	
+	Animate HudHealth		Blur		"5"			Linear	0.0		0.1
+	Animate HudHealth		Blur		"3"			Deaccel	0.1		0.9
+
+	RunEvent HealthPulse	1.0
+}
+
+event HealthPulse
+{
+	Animate HudHealth		Blur		"5"			Linear	0.0		0.1
+	Animate HudHealth		Blur		"2"			Deaccel	0.1		0.8
+	Animate HudHealth		TextColor	"BrightDamagedFg"	Linear	0.0		0.1
+	Animate HudHealth		TextColor	"DamagedFg"		Deaccel	0.1		0.8
+	Animate HudHealth		BgColor	"100 0 0 80"		Linear	0.0		0.1
+	Animate HudHealth		BgColor	"BgColor"		Deaccel	0.1		0.8
+
+	RunEvent HealthLoop	0.8
+}
+
+// call to loop HealthPulse
+event HealthLoop
+{
+	RunEvent HealthPulse 0.0
+}
+
+
+// suit armor has been damaged to below 20%
+event SuitArmorLow
+{
+	StopEvent SuitDamageTaken 0.0
+	StopEvent SuitPulse	0.0
+	StopEvent SuitLoop	0.0
+
+//	removing this effect -- matching it to the event for normal suit damage
+//	so, there will be no special indication (redness, flashing)
+//	in the hud that the suit armor is low
+	
+//	Animate HudSuit	BgColor		"DamagedBg"		Linear	0.0		0.1
+//	Animate HudSuit	BgColor		"BgColor"		Deaccel	0.1		1.75
+	
+	Animate HudSuit		FgColor	"BrightFg"	Linear	0.0		0.25
+	Animate HudSuit		FgColor	"FgColor"		Linear	0.3		0.75
+	
+	Animate HudSuit		Blur		"3"			Linear	0.0		0.1
+	Animate HudSuit		Blur		"0"			Deaccel	0.1		2.0
+	
+	Animate HudSuit		TextColor	"BrightFg"	Linear	0.0		0.1
+	Animate HudSuit		TextColor	"FgColor"		Deaccel	0.1		1.2
+	
+//	RunEvent SuitPulse	1.0
+}
+
+event SuitPulse
+//	this even no longer gets called
+{
+	Animate HudSuit		Blur		"5"			Linear	0.0		0.1
+	Animate HudSuit		Blur		"2"			Deaccel	0.1		0.8
+	Animate HudSuit		TextColor	"BrightDamagedFg"	Linear	0.0		0.1
+	Animate HudSuit		TextColor	"DamagedFg"		Deaccel	0.1		0.8
+	Animate HudSuit		BgColor	"100 0 0 80"	Linear	0.0		0.1
+	Animate HudSuit		BgColor	"BgColor"		Deaccel	0.1		0.8
+	RunEvent SuitLoop	0.8
+}
+
+event SuitLoop
+{
+//	this event no longer gets called
+	RunEvent SuitPulse 0.0
+}
+
+// ammo has been picked up
+event AmmoIncreased
+{
+	Animate HudAmmo		FgColor	"BrightFg"		Linear	0.0	0.15
+	Animate HudAmmo		FgColor	"FgColor"		Deaccel	0.15	1.5
+	Animate HudAmmo		Blur		"5"			Linear	0.0	0.0 
+	Animate HudAmmo		Blur		"0"			Accel		0.01	1.5 
+}
+
+// ammo has been decreased, but there is still some remaining
+event AmmoDecreased
+{
+	StopEvent AmmoIncreased	0.0
+	
+	Animate HudAmmo		Blur		"7"			Linear	0.0	0.0
+	Animate HudAmmo		Blur		"0"			Deaccel	0.1	1.5
+	
+	Animate HudAmmo		TextColor	"BrightFg"		Linear	0.0	0.1
+	Animate HudAmmo		TextColor	"FgColor"		Deaccel	0.1	0.75
+}
+
+// primary ammo is zero
+event AmmoEmpty
+{
+	Animate Hudammo	FgColor		"BrightDamagedFg"	Linear	0.0	0.2
+	Animate Hudammo	FgColor		"DamagedFg"		Accel		0.2	1.2		
+}
+
+// ammo2 is the total ammo for a weapon that uses clip ammo
+event Ammo2Increased
+{
+	Animate Hudammo	ammo2color		"BrightFg"		Linear	0.0	0.2
+	Animate Hudammo	ammo2color		"FgColor"		Accel		0.2	1.2		
+}
+
+// total ammo has been decreased, but there is still some remaining
+event Ammo2Decreased
+{
+	Animate Hudammo	ammo2color		"BrightFg"		Linear	0.0	0.2
+	Animate Hudammo	ammo2color		"FgColor"		Accel		0.2	1.2		
+}
+
+// total ammo is zero
+event Ammo2Empty
+{
+	Animate Hudammo	ammo2color		"BrightDamagedFg"	Linear	0.0	0.2
+	Animate Hudammo	ammo2color		"DamagedFg"		Accel		0.2	1.2		
+}
+
+event AmmoSecondaryIncreased
+{
+	Animate HudAmmoSecondary		FgColor	"BrightFg"		Linear	0.0	0.15
+	Animate HudAmmoSecondary		FgColor	"FgColor"		Deaccel	0.15	1.5
+	Animate HudAmmoSecondary		Blur		"5"			Linear	0.0	0.0 
+	Animate HudAmmoSecondary		Blur		"0"			Accel		0.01	1.5 	
+}
+
+event AmmoSecondaryDecreased
+{
+	StopEvent AmmoSecondaryIncreased	0.0
+	
+	Animate HudAmmoSecondary		Blur		"7"			Linear	0.0	0.0
+	Animate HudAmmoSecondary		Blur		"0"			Deaccel	0.1	1.5
+	
+	Animate HudAmmoSecondary		TextColor	"BrightFg"		Linear	0.0	0.1
+	Animate HudAmmoSecondary		TextColor	"FgColor"		Deaccel	0.1	0.75
+}
+
+event AmmoSecondaryEmpty
+{
+	Animate HudAmmoSecondary		FgColor		"BrightDamagedFg"	Linear	0.0	0.2
+	Animate HudAmmoSecondary		FgColor		"DamagedFg"		Accel		0.2	1.2
+	Animate HudAmmoSecondary		Blur		"7"			Linear	0.0	0.0
+	Animate HudAmmoSecondary		Blur		"0"			Deaccel	0.1	1.5
+
+}
+
+// current weapon has been changed
+event WeaponChanged
+{
+	Animate HudAmmo		BgColor		"250 220 0 80"	Linear	0.0		0.1
+	Animate HudAmmo		BgColor		"BgColor"		Deaccel	0.1		1.0
+	Animate HudAmmo		FgColor		"BrightFg"		Linear	0.0		0.1
+	Animate HudAmmo		FgColor		"FgColor"		Linear	0.2		1.5
+}
+
+// ran if we just changed to a weapon that needs clip ammo
+event WeaponUsesClips
+{
+	Animate HudAmmo		Position	"r150 432"	Deaccel	0.0		0.4
+	Animate HudAmmo		Size		"132 36"	Deaccel	0.0		0.4
+}
+
+// ran if we just changed to a weapon that does not use clip ammo
+event WeaponDoesNotUseClips
+{
+	Animate HudAmmo		Position	"r118 432"	Deaccel	0.0		0.4
+	Animate HudAmmo		Size		"100 36"	Deaccel	0.0		0.4
+}
+
+event WeaponUsesSecondaryAmmo
+{
+	StopAnimation 	HudAmmo Position 0.0
+	StopAnimation 	HudAmmo Size 0.0
+	StopPanelAnimations HudAmmoSecondary 0.0
+
+	Animate HudAmmoSecondary	BgColor		"250 220 0 60"	Linear	0.0		0.1
+	Animate HudAmmoSecondary	BgColor		"BgColor"		Deaccel	0.1		1.0
+	Animate HudAmmoSecondary	FgColor		"BrightFg"	Linear	0.0		0.1
+	Animate HudAmmoSecondary	FgColor		"FgColor"		Linear	0.2		1.5
+	Animate HudAmmoSecondary	Alpha		255		Linear	0.0		0.1
+
+	Animate HudAmmo		Position	"r222 432"	Deaccel	0.0		0.5
+	Animate HudAmmo		Size		"132 36"	Deaccel	0.0		0.4
+}
+
+event WeaponDoesNotUseSecondaryAmmo
+{
+	StopPanelAnimations	HudAmmoSecondary 	0.0
+	Animate HudAmmoSecondary	FgColor		"0 0 0 0"	Linear	0.0		0.4
+	Animate HudAmmoSecondary	BgColor		"0 0 0 0"	Linear	0.0		0.4
+	Animate HudAmmoSecondary	Alpha		0		Linear	0.0		0.1
+}
+
+event CraneMagnetFlash
+{
+	Animate HudCraneMagnet TextColor	"255 220 0 255"	Linear 0.0 0.1
+	Animate HudCraneMagnet TextColor	"255 220 0 160"	Deaccel 0.1 0.3
+	Animate HudCraneMagnet TextColor	"255 170 0 220"	Deaccel 0.4 0.3
+	Animate HudCraneMagnet TextColor	"255 220 0 255"	Linear 0.8 0.2
+}
+
+event HintMessageShow
+{
+	// show the hints
+	Animate HudHintDisplay Alpha	255 Linear 0.0 0.5
+
+	// flash text
+	Animate HudHintDisplay FgColor	"FgColor" 	Linear 0.0 0.01
+	Animate HudHintDisplay FgColor	"255 220 0 255" Linear 0.5 0.2
+	Animate HudHintDisplay FgColor	"FgColor" 	Linear 0.7 0.2
+	Animate HudHintDisplay FgColor	"255 220 0 255" Linear 1.5 0.2
+	Animate HudHintDisplay FgColor	"FgColor" 	Linear 1.7 0.2
+
+	// hide the panel after a while	
+	Animate HudHintDisplay Alpha	0 Linear 12.0 1.0
+}
+
+event HintMessageHide
+{
+	Animate HudHintDisplay Alpha	0 Linear 0.0 0.5
+}
+
+event SquadMemberAdded
+{
+	StopEvent	SquadMemberDied		0.0
+	StopEvent	SquadMemberLeft		0.0
+
+	// add in the squad member, brighter then normal color
+	Animate HudSquadStatus LastMemberColor	"255 220 0 255" Linear 0.0 0.3
+	Animate HudSquadStatus LastMemberColor	"255 220 0 160" Linear 0.3 0.3
+}
+
+event SquadMemberLeft
+{
+	StopEvent	SquadMemberDied		0.0
+	StopEvent	SquadMemberAdded	0.0
+
+	// fade out the icon
+	Animate HudSquadStatus LastMemberColor	"255 220 0 0"	Linear 0.0 0.5
+}
+
+event SquadMemberDied
+{
+	StopEvent	SquadMemberAdded	0.0
+	StopEvent	SquadMemberLeft		0.0
+
+	// flash red, hold, then disappear
+	Animate HudSquadStatus	LastMemberColor	"255 0 0 255"	Linear 0.0 0.5
+	Animate HudSquadStatus	LastMemberColor	"255 0 0 0"		Linear 2.0 2.0
+}
+
+event SquadMembersFollowing
+{
+	StopEvent	SquadMembersStationed	0.0
+	Animate		HudSquadStatus	SquadTextColor	"255 220 0 255"		Linear 0.0 0.2
+	Animate		HudSquadStatus	SquadTextColor	"255 220 0 160"		Linear 0.2 0.4
+}
+
+event SquadMembersStationed
+{
+	StopEvent	SquadMembersFollowing	0.0
+	Animate		HudSquadStatus	SquadTextColor	"255 220 0 160"			Linear 0.5 0.5
+}
+
+event PoisonDamageTaken
+{
+	Animate 	HudPoisonDamageIndicator 	Alpha	255 Linear 0.0 1.0
+	RunEvent PoisonLoop	0.0
+}
+
+event PoisonDamageCured
+{
+	StopEvent 	PoisonDamageTaken	0.0
+	StopEvent 	PoisonLoop		0.0
+	StopEvent 	PoisonPulse		0.0
+	Animate 	HudPoisonDamageIndicator 	Alpha	0 Linear 0.0 1.0
+}
+
+event PoisonPulse
+{
+	Animate HudPoisonDamageIndicator	TextColor	"BrightFg"		Linear	0.0		0.1
+	Animate HudPoisonDamageIndicator	TextColor	"FgColor"		Deaccel	0.1		0.8
+	Animate HudPoisonDamageIndicator	BgColor		"100 0 0 80"		Linear	0.0		0.1
+	Animate HudPoisonDamageIndicator	BgColor		"BgColor"		Deaccel	0.1		0.8
+
+	RunEvent PoisonLoop	0.8
+}
+
+// call to loop PoisonLoop
+event PoisonLoop
+{
+	RunEvent PoisonPulse 0.0
+}</code></pre></div></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p80081">
+	<div class="info">
+		<p class="poster">srslyNOTnewguy</p>
+		<p class="dt">2011-04-17 00:33:53</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Saturday, April 16, 2011<br>
+4:26 PM - {EE} The New Guy™: it work?<br>
+4:27 PM - «§» CellarDweller: yes, but i have an odd cyan U in the bottom center of my screen.  looks like a computer zero with the top chopped off.  doesnt seem to change... ever.  not a problem visually.  just curious.<br>
+4:28 PM - {EE} The New Guy™: its the flashlight icon<br>
+4:28 PM - {EE} The New Guy™: from ep2<br>
+4:28 PM - {EE} The New Guy™: soon to be non-existant<br>
+4:28 PM - «§» CellarDweller: lol<br>
+4:28 PM - {EE} The New Guy™: so, it will be an unlimited flashlight like old-school DM in the next release for "league" play <br>
+4:29 PM - «§» CellarDweller: not sure what that means.  i dont even have a bind for flashlight.  havent for a loooooooooooooooong time.<br>
+4:29 PM - {EE} The New Guy™: indeed<br>
+4:29 PM - {EE} The New Guy™: its why james didn't think about it<br>
+4:29 PM - {EE} The New Guy™: and left the ep2 flashlight crap in<br>
+4:29 PM - «§» CellarDweller: ah<br>
+4:31 PM - «§» CellarDweller: i dont understand why neo didnt figure out the outline thang.  he's the one who convinced me it couldnt be done.<br>
+4:31 PM - {EE} The New Guy™: he thought sub_zero-xhairs are like nerf'd-DM ones<br>
+4:31 PM - {EE} The New Guy™: sprites<br>
+4:31 PM - «§» CellarDweller: yes<br>
+4:31 PM - «§» CellarDweller: he told me that</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p80084">
+	<div class="info">
+		<p class="poster">phantom</p>
+		<p class="dt">2011-04-17 03:56:56</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">tl;dr</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p80114">
+	<div class="info">
+		<p class="poster">Neolinkster</p>
+		<p class="dt">2011-04-18 12:12:49</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">never said it couldn't be done in the mod just not in dm i've known it works in the mod since before dm got fucked over it just doesn't work for dm thats what ive been saying for the longest time though i love seeing my crosshair the mod's just not that fun.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Using Single Player Entities in MP - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>Using Single Player Entities in MP</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=408">https://forum.hl2dm.community/viewtopic.php?t=408</a>
+-->
+
+<div class="post" id="p2448">
+	<div class="info">
+		<p class="poster">Thorofin</p>
+		<p class="dt">2007-09-14 17:43:15</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">So, I've mucked around with this before, and didn't get very far, so I thought I question the masses.<br>
+<br>
+There are a few SP entities that I would like to use in MP (no not cars), and I was wondering if there is a simple way to do it from inside the map, packaging all the necessary pieces in the BSP.  For example...the Annabelle, or (for a map one of my clan members is working on) a manually operated turret.<br>
+<br>
+I don't want to have to worry about making any server side changes.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2450">
+	<div class="info">
+		<p class="poster">st00pidity</p>
+		<p class="dt">2007-09-14 18:16:05</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">idk about the annabelle, but you can make your own turret with func_tank, some well thought out relays and a few dynamic props...</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2479">
+	<div class="info">
+		<p class="poster">Irie Skanking</p>
+		<p class="dt">2007-09-15 06:03:44</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">last i checked turrets are ok (airboat gun, lasers, ctfmod style, tfc style)<br>
+<br>
+annabelle dont even work really in single player, its world model only i think?????<br>
+<br>
+not sure been a while KAPOWWWWWWWWW!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2481">
+	<div class="info">
+		<p class="poster">Swot</p>
+		<p class="dt">2007-09-15 06:21:30</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">yes, there seems to be only a world model for that weapon. it's from that guy from ravenholm afair.<br>
+<br>
+As you can read here:<br>
+<br>
+<a href="http://developer.valvesoftware.com/wiki/Weapon_annabelle" class="postlink">http://developer.valvesoftware.com/wiki ... _annabelle</a><br>
+<br>
+it was never intended being picked up by the player.<br>
+<br>
+<em class="text-italics">When wielded by the player, this appears to be the normal combat shotgun. However the behavior of the weapon is not uniform with that of the combat shotgun - only two shells are loaded into the gun at a time, and the ammo is limited as well. Lastly, the cooldown is much longer for this weapon.</em><br>
+<br>
+Did not check this one yet <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"><br>
+<br>
+Generally most of the sp entities can work also in mp but sometimes it is a bit more work. But if the code for it has been removed there is no way.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2483">
+	<div class="info">
+		<p class="poster">Ko-Tao</p>
+		<p class="dt">2007-09-15 08:08:17</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">You cant import the annabelle, alyxgun or bugbait with any degree of reliability. Cars and fast zombies are also unavailable, as their entity types were erased from hl2dm during the fios patch.<br>
+<br>
+You can bring in airboats (gunless type only, takes some work), and most types of turrets will function, though a way hasnt yet been found to make them credit kills.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2519">
+	<div class="info">
+		<p class="poster">snipeIT</p>
+		<p class="dt">2007-09-19 09:34:04</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Irie Skanking wrote:</cite>last i checked turrets are ok (airboat gun, lasers, ctfmod style, tfc style)<br>
+<br>
+annabelle dont even work really in single player, its world model only i think?????<br>
+<br>
+not sure been a while KAPOWWWWWWWWW!</div></blockquote>
+
+Airboats dont work in linux servers no longer, to my knowledge.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

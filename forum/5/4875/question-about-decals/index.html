@@ -1,0 +1,296 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Question about decals - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>Question about decals</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=4875">https://forum.hl2dm.community/viewtopic.php?t=4875</a>
+-->
+
+<div class="post" id="p67289">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2010-03-11 08:10:01</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I would guess that making decals are less expensive on the game resource wise than making a texture of the same image???<br>
+<br>
+Anyone know?<br>
+<br>
+Ive got my first ever map just about completed.  Still learning alot and one thing Im discovering is how much different things can make a difference to the file size.  Right now I have a map thats a bit too big in the file size so Im trying to see where I could reduce.  I have some textures that really could be decals.<br>
+Can that make a difference?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67295">
+	<div class="info">
+		<p class="poster">{EE}chEmicalbuRn</p>
+		<p class="dt">2010-03-11 17:19:58</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">how big is it? any SS's?  its not like a blown up version of your kitchen is it?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67298">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2010-03-11 20:10:11</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">lol no you bastard  <img class="smilies" src="../../../images/smilies/icon_razz.gif" width="15" height="15" alt=":P" title="Razz"> <br>
+<br>
+No SS yet until i get this issue resolved.  Its very big, bigger than Octagon in file size.  I have a bunch of custom textures and lots of func_details, many of which could be made into decals which might significanly reduce the file size.  <br>
+<br>
+I've got a RC candidate running on a server now with no problems for the server but playing on it causes a client timeout in a few minutes which I believe is because of the file size or number of func_details.<br>
+<br>
+Prob just gona have to save a new version of the vmf file and try to change things over and see what the effect is.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67361">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2010-03-13 21:09:12</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Decals are still a texture. Custom content will always bring up your filesize, the only way around it is to use less custom content. Models are usually quite small but textures are not.<br>
+<br>
+For example: a standard 512x512 compressed texture is about 170 kb, a normalmap plus specular mask for that texture is about 1.3mb - so for every 10 custom textures with bump and spec you're looking at roughly 15mb filesize increase. Doubling the dimensions of the texture to 1024 x 1024 multiplies all that by 4.<br>
+<br>
+func_detail is generally a good thing and wont really bump up filesize.<br>
+<br>
+Your first step should be to compare the file size of your raw compiled .bsp vs your .bsp with the all the custom content packed into it. If it's still very large without any custom content then you have a problem.<br>
+<br>
+If the difference is huge then its simply due to all the custom content. It's a balancing act between adding shiny new things and keeping the size down really - I generally aim for 50mb max uncompressed filesize as a good compromise.<br>
+<br>
+Things I can think of that will also bump up size:<br>
+<br>
+<strong class="text-strong">using HDR</strong> - this will add 2 sets of lightmaps, cubemaps etc<br>
+<br>
+<strong class="text-strong">lightmap values too low</strong> - they only need to be low where they actually make a difference and can be balanced out with using very high lightmap scales where they wouldn't be noticed like flat dark ceilings and such<br>
+<br>
+<strong class="text-strong">not using compressed .vtf files</strong> - base textures should always be compressed, normalmaps are usually not compressed due to how crap it makes them look<br>
+<br>
+<strong class="text-strong">lots of displacements</strong> - displacements will bring your filesize up, however they compress very well when using serving bz2 compressed maps and are very easy for the engine to render.<br>
+<br>
+<strong class="text-strong">bad vis optimisation</strong> - don't quote me on this one, but I have a feeling a really messed up vis will add some size to your bsp (see compare raw vs packed above)<br>
+<br>
+<strong class="text-strong">not serving compressed map downloads</strong> - lots of maps with huge filesize will compress down very nicely when compressed, take a look at dm_octagon for example. If I remember rightly its something like 30mb vs 85mb.<br>
+<br>
+Oo, wall of text.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67819">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2010-03-28 22:35:56</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Update:  Yea most of my custom texture files were over 1.3 mb each because the files I made them from originally were all bigger than 512 px X 512 px.  I was able to reduce them to 512 X 512 or smaller (most are at 256 x 256) without noticable reduction in the image quality.  This reduced the size of the map file significantly, now its about as big as LD_r4 so its much more managable.  Im going to run it on a server for a while and see how it goes.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p67820">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2010-03-28 23:22:39</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Paradox wrote:</cite>Update:  Yea most of my custom texture files were over 1.3 mb each because the files I made them from originally were all bigger than 512 px X 512 px.  I was able to reduce them to 512 X 512 or smaller (most are at 256 x 256) without noticable reduction in the image quality.  This reduced the size of the map file significantly, now its about as big as LD_r4 so its much more managable.  Im going to run it on a server for a while and see how it goes.</div></blockquote>
+
+Looking forward to seeing it <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68258">
+	<div class="info">
+		<p class="poster">Pseudonym</p>
+		<p class="dt">2010-04-08 02:18:31</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Boshed covered alot here.  (as per usual  <img class="smilies" src="../../../images/smilies/cheer.gif" width="55" height="43" alt=":cheer:" title="Cheer"> )<br>
+<br>
+I would reccomend converting any WAVs to MP3s too.<br>
+<br>
+With no noticable sound quality loss and a <span style="text-decoration:underline"><strong class="text-strong">massively</strong></span> reduced filesize its well worth doing.<br>
+I just did it in my map and the filesize went down by around 7mb!<br>
+<br>
+Two free programs:<br>
+Audacity (best)  - <a href="http://audacity.sourceforge.net" class="postlink">http://audacity.sourceforge.net</a><br>
+FreeRIP (does the job, but use audacity) - <a href="http://www.freerip.com" class="postlink">http://www.freerip.com</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68291">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2010-04-08 04:56:56</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I gave up on the sound, because no matter what I did it just didnt work.<br>
+<br>
+Thanks for those links though</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68391">
+	<div class="info">
+		<p class="poster">Pseudonym</p>
+		<p class="dt">2010-04-10 02:59:48</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">This sound:<br>
+C:\Program Files\Valve\Steam\SteamApps\jacka18l\half-life 2 deathmatch\hl2mp\sound\pseudonym\splash.mp3<br>
+<br>
+Will be this sound name in an ambient_generic:<br>
+pseudonym\splash.mp3<br>
+(or in a soundscape)<br>
+<br>
+Mp3s dont preview in the sdk sound browser, but will work ingame so use them.<br>
+wavs do preview in sdk, but have a big nasty filesize.<br>
+<br>
+<br>
+Another thing i thought of to reduce your vmt count is to put multiple images into one vtf and then align it accordingly ingame.<br>
+fair enough you will have a large single .vtf, but you will cut down on the amount of .vmts associated with each texture you are not having to use as you have it all neatly in one place.<br>
+<br>
+now i dont know how reliable this is, but valve did it with some posters in l4d no mercy and i think they know their mapping <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=";)" title="Wink"> also theoretically this would work, but then again .vmts dont add up to much in filesize.<br>
+Just brainstorming here, anyone any thoughts on this last idea?<br>
+<br>
+give it a try paradox. or msg for more info.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68421">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2010-04-10 14:05:10</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Pseudonym wrote:</cite>Just brainstorming here, anyone any thoughts on this last idea?</div></blockquote>
+
+I think there's some overhead on using several vtfs (file type headers, colour indexes and such) so compacting them into one should make it a little smaller, but like you said filesize of vmts is not really an issue. This requires investigation <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"><br>
+<br>
+Edit: Woo science time!<br>
+<br>
+So, tested this with 4 x 256x256 and 1 x 512x512 simple textures (compressed, no alpha, vmt contains just basetexture and surpfaceprop)<br>
+<br>
+<strong class="text-strong">VTFs only</strong><br>
+<br>
+All 4 in one sheet:<br>
+174,984 bytes<br>
+<br>
+All 4 seperate:<br>
+175,648 bytes (43,912 x 4)<br>
+<br>
+<strong class="text-strong">VTFs and VMTs</strong><br>
+<br>
+All 4 in one sheet: <br>
+175,077 bytes<br>
+<br>
+All 4 seperate:<br>
+176,020 bytes<br>
+<br>
+So, yes there is a saving in filesize but its negligible (~1kb) - also as I'm using small textures, large textures would get less of a benefit as the VMT size would generally stay very small in comparison to the VTF size.<br>
+<br>
+The real kicker is in game and how texture caching works - If it disregards non-visible textures when not needed then you're actually hurting performance by loading up the larger texture sheet to only use part of it. I have a feeling though that textures are all cached permanently for the duration of the map which would make it extremely efficient as only the one texture is cached.<br>
+<br>
+Going to look into this more when I can get back to a PC that will run source games.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68431">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2010-04-10 19:16:10</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">The size of my texture files went from 1.3 mb each to 700 kb just by reducing to 256x256, so it had to have done something.   However they were HUGE before because I had been working with them in photoshop to get them to tile correctly and kinda forgot to reduce them.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68432">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2010-04-10 20:12:18</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">700k is ridiculously huge for a 256x256 texture, it should be about 43k for a plain texture and 84k for one with an alpha channel. <br>
+<br>
+Are you sure you're using the right vtf format and compressing them?<br>
+<br>
+edit: normalmaps will be large, don't compress them.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68436">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2010-04-10 23:02:43</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I use the photshop plugin to save/convert them to the VTF format</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68438">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2010-04-10 23:58:14</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Me too (<a href="http://nemesis.thewavelength.net/index.php?c=154" class="postlink">this one</a>). You sure you're using the "compressed texture" (or "compressed texture with alpha") preset?<br>
+<br>
+Even with Generic / 8 Bit Alpha the largest filesize I can get a 256x256 texture to is 342k, that's still less than half your 700k.<br>
+<br>
+edit: compressed 256x256 texture with no alpha is 42.8k, that's ~16x smaller than what you're getting - looks like we found the cause of your filesize bloat <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68492">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2010-04-12 05:28:38</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">8 bit / 22 Khz WAVs aren't as large as the usual 16 bit / 44.1 Khz ones.<br>
+same goes for Mono vs Stereo.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p68677">
+	<div class="info">
+		<p class="poster">Sadist</p>
+		<p class="dt">2010-04-15 22:49:21</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Oo oo......just wanted to get my two cents in too <img class="smilies" src="../../../images/smilies/icon_lol.gif" width="15" height="15" alt=":lol:" title="Laughing"> <br>
+<br>
+A few things you might not know about map file size:<br>
+<br>
+1. Large open spaces such as landscape maps or skyboxes that reach up very high will increase bsp size.  This is because of the stress put on vis.<br>
+<br>
+2. Lots of env_cubemaps will increase file size once buildcubemaps is run.  Cubemaps are not big on their own but it is important to keep numbers as few as necessary.  Also, more detailed env_cubemaps (128x128 and 256x256) will rapidly increase bsp file size.<br>
+<br>
+3. Lots of flashing or strobe lights will put stress on rad and increase bsp file size.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

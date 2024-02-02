@@ -1,0 +1,330 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Impulse Fix Plugin - v1.00 - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Released Plugins</a></p>
+</div>
+
+<h1>Impulse Fix Plugin - v1.00</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=1729">https://forum.hl2dm.community/viewtopic.php?t=1729</a>
+-->
+
+<div class="post" id="p20992">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2008-05-13 23:06:03</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><strong class="text-strong">Purpose:</strong>
+<ul><li>This plugin was created to block the use of an impulse exploit.  This plugin will simply deny the effects of the impulse and kick the offender.</li></ul>
+
+<strong class="text-strong">Installation:</strong>
+<ul><li>Extract the contents of this archive to a known directory.</li></ul>
+
+<ul><li><span style="text-decoration:underline">VSP - standard plugin</span><ol style="list-style-type:decimal">
+<li><em class="text-italics">Ignore or delete the metamod and keeper directories.</em></li>
+<li>Place the keeper_noimpulse_hl2.vdf file in the addons directory of the server ( if there is no addons folder, create it under the main hl2mp folder ).</li>
+<li>Place the keeper_noimpulse_hl2.dll file in the addons directory if you have a <span style="color:navy"><strong class="text-strong">Windows</strong></span> server, or the keeper_noimpulse_hl2_i486.so file if you have a <strong class="text-strong"><span style="color:red">Linux</span></strong> server.</li>
+<li>Restart the server.</li>
+<li>Type plugin_print to see if you should see <blockquote class="uncited"><div>Keeper's NoImpulse Plugin (VSP) - v1.00 - <a href="http://www.hl2dm-university.com" class="postlink">http://www.hl2dm-university.com</a></div></blockquote></li></ol>
+<span style="text-decoration:underline">Source MetaMod ( SMM ) plugin</span><ol style="list-style-type:decimal">
+<li><em class="text-italics">Ignore or delete the keeper_noimpulse_hl2.vdf, keeper_noimpulse_hl2.dll, keeper_noimpulse_hl2_i486.so files in the main directory.</em></li>
+<li>Place the keeper_noimpulse_hl2_mm.vdf file in the addons/metamod directory of the server.</li>
+<li>Place the keeper_noimpulse_hl2_mm.dll file in the addons/keeper/bin directory if you have a <span style="color:navy"><strong class="text-strong">Windows</strong></span> server, or the keeper_noimpulse_hl2_mm_i486.so file if you have a <strong class="text-strong"><span style="color:red">Linux</span></strong> server.</li>
+<li>Restart the server.</li>
+<li>Type meta list to see if you should see <blockquote class="uncited"><div>Keeper's NoImpulse    v1.00       Keeper               RUN</div></blockquote></li></ol></li></ul>
+
+<strong class="text-strong">Notes:</strong>
+<ul><li>If you are using SourceMM, please update to the latest version: <a href="http://downloads.sourceforge.net/sourcemm/sourcemm-1.4.3.zip?modtime=1203484655&amp;big_mirror=0" class="postlink">1.4.3</a><br>
+If you are not already using SourceMM, I would suggest just using the VSP version.</li></ul>
+
+<strong class="text-strong">Download:</strong>
+<ul><li><div class="inline-attachment">
+			
+		
+		
+				<dl class="file">
+			<dt><span class="imageset icon_topic_attach"></span> <a class="postlink" href="keeper_noimpulse_hl2.zip">keeper_noimpulse_hl2.zip</a></dt>
+			<dd><em>Version 1.00 - Fixed Win32 SourceMM</em></dd>			<dd>(363.2 KiB) Downloaded 384 times</dd>
+		</dl>
+		
+			</div></li></ul></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p20997">
+	<div class="info">
+		<p class="poster">Cynips</p>
+		<p class="dt">2008-05-13 23:46:47</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I'll post this over at Clans United.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p20998">
+	<div class="info">
+		<p class="poster">[AgC] Flushthetoilet</p>
+		<p class="dt">2008-05-14 00:08:59</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">OK I'll stick my head above the parapet and ask what an impulse exploit is.3</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p21000">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2008-05-14 00:12:28</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">It's supposed to be a cheat (sv_cheats = 1), but this somehow is missed.<br>
+<br>
+This plugin just keeps the recalcitrant kiddies away.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p21002">
+	<div class="info">
+		<p class="poster">[AgC] Flushthetoilet</p>
+		<p class="dt">2008-05-14 00:22:56</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I'm non the wiser. Sorry, more detail explination for this old brain please. <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p21005">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2008-05-14 00:42:53</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Well we are trying not to spread the exploit while still providing a fix. I don't have time to explain just now, but remind me by PM later and I'll explain it if you are interested in patching this hole in your servers.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p21015">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2008-05-14 02:28:22</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">The exploit in question spawns usefull items directly infront of the player and once picked up they will respawn in that location as normal.<br>
+Going to give this a try and sprea the word.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p21020">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2008-05-14 02:59:47</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Oh yeah I guess I could have said that much, thx Keefy. <img class="smilies" src="../../../images/smilies/icon_mrgreen.gif" width="15" height="15" alt=":mrgreen:" title="Mr. Green"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p21034">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2008-05-14 04:13:29</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Plugin works great on my windows server, infact so well it even works with sv_cheats on!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p21035">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2008-05-14 04:21:55</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yeah, technically it's a HL2 thing, not even a DM thing.  So I didn't even test for sv_cheats <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p21039">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2008-05-14 04:35:27</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">The metamod version crashes my server, keeps it in a constant timeout loop i have 1.43 metamod 81.19.219.24:27025 <br>
+The VSP apears to work</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p21040">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2008-05-14 04:45:23</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">ORLY?  Windows SourceMM?<br>
+<br>
+That's the one I tested it on!?!?!?!<br>
+<br>
+Weird....glad the VSP is working for you.<br>
+<br>
+<br>
+BTW, what other plugins?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p21042">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2008-05-14 04:55:23</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yes its windows.<br>
+metamod_version "1.4.3.656V"<br>
+mani_admin_plugin_version "1.2BetaS SMM"<br>
+No other plugins apart from you impulse exploit.<br>
+I will try again in the morning, was just a quick test Imay have missed something.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p21047">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2008-05-14 05:21:33</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Download it again.  The first one didn't work for me either.  I think I included a debug build.  <br>
+<br>
+Once you download the new one it should work.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p21058">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2008-05-14 06:16:20</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Looks like Keeper is human after all. I was beginning to get suspicious. <img class="smilies" src="../../../images/smilies/icon_lol.gif" width="15" height="15" alt=":lol:" title="Laughing"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p21065">
+	<div class="info">
+		<p class="poster">snuffymckiller</p>
+		<p class="dt">2008-05-14 07:19:10</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Walking Target wrote:</cite>Looks like Keeper is human after all. I was beginning to get suspicious. <img class="smilies" src="../../../images/smilies/icon_lol.gif" width="15" height="15" alt=":lol:" title="Laughing"></div></blockquote>
+
+<br>
+Nah--he is a Strogg. Just look at his baby picture for proof <img class="smilies" src="../../../images/smilies/pointlaugh.gif" width="58" height="23" alt=":pointlaugh:" title="Tease"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p21086">
+	<div class="info">
+		<p class="poster">Keeper</p>
+		<p class="dt">2008-05-14 16:19:17</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Didn't you ever wonder what a combine really looked like under that suit?  <br>
+<br>
+I don't know what WT has working on his end <img class="smilies" src="../../../images/smilies/spy.gif" width="21" height="22" alt=":spy:" title="Spy"> , but I know VALVe definitely knows about this.  Not saying a solution is forthcoming anytime soon, but it is known.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p21091">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2008-05-14 17:31:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Keeper wrote:</cite>Download it again.  The first one didn't work for me either.  I think I included a debug build.  <br>
+<br>
+Once you download the new one it should work.</div></blockquote>
+Yes the SMM is working perfectly</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p21151">
+	<div class="info">
+		<p class="poster">Zman42</p>
+		<p class="dt">2008-05-15 02:26:36</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">wow n1 keeper on getting this fixed so soon <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p21229">
+	<div class="info">
+		<p class="poster">ninojman</p>
+		<p class="dt">2008-05-15 17:37:37</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>snuffymckiller wrote:</cite><blockquote><div><cite>Walking Target wrote:</cite>Looks like Keeper is human after all. I was beginning to get suspicious. <img class="smilies" src="../../../images/smilies/icon_lol.gif" width="15" height="15" alt=":lol:" title="Laughing"></div></blockquote>
+
+<br>
+Nah--he is a Strogg. Just look at his baby picture for proof <img class="smilies" src="../../../images/smilies/pointlaugh.gif" width="58" height="23" alt=":pointlaugh:" title="Tease"></div></blockquote>
+
+<br>
+that damned pic wigs me out every time i look at it lol</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p21449">
+	<div class="info">
+		<p class="poster">Cynyx</p>
+		<p class="dt">2008-05-18 03:57:36</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">One hour ago, a member of my clan has just showed to me a video about the impulse bug... <br>
+(we are a bit late compare to all of you)<br>
+After trying it on my servers, I was searching for a solution to prevent that... and i fall here <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"><br>
+One time again, Keeper is the man who save the world ... Many thanks for that.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p42204">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2009-01-27 11:00:25</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>keefy wrote:</cite>The exploit in question spawns usefull items directly infront of the player and once picked up they will respawn in that location as normal.<br>
+Going to give this a try and sprea the word.</div></blockquote>
+
+I was just wondering, almost a year later, why isn't this plugin in the DMU training server yet?<br>
+<br>
+ <img class="smilies" src="../../../images/smilies/icon_eek.gif" width="15" height="15" alt=":shock:" title="Shocked">  <img class="smilies" src="../../../images/smilies/icon_eek.gif" width="15" height="15" alt=":shock:" title="Shocked">  <img class="smilies" src="../../../images/smilies/icon_eek.gif" width="15" height="15" alt=":shock:" title="Shocked"> <br>
+<br>
+Btw, nice T-shirt, keeper! <img class="smilies" src="../../../images/smilies/icon_mrgreen.gif" width="15" height="15" alt=":mrgreen:" title="Mr. Green"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p42209">
+	<div class="info">
+		<p class="poster">Jelly Fox</p>
+		<p class="dt">2009-01-27 14:19:03</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Good question, I've asked it many times!  <img class="smilies" src="../../../images/smilies/icon_razz.gif" width="15" height="15" alt=":P" title="Razz"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Released Plugins</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

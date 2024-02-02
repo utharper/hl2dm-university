@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>How to set up a Dedicated HL2mpod Final server. - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+
+<h1>How to set up a Dedicated HL2mpod Final server.</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=5596">https://forum.hl2dm.community/viewtopic.php?t=5596</a>
+-->
+
+<div class="post" id="p78749">
+	<div class="info">
+		<p class="poster">KILLER_K™</p>
+		<p class="dt">2011-01-02 08:50:29</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">It seems a lot of people has been having issues getting this mod to run. So i thought i would share this so if anyone would like to make a dedicated server to host this mod could do so. Also special thanks goes out to <span style="color:#FF0000">Molester</span> for helping me out and all his hard work. And <span style="color:#0000FF">New Guy </span> for getting everyone together to sort out the issues.<br>
+<br>
+Moving on here is the two files you will need. And the hl2updatetool which most will have at this point but i will link to it also.<br>
+* Jame's site:<br>
+<a href="http://james1324.web.officelive.com/default.aspx" class="postlink">http://james1324.web.officelive.com/default.aspx</a><br>
+* Half-Life 2 Deathmatch: Orange Box Mod:<br>
+<a href="http://www.mediafire.com/?53x52vm5sa35kga" class="postlink">http://www.mediafire.com/?53x52vm5sa35kga</a><br>
+* Bin file to fix the mod:<br>
+<a href="http://www.filefactory.com/file/b4e8faa/n/orangebox.rar" class="postlink">http://www.filefactory.com/file/b4e8faa/n/orangebox.rar</a> <br>
+* HL2updateTool:<br>
+<a href="http://www.steampowered.com/download/hldsupdatetool.exe" class="postlink">http://www.steampowered.com/download/hldsupdatetool.exe</a><br>
+<br>
+Installing the mod:<br>
+   <br>
+Step 1: Install a clean SRCDS with orangebox and hl2mp using the following commands:<br>
+ <br>
+steam -command update -game hl2mp -dir<br>
+<br>
+steam -command update -game orangebox -dir<br>
+     <br>
+Step 2: Download and unzip <a href="http://www.mediafire.com/?53x52vm5sa35kga" class="postlink">http://www.mediafire.com/?53x52vm5sa35kga</a><br>
+        Into the orangebox directory. The orangebox directory should<br>
+        now contain both the hl2mp folder and the hl2mpob folder. <br>
+<br>
+Step 3: Edit the file orangebox/hl2mpob/cfg/server.cfg by adding the<br>
+        line "sv_password abc123" in order to introduce a password.<br>
+        So that the server does not violate the private server criterion.<br>
+      <br>
+Step 4: Modify the srcds_run command line so that where it once said<br>
+        "-game hl2mp" so it now says "-game hl2mpob".    <br>
+<br>
+After these steps are completed. Download the orangebox.rar and extract the contents and overwrite the files in the folder.  Then you game should start up and run with no issues.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p78751">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2011-01-02 10:10:43</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">whats the bin file to fix the mod for and what does it do?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p78753">
+	<div class="info">
+		<p class="poster">KILLER_K™</p>
+		<p class="dt">2011-01-02 19:50:51</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>L2k wrote:</cite>whats the bin file to fix the mod for and what does it do?</div></blockquote>
+
+It corrects the files as the default {newer ones} doesn't allow the server to start up. So these older .dll's will fix the problem and allow it to start up.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p78754">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2011-01-02 20:59:34</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">What you shoudl do is as follows<br>
+<br>
+Install HL2DM<br>
+<strong class="text-strong">hldsupdatetool -command update -game hl2mp -dir c:\srcds</strong><br>
+<br>
+Then instal orangebox into the "orangebox" folder HL2DM creates. <br>
+<strong class="text-strong">hldsupdatetool -command update -game orangebox -dir c:\srcds\orangebox </strong><br>
+<br>
+Then put HL2MPOB into that newly created orangebox folder e.g<br>
+<strong class="text-strong">c:\srcds\orangebox\orangebox\hl2mpob</strong><br>
+<br>
+<strong class="text-strong">Hl2mp</strong> and <strong class="text-strong">Hl2mpob</strong> folders should not be in the same directory.<br>
+If you do it this way you should not need that bin file.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p78755">
+	<div class="info">
+		<p class="poster">KILLER_K™</p>
+		<p class="dt">2011-01-02 21:25:10</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">HL2DM is in the orangebox folder by default. So i'm not sure what you are meaning when you say put hl2mpod in the orangebox and then say hl2dm can't be in the same folder.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p78756">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2011-01-02 21:48:48</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">You will have 2 "orangebox" folders one inside the other.<br>
+orangebox\orangebox\hl2mpob<br>
+<br>
+
+<blockquote class="uncited"><div>The thing to understand to make a functional installation: mods done by Valve (like hl2dm, css, tf) are using OrangeBox Engine which is not the same OrangeBox engine that the one that us (modders) are using. When HL2DM did is upgrade, if AG2 is in OrangeBox folder, it simply overwrites the OB engine we're are using (this one not being compliant with our mod) so you must review your folder structure as follow.<br>
+<br>
+All official Valve's mods must be in orangebox folder which is containing bin for their OB engine:<br>
+orangebox/hl2dm<br>
+orangebox/css<br>
+orangebox/tf<br>
+<br>
+Inside this folder launch an installation of orangebox that we (modders) are using. It will create an orangebox folder inside orangebox but this one will contain the OB engine bin that we're using. Then put our external mods (age of chivalry, ag2...) in this second orangebox folder. Structure will be:<br>
+orangebox/orangebox/ag2<br>
+orangebox/orangebox/aoc</div></blockquote>
+<a href="http://www.adrenalinegamer2.com/index.php?site=news_comments&amp;newsID=336" class="postlink">http://www.adrenalinegamer2.com/index.p ... newsID=336</a><br>
+<br>
+Thats why you had to create a new "bin" file.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p78757">
+	<div class="info">
+		<p class="poster">KILLER_K™</p>
+		<p class="dt">2011-01-02 21:57:39</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thanks i will look into that then. As we need more servers and the easier we can make it then the better.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p78759">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2011-01-02 22:53:32</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Its easily done due to Valve naming both engines the same if the mod version was named different I think it would solve such issues as this.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p78760">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2011-01-03 00:04:33</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Thats why I was confused about the bin file, I did not use it and I had no problem getting a server to run.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

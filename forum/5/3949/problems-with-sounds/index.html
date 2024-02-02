@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Problems with sounds... - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>Problems with sounds...</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=3949">https://forum.hl2dm.community/viewtopic.php?t=3949</a>
+-->
+
+<div class="post" id="p52397">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2009-05-10 13:12:25</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I got two maps on stand by cuz of this.<br>
+<br>
+In one of them I made a big digger, like those in citadel, and added 3 sounds to it. One for when it moves up, one for when it hits the upper limit and another for when it hits the ground. I tested the map locally and everything goes fine. No probs at all. But then I tested it in a server (with server tool), and no sounds play. I haven't tried to include the sounds with pakrat, but, correct me if I'm wrong, I guess they should be played well anyway since the sounds available in sdk are in the game/sdk content.<br>
+<br>
+In the other map, I have some other sounds, some play well in the server, but most don't.<br>
+<br>
+I'm a little confused...<br>
+<br>
+EDIT: I tested adding the sound files to it with pakrat and it's the same...  <img class="smilies" src="../../../images/smilies/icon_confused.gif" width="15" height="15" alt=":?" title="Confused"> <br>
+btw: I noticed nothing in my console, but in the server console I get this (for some sparks sounds):<br>
+<br>
+SV_StartSound: ambient/energy/zap7.wav not precached (0)<br>
+SV_StartSound: ambient/energy/zap8.wav not precached (0)<br>
+SV_StartSound: ambient/energy/zap1.wav not precached (0)<br>
+SV_StartSound: ambient/energy/zap3.wav not precached (0)<br>
+SV_StartSound: ambient/energy/zap2.wav not precached (0)<br>
+SV_StartSound: ambient/energy/zap7.wav not precached (0)<br>
+SV_StartSound: ambient/energy/zap2.wav not precached (0)<br>
+SV_StartSound: ambient/energy/zap1.wav not precached (0)<br>
+and so on, infinitely....</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p52433">
+	<div class="info">
+		<p class="poster">[EYE] Valar</p>
+		<p class="dt">2009-05-11 02:41:48</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">and to that we say <em class="text-italics">welcome to hl2mp</em><br>
+<br>
+Find the sounds you're using in <strong class="text-strong">source 2007 shared sounds.gcf</strong> or in <strong class="text-strong">source sounds.gcf</strong> (using GCFScape). extract them to your local <strong class="text-strong">Sound</strong> folder.<br>
+Open Hammer and reassign them using the local files now.<br>
+Compile<br>
+Run in Game<br>
+Build Cubemaps<br>
+Close out of HL2DM<br>
+Download <a href="http://www.geocities.com/cofrdrbob/pakrat.html" class="postlink"><strong class="text-strong">Pakrat</strong></a><br>
+Browse to your Maps folder to the map you're working on.<br>
+Add your sounds to your map using Pakrat.<br>
+Save BSP (by the same name).<br>
+<br>
+everything will work flawlessly online.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p52437">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2009-05-11 02:54:23</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">hmm, I didn't reassign the local files...<br>
+I didnt even think it might be needed.<br>
+Thx. I'll do it and test it.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p52442">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2009-05-11 04:13:04</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Sounds from the digger work now. Thx. The other map will be easy to fix too.<br>
+but for the sparking sounds I still get those error mesages in server console and no sound. <br>
+I made them with func_buttons, Sounds = small zap, toggled the flag "Sparks" and aplied "invisible" material. It works for the visual effect only, atm... dunno if there's any better way to have two or three spots of sparks in the map...<br>
+<br>
+EDIT: Nvm. Got everything working now. Boshed told me about env_spark. Much more flexible and sounds play nicely.<br>
+It's all good.<br>
+<br>
+Thx to both Valar and Boshed.  <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=":wink:" title="Wink"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p57113">
+	<div class="info">
+		<p class="poster">Pernicious</p>
+		<p class="dt">2009-07-15 04:17:37</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Lets say i had a map with heaps of sounds, but didnt want to include them in the map to save on filesize, i would use point_tesla to play the sounds, BUT, how would i get point tesla to play the sounds in 3d as aposed to being played everywhere in the map? If anyone knows.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

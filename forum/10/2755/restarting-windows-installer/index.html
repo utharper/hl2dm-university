@@ -1,0 +1,207 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Restarting windows installer. - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+
+<h1>Restarting windows installer.</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=2755">https://forum.hl2dm.community/viewtopic.php?t=2755</a>
+-->
+
+<div class="post" id="p34995">
+	<div class="info">
+		<p class="poster">badinfluence</p>
+		<p class="dt">2008-11-16 23:13:12</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Every time I try to boot windows with the disk inside, it goes straight to where it was. That blue screen that tells you about windows XP. It comes up with some type of error. I want to go back to setting partitions and stuff like that. How do I do this?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p34996">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2008-11-16 23:23:49</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">only way I know is to take the HD out put in another machine as a slave and reformat it, then put back and start over.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p34997">
+	<div class="info">
+		<p class="poster">Bobadin</p>
+		<p class="dt">2008-11-16 23:25:51</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">partition magic</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p35000">
+	<div class="info">
+		<p class="poster">[KBH]Tazzer</p>
+		<p class="dt">2008-11-16 23:48:20</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>badinfluence wrote:</cite>Every time I try to boot windows with the disk inside, it goes straight to where it was. That blue screen that tells you about windows XP. It comes up with some type of error. I want to go back to setting partitions and stuff like that. How do I do this?</div></blockquote>
+
+<br>
+change your boot setting tell it "not" to boot from disk <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=":wink:" title="Wink"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p35005">
+	<div class="info">
+		<p class="poster">badinfluence</p>
+		<p class="dt">2008-11-17 00:05:23</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I tried that tazzer. It didn't work.<br>
+
+<blockquote><div><cite>L2k wrote:</cite>only way I know is to take the HD out put in another machine as a slave and reformat it, then put back and start over.</div></blockquote>
+
+Do you think you could walk me through this punk?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p35009">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2008-11-17 00:35:18</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Take the HD and put the jumper on the slave position (look at diagram usually on top of HD) then open your other pc and put your good HD jumper on master posistion, plug in a power cable to the bad HD and plug a ide cable into the bad hd and mobo. Depending on what kind of ide cable( providing your newer good HD is IDE and not SATA) you have now it may have a extra plug in on it, if so use it. You dont really have to mount the bad HD in the case just set it somewhere maybe on top of the other HD. Boot up the newer pc, it should recognize the new HD as a slave and then it will show in your My computer tab as drive D or E w/e just right click on it and select format, chose ntfs option and start it. When its done formatting put it back in old pc, change pins back to master on both HD's and then you can reinstall windows xp on the newly formatted HD.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p35010">
+	<div class="info">
+		<p class="poster">{EE}chEmicalbuRn</p>
+		<p class="dt">2008-11-17 00:59:14</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">use fdisk,  then you will have a totally new HD, nothing left beind. you can set up partitions with that too</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p35013">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2008-11-17 01:48:46</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>{EE}chEmicalBurn wrote:</cite>use fdisk,  then you will have a totally new HD, nothing left beind. you can set up partitions with that too</div></blockquote>
+he botched the install on this pc and cant even get to that point, so I think he still needs to put it in another pc</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p35020">
+	<div class="info">
+		<p class="poster">{EE}chEmicalbuRn</p>
+		<p class="dt">2008-11-17 05:09:11</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">he cant get windows to install at all?  without knowing anything about what he did, my guess would be that he used one IDE cable.  plugged the end connector to the DVD rom and the middle connector to the HD with the HD's jumper set on master and/or the DVD's jumper set on slave.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p35021">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2008-11-17 06:18:10</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">he was installing windows and got about 25% done when it failed due to a error, now when trying to restart the process it tries to resume where it left off but still has a error so he wanted to know how to start over.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p35028">
+	<div class="info">
+		<p class="poster">badinfluence</p>
+		<p class="dt">2008-11-17 07:46:23</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I did everything I was told. We tried to get the hard drive to be recognized on two computers and it didn't work. I'm going to take it to school tomorrow and see if the IT department can reformat it.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p35045">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2008-11-17 14:43:17</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Sounds like the drive is broken.<br>
+You dont have much luck with computers do you <img class="smilies" src="../../../images/smilies/icon_lol.gif" width="15" height="15" alt=":lol:" title="Laughing"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p35050">
+	<div class="info">
+		<p class="poster">{EE}chEmicalbuRn</p>
+		<p class="dt">2008-11-17 17:15:31</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">thats why i like fdisk, when you use it to format its done by command line and you can use a switch to check and mark bad sectors........ format c:/c   will format the drive and mark the bad sectors so windows wont use them</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p35054">
+	<div class="info">
+		<p class="poster">badinfluence</p>
+		<p class="dt">2008-11-17 17:35:23</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">If I could get to fdisk, I would use it.<br>
+<br>
+Edit: I just gave it to my school's IT department. I'll see what they can do with it and report back after school. ; D</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p35826">
+	<div class="info">
+		<p class="poster">badinfluence</p>
+		<p class="dt">2008-11-24 18:27:28</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">They formatted it, but I don't think they removed the operating system. I'm going to try to see if it'll boot up as a slave now on my pc.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p35836">
+	<div class="info">
+		<p class="poster">L2k</p>
+		<p class="dt">2008-11-24 20:05:02</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">If they formatted it properly it should have removed it. On another note don't use that download I gave you, it got corrupted somehow in the process of uploading it to the ftp server. This likely what  caused your problem in the first place. I found this out by downloading the file and trying to use it myself, had same problem as you with the error. I fixed my HDD by reformatting it in another pc and then used the good source file for the download I gave you and it worked. Been wanting to tell you this but you haven't been on steam.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p35916">
+	<div class="info">
+		<p class="poster">badinfluence</p>
+		<p class="dt">2008-11-25 17:35:17</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Yeah, my power supply went out. That was in my "Update" post.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">The Cafeteria</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

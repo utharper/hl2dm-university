@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Crosshair creation problem - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Training Center</a></p>
+</div>
+
+<h1>Crosshair creation problem</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=4411">https://forum.hl2dm.community/viewtopic.php?t=4411</a>
+-->
+
+<div class="post" id="p59692">
+	<div class="info">
+		<p class="poster">Shift</p>
+		<p class="dt">2009-09-04 03:40:46</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I've been attempting to make cross hairs lately and they always seem distorted in game.<br>
+Does anybody have any suggestions? <br>
+<a href="http://rapidshare.com/files/275319182/halflife2.ttf.html" class="postlink">http://rapidshare.com/files/275319182/h ... 2.ttf.html</a></div>
+<dl class="attachbox">
+					<dt>
+						Attachments
+					</dt>
+											<dd>
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="Untitled-2.jpg" class="postimage" alt="In font editor" onclick="viewableArea(this);"></dt>
+			<dd><em>In font editor</em></dd>			<dd>Untitled-2.jpg (32.06 KiB) Viewed 722 times</dd>
+		</dl>
+		
+		
+			</dd>
+											<dd>
+			
+		
+				<dl class="file">
+			<dt class="attach-image"><img src="Untitled-1.jpg" class="postimage" alt="Ingame" onclick="viewableArea(this);"></dt>
+			<dd><em>Ingame</em></dd>			<dd>Untitled-1.jpg (185.4 KiB) Viewed 720 times</dd>
+		</dl>
+		
+		
+			</dd>
+									</dl>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p59693">
+	<div class="info">
+		<p class="poster">Tranthor</p>
+		<p class="dt">2009-09-04 04:20:09</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">if you only want a dot download one?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p59694">
+	<div class="info">
+		<p class="poster">Shift</p>
+		<p class="dt">2009-09-04 04:28:44</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">The dot is just an example it happens with all crosshairs I make.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p59696">
+	<div class="info">
+		<p class="poster">Book</p>
+		<p class="dt">2009-09-04 08:01:31</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">it seems to me as if the dot in your font editor is off centered with the grid behind it. that may result in a off centered xhair in-game?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p59707">
+	<div class="info">
+		<p class="poster">Ko-Tao</p>
+		<p class="dt">2009-09-04 10:41:00</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">You cant use circles in font editors if you want a circle ingame. Use a thick + instead, or a pair of joined ziggurats (blocky diamond shape).<br>
+<br>
+Also, make sure your new xhair uses the same midpoint coordinates as the default, or its got a good chance of ending up slightly off center- not enough to be obvious during most play, but still likely to cost you a large % of your long range mag hs. The old bullseye crosshairs were like this for years before it was noticed.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p59764">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-09-05 12:37:14</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Maybe you already have it but  I noticed if the fiollowing isnt added tot he clientschem.res under "crosshairs"  then your crosshair can be distorted much like you expreience.
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>"yres"		"1 10000"</code></pre></div></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p59765">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-09-05 13:09:44</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Got it.<br>
+<br>
+In clientscheme.res under "crosshairs"   set "antialias" "1"  and remove "yres" "1 10000"<br>
+Now it shoudl look like this.<br>
+
+		<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>Crosshairs
+		{
+			"1"
+			{
+				"name"		"HalfLife2"
+				"tall"		"40"
+				"weight"	"0"
+				"antialias" "1"
+				"additive"	"0"
+				"custom"	"1"
+				//"yres"      "1 10000"
+				"outline" "1"</code></pre></div>
+
+Looks a little big though.<br>
+<a href="http://i524.photobucket.com/albums/cc324/k33fy/dm_amplitude_r20000.jpg" class="postlink"><img src="http://i524.photobucket.com/albums/cc324/k33fy/th_dm_amplitude_r20000.jpg" class="postimage" alt="Image"></a><br>
+<br>
+You may have to fiddle with the clientscheme.res if you plan on shrinking the size alot.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p59791">
+	<div class="info">
+		<p class="poster">Ko-Tao</p>
+		<p class="dt">2009-09-05 22:32:00</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hmm, interesting. Ill have to remember that if i ever manage to find another fps that uses ttfs for its xhairs. <img class="smilies" src="../../../images/smilies/icon_lol.gif" width="15" height="15" alt=":lol:" title="Laughing"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p59871">
+	<div class="info">
+		<p class="poster">Shift</p>
+		<p class="dt">2009-09-08 03:55:25</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">That fixed it keefy tyvm for the help!</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Training Center</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

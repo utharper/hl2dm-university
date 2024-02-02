@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>server config - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+
+<h1>server config</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=1236">https://forum.hl2dm.community/viewtopic.php?t=1236</a>
+-->
+
+<div class="post" id="p12851">
+	<div class="info">
+		<p class="poster">Strange</p>
+		<p class="dt">2008-03-16 23:33:44</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Can some1 give me a server config that you all use.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p12863">
+	<div class="info">
+		<p class="poster">MeekMeekle</p>
+		<p class="dt">2008-03-17 00:43:22</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">the last file listed are cal configs for both deathmatch and team deathmatch..<br>
+<br>
+maybe you can start at looking at those<br>
+<br>
+<a href="http://www.caleague.com/?page=files" class="postlink">http://www.caleague.com/?page=files</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p12983">
+	<div class="info">
+		<p class="poster">Strange</p>
+		<p class="dt">2008-03-17 15:41:50</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>MeekMeekle wrote:</cite>the last file listed are cal configs for both deathmatch and team deathmatch..<br>
+<br>
+maybe you can start at looking at those<br>
+<br>
+<a href="http://www.caleague.com/?page=files" class="postlink">http://www.caleague.com/?page=files</a></div></blockquote>
+
+<br>
+that sites says "There are currently no league-wide files."</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p12997">
+	<div class="info">
+		<p class="poster">Fearsome*</p>
+		<p class="dt">2008-03-17 18:05:39</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">You need to select a division, so pick 4v4 if you want teams and 1v1 if you want death match then click files on the right side of the page</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p13148">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2008-03-18 06:35:06</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">My CAL server cfg when its not running the CAL match cfgs.<br>
+<br>
+Most of the settings match the CAL team Cfg<br>
+<br>
+hostname "       "<br>
+<br>
+log 1<br>
+sv_lan 0<br>
+sv_downloadurl ""<br>
+sv_allowdownload 1<br>
+sv_allowupload 1<br>
+sv_region 0<br>
+decalfrequency 5<br>
+<br>
+sv_pure 2<br>
+sv_pure_kick_clients 0<br>
+sv_pure_trace 1<br>
+sv_allow_wait_command 0<br>
+<br>
+rcon_password ""<br>
+sv_password ""<br>
+sv_alltalk "1"<br>
+<br>
+mp_teamplay 1<br>
+mp_timelimit 20<br>
+mp_chattime 20<br>
+mp_fraglimit 0<br>
+mp_forcerespawn 1<br>
+<br>
+mp_allowspectators 1<br>
+decalfrequency 5<br>
+mp_friendlyfire 0<br>
+mp_flashlight 1<br>
+mp_footsteps 1<br>
+mp_falldamage 0<br>
+<br>
+sv_hl2mp_item_respawn_time 30 <br>
+sv_hl2mp_weapon_respawn_time 20<br>
+<br>
+sv_cheats 0<br>
+sv_gravity 600<br>
+sv_friction 4<br>
+sv_bounce 0<br>
+sv_maxspeed 320<br>
+sv_maxvelocity 3500<br>
+sv_waterfriction 1<br>
+sv_wateraccelerate 10<br>
+sv_accelerate 10<br>
+<br>
+// LOGGING<br>
+mp_logfile 1<br>
+sv_logbans 1<br>
+sv_stats 1<br>
+<br>
+sv_timeout 20<br>
+sv_maxrate 30000<br>
+sv_minrate 5000<br>
+sv_unlag 1<br>
+sv_maxunlag 1<br>
+sv_mincmdrate 30<br>
+sv_maxcmdrate 100<br>
+sv_client_cmdrate_difference 40<br>
+sv_client_interpolate -1<br>
+sv_client_max_interp_ratio 2<br>
+sv_client_min_interp_ratio 1<br>
+sv_client_predict -1<br>
+<br>
+//sv_maxupdaterate 100<br>
+//sv_minupdaterate 20<br>
+<br>
+//sv_rcon_minfailures 3<br>
+//sv_rcon_minfailuretime 300<br>
+//sv_rcon_banpenalty 30<br>
+//sv_rcon_maxfailures 10<br>
+<br>
+<br>
+// load ban files<br>
+exec listip.cfg<br>
+exec banned.cfg<br>
+exec banned_ip.cfg<br>
+exec banned_user.cfg<br>
+<br>
+//MapRotation<br>
+set g_gametype "tdm"<br>
+set sv_mapRotation<br>
+map_rotate</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

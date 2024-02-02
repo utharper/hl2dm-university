@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Bumpmaps (normal maps) Ever tried making them? - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+
+<h1>Bumpmaps (normal maps) Ever tried making them?</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=3490">https://forum.hl2dm.community/viewtopic.php?t=3490</a>
+-->
+
+<div class="post" id="p47588">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2009-03-24 01:53:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">I'm in doubt about this. I've always seen bumpmaps as greyscale images and I rly understand the concept and how they work. But valve uses images in blue/purple shades. How do we achieve that?<br>
+<br>
+I haven't yet tried to make anything alike, but I thought inverse colors make a similar effect. Would that be it?? If it is, then it's the simplest matter.<br>
+If it's not, how???<br>
+<br>
+Any suggestions?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p47604">
+	<div class="info">
+		<p class="poster">haymaker</p>
+		<p class="dt">2009-03-24 04:15:45</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">there's a couple of ways to do this, covered in this thread<br>
+<br>
+<a href="http://forum.interlopers.net/viewtopic.php?t=3501" class="postlink">http://forum.interlopers.net/viewtopic.php?t=3501</a><br>
+<br>
+I can't get crazybump to work, it crashes out for w/e reason, but the nividia photoshop plugin is pretty simple to use. Just make sure you have the vtf plugin for PS as well so you can save your bumpmap texture with the correct flags in one step.<br>
+<br>
+here's an in-depth look at it<br>
+<br>
+<a href="http://www.saschahenrichs.de/midsizedocs/nvidiatut.html" class="postlink">http://www.saschahenrichs.de/midsizedocs/nvidiatut.html</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p47605">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2009-03-24 04:26:59</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">2nding crazybump, it really is superb and lets you do more than just simple normal maps. I've used the nvidia plugin and the results can be quite good with simple textures but for the more advanced stuff crazybump has it beat.<br>
+<br>
+You can get great results by making a greyscale heightmap for your texture and generating the normal map from that but this will only work well if the texture is a "clean" one. This is how I made the bumpmaps for textures on datacore.<br>
+<br>
+Also, normal mapped materials look much better with a good specular mask <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p47630">
+	<div class="info">
+		<p class="poster">Skaruts</p>
+		<p class="dt">2009-03-24 12:37:48</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Specular masks... I still have to go into that. I'm also trying to learn how to make the material have reflectiveness. The results I've had so far were a little unexpected...  <img class="smilies" src="../../../images/smilies/icon_mrgreen.gif" width="15" height="15" alt=":mrgreen:" title="Mr. Green">  <img class="smilies" src="../../../images/smilies/sketchy.gif" width="15" height="15" alt=":sketchy:" title="Unsure"><br>
+<br>
+Anyway, thx for the tips. NVIDIA plugin has made some interesting results.<br>
+But I gotta try crazy bump. I like it from what I see in <a href="http://developer.valvesoftware.com/wiki/Image:Test_bump.jpg" class="postlink">this picture</a><br>
+ (from <a href="http://developer.valvesoftware.com/wiki/Bump_map" class="postlink">this page</a>)</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p47631">
+	<div class="info">
+		<p class="poster">boshed</p>
+		<p class="dt">2009-03-24 13:28:32</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Specular = reflectiveness <img class="smilies" src="../../../images/smilies/icon_smile.gif" width="15" height="15" alt=":)" title="Smile"><br>
+<br>
+A specular mask is a greyscale image that is applied to your texture, where white = full shininess and black = no shininess.<br>
+<br>
+Gives you results like this:<br>
+<br>
+<img src="http://img2.pict.com/26/a9/40/5140b9715ce3e67964b39d57af/NUgKD/320/render.jpg" class="postimage" alt="Image"><br>
+<br>
+Notice how the the raised studs are shinier and the gaps between the tiles have no reflection. It's subtle on screenshots but is much more noticeable when you're moving around ingame, you can see it in action clearly on a lot of the combine textures.<br>
+<br>
+Add me on steam if you want help with bump/spec stuff <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"> (see sig)</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Mapping Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>hlstatsx help - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+
+<h1>hlstatsx help</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=355">https://forum.hl2dm.community/viewtopic.php?t=355</a>
+-->
+
+<div class="post" id="p2043">
+	<div class="info">
+		<p class="poster">st00pidity</p>
+		<p class="dt">2007-08-24 04:45:47</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">i need help setting up my hlstatsx, anyone willing to help me i was going to put everything i learned to get it working into a documentation for hl2dmu.<br>
+<br>
+this is from a remotre host using cpanel, im having trouble crontabbing the damn pearl files.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2045">
+	<div class="info">
+		<p class="poster">Thorofin</p>
+		<p class="dt">2007-08-24 05:43:12</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Can you post your cron file so we can take a look?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2049">
+	<div class="info">
+		<p class="poster">st00pidity</p>
+		<p class="dt">2007-08-24 09:08:22</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">my hlstats.pl or ... what?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2057">
+	<div class="info">
+		<p class="poster">Thorofin</p>
+		<p class="dt">2007-08-24 17:04:58</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hmm...no, I was talking about the systems Crontab..but now I remember that hlstats requires a perl deamon to be running...one of the reasons I had to go with psychostats...</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2064">
+	<div class="info">
+		<p class="poster">st00pidity</p>
+		<p class="dt">2007-08-25 00:54:49</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">psychostats is icky</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2097">
+	<div class="info">
+		<p class="poster">Thorofin</p>
+		<p class="dt">2007-08-27 16:49:44</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Maybe so..but it can be installed with out having to run a daemon...</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2098">
+	<div class="info">
+		<p class="poster">st00pidity</p>
+		<p class="dt">2007-08-27 17:50:20</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">we'll see, i got acidrain from thenerdnetwork.net helping me out, hes a little more experienced with this shit.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p2291">
+	<div class="info">
+		<p class="poster">Cynyx</p>
+		<p class="dt">2007-09-06 12:00:18</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>st0wn3d wrote:</cite>
+this is from a remotre host using cpanel, im having trouble crontabbing the damn pearl files.</div></blockquote>
+
+I suppose you speak about linux install of hlstatsX<br>
+<br>
+The only thing to be crontabbed is for calculation of daily award. Just do :<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code># crontab -e
+</code></pre></div>
+
+and add a line like that:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>30 00 * * * cd /home/cynyx/hlstatsx/perl; ./hlstats-awards.pl
+</code></pre></div>
+
+The deamon needed by HLstatsX is launched via a simple command like this one :
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>$ /home/cynyx//hlstatsx/perl/run_hlstarts start
+</code></pre></div>
+
+but yes .... u need to be able to access to a remote shell (SSH) and have the appropriate rights to do that on your server.<br>
+<br>
+I dunno if i have helped you... but i have a full working HLstatsX system for my clan - <a href="http://stats.emc2-clan.com" class="postlink">http://stats.emc2-clan.com</a> - and if i can help you, just ask...</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

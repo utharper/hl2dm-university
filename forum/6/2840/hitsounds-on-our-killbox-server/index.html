@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Hit-Sounds on our Killbox server - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+
+<h1>Hit-Sounds on our Killbox server</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=2840">https://forum.hl2dm.community/viewtopic.php?t=2840</a>
+-->
+
+<div class="post" id="p36399">
+	<div class="info">
+		<p class="poster">Maxtasy</p>
+		<p class="dt">2008-11-30 08:35:26</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hello community,<br>
+we have a verygames halflife 2 deathmatch server will 24/7 killbox and want to add a plugin for "Hit-Sounds". i think this is called hit registration (?) or something like this. we are totally noob with this plugins, etc. <br>
+all we can do is change maps and sounds. plz help us to make our server more fun <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"> <br>
+<br>
+regards, <br>
+Maxtasy</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p36402">
+	<div class="info">
+		<p class="poster">Shinigami</p>
+		<p class="dt">2008-11-30 08:51:10</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">keeper MAY know sumething bout this..  <img class="smilies" src="../../../images/smilies/icon_mrgreen.gif" width="15" height="15" alt=":mrgreen:" title="Mr. Green"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p36404">
+	<div class="info">
+		<p class="poster">Maxtasy</p>
+		<p class="dt">2008-11-30 09:06:41</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">okay now i have hope to solve this issue  <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=":wink:" title="Wink"> <br>
+<br>
+and maybe someone knows a link to the newest version of the mani mod, because we have <span style="color:#008000"><a href="http://www.hl2dm-university.com/forum/phpBB3/viewtopic.php?f=6&amp;t=2034" class="postlink">this problem</a></span> as well.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p36409">
+	<div class="info">
+		<p class="poster">Paradox</p>
+		<p class="dt">2008-11-30 10:00:17</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><a href="http://www.mani-admin-plugin.com/" class="postlink">http://www.mani-admin-plugin.com/</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p36421">
+	<div class="info">
+		<p class="poster">Walking Target</p>
+		<p class="dt">2008-11-30 19:11:40</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Keepers plugins here at the U:<br>
+<br>
+<a href="http://www.hl2dm-university.com/plugin_wiki/index.php?title=Main_Page" class="postlink">http://www.hl2dm-university.com/plugin_ ... =Main_Page</a></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p36567">
+	<div class="info">
+		<p class="poster">Maxtasy</p>
+		<p class="dt">2008-12-02 16:12:27</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">thank you alot</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p40142">
+	<div class="info">
+		<p class="poster">[1979] Babbage</p>
+		<p class="dt">2009-01-06 09:39:30</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">You dont need Keeper's plugin or Mani-Admin to do what you're looking to do... Sheesh, this is supposed to be "HL2DM University"? Certainly reminds me of college...Kids who barely know their way around are teaching the classes.. <img class="smilies" src="../../../images/smilies/icon_sad.gif" width="15" height="15" alt=":(" title="Sad"><br>
+<br>
+You can do everything you're looking to do in one line in one stanza in Eventscripts:<br>
+<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>event player_hurt
+{
+              es_emitsound player event_var(userid) "admin_plugin/hitsound.mp3" 1.0 0.4
+}</code></pre></div>
+
+Just make sure your clients are downloading the sound file you want to use when they connect. BTW, stop playing killbox maps. Killbox maps are for children and clowns, and we already have enough of those groups.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p40146">
+	<div class="info">
+		<p class="poster">Ghost Dog_TSGK</p>
+		<p class="dt">2009-01-06 10:19:38</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>[1979] Babbage wrote:</cite>You dont need Keeper's plugin or Mani-Admin to do what you're looking to do... Sheesh, this is supposed to be "HL2DM University"? Certainly reminds me of college...Kids who barely know their way around are teaching the classes.. <img class="smilies" src="../../../images/smilies/icon_sad.gif" width="15" height="15" alt=":(" title="Sad"><br>
+<br>
+You can do everything you're looking to do in one line in one stanza in Eventscripts:<br>
+<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>event player_hurt
+{
+              es_emitsound player event_var(userid) "admin_plugin/hitsound.mp3" 1.0 0.4
+}</code></pre></div>
+
+Just make sure your clients are downloading the sound file you want to use when they connect. BTW, stop playing killbox maps. Killbox maps are for children and clowns, and we already have enough of those groups.</div></blockquote>
+
+<br>
+I bet you're just a joy to live with.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>

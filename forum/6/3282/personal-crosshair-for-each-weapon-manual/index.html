@@ -1,0 +1,298 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>(!) Personal crosshair for each weapon (manual) - HL2DMU Forum Archive</title>
+<link rel="stylesheet" type="text/css" href="../../../topic.css"/>
+</head><body>
+
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+
+<h1>(!) Personal crosshair for each weapon (manual)</h1>
+
+<!-- Original URL of this topic:
+	<a href="https://forum.hl2dm.community/viewtopic.php?t=3282">https://forum.hl2dm.community/viewtopic.php?t=3282</a>
+-->
+
+<div class="post" id="p43720">
+	<div class="info">
+		<p class="poster">Jerk</p>
+		<p class="dt">2009-02-11 12:40:28</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Hello, ladies and gentlemen. Today i'll teach you how to set your own crosshair to each weapon (thanks 2 <strong class="text-strong">&lt;FENIX&gt;</strong> and <strong class="text-strong">z4kky</strong> for help).<br>
+<br>
+First you need to get the <strong class="text-strong">"GCFScape"</strong> program and open the .gcf file called "source engine". Here you need to open the "scripts" folder and unpack 11 files: <strong class="text-strong">"weapon_crowbar.txt", "weapon_stunstick.txt", "weapon_pistol.txt", "weapon_smg1.txt", "weapon_ar2.txt", "weapon_physcannon.txt", "weapon_357.txt", "weapon_rpg.txt", "weapon_shotgun.txt", "weapon_crossbow.txt" and "weapon_frag.txt"</strong>. Extract 'em all to <strong class="text-strong">"scripts"</strong> folder located in your <strong class="text-strong">"hl2mp"</strong> directory (if its not exist, just create it). Then open some file you need to edit (search for weapon name) and find the block called <strong class="text-strong">"crosshair"</strong>. Here is where the fun starts, now its two different ways to set the crosshair.<br>
+<br>
+<strong class="text-strong">First</strong> way: the pic. You can use every pic you want to set is as crosshair. But since every clanwar plays with "sv_pure 2" command, your pic will be replaced with one called <strong class="text-strong">"crosshairs.vtf"</strong> located in <strong class="text-strong">"source materials.gcf/Sprites"</strong>, so i not recommend you to use your image as xhair. So, here is the "crosshairs.vtf" pic (i converted it to .png format):<br>
+<br>
+<img src="http://img26.imageshack.us/img26/5664/crosshairshs4.png" class="postimage" alt="Image">.<br>
+<br>
+Choose the xhair you need (let "N" be the number), they are all has width and height equals 24 pics. To set the crosshair you've chosen, paste next text under the "crosshairs" string in .txt file (delete everything in this block first, otherwise it wont works):
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>		{
+				"file"		"sprites/crosshairs"
+				"x"			""
+				"y"			""
+				"width"		"24"
+				"height"	"24"
+		}</code></pre></div>.<br>
+Here  you need to fill the "x" and "y" fields. Use the equations <strong class="text-strong">x=(X(N)-1)*24 , y=(Y(N)-1)*24</strong> to canculate the coordinates (here X(N) is the string of your xhair, and Y(N) is the coloumn). For example, you've chosen the second crosshair in the third string. So the block will be:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>		{
+				"file"		"sprites/crosshairs"
+				"x"			"24"
+				"y"			"48"
+				"width"		"24"
+				"height"	"24"
+		}</code></pre></div>.<br>
+And you'll see something like that: <br>
+<br>
+<a href="http://keep4u.ru/full/2009/02/11/22e0551626c988b647/jpg" class="postlink"><img src="http://keep4u.ru/imgs/s/2009/02/11/22/22e0551626c988b647.jpg" class="postimage" alt="Image"></a>.<br>
+<br>
+Same with every weapon you need to change.<br>
+Im not recommend you to use the first way for next reason - as you see on previev image, the edges of xhair has been cuted off, so there are only few xhairs that looks good: fourth in second string, third, fourth, fifth in third string. But if you prefer them to use, your work is over here.<br>
+<br>
+<br>
+<strong class="text-strong">Second</strong> way: the font file. Yes, you can make your own font file to use in hl2dm, and it wont be replaced with default even with "sv_pure 2". Second way is harder, but if you prefer to use your own xhair, you should read attentively.<br>
+First you need to create (or edit) the font file and make some crosshairs you need (i used <strong class="text-strong">"Font Creator Program"</strong> for this), paste it to <strong class="text-strong">C:/WINDOWS/Fonts</strong> and to "resource" folders. I just edited the halflife2.ttf font file in the "resource" dir.<br>
+<strong class="text-strong">Important: you need to edit the name of the font file and the "Family Name" of the font, make sure they are not the <em class="text-italics">halflife2.ttf</em> and <em class="text-italics">HalfLife2</em>, otherwise the game font will be replaced and you'll see your crosshairs instead of weapon icons and stuff!</strong><br>
+<a href="http://keep4u.ru/full/2009/02/11/67c0711a611bd5cf24/jpg" class="postlink"><img src="http://keep4u.ru/imgs/s/2009/02/11/67/67c0711a611bd5cf24.jpg" class="postimage" alt="Image"></a><br>
+<br>
+Now, you created the .ttf font file, named it "mycros" for example and copied it to both directories. If you edited the "halflife2.ttf" file (its easier than create the new one), you'll see something like that (i used some of my crosshairs and one from hl2dmPro):<br>
+<br>
+<a href="http://keep4u.ru/full/2009/02/11/072e346911a404843d/jpg" class="postlink"><img src="http://keep4u.ru/imgs/s/2009/02/11/07/072e346911a404843d.jpg" class="postimage" alt="Image"></a><br>
+<br>
+Now you need to open the <strong class="text-strong">"recource"</strong> folder located in <strong class="text-strong">:\Steam\steamapps\&lt;name&gt;\half-life 2 deathmatch\hl2mp\</strong>. Here you will find the <strong class="text-strong">"clientscheme.res"</strong> file. Open it with "notepad" and find the block called <strong class="text-strong">"crosshairs"</strong>:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>		Crosshairs
+		{
+			"1"
+			{
+				"name"		"HalfLife2"
+				"tall"		"40"
+				"weight"	"0"
+				"antialias" "0"
+				"additive"	"0"
+				"custom"	"1"
+				"yres"		"1 10000"
+			}
+		}</code></pre></div>.<br>
+Copy the whole block and paste it right below the last "}" symbol, then rename it to "Mycros" and change the font name to "mycros" too (click the image).<br>
+<br>
+<a href="http://keep4u.ru/full/2009/02/11/c4754a502cf5632a7b/jpg" class="postlink"><img src="http://keep4u.ru/imgs/s/2009/02/11/c4/c4754a502cf5632a7b.jpg" class="postimage" alt="Image"></a><br>
+<br>
+Save the "clientscheme.res" file (make backup first), then proceed to the "scripts" folder. Here, open the file you need, find the "crosshair" block and paste this:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>"Mycros"
+		{
+				"font"		"mycros"
+				"character"	"&lt;charname&gt;"</code></pre></div>.<br>
+Where <strong class="text-strong">&lt;charname&gt;</strong> is the name of symbol you prefer to use as crosshair. "a" for example.<br>
+If you did everything right, you'll see something like that (few examples):<br>
+<br>
+<a href="http://keep4u.ru/full/2009/02/11/482f8e758a77f460db/jpg" class="postlink"><img src="http://keep4u.ru/imgs/s/2009/02/11/48/482f8e758a77f460db.jpg" class="postimage" alt="Image"></a><br>
+<a href="http://keep4u.ru/full/2009/02/11/0c06cb68c32736242d/jpg" class="postlink"><img src="http://keep4u.ru/imgs/s/2009/02/11/0c/0c06cb68c32736242d.jpg" class="postimage" alt="Image"></a><br>
+<a href="http://keep4u.ru/full/2009/02/11/6dcc815fbd3b9d9142/jpg" class="postlink"><img src="http://keep4u.ru/imgs/s/2009/02/11/6d/6dcc815fbd3b9d9142.jpg" class="postimage" alt="Image"></a>.<br>
+<br>
+So, i think its all i wanted to say. Have fun! <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=";)" title="Wink"></div>
+<dl class="attachbox">
+					<dt>
+						Attachments
+					</dt>
+											<dd>
+			
+		
+		
+				<dl class="file">
+			<dt><span class="imageset icon_topic_attach"></span> <a class="postlink" href="manual_files.rar">manual_files.rar</a></dt>
+			<dd><em>scripts and font i used</em></dd>			<dd>(35.07 KiB) Downloaded 161 times</dd>
+		</dl>
+		
+			</dd>
+									</dl>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p43721">
+	<div class="info">
+		<p class="poster">Ghost Dog_TSGK</p>
+		<p class="dt">2009-02-11 13:37:14</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">This is uhhhh           lookin pretty good.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p43725">
+	<div class="info">
+		<p class="poster">badinfluence</p>
+		<p class="dt">2009-02-11 17:42:54</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">This would be terrific if I wanted to take the time, but sadly, I'm too lazy.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p43781">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-02-12 20:34:02</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">1 step closer to being able to use no weapon models.<br>
+But does look hard to do <img class="smilies" src="../../../images/smilies/icon_sad.gif" width="15" height="15" alt=":(" title="Sad"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p43782">
+	<div class="info">
+		<p class="poster">Jelly Fox</p>
+		<p class="dt">2009-02-12 20:40:00</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">You can do this in Pro mod with the click of a button <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p43783">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2009-02-12 20:55:05</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Jelly Fox wrote:</cite>You can do this in Pro mod with the click of a button <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div></blockquote>
+
+Pro uses the picture way of doing it (.vtf) so they do not work with sv_pure 2</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p45483">
+	<div class="info">
+		<p class="poster">Jelly Fox</p>
+		<p class="dt">2009-03-01 15:56:50</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">Didn't know that.<br>
+<br>
+Cheers for the info Jerk, it does look a little time consuming but I'll give it a shot on day when I have some free time. <img class="smilies" src="../../../images/smilies/icon_idea.gif" width="15" height="15" alt=":idea:" title="Idea"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p47838">
+	<div class="info">
+		<p class="poster">Deathwish</p>
+		<p class="dt">2009-03-27 02:49:43</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>keefy wrote:</cite>1 step closer to being able to use no weapon models.<br>
+But does look hard to do <img class="smilies" src="../../../images/smilies/icon_sad.gif" width="15" height="15" alt=":(" title="Sad"></div></blockquote>
+
+Already achievable even with sv_pure 2.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p47842">
+	<div class="info">
+		<p class="poster">Jelly Fox</p>
+		<p class="dt">2009-03-27 03:41:35</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">How?</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p49027">
+	<div class="info">
+		<p class="poster">Jelly Fox</p>
+		<p class="dt">2009-04-05 17:18:57</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">come on Deathwish enlighten me...</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p49731">
+	<div class="info">
+		<p class="poster">**DDF**</p>
+		<p class="dt">2009-04-12 03:39:34</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Jelly Fox wrote:</cite>come on Deathwish enlighten me...</div></blockquote>
+
+] r_drawviewmodel 0
+<blockquote class="uncited"><div>
+Can't use cheat cvar r_drawviewmodel in multiplayer, unless the server has sv_cheats set to 1.
+</div></blockquote><img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=";)" title="Wink"><br>
+<br>
+<br>
+<br>
+Jerk's tip to have a different crosshair for each weapon is awesome. But the prob is you can't remove the model without sv_cheats 1 so it cant be used as a unique way to know the current weapon you use <img class="smilies" src="../../../images/smilies/icon_wink.gif" width="15" height="15" alt=";)" title="Wink"> And be careful to not mixed the custom skins and the 3D models itselves.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p51982">
+	<div class="info">
+		<p class="poster">provost</p>
+		<p class="dt">2009-05-05 17:41:29</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>Jelly Fox wrote:</cite>You can do this in Pro mod with the click of a button <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div></blockquote>
+
+You can't find people to play with in Pro mod ;(</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p51987">
+	<div class="info">
+		<p class="poster">Jelly Fox</p>
+		<p class="dt">2009-05-05 18:00:34</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>.conflict wrote:</cite><blockquote><div><cite>Jelly Fox wrote:</cite>You can do this in Pro mod with the click of a button <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div></blockquote>
+
+You can't find people to play with in Pro mod ;(</div></blockquote>
+
+It's a shame, but people like exploiting exploits rather than fixing them. <img class="smilies" src="../../../images/smilies/icon_sad.gif" width="15" height="15" alt=":(" title="Sad"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p61053">
+	<div class="info">
+		<p class="poster">ninjins</p>
+		<p class="dt">2009-10-06 05:23:04</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">what exploits? <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p61058">
+	<div class="info">
+		<p class="poster">provost</p>
+		<p class="dt">2009-10-06 08:33:21</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content"><blockquote><div><cite>TiGGy wrote:</cite>what exploits? <img class="smilies" src="../../../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":D" title="Very Happy"></div></blockquote>
+<img src="http://i36.photobucket.com/albums/e50/TheFinalConflict/impulse.jpg" class="postimage" alt="Image"><br>
+<br>
+you asked for it son</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="post" id="p77705">
+	<div class="info">
+		<p class="poster">keefy</p>
+		<p class="dt">2010-11-01 22:24:06</p>
+	</div>
+	<div class="msg">
+	<!-- BEGIN MESSAGE -->
+	<div class="content">You have to extract the weapon script files from <strong class="text-strong">half-life 2 deathmatch.gcf</strong> otherwise your shots do not register when you create a listen server.</div>	<!-- END MESSAGE -->
+	</div>
+</div>
+<div class="breadcrumb">
+	<p><a href="../../../">HL2DMU Forum Archive</a> &raquo; <a href="../../">Engineering Discussion</a></p>
+</div>
+<footer>
+<!-- Forum archived to static pages 28 Jan 2024 - www.hl2dm.community --></footer>
+</body></html>
